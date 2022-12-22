@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDetail">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API JobDetail
+  class JobDetail
   {
   public:
-    JobDetail();
-    JobDetail(Aws::Utils::Json::JsonView jsonValue);
-    JobDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobDetail();
+    AWS_BATCH_API JobDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1168,6 +1168,48 @@ namespace Model
      */
     inline JobDetail& AddEksAttempts(EksAttemptDetail&& value) { m_eksAttemptsHasBeenSet = true; m_eksAttempts.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline bool GetIsCancelled() const{ return m_isCancelled; }
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline bool IsCancelledHasBeenSet() const { return m_isCancelledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline void SetIsCancelled(bool value) { m_isCancelledHasBeenSet = true; m_isCancelled = value; }
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline JobDetail& WithIsCancelled(bool value) { SetIsCancelled(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline bool GetIsTerminated() const{ return m_isTerminated; }
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline bool IsTerminatedHasBeenSet() const { return m_isTerminatedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline void SetIsTerminated(bool value) { m_isTerminatedHasBeenSet = true; m_isTerminated = value; }
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline JobDetail& WithIsTerminated(bool value) { SetIsTerminated(value); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -1247,6 +1289,12 @@ namespace Model
 
     Aws::Vector<EksAttemptDetail> m_eksAttempts;
     bool m_eksAttemptsHasBeenSet = false;
+
+    bool m_isCancelled;
+    bool m_isCancelledHasBeenSet = false;
+
+    bool m_isTerminated;
+    bool m_isTerminatedHasBeenSet = false;
   };
 
 } // namespace Model

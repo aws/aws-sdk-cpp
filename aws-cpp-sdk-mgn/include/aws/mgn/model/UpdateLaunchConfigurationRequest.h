@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MGN_API UpdateLaunchConfigurationRequest : public MgnRequest
+  class UpdateLaunchConfigurationRequest : public MgnRequest
   {
   public:
-    UpdateLaunchConfigurationRequest();
+    AWS_MGN_API UpdateLaunchConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLaunchConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MGN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -111,6 +111,27 @@ namespace Model
 
 
     /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline bool GetEnableMapAutoTagging() const{ return m_enableMapAutoTagging; }
+
+    /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline bool EnableMapAutoTaggingHasBeenSet() const { return m_enableMapAutoTaggingHasBeenSet; }
+
+    /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline void SetEnableMapAutoTagging(bool value) { m_enableMapAutoTaggingHasBeenSet = true; m_enableMapAutoTagging = value; }
+
+    /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithEnableMapAutoTagging(bool value) { SetEnableMapAutoTagging(value); return *this;}
+
+
+    /**
      * <p>Update Launch configuration launch disposition request.</p>
      */
     inline const LaunchDisposition& GetLaunchDisposition() const{ return m_launchDisposition; }
@@ -170,6 +191,47 @@ namespace Model
      * <p>Update Launch configuration licensing request.</p>
      */
     inline UpdateLaunchConfigurationRequest& WithLicensing(Licensing&& value) { SetLicensing(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline const Aws::String& GetMapAutoTaggingMpeID() const{ return m_mapAutoTaggingMpeID; }
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline bool MapAutoTaggingMpeIDHasBeenSet() const { return m_mapAutoTaggingMpeIDHasBeenSet; }
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline void SetMapAutoTaggingMpeID(const Aws::String& value) { m_mapAutoTaggingMpeIDHasBeenSet = true; m_mapAutoTaggingMpeID = value; }
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline void SetMapAutoTaggingMpeID(Aws::String&& value) { m_mapAutoTaggingMpeIDHasBeenSet = true; m_mapAutoTaggingMpeID = std::move(value); }
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline void SetMapAutoTaggingMpeID(const char* value) { m_mapAutoTaggingMpeIDHasBeenSet = true; m_mapAutoTaggingMpeID.assign(value); }
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithMapAutoTaggingMpeID(const Aws::String& value) { SetMapAutoTaggingMpeID(value); return *this;}
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithMapAutoTaggingMpeID(Aws::String&& value) { SetMapAutoTaggingMpeID(std::move(value)); return *this;}
+
+    /**
+     * <p>Launch configuration map auto tagging MPE ID.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithMapAutoTaggingMpeID(const char* value) { SetMapAutoTaggingMpeID(value); return *this;}
 
 
     /**
@@ -314,11 +376,17 @@ namespace Model
     bool m_copyTags;
     bool m_copyTagsHasBeenSet = false;
 
+    bool m_enableMapAutoTagging;
+    bool m_enableMapAutoTaggingHasBeenSet = false;
+
     LaunchDisposition m_launchDisposition;
     bool m_launchDispositionHasBeenSet = false;
 
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
+
+    Aws::String m_mapAutoTaggingMpeID;
+    bool m_mapAutoTaggingMpeIDHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

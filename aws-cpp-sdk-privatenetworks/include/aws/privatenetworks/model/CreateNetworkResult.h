@@ -26,12 +26,12 @@ namespace PrivateNetworks
 {
 namespace Model
 {
-  class AWS_PRIVATENETWORKS_API CreateNetworkResult
+  class CreateNetworkResult
   {
   public:
-    CreateNetworkResult();
-    CreateNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API CreateNetworkResult();
+    AWS_PRIVATENETWORKS_API CreateNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API CreateNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

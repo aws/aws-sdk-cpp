@@ -30,12 +30,12 @@ namespace EventBridge
 {
 namespace Model
 {
-  class AWS_EVENTBRIDGE_API DescribeEndpointResult
+  class DescribeEndpointResult
   {
   public:
-    DescribeEndpointResult();
-    DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API DescribeEndpointResult();
+    AWS_EVENTBRIDGE_API DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

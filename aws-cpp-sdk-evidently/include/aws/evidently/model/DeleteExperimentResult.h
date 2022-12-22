@@ -22,12 +22,12 @@ namespace CloudWatchEvidently
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVIDENTLY_API DeleteExperimentResult
+  class DeleteExperimentResult
   {
   public:
-    DeleteExperimentResult();
-    DeleteExperimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVIDENTLY_API DeleteExperimentResult();
+    AWS_CLOUDWATCHEVIDENTLY_API DeleteExperimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVIDENTLY_API DeleteExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

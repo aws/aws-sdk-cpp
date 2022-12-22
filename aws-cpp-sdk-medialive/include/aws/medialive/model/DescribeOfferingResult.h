@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOfferingResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DescribeOfferingResult
+  class DescribeOfferingResult
   {
   public:
-    DescribeOfferingResult();
-    DescribeOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DescribeOfferingResult();
+    AWS_MEDIALIVE_API DescribeOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DescribeOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

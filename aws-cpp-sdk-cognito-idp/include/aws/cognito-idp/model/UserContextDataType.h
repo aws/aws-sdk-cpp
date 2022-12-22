@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserContextDataType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType
+  class UserContextDataType
   {
   public:
-    UserContextDataType();
-    UserContextDataType(Aws::Utils::Json::JsonView jsonValue);
-    UserContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

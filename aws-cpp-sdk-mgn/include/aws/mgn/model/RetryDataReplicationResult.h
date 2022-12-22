@@ -30,12 +30,48 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API RetryDataReplicationResult
+  class RetryDataReplicationResult
   {
   public:
-    RetryDataReplicationResult();
-    RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API RetryDataReplicationResult();
+    AWS_MGN_API RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const Aws::String& value) { m_applicationID = value; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(Aws::String&& value) { m_applicationID = std::move(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const char* value) { m_applicationID.assign(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline RetryDataReplicationResult& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline RetryDataReplicationResult& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline RetryDataReplicationResult& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
 
 
     /**
@@ -353,6 +389,8 @@ namespace Model
     inline RetryDataReplicationResult& WithVcenterClientID(const char* value) { SetVcenterClientID(value); return *this;}
 
   private:
+
+    Aws::String m_applicationID;
 
     Aws::String m_arn;
 

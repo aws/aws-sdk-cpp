@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/LatestDeviceJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API LatestDeviceJob
+  class LatestDeviceJob
   {
   public:
-    LatestDeviceJob();
-    LatestDeviceJob(Aws::Utils::Json::JsonView jsonValue);
-    LatestDeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API LatestDeviceJob();
+    AWS_PANORAMA_API LatestDeviceJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API LatestDeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

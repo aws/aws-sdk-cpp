@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/AppMonitorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API AppMonitorConfiguration
+  class AppMonitorConfiguration
   {
   public:
-    AppMonitorConfiguration();
-    AppMonitorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AppMonitorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API AppMonitorConfiguration();
+    AWS_CLOUDWATCHRUM_API AppMonitorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API AppMonitorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -341,82 +341,73 @@ namespace Model
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludedPages() const{ return m_includedPages; }
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline bool IncludedPagesHasBeenSet() const { return m_includedPagesHasBeenSet; }
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline void SetIncludedPages(const Aws::Vector<Aws::String>& value) { m_includedPagesHasBeenSet = true; m_includedPages = value; }
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline void SetIncludedPages(Aws::Vector<Aws::String>&& value) { m_includedPagesHasBeenSet = true; m_includedPages = std::move(value); }
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline AppMonitorConfiguration& WithIncludedPages(const Aws::Vector<Aws::String>& value) { SetIncludedPages(value); return *this;}
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline AppMonitorConfiguration& WithIncludedPages(Aws::Vector<Aws::String>&& value) { SetIncludedPages(std::move(value)); return *this;}
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline AppMonitorConfiguration& AddIncludedPages(const Aws::String& value) { m_includedPagesHasBeenSet = true; m_includedPages.push_back(value); return *this; }
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline AppMonitorConfiguration& AddIncludedPages(Aws::String&& value) { m_includedPagesHasBeenSet = true; m_includedPages.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If this app monitor is to collect data from only certain pages in your
-     * application, this structure lists those pages. </p> <pre><code> &lt;p&gt;You
-     * can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and
-     * &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt;
-     * </code></pre>
+     * application, this structure lists those pages. </p> <p>You can't include both
+     * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+     * operation.</p>
      */
     inline AppMonitorConfiguration& AddIncludedPages(const char* value) { m_includedPagesHasBeenSet = true; m_includedPages.push_back(value); return *this; }
 

@@ -19,6 +19,7 @@ namespace Model
 {
 
 SourceServer::SourceServer() : 
+    m_applicationIDHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_isArchived(false),
@@ -35,6 +36,7 @@ SourceServer::SourceServer() :
 }
 
 SourceServer::SourceServer(JsonView jsonValue) : 
+    m_applicationIDHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_isArchived(false),
@@ -53,6 +55,13 @@ SourceServer::SourceServer(JsonView jsonValue) :
 
 SourceServer& SourceServer::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("applicationID"))
+  {
+    m_applicationID = jsonValue.GetString("applicationID");
+
+    m_applicationIDHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -132,6 +141,12 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
 JsonValue SourceServer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_applicationIDHasBeenSet)
+  {
+   payload.WithString("applicationID", m_applicationID);
+
+  }
 
   if(m_arnHasBeenSet)
   {

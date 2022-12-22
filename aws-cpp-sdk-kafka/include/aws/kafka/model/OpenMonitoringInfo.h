@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/OpenMonitoringInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API OpenMonitoringInfo
+  class OpenMonitoringInfo
   {
   public:
-    OpenMonitoringInfo();
-    OpenMonitoringInfo(Aws::Utils::Json::JsonView jsonValue);
-    OpenMonitoringInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API OpenMonitoringInfo();
+    AWS_KAFKA_API OpenMonitoringInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API OpenMonitoringInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

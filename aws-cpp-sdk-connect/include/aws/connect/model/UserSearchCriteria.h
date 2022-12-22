@@ -27,20 +27,20 @@ namespace Model
 
   /**
    * <p>The search criteria to be used to return users.</p>  <p>The
-   * <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields
-   * support "contains" queries with a minimum of 2 characters and a maximum of 25
-   * characters. Any queries with character lengths outside of this range result in
-   * empty results. </p> <p><h3>See Also:</h3>   <a
+   * <code>name</code> and <code>description</code> fields support "contains" queries
+   * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+   * character lengths outside of this range will throw invalid results. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserSearchCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserSearchCriteria
+  class UserSearchCriteria
   {
   public:
-    UserSearchCriteria();
-    UserSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
-    UserSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserSearchCriteria();
+    AWS_CONNECT_API UserSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

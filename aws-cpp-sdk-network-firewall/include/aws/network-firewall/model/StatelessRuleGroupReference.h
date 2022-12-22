@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatelessRuleGroupReference">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatelessRuleGroupReference
+  class StatelessRuleGroupReference
   {
   public:
-    StatelessRuleGroupReference();
-    StatelessRuleGroupReference(Aws::Utils::Json::JsonView jsonValue);
-    StatelessRuleGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatelessRuleGroupReference();
+    AWS_NETWORKFIREWALL_API StatelessRuleGroupReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatelessRuleGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -44,6 +44,7 @@
 #include <aws/ssm/model/DeleteParametersRequest.h>
 #include <aws/ssm/model/DeletePatchBaselineRequest.h>
 #include <aws/ssm/model/DeleteResourceDataSyncRequest.h>
+#include <aws/ssm/model/DeleteResourcePolicyRequest.h>
 #include <aws/ssm/model/DeregisterManagedInstanceRequest.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h>
 #include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowRequest.h>
@@ -104,6 +105,7 @@
 #include <aws/ssm/model/GetParametersByPathRequest.h>
 #include <aws/ssm/model/GetPatchBaselineRequest.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h>
+#include <aws/ssm/model/GetResourcePoliciesRequest.h>
 #include <aws/ssm/model/GetServiceSettingRequest.h>
 #include <aws/ssm/model/LabelParameterVersionRequest.h>
 #include <aws/ssm/model/ListAssociationVersionsRequest.h>
@@ -126,6 +128,7 @@
 #include <aws/ssm/model/PutComplianceItemsRequest.h>
 #include <aws/ssm/model/PutInventoryRequest.h>
 #include <aws/ssm/model/PutParameterRequest.h>
+#include <aws/ssm/model/PutResourcePolicyRequest.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineRequest.h>
 #include <aws/ssm/model/RegisterPatchBaselineForPatchGroupRequest.h>
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowRequest.h>
@@ -833,6 +836,30 @@ void SSMClient::DeleteResourceDataSyncAsync(const DeleteResourceDataSyncRequest&
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteResourceDataSync(request), context);
+    } );
+}
+
+DeleteResourcePolicyOutcome SSMClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourcePolicyOutcomeCallable SSMClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourcePolicy(request), context);
     } );
 }
 
@@ -2276,6 +2303,30 @@ void SSMClient::GetPatchBaselineForPatchGroupAsync(const GetPatchBaselineForPatc
     } );
 }
 
+GetResourcePoliciesOutcome SSMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourcePoliciesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourcePoliciesOutcomeCallable SSMClient::GetResourcePoliciesCallable(const GetResourcePoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcePoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourcePolicies(request), context);
+    } );
+}
+
 GetServiceSettingOutcome SSMClient::GetServiceSetting(const GetServiceSettingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2801,6 +2852,30 @@ void SSMClient::PutParameterAsync(const PutParameterRequest& request, const PutP
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutParameter(request), context);
+    } );
+}
+
+PutResourcePolicyOutcome SSMClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutResourcePolicyOutcomeCallable SSMClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResourcePolicy(request), context);
     } );
 }
 

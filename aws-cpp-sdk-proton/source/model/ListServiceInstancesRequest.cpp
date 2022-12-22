@@ -13,16 +13,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListServiceInstancesRequest::ListServiceInstancesRequest() : 
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_sortBy(ListServiceInstancesSortBy::NOT_SET),
+    m_sortByHasBeenSet(false),
+    m_sortOrder(SortOrder::NOT_SET),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
 Aws::String ListServiceInstancesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_filtersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("filters", std::move(filtersJsonList));
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {
@@ -40,6 +56,16 @@ Aws::String ListServiceInstancesRequest::SerializePayload() const
   {
    payload.WithString("serviceName", m_serviceName);
 
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("sortBy", ListServiceInstancesSortByMapper::GetNameForListServiceInstancesSortBy(m_sortBy));
+  }
+
+  if(m_sortOrderHasBeenSet)
+  {
+   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload.View().WriteReadable();

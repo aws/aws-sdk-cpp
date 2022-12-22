@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RobotSoftwareSuite">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API RobotSoftwareSuite
+  class RobotSoftwareSuite
   {
   public:
-    RobotSoftwareSuite();
-    RobotSoftwareSuite(Aws::Utils::Json::JsonView jsonValue);
-    RobotSoftwareSuite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API RobotSoftwareSuite();
+    AWS_ROBOMAKER_API RobotSoftwareSuite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API RobotSoftwareSuite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

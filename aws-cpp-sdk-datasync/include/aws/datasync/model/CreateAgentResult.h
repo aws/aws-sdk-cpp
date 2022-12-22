@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API CreateAgentResult
+  class CreateAgentResult
   {
   public:
-    CreateAgentResult();
-    CreateAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CreateAgentResult();
+    AWS_DATASYNC_API CreateAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CreateAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

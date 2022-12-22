@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult
+  class GetRelationalDatabaseLogStreamsResult
   {
   public:
-    GetRelationalDatabaseLogStreamsResult();
-    GetRelationalDatabaseLogStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRelationalDatabaseLogStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     TEST_AND_CUTOVER,
-    CUTOVER_ONLY
+    CUTOVER_ONLY,
+    TEST_ONLY
   };
 
 namespace PostLaunchActionsDeploymentTypeMapper

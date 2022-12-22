@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/TagResourceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API TagResourceResult
+  class TagResourceResult
   {
   public:
-    TagResourceResult();
-    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API TagResourceResult();
+    AWS_FSX_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

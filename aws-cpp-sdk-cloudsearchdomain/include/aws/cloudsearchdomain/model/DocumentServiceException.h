@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/DocumentServiceException">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException
+  class DocumentServiceException
   {
   public:
-    DocumentServiceException();
-    DocumentServiceException(Aws::Utils::Json::JsonView jsonValue);
-    DocumentServiceException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException();
+    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

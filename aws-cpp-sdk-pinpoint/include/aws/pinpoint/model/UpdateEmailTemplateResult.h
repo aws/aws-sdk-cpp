@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API UpdateEmailTemplateResult
+  class UpdateEmailTemplateResult
   {
   public:
-    UpdateEmailTemplateResult();
-    UpdateEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API UpdateEmailTemplateResult();
+    AWS_PINPOINT_API UpdateEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API UpdateEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

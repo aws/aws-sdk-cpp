@@ -26,18 +26,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleetLocationsOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API DeleteFleetLocationsResult
+  class DeleteFleetLocationsResult
   {
   public:
-    DeleteFleetLocationsResult();
-    DeleteFleetLocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFleetLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteFleetLocationsResult();
+    AWS_GAMELIFT_API DeleteFleetLocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteFleetLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/RepositorySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API RepositorySummary
+  class RepositorySummary
   {
   public:
-    RepositorySummary();
-    RepositorySummary(Aws::Utils::Json::JsonView jsonValue);
-    RepositorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API RepositorySummary();
+    AWS_CODEARTIFACT_API RepositorySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API RepositorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

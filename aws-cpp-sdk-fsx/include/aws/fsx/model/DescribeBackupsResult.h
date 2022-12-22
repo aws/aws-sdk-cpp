@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackupsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DescribeBackupsResult
+  class DescribeBackupsResult
   {
   public:
-    DescribeBackupsResult();
-    DescribeBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeBackupsResult();
+    AWS_FSX_API DescribeBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

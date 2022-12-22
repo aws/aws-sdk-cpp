@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest
+  class BatchExecuteStatementRequest : public RedshiftDataAPIServiceRequest
   {
   public:
-    BatchExecuteStatementRequest();
+    AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +31,58 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchExecuteStatement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline BatchExecuteStatementRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline BatchExecuteStatementRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline BatchExecuteStatementRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -240,47 +290,83 @@ namespace Model
 
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline const Aws::Vector<Aws::String>& GetSqls() const{ return m_sqls; }
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline bool SqlsHasBeenSet() const { return m_sqlsHasBeenSet; }
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline void SetSqls(const Aws::Vector<Aws::String>& value) { m_sqlsHasBeenSet = true; m_sqls = value; }
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline void SetSqls(Aws::Vector<Aws::String>&& value) { m_sqlsHasBeenSet = true; m_sqls = std::move(value); }
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline BatchExecuteStatementRequest& WithSqls(const Aws::Vector<Aws::String>& value) { SetSqls(value); return *this;}
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline BatchExecuteStatementRequest& WithSqls(Aws::Vector<Aws::String>&& value) { SetSqls(std::move(value)); return *this;}
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline BatchExecuteStatementRequest& AddSqls(const Aws::String& value) { m_sqlsHasBeenSet = true; m_sqls.push_back(value); return *this; }
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline BatchExecuteStatementRequest& AddSqls(Aws::String&& value) { m_sqlsHasBeenSet = true; m_sqls.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more SQL statements to run. </p>
+     * <p>One or more SQL statements to run. <pre><code> The SQL statements are run as
+     * a single transaction. They run serially in the order of the array. Subsequent
+     * SQL statements don't start until the previous statement in the array completes.
+     * If any SQL statement fails, then because they are run as one transaction, all
+     * work is rolled back.&lt;/p&gt; </code></pre>
      */
     inline BatchExecuteStatementRequest& AddSqls(const char* value) { m_sqlsHasBeenSet = true; m_sqls.push_back(value); return *this; }
 
@@ -416,6 +502,9 @@ namespace Model
     inline BatchExecuteStatementRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
   private:
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet = false;

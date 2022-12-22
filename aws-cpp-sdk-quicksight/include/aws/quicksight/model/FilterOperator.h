@@ -16,7 +16,8 @@ namespace Model
   enum class FilterOperator
   {
     NOT_SET,
-    StringEquals
+    StringEquals,
+    StringLike
   };
 
 namespace FilterOperatorMapper

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StepFunctionsAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API StepFunctionsAction
+  class StepFunctionsAction
   {
   public:
-    StepFunctionsAction();
-    StepFunctionsAction(Aws::Utils::Json::JsonView jsonValue);
-    StepFunctionsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API StepFunctionsAction();
+    AWS_IOT_API StepFunctionsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API StepFunctionsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

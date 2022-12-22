@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TransitGatewayConnectPeerAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation
+  class TransitGatewayConnectPeerAssociation
   {
   public:
-    TransitGatewayConnectPeerAssociation();
-    TransitGatewayConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
-    TransitGatewayConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation();
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

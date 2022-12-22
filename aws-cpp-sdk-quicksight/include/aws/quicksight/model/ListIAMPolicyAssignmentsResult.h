@@ -26,12 +26,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API ListIAMPolicyAssignmentsResult
+  class ListIAMPolicyAssignmentsResult
   {
   public:
-    ListIAMPolicyAssignmentsResult();
-    ListIAMPolicyAssignmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIAMPolicyAssignmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API ListIAMPolicyAssignmentsResult();
+    AWS_QUICKSIGHT_API ListIAMPolicyAssignmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API ListIAMPolicyAssignmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

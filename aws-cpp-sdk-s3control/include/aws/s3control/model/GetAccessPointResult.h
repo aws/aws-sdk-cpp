@@ -29,12 +29,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API GetAccessPointResult
+  class GetAccessPointResult
   {
   public:
-    GetAccessPointResult();
-    GetAccessPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetAccessPointResult();
+    AWS_S3CONTROL_API GetAccessPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -380,6 +380,49 @@ namespace Model
      */
     inline GetAccessPointResult& AddEndpoints(const char* key, const char* value) { m_endpoints.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const char* value) { m_bucketAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline GetAccessPointResult& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline GetAccessPointResult& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline GetAccessPointResult& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -399,6 +442,8 @@ namespace Model
     Aws::String m_accessPointArn;
 
     Aws::Map<Aws::String, Aws::String> m_endpoints;
+
+    Aws::String m_bucketAccountId;
   };
 
 } // namespace Model

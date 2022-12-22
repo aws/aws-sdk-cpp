@@ -24,12 +24,12 @@ namespace ResourceGroupsTaggingAPI
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult
+  class DescribeReportCreationResult
   {
   public:
-    DescribeReportCreationResult();
-    DescribeReportCreationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReportCreationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

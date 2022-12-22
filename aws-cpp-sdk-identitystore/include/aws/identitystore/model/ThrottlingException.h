@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API ThrottlingException();
+    AWS_IDENTITYSTORE_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Cipher">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API Cipher
+  class Cipher
   {
   public:
-    Cipher();
-    Cipher(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Cipher& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API Cipher();
+    AWS_ELASTICLOADBALANCINGV2_API Cipher(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API Cipher& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

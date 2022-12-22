@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbClusterDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbClusterDetails
+  class AwsRdsDbClusterDetails
   {
   public:
-    AwsRdsDbClusterDetails();
-    AwsRdsDbClusterDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbClusterDetails();
+    AWS_SECURITYHUB_API AwsRdsDbClusterDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

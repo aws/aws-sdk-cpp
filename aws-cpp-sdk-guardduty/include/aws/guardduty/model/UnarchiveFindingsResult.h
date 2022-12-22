@@ -22,12 +22,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API UnarchiveFindingsResult
+  class UnarchiveFindingsResult
   {
   public:
-    UnarchiveFindingsResult();
-    UnarchiveFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnarchiveFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API UnarchiveFindingsResult();
+    AWS_GUARDDUTY_API UnarchiveFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API UnarchiveFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

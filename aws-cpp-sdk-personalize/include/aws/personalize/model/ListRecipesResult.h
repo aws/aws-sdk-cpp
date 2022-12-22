@@ -26,12 +26,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API ListRecipesResult
+  class ListRecipesResult
   {
   public:
-    ListRecipesResult();
-    ListRecipesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API ListRecipesResult();
+    AWS_PERSONALIZE_API ListRecipesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API ListRecipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

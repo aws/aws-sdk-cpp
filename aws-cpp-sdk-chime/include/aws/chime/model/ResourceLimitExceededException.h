@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ResourceLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ResourceLimitExceededException
+  class ResourceLimitExceededException
   {
   public:
-    ResourceLimitExceededException();
-    ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ResourceLimitExceededException();
+    AWS_CHIME_API ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

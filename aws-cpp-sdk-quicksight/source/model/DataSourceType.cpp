@@ -45,6 +45,7 @@ namespace Aws
         static const int TIMESTREAM_HASH = HashingUtils::HashString("TIMESTREAM");
         static const int AMAZON_OPENSEARCH_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH");
         static const int EXASOL_HASH = HashingUtils::HashString("EXASOL");
+        static const int DATABRICKS_HASH = HashingUtils::HashString("DATABRICKS");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -150,6 +151,10 @@ namespace Aws
           {
             return DataSourceType::EXASOL;
           }
+          else if (hashCode == DATABRICKS_HASH)
+          {
+            return DataSourceType::DATABRICKS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -214,6 +219,8 @@ namespace Aws
             return "AMAZON_OPENSEARCH";
           case DataSourceType::EXASOL:
             return "EXASOL";
+          case DataSourceType::DATABRICKS:
+            return "DATABRICKS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

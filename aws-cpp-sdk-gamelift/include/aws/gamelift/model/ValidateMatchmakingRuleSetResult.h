@@ -22,18 +22,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSetOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult
+  class ValidateMatchmakingRuleSetResult
   {
   public:
-    ValidateMatchmakingRuleSetResult();
-    ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult();
+    AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

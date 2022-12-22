@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaExecutionParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaExecutionParameters
+  class LambdaExecutionParameters
   {
   public:
-    LambdaExecutionParameters();
-    LambdaExecutionParameters(Aws::Utils::Json::JsonView jsonValue);
-    LambdaExecutionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaExecutionParameters();
+    AWS_GREENGRASSV2_API LambdaExecutionParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaExecutionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -18,7 +18,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_settingsHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_capacityProvidersHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false)
+    m_defaultCapacityProviderStrategyHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
      defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject(m_defaultCapacityProviderStrategy[defaultCapacityProviderStrategyIndex].Jsonize());
    }
    payload.WithArray("defaultCapacityProviderStrategy", std::move(defaultCapacityProviderStrategyJsonList));
+
+  }
+
+  if(m_serviceConnectDefaultsHasBeenSet)
+  {
+   payload.WithObject("serviceConnectDefaults", m_serviceConnectDefaults.Jsonize());
 
   }
 

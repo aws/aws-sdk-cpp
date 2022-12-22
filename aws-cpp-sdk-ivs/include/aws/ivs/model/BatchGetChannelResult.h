@@ -26,12 +26,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API BatchGetChannelResult
+  class BatchGetChannelResult
   {
   public:
-    BatchGetChannelResult();
-    BatchGetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API BatchGetChannelResult();
+    AWS_IVS_API BatchGetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API BatchGetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

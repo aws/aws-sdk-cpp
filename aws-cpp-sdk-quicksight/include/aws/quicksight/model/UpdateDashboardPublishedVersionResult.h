@@ -24,12 +24,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API UpdateDashboardPublishedVersionResult
+  class UpdateDashboardPublishedVersionResult
   {
   public:
-    UpdateDashboardPublishedVersionResult();
-    UpdateDashboardPublishedVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDashboardPublishedVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API UpdateDashboardPublishedVersionResult();
+    AWS_QUICKSIGHT_API UpdateDashboardPublishedVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API UpdateDashboardPublishedVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

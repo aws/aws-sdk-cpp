@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails
+  class AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails
   {
   public:
-    AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails();
-    AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API UpdateServicePipelineResult
+  class UpdateServicePipelineResult
   {
   public:
-    UpdateServicePipelineResult();
-    UpdateServicePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateServicePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API UpdateServicePipelineResult();
+    AWS_PROTON_API UpdateServicePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API UpdateServicePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

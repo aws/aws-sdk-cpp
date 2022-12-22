@@ -24,7 +24,12 @@ OperationSummary::OperationSummary() :
     m_statusHasBeenSet(false),
     m_type(OperationType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_submittedDateHasBeenSet(false)
+    m_submittedDateHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_statusFlag(StatusFlag::NOT_SET),
+    m_statusFlagHasBeenSet(false),
+    m_lastUpdatedDateHasBeenSet(false)
 {
 }
 
@@ -34,7 +39,12 @@ OperationSummary::OperationSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_type(OperationType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_submittedDateHasBeenSet(false)
+    m_submittedDateHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_statusFlag(StatusFlag::NOT_SET),
+    m_statusFlagHasBeenSet(false),
+    m_lastUpdatedDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +79,34 @@ OperationSummary& OperationSummary::operator =(JsonView jsonValue)
     m_submittedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DomainName"))
+  {
+    m_domainName = jsonValue.GetString("DomainName");
+
+    m_domainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+
+    m_messageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusFlag"))
+  {
+    m_statusFlag = StatusFlagMapper::GetStatusFlagForName(jsonValue.GetString("StatusFlag"));
+
+    m_statusFlagHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdatedDate"))
+  {
+    m_lastUpdatedDate = jsonValue.GetDouble("LastUpdatedDate");
+
+    m_lastUpdatedDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +133,28 @@ JsonValue OperationSummary::Jsonize() const
   if(m_submittedDateHasBeenSet)
   {
    payload.WithDouble("SubmittedDate", m_submittedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   payload.WithString("DomainName", m_domainName);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("Message", m_message);
+
+  }
+
+  if(m_statusFlagHasBeenSet)
+  {
+   payload.WithString("StatusFlag", StatusFlagMapper::GetNameForStatusFlag(m_statusFlag));
+  }
+
+  if(m_lastUpdatedDateHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedDate", m_lastUpdatedDate.SecondsWithMSPrecision());
   }
 
   return payload;

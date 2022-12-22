@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFacesMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API CompareFacesMatch
+  class CompareFacesMatch
   {
   public:
-    CompareFacesMatch();
-    CompareFacesMatch(Aws::Utils::Json::JsonView jsonValue);
-    CompareFacesMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API CompareFacesMatch();
+    AWS_REKOGNITION_API CompareFacesMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API CompareFacesMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

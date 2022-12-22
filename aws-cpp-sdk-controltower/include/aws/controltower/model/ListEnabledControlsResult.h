@@ -26,12 +26,12 @@ namespace ControlTower
 {
 namespace Model
 {
-  class AWS_CONTROLTOWER_API ListEnabledControlsResult
+  class ListEnabledControlsResult
   {
   public:
-    ListEnabledControlsResult();
-    ListEnabledControlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnabledControlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API ListEnabledControlsResult();
+    AWS_CONTROLTOWER_API ListEnabledControlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API ListEnabledControlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

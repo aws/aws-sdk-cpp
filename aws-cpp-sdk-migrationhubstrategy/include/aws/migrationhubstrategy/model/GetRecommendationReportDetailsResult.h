@@ -25,12 +25,12 @@ namespace MigrationHubStrategyRecommendations
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetRecommendationReportDetailsResult
+  class GetRecommendationReportDetailsResult
   {
   public:
-    GetRecommendationReportDetailsResult();
-    GetRecommendationReportDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRecommendationReportDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetRecommendationReportDetailsResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetRecommendationReportDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetRecommendationReportDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

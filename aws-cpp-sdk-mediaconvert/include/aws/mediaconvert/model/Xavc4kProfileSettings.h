@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Xavc4kProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Xavc4kProfileSettings
+  class Xavc4kProfileSettings
   {
   public:
-    Xavc4kProfileSettings();
-    Xavc4kProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    Xavc4kProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Xavc4kProfileSettings();
+    AWS_MEDIACONVERT_API Xavc4kProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Xavc4kProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

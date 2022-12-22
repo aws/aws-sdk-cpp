@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/NeptuneSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings
+  class NeptuneSettings
   {
   public:
-    NeptuneSettings();
-    NeptuneSettings(Aws::Utils::Json::JsonView jsonValue);
-    NeptuneSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

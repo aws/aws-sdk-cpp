@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/PrivateDnsPropertiesMutableChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange
+  class PrivateDnsPropertiesMutableChange
   {
   public:
-    PrivateDnsPropertiesMutableChange();
-    PrivateDnsPropertiesMutableChange(Aws::Utils::Json::JsonView jsonValue);
-    PrivateDnsPropertiesMutableChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange();
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API VerifyMacRequest : public KMSRequest
+  class VerifyMacRequest : public KMSRequest
   {
   public:
-    VerifyMacRequest();
+    AWS_KMS_API VerifyMacRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "VerifyMac"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

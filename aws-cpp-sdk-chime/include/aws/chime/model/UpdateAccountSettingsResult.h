@@ -22,12 +22,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API UpdateAccountSettingsResult
+  class UpdateAccountSettingsResult
   {
   public:
-    UpdateAccountSettingsResult();
-    UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API UpdateAccountSettingsResult();
+    AWS_CHIME_API UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API UpdateAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

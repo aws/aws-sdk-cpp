@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DeleteParameterResult
+  class DeleteParameterResult
   {
   public:
-    DeleteParameterResult();
-    DeleteParameterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DeleteParameterResult();
+    AWS_SSM_API DeleteParameterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DeleteParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

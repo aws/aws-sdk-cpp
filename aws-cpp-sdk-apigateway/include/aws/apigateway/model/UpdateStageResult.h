@@ -37,12 +37,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Stage">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UpdateStageResult
+  class UpdateStageResult
   {
   public:
-    UpdateStageResult();
-    UpdateStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateStageResult();
+    AWS_APIGATEWAY_API UpdateStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

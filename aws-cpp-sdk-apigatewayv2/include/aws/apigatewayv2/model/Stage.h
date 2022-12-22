@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Stage">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Stage
+  class Stage
   {
   public:
-    Stage();
-    Stage(Aws::Utils::Json::JsonView jsonValue);
-    Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Stage();
+    AWS_APIGATEWAYV2_API Stage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

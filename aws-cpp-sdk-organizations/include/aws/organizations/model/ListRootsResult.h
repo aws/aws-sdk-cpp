@@ -26,12 +26,12 @@ namespace Organizations
 {
 namespace Model
 {
-  class AWS_ORGANIZATIONS_API ListRootsResult
+  class ListRootsResult
   {
   public:
-    ListRootsResult();
-    ListRootsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRootsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API ListRootsResult();
+    AWS_ORGANIZATIONS_API ListRootsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API ListRootsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

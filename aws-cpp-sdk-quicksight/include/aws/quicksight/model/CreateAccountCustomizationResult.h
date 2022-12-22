@@ -25,12 +25,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API CreateAccountCustomizationResult
+  class CreateAccountCustomizationResult
   {
   public:
-    CreateAccountCustomizationResult();
-    CreateAccountCustomizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAccountCustomizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API CreateAccountCustomizationResult();
+    AWS_QUICKSIGHT_API CreateAccountCustomizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API CreateAccountCustomizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

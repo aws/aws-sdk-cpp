@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterParameterGroupNameMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ResetDBClusterParameterGroupResult
+  class ResetDBClusterParameterGroupResult
   {
   public:
-    ResetDBClusterParameterGroupResult();
-    ResetDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ResetDBClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ResetDBClusterParameterGroupResult();
+    AWS_RDS_API ResetDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ResetDBClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

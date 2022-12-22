@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API UpdateJobFromSourceControlResult
+  class UpdateJobFromSourceControlResult
   {
   public:
-    UpdateJobFromSourceControlResult();
-    UpdateJobFromSourceControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateJobFromSourceControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API UpdateJobFromSourceControlResult();
+    AWS_GLUE_API UpdateJobFromSourceControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API UpdateJobFromSourceControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

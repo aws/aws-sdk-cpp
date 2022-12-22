@@ -41,7 +41,10 @@ DistributionConfig::DistributionConfig() :
     m_httpVersion(HttpVersion::NOT_SET),
     m_httpVersionHasBeenSet(false),
     m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false)
+    m_isIPV6EnabledHasBeenSet(false),
+    m_continuousDeploymentPolicyIdHasBeenSet(false),
+    m_staging(false),
+    m_stagingHasBeenSet(false)
 {
 }
 
@@ -66,7 +69,10 @@ DistributionConfig::DistributionConfig(const XmlNode& xmlNode) :
     m_httpVersion(HttpVersion::NOT_SET),
     m_httpVersionHasBeenSet(false),
     m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false)
+    m_isIPV6EnabledHasBeenSet(false),
+    m_continuousDeploymentPolicyIdHasBeenSet(false),
+    m_staging(false),
+    m_stagingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -179,6 +185,18 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
       m_isIPV6Enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isIPV6EnabledNode.GetText()).c_str()).c_str());
       m_isIPV6EnabledHasBeenSet = true;
     }
+    XmlNode continuousDeploymentPolicyIdNode = resultNode.FirstChild("ContinuousDeploymentPolicyId");
+    if(!continuousDeploymentPolicyIdNode.IsNull())
+    {
+      m_continuousDeploymentPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(continuousDeploymentPolicyIdNode.GetText());
+      m_continuousDeploymentPolicyIdHasBeenSet = true;
+    }
+    XmlNode stagingNode = resultNode.FirstChild("Staging");
+    if(!stagingNode.IsNull())
+    {
+      m_staging = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stagingNode.GetText()).c_str()).c_str());
+      m_stagingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -290,6 +308,20 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
    XmlNode isIPV6EnabledNode = parentNode.CreateChildElement("IsIPV6Enabled");
    ss << std::boolalpha << m_isIPV6Enabled;
    isIPV6EnabledNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_continuousDeploymentPolicyIdHasBeenSet)
+  {
+   XmlNode continuousDeploymentPolicyIdNode = parentNode.CreateChildElement("ContinuousDeploymentPolicyId");
+   continuousDeploymentPolicyIdNode.SetText(m_continuousDeploymentPolicyId);
+  }
+
+  if(m_stagingHasBeenSet)
+  {
+   XmlNode stagingNode = parentNode.CreateChildElement("Staging");
+   ss << std::boolalpha << m_staging;
+   stagingNode.SetText(ss.str());
    ss.str("");
   }
 

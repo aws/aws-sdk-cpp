@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API CreateModelPackageResult
+  class CreateModelPackageResult
   {
   public:
-    CreateModelPackageResult();
-    CreateModelPackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateModelPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreateModelPackageResult();
+    AWS_SAGEMAKER_API CreateModelPackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreateModelPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API DescribeAgentStatusResult
+  class DescribeAgentStatusResult
   {
   public:
-    DescribeAgentStatusResult();
-    DescribeAgentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAgentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DescribeAgentStatusResult();
+    AWS_CONNECT_API DescribeAgentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DescribeAgentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

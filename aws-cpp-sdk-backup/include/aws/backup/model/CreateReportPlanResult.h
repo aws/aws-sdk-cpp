@@ -25,12 +25,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API CreateReportPlanResult
+  class CreateReportPlanResult
   {
   public:
-    CreateReportPlanResult();
-    CreateReportPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateReportPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API CreateReportPlanResult();
+    AWS_BACKUP_API CreateReportPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API CreateReportPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

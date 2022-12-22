@@ -27,12 +27,12 @@ namespace WorkDocs
 {
 namespace Model
 {
-  class AWS_WORKDOCS_API DescribeFolderContentsResult
+  class DescribeFolderContentsResult
   {
   public:
-    DescribeFolderContentsResult();
-    DescribeFolderContentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFolderContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API DescribeFolderContentsResult();
+    AWS_WORKDOCS_API DescribeFolderContentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API DescribeFolderContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

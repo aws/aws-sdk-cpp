@@ -24,12 +24,12 @@ namespace WAFRegional
 {
 namespace Model
 {
-  class AWS_WAFREGIONAL_API UpdateGeoMatchSetResult
+  class UpdateGeoMatchSetResult
   {
   public:
-    UpdateGeoMatchSetResult();
-    UpdateGeoMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGeoMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API UpdateGeoMatchSetResult();
+    AWS_WAFREGIONAL_API UpdateGeoMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API UpdateGeoMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

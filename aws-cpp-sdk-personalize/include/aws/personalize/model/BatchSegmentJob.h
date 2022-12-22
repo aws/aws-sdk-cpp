@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchSegmentJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchSegmentJob
+  class BatchSegmentJob
   {
   public:
-    BatchSegmentJob();
-    BatchSegmentJob(Aws::Utils::Json::JsonView jsonValue);
-    BatchSegmentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchSegmentJob();
+    AWS_PERSONALIZE_API BatchSegmentJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchSegmentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

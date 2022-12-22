@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetOpsItemRequest::GetOpsItemRequest() : 
-    m_opsItemIdHasBeenSet(false)
+    m_opsItemIdHasBeenSet(false),
+    m_opsItemArnHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String GetOpsItemRequest::SerializePayload() const
   if(m_opsItemIdHasBeenSet)
   {
    payload.WithString("OpsItemId", m_opsItemId);
+
+  }
+
+  if(m_opsItemArnHasBeenSet)
+  {
+   payload.WithString("OpsItemArn", m_opsItemArn);
 
   }
 

@@ -27,17 +27,17 @@ namespace Model
    * <p>A set of instructions for launching server processes on each instance in a
    * fleet. Server processes run either an executable in a custom game build or a
    * Realtime Servers script. Server process configurations are part of a fleet's
-   * <a>RuntimeConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+   * runtime configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API ServerProcess
+  class ServerProcess
   {
   public:
-    ServerProcess();
-    ServerProcess(Aws::Utils::Json::JsonView jsonValue);
-    ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API ServerProcess();
+    AWS_GAMELIFT_API ServerProcess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

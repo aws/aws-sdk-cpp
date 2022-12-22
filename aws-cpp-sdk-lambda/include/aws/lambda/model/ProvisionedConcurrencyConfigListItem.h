@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ProvisionedConcurrencyConfigListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ProvisionedConcurrencyConfigListItem
+  class ProvisionedConcurrencyConfigListItem
   {
   public:
-    ProvisionedConcurrencyConfigListItem();
-    ProvisionedConcurrencyConfigListItem(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedConcurrencyConfigListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ProvisionedConcurrencyConfigListItem();
+    AWS_LAMBDA_API ProvisionedConcurrencyConfigListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ProvisionedConcurrencyConfigListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,22 +123,30 @@ namespace Model
 
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline int GetAllocatedProvisionedConcurrentExecutions() const{ return m_allocatedProvisionedConcurrentExecutions; }
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline bool AllocatedProvisionedConcurrentExecutionsHasBeenSet() const { return m_allocatedProvisionedConcurrentExecutionsHasBeenSet; }
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline void SetAllocatedProvisionedConcurrentExecutions(int value) { m_allocatedProvisionedConcurrentExecutionsHasBeenSet = true; m_allocatedProvisionedConcurrentExecutions = value; }
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline ProvisionedConcurrencyConfigListItem& WithAllocatedProvisionedConcurrentExecutions(int value) { SetAllocatedProvisionedConcurrentExecutions(value); return *this;}
 

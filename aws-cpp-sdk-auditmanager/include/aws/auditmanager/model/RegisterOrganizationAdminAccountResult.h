@@ -24,12 +24,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API RegisterOrganizationAdminAccountResult
+  class RegisterOrganizationAdminAccountResult
   {
   public:
-    RegisterOrganizationAdminAccountResult();
-    RegisterOrganizationAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterOrganizationAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API RegisterOrganizationAdminAccountResult();
+    AWS_AUDITMANAGER_API RegisterOrganizationAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API RegisterOrganizationAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

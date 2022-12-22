@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferingsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DescribeReservedInstanceOfferingsResult
+  class DescribeReservedInstanceOfferingsResult
   {
   public:
-    DescribeReservedInstanceOfferingsResult();
-    DescribeReservedInstanceOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReservedInstanceOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DescribeReservedInstanceOfferingsResult();
+    AWS_OPENSEARCHSERVICE_API DescribeReservedInstanceOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DescribeReservedInstanceOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

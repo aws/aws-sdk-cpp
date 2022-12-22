@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTagsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API RemoveTagsResult
+  class RemoveTagsResult
   {
   public:
-    RemoveTagsResult();
-    RemoveTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API RemoveTagsResult();
+    AWS_DATAPIPELINE_API RemoveTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API RemoveTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API SearchRoutingProfilesRequest : public ConnectRequest
+  class SearchRoutingProfilesRequest : public ConnectRequest
   {
   public:
-    SearchRoutingProfilesRequest();
+    AWS_CONNECT_API SearchRoutingProfilesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SearchRoutingProfiles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -185,32 +185,50 @@ namespace Model
 
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline const RoutingProfileSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline void SetSearchCriteria(const RoutingProfileSearchCriteria& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = value; }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline void SetSearchCriteria(RoutingProfileSearchCriteria&& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = std::move(value); }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline SearchRoutingProfilesRequest& WithSearchCriteria(const RoutingProfileSearchCriteria& value) { SetSearchCriteria(value); return *this;}
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline SearchRoutingProfilesRequest& WithSearchCriteria(RoutingProfileSearchCriteria&& value) { SetSearchCriteria(std::move(value)); return *this;}
 

@@ -25,12 +25,12 @@ namespace CloudDirectory
 {
 namespace Model
 {
-  class AWS_CLOUDDIRECTORY_API ListObjectChildrenResult
+  class ListObjectChildrenResult
   {
   public:
-    ListObjectChildrenResult();
-    ListObjectChildrenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListObjectChildrenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API ListObjectChildrenResult();
+    AWS_CLOUDDIRECTORY_API ListObjectChildrenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API ListObjectChildrenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEventsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API LookupEventsResult
+  class LookupEventsResult
   {
   public:
-    LookupEventsResult();
-    LookupEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    LookupEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API LookupEventsResult();
+    AWS_CLOUDTRAIL_API LookupEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API LookupEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

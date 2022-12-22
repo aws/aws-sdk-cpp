@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CreateInputResult
+  class CreateInputResult
   {
   public:
-    CreateInputResult();
-    CreateInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API CreateInputResult();
+    AWS_MEDIALIVE_API CreateInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API CreateInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

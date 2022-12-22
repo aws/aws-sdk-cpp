@@ -24,12 +24,12 @@ namespace MWAA
 {
 namespace Model
 {
-  class AWS_MWAA_API CreateCliTokenResult
+  class CreateCliTokenResult
   {
   public:
-    CreateCliTokenResult();
-    CreateCliTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCliTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API CreateCliTokenResult();
+    AWS_MWAA_API CreateCliTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API CreateCliTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

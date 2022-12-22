@@ -7,6 +7,7 @@
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutvision/LookoutforVisionServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace LookoutforVision
    * physical item where quality is important such as a missing capacitor on printed
    * circuit boards.</p>
    */
-  class AWS_LOOKOUTFORVISION_API LookoutforVisionClient : public Aws::Client::AWSJsonClient
+  class AWS_LOOKOUTFORVISION_API LookoutforVisionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace LookoutforVision
 
         /* End of legacy constructors due deprecation */
         virtual ~LookoutforVisionClient();
-
 
         /**
          * <p>Creates a new dataset in an Amazon Lookout for Vision project.
@@ -486,8 +486,9 @@ namespace LookoutforVision
          * API.</p> <p>This operation requires the following permissions:</p> <ul> <li> <p>
          * <code>lookoutvision:StartModelPackagingJob</code> </p> </li> <li> <p>
          * <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code>
-         * </p> </li> <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li>
-         * <li> <p> <code>greengrass:DescribeComponent</code> </p> </li> <li> <p>(Optional)
+         * </p> </li> <li> <p> <code>kms:GenerateDataKey</code> </p> </li> <li> <p>
+         * <code>greengrass:CreateComponentVersion</code> </p> </li> <li> <p>
+         * <code>greengrass:DescribeComponent</code> </p> </li> <li> <p>(Optional)
          * <code>greengrass:TagResource</code>. Only required if you want to tag the
          * component.</p> </li> </ul> <p>For more information, see <i>Using your Amazon
          * Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision
@@ -604,6 +605,7 @@ namespace LookoutforVision
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LookoutforVisionEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>;
       void init(const LookoutforVisionClientConfiguration& clientConfiguration);
 
       LookoutforVisionClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeServiceClientModel.h>
 
@@ -45,7 +46,7 @@ namespace AugmentedAIRuntime
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html">Use
    * APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.</p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient
+  class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -99,7 +100,6 @@ namespace AugmentedAIRuntime
 
         /* End of legacy constructors due deprecation */
         virtual ~AugmentedAIRuntimeClient();
-
 
         /**
          * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human
@@ -196,6 +196,7 @@ namespace AugmentedAIRuntime
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>;
       void init(const AugmentedAIRuntimeClientConfiguration& clientConfiguration);
 
       AugmentedAIRuntimeClientConfiguration m_clientConfiguration;

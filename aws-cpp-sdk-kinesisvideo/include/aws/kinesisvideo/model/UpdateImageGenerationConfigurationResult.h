@@ -22,12 +22,12 @@ namespace KinesisVideo
 {
 namespace Model
 {
-  class AWS_KINESISVIDEO_API UpdateImageGenerationConfigurationResult
+  class UpdateImageGenerationConfigurationResult
   {
   public:
-    UpdateImageGenerationConfigurationResult();
-    UpdateImageGenerationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateImageGenerationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API UpdateImageGenerationConfigurationResult();
+    AWS_KINESISVIDEO_API UpdateImageGenerationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API UpdateImageGenerationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

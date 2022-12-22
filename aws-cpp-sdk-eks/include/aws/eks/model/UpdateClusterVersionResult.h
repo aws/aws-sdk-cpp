@@ -24,12 +24,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API UpdateClusterVersionResult
+  class UpdateClusterVersionResult
   {
   public:
-    UpdateClusterVersionResult();
-    UpdateClusterVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateClusterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API UpdateClusterVersionResult();
+    AWS_EKS_API UpdateClusterVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API UpdateClusterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

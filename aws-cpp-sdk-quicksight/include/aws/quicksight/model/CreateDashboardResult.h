@@ -25,12 +25,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API CreateDashboardResult
+  class CreateDashboardResult
   {
   public:
-    CreateDashboardResult();
-    CreateDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API CreateDashboardResult();
+    AWS_QUICKSIGHT_API CreateDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API CreateDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

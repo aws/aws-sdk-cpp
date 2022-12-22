@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpointResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DescribeEndpointResult
+  class DescribeEndpointResult
   {
   public:
-    DescribeEndpointResult();
-    DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeEndpointResult();
+    AWS_IOT_API DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

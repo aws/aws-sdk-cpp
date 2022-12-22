@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceComplianceSummaryItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceComplianceSummaryItem
+  class ResourceComplianceSummaryItem
   {
   public:
-    ResourceComplianceSummaryItem();
-    ResourceComplianceSummaryItem(Aws::Utils::Json::JsonView jsonValue);
-    ResourceComplianceSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceComplianceSummaryItem();
+    AWS_SSM_API ResourceComplianceSummaryItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceComplianceSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

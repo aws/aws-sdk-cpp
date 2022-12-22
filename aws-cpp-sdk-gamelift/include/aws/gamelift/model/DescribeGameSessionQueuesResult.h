@@ -26,18 +26,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueuesOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API DescribeGameSessionQueuesResult
+  class DescribeGameSessionQueuesResult
   {
   public:
-    DescribeGameSessionQueuesResult();
-    DescribeGameSessionQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGameSessionQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeGameSessionQueuesResult();
+    AWS_GAMELIFT_API DescribeGameSessionQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeGameSessionQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

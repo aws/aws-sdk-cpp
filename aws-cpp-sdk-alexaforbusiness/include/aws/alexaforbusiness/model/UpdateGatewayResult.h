@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API UpdateGatewayResult
+  class UpdateGatewayResult
   {
   public:
-    UpdateGatewayResult();
-    UpdateGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API UpdateGatewayResult();
+    AWS_ALEXAFORBUSINESS_API UpdateGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API UpdateGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

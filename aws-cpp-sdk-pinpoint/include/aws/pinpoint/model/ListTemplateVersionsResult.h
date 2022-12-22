@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API ListTemplateVersionsResult
+  class ListTemplateVersionsResult
   {
   public:
-    ListTemplateVersionsResult();
-    ListTemplateVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API ListTemplateVersionsResult();
+    AWS_PINPOINT_API ListTemplateVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API ListTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

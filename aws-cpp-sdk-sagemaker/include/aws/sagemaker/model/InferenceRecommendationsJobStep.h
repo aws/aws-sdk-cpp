@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceRecommendationsJobStep">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InferenceRecommendationsJobStep
+  class InferenceRecommendationsJobStep
   {
   public:
-    InferenceRecommendationsJobStep();
-    InferenceRecommendationsJobStep(Aws::Utils::Json::JsonView jsonValue);
-    InferenceRecommendationsJobStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InferenceRecommendationsJobStep();
+    AWS_SAGEMAKER_API InferenceRecommendationsJobStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InferenceRecommendationsJobStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

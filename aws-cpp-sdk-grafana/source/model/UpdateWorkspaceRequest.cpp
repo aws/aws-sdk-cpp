@@ -18,7 +18,10 @@ UpdateWorkspaceRequest::UpdateWorkspaceRequest() :
     m_organizationRoleNameHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
+    m_removeVpcConfiguration(false),
+    m_removeVpcConfigurationHasBeenSet(false),
     m_stackSetNameHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceDataSourcesHasBeenSet(false),
     m_workspaceDescriptionHasBeenSet(false),
     m_workspaceIdHasBeenSet(false),
@@ -49,9 +52,21 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
    payload.WithString("permissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
   }
 
+  if(m_removeVpcConfigurationHasBeenSet)
+  {
+   payload.WithBool("removeVpcConfiguration", m_removeVpcConfiguration);
+
+  }
+
   if(m_stackSetNameHasBeenSet)
   {
    payload.WithString("stackSetName", m_stackSetName);
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

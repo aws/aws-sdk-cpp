@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API UpdateEnvironmentAccountConnectionRequest : public ProtonRequest
+  class UpdateEnvironmentAccountConnectionRequest : public ProtonRequest
   {
   public:
-    UpdateEnvironmentAccountConnectionRequest();
+    AWS_PROTON_API UpdateEnvironmentAccountConnectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEnvironmentAccountConnection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -238,66 +238,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline UpdateEnvironmentAccountConnectionRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline UpdateEnvironmentAccountConnectionRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
+     * the environment account connection to update.</p>
      */
     inline UpdateEnvironmentAccountConnectionRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

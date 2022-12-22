@@ -26,12 +26,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API QuerySchemaVersionMetadataResult
+  class QuerySchemaVersionMetadataResult
   {
   public:
-    QuerySchemaVersionMetadataResult();
-    QuerySchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    QuerySchemaVersionMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API QuerySchemaVersionMetadataResult();
+    AWS_GLUE_API QuerySchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API QuerySchemaVersionMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

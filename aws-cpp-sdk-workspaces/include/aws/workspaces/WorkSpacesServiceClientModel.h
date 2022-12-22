@@ -25,6 +25,7 @@
 #include <aws/workspaces/model/CreateConnectClientAddInResult.h>
 #include <aws/workspaces/model/CreateConnectionAliasResult.h>
 #include <aws/workspaces/model/CreateIpGroupResult.h>
+#include <aws/workspaces/model/CreateStandbyWorkspacesResult.h>
 #include <aws/workspaces/model/CreateTagsResult.h>
 #include <aws/workspaces/model/CreateUpdatedWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleResult.h>
@@ -129,6 +130,7 @@ namespace Aws
       class CreateConnectClientAddInRequest;
       class CreateConnectionAliasRequest;
       class CreateIpGroupRequest;
+      class CreateStandbyWorkspacesRequest;
       class CreateTagsRequest;
       class CreateUpdatedWorkspaceImageRequest;
       class CreateWorkspaceBundleRequest;
@@ -196,6 +198,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateConnectClientAddInResult, WorkSpacesError> CreateConnectClientAddInOutcome;
       typedef Aws::Utils::Outcome<CreateConnectionAliasResult, WorkSpacesError> CreateConnectionAliasOutcome;
       typedef Aws::Utils::Outcome<CreateIpGroupResult, WorkSpacesError> CreateIpGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateStandbyWorkspacesResult, WorkSpacesError> CreateStandbyWorkspacesOutcome;
       typedef Aws::Utils::Outcome<CreateTagsResult, WorkSpacesError> CreateTagsOutcome;
       typedef Aws::Utils::Outcome<CreateUpdatedWorkspaceImageResult, WorkSpacesError> CreateUpdatedWorkspaceImageOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspaceBundleResult, WorkSpacesError> CreateWorkspaceBundleOutcome;
@@ -263,6 +266,7 @@ namespace Aws
       typedef std::future<CreateConnectClientAddInOutcome> CreateConnectClientAddInOutcomeCallable;
       typedef std::future<CreateConnectionAliasOutcome> CreateConnectionAliasOutcomeCallable;
       typedef std::future<CreateIpGroupOutcome> CreateIpGroupOutcomeCallable;
+      typedef std::future<CreateStandbyWorkspacesOutcome> CreateStandbyWorkspacesOutcomeCallable;
       typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
       typedef std::future<CreateUpdatedWorkspaceImageOutcome> CreateUpdatedWorkspaceImageOutcomeCallable;
       typedef std::future<CreateWorkspaceBundleOutcome> CreateWorkspaceBundleOutcomeCallable;
@@ -333,6 +337,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateConnectClientAddInRequest&, const Model::CreateConnectClientAddInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectClientAddInResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateConnectionAliasRequest&, const Model::CreateConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateIpGroupRequest&, const Model::CreateIpGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::CreateStandbyWorkspacesRequest&, const Model::CreateStandbyWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStandbyWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateUpdatedWorkspaceImageRequest&, const Model::CreateUpdatedWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUpdatedWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceBundleRequest&, const Model::CreateWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceBundleResponseReceivedHandler;

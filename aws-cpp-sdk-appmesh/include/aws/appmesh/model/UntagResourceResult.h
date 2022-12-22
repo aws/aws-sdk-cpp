@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResourceOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API UntagResourceResult();
+    AWS_APPMESH_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

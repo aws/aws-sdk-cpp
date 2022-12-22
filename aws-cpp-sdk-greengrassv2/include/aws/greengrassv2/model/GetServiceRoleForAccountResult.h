@@ -24,12 +24,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API GetServiceRoleForAccountResult
+  class GetServiceRoleForAccountResult
   {
   public:
-    GetServiceRoleForAccountResult();
-    GetServiceRoleForAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServiceRoleForAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API GetServiceRoleForAccountResult();
+    AWS_GREENGRASSV2_API GetServiceRoleForAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API GetServiceRoleForAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

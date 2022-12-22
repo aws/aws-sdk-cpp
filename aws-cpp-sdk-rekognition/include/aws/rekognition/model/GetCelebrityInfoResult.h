@@ -26,12 +26,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API GetCelebrityInfoResult
+  class GetCelebrityInfoResult
   {
   public:
-    GetCelebrityInfoResult();
-    GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCelebrityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetCelebrityInfoResult();
+    AWS_REKOGNITION_API GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetCelebrityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API ListEventSourceMappingsResult
+  class ListEventSourceMappingsResult
   {
   public:
-    ListEventSourceMappingsResult();
-    ListEventSourceMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEventSourceMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API ListEventSourceMappingsResult();
+    AWS_LAMBDA_API ListEventSourceMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API ListEventSourceMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

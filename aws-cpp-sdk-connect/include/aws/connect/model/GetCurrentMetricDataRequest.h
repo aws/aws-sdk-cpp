@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API GetCurrentMetricDataRequest : public ConnectRequest
+  class GetCurrentMetricDataRequest : public ConnectRequest
   {
   public:
-    GetCurrentMetricDataRequest();
+    AWS_CONNECT_API GetCurrentMetricDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCurrentMetricData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -137,80 +137,96 @@ namespace Model
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline const Aws::Vector<Grouping>& GetGroupings() const{ return m_groupings; }
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline void SetGroupings(const Aws::Vector<Grouping>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline void SetGroupings(Aws::Vector<Grouping>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& WithGroupings(const Aws::Vector<Grouping>& value) { SetGroupings(value); return *this;}
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& WithGroupings(Aws::Vector<Grouping>&& value) { SetGroupings(std::move(value)); return *this;}
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& AddGroupings(const Grouping& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
 
     /**
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
-     * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
-     * is returned.</p>
+     * aggregated for all queues. </p> <ul> <li> <p>If you group by
+     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
+     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
+     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
+     * request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& AddGroupings(Grouping&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
 

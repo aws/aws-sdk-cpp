@@ -7,6 +7,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/storagegateway/StorageGatewayServiceClientModel.h>
 
@@ -60,7 +61,7 @@ namespace StorageGateway
    * Longer Storage Gateway volume and snapshot IDs coming in 2016</a>.</p>
    * 
    */
-  class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonClient
+  class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -114,7 +115,6 @@ namespace StorageGateway
 
         /* End of legacy constructors due deprecation */
         virtual ~StorageGatewayClient();
-
 
         /**
          * <p>Activates the gateway you previously deployed on your host. In the activation
@@ -2203,6 +2203,7 @@ namespace StorageGateway
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<StorageGatewayEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>;
       void init(const StorageGatewayClientConfiguration& clientConfiguration);
 
       StorageGatewayClientConfiguration m_clientConfiguration;

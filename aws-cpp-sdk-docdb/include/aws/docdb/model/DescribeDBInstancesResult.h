@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBInstanceMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API DescribeDBInstancesResult
+  class DescribeDBInstancesResult
   {
   public:
-    DescribeDBInstancesResult();
-    DescribeDBInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeDBInstancesResult();
+    AWS_DOCDB_API DescribeDBInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeDBInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

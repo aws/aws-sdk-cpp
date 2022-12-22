@@ -24,12 +24,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API CreateSnapshotResult
+  class CreateSnapshotResult
   {
   public:
-    CreateSnapshotResult();
-    CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API CreateSnapshotResult();
+    AWS_MEMORYDB_API CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

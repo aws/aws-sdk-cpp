@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace WorkSpaces
    * href="https://docs.aws.amazon.com/cli/latest/reference/workspaces/index.html">WorkSpaces
    * section of the CLI Reference</a>.</p>
    */
-  class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -93,7 +94,6 @@ namespace WorkSpaces
 
         /* End of legacy constructors due deprecation */
         virtual ~WorkSpacesClient();
-
 
         /**
          * <p>Associates the specified connection alias with the specified directory to
@@ -253,6 +253,24 @@ namespace WorkSpaces
          * An Async wrapper for CreateIpGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateIpGroupAsync(const Model::CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a Standby WorkSpace in a secondary region.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateStandbyWorkspaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStandbyWorkspacesOutcome CreateStandbyWorkspaces(const Model::CreateStandbyWorkspacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateStandbyWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateStandbyWorkspacesOutcomeCallable CreateStandbyWorkspacesCallable(const Model::CreateStandbyWorkspacesRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateStandbyWorkspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateStandbyWorkspacesAsync(const Model::CreateStandbyWorkspacesRequest& request, const CreateStandbyWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the specified tags for the specified WorkSpaces
@@ -1483,6 +1501,7 @@ namespace WorkSpaces
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkSpacesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>;
       void init(const WorkSpacesClientConfiguration& clientConfiguration);
 
       WorkSpacesClientConfiguration m_clientConfiguration;

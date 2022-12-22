@@ -26,12 +26,12 @@ namespace DataExchange
 {
 namespace Model
 {
-  class AWS_DATAEXCHANGE_API CreateRevisionResult
+  class CreateRevisionResult
   {
   public:
-    CreateRevisionResult();
-    CreateRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAEXCHANGE_API CreateRevisionResult();
+    AWS_DATAEXCHANGE_API CreateRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAEXCHANGE_API CreateRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -133,37 +133,44 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline CreateRevisionResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline CreateRevisionResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline CreateRevisionResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 

@@ -24,12 +24,12 @@ namespace IoTFleetWise
 {
 namespace Model
 {
-  class AWS_IOTFLEETWISE_API DeleteDecoderManifestResult
+  class DeleteDecoderManifestResult
   {
   public:
-    DeleteDecoderManifestResult();
-    DeleteDecoderManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDecoderManifestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API DeleteDecoderManifestResult();
+    AWS_IOTFLEETWISE_API DeleteDecoderManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API DeleteDecoderManifestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

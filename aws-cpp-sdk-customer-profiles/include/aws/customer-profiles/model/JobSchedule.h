@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/JobSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API JobSchedule
+  class JobSchedule
   {
   public:
-    JobSchedule();
-    JobSchedule(Aws::Utils::Json::JsonView jsonValue);
-    JobSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API JobSchedule();
+    AWS_CUSTOMERPROFILES_API JobSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API JobSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

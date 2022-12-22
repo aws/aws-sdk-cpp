@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API DescribeWorkflowExecutionResult
+  class DescribeWorkflowExecutionResult
   {
   public:
-    DescribeWorkflowExecutionResult();
-    DescribeWorkflowExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkflowExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API DescribeWorkflowExecutionResult();
+    AWS_SWF_API DescribeWorkflowExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API DescribeWorkflowExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

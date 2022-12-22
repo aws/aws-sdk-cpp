@@ -40,7 +40,9 @@ Deployment::Deployment() :
     m_networkConfigurationHasBeenSet(false),
     m_rolloutState(DeploymentRolloutState::NOT_SET),
     m_rolloutStateHasBeenSet(false),
-    m_rolloutStateReasonHasBeenSet(false)
+    m_rolloutStateReasonHasBeenSet(false),
+    m_serviceConnectConfigurationHasBeenSet(false),
+    m_serviceConnectResourcesHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ Deployment::Deployment(JsonView jsonValue) :
     m_networkConfigurationHasBeenSet(false),
     m_rolloutState(DeploymentRolloutState::NOT_SET),
     m_rolloutStateHasBeenSet(false),
-    m_rolloutStateReasonHasBeenSet(false)
+    m_rolloutStateReasonHasBeenSet(false),
+    m_serviceConnectConfigurationHasBeenSet(false),
+    m_serviceConnectResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -188,6 +192,23 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_rolloutStateReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceConnectConfiguration"))
+  {
+    m_serviceConnectConfiguration = jsonValue.GetObject("serviceConnectConfiguration");
+
+    m_serviceConnectConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceConnectResources"))
+  {
+    Aws::Utils::Array<JsonView> serviceConnectResourcesJsonList = jsonValue.GetArray("serviceConnectResources");
+    for(unsigned serviceConnectResourcesIndex = 0; serviceConnectResourcesIndex < serviceConnectResourcesJsonList.GetLength(); ++serviceConnectResourcesIndex)
+    {
+      m_serviceConnectResources.push_back(serviceConnectResourcesJsonList[serviceConnectResourcesIndex].AsObject());
+    }
+    m_serviceConnectResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -289,6 +310,23 @@ JsonValue Deployment::Jsonize() const
   if(m_rolloutStateReasonHasBeenSet)
   {
    payload.WithString("rolloutStateReason", m_rolloutStateReason);
+
+  }
+
+  if(m_serviceConnectConfigurationHasBeenSet)
+  {
+   payload.WithObject("serviceConnectConfiguration", m_serviceConnectConfiguration.Jsonize());
+
+  }
+
+  if(m_serviceConnectResourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceConnectResourcesJsonList(m_serviceConnectResources.size());
+   for(unsigned serviceConnectResourcesIndex = 0; serviceConnectResourcesIndex < serviceConnectResourcesJsonList.GetLength(); ++serviceConnectResourcesIndex)
+   {
+     serviceConnectResourcesJsonList[serviceConnectResourcesIndex].AsObject(m_serviceConnectResources[serviceConnectResourcesIndex].Jsonize());
+   }
+   payload.WithArray("serviceConnectResources", std::move(serviceConnectResourcesJsonList));
 
   }
 

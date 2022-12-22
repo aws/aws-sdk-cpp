@@ -34,21 +34,19 @@ namespace Model
    * including player data, is automatically passed to a game session when the player
    * connects to the game session and is validated. After the game session ends,
    * player sessions information is retained for 30 days and then removed.</p> <p>
-   * <b>Related actions</b> </p> <p> <a>CreatePlayerSession</a> |
-   * <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a> |
-   * <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a
+   * <b>Related actions</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PlayerSession
+  class PlayerSession
   {
   public:
-    PlayerSession();
-    PlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PlayerSession();
+    AWS_GAMELIFT_API PlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

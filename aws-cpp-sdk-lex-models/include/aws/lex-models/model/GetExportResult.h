@@ -27,12 +27,12 @@ namespace LexModelBuildingService
 {
 namespace Model
 {
-  class AWS_LEXMODELBUILDINGSERVICE_API GetExportResult
+  class GetExportResult
   {
   public:
-    GetExportResult();
-    GetExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetExportResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

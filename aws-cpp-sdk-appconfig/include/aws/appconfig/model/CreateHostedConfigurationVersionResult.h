@@ -19,21 +19,21 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API CreateHostedConfigurationVersionResult
+  class CreateHostedConfigurationVersionResult
   {
   public:
-    CreateHostedConfigurationVersionResult();
+    AWS_APPCONFIG_API CreateHostedConfigurationVersionResult();
     //We have to define these because Microsoft doesn't auto generate them
-    CreateHostedConfigurationVersionResult(CreateHostedConfigurationVersionResult&&);
-    CreateHostedConfigurationVersionResult& operator=(CreateHostedConfigurationVersionResult&&);
+    AWS_APPCONFIG_API CreateHostedConfigurationVersionResult(CreateHostedConfigurationVersionResult&&);
+    AWS_APPCONFIG_API CreateHostedConfigurationVersionResult& operator=(CreateHostedConfigurationVersionResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     CreateHostedConfigurationVersionResult(const CreateHostedConfigurationVersionResult&) = delete;
     CreateHostedConfigurationVersionResult& operator=(const CreateHostedConfigurationVersionResult&) = delete;
 
 
-    CreateHostedConfigurationVersionResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    CreateHostedConfigurationVersionResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APPCONFIG_API CreateHostedConfigurationVersionResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APPCONFIG_API CreateHostedConfigurationVersionResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetSummary
+  class AssetSummary
   {
   public:
-    AssetSummary();
-    AssetSummary(Aws::Utils::Json::JsonView jsonValue);
-    AssetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetSummary();
+    AWS_IOTSITEWISE_API AssetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

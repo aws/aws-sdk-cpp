@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MAINFRAMEMODERNIZATION_API CreateDeploymentRequest : public MainframeModernizationRequest
+  class CreateDeploymentRequest : public MainframeModernizationRequest
   {
   public:
-    CreateDeploymentRequest();
+    AWS_MAINFRAMEMODERNIZATION_API CreateDeploymentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDeployment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MAINFRAMEMODERNIZATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -177,50 +177,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline CreateDeploymentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline CreateDeploymentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the environment where this application will be
-     * deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy this
+     * application.</p>
      */
     inline CreateDeploymentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 

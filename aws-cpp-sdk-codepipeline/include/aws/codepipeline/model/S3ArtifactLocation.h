@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/S3ArtifactLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API S3ArtifactLocation
+  class S3ArtifactLocation
   {
   public:
-    S3ArtifactLocation();
-    S3ArtifactLocation(Aws::Utils::Json::JsonView jsonValue);
-    S3ArtifactLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API S3ArtifactLocation();
+    AWS_CODEPIPELINE_API S3ArtifactLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API S3ArtifactLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

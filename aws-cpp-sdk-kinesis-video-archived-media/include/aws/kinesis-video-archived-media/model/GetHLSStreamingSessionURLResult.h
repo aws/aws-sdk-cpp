@@ -24,12 +24,12 @@ namespace KinesisVideoArchivedMedia
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLResult
+  class GetHLSStreamingSessionURLResult
   {
   public:
-    GetHLSStreamingSessionURLResult();
-    GetHLSStreamingSessionURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetHLSStreamingSessionURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLResult();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

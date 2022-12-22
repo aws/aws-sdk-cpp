@@ -25,12 +25,12 @@ namespace EventBridge
 {
 namespace Model
 {
-  class AWS_EVENTBRIDGE_API CancelReplayResult
+  class CancelReplayResult
   {
   public:
-    CancelReplayResult();
-    CancelReplayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelReplayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API CancelReplayResult();
+    AWS_EVENTBRIDGE_API CancelReplayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API CancelReplayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

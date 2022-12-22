@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailTemplateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DeleteEmailTemplateResult
+  class DeleteEmailTemplateResult
   {
   public:
-    DeleteEmailTemplateResult();
-    DeleteEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteEmailTemplateResult();
+    AWS_SESV2_API DeleteEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

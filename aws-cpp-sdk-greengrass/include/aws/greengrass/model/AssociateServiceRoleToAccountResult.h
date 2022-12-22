@@ -24,12 +24,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API AssociateServiceRoleToAccountResult
+  class AssociateServiceRoleToAccountResult
   {
   public:
-    AssociateServiceRoleToAccountResult();
-    AssociateServiceRoleToAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateServiceRoleToAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API AssociateServiceRoleToAccountResult();
+    AWS_GREENGRASS_API AssociateServiceRoleToAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API AssociateServiceRoleToAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

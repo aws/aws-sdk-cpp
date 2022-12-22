@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType
+  class CodeDeliveryDetailsType
   {
   public:
-    CodeDeliveryDetailsType();
-    CodeDeliveryDetailsType(Aws::Utils::Json::JsonView jsonValue);
-    CodeDeliveryDetailsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType();
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

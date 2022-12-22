@@ -25,12 +25,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API DescribeBackupVaultResult
+  class DescribeBackupVaultResult
   {
   public:
-    DescribeBackupVaultResult();
-    DescribeBackupVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBackupVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeBackupVaultResult();
+    AWS_BACKUP_API DescribeBackupVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeBackupVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API PutIntegrationResult
+  class PutIntegrationResult
   {
   public:
-    PutIntegrationResult();
-    PutIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API PutIntegrationResult();
+    AWS_CUSTOMERPROFILES_API PutIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API PutIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

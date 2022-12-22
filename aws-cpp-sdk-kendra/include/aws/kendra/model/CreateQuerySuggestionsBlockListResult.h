@@ -24,46 +24,46 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API CreateQuerySuggestionsBlockListResult
+  class CreateQuerySuggestionsBlockListResult
   {
   public:
-    CreateQuerySuggestionsBlockListResult();
-    CreateQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateQuerySuggestionsBlockListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateQuerySuggestionsBlockListResult();
+    AWS_KENDRA_API CreateQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateQuerySuggestionsBlockListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline CreateQuerySuggestionsBlockListResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline CreateQuerySuggestionsBlockListResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the created block list.</p>
+     * <p>The identifier of the created block list.</p>
      */
     inline CreateQuerySuggestionsBlockListResult& WithId(const char* value) { SetId(value); return *this;}
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchUpdateObjectAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchUpdateObjectAttributes
+  class BatchUpdateObjectAttributes
   {
   public:
-    BatchUpdateObjectAttributes();
-    BatchUpdateObjectAttributes(Aws::Utils::Json::JsonView jsonValue);
-    BatchUpdateObjectAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchUpdateObjectAttributes();
+    AWS_CLOUDDIRECTORY_API BatchUpdateObjectAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchUpdateObjectAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

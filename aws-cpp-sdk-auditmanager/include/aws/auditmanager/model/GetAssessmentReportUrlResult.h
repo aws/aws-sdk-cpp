@@ -24,12 +24,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API GetAssessmentReportUrlResult
+  class GetAssessmentReportUrlResult
   {
   public:
-    GetAssessmentReportUrlResult();
-    GetAssessmentReportUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssessmentReportUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API GetAssessmentReportUrlResult();
+    AWS_AUDITMANAGER_API GetAssessmentReportUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API GetAssessmentReportUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

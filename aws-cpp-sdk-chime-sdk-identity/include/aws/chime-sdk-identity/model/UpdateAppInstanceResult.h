@@ -24,12 +24,12 @@ namespace ChimeSDKIdentity
 {
 namespace Model
 {
-  class AWS_CHIMESDKIDENTITY_API UpdateAppInstanceResult
+  class UpdateAppInstanceResult
   {
   public:
-    UpdateAppInstanceResult();
-    UpdateAppInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAppInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceResult();
+    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,41 +26,51 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API GenerateMacResult
+  class GenerateMacResult
   {
   public:
-    GenerateMacResult();
-    GenerateMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateMacResult();
+    AWS_KMS_API GenerateMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The hash-based message authentication code (HMAC) for the given message, key,
-     * and MAC algorithm.</p>
+     * <p>The hash-based message authentication code (HMAC) that was generated for the
+     * specified message, HMAC KMS key, and MAC algorithm.</p> <p>This is the standard,
+     * raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     * 2104</a>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetMac() const{ return m_mac; }
 
     /**
-     * <p>The hash-based message authentication code (HMAC) for the given message, key,
-     * and MAC algorithm.</p>
+     * <p>The hash-based message authentication code (HMAC) that was generated for the
+     * specified message, HMAC KMS key, and MAC algorithm.</p> <p>This is the standard,
+     * raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     * 2104</a>.</p>
      */
     inline void SetMac(const Aws::Utils::ByteBuffer& value) { m_mac = value; }
 
     /**
-     * <p>The hash-based message authentication code (HMAC) for the given message, key,
-     * and MAC algorithm.</p>
+     * <p>The hash-based message authentication code (HMAC) that was generated for the
+     * specified message, HMAC KMS key, and MAC algorithm.</p> <p>This is the standard,
+     * raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     * 2104</a>.</p>
      */
     inline void SetMac(Aws::Utils::ByteBuffer&& value) { m_mac = std::move(value); }
 
     /**
-     * <p>The hash-based message authentication code (HMAC) for the given message, key,
-     * and MAC algorithm.</p>
+     * <p>The hash-based message authentication code (HMAC) that was generated for the
+     * specified message, HMAC KMS key, and MAC algorithm.</p> <p>This is the standard,
+     * raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     * 2104</a>.</p>
      */
     inline GenerateMacResult& WithMac(const Aws::Utils::ByteBuffer& value) { SetMac(value); return *this;}
 
     /**
-     * <p>The hash-based message authentication code (HMAC) for the given message, key,
-     * and MAC algorithm.</p>
+     * <p>The hash-based message authentication code (HMAC) that was generated for the
+     * specified message, HMAC KMS key, and MAC algorithm.</p> <p>This is the standard,
+     * raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     * 2104</a>.</p>
      */
     inline GenerateMacResult& WithMac(Aws::Utils::ByteBuffer&& value) { SetMac(std::move(value)); return *this;}
 

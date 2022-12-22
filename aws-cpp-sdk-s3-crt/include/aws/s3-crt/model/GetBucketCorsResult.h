@@ -25,12 +25,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API GetBucketCorsResult
+  class GetBucketCorsResult
   {
   public:
-    GetBucketCorsResult();
-    GetBucketCorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketCorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API GetBucketCorsResult();
+    AWS_S3CRT_API GetBucketCorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API GetBucketCorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

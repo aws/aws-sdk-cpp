@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35TimeSignalApos">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35TimeSignalApos
+  class Scte35TimeSignalApos
   {
   public:
-    Scte35TimeSignalApos();
-    Scte35TimeSignalApos(Aws::Utils::Json::JsonView jsonValue);
-    Scte35TimeSignalApos& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35TimeSignalApos();
+    AWS_MEDIALIVE_API Scte35TimeSignalApos(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35TimeSignalApos& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -15,6 +15,8 @@
 #include <aws/gamelift/model/OperatingSystem.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/gamelift/model/CertificateConfiguration.h>
+#include <aws/gamelift/model/ComputeType.h>
+#include <aws/gamelift/model/AnywhereConfiguration.h>
 #include <aws/gamelift/model/FleetAction.h>
 #include <utility>
 
@@ -35,18 +37,17 @@ namespace Model
 
   /**
    * <p>Describes a GameLift fleet of game hosting resources.</p> <p> <b>Related
-   * actions</b> </p> <p> <a>CreateFleet</a> | <a>DescribeFleetAttributes</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * actions</b> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API FleetAttributes
+  class FleetAttributes
   {
   public:
-    FleetAttributes();
-    FleetAttributes(Aws::Utils::Json::JsonView jsonValue);
-    FleetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API FleetAttributes();
+    AWS_GAMELIFT_API FleetAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API FleetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,32 +181,62 @@ namespace Model
 
 
     /**
-     * <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+     * <p>Indicates whether to use On-Demand or Spot instances for this fleet. By
+     * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
+     * to use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
+     * fleet is created.</p>
      */
     inline const FleetType& GetFleetType() const{ return m_fleetType; }
 
     /**
-     * <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+     * <p>Indicates whether to use On-Demand or Spot instances for this fleet. By
+     * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
+     * to use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
+     * fleet is created.</p>
      */
     inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
 
     /**
-     * <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+     * <p>Indicates whether to use On-Demand or Spot instances for this fleet. By
+     * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
+     * to use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
+     * fleet is created.</p>
      */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
     /**
-     * <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+     * <p>Indicates whether to use On-Demand or Spot instances for this fleet. By
+     * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
+     * to use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
+     * fleet is created.</p>
      */
     inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
     /**
-     * <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+     * <p>Indicates whether to use On-Demand or Spot instances for this fleet. By
+     * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
+     * to use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
+     * fleet is created.</p>
      */
     inline FleetAttributes& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
 
     /**
-     * <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
+     * <p>Indicates whether to use On-Demand or Spot instances for this fleet. By
+     * default, this property is set to <code>ON_DEMAND</code>. Learn more about when
+     * to use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+     * On-Demand versus Spot Instances</a>. This property cannot be changed after the
+     * fleet is created.</p>
      */
     inline FleetAttributes& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
 
@@ -772,114 +803,122 @@ namespace Model
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline bool ServerLaunchPathHasBeenSet() const { return m_serverLaunchPathHasBeenSet; }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline void SetServerLaunchPath(const Aws::String& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = std::move(value); }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline void SetServerLaunchPath(const char* value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath.assign(value); }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const Aws::String& value) { SetServerLaunchPath(value); return *this;}
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(std::move(value)); return *this;}
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch paths are now defined
-     * using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that use this
-     * parameter instead continue to be valid.</p>
+     * using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
+     * . Requests that use this parameter instead continue to be valid.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline bool ServerLaunchParametersHasBeenSet() const { return m_serverLaunchParametersHasBeenSet; }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::move(value); }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(std::move(value)); return *this;}
 
     /**
      * <p> <b>This parameter is no longer used.</b> Server launch parameters are now
-     * defined using the fleet's <a>RuntimeConfiguration</a> parameter. Requests that
-     * use this parameter instead continue to be valid.</p>
+     * defined using the fleet's runtime configuration . Requests that use this
+     * parameter instead continue to be valid.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
@@ -1064,40 +1103,22 @@ namespace Model
     inline FleetAttributes& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The fleet policy that limits the number of game sessions an individual player
-     * can create over a span of time.</p>
-     */
+    
     inline const ResourceCreationLimitPolicy& GetResourceCreationLimitPolicy() const{ return m_resourceCreationLimitPolicy; }
 
-    /**
-     * <p>The fleet policy that limits the number of game sessions an individual player
-     * can create over a span of time.</p>
-     */
+    
     inline bool ResourceCreationLimitPolicyHasBeenSet() const { return m_resourceCreationLimitPolicyHasBeenSet; }
 
-    /**
-     * <p>The fleet policy that limits the number of game sessions an individual player
-     * can create over a span of time.</p>
-     */
+    
     inline void SetResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
 
-    /**
-     * <p>The fleet policy that limits the number of game sessions an individual player
-     * can create over a span of time.</p>
-     */
+    
     inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = std::move(value); }
 
-    /**
-     * <p>The fleet policy that limits the number of game sessions an individual player
-     * can create over a span of time.</p>
-     */
+    
     inline FleetAttributes& WithResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { SetResourceCreationLimitPolicy(value); return *this;}
 
-    /**
-     * <p>The fleet policy that limits the number of game sessions an individual player
-     * can create over a span of time.</p>
-     */
+    
     inline FleetAttributes& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
 
@@ -1166,50 +1187,58 @@ namespace Model
 
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline void SetStoppedActions(Aws::Vector<FleetAction>&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::move(value); }
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline FleetAttributes& WithStoppedActions(const Aws::Vector<FleetAction>& value) { SetStoppedActions(value); return *this;}
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline FleetAttributes& WithStoppedActions(Aws::Vector<FleetAction>&& value) { SetStoppedActions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline FleetAttributes& AddStoppedActions(const FleetAction& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
 
     /**
-     * <p>A list of fleet activity that has been suspended using
-     * <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
+     * <p>A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>
+     * . This includes fleet auto-scaling.</p>
      */
     inline FleetAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
 
@@ -1319,35 +1348,85 @@ namespace Model
     inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 
 
-    /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
-     */
+    
     inline const CertificateConfiguration& GetCertificateConfiguration() const{ return m_certificateConfiguration; }
 
-    /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
-     */
+    
     inline bool CertificateConfigurationHasBeenSet() const { return m_certificateConfigurationHasBeenSet; }
 
-    /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
-     */
+    
     inline void SetCertificateConfiguration(const CertificateConfiguration& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = value; }
 
-    /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
-     */
+    
     inline void SetCertificateConfiguration(CertificateConfiguration&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::move(value); }
 
-    /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
-     */
+    
     inline FleetAttributes& WithCertificateConfiguration(const CertificateConfiguration& value) { SetCertificateConfiguration(value); return *this;}
 
-    /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
-     */
+    
     inline FleetAttributes& WithCertificateConfiguration(CertificateConfiguration&& value) { SetCertificateConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline FleetAttributes& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline FleetAttributes& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+
+
+    
+    inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
+
+    
+    inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
+
+    
+    inline void SetAnywhereConfiguration(const AnywhereConfiguration& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = value; }
+
+    
+    inline void SetAnywhereConfiguration(AnywhereConfiguration&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::move(value); }
+
+    
+    inline FleetAttributes& WithAnywhereConfiguration(const AnywhereConfiguration& value) { SetAnywhereConfiguration(value); return *this;}
+
+    
+    inline FleetAttributes& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -1419,6 +1498,12 @@ namespace Model
 
     CertificateConfiguration m_certificateConfiguration;
     bool m_certificateConfigurationHasBeenSet = false;
+
+    ComputeType m_computeType;
+    bool m_computeTypeHasBeenSet = false;
+
+    AnywhereConfiguration m_anywhereConfiguration;
+    bool m_anywhereConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

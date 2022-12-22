@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/OnEnterLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API OnEnterLifecycle
+  class OnEnterLifecycle
   {
   public:
-    OnEnterLifecycle();
-    OnEnterLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    OnEnterLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API OnEnterLifecycle();
+    AWS_IOTEVENTS_API OnEnterLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API OnEnterLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

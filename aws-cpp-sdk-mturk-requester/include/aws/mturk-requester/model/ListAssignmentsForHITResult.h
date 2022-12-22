@@ -26,12 +26,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API ListAssignmentsForHITResult
+  class ListAssignmentsForHITResult
   {
   public:
-    ListAssignmentsForHITResult();
-    ListAssignmentsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssignmentsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListAssignmentsForHITResult();
+    AWS_MTURK_API ListAssignmentsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListAssignmentsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

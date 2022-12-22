@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/PortRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API PortRange
+  class PortRange
   {
   public:
-    PortRange();
-    PortRange(Aws::Utils::Json::JsonView jsonValue);
-    PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API PortRange();
+    AWS_SECURITYHUB_API PortRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

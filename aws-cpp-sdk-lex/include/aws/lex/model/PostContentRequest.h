@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMESERVICE_API PostContentRequest : public StreamingLexRuntimeServiceRequest
+  class PostContentRequest : public StreamingLexRuntimeServiceRequest
   {
   public:
-    PostContentRequest();
+    AWS_LEXRUNTIMESERVICE_API PostContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PostContent"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LEXRUNTIMESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_LEXRUNTIMESERVICE_API bool SignBody() const override { return false; }
 
 
     /**

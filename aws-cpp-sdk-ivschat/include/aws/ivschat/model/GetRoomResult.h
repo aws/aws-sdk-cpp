@@ -7,6 +7,7 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivschat/model/MessageReviewHandler.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -27,12 +28,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API GetRoomResult
+  class GetRoomResult
   {
   public:
-    GetRoomResult();
-    GetRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API GetRoomResult();
+    AWS_IVSCHAT_API GetRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API GetRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -143,6 +144,47 @@ namespace Model
      * the ARN that uniquely identifies the room.</p>
      */
     inline GetRoomResult& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiers = value; }
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiers = std::move(value); }
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline GetRoomResult& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline GetRoomResult& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline GetRoomResult& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline GetRoomResult& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Array of logging configurations attached to the room.</p>
+     */
+    inline GetRoomResult& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiers.push_back(value); return *this; }
 
 
     /**
@@ -358,6 +400,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_id;
+
+    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
 
     int m_maximumMessageLength;
 

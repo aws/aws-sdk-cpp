@@ -29,6 +29,7 @@ namespace Aws
         static const int Passthrough_HASH = HashingUtils::HashString("Passthrough");
         static const int Truncate_HASH = HashingUtils::HashString("Truncate");
         static const int Validate_HASH = HashingUtils::HashString("Validate");
+        static const int Partition_HASH = HashingUtils::HashString("Partition");
 
 
         TaskType GetTaskTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return TaskType::Validate;
           }
+          else if (hashCode == Partition_HASH)
+          {
+            return TaskType::Partition;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "Truncate";
           case TaskType::Validate:
             return "Validate";
+          case TaskType::Partition:
+            return "Partition";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

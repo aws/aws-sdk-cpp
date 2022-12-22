@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/Credentials">AWS API
    * Reference</a></p>
    */
-  class AWS_STS_API Credentials
+  class Credentials
   {
   public:
-    Credentials();
-    Credentials(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Credentials& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_STS_API Credentials();
+    AWS_STS_API Credentials(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_STS_API Credentials& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_STS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_STS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

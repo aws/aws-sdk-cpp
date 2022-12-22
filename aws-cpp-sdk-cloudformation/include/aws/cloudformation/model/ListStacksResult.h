@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacksOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ListStacksResult
+  class ListStacksResult
   {
   public:
-    ListStacksResult();
-    ListStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ListStacksResult();
+    AWS_CLOUDFORMATION_API ListStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ListStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

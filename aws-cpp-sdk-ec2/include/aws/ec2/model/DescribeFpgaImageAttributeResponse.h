@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeFpgaImageAttributeResponse
+  class DescribeFpgaImageAttributeResponse
   {
   public:
-    DescribeFpgaImageAttributeResponse();
-    DescribeFpgaImageAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeFpgaImageAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeFpgaImageAttributeResponse();
+    AWS_EC2_API DescribeFpgaImageAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeFpgaImageAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

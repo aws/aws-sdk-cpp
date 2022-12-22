@@ -1,5 +1,5 @@
 #parseOverrideOrDefault( $serviceModel.serviceName.concat("_").concat($operation.name).concat("_OperationOutcome") "com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withrequest/OperationOutcome.vm")
 
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withrequest/OperationOutcomeCallable.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
 
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withrequest/OperationAsync.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")

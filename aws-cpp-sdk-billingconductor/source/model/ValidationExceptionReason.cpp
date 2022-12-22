@@ -66,8 +66,13 @@ namespace Aws
         static const int MULTIPLE_PRICING_PLAN_ARN_HASH = HashingUtils::HashString("MULTIPLE_PRICING_PLAN_ARN");
         static const int ILLEGAL_CHILD_ASSOCIATE_RESOURCE_HASH = HashingUtils::HashString("ILLEGAL_CHILD_ASSOCIATE_RESOURCE");
         static const int CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS_HASH = HashingUtils::HashString("CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS");
-        static const int INVALID_BILLING_PERIOD_FOR_OPERATION_HASH = HashingUtils::HashString("INVALID_BILLING_PERIOD_FOR_OPERATION");
         static const int INVALID_BILLING_GROUP_HASH = HashingUtils::HashString("INVALID_BILLING_GROUP");
+        static const int INVALID_BILLING_PERIOD_FOR_OPERATION_HASH = HashingUtils::HashString("INVALID_BILLING_PERIOD_FOR_OPERATION");
+        static const int ILLEGAL_BILLING_ENTITY_HASH = HashingUtils::HashString("ILLEGAL_BILLING_ENTITY");
+        static const int ILLEGAL_MODIFIER_PERCENTAGE_HASH = HashingUtils::HashString("ILLEGAL_MODIFIER_PERCENTAGE");
+        static const int ILLEGAL_TYPE_HASH = HashingUtils::HashString("ILLEGAL_TYPE");
+        static const int ILLEGAL_ENDED_BILLINGGROUP_HASH = HashingUtils::HashString("ILLEGAL_ENDED_BILLINGGROUP");
+        static const int ILLEGAL_TIERING_INPUT_HASH = HashingUtils::HashString("ILLEGAL_TIERING_INPUT");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -257,13 +262,33 @@ namespace Aws
           {
             return ValidationExceptionReason::CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS;
           }
+          else if (hashCode == INVALID_BILLING_GROUP_HASH)
+          {
+            return ValidationExceptionReason::INVALID_BILLING_GROUP;
+          }
           else if (hashCode == INVALID_BILLING_PERIOD_FOR_OPERATION_HASH)
           {
             return ValidationExceptionReason::INVALID_BILLING_PERIOD_FOR_OPERATION;
           }
-          else if (hashCode == INVALID_BILLING_GROUP_HASH)
+          else if (hashCode == ILLEGAL_BILLING_ENTITY_HASH)
           {
-            return ValidationExceptionReason::INVALID_BILLING_GROUP;
+            return ValidationExceptionReason::ILLEGAL_BILLING_ENTITY;
+          }
+          else if (hashCode == ILLEGAL_MODIFIER_PERCENTAGE_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_MODIFIER_PERCENTAGE;
+          }
+          else if (hashCode == ILLEGAL_TYPE_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_TYPE;
+          }
+          else if (hashCode == ILLEGAL_ENDED_BILLINGGROUP_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_ENDED_BILLINGGROUP;
+          }
+          else if (hashCode == ILLEGAL_TIERING_INPUT_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_TIERING_INPUT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -371,10 +396,20 @@ namespace Aws
             return "ILLEGAL_CHILD_ASSOCIATE_RESOURCE";
           case ValidationExceptionReason::CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS:
             return "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS";
-          case ValidationExceptionReason::INVALID_BILLING_PERIOD_FOR_OPERATION:
-            return "INVALID_BILLING_PERIOD_FOR_OPERATION";
           case ValidationExceptionReason::INVALID_BILLING_GROUP:
             return "INVALID_BILLING_GROUP";
+          case ValidationExceptionReason::INVALID_BILLING_PERIOD_FOR_OPERATION:
+            return "INVALID_BILLING_PERIOD_FOR_OPERATION";
+          case ValidationExceptionReason::ILLEGAL_BILLING_ENTITY:
+            return "ILLEGAL_BILLING_ENTITY";
+          case ValidationExceptionReason::ILLEGAL_MODIFIER_PERCENTAGE:
+            return "ILLEGAL_MODIFIER_PERCENTAGE";
+          case ValidationExceptionReason::ILLEGAL_TYPE:
+            return "ILLEGAL_TYPE";
+          case ValidationExceptionReason::ILLEGAL_ENDED_BILLINGGROUP:
+            return "ILLEGAL_ENDED_BILLINGGROUP";
+          case ValidationExceptionReason::ILLEGAL_TIERING_INPUT:
+            return "ILLEGAL_TIERING_INPUT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API ConflictException();
+    AWS_CLOUDWATCHRUM_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

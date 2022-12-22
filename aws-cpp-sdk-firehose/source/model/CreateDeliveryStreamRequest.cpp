@@ -24,7 +24,8 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_amazonopensearchserviceDestinationConfigurationHasBeenSet(false),
     m_splunkDestinationConfigurationHasBeenSet(false),
     m_httpEndpointDestinationConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("AmazonOpenSearchServerlessDestinationConfiguration", m_amazonOpenSearchServerlessDestinationConfiguration.Jsonize());
 
   }
 

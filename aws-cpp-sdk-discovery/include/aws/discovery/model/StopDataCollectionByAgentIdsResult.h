@@ -25,12 +25,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API StopDataCollectionByAgentIdsResult
+  class StopDataCollectionByAgentIdsResult
   {
   public:
-    StopDataCollectionByAgentIdsResult();
-    StopDataCollectionByAgentIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDataCollectionByAgentIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API StopDataCollectionByAgentIdsResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API StopDataCollectionByAgentIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API StopDataCollectionByAgentIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

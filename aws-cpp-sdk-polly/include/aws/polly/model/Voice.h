@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Voice">AWS API
    * Reference</a></p>
    */
-  class AWS_POLLY_API Voice
+  class Voice
   {
   public:
-    Voice();
-    Voice(Aws::Utils::Json::JsonView jsonValue);
-    Voice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_POLLY_API Voice();
+    AWS_POLLY_API Voice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Voice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

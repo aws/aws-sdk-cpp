@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServiceTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ServiceTemplate
+  class ServiceTemplate
   {
   public:
-    ServiceTemplate();
-    ServiceTemplate(Aws::Utils::Json::JsonView jsonValue);
-    ServiceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ServiceTemplate();
+    AWS_PROTON_API ServiceTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ServiceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

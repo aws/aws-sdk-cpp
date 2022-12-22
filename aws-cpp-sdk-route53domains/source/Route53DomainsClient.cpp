@@ -22,6 +22,7 @@
 #include <aws/route53domains/Route53DomainsErrorMarshaller.h>
 #include <aws/route53domains/Route53DomainsEndpointProvider.h>
 #include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountRequest.h>
+#include <aws/route53domains/model/AssociateDelegationSignerToDomainRequest.h>
 #include <aws/route53domains/model/CancelDomainTransferToAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/CheckDomainAvailabilityRequest.h>
 #include <aws/route53domains/model/CheckDomainTransferabilityRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/route53domains/model/DeleteTagsForDomainRequest.h>
 #include <aws/route53domains/model/DisableDomainAutoRenewRequest.h>
 #include <aws/route53domains/model/DisableDomainTransferLockRequest.h>
+#include <aws/route53domains/model/DisassociateDelegationSignerFromDomainRequest.h>
 #include <aws/route53domains/model/EnableDomainAutoRenewRequest.h>
 #include <aws/route53domains/model/EnableDomainTransferLockRequest.h>
 #include <aws/route53domains/model/GetContactReachabilityStatusRequest.h>
@@ -39,10 +41,12 @@
 #include <aws/route53domains/model/ListOperationsRequest.h>
 #include <aws/route53domains/model/ListPricesRequest.h>
 #include <aws/route53domains/model/ListTagsForDomainRequest.h>
+#include <aws/route53domains/model/PushDomainRequest.h>
 #include <aws/route53domains/model/RegisterDomainRequest.h>
 #include <aws/route53domains/model/RejectDomainTransferFromAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/RenewDomainRequest.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
+#include <aws/route53domains/model/ResendOperationAuthorizationRequest.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeRequest.h>
 #include <aws/route53domains/model/TransferDomainRequest.h>
 #include <aws/route53domains/model/TransferDomainToAnotherAwsAccountRequest.h>
@@ -200,6 +204,30 @@ void Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountAsync(const 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, AcceptDomainTransferFromAnotherAwsAccount(request), context);
+    } );
+}
+
+AssociateDelegationSignerToDomainOutcome Route53DomainsClient::AssociateDelegationSignerToDomain(const AssociateDelegationSignerToDomainRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDelegationSignerToDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateDelegationSignerToDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateDelegationSignerToDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateDelegationSignerToDomainOutcomeCallable Route53DomainsClient::AssociateDelegationSignerToDomainCallable(const AssociateDelegationSignerToDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDelegationSignerToDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDelegationSignerToDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::AssociateDelegationSignerToDomainAsync(const AssociateDelegationSignerToDomainRequest& request, const AssociateDelegationSignerToDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateDelegationSignerToDomain(request), context);
     } );
 }
 
@@ -368,6 +396,30 @@ void Route53DomainsClient::DisableDomainTransferLockAsync(const DisableDomainTra
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DisableDomainTransferLock(request), context);
+    } );
+}
+
+DisassociateDelegationSignerFromDomainOutcome Route53DomainsClient::DisassociateDelegationSignerFromDomain(const DisassociateDelegationSignerFromDomainRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateDelegationSignerFromDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateDelegationSignerFromDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateDelegationSignerFromDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateDelegationSignerFromDomainOutcomeCallable Route53DomainsClient::DisassociateDelegationSignerFromDomainCallable(const DisassociateDelegationSignerFromDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateDelegationSignerFromDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateDelegationSignerFromDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::DisassociateDelegationSignerFromDomainAsync(const DisassociateDelegationSignerFromDomainRequest& request, const DisassociateDelegationSignerFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateDelegationSignerFromDomain(request), context);
     } );
 }
 
@@ -611,6 +663,30 @@ void Route53DomainsClient::ListTagsForDomainAsync(const ListTagsForDomainRequest
     } );
 }
 
+PushDomainOutcome Route53DomainsClient::PushDomain(const PushDomainRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PushDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PushDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PushDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PushDomainOutcomeCallable Route53DomainsClient::PushDomainCallable(const PushDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PushDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PushDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::PushDomainAsync(const PushDomainRequest& request, const PushDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PushDomain(request), context);
+    } );
+}
+
 RegisterDomainOutcome Route53DomainsClient::RegisterDomain(const RegisterDomainRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -704,6 +780,30 @@ void Route53DomainsClient::ResendContactReachabilityEmailAsync(const ResendConta
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ResendContactReachabilityEmail(request), context);
+    } );
+}
+
+ResendOperationAuthorizationOutcome Route53DomainsClient::ResendOperationAuthorization(const ResendOperationAuthorizationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResendOperationAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResendOperationAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ResendOperationAuthorizationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResendOperationAuthorizationOutcomeCallable Route53DomainsClient::ResendOperationAuthorizationCallable(const ResendOperationAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResendOperationAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResendOperationAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::ResendOperationAuthorizationAsync(const ResendOperationAuthorizationRequest& request, const ResendOperationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResendOperationAuthorization(request), context);
     } );
 }
 

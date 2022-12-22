@@ -66,6 +66,7 @@ static const int INVALID_S_N_S_TOPIC_A_R_N_HASH = HashingUtils::HashString("Inva
 static const int NO_SUCH_ORGANIZATION_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchOrganizationConfigRuleException");
 static const int RESOURCE_NOT_DISCOVERED_HASH = HashingUtils::HashString("ResourceNotDiscoveredException");
 static const int INVALID_RESULT_TOKEN_HASH = HashingUtils::HashString("InvalidResultTokenException");
+static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatch");
 static const int INVALID_LIMIT_HASH = HashingUtils::HashString("InvalidLimitException");
 static const int NO_SUCH_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoSuchConfigurationRecorderException");
 
@@ -265,6 +266,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESULT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_RESULT_TOKEN), false);
+  }
+  else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
   }
   else if (hashCode == INVALID_LIMIT_HASH)
   {

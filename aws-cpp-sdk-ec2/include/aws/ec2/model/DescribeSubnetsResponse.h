@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeSubnetsResponse
+  class DescribeSubnetsResponse
   {
   public:
-    DescribeSubnetsResponse();
-    DescribeSubnetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSubnetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSubnetsResponse();
+    AWS_EC2_API DescribeSubnetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSubnetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

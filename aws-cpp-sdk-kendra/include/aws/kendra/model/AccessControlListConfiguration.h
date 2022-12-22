@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AccessControlListConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API AccessControlListConfiguration
+  class AccessControlListConfiguration
   {
   public:
-    AccessControlListConfiguration();
-    AccessControlListConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AccessControlListConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API AccessControlListConfiguration();
+    AWS_KENDRA_API AccessControlListConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API AccessControlListConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DetectorSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API DetectorSummary
+  class DetectorSummary
   {
   public:
-    DetectorSummary();
-    DetectorSummary(Aws::Utils::Json::JsonView jsonValue);
-    DetectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API DetectorSummary();
+    AWS_IOTEVENTSDATA_API DetectorSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API DetectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

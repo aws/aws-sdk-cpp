@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConfigRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationConfigRule
+  class OrganizationConfigRule
   {
   public:
-    OrganizationConfigRule();
-    OrganizationConfigRule(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationConfigRule();
+    AWS_CONFIGSERVICE_API OrganizationConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

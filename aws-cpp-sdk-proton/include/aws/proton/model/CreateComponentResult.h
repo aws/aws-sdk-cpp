@@ -24,12 +24,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API CreateComponentResult
+  class CreateComponentResult
   {
   public:
-    CreateComponentResult();
-    CreateComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API CreateComponentResult();
+    AWS_PROTON_API CreateComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API CreateComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

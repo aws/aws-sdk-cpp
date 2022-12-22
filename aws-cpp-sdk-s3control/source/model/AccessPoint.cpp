@@ -27,7 +27,8 @@ AccessPoint::AccessPoint() :
     m_vpcConfigurationHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_accessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_bucketAccountIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ AccessPoint::AccessPoint(const XmlNode& xmlNode) :
     m_vpcConfigurationHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_accessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_bucketAccountIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +87,12 @@ AccessPoint& AccessPoint::operator =(const XmlNode& xmlNode)
       m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
       m_aliasHasBeenSet = true;
     }
+    XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
+    if(!bucketAccountIdNode.IsNull())
+    {
+      m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
+      m_bucketAccountIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -127,6 +135,12 @@ void AccessPoint::AddToNode(XmlNode& parentNode) const
   {
    XmlNode aliasNode = parentNode.CreateChildElement("Alias");
    aliasNode.SetText(m_alias);
+  }
+
+  if(m_bucketAccountIdHasBeenSet)
+  {
+   XmlNode bucketAccountIdNode = parentNode.CreateChildElement("BucketAccountId");
+   bucketAccountIdNode.SetText(m_bucketAccountId);
   }
 
 }

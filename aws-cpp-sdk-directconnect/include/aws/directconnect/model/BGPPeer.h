@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/BGPPeer">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API BGPPeer
+  class BGPPeer
   {
   public:
-    BGPPeer();
-    BGPPeer(Aws::Utils::Json::JsonView jsonValue);
-    BGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API BGPPeer();
+    AWS_DIRECTCONNECT_API BGPPeer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API BGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

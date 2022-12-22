@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegistryScanningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API RegistryScanningConfiguration
+  class RegistryScanningConfiguration
   {
   public:
-    RegistryScanningConfiguration();
-    RegistryScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RegistryScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API RegistryScanningConfiguration();
+    AWS_ECR_API RegistryScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API RegistryScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

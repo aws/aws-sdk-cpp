@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPoliciesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ListPoliciesResult
+  class ListPoliciesResult
   {
   public:
-    ListPoliciesResult();
-    ListPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListPoliciesResult();
+    AWS_IOT_API ListPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

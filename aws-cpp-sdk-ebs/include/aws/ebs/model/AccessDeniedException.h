@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/AccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_EBS_API AccessDeniedException
+  class AccessDeniedException
   {
   public:
-    AccessDeniedException();
-    AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API AccessDeniedException();
+    AWS_EBS_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

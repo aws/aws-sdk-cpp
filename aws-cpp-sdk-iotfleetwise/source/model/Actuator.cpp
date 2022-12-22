@@ -28,8 +28,7 @@ Actuator::Actuator() :
     m_min(0.0),
     m_minHasBeenSet(false),
     m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_assignedValueHasBeenSet(false)
+    m_maxHasBeenSet(false)
 {
 }
 
@@ -43,8 +42,7 @@ Actuator::Actuator(JsonView jsonValue) :
     m_min(0.0),
     m_minHasBeenSet(false),
     m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_assignedValueHasBeenSet(false)
+    m_maxHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,13 +101,6 @@ Actuator& Actuator::operator =(JsonView jsonValue)
     m_maxHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("assignedValue"))
-  {
-    m_assignedValue = jsonValue.GetString("assignedValue");
-
-    m_assignedValueHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -160,12 +151,6 @@ JsonValue Actuator::Jsonize() const
   if(m_maxHasBeenSet)
   {
    payload.WithDouble("max", m_max);
-
-  }
-
-  if(m_assignedValueHasBeenSet)
-  {
-   payload.WithString("assignedValue", m_assignedValue);
 
   }
 

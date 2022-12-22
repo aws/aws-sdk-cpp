@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeExecutor">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeExecutor
+  class ActionTypeExecutor
   {
   public:
-    ActionTypeExecutor();
-    ActionTypeExecutor(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeExecutor();
+    AWS_CODEPIPELINE_API ActionTypeExecutor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

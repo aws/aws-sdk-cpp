@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
+#include <aws/migrationhubstrategy/model/ApplicationMode.h>
 #include <aws/migrationhubstrategy/model/ApplicationPreferences.h>
 #include <aws/migrationhubstrategy/model/DatabasePreferences.h>
 #include <aws/migrationhubstrategy/model/PrioritizeBusinessGoals.h>
@@ -26,12 +27,38 @@ namespace MigrationHubStrategyRecommendations
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult
+  class GetPortfolioPreferencesResult
   {
   public:
-    GetPortfolioPreferencesResult();
-    GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPortfolioPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationMode = value; }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationMode = std::move(value); }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline GetPortfolioPreferencesResult& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline GetPortfolioPreferencesResult& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
 
 
     /**
@@ -112,6 +139,8 @@ namespace Model
     inline GetPortfolioPreferencesResult& WithPrioritizeBusinessGoals(PrioritizeBusinessGoals&& value) { SetPrioritizeBusinessGoals(std::move(value)); return *this;}
 
   private:
+
+    ApplicationMode m_applicationMode;
 
     ApplicationPreferences m_applicationPreferences;
 

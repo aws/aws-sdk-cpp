@@ -27,12 +27,14 @@
 #include <aws/states/model/DeleteStateMachineRequest.h>
 #include <aws/states/model/DescribeActivityRequest.h>
 #include <aws/states/model/DescribeExecutionRequest.h>
+#include <aws/states/model/DescribeMapRunRequest.h>
 #include <aws/states/model/DescribeStateMachineRequest.h>
 #include <aws/states/model/DescribeStateMachineForExecutionRequest.h>
 #include <aws/states/model/GetActivityTaskRequest.h>
 #include <aws/states/model/GetExecutionHistoryRequest.h>
 #include <aws/states/model/ListActivitiesRequest.h>
 #include <aws/states/model/ListExecutionsRequest.h>
+#include <aws/states/model/ListMapRunsRequest.h>
 #include <aws/states/model/ListStateMachinesRequest.h>
 #include <aws/states/model/ListTagsForResourceRequest.h>
 #include <aws/states/model/SendTaskFailureRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/states/model/StopExecutionRequest.h>
 #include <aws/states/model/TagResourceRequest.h>
 #include <aws/states/model/UntagResourceRequest.h>
+#include <aws/states/model/UpdateMapRunRequest.h>
 #include <aws/states/model/UpdateStateMachineRequest.h>
 
 using namespace Aws;
@@ -316,6 +319,30 @@ void SFNClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, 
     } );
 }
 
+DescribeMapRunOutcome SFNClient::DescribeMapRun(const DescribeMapRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMapRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMapRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeMapRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMapRunOutcomeCallable SFNClient::DescribeMapRunCallable(const DescribeMapRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMapRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMapRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SFNClient::DescribeMapRunAsync(const DescribeMapRunRequest& request, const DescribeMapRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMapRun(request), context);
+    } );
+}
+
 DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateMachineRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -457,6 +484,30 @@ void SFNClient::ListExecutionsAsync(const ListExecutionsRequest& request, const 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListExecutions(request), context);
+    } );
+}
+
+ListMapRunsOutcome SFNClient::ListMapRuns(const ListMapRunsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMapRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMapRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMapRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMapRunsOutcomeCallable SFNClient::ListMapRunsCallable(const ListMapRunsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMapRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMapRuns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SFNClient::ListMapRunsAsync(const ListMapRunsRequest& request, const ListMapRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMapRuns(request), context);
     } );
 }
 
@@ -699,6 +750,30 @@ void SFNClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UntagResource(request), context);
+    } );
+}
+
+UpdateMapRunOutcome SFNClient::UpdateMapRun(const UpdateMapRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMapRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMapRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateMapRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMapRunOutcomeCallable SFNClient::UpdateMapRunCallable(const UpdateMapRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMapRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMapRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SFNClient::UpdateMapRunAsync(const UpdateMapRunRequest& request, const UpdateMapRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMapRun(request), context);
     } );
 }
 

@@ -25,12 +25,12 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVENTS_API CancelReplayResult
+  class CancelReplayResult
   {
   public:
-    CancelReplayResult();
-    CancelReplayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelReplayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API CancelReplayResult();
+    AWS_CLOUDWATCHEVENTS_API CancelReplayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API CancelReplayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

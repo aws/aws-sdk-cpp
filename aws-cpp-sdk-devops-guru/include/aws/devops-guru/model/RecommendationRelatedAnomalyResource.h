@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedAnomalyResource">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource
+  class RecommendationRelatedAnomalyResource
   {
   public:
-    RecommendationRelatedAnomalyResource();
-    RecommendationRelatedAnomalyResource(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationRelatedAnomalyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource();
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

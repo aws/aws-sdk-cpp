@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JiraConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API JiraConfiguration
+  class JiraConfiguration
   {
   public:
-    JiraConfiguration();
-    JiraConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JiraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API JiraConfiguration();
+    AWS_KENDRA_API JiraConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API JiraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,8 +105,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -116,8 +116,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -127,8 +127,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -138,8 +138,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -149,8 +149,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -160,8 +160,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -171,8 +171,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -182,8 +182,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

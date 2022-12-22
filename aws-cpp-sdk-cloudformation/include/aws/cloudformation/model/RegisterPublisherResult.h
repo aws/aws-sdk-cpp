@@ -25,12 +25,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API RegisterPublisherResult
+  class RegisterPublisherResult
   {
   public:
-    RegisterPublisherResult();
-    RegisterPublisherResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RegisterPublisherResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API RegisterPublisherResult();
+    AWS_CLOUDFORMATION_API RegisterPublisherResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API RegisterPublisherResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

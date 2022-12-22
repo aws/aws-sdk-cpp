@@ -7,6 +7,7 @@
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dataexchange/DataExchangeServiceClientModel.h>
 
@@ -19,21 +20,22 @@ namespace DataExchange
    * exchange data in the cloud. You can use the AWS Data Exchange APIs to create,
    * update, manage, and access file-based data set in the AWS Cloud.</p> <p>As a
    * subscriber, you can view and access the data sets that you have an entitlement
-   * to through a subscription. You can use the APIS to download or copy your
-   * entitled data sets to Amazon S3 for use across a variety of AWS analytics and
-   * machine learning services.</p> <p>As a provider, you can create and manage your
-   * data sets that you would like to publish to a product. Being able to package and
-   * provide your data sets into products requires a few steps to determine
-   * eligibility. For more information, visit the AWS Data Exchange User Guide.</p>
-   * <p>A data set is a collection of data that can be changed or updated over time.
-   * Data sets can be updated using revisions, which represent a new version or
-   * incremental change to a data set. A revision contains one or more assets. An
-   * asset in AWS Data Exchange is a piece of data that can be stored as an Amazon S3
-   * object. The asset can be a structured data file, an image file, or some other
-   * data file. Jobs are asynchronous import or export operations used to create or
-   * copy assets.</p>
+   * to through a subscription. You can use the APIs to download or copy your
+   * entitled data sets to Amazon Simple Storage Service (Amazon S3) for use across a
+   * variety of AWS analytics and machine learning services.</p> <p>As a provider,
+   * you can create and manage your data sets that you would like to publish to a
+   * product. Being able to package and provide your data sets into products requires
+   * a few steps to determine eligibility. For more information, visit the <i>AWS
+   * Data Exchange User Guide</i>.</p> <p>A data set is a collection of data that can
+   * be changed or updated over time. Data sets can be updated using revisions, which
+   * represent a new version or incremental change to a data set. A revision contains
+   * one or more assets. An asset in AWS Data Exchange is a piece of data that can be
+   * stored as an Amazon S3 object, Redshift datashare, API Gateway API, AWS Lake
+   * Formation data permission, or Amazon S3 data access. The asset can be a
+   * structured data file, an image file, or some other data file. Jobs are
+   * asynchronous import or export operations used to create or copy assets.</p>
    */
-  class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient
+  class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +89,6 @@ namespace DataExchange
 
         /* End of legacy constructors due deprecation */
         virtual ~DataExchangeClient();
-
 
         /**
          * <p>This operation cancels a job. Jobs can be cancelled only when they are in the
@@ -601,6 +602,7 @@ namespace DataExchange
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DataExchangeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>;
       void init(const DataExchangeClientConfiguration& clientConfiguration);
 
       DataExchangeClientConfiguration m_clientConfiguration;

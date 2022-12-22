@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API CreateClusterResult
+  class CreateClusterResult
   {
   public:
-    CreateClusterResult();
-    CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateClusterResult();
+    AWS_REDSHIFT_API CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

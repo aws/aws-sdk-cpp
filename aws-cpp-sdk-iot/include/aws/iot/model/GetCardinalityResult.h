@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API GetCardinalityResult
+  class GetCardinalityResult
   {
   public:
-    GetCardinalityResult();
-    GetCardinalityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCardinalityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API GetCardinalityResult();
+    AWS_IOT_API GetCardinalityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API GetCardinalityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

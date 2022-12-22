@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DeleteDBInstanceAutomatedBackupResult
+  class DeleteDBInstanceAutomatedBackupResult
   {
   public:
-    DeleteDBInstanceAutomatedBackupResult();
-    DeleteDBInstanceAutomatedBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteDBInstanceAutomatedBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DeleteDBInstanceAutomatedBackupResult();
+    AWS_RDS_API DeleteDBInstanceAutomatedBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DeleteDBInstanceAutomatedBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

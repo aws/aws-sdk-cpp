@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnectionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API DescribeInboundCrossClusterSearchConnectionsResult
+  class DescribeInboundCrossClusterSearchConnectionsResult
   {
   public:
-    DescribeInboundCrossClusterSearchConnectionsResult();
-    DescribeInboundCrossClusterSearchConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInboundCrossClusterSearchConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API DescribeInboundCrossClusterSearchConnectionsResult();
+    AWS_ELASTICSEARCHSERVICE_API DescribeInboundCrossClusterSearchConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API DescribeInboundCrossClusterSearchConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/BatchPutMessageErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API BatchPutMessageErrorEntry
+  class BatchPutMessageErrorEntry
   {
   public:
-    BatchPutMessageErrorEntry();
-    BatchPutMessageErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutMessageErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API BatchPutMessageErrorEntry();
+    AWS_IOTANALYTICS_API BatchPutMessageErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API BatchPutMessageErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

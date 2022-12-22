@@ -26,12 +26,12 @@ namespace Synthetics
 {
 namespace Model
 {
-  class AWS_SYNTHETICS_API ListGroupsResult
+  class ListGroupsResult
   {
   public:
-    ListGroupsResult();
-    ListGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SYNTHETICS_API ListGroupsResult();
+    AWS_SYNTHETICS_API ListGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SYNTHETICS_API ListGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

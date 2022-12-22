@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API UpdateDomainAssociationResult
+  class UpdateDomainAssociationResult
   {
   public:
-    UpdateDomainAssociationResult();
-    UpdateDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API UpdateDomainAssociationResult();
+    AWS_AMPLIFY_API UpdateDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API UpdateDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

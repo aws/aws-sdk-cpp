@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterBacktrack">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBClusterBacktrack
+  class DBClusterBacktrack
   {
   public:
-    DBClusterBacktrack();
-    DBClusterBacktrack(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterBacktrack& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterBacktrack();
+    AWS_RDS_API DBClusterBacktrack(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterBacktrack& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

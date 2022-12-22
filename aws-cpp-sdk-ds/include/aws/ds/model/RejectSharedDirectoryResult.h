@@ -24,12 +24,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult
+  class RejectSharedDirectoryResult
   {
   public:
-    RejectSharedDirectoryResult();
-    RejectSharedDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectSharedDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult();
+    AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

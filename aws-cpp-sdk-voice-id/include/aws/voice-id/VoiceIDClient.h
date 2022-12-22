@@ -7,6 +7,7 @@
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/voice-id/VoiceIDServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace VoiceID
    * <p>Amazon Connect Voice ID provides real-time caller authentication and fraud
    * screening. This guide describes the APIs used for this service. </p>
    */
-  class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient
+  class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace VoiceID
 
         /* End of legacy constructors due deprecation */
         virtual ~VoiceIDClient();
-
 
         /**
          * <p>Creates a domain that contains all Amazon Connect Voice ID data, such as
@@ -459,6 +459,7 @@ namespace VoiceID
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<VoiceIDEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>;
       void init(const VoiceIDClientConfiguration& clientConfiguration);
 
       VoiceIDClientConfiguration m_clientConfiguration;

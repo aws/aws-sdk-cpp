@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatusOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API GetStatusResult
+  class GetStatusResult
   {
   public:
-    GetStatusResult();
-    GetStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API GetStatusResult();
+    AWS_IMPORTEXPORT_API GetStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API GetStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

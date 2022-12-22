@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API UpdateContactFlowContentRequest : public ConnectRequest
+  class UpdateContactFlowContentRequest : public ConnectRequest
   {
   public:
-    UpdateContactFlowContentRequest();
+    AWS_CONNECT_API UpdateContactFlowContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateContactFlowContent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,65 +116,57 @@ namespace Model
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline UpdateContactFlowContentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline UpdateContactFlowContentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
-     * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
-     * Administrator Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * contact flow in Amazon Connect Flow language</a>. </p>
      */
     inline UpdateContactFlowContentRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

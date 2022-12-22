@@ -27,12 +27,12 @@ namespace ConnectCases
 {
 namespace Model
 {
-  class AWS_CONNECTCASES_API GetDomainResult
+  class GetDomainResult
   {
   public:
-    GetDomainResult();
-    GetDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API GetDomainResult();
+    AWS_CONNECTCASES_API GetDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API GetDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

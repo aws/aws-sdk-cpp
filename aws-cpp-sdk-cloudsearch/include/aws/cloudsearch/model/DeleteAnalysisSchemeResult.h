@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisSchemeResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DeleteAnalysisSchemeResult
+  class DeleteAnalysisSchemeResult
   {
   public:
-    DeleteAnalysisSchemeResult();
-    DeleteAnalysisSchemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteAnalysisSchemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DeleteAnalysisSchemeResult();
+    AWS_CLOUDSEARCH_API DeleteAnalysisSchemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DeleteAnalysisSchemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

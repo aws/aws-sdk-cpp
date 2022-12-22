@@ -18,7 +18,8 @@ UpdateFlowRequest::UpdateFlowRequest() :
     m_triggerConfigHasBeenSet(false),
     m_sourceFlowConfigHasBeenSet(false),
     m_destinationFlowConfigListHasBeenSet(false),
-    m_tasksHasBeenSet(false)
+    m_tasksHasBeenSet(false),
+    m_metadataCatalogConfigHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,12 @@ Aws::String UpdateFlowRequest::SerializePayload() const
      tasksJsonList[tasksIndex].AsObject(m_tasks[tasksIndex].Jsonize());
    }
    payload.WithArray("tasks", std::move(tasksJsonList));
+
+  }
+
+  if(m_metadataCatalogConfigHasBeenSet)
+  {
+   payload.WithObject("metadataCatalogConfig", m_metadataCatalogConfig.Jsonize());
 
   }
 

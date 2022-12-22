@@ -7,6 +7,7 @@
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace EC2InstanceConnect
    * use SSH public keys to EC2, providing users a simple and secure way to connect
    * to their instances.</p>
    */
-  class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace EC2InstanceConnect
         /* End of legacy constructors due deprecation */
         virtual ~EC2InstanceConnectClient();
 
-
         /**
          * <p>Pushes an SSH public key to the specified EC2 instance for use by the
          * specified user. The key remains for 60 seconds. For more information, see <a
@@ -122,6 +122,7 @@ namespace EC2InstanceConnect
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>;
       void init(const EC2InstanceConnectClientConfiguration& clientConfiguration);
 
       EC2InstanceConnectClientConfiguration m_clientConfiguration;

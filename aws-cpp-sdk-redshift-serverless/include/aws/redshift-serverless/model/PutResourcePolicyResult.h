@@ -24,12 +24,12 @@ namespace RedshiftServerless
 {
 namespace Model
 {
-  class AWS_REDSHIFTSERVERLESS_API PutResourcePolicyResult
+  class PutResourcePolicyResult
   {
   public:
-    PutResourcePolicyResult();
-    PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API PutResourcePolicyResult();
+    AWS_REDSHIFTSERVERLESS_API PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

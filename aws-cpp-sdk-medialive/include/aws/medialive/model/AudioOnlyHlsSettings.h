@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioOnlyHlsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioOnlyHlsSettings
+  class AudioOnlyHlsSettings
   {
   public:
-    AudioOnlyHlsSettings();
-    AudioOnlyHlsSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioOnlyHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioOnlyHlsSettings();
+    AWS_MEDIALIVE_API AudioOnlyHlsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioOnlyHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

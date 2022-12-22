@@ -30,15 +30,15 @@ UpdateEntityResult::UpdateEntityResult(const Aws::AmazonWebServiceResult<JsonVal
 UpdateEntityResult& UpdateEntityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("state"))
-  {
-    m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
-  }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
+
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
 
   }
 

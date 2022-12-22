@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LocalGatewayRouteTableVpcAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LocalGatewayRouteTableVpcAssociation
+  class LocalGatewayRouteTableVpcAssociation
   {
   public:
-    LocalGatewayRouteTableVpcAssociation();
-    LocalGatewayRouteTableVpcAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LocalGatewayRouteTableVpcAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayRouteTableVpcAssociation();
+    AWS_EC2_API LocalGatewayRouteTableVpcAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayRouteTableVpcAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

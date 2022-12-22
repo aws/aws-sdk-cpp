@@ -23,13 +23,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API ServiceUnavailableException
+  class ServiceUnavailableException
   {
   public:
-    ServiceUnavailableException();
-    ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API ServiceUnavailableException();
+    AWS_SCHEMAS_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

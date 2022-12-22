@@ -26,12 +26,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API UpdateContainerInstancesStateResult
+  class UpdateContainerInstancesStateResult
   {
   public:
-    UpdateContainerInstancesStateResult();
-    UpdateContainerInstancesStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateContainerInstancesStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API UpdateContainerInstancesStateResult();
+    AWS_ECS_API UpdateContainerInstancesStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API UpdateContainerInstancesStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

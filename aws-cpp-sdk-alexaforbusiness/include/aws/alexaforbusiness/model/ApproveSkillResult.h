@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API ApproveSkillResult
+  class ApproveSkillResult
   {
   public:
-    ApproveSkillResult();
-    ApproveSkillResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ApproveSkillResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ApproveSkillResult();
+    AWS_ALEXAFORBUSINESS_API ApproveSkillResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ApproveSkillResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

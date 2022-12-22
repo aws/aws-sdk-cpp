@@ -27,12 +27,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API ValidateE911AddressResult
+  class ValidateE911AddressResult
   {
   public:
-    ValidateE911AddressResult();
-    ValidateE911AddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidateE911AddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ValidateE911AddressResult();
+    AWS_CHIME_API ValidateE911AddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ValidateE911AddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

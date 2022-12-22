@@ -31,7 +31,8 @@ namespace Model
     CONCAT_FORMAT,
     SUBFIELD_CATEGORY_MAP,
     EXCLUDE_SOURCE_FIELDS_LIST,
-    INCLUDE_NEW_FIELDS
+    INCLUDE_NEW_FIELDS,
+    ORDERED_PARTITION_KEYS_LIST
   };
 
 namespace OperatorPropertiesKeysMapper

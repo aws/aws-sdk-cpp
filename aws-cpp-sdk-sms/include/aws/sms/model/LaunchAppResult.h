@@ -22,12 +22,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API LaunchAppResult
+  class LaunchAppResult
   {
   public:
-    LaunchAppResult();
-    LaunchAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    LaunchAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API LaunchAppResult();
+    AWS_SMS_API LaunchAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API LaunchAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

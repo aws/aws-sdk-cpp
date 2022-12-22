@@ -29,7 +29,10 @@ OptionGroup::OptionGroup() :
     m_allowsVpcAndNonVpcInstanceMemberships(false),
     m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_optionGroupArnHasBeenSet(false)
+    m_optionGroupArnHasBeenSet(false),
+    m_sourceOptionGroupHasBeenSet(false),
+    m_sourceAccountIdHasBeenSet(false),
+    m_copyTimestampHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ OptionGroup::OptionGroup(const XmlNode& xmlNode) :
     m_allowsVpcAndNonVpcInstanceMemberships(false),
     m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_optionGroupArnHasBeenSet(false)
+    m_optionGroupArnHasBeenSet(false),
+    m_sourceOptionGroupHasBeenSet(false),
+    m_sourceAccountIdHasBeenSet(false),
+    m_copyTimestampHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -107,6 +113,24 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
       m_optionGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupArnNode.GetText());
       m_optionGroupArnHasBeenSet = true;
     }
+    XmlNode sourceOptionGroupNode = resultNode.FirstChild("SourceOptionGroup");
+    if(!sourceOptionGroupNode.IsNull())
+    {
+      m_sourceOptionGroup = Aws::Utils::Xml::DecodeEscapedXmlText(sourceOptionGroupNode.GetText());
+      m_sourceOptionGroupHasBeenSet = true;
+    }
+    XmlNode sourceAccountIdNode = resultNode.FirstChild("SourceAccountId");
+    if(!sourceAccountIdNode.IsNull())
+    {
+      m_sourceAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceAccountIdNode.GetText());
+      m_sourceAccountIdHasBeenSet = true;
+    }
+    XmlNode copyTimestampNode = resultNode.FirstChild("CopyTimestamp");
+    if(!copyTimestampNode.IsNull())
+    {
+      m_copyTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_copyTimestampHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -160,6 +184,21 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".OptionGroupArn=" << StringUtils::URLEncode(m_optionGroupArn.c_str()) << "&";
   }
 
+  if(m_sourceOptionGroupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceOptionGroup=" << StringUtils::URLEncode(m_sourceOptionGroup.c_str()) << "&";
+  }
+
+  if(m_sourceAccountIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceAccountId=" << StringUtils::URLEncode(m_sourceAccountId.c_str()) << "&";
+  }
+
+  if(m_copyTimestampHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CopyTimestamp=" << StringUtils::URLEncode(m_copyTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -201,6 +240,18 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_optionGroupArnHasBeenSet)
   {
       oStream << location << ".OptionGroupArn=" << StringUtils::URLEncode(m_optionGroupArn.c_str()) << "&";
+  }
+  if(m_sourceOptionGroupHasBeenSet)
+  {
+      oStream << location << ".SourceOptionGroup=" << StringUtils::URLEncode(m_sourceOptionGroup.c_str()) << "&";
+  }
+  if(m_sourceAccountIdHasBeenSet)
+  {
+      oStream << location << ".SourceAccountId=" << StringUtils::URLEncode(m_sourceAccountId.c_str()) << "&";
+  }
+  if(m_copyTimestampHasBeenSet)
+  {
+      oStream << location << ".CopyTimestamp=" << StringUtils::URLEncode(m_copyTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

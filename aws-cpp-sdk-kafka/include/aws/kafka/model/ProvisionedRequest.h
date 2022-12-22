@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ProvisionedRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ProvisionedRequest
+  class ProvisionedRequest
   {
   public:
-    ProvisionedRequest();
-    ProvisionedRequest(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ProvisionedRequest();
+    AWS_KAFKA_API ProvisionedRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ProvisionedRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

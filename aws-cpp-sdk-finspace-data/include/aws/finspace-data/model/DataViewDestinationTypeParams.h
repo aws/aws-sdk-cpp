@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DataViewDestinationTypeParams">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DataViewDestinationTypeParams
+  class DataViewDestinationTypeParams
   {
   public:
-    DataViewDestinationTypeParams();
-    DataViewDestinationTypeParams(Aws::Utils::Json::JsonView jsonValue);
-    DataViewDestinationTypeParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DataViewDestinationTypeParams();
+    AWS_FINSPACEDATA_API DataViewDestinationTypeParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DataViewDestinationTypeParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

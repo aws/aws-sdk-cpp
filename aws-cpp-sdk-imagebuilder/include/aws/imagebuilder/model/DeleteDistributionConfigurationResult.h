@@ -24,12 +24,12 @@ namespace imagebuilder
 {
 namespace Model
 {
-  class AWS_IMAGEBUILDER_API DeleteDistributionConfigurationResult
+  class DeleteDistributionConfigurationResult
   {
   public:
-    DeleteDistributionConfigurationResult();
-    DeleteDistributionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API DeleteDistributionConfigurationResult();
+    AWS_IMAGEBUILDER_API DeleteDistributionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API DeleteDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricDimensionGroups">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API MetricDimensionGroups
+  class MetricDimensionGroups
   {
   public:
-    MetricDimensionGroups();
-    MetricDimensionGroups(Aws::Utils::Json::JsonView jsonValue);
-    MetricDimensionGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API MetricDimensionGroups();
+    AWS_PI_API MetricDimensionGroups(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API MetricDimensionGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

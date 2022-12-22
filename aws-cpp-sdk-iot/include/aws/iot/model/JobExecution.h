@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecution
+  class JobExecution
   {
   public:
-    JobExecution();
-    JobExecution(Aws::Utils::Json::JsonView jsonValue);
-    JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecution();
+    AWS_IOT_API JobExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

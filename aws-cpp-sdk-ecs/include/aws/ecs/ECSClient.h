@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecs/ECSServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace ECS
    * management systems. You also don't need to worry about scaling your management
    * infrastructure.</p>
    */
-  class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient
+  class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace ECS
 
         /* End of legacy constructors due deprecation */
         virtual ~ECSClient();
-
 
         /**
          * <p>Creates a new capacity provider. Capacity providers are associated with an
@@ -625,10 +625,13 @@ namespace ECS
         /**
          * <p>Runs a command remotely on a container within a task.</p> <p>If you use a
          * condition key in your IAM policy to refine the conditions for the policy
-         * statement, for example limit the actions to a specific cluster, you recevie an
+         * statement, for example limit the actions to a specific cluster, you receive an
          * <code>AccessDeniedException</code> when there is a mismatch between the
-         * condition key value and the corresponding parameter value.</p><p><h3>See
-         * Also:</h3>   <a
+         * condition key value and the corresponding parameter value.</p> <p>For
+         * information about required permissions and considerations, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+         * Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
          * API Reference</a></p>
          */
@@ -761,6 +764,30 @@ namespace ECS
          * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation lists all of the services that are associated with a Cloud Map
+         * namespace. This list might include services in different clusters. In contrast,
+         * <code>ListServices</code> can only list services in one cluster at a time. If
+         * you need to filter the list of services in a single cluster by various
+         * parameters, use <code>ListServices</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+         * Connect</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServicesByNamespaceOutcome ListServicesByNamespace(const Model::ListServicesByNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListServicesByNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListServicesByNamespaceOutcomeCallable ListServicesByNamespaceCallable(const Model::ListServicesByNamespaceRequest& request) const;
+
+        /**
+         * An Async wrapper for ListServicesByNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListServicesByNamespaceAsync(const Model::ListServicesByNamespaceRequest& request, const ListServicesByNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for an Amazon ECS resource.</p><p><h3>See Also:</h3>   <a
@@ -1268,10 +1295,14 @@ namespace ECS
          * the agent. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating
          * the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p>  <p>The <code>UpdateContainerAgent</code> API
-         * requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
-         * <code>ecs-init</code> service installed and running. For help updating the
-         * Amazon ECS container agent on other operating systems, see <a
+         * Developer Guide</i>.</p>   <p>Agent updates with the
+         * <code>UpdateContainerAgent</code> API operation do not apply to Windows
+         * container instances. We recommend that you launch new container instances to
+         * update the agent version in your Windows clusters.</p>  <p>The
+         * <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or
+         * Amazon Linux AMI with the <code>ecs-init</code> service installed and running.
+         * For help updating the Amazon ECS container agent on other operating systems, see
+         * <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1494,15 +1525,16 @@ namespace ECS
          * extending the protection expiration period of a task by invoking this operation
          * repeatedly.</p> <p>To learn more about Amazon ECS task protection, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task
-         * scale-in protection</a> in the <i>Amazon Elastic Container Service Developer
-         * Guide</i>.</p>  <p>This operation is only supported for tasks belonging to
-         * an Amazon ECS service. Invoking this operation for a standalone task will result
-         * in an <code>TASK_NOT_VALID</code> failure. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html.html">API
+         * scale-in protection</a> in the <i> <i>Amazon Elastic Container Service Developer
+         * Guide</i> </i>.</p>  <p>This operation is only supported for tasks
+         * belonging to an Amazon ECS service. Invoking this operation for a standalone
+         * task will result in an <code>TASK_NOT_VALID</code> failure. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
          * failure reasons</a>.</p>   <p>If you prefer to set task
          * protection from within the container, we recommend using the <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-endpoint.html">Amazon
-         * ECS container agent endpoint</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task
+         * scale-in protection endpoint</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">AWS
          * API Reference</a></p>
          */
@@ -1543,6 +1575,7 @@ namespace ECS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ECSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>;
       void init(const ECSClientConfiguration& clientConfiguration);
 
       ECSClientConfiguration m_clientConfiguration;

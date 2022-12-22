@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetContainerServicesResult
+  class GetContainerServicesResult
   {
   public:
-    GetContainerServicesResult();
-    GetContainerServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetContainerServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetContainerServicesResult();
+    AWS_LIGHTSAIL_API GetContainerServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetContainerServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

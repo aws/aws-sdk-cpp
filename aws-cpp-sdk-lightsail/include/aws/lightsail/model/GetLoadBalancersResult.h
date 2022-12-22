@@ -26,12 +26,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetLoadBalancersResult
+  class GetLoadBalancersResult
   {
   public:
-    GetLoadBalancersResult();
-    GetLoadBalancersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetLoadBalancersResult();
+    AWS_LIGHTSAIL_API GetLoadBalancersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

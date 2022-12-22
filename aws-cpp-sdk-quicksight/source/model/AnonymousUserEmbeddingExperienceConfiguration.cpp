@@ -20,13 +20,15 @@ namespace Model
 
 AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration() : 
     m_dashboardHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false)
+    m_dashboardVisualHasBeenSet(false),
+    m_qSearchBarHasBeenSet(false)
 {
 }
 
 AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
     m_dashboardHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false)
+    m_dashboardVisualHasBeenSet(false),
+    m_qSearchBarHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AnonymousUserEmbeddingExperienceConfiguration& AnonymousUserEmbeddingExperienceC
     m_dashboardVisualHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QSearchBar"))
+  {
+    m_qSearchBar = jsonValue.GetObject("QSearchBar");
+
+    m_qSearchBarHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue AnonymousUserEmbeddingExperienceConfiguration::Jsonize() const
   if(m_dashboardVisualHasBeenSet)
   {
    payload.WithObject("DashboardVisual", m_dashboardVisual.Jsonize());
+
+  }
+
+  if(m_qSearchBarHasBeenSet)
+  {
+   payload.WithObject("QSearchBar", m_qSearchBar.Jsonize());
 
   }
 

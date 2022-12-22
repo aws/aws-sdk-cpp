@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizers">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetAuthorizersResult
+  class GetAuthorizersResult
   {
   public:
-    GetAuthorizersResult();
-    GetAuthorizersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAuthorizersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetAuthorizersResult();
+    AWS_APIGATEWAY_API GetAuthorizersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetAuthorizersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

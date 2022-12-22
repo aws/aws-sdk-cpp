@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DownlinkQueueMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API DownlinkQueueMessage
+  class DownlinkQueueMessage
   {
   public:
-    DownlinkQueueMessage();
-    DownlinkQueueMessage(Aws::Utils::Json::JsonView jsonValue);
-    DownlinkQueueMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API DownlinkQueueMessage();
+    AWS_IOTWIRELESS_API DownlinkQueueMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API DownlinkQueueMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

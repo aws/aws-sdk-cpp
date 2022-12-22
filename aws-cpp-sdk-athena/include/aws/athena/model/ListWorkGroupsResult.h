@@ -26,12 +26,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API ListWorkGroupsResult
+  class ListWorkGroupsResult
   {
   public:
-    ListWorkGroupsResult();
-    ListWorkGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ListWorkGroupsResult();
+    AWS_ATHENA_API ListWorkGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ListWorkGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

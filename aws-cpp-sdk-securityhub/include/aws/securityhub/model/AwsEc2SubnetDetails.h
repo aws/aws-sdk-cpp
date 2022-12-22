@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SubnetDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2SubnetDetails
+  class AwsEc2SubnetDetails
   {
   public:
-    AwsEc2SubnetDetails();
-    AwsEc2SubnetDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2SubnetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2SubnetDetails();
+    AWS_SECURITYHUB_API AwsEc2SubnetDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2SubnetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

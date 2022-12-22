@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CompatibleVersionsMap">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API CompatibleVersionsMap
+  class CompatibleVersionsMap
   {
   public:
-    CompatibleVersionsMap();
-    CompatibleVersionsMap(Aws::Utils::Json::JsonView jsonValue);
-    CompatibleVersionsMap& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API CompatibleVersionsMap();
+    AWS_ELASTICSEARCHSERVICE_API CompatibleVersionsMap(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API CompatibleVersionsMap& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

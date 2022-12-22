@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeRecoveryPointInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo
+  class VolumeRecoveryPointInfo
   {
   public:
-    VolumeRecoveryPointInfo();
-    VolumeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
-    VolumeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo();
+    AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

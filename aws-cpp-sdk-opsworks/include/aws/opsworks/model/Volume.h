@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Volume">AWS API
    * Reference</a></p>
    */
-  class AWS_OPSWORKS_API Volume
+  class Volume
   {
   public:
-    Volume();
-    Volume(Aws::Utils::Json::JsonView jsonValue);
-    Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Volume();
+    AWS_OPSWORKS_API Volume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

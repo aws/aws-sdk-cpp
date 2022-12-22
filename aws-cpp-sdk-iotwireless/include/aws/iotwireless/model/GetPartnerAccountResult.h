@@ -24,12 +24,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetPartnerAccountResult
+  class GetPartnerAccountResult
   {
   public:
-    GetPartnerAccountResult();
-    GetPartnerAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPartnerAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetPartnerAccountResult();
+    AWS_IOTWIRELESS_API GetPartnerAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetPartnerAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

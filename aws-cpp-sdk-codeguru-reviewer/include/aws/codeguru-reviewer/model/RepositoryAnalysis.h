@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAnalysis">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RepositoryAnalysis
+  class RepositoryAnalysis
   {
   public:
-    RepositoryAnalysis();
-    RepositoryAnalysis(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis();
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

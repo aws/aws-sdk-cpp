@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API StopDBInstanceAutomatedBackupsReplicationResult
+  class StopDBInstanceAutomatedBackupsReplicationResult
   {
   public:
-    StopDBInstanceAutomatedBackupsReplicationResult();
-    StopDBInstanceAutomatedBackupsReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StopDBInstanceAutomatedBackupsReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StopDBInstanceAutomatedBackupsReplicationResult();
+    AWS_RDS_API StopDBInstanceAutomatedBackupsReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StopDBInstanceAutomatedBackupsReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

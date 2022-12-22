@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API CreateTrialComponentResult
+  class CreateTrialComponentResult
   {
   public:
-    CreateTrialComponentResult();
-    CreateTrialComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTrialComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreateTrialComponentResult();
+    AWS_SAGEMAKER_API CreateTrialComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreateTrialComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

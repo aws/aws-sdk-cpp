@@ -26,12 +26,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API ListSipRulesResult
+  class ListSipRulesResult
   {
   public:
-    ListSipRulesResult();
-    ListSipRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSipRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListSipRulesResult();
+    AWS_CHIME_API ListSipRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListSipRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

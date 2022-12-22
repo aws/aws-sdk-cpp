@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/AudioInputEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API AudioInputEvent
+  class AudioInputEvent
   {
   public:
-    AudioInputEvent();
-    AudioInputEvent(Aws::Utils::Json::JsonView jsonValue);
-    AudioInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API AudioInputEvent();
+    AWS_LEXRUNTIMEV2_API AudioInputEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API AudioInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

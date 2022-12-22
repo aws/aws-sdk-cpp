@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API AddAssociationResult
+  class AddAssociationResult
   {
   public:
-    AddAssociationResult();
-    AddAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API AddAssociationResult();
+    AWS_SAGEMAKER_API AddAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API AddAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

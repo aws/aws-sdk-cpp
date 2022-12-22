@@ -24,12 +24,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API RollbackApplicationResult
+  class RollbackApplicationResult
   {
   public:
-    RollbackApplicationResult();
-    RollbackApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RollbackApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API RollbackApplicationResult();
+    AWS_KINESISANALYTICSV2_API RollbackApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API RollbackApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

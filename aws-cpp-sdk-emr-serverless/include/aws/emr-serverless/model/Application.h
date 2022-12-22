@@ -13,6 +13,7 @@
 #include <aws/emr-serverless/model/AutoStartConfig.h>
 #include <aws/emr-serverless/model/AutoStopConfig.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
+#include <aws/emr-serverless/model/Architecture.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <utility>
 
@@ -37,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/Application">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API Application
+  class Application
   {
   public:
-    Application();
-    Application(Aws::Utils::Json::JsonView jsonValue);
-    Application& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API Application();
+    AWS_EMRSERVERLESS_API Application(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -671,6 +672,37 @@ namespace Model
      */
     inline Application& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline Application& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline Application& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -717,6 +749,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
+
+    Architecture m_architecture;
+    bool m_architectureHasBeenSet = false;
   };
 
 } // namespace Model

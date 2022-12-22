@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/LoggingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API LoggingOptions
+  class LoggingOptions
   {
   public:
-    LoggingOptions();
-    LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
-    LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API LoggingOptions();
+    AWS_IOTEVENTS_API LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

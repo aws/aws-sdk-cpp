@@ -30,12 +30,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API UpdateChannelResult
+  class UpdateChannelResult
   {
   public:
-    UpdateChannelResult();
-    UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateChannelResult();
+    AWS_MEDIATAILOR_API UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

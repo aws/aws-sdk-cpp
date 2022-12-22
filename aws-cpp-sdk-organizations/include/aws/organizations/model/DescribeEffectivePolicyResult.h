@@ -24,12 +24,12 @@ namespace Organizations
 {
 namespace Model
 {
-  class AWS_ORGANIZATIONS_API DescribeEffectivePolicyResult
+  class DescribeEffectivePolicyResult
   {
   public:
-    DescribeEffectivePolicyResult();
-    DescribeEffectivePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEffectivePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API DescribeEffectivePolicyResult();
+    AWS_ORGANIZATIONS_API DescribeEffectivePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API DescribeEffectivePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

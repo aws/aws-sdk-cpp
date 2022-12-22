@@ -7,6 +7,7 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/braket/BraketServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace Braket
    * href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">Amazon
    * Braket Developer Guide</a> </p> </li> </ul>
    */
-  class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient
+  class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace Braket
 
         /* End of legacy constructors due deprecation */
         virtual ~BraketClient();
-
 
         /**
          * <p>Cancels an Amazon Braket job.</p><p><h3>See Also:</h3>   <a
@@ -313,6 +313,7 @@ namespace Braket
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>;
       void init(const BraketClientConfiguration& clientConfiguration);
 
       BraketClientConfiguration m_clientConfiguration;

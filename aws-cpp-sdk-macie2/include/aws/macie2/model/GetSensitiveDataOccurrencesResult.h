@@ -28,12 +28,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetSensitiveDataOccurrencesResult
+  class GetSensitiveDataOccurrencesResult
   {
   public:
-    GetSensitiveDataOccurrencesResult();
-    GetSensitiveDataOccurrencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSensitiveDataOccurrencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetSensitiveDataOccurrencesResult();
+    AWS_MACIE2_API GetSensitiveDataOccurrencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetSensitiveDataOccurrencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

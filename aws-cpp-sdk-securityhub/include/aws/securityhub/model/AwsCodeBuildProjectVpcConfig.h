@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectVpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectVpcConfig
+  class AwsCodeBuildProjectVpcConfig
   {
   public:
-    AwsCodeBuildProjectVpcConfig();
-    AwsCodeBuildProjectVpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectVpcConfig();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectVpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

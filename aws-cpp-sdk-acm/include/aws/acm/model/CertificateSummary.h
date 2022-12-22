@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API CertificateSummary
+  class CertificateSummary
   {
   public:
-    CertificateSummary();
-    CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
-    CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API CertificateSummary();
+    AWS_ACM_API CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API GetMatchesResult
+  class GetMatchesResult
   {
   public:
-    GetMatchesResult();
-    GetMatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetMatchesResult();
+    AWS_CUSTOMERPROFILES_API GetMatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetMatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

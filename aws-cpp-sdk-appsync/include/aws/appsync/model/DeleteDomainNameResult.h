@@ -22,12 +22,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API DeleteDomainNameResult
+  class DeleteDomainNameResult
   {
   public:
-    DeleteDomainNameResult();
-    DeleteDomainNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDomainNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API DeleteDomainNameResult();
+    AWS_APPSYNC_API DeleteDomainNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API DeleteDomainNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

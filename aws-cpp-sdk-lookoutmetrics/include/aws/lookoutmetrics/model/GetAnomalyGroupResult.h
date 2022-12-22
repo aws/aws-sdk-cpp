@@ -24,12 +24,12 @@ namespace LookoutMetrics
 {
 namespace Model
 {
-  class AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult
+  class GetAnomalyGroupResult
   {
   public:
-    GetAnomalyGroupResult();
-    GetAnomalyGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAnomalyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult();
+    AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

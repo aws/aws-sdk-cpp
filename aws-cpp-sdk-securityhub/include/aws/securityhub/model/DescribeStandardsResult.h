@@ -26,12 +26,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API DescribeStandardsResult
+  class DescribeStandardsResult
   {
   public:
-    DescribeStandardsResult();
-    DescribeStandardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStandardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API DescribeStandardsResult();
+    AWS_SECURITYHUB_API DescribeStandardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API DescribeStandardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

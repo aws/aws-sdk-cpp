@@ -26,12 +26,12 @@ namespace IoTFleetWise
 {
 namespace Model
 {
-  class AWS_IOTFLEETWISE_API ListSignalCatalogsResult
+  class ListSignalCatalogsResult
   {
   public:
-    ListSignalCatalogsResult();
-    ListSignalCatalogsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSignalCatalogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListSignalCatalogsResult();
+    AWS_IOTFLEETWISE_API ListSignalCatalogsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListSignalCatalogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

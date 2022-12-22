@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PendingTaskCount">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API CountPendingActivityTasksResult
+  class CountPendingActivityTasksResult
   {
   public:
-    CountPendingActivityTasksResult();
-    CountPendingActivityTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CountPendingActivityTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API CountPendingActivityTasksResult();
+    AWS_SWF_API CountPendingActivityTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API CountPendingActivityTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

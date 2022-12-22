@@ -24,12 +24,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API RejectAttachmentResult
+  class RejectAttachmentResult
   {
   public:
-    RejectAttachmentResult();
-    RejectAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API RejectAttachmentResult();
+    AWS_NETWORKMANAGER_API RejectAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API RejectAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/InstanceAccessControlAttributeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration
+  class InstanceAccessControlAttributeConfiguration
   {
   public:
-    InstanceAccessControlAttributeConfiguration();
-    InstanceAccessControlAttributeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAccessControlAttributeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration();
+    AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

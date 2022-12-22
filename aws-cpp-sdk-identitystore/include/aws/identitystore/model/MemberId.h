@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/MemberId">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API MemberId
+  class MemberId
   {
   public:
-    MemberId();
-    MemberId(Aws::Utils::Json::JsonView jsonValue);
-    MemberId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API MemberId();
+    AWS_IDENTITYSTORE_API MemberId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API MemberId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

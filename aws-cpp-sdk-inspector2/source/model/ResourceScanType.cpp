@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int ECR_HASH = HashingUtils::HashString("ECR");
+        static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
 
 
         ResourceScanType GetResourceScanTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ECR_HASH)
           {
             return ResourceScanType::ECR;
+          }
+          else if (hashCode == LAMBDA_HASH)
+          {
+            return ResourceScanType::LAMBDA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "EC2";
           case ResourceScanType::ECR:
             return "ECR";
+          case ResourceScanType::LAMBDA:
+            return "LAMBDA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

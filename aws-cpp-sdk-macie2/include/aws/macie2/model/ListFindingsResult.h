@@ -25,59 +25,59 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API ListFindingsResult
+  class ListFindingsResult
   {
   public:
-    ListFindingsResult();
-    ListFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListFindingsResult();
+    AWS_MACIE2_API ListFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIds = value; }
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIds = std::move(value); }
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline ListFindingsResult& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline ListFindingsResult& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline ListFindingsResult& AddFindingIds(const Aws::String& value) { m_findingIds.push_back(value); return *this; }
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline ListFindingsResult& AddFindingIds(Aws::String&& value) { m_findingIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings, where each string is the unique identifier for a finding
-     * that meets the filter criteria specified in the request.</p>
+     * that matches the filter criteria specified in the request.</p>
      */
     inline ListFindingsResult& AddFindingIds(const char* value) { m_findingIds.push_back(value); return *this; }
 

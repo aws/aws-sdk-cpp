@@ -27,12 +27,12 @@ namespace LexModelBuildingService
 {
 namespace Model
 {
-  class AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentResult
+  class GetBuiltinIntentResult
   {
   public:
-    GetBuiltinIntentResult();
-    GetBuiltinIntentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBuiltinIntentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

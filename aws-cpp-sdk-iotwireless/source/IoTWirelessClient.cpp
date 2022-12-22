@@ -66,10 +66,10 @@
 #include <aws/iotwireless/model/GetMulticastGroupSessionRequest.h>
 #include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
-#include <aws/iotwireless/model/GetPositionRequest.h>
-#include <aws/iotwireless/model/GetPositionConfigurationRequest.h>
+#include <aws/iotwireless/model/GetPositionEstimateRequest.h>
 #include <aws/iotwireless/model/GetResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
+#include <aws/iotwireless/model/GetResourcePositionRequest.h>
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
 #include <aws/iotwireless/model/GetServiceProfileRequest.h>
 #include <aws/iotwireless/model/GetWirelessDeviceRequest.h>
@@ -88,14 +88,12 @@
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskRequest.h>
 #include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
-#include <aws/iotwireless/model/ListPositionConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
 #include <aws/iotwireless/model/ListTagsForResourceRequest.h>
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
-#include <aws/iotwireless/model/PutPositionConfigurationRequest.h>
 #include <aws/iotwireless/model/PutResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
 #include <aws/iotwireless/model/ResetResourceLogLevelRequest.h>
@@ -115,8 +113,8 @@
 #include <aws/iotwireless/model/UpdateMulticastGroupRequest.h>
 #include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
-#include <aws/iotwireless/model/UpdatePositionRequest.h>
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationRequest.h>
+#include <aws/iotwireless/model/UpdateResourcePositionRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
 
@@ -135,10 +133,10 @@ const char* IoTWirelessClient::ALLOCATION_TAG = "IoTWirelessClient";
 IoTWirelessClient::IoTWirelessClient(const IoTWireless::IoTWirelessClientConfiguration& clientConfiguration,
                                      std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -151,10 +149,10 @@ IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
                                      std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider,
                                      const IoTWireless::IoTWirelessClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -167,10 +165,10 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
                                      std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider,
                                      const IoTWireless::IoTWirelessClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -182,10 +180,10 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
     /* Legacy constructors due deprecation */
   IoTWirelessClient::IoTWirelessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -197,10 +195,10 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
 IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
                                      const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -212,10 +210,10 @@ IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
 IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                      const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -1620,75 +1618,28 @@ void IoTWirelessClient::GetPartnerAccountAsync(const GetPartnerAccountRequest& r
     } );
 }
 
-GetPositionOutcome IoTWirelessClient::GetPosition(const GetPositionRequest& request) const
+GetPositionEstimateOutcome IoTWirelessClient::GetPositionEstimate(const GetPositionEstimateRequest& request) const
 {
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetPosition", "Required field: ResourceIdentifier, is not set");
-    return GetPositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
-  }
-  if (!request.ResourceTypeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetPosition", "Required field: ResourceType, is not set");
-    return GetPositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
-  }
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPositionEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/positions/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
-  return GetPositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPositionEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/position-estimate");
+  return GetPositionEstimateOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
-GetPositionOutcomeCallable IoTWirelessClient::GetPositionCallable(const GetPositionRequest& request) const
+GetPositionEstimateOutcomeCallable IoTWirelessClient::GetPositionEstimateCallable(const GetPositionEstimateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPosition(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetPositionEstimateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPositionEstimate(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void IoTWirelessClient::GetPositionAsync(const GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IoTWirelessClient::GetPositionEstimateAsync(const GetPositionEstimateRequest& request, const GetPositionEstimateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, GetPosition(request), context);
-    } );
-}
-
-GetPositionConfigurationOutcome IoTWirelessClient::GetPositionConfiguration(const GetPositionConfigurationRequest& request) const
-{
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPositionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetPositionConfiguration", "Required field: ResourceIdentifier, is not set");
-    return GetPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
-  }
-  if (!request.ResourceTypeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetPositionConfiguration", "Required field: ResourceType, is not set");
-    return GetPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
-  }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPositionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/position-configurations/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
-  return GetPositionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-GetPositionConfigurationOutcomeCallable IoTWirelessClient::GetPositionConfigurationCallable(const GetPositionConfigurationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetPositionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPositionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTWirelessClient::GetPositionConfigurationAsync(const GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPositionConfiguration(request), context);
+      handler(this, request, GetPositionEstimate(request), context);
     } );
 }
 
@@ -1761,6 +1712,42 @@ void IoTWirelessClient::GetResourceLogLevelAsync(const GetResourceLogLevelReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetResourceLogLevel(request), context);
+    } );
+}
+
+GetResourcePositionOutcome IoTWirelessClient::GetResourcePosition(const GetResourcePositionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourcePosition", "Required field: ResourceIdentifier, is not set");
+    return GetResourcePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourcePosition", "Required field: ResourceType, is not set");
+    return GetResourcePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-positions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
+  return GetResourcePositionOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetResourcePositionOutcomeCallable IoTWirelessClient::GetResourcePositionCallable(const GetResourcePositionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcePositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePosition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetResourcePositionAsync(const GetResourcePositionRequest& request, const GetResourcePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourcePosition(request), context);
     } );
 }
 
@@ -2295,31 +2282,6 @@ void IoTWirelessClient::ListPartnerAccountsAsync(const ListPartnerAccountsReques
     } );
 }
 
-ListPositionConfigurationsOutcome IoTWirelessClient::ListPositionConfigurations(const ListPositionConfigurationsRequest& request) const
-{
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPositionConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPositionConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/position-configurations");
-  return ListPositionConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-ListPositionConfigurationsOutcomeCallable IoTWirelessClient::ListPositionConfigurationsCallable(const ListPositionConfigurationsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListPositionConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPositionConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTWirelessClient::ListPositionConfigurationsAsync(const ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPositionConfigurations(request), context);
-    } );
-}
-
 ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueuedMessagesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueuedMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2479,42 +2441,6 @@ void IoTWirelessClient::ListWirelessGatewaysAsync(const ListWirelessGatewaysRequ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListWirelessGateways(request), context);
-    } );
-}
-
-PutPositionConfigurationOutcome IoTWirelessClient::PutPositionConfiguration(const PutPositionConfigurationRequest& request) const
-{
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPositionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutPositionConfiguration", "Required field: ResourceIdentifier, is not set");
-    return PutPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
-  }
-  if (!request.ResourceTypeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutPositionConfiguration", "Required field: ResourceType, is not set");
-    return PutPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
-  }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutPositionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/position-configurations/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
-  return PutPositionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-}
-
-PutPositionConfigurationOutcomeCallable IoTWirelessClient::PutPositionConfigurationCallable(const PutPositionConfigurationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< PutPositionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPositionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTWirelessClient::PutPositionConfigurationAsync(const PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutPositionConfiguration(request), context);
     } );
 }
 
@@ -3113,42 +3039,6 @@ void IoTWirelessClient::UpdatePartnerAccountAsync(const UpdatePartnerAccountRequ
     } );
 }
 
-UpdatePositionOutcome IoTWirelessClient::UpdatePosition(const UpdatePositionRequest& request) const
-{
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdatePosition", "Required field: ResourceIdentifier, is not set");
-    return UpdatePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
-  }
-  if (!request.ResourceTypeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdatePosition", "Required field: ResourceType, is not set");
-    return UpdatePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
-  }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/positions/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
-  return UpdatePositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
-}
-
-UpdatePositionOutcomeCallable IoTWirelessClient::UpdatePositionCallable(const UpdatePositionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePosition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTWirelessClient::UpdatePositionAsync(const UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePosition(request), context);
-    } );
-}
-
 UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventConfiguration(const UpdateResourceEventConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceEventConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3182,6 +3072,42 @@ void IoTWirelessClient::UpdateResourceEventConfigurationAsync(const UpdateResour
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateResourceEventConfiguration(request), context);
+    } );
+}
+
+UpdateResourcePositionOutcome IoTWirelessClient::UpdateResourcePosition(const UpdateResourcePositionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourcePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourcePosition", "Required field: ResourceIdentifier, is not set");
+    return UpdateResourcePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourcePosition", "Required field: ResourceType, is not set");
+    return UpdateResourcePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResourcePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-positions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
+  return UpdateResourcePositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResourcePositionOutcomeCallable IoTWirelessClient::UpdateResourcePositionCallable(const UpdateResourcePositionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourcePositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourcePosition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateResourcePositionAsync(const UpdateResourcePositionRequest& request, const UpdateResourcePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResourcePosition(request), context);
     } );
 }
 

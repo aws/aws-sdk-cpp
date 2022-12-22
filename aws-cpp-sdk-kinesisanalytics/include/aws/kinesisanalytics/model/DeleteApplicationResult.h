@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API DeleteApplicationResult
+  class DeleteApplicationResult
   {
   public:
-    DeleteApplicationResult();
-    DeleteApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API DeleteApplicationResult();
+    AWS_KINESISANALYTICS_API DeleteApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API DeleteApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

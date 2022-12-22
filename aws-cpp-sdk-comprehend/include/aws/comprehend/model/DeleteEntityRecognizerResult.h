@@ -22,12 +22,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API DeleteEntityRecognizerResult
+  class DeleteEntityRecognizerResult
   {
   public:
-    DeleteEntityRecognizerResult();
-    DeleteEntityRecognizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEntityRecognizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DeleteEntityRecognizerResult();
+    AWS_COMPREHEND_API DeleteEntityRecognizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DeleteEntityRecognizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

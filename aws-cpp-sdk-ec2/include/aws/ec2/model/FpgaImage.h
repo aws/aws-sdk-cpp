@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FpgaImage">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API FpgaImage
+  class FpgaImage
   {
   public:
-    FpgaImage();
-    FpgaImage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FpgaImage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FpgaImage();
+    AWS_EC2_API FpgaImage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FpgaImage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -595,6 +595,34 @@ namespace Model
      */
     inline FpgaImage& WithDataRetentionSupport(bool value) { SetDataRetentionSupport(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
+
+    
+    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+
+    
+    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
+
+    
+    inline FpgaImage& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
+
+    
+    inline FpgaImage& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
+
+    
+    inline FpgaImage& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    
+    inline FpgaImage& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+
+    
+    inline FpgaImage& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_fpgaImageId;
@@ -641,6 +669,9 @@ namespace Model
 
     bool m_dataRetentionSupport;
     bool m_dataRetentionSupportHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API GetMembersResult
+  class GetMembersResult
   {
   public:
-    GetMembersResult();
-    GetMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API GetMembersResult();
+    AWS_DETECTIVE_API GetMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API GetMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

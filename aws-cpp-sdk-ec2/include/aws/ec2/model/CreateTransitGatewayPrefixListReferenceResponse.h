@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse
+  class CreateTransitGatewayPrefixListReferenceResponse
   {
   public:
-    CreateTransitGatewayPrefixListReferenceResponse();
-    CreateTransitGatewayPrefixListReferenceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTransitGatewayPrefixListReferenceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse();
+    AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API ListAliasesResult
+  class ListAliasesResult
   {
   public:
-    ListAliasesResult();
-    ListAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListAliasesResult();
+    AWS_WORKMAIL_API ListAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

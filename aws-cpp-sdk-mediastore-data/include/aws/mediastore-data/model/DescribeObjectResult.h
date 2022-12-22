@@ -25,12 +25,12 @@ namespace MediaStoreData
 {
 namespace Model
 {
-  class AWS_MEDIASTOREDATA_API DescribeObjectResult
+  class DescribeObjectResult
   {
   public:
-    DescribeObjectResult();
-    DescribeObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTOREDATA_API DescribeObjectResult();
+    AWS_MEDIASTOREDATA_API DescribeObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTOREDATA_API DescribeObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MsSmoothAdditionalManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MsSmoothAdditionalManifest
+  class MsSmoothAdditionalManifest
   {
   public:
-    MsSmoothAdditionalManifest();
-    MsSmoothAdditionalManifest(Aws::Utils::Json::JsonView jsonValue);
-    MsSmoothAdditionalManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MsSmoothAdditionalManifest();
+    AWS_MEDIACONVERT_API MsSmoothAdditionalManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MsSmoothAdditionalManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

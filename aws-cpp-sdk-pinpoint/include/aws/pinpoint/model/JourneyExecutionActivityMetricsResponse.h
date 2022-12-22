@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyExecutionActivityMetricsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse
+  class JourneyExecutionActivityMetricsResponse
   {
   public:
-    JourneyExecutionActivityMetricsResponse();
-    JourneyExecutionActivityMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
-    JourneyExecutionActivityMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse();
+    AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

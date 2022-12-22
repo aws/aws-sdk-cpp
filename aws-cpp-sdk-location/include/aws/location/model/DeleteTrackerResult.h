@@ -22,12 +22,12 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API DeleteTrackerResult
+  class DeleteTrackerResult
   {
   public:
-    DeleteTrackerResult();
-    DeleteTrackerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTrackerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API DeleteTrackerResult();
+    AWS_LOCATIONSERVICE_API DeleteTrackerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API DeleteTrackerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

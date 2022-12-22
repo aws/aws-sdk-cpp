@@ -27,12 +27,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API ListTypeVersionsResult
+  class ListTypeVersionsResult
   {
   public:
-    ListTypeVersionsResult();
-    ListTypeVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTypeVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ListTypeVersionsResult();
+    AWS_CLOUDFORMATION_API ListTypeVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ListTypeVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

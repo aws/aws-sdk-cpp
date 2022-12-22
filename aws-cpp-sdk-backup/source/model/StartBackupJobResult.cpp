@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartBackupJobResult::StartBackupJobResult()
+StartBackupJobResult::StartBackupJobResult() : 
+    m_isParent(false)
 {
 }
 
-StartBackupJobResult::StartBackupJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+StartBackupJobResult::StartBackupJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_isParent(false)
 {
   *this = result;
 }
@@ -43,6 +45,12 @@ StartBackupJobResult& StartBackupJobResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
+
+  }
+
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
 
   }
 

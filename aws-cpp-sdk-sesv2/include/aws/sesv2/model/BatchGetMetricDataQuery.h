@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricDataQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API BatchGetMetricDataQuery
+  class BatchGetMetricDataQuery
   {
   public:
-    BatchGetMetricDataQuery();
-    BatchGetMetricDataQuery(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetMetricDataQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API BatchGetMetricDataQuery();
+    AWS_SESV2_API BatchGetMetricDataQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API BatchGetMetricDataQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

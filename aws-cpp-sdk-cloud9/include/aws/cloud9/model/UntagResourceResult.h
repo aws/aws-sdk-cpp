@@ -22,12 +22,12 @@ namespace Cloud9
 {
 namespace Model
 {
-  class AWS_CLOUD9_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API UntagResourceResult();
+    AWS_CLOUD9_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

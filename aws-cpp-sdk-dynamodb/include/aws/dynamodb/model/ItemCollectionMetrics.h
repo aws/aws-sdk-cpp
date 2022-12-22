@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ItemCollectionMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ItemCollectionMetrics
+  class ItemCollectionMetrics
   {
   public:
-    ItemCollectionMetrics();
-    ItemCollectionMetrics(Aws::Utils::Json::JsonView jsonValue);
-    ItemCollectionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ItemCollectionMetrics();
+    AWS_DYNAMODB_API ItemCollectionMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ItemCollectionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

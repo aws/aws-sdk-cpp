@@ -7,6 +7,7 @@
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace IoTFleetWise
    * Amazon Web Services IoT FleetWise?</a> in the <i>Amazon Web Services IoT
    * FleetWise Developer Guide</i>.</p>
    */
-  class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace IoTFleetWise
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTFleetWiseClient();
-
 
         /**
          * <p> Adds, or associates, a vehicle with a fleet. </p><p><h3>See Also:</h3>   <a
@@ -1063,6 +1063,7 @@ namespace IoTFleetWise
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTFleetWiseEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>;
       void init(const IoTFleetWiseClientConfiguration& clientConfiguration);
 
       IoTFleetWiseClientConfiguration m_clientConfiguration;

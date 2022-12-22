@@ -26,12 +26,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API BatchGetGraphMemberDatasourcesResult
+  class BatchGetGraphMemberDatasourcesResult
   {
   public:
-    BatchGetGraphMemberDatasourcesResult();
-    BatchGetGraphMemberDatasourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetGraphMemberDatasourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API BatchGetGraphMemberDatasourcesResult();
+    AWS_DETECTIVE_API BatchGetGraphMemberDatasourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API BatchGetGraphMemberDatasourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

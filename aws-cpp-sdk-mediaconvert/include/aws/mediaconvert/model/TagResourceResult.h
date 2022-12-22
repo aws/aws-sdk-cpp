@@ -22,12 +22,12 @@ namespace MediaConvert
 {
 namespace Model
 {
-  class AWS_MEDIACONVERT_API TagResourceResult
+  class TagResourceResult
   {
   public:
-    TagResourceResult();
-    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API TagResourceResult();
+    AWS_MEDIACONVERT_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

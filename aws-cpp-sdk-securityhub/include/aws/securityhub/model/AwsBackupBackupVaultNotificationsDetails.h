@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsBackupBackupVaultNotificationsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsBackupBackupVaultNotificationsDetails
+  class AwsBackupBackupVaultNotificationsDetails
   {
   public:
-    AwsBackupBackupVaultNotificationsDetails();
-    AwsBackupBackupVaultNotificationsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsBackupBackupVaultNotificationsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsBackupBackupVaultNotificationsDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupVaultNotificationsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsBackupBackupVaultNotificationsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

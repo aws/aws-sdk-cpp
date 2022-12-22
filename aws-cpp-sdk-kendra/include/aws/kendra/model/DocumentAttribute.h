@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentAttribute
+  class DocumentAttribute
   {
   public:
-    DocumentAttribute();
-    DocumentAttribute(Aws::Utils::Json::JsonView jsonValue);
-    DocumentAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentAttribute();
+    AWS_KENDRA_API DocumentAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

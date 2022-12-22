@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CacheSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API CacheSettings
+  class CacheSettings
   {
   public:
-    CacheSettings();
-    CacheSettings(Aws::Utils::Json::JsonView jsonValue);
-    CacheSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API CacheSettings();
+    AWS_LIGHTSAIL_API CacheSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API CacheSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

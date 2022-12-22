@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ServiceFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceFilter
+  class ServiceFilter
   {
   public:
-    ServiceFilter();
-    ServiceFilter(Aws::Utils::Json::JsonView jsonValue);
-    ServiceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API ServiceFilter();
+    AWS_SERVICEDISCOVERY_API ServiceFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API ServiceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

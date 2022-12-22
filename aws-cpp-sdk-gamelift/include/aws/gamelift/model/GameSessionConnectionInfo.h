@@ -27,21 +27,20 @@ namespace Model
 
   /**
    * <p>Connection information for a new game session that is created in response to
-   * a <a>StartMatchmaking</a> request. Once a match is made, the FlexMatch engine
-   * creates a new game session for it. This information, including the game session
-   * endpoint and player sessions for each player in the original matchmaking
-   * request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by
-   * calling <a>DescribeMatchmaking</a>.</p><p><h3>See Also:</h3>   <a
+   * a start matchmaking request. Once a match is made, the FlexMatch engine creates
+   * a new game session for it. This information, including the game session endpoint
+   * and player sessions for each player in the original matchmaking request, is
+   * added to the matchmaking ticket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionConnectionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameSessionConnectionInfo
+  class GameSessionConnectionInfo
   {
   public:
-    GameSessionConnectionInfo();
-    GameSessionConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
-    GameSessionConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameSessionConnectionInfo();
+    AWS_GAMELIFT_API GameSessionConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameSessionConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

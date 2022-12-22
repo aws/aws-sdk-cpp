@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/ivschat/IvschatRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivschat/model/MessageReviewHandler.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -20,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVSCHAT_API CreateRoomRequest : public IvschatRequest
+  class CreateRoomRequest : public IvschatRequest
   {
   public:
-    CreateRoomRequest();
+    AWS_IVSCHAT_API CreateRoomRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +32,53 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRoom"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVSCHAT_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline bool LoggingConfigurationIdentifiersHasBeenSet() const { return m_loggingConfigurationIdentifiersHasBeenSet; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = value; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = std::move(value); }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline CreateRoomRequest& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline CreateRoomRequest& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline CreateRoomRequest& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline CreateRoomRequest& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline CreateRoomRequest& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
 
 
     /**
@@ -291,6 +338,9 @@ namespace Model
     inline CreateRoomRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
+    bool m_loggingConfigurationIdentifiersHasBeenSet = false;
 
     int m_maximumMessageLength;
     bool m_maximumMessageLengthHasBeenSet = false;

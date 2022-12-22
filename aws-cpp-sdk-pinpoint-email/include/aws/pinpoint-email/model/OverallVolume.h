@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/OverallVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API OverallVolume
+  class OverallVolume
   {
   public:
-    OverallVolume();
-    OverallVolume(Aws::Utils::Json::JsonView jsonValue);
-    OverallVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API OverallVolume();
+    AWS_PINPOINTEMAIL_API OverallVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API OverallVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

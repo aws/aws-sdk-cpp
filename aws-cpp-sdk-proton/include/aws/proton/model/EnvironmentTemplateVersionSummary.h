@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/EnvironmentTemplateVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API EnvironmentTemplateVersionSummary
+  class EnvironmentTemplateVersionSummary
   {
   public:
-    EnvironmentTemplateVersionSummary();
-    EnvironmentTemplateVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentTemplateVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API EnvironmentTemplateVersionSummary();
+    AWS_PROTON_API EnvironmentTemplateVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API EnvironmentTemplateVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

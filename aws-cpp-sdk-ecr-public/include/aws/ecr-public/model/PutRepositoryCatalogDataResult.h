@@ -24,12 +24,12 @@ namespace ECRPublic
 {
 namespace Model
 {
-  class AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult
+  class PutRepositoryCatalogDataResult
   {
   public:
-    PutRepositoryCatalogDataResult();
-    PutRepositoryCatalogDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRepositoryCatalogDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult();
+    AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

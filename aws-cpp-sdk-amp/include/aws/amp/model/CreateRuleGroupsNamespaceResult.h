@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespaceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API CreateRuleGroupsNamespaceResult
+  class CreateRuleGroupsNamespaceResult
   {
   public:
-    CreateRuleGroupsNamespaceResult();
-    CreateRuleGroupsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRuleGroupsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API CreateRuleGroupsNamespaceResult();
+    AWS_PROMETHEUSSERVICE_API CreateRuleGroupsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API CreateRuleGroupsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

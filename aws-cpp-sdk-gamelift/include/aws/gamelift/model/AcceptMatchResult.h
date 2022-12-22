@@ -22,12 +22,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API AcceptMatchResult
+  class AcceptMatchResult
   {
   public:
-    AcceptMatchResult();
-    AcceptMatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptMatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API AcceptMatchResult();
+    AWS_GAMELIFT_API AcceptMatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API AcceptMatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

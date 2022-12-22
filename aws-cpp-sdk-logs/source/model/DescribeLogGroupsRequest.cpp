@@ -13,10 +13,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeLogGroupsRequest::DescribeLogGroupsRequest() : 
+    m_accountIdentifiersHasBeenSet(false),
     m_logGroupNamePrefixHasBeenSet(false),
+    m_logGroupNamePatternHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_includeLinkedAccounts(false),
+    m_includeLinkedAccountsHasBeenSet(false)
 {
 }
 
@@ -24,9 +28,26 @@ Aws::String DescribeLogGroupsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_accountIdentifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> accountIdentifiersJsonList(m_accountIdentifiers.size());
+   for(unsigned accountIdentifiersIndex = 0; accountIdentifiersIndex < accountIdentifiersJsonList.GetLength(); ++accountIdentifiersIndex)
+   {
+     accountIdentifiersJsonList[accountIdentifiersIndex].AsString(m_accountIdentifiers[accountIdentifiersIndex]);
+   }
+   payload.WithArray("accountIdentifiers", std::move(accountIdentifiersJsonList));
+
+  }
+
   if(m_logGroupNamePrefixHasBeenSet)
   {
    payload.WithString("logGroupNamePrefix", m_logGroupNamePrefix);
+
+  }
+
+  if(m_logGroupNamePatternHasBeenSet)
+  {
+   payload.WithString("logGroupNamePattern", m_logGroupNamePattern);
 
   }
 
@@ -39,6 +60,12 @@ Aws::String DescribeLogGroupsRequest::SerializePayload() const
   if(m_limitHasBeenSet)
   {
    payload.WithInteger("limit", m_limit);
+
+  }
+
+  if(m_includeLinkedAccountsHasBeenSet)
+  {
+   payload.WithBool("includeLinkedAccounts", m_includeLinkedAccounts);
 
   }
 

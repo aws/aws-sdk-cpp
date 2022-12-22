@@ -25,12 +25,12 @@ namespace IoTFleetWise
 {
 namespace Model
 {
-  class AWS_IOTFLEETWISE_API ListFleetsForVehicleResult
+  class ListFleetsForVehicleResult
   {
   public:
-    ListFleetsForVehicleResult();
-    ListFleetsForVehicleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFleetsForVehicleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListFleetsForVehicleResult();
+    AWS_IOTFLEETWISE_API ListFleetsForVehicleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListFleetsForVehicleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

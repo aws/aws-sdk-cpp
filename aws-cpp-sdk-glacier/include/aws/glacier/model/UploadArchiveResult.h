@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ArchiveCreationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API UploadArchiveResult
+  class UploadArchiveResult
   {
   public:
-    UploadArchiveResult();
-    UploadArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UploadArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API UploadArchiveResult();
+    AWS_GLACIER_API UploadArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API UploadArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

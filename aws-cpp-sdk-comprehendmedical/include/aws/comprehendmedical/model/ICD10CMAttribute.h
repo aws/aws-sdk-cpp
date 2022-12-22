@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ICD10CMAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API ICD10CMAttribute
+  class ICD10CMAttribute
   {
   public:
-    ICD10CMAttribute();
-    ICD10CMAttribute(Aws::Utils::Json::JsonView jsonValue);
-    ICD10CMAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API ICD10CMAttribute();
+    AWS_COMPREHENDMEDICAL_API ICD10CMAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API ICD10CMAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

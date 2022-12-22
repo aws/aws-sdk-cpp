@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipelineResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API CreatePipelineResult
+  class CreatePipelineResult
   {
   public:
-    CreatePipelineResult();
-    CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API CreatePipelineResult();
+    AWS_ELASTICTRANSCODER_API CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

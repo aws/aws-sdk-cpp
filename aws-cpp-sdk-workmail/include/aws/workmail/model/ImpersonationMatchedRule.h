@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ImpersonationMatchedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API ImpersonationMatchedRule
+  class ImpersonationMatchedRule
   {
   public:
-    ImpersonationMatchedRule();
-    ImpersonationMatchedRule(Aws::Utils::Json::JsonView jsonValue);
-    ImpersonationMatchedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API ImpersonationMatchedRule();
+    AWS_WORKMAIL_API ImpersonationMatchedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API ImpersonationMatchedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

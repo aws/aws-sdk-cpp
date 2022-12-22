@@ -24,12 +24,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API ResetDeploymentsResult
+  class ResetDeploymentsResult
   {
   public:
-    ResetDeploymentsResult();
-    ResetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API ResetDeploymentsResult();
+    AWS_GREENGRASS_API ResetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API ResetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

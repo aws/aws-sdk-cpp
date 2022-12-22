@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisableAddressTransferResponse
+  class DisableAddressTransferResponse
   {
   public:
-    DisableAddressTransferResponse();
-    DisableAddressTransferResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableAddressTransferResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableAddressTransferResponse();
+    AWS_EC2_API DisableAddressTransferResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableAddressTransferResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

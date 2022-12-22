@@ -25,9 +25,12 @@
 #include <aws/textract/model/GetDocumentAnalysisResult.h>
 #include <aws/textract/model/GetDocumentTextDetectionResult.h>
 #include <aws/textract/model/GetExpenseAnalysisResult.h>
+#include <aws/textract/model/GetLendingAnalysisResult.h>
+#include <aws/textract/model/GetLendingAnalysisSummaryResult.h>
 #include <aws/textract/model/StartDocumentAnalysisResult.h>
 #include <aws/textract/model/StartDocumentTextDetectionResult.h>
 #include <aws/textract/model/StartExpenseAnalysisResult.h>
+#include <aws/textract/model/StartLendingAnalysisResult.h>
 /* End of service model headers required in TextractClient header */
 
 namespace Aws
@@ -75,9 +78,12 @@ namespace Aws
       class GetDocumentAnalysisRequest;
       class GetDocumentTextDetectionRequest;
       class GetExpenseAnalysisRequest;
+      class GetLendingAnalysisRequest;
+      class GetLendingAnalysisSummaryRequest;
       class StartDocumentAnalysisRequest;
       class StartDocumentTextDetectionRequest;
       class StartExpenseAnalysisRequest;
+      class StartLendingAnalysisRequest;
       /* End of service model forward declarations required in TextractClient header */
 
       /* Service model Outcome class definitions */
@@ -88,9 +94,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
       typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
       typedef Aws::Utils::Outcome<GetExpenseAnalysisResult, TextractError> GetExpenseAnalysisOutcome;
+      typedef Aws::Utils::Outcome<GetLendingAnalysisResult, TextractError> GetLendingAnalysisOutcome;
+      typedef Aws::Utils::Outcome<GetLendingAnalysisSummaryResult, TextractError> GetLendingAnalysisSummaryOutcome;
       typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, TextractError> StartDocumentAnalysisOutcome;
       typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, TextractError> StartDocumentTextDetectionOutcome;
       typedef Aws::Utils::Outcome<StartExpenseAnalysisResult, TextractError> StartExpenseAnalysisOutcome;
+      typedef Aws::Utils::Outcome<StartLendingAnalysisResult, TextractError> StartLendingAnalysisOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -101,9 +110,12 @@ namespace Aws
       typedef std::future<GetDocumentAnalysisOutcome> GetDocumentAnalysisOutcomeCallable;
       typedef std::future<GetDocumentTextDetectionOutcome> GetDocumentTextDetectionOutcomeCallable;
       typedef std::future<GetExpenseAnalysisOutcome> GetExpenseAnalysisOutcomeCallable;
+      typedef std::future<GetLendingAnalysisOutcome> GetLendingAnalysisOutcomeCallable;
+      typedef std::future<GetLendingAnalysisSummaryOutcome> GetLendingAnalysisSummaryOutcomeCallable;
       typedef std::future<StartDocumentAnalysisOutcome> StartDocumentAnalysisOutcomeCallable;
       typedef std::future<StartDocumentTextDetectionOutcome> StartDocumentTextDetectionOutcomeCallable;
       typedef std::future<StartExpenseAnalysisOutcome> StartExpenseAnalysisOutcomeCallable;
+      typedef std::future<StartLendingAnalysisOutcome> StartLendingAnalysisOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -117,9 +129,12 @@ namespace Aws
     typedef std::function<void(const TextractClient*, const Model::GetDocumentAnalysisRequest&, const Model::GetDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentAnalysisResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::GetDocumentTextDetectionRequest&, const Model::GetDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentTextDetectionResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::GetExpenseAnalysisRequest&, const Model::GetExpenseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExpenseAnalysisResponseReceivedHandler;
+    typedef std::function<void(const TextractClient*, const Model::GetLendingAnalysisRequest&, const Model::GetLendingAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLendingAnalysisResponseReceivedHandler;
+    typedef std::function<void(const TextractClient*, const Model::GetLendingAnalysisSummaryRequest&, const Model::GetLendingAnalysisSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLendingAnalysisSummaryResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::StartDocumentAnalysisRequest&, const Model::StartDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentAnalysisResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::StartDocumentTextDetectionRequest&, const Model::StartDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentTextDetectionResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::StartExpenseAnalysisRequest&, const Model::StartExpenseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExpenseAnalysisResponseReceivedHandler;
+    typedef std::function<void(const TextractClient*, const Model::StartLendingAnalysisRequest&, const Model::StartLendingAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLendingAnalysisResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Textract
 } // namespace Aws

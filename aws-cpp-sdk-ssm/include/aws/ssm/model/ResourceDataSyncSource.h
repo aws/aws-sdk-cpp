@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncSource
+  class ResourceDataSyncSource
   {
   public:
-    ResourceDataSyncSource();
-    ResourceDataSyncSource(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncSource();
+    AWS_SSM_API ResourceDataSyncSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

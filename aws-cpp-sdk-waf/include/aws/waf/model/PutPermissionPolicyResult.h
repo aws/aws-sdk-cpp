@@ -22,12 +22,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API PutPermissionPolicyResult
+  class PutPermissionPolicyResult
   {
   public:
-    PutPermissionPolicyResult();
-    PutPermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutPermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API PutPermissionPolicyResult();
+    AWS_WAF_API PutPermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API PutPermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

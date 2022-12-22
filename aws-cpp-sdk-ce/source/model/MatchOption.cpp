@@ -27,6 +27,7 @@ namespace Aws
         static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
         static const int CASE_SENSITIVE_HASH = HashingUtils::HashString("CASE_SENSITIVE");
         static const int CASE_INSENSITIVE_HASH = HashingUtils::HashString("CASE_INSENSITIVE");
+        static const int GREATER_THAN_OR_EQUAL_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUAL");
 
 
         MatchOption GetMatchOptionForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return MatchOption::CASE_INSENSITIVE;
           }
+          else if (hashCode == GREATER_THAN_OR_EQUAL_HASH)
+          {
+            return MatchOption::GREATER_THAN_OR_EQUAL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "CASE_SENSITIVE";
           case MatchOption::CASE_INSENSITIVE:
             return "CASE_INSENSITIVE";
+          case MatchOption::GREATER_THAN_OR_EQUAL:
+            return "GREATER_THAN_OR_EQUAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

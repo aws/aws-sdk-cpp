@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneCommentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API UpdateHostedZoneCommentResult
+  class UpdateHostedZoneCommentResult
   {
   public:
-    UpdateHostedZoneCommentResult();
-    UpdateHostedZoneCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateHostedZoneCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API UpdateHostedZoneCommentResult();
+    AWS_ROUTE53_API UpdateHostedZoneCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API UpdateHostedZoneCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

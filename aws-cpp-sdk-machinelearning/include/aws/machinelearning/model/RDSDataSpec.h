@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSDataSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RDSDataSpec
+  class RDSDataSpec
   {
   public:
-    RDSDataSpec();
-    RDSDataSpec(Aws::Utils::Json::JsonView jsonValue);
-    RDSDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RDSDataSpec();
+    AWS_MACHINELEARNING_API RDSDataSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RDSDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

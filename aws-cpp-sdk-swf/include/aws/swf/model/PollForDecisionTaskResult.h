@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DecisionTask">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API PollForDecisionTaskResult
+  class PollForDecisionTaskResult
   {
   public:
-    PollForDecisionTaskResult();
-    PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForDecisionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API PollForDecisionTaskResult();
+    AWS_SWF_API PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API PollForDecisionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

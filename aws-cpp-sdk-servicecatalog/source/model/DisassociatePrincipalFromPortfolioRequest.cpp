@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 DisassociatePrincipalFromPortfolioRequest::DisassociatePrincipalFromPortfolioRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_portfolioIdHasBeenSet(false),
-    m_principalARNHasBeenSet(false)
+    m_principalARNHasBeenSet(false),
+    m_principalType(PrincipalType::NOT_SET),
+    m_principalTypeHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String DisassociatePrincipalFromPortfolioRequest::SerializePayload() const
   {
    payload.WithString("PrincipalARN", m_principalARN);
 
+  }
+
+  if(m_principalTypeHasBeenSet)
+  {
+   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
   }
 
   return payload.View().WriteReadable();

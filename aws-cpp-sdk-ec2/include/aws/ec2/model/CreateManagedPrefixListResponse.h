@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateManagedPrefixListResponse
+  class CreateManagedPrefixListResponse
   {
   public:
-    CreateManagedPrefixListResponse();
-    CreateManagedPrefixListResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateManagedPrefixListResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateManagedPrefixListResponse();
+    AWS_EC2_API CreateManagedPrefixListResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateManagedPrefixListResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

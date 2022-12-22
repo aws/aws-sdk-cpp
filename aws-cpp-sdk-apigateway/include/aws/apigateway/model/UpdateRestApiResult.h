@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApi">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UpdateRestApiResult
+  class UpdateRestApiResult
   {
   public:
-    UpdateRestApiResult();
-    UpdateRestApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRestApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateRestApiResult();
+    AWS_APIGATEWAY_API UpdateRestApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateRestApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

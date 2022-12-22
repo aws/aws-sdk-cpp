@@ -29,21 +29,27 @@ namespace Model
 
   /**
    * <p>The configuration of resources, including compute instances and storage
-   * volumes for use in training jobs launched by hyperparameter tuning jobs. Specify
-   * one or more instance type and count and the allocation strategy for instance
-   * selection.</p>  <p> <code>HyperParameterTuningResourceConfig</code>
-   * supports all of the capabilities of ResourceConfig with added functionality for
-   * flexible instance management.</p> <p><h3>See Also:</h3>   <a
+   * volumes for use in training jobs launched by hyperparameter tuning jobs.
+   * <code>HyperParameterTuningResourceConfig</code> is similar to
+   * <code>ResourceConfig</code>, but has the additional <code>InstanceConfigs</code>
+   * and <code>AllocationStrategy</code> fields to allow for flexible instance
+   * management. Specify one or more instance types, count, and the allocation
+   * strategy for instance selection.</p>  <p>
+   * <code>HyperParameterTuningResourceConfig</code> supports the capabilities of
+   * <code>ResourceConfig</code> with the exception of
+   * <code>KeepAlivePeriodInSeconds</code>. Hyperparameter tuning jobs use warm pools
+   * by default, which reuse clusters between training jobs.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTuningResourceConfig
+  class HyperParameterTuningResourceConfig
   {
   public:
-    HyperParameterTuningResourceConfig();
-    HyperParameterTuningResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

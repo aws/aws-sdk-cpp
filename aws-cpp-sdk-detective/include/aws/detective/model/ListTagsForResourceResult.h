@@ -25,12 +25,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API ListTagsForResourceResult
+  class ListTagsForResourceResult
   {
   public:
-    ListTagsForResourceResult();
-    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListTagsForResourceResult();
+    AWS_DETECTIVE_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

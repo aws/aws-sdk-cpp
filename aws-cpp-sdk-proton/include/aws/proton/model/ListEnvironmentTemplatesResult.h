@@ -26,12 +26,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API ListEnvironmentTemplatesResult
+  class ListEnvironmentTemplatesResult
   {
   public:
-    ListEnvironmentTemplatesResult();
-    ListEnvironmentTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnvironmentTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListEnvironmentTemplatesResult();
+    AWS_PROTON_API ListEnvironmentTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListEnvironmentTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

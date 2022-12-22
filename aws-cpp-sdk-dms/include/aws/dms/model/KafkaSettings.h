@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/KafkaSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings
+  class KafkaSettings
   {
   public:
-    KafkaSettings();
-    KafkaSettings(Aws::Utils::Json::JsonView jsonValue);
-    KafkaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API ListThemeVersionsResult
+  class ListThemeVersionsResult
   {
   public:
-    ListThemeVersionsResult();
-    ListThemeVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThemeVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API ListThemeVersionsResult();
+    AWS_QUICKSIGHT_API ListThemeVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API ListThemeVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

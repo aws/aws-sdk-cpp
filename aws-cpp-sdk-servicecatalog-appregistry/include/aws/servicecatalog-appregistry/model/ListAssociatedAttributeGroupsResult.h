@@ -25,12 +25,12 @@ namespace AppRegistry
 {
 namespace Model
 {
-  class AWS_APPREGISTRY_API ListAssociatedAttributeGroupsResult
+  class ListAssociatedAttributeGroupsResult
   {
   public:
-    ListAssociatedAttributeGroupsResult();
-    ListAssociatedAttributeGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssociatedAttributeGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API ListAssociatedAttributeGroupsResult();
+    AWS_APPREGISTRY_API ListAssociatedAttributeGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API ListAssociatedAttributeGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

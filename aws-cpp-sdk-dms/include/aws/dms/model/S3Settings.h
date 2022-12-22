@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/S3Settings">AWS API
    * Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API S3Settings
+  class S3Settings
   {
   public:
-    S3Settings();
-    S3Settings(Aws::Utils::Json::JsonView jsonValue);
-    S3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings();
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -2226,7 +2226,7 @@ namespace Model
 
 
     /**
-     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon
      * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
      * are both specified, the file write is triggered by whichever parameter condition
      * is met first within an DMS CloudFormation template.</p> <p>The default value is
@@ -2235,7 +2235,7 @@ namespace Model
     inline int GetCdcMinFileSize() const{ return m_cdcMinFileSize; }
 
     /**
-     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon
      * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
      * are both specified, the file write is triggered by whichever parameter condition
      * is met first within an DMS CloudFormation template.</p> <p>The default value is
@@ -2244,7 +2244,7 @@ namespace Model
     inline bool CdcMinFileSizeHasBeenSet() const { return m_cdcMinFileSizeHasBeenSet; }
 
     /**
-     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon
      * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
      * are both specified, the file write is triggered by whichever parameter condition
      * is met first within an DMS CloudFormation template.</p> <p>The default value is
@@ -2253,7 +2253,7 @@ namespace Model
     inline void SetCdcMinFileSize(int value) { m_cdcMinFileSizeHasBeenSet = true; m_cdcMinFileSize = value; }
 
     /**
-     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * <p>Minimum file size, defined in kilobytes, to reach for a file output to Amazon
      * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
      * are both specified, the file write is triggered by whichever parameter condition
      * is met first within an DMS CloudFormation template.</p> <p>The default value is

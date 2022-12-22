@@ -22,6 +22,7 @@ namespace Aws
 
         static const int WEB_HASH = HashingUtils::HashString("WEB");
         static const int WEB_DYNAMIC_HASH = HashingUtils::HashString("WEB_DYNAMIC");
+        static const int WEB_COMPUTE_HASH = HashingUtils::HashString("WEB_COMPUTE");
 
 
         Platform GetPlatformForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == WEB_DYNAMIC_HASH)
           {
             return Platform::WEB_DYNAMIC;
+          }
+          else if (hashCode == WEB_COMPUTE_HASH)
+          {
+            return Platform::WEB_COMPUTE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "WEB";
           case Platform::WEB_DYNAMIC:
             return "WEB_DYNAMIC";
+          case Platform::WEB_COMPUTE:
+            return "WEB_COMPUTE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

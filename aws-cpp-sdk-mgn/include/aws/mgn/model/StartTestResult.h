@@ -24,12 +24,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API StartTestResult
+  class StartTestResult
   {
   public:
-    StartTestResult();
-    StartTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API StartTestResult();
+    AWS_MGN_API StartTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API StartTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

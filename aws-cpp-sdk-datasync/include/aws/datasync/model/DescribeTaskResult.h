@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API DescribeTaskResult
+  class DescribeTaskResult
   {
   public:
-    DescribeTaskResult();
-    DescribeTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeTaskResult();
+    AWS_DATASYNC_API DescribeTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -152,43 +152,43 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline const Aws::String& GetCurrentTaskExecutionArn() const{ return m_currentTaskExecutionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline void SetCurrentTaskExecutionArn(const Aws::String& value) { m_currentTaskExecutionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline void SetCurrentTaskExecutionArn(Aws::String&& value) { m_currentTaskExecutionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline void SetCurrentTaskExecutionArn(const char* value) { m_currentTaskExecutionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline DescribeTaskResult& WithCurrentTaskExecutionArn(const Aws::String& value) { SetCurrentTaskExecutionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline DescribeTaskResult& WithCurrentTaskExecutionArn(Aws::String&& value) { SetCurrentTaskExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution that is syncing
+     * <p>The Amazon Resource Name (ARN) of the task execution that is transferring
      * files.</p>
      */
     inline DescribeTaskResult& WithCurrentTaskExecutionArn(const char* value) { SetCurrentTaskExecutionArn(value); return *this;}
@@ -331,217 +331,234 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceNetworkInterfaceArns() const{ return m_sourceNetworkInterfaceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline void SetSourceNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { m_sourceNetworkInterfaceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline void SetSourceNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { m_sourceNetworkInterfaceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& WithSourceNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { SetSourceNetworkInterfaceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& WithSourceNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { SetSourceNetworkInterfaceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& AddSourceNetworkInterfaceArns(const Aws::String& value) { m_sourceNetworkInterfaceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& AddSourceNetworkInterfaceArns(Aws::String&& value) { m_sourceNetworkInterfaceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the source elastic network interfaces
-     * (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * source location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& AddSourceNetworkInterfaceArns(const char* value) { m_sourceNetworkInterfaceArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinationNetworkInterfaceArns() const{ return m_destinationNetworkInterfaceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline void SetDestinationNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { m_destinationNetworkInterfaceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline void SetDestinationNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { m_destinationNetworkInterfaceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& WithDestinationNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { SetDestinationNetworkInterfaceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& WithDestinationNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { SetDestinationNetworkInterfaceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(const Aws::String& value) { m_destinationNetworkInterfaceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(Aws::String&& value) { m_destinationNetworkInterfaceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the destination elastic network
-     * interfaces (ENIs) that were created for your subnet.</p>
+     * <p>The Amazon Resource Names (ARNs) of the network interfaces created for your
+     * destination location. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
+     * interface requirements</a>.</p>
      */
     inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(const char* value) { m_destinationNetworkInterfaceArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>The configuration options that control the behavior of the
+     * <code>StartTaskExecution</code> operation. Some options include preserving file
+     * or object metadata and verifying data integrity.</p> <p>You can override these
+     * options for each task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline const Options& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>The configuration options that control the behavior of the
+     * <code>StartTaskExecution</code> operation. Some options include preserving file
+     * or object metadata and verifying data integrity.</p> <p>You can override these
+     * options for each task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline void SetOptions(const Options& value) { m_options = value; }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>The configuration options that control the behavior of the
+     * <code>StartTaskExecution</code> operation. Some options include preserving file
+     * or object metadata and verifying data integrity.</p> <p>You can override these
+     * options for each task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline void SetOptions(Options&& value) { m_options = std::move(value); }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>The configuration options that control the behavior of the
+     * <code>StartTaskExecution</code> operation. Some options include preserving file
+     * or object metadata and verifying data integrity.</p> <p>You can override these
+     * options for each task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline DescribeTaskResult& WithOptions(const Options& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>The configuration options that control the behavior of the
+     * <code>StartTaskExecution</code> operation. Some options include preserving file
+     * or object metadata and verifying data integrity.</p> <p>You can override these
+     * options for each task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline DescribeTaskResult& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& AddExcludes(const FilterRule& value) { m_excludes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& AddExcludes(FilterRule&& value) { m_excludes.push_back(std::move(value)); return *this; }
 
@@ -690,58 +707,58 @@ namespace Model
 
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& AddIncludes(const FilterRule& value) { m_includes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2</code>".</p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskResult& AddIncludes(FilterRule&& value) { m_includes.push_back(std::move(value)); return *this; }
 

@@ -52,13 +52,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowRunCommandParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API MaintenanceWindowRunCommandParameters
+  class MaintenanceWindowRunCommandParameters
   {
   public:
-    MaintenanceWindowRunCommandParameters();
-    MaintenanceWindowRunCommandParameters(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceWindowRunCommandParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API MaintenanceWindowRunCommandParameters();
+    AWS_SSM_API MaintenanceWindowRunCommandParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API MaintenanceWindowRunCommandParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

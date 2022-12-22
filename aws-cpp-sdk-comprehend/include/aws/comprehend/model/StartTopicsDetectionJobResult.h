@@ -25,12 +25,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API StartTopicsDetectionJobResult
+  class StartTopicsDetectionJobResult
   {
   public:
-    StartTopicsDetectionJobResult();
-    StartTopicsDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartTopicsDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API StartTopicsDetectionJobResult();
+    AWS_COMPREHEND_API StartTopicsDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API StartTopicsDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

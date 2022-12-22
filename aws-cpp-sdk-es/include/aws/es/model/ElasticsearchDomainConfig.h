@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchDomainConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainConfig
+  class ElasticsearchDomainConfig
   {
   public:
-    ElasticsearchDomainConfig();
-    ElasticsearchDomainConfig(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchDomainConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainConfig();
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

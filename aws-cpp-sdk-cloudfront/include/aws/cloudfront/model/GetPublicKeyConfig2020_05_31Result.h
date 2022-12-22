@@ -25,12 +25,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result
+  class GetPublicKeyConfig2020_05_31Result
   {
   public:
-    GetPublicKeyConfig2020_05_31Result();
-    GetPublicKeyConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetPublicKeyConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

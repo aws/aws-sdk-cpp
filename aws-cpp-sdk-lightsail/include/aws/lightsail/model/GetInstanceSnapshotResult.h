@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetInstanceSnapshotResult
+  class GetInstanceSnapshotResult
   {
   public:
-    GetInstanceSnapshotResult();
-    GetInstanceSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetInstanceSnapshotResult();
+    AWS_LIGHTSAIL_API GetInstanceSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetInstanceSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

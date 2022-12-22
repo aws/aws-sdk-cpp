@@ -24,12 +24,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API GetLaunchProfileInitializationResult
+  class GetLaunchProfileInitializationResult
   {
   public:
-    GetLaunchProfileInitializationResult();
-    GetLaunchProfileInitializationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLaunchProfileInitializationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetLaunchProfileInitializationResult();
+    AWS_NIMBLESTUDIO_API GetLaunchProfileInitializationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetLaunchProfileInitializationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

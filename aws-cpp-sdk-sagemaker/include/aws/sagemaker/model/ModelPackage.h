@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackage">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelPackage
+  class ModelPackage
   {
   public:
-    ModelPackage();
-    ModelPackage(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelPackage();
+    AWS_SAGEMAKER_API ModelPackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

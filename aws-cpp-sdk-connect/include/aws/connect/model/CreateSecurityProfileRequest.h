@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API CreateSecurityProfileRequest : public ConnectRequest
+  class CreateSecurityProfileRequest : public ConnectRequest
   {
   public:
-    CreateSecurityProfileRequest();
+    AWS_CONNECT_API CreateSecurityProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSecurityProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -316,6 +316,158 @@ namespace Model
      */
     inline CreateSecurityProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAllowedAccessControlTags() const{ return m_allowedAccessControlTags; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline bool AllowedAccessControlTagsHasBeenSet() const { return m_allowedAccessControlTagsHasBeenSet; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline void SetAllowedAccessControlTags(const Aws::Map<Aws::String, Aws::String>& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags = value; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline void SetAllowedAccessControlTags(Aws::Map<Aws::String, Aws::String>&& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags = std::move(value); }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& WithAllowedAccessControlTags(const Aws::Map<Aws::String, Aws::String>& value) { SetAllowedAccessControlTags(value); return *this;}
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& WithAllowedAccessControlTags(Aws::Map<Aws::String, Aws::String>&& value) { SetAllowedAccessControlTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(const Aws::String& key, const Aws::String& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(Aws::String&& key, const Aws::String& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(const Aws::String& key, Aws::String&& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(Aws::String&& key, Aws::String&& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(const char* key, Aws::String&& value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(Aws::String&& key, const char* value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of tags that a security profile uses to restrict access to resources
+     * in Amazon Connect.</p>
+     */
+    inline CreateSecurityProfileRequest& AddAllowedAccessControlTags(const char* key, const char* value) { m_allowedAccessControlTagsHasBeenSet = true; m_allowedAccessControlTags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTagRestrictedResources() const{ return m_tagRestrictedResources; }
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline bool TagRestrictedResourcesHasBeenSet() const { return m_tagRestrictedResourcesHasBeenSet; }
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline void SetTagRestrictedResources(const Aws::Vector<Aws::String>& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources = value; }
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline void SetTagRestrictedResources(Aws::Vector<Aws::String>&& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources = std::move(value); }
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline CreateSecurityProfileRequest& WithTagRestrictedResources(const Aws::Vector<Aws::String>& value) { SetTagRestrictedResources(value); return *this;}
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline CreateSecurityProfileRequest& WithTagRestrictedResources(Aws::Vector<Aws::String>&& value) { SetTagRestrictedResources(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline CreateSecurityProfileRequest& AddTagRestrictedResources(const Aws::String& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(value); return *this; }
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline CreateSecurityProfileRequest& AddTagRestrictedResources(Aws::String&& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of resources that a security profile applies tag restrictions to in
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
+     */
+    inline CreateSecurityProfileRequest& AddTagRestrictedResources(const char* value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(value); return *this; }
+
   private:
 
     Aws::String m_securityProfileName;
@@ -332,6 +484,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_allowedAccessControlTags;
+    bool m_allowedAccessControlTagsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tagRestrictedResources;
+    bool m_tagRestrictedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

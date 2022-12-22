@@ -25,12 +25,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API AddProfileKeyResult
+  class AddProfileKeyResult
   {
   public:
-    AddProfileKeyResult();
-    AddProfileKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddProfileKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API AddProfileKeyResult();
+    AWS_CUSTOMERPROFILES_API AddProfileKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API AddProfileKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

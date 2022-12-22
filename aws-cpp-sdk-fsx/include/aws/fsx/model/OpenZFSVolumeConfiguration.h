@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSVolumeConfiguration
+  class OpenZFSVolumeConfiguration
   {
   public:
-    OpenZFSVolumeConfiguration();
-    OpenZFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSVolumeConfiguration();
+    AWS_FSX_API OpenZFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -499,6 +499,105 @@ namespace Model
      */
     inline OpenZFSVolumeConfiguration& AddUserAndGroupQuotas(OpenZFSUserOrGroupQuota&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline const Aws::String& GetRestoreToSnapshot() const{ return m_restoreToSnapshot; }
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline bool RestoreToSnapshotHasBeenSet() const { return m_restoreToSnapshotHasBeenSet; }
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline void SetRestoreToSnapshot(const Aws::String& value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot = value; }
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline void SetRestoreToSnapshot(Aws::String&& value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot = std::move(value); }
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline void SetRestoreToSnapshot(const char* value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot.assign(value); }
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithRestoreToSnapshot(const Aws::String& value) { SetRestoreToSnapshot(value); return *this;}
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithRestoreToSnapshot(Aws::String&& value) { SetRestoreToSnapshot(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithRestoreToSnapshot(const char* value) { SetRestoreToSnapshot(value); return *this;}
+
+
+    /**
+     * <p>A Boolean value indicating whether snapshots between the current state and
+     * the specified snapshot should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline bool GetDeleteIntermediateSnaphots() const{ return m_deleteIntermediateSnaphots; }
+
+    /**
+     * <p>A Boolean value indicating whether snapshots between the current state and
+     * the specified snapshot should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline bool DeleteIntermediateSnaphotsHasBeenSet() const { return m_deleteIntermediateSnaphotsHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether snapshots between the current state and
+     * the specified snapshot should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline void SetDeleteIntermediateSnaphots(bool value) { m_deleteIntermediateSnaphotsHasBeenSet = true; m_deleteIntermediateSnaphots = value; }
+
+    /**
+     * <p>A Boolean value indicating whether snapshots between the current state and
+     * the specified snapshot should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithDeleteIntermediateSnaphots(bool value) { SetDeleteIntermediateSnaphots(value); return *this;}
+
+
+    /**
+     * <p>A Boolean value indicating whether dependent clone volumes created from
+     * intermediate snapshots should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline bool GetDeleteClonedVolumes() const{ return m_deleteClonedVolumes; }
+
+    /**
+     * <p>A Boolean value indicating whether dependent clone volumes created from
+     * intermediate snapshots should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline bool DeleteClonedVolumesHasBeenSet() const { return m_deleteClonedVolumesHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether dependent clone volumes created from
+     * intermediate snapshots should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline void SetDeleteClonedVolumes(bool value) { m_deleteClonedVolumesHasBeenSet = true; m_deleteClonedVolumes = value; }
+
+    /**
+     * <p>A Boolean value indicating whether dependent clone volumes created from
+     * intermediate snapshots should be deleted when a volume is restored from
+     * snapshot.</p>
+     */
+    inline OpenZFSVolumeConfiguration& WithDeleteClonedVolumes(bool value) { SetDeleteClonedVolumes(value); return *this;}
+
   private:
 
     Aws::String m_parentVolumeId;
@@ -533,6 +632,15 @@ namespace Model
 
     Aws::Vector<OpenZFSUserOrGroupQuota> m_userAndGroupQuotas;
     bool m_userAndGroupQuotasHasBeenSet = false;
+
+    Aws::String m_restoreToSnapshot;
+    bool m_restoreToSnapshotHasBeenSet = false;
+
+    bool m_deleteIntermediateSnaphots;
+    bool m_deleteIntermediateSnaphotsHasBeenSet = false;
+
+    bool m_deleteClonedVolumes;
+    bool m_deleteClonedVolumesHasBeenSet = false;
   };
 
 } // namespace Model

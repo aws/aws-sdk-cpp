@@ -22,12 +22,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API DeleteCallAnalyticsJobResult
+  class DeleteCallAnalyticsJobResult
   {
   public:
-    DeleteCallAnalyticsJobResult();
-    DeleteCallAnalyticsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCallAnalyticsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API DeleteCallAnalyticsJobResult();
+    AWS_TRANSCRIBESERVICE_API DeleteCallAnalyticsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API DeleteCallAnalyticsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

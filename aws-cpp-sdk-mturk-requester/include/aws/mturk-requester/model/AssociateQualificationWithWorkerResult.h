@@ -22,12 +22,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API AssociateQualificationWithWorkerResult
+  class AssociateQualificationWithWorkerResult
   {
   public:
-    AssociateQualificationWithWorkerResult();
-    AssociateQualificationWithWorkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateQualificationWithWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API AssociateQualificationWithWorkerResult();
+    AWS_MTURK_API AssociateQualificationWithWorkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API AssociateQualificationWithWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

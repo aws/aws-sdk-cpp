@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DynamoDBCatalogSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DynamoDBCatalogSource
+  class DynamoDBCatalogSource
   {
   public:
-    DynamoDBCatalogSource();
-    DynamoDBCatalogSource(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DynamoDBCatalogSource();
+    AWS_GLUE_API DynamoDBCatalogSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DynamoDBCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

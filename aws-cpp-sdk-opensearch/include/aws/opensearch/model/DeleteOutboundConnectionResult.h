@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnectionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DeleteOutboundConnectionResult
+  class DeleteOutboundConnectionResult
   {
   public:
-    DeleteOutboundConnectionResult();
-    DeleteOutboundConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteOutboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DeleteOutboundConnectionResult();
+    AWS_OPENSEARCHSERVICE_API DeleteOutboundConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DeleteOutboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

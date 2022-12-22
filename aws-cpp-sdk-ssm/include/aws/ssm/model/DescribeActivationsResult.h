@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeActivationsResult
+  class DescribeActivationsResult
   {
   public:
-    DescribeActivationsResult();
-    DescribeActivationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeActivationsResult();
+    AWS_SSM_API DescribeActivationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeActivationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

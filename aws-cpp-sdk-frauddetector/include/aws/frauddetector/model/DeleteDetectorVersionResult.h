@@ -22,12 +22,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API DeleteDetectorVersionResult
+  class DeleteDetectorVersionResult
   {
   public:
-    DeleteDetectorVersionResult();
-    DeleteDetectorVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API DeleteDetectorVersionResult();
+    AWS_FRAUDDETECTOR_API DeleteDetectorVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API DeleteDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

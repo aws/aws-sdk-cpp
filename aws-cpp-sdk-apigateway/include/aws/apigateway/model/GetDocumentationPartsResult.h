@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationParts">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetDocumentationPartsResult
+  class GetDocumentationPartsResult
   {
   public:
-    GetDocumentationPartsResult();
-    GetDocumentationPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentationPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetDocumentationPartsResult();
+    AWS_APIGATEWAY_API GetDocumentationPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetDocumentationPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -27,12 +27,12 @@ namespace ResilienceHub
 {
 namespace Model
 {
-  class AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionResult
+  class ImportResourcesToDraftAppVersionResult
   {
   public:
-    ImportResourcesToDraftAppVersionResult();
-    ImportResourcesToDraftAppVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportResourcesToDraftAppVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionResult();
+    AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

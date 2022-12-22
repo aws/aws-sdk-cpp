@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API UpdateFilterRequest : public GuardDutyRequest
+  class UpdateFilterRequest : public GuardDutyRequest
   {
   public:
-    UpdateFilterRequest();
+    AWS_GUARDDUTY_API UpdateFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -125,42 +125,58 @@ namespace Model
 
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline UpdateFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline UpdateFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the filter.</p>
+     * <p>The description of the filter. Valid special characters include period (.),
+     * underscore (_), dash (-), and whitespace. The new line character is considered
+     * to be an invalid input for description.</p>
      */
     inline UpdateFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

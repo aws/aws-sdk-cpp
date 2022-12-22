@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SqliMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API SqliMatchStatement
+  class SqliMatchStatement
   {
   public:
-    SqliMatchStatement();
-    SqliMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    SqliMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API SqliMatchStatement();
+    AWS_WAFV2_API SqliMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API SqliMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

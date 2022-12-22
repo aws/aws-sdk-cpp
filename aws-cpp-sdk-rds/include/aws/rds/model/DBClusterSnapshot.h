@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBClusterSnapshot
+  class DBClusterSnapshot
   {
   public:
-    DBClusterSnapshot();
-    DBClusterSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterSnapshot();
+    AWS_RDS_API DBClusterSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -915,6 +915,47 @@ namespace Model
     
     inline DBClusterSnapshot& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBClusterSnapshot& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBClusterSnapshot& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBClusterSnapshot& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -982,6 +1023,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
+
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

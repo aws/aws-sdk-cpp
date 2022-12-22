@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API TransferDomainResult
+  class TransferDomainResult
   {
   public:
-    TransferDomainResult();
-    TransferDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TransferDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API TransferDomainResult();
+    AWS_ROUTE53DOMAINS_API TransferDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API TransferDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

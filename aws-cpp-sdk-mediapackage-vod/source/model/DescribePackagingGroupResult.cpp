@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePackagingGroupResult::DescribePackagingGroupResult()
+DescribePackagingGroupResult::DescribePackagingGroupResult() : 
+    m_approximateAssetCount(0)
 {
 }
 
-DescribePackagingGroupResult::DescribePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribePackagingGroupResult::DescribePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_approximateAssetCount(0)
 {
   *this = result;
 }
@@ -28,6 +30,12 @@ DescribePackagingGroupResult::DescribePackagingGroupResult(const Aws::AmazonWebS
 DescribePackagingGroupResult& DescribePackagingGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("approximateAssetCount"))
+  {
+    m_approximateAssetCount = jsonValue.GetInteger("approximateAssetCount");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");

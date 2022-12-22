@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Listener">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API Listener
+  class Listener
   {
   public:
-    Listener();
-    Listener(Aws::Utils::Json::JsonView jsonValue);
-    Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API Listener();
+    AWS_APPMESH_API Listener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

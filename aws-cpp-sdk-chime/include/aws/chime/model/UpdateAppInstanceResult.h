@@ -24,12 +24,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API UpdateAppInstanceResult
+  class UpdateAppInstanceResult
   {
   public:
-    UpdateAppInstanceResult();
-    UpdateAppInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAppInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API UpdateAppInstanceResult();
+    AWS_CHIME_API UpdateAppInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API UpdateAppInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

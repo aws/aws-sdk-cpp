@@ -21,14 +21,16 @@ namespace Model
 DashboardPublishOptions::DashboardPublishOptions() : 
     m_adHocFilteringOptionHasBeenSet(false),
     m_exportToCSVOptionHasBeenSet(false),
-    m_sheetControlsOptionHasBeenSet(false)
+    m_sheetControlsOptionHasBeenSet(false),
+    m_visualPublishOptionsHasBeenSet(false)
 {
 }
 
 DashboardPublishOptions::DashboardPublishOptions(JsonView jsonValue) : 
     m_adHocFilteringOptionHasBeenSet(false),
     m_exportToCSVOptionHasBeenSet(false),
-    m_sheetControlsOptionHasBeenSet(false)
+    m_sheetControlsOptionHasBeenSet(false),
+    m_visualPublishOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ DashboardPublishOptions& DashboardPublishOptions::operator =(JsonView jsonValue)
     m_sheetControlsOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VisualPublishOptions"))
+  {
+    m_visualPublishOptions = jsonValue.GetObject("VisualPublishOptions");
+
+    m_visualPublishOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue DashboardPublishOptions::Jsonize() const
   if(m_sheetControlsOptionHasBeenSet)
   {
    payload.WithObject("SheetControlsOption", m_sheetControlsOption.Jsonize());
+
+  }
+
+  if(m_visualPublishOptionsHasBeenSet)
+  {
+   payload.WithObject("VisualPublishOptions", m_visualPublishOptions.Jsonize());
 
   }
 

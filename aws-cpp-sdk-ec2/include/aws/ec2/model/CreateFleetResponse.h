@@ -28,12 +28,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateFleetResponse
+  class CreateFleetResponse
   {
   public:
-    CreateFleetResponse();
-    CreateFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateFleetResponse();
+    AWS_EC2_API CreateFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

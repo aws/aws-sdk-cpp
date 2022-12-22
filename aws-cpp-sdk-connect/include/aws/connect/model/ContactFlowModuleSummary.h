@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowModuleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ContactFlowModuleSummary
+  class ContactFlowModuleSummary
   {
   public:
-    ContactFlowModuleSummary();
-    ContactFlowModuleSummary(Aws::Utils::Json::JsonView jsonValue);
-    ContactFlowModuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ContactFlowModuleSummary();
+    AWS_CONNECT_API ContactFlowModuleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ContactFlowModuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

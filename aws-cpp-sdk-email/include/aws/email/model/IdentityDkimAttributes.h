@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityDkimAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API IdentityDkimAttributes
+  class IdentityDkimAttributes
   {
   public:
-    IdentityDkimAttributes();
-    IdentityDkimAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IdentityDkimAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API IdentityDkimAttributes();
+    AWS_SES_API IdentityDkimAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API IdentityDkimAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

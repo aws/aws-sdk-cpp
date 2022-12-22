@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API CreatePortfolioShareRequest : public ServiceCatalogRequest
+  class CreatePortfolioShareRequest : public ServiceCatalogRequest
   {
   public:
-    CreatePortfolioShareRequest();
+    AWS_SERVICECATALOG_API CreatePortfolioShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePortfolioShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -271,6 +271,55 @@ namespace Model
      */
     inline CreatePortfolioShareRequest& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
 
+
+    /**
+     * <p>Enables or disables <code>Principal</code> sharing when creating the
+     * portfolio share. If this flag is not provided, principal sharing is disabled.
+     * </p> <p>When you enable Principal Name Sharing for a portfolio share, the share
+     * recipient account end users with a principal that matches any of the associated
+     * IAM patterns can provision products from the portfolio. Once shared, the share
+     * recipient can view associations of <code>PrincipalType</code>:
+     * <code>IAM_PATTERN</code> on their portfolio. You can create the principals in
+     * the recipient account before or after creating the share. </p>
+     */
+    inline bool GetSharePrincipals() const{ return m_sharePrincipals; }
+
+    /**
+     * <p>Enables or disables <code>Principal</code> sharing when creating the
+     * portfolio share. If this flag is not provided, principal sharing is disabled.
+     * </p> <p>When you enable Principal Name Sharing for a portfolio share, the share
+     * recipient account end users with a principal that matches any of the associated
+     * IAM patterns can provision products from the portfolio. Once shared, the share
+     * recipient can view associations of <code>PrincipalType</code>:
+     * <code>IAM_PATTERN</code> on their portfolio. You can create the principals in
+     * the recipient account before or after creating the share. </p>
+     */
+    inline bool SharePrincipalsHasBeenSet() const { return m_sharePrincipalsHasBeenSet; }
+
+    /**
+     * <p>Enables or disables <code>Principal</code> sharing when creating the
+     * portfolio share. If this flag is not provided, principal sharing is disabled.
+     * </p> <p>When you enable Principal Name Sharing for a portfolio share, the share
+     * recipient account end users with a principal that matches any of the associated
+     * IAM patterns can provision products from the portfolio. Once shared, the share
+     * recipient can view associations of <code>PrincipalType</code>:
+     * <code>IAM_PATTERN</code> on their portfolio. You can create the principals in
+     * the recipient account before or after creating the share. </p>
+     */
+    inline void SetSharePrincipals(bool value) { m_sharePrincipalsHasBeenSet = true; m_sharePrincipals = value; }
+
+    /**
+     * <p>Enables or disables <code>Principal</code> sharing when creating the
+     * portfolio share. If this flag is not provided, principal sharing is disabled.
+     * </p> <p>When you enable Principal Name Sharing for a portfolio share, the share
+     * recipient account end users with a principal that matches any of the associated
+     * IAM patterns can provision products from the portfolio. Once shared, the share
+     * recipient can view associations of <code>PrincipalType</code>:
+     * <code>IAM_PATTERN</code> on their portfolio. You can create the principals in
+     * the recipient account before or after creating the share. </p>
+     */
+    inline CreatePortfolioShareRequest& WithSharePrincipals(bool value) { SetSharePrincipals(value); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -287,6 +336,9 @@ namespace Model
 
     bool m_shareTagOptions;
     bool m_shareTagOptionsHasBeenSet = false;
+
+    bool m_sharePrincipals;
+    bool m_sharePrincipalsHasBeenSet = false;
   };
 
 } // namespace Model

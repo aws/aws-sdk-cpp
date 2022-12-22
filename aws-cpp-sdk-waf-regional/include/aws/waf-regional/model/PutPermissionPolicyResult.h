@@ -22,12 +22,12 @@ namespace WAFRegional
 {
 namespace Model
 {
-  class AWS_WAFREGIONAL_API PutPermissionPolicyResult
+  class PutPermissionPolicyResult
   {
   public:
-    PutPermissionPolicyResult();
-    PutPermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutPermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API PutPermissionPolicyResult();
+    AWS_WAFREGIONAL_API PutPermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API PutPermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

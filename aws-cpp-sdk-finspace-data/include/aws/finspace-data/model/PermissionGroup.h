@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/PermissionGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API PermissionGroup
+  class PermissionGroup
   {
   public:
-    PermissionGroup();
-    PermissionGroup(Aws::Utils::Json::JsonView jsonValue);
-    PermissionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API PermissionGroup();
+    AWS_FINSPACEDATA_API PermissionGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API PermissionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

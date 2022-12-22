@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CFN_STACK_HASH = HashingUtils::HashString("CFN_STACK");
+        static const int RESOURCE_TAG_VALUE_HASH = HashingUtils::HashString("RESOURCE_TAG_VALUE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == CFN_STACK_HASH)
           {
             return ResourceType::CFN_STACK;
+          }
+          else if (hashCode == RESOURCE_TAG_VALUE_HASH)
+          {
+            return ResourceType::RESOURCE_TAG_VALUE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ResourceType::CFN_STACK:
             return "CFN_STACK";
+          case ResourceType::RESOURCE_TAG_VALUE:
+            return "RESOURCE_TAG_VALUE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

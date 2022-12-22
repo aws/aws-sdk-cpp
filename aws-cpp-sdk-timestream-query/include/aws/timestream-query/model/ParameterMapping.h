@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ParameterMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ParameterMapping
+  class ParameterMapping
   {
   public:
-    ParameterMapping();
-    ParameterMapping(Aws::Utils::Json::JsonView jsonValue);
-    ParameterMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ParameterMapping();
+    AWS_TIMESTREAMQUERY_API ParameterMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ParameterMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

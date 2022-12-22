@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/Outpost">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API Outpost
+  class Outpost
   {
   public:
-    Outpost();
-    Outpost(Aws::Utils::Json::JsonView jsonValue);
-    Outpost& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API Outpost();
+    AWS_OUTPOSTS_API Outpost(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Outpost& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

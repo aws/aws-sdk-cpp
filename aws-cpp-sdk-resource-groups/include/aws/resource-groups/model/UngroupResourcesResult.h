@@ -27,12 +27,12 @@ namespace ResourceGroups
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPS_API UngroupResourcesResult
+  class UngroupResourcesResult
   {
   public:
-    UngroupResourcesResult();
-    UngroupResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UngroupResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API UngroupResourcesResult();
+    AWS_RESOURCEGROUPS_API UngroupResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API UngroupResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

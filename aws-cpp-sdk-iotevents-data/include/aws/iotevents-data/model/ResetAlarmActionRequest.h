@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ResetAlarmActionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API ResetAlarmActionRequest
+  class ResetAlarmActionRequest
   {
   public:
-    ResetAlarmActionRequest();
-    ResetAlarmActionRequest(Aws::Utils::Json::JsonView jsonValue);
-    ResetAlarmActionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API ResetAlarmActionRequest();
+    AWS_IOTEVENTSDATA_API ResetAlarmActionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API ResetAlarmActionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

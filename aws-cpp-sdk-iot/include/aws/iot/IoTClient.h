@@ -7,6 +7,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot/IoTServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace IoT
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
    * Direct Calls to Amazon Web Services Services</a>.</p>
    */
-  class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient
+  class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace IoT
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTClient();
-
 
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate
@@ -219,8 +219,8 @@ namespace IoT
 
         /**
          * <p>Attaches the specified principal to the specified thing. A principal can be
-         * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p> <p>Requires permission to access the <a
+         * X.509 certificates, Amazon Cognito identities or federated identities.</p>
+         * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">AWS
@@ -4894,6 +4894,7 @@ namespace IoT
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>;
       void init(const IoTClientConfiguration& clientConfiguration);
 
       IoTClientConfiguration m_clientConfiguration;

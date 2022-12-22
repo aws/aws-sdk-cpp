@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MediaPlacement">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API MediaPlacement
+  class MediaPlacement
   {
   public:
-    MediaPlacement();
-    MediaPlacement(Aws::Utils::Json::JsonView jsonValue);
-    MediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API MediaPlacement();
+    AWS_CHIME_API MediaPlacement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API MediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

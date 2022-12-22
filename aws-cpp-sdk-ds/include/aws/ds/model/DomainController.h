@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DomainController">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DomainController
+  class DomainController
   {
   public:
-    DomainController();
-    DomainController(Aws::Utils::Json::JsonView jsonValue);
-    DomainController& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DomainController();
+    AWS_DIRECTORYSERVICE_API DomainController(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DomainController& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ConditionExpression">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ConditionExpression
+  class ConditionExpression
   {
   public:
-    ConditionExpression();
-    ConditionExpression(Aws::Utils::Json::JsonView jsonValue);
-    ConditionExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ConditionExpression();
+    AWS_GLUEDATABREW_API ConditionExpression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ConditionExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace ConfigService
 {
 namespace Model
 {
-  class AWS_CONFIGSERVICE_API DeleteStoredQueryResult
+  class DeleteStoredQueryResult
   {
   public:
-    DeleteStoredQueryResult();
-    DeleteStoredQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteStoredQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DeleteStoredQueryResult();
+    AWS_CONFIGSERVICE_API DeleteStoredQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DeleteStoredQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

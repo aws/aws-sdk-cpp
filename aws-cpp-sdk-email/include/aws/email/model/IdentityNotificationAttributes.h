@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityNotificationAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API IdentityNotificationAttributes
+  class IdentityNotificationAttributes
   {
   public:
-    IdentityNotificationAttributes();
-    IdentityNotificationAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IdentityNotificationAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API IdentityNotificationAttributes();
+    AWS_SES_API IdentityNotificationAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API IdentityNotificationAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

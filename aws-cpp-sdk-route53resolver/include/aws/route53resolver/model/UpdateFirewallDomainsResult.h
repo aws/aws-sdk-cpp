@@ -25,12 +25,12 @@ namespace Route53Resolver
 {
 namespace Model
 {
-  class AWS_ROUTE53RESOLVER_API UpdateFirewallDomainsResult
+  class UpdateFirewallDomainsResult
   {
   public:
-    UpdateFirewallDomainsResult();
-    UpdateFirewallDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFirewallDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API UpdateFirewallDomainsResult();
+    AWS_ROUTE53RESOLVER_API UpdateFirewallDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API UpdateFirewallDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

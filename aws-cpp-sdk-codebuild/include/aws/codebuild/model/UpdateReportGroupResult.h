@@ -24,12 +24,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API UpdateReportGroupResult
+  class UpdateReportGroupResult
   {
   public:
-    UpdateReportGroupResult();
-    UpdateReportGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateReportGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API UpdateReportGroupResult();
+    AWS_CODEBUILD_API UpdateReportGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API UpdateReportGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

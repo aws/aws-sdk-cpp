@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MinBottomRenditionSize">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MinBottomRenditionSize
+  class MinBottomRenditionSize
   {
   public:
-    MinBottomRenditionSize();
-    MinBottomRenditionSize(Aws::Utils::Json::JsonView jsonValue);
-    MinBottomRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MinBottomRenditionSize();
+    AWS_MEDIACONVERT_API MinBottomRenditionSize(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MinBottomRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

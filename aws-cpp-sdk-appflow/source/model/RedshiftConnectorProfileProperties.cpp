@@ -22,7 +22,13 @@ RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties() :
     m_databaseUrlHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_bucketPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_dataApiRoleArnHasBeenSet(false),
+    m_isRedshiftServerless(false),
+    m_isRedshiftServerlessHasBeenSet(false),
+    m_clusterIdentifierHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false)
 {
 }
 
@@ -30,7 +36,13 @@ RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties(JsonView 
     m_databaseUrlHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_bucketPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_dataApiRoleArnHasBeenSet(false),
+    m_isRedshiftServerless(false),
+    m_isRedshiftServerlessHasBeenSet(false),
+    m_clusterIdentifierHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +77,41 @@ RedshiftConnectorProfileProperties& RedshiftConnectorProfileProperties::operator
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataApiRoleArn"))
+  {
+    m_dataApiRoleArn = jsonValue.GetString("dataApiRoleArn");
+
+    m_dataApiRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isRedshiftServerless"))
+  {
+    m_isRedshiftServerless = jsonValue.GetBool("isRedshiftServerless");
+
+    m_isRedshiftServerlessHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clusterIdentifier"))
+  {
+    m_clusterIdentifier = jsonValue.GetString("clusterIdentifier");
+
+    m_clusterIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("workgroupName"))
+  {
+    m_workgroupName = jsonValue.GetString("workgroupName");
+
+    m_workgroupNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("databaseName"))
+  {
+    m_databaseName = jsonValue.GetString("databaseName");
+
+    m_databaseNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +140,36 @@ JsonValue RedshiftConnectorProfileProperties::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_dataApiRoleArnHasBeenSet)
+  {
+   payload.WithString("dataApiRoleArn", m_dataApiRoleArn);
+
+  }
+
+  if(m_isRedshiftServerlessHasBeenSet)
+  {
+   payload.WithBool("isRedshiftServerless", m_isRedshiftServerless);
+
+  }
+
+  if(m_clusterIdentifierHasBeenSet)
+  {
+   payload.WithString("clusterIdentifier", m_clusterIdentifier);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("workgroupName", m_workgroupName);
+
+  }
+
+  if(m_databaseNameHasBeenSet)
+  {
+   payload.WithString("databaseName", m_databaseName);
 
   }
 

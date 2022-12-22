@@ -27,12 +27,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetMacieSessionResult
+  class GetMacieSessionResult
   {
   public:
-    GetMacieSessionResult();
-    GetMacieSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMacieSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetMacieSessionResult();
+    AWS_MACIE2_API GetMacieSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetMacieSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

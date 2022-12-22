@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapServiceDiscovery">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API AwsCloudMapServiceDiscovery
+  class AwsCloudMapServiceDiscovery
   {
   public:
-    AwsCloudMapServiceDiscovery();
-    AwsCloudMapServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudMapServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API AwsCloudMapServiceDiscovery();
+    AWS_APPMESH_API AwsCloudMapServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API AwsCloudMapServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

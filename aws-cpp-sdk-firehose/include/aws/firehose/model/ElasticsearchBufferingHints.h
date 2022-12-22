@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchBufferingHints">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ElasticsearchBufferingHints
+  class ElasticsearchBufferingHints
   {
   public:
-    ElasticsearchBufferingHints();
-    ElasticsearchBufferingHints(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ElasticsearchBufferingHints();
+    AWS_FIREHOSE_API ElasticsearchBufferingHints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ElasticsearchBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

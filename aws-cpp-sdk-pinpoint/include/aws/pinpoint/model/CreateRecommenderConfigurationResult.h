@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API CreateRecommenderConfigurationResult
+  class CreateRecommenderConfigurationResult
   {
   public:
-    CreateRecommenderConfigurationResult();
-    CreateRecommenderConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRecommenderConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API CreateRecommenderConfigurationResult();
+    AWS_PINPOINT_API CreateRecommenderConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API CreateRecommenderConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

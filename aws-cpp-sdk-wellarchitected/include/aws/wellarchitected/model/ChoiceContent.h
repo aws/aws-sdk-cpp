@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ChoiceContent">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ChoiceContent
+  class ChoiceContent
   {
   public:
-    ChoiceContent();
-    ChoiceContent(Aws::Utils::Json::JsonView jsonValue);
-    ChoiceContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API ChoiceContent();
+    AWS_WELLARCHITECTED_API ChoiceContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API ChoiceContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

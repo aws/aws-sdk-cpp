@@ -24,12 +24,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API StartExportTaskResult
+  class StartExportTaskResult
   {
   public:
-    StartExportTaskResult();
-    StartExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API StartExportTaskResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API StartExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API StartExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

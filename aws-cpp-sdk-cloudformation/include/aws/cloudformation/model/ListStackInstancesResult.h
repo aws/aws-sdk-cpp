@@ -27,12 +27,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API ListStackInstancesResult
+  class ListStackInstancesResult
   {
   public:
-    ListStackInstancesResult();
-    ListStackInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStackInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ListStackInstancesResult();
+    AWS_CLOUDFORMATION_API ListStackInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ListStackInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

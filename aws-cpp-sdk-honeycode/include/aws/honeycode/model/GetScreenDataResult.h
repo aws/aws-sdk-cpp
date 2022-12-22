@@ -26,12 +26,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API GetScreenDataResult
+  class GetScreenDataResult
   {
   public:
-    GetScreenDataResult();
-    GetScreenDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetScreenDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API GetScreenDataResult();
+    AWS_HONEYCODE_API GetScreenDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API GetScreenDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

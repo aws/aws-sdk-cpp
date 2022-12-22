@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeploymentCanarySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DeploymentCanarySettings
+  class DeploymentCanarySettings
   {
   public:
-    DeploymentCanarySettings();
-    DeploymentCanarySettings(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentCanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DeploymentCanarySettings();
+    AWS_APIGATEWAY_API DeploymentCanarySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DeploymentCanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

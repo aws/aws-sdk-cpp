@@ -304,14 +304,6 @@ void S3CrtClient::OverrideEndpoint(const Aws::String& endpoint)
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
-static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
-{
-    if (response->HasClientError()) return true;
-
-    int responseCode = static_cast<int>(response->GetResponseCode());
-    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
-}
-
 static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request, const struct aws_http_headers *headers,
     int response_status, void *user_data)
 {
@@ -392,7 +384,7 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
 Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const
 {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (DoesResponseGenerateError(response))
+  if (AWSClient::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
     auto error = BuildAWSError(response);
@@ -428,7 +420,7 @@ Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<Ht
 Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const
 {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (DoesResponseGenerateError(response))
+  if (AWSClient::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
     auto error = BuildAWSError(response);
@@ -520,6 +512,13 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   userData->getResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
+  if (userData != nullptr &&
+    userData->request != nullptr &&
+    userData->request->GetContentBody() != nullptr &&
+    userData->request->GetContentBody()->fail())
+  {
+    return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Output stream in bad state", false)), handlerContext);
+  }
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -600,6 +599,13 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
+  if (userData != nullptr &&
+    userData->request != nullptr &&
+    userData->request->GetContentBody() != nullptr &&
+    userData->request->GetContentBody()->fail())
+  {
+    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Input stream in bad state", false)), handlerContext);
+  }
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;

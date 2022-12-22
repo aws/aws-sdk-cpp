@@ -153,6 +153,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("DefaultSpaceSettings"))
+  {
+    m_defaultSpaceSettings = jsonValue.GetObject("DefaultSpaceSettings");
+
+  }
+
 
 
   return *this;

@@ -41,12 +41,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlan">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UpdateUsagePlanResult
+  class UpdateUsagePlanResult
   {
   public:
-    UpdateUsagePlanResult();
-    UpdateUsagePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateUsagePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateUsagePlanResult();
+    AWS_APIGATEWAY_API UpdateUsagePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateUsagePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

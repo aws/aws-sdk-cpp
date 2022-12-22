@@ -56,15 +56,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstance">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API DBInstance
+  class DBInstance
   {
   public:
-    DBInstance();
-    DBInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBInstance();
+    AWS_RDS_API DBInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -2897,7 +2897,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetCustomerOwnedIpEnabled() const{ return m_customerOwnedIpEnabled; }
@@ -2912,7 +2912,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool CustomerOwnedIpEnabledHasBeenSet() const { return m_customerOwnedIpEnabledHasBeenSet; }
@@ -2927,7 +2927,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetCustomerOwnedIpEnabled(bool value) { m_customerOwnedIpEnabledHasBeenSet = true; m_customerOwnedIpEnabled = value; }
@@ -2942,7 +2942,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline DBInstance& WithCustomerOwnedIpEnabled(bool value) { SetCustomerOwnedIpEnabled(value); return *this;}
@@ -3638,6 +3638,55 @@ namespace Model
      */
     inline DBInstance& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline DBInstance& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline DBInstance& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle
+     * SID is also the name of the CDB. This setting is valid for RDS Custom only.</p>
+     */
+    inline DBInstance& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3870,6 +3919,9 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggersOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API GetRepositoryTriggersResult
+  class GetRepositoryTriggersResult
   {
   public:
-    GetRepositoryTriggersResult();
-    GetRepositoryTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetRepositoryTriggersResult();
+    AWS_CODECOMMIT_API GetRepositoryTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

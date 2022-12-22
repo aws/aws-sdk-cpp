@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API UpdatePrimaryEmailAddressResult
+  class UpdatePrimaryEmailAddressResult
   {
   public:
-    UpdatePrimaryEmailAddressResult();
-    UpdatePrimaryEmailAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePrimaryEmailAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API UpdatePrimaryEmailAddressResult();
+    AWS_WORKMAIL_API UpdatePrimaryEmailAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API UpdatePrimaryEmailAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

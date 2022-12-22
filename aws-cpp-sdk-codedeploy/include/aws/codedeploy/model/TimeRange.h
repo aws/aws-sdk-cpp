@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API TimeRange
+  class TimeRange
   {
   public:
-    TimeRange();
-    TimeRange(Aws::Utils::Json::JsonView jsonValue);
-    TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API TimeRange();
+    AWS_CODEDEPLOY_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ErrorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ErrorDetail
+  class ErrorDetail
   {
   public:
-    ErrorDetail();
-    ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ErrorDetail();
+    AWS_GLUE_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

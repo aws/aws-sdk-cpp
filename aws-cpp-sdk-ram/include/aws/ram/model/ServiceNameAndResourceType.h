@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ServiceNameAndResourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ServiceNameAndResourceType
+  class ServiceNameAndResourceType
   {
   public:
-    ServiceNameAndResourceType();
-    ServiceNameAndResourceType(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNameAndResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ServiceNameAndResourceType();
+    AWS_RAM_API ServiceNameAndResourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ServiceNameAndResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Shard">AWS API
    * Reference</a></p>
    */
-  class AWS_KINESIS_API Shard
+  class Shard
   {
   public:
-    Shard();
-    Shard(Aws::Utils::Json::JsonView jsonValue);
-    Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API Shard();
+    AWS_KINESIS_API Shard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

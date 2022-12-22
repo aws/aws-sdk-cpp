@@ -36,6 +36,8 @@ namespace Aws
         static const int PENDING_DISABLE_HASH = HashingUtils::HashString("PENDING_DISABLE");
         static const int NO_INVENTORY_HASH = HashingUtils::HashString("NO_INVENTORY");
         static const int STALE_INVENTORY_HASH = HashingUtils::HashString("STALE_INVENTORY");
+        static const int EXCLUDED_BY_TAG_HASH = HashingUtils::HashString("EXCLUDED_BY_TAG");
+        static const int UNSUPPORTED_RUNTIME_HASH = HashingUtils::HashString("UNSUPPORTED_RUNTIME");
 
 
         ScanStatusReason GetScanStatusReasonForName(const Aws::String& name)
@@ -105,6 +107,14 @@ namespace Aws
           {
             return ScanStatusReason::STALE_INVENTORY;
           }
+          else if (hashCode == EXCLUDED_BY_TAG_HASH)
+          {
+            return ScanStatusReason::EXCLUDED_BY_TAG;
+          }
+          else if (hashCode == UNSUPPORTED_RUNTIME_HASH)
+          {
+            return ScanStatusReason::UNSUPPORTED_RUNTIME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -151,6 +161,10 @@ namespace Aws
             return "NO_INVENTORY";
           case ScanStatusReason::STALE_INVENTORY:
             return "STALE_INVENTORY";
+          case ScanStatusReason::EXCLUDED_BY_TAG:
+            return "EXCLUDED_BY_TAG";
+          case ScanStatusReason::UNSUPPORTED_RUNTIME:
+            return "UNSUPPORTED_RUNTIME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

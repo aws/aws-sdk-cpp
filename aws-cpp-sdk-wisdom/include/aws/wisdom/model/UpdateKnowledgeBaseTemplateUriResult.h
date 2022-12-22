@@ -24,12 +24,12 @@ namespace ConnectWisdomService
 {
 namespace Model
 {
-  class AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriResult
+  class UpdateKnowledgeBaseTemplateUriResult
   {
   public:
-    UpdateKnowledgeBaseTemplateUriResult();
-    UpdateKnowledgeBaseTemplateUriResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateKnowledgeBaseTemplateUriResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriResult();
+    AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

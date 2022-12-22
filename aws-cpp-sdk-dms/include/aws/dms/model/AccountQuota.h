@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AccountQuota">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API AccountQuota
+  class AccountQuota
   {
   public:
-    AccountQuota();
-    AccountQuota(Aws::Utils::Json::JsonView jsonValue);
-    AccountQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API AccountQuota();
+    AWS_DATABASEMIGRATIONSERVICE_API AccountQuota(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API AccountQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

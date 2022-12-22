@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/AppInstanceAdmin">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API AppInstanceAdmin
+  class AppInstanceAdmin
   {
   public:
-    AppInstanceAdmin();
-    AppInstanceAdmin(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API AppInstanceAdmin();
+    AWS_CHIMESDKIDENTITY_API AppInstanceAdmin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API AppInstanceAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

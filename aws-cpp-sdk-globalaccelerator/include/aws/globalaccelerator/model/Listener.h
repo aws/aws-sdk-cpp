@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/Listener">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API Listener
+  class Listener
   {
   public:
-    Listener();
-    Listener(Aws::Utils::Json::JsonView jsonValue);
-    Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API Listener();
+    AWS_GLOBALACCELERATOR_API Listener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

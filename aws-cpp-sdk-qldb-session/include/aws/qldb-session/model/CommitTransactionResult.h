@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/CommitTransactionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API CommitTransactionResult
+  class CommitTransactionResult
   {
   public:
-    CommitTransactionResult();
-    CommitTransactionResult(Aws::Utils::Json::JsonView jsonValue);
-    CommitTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API CommitTransactionResult();
+    AWS_QLDBSESSION_API CommitTransactionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API CommitTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

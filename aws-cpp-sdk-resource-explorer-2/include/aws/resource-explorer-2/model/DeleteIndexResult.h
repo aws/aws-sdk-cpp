@@ -26,12 +26,12 @@ namespace ResourceExplorer2
 {
 namespace Model
 {
-  class AWS_RESOURCEEXPLORER2_API DeleteIndexResult
+  class DeleteIndexResult
   {
   public:
-    DeleteIndexResult();
-    DeleteIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API DeleteIndexResult();
+    AWS_RESOURCEEXPLORER2_API DeleteIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API DeleteIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

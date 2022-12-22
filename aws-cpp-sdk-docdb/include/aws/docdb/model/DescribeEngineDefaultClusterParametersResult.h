@@ -25,12 +25,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API DescribeEngineDefaultClusterParametersResult
+  class DescribeEngineDefaultClusterParametersResult
   {
   public:
-    DescribeEngineDefaultClusterParametersResult();
-    DescribeEngineDefaultClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEngineDefaultClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeEngineDefaultClusterParametersResult();
+    AWS_DOCDB_API DescribeEngineDefaultClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeEngineDefaultClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

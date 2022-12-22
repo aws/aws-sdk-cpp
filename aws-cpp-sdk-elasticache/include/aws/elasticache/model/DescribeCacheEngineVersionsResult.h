@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheEngineVersionMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheEngineVersionsResult
+  class DescribeCacheEngineVersionsResult
   {
   public:
-    DescribeCacheEngineVersionsResult();
-    DescribeCacheEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheEngineVersionsResult();
+    AWS_ELASTICACHE_API DescribeCacheEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

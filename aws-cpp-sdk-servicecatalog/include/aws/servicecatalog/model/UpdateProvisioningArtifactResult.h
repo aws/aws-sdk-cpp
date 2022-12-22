@@ -27,12 +27,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API UpdateProvisioningArtifactResult
+  class UpdateProvisioningArtifactResult
   {
   public:
-    UpdateProvisioningArtifactResult();
-    UpdateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API UpdateProvisioningArtifactResult();
+    AWS_SERVICECATALOG_API UpdateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API UpdateProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -62,74 +62,74 @@ namespace Model
 
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_info = value; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_info = std::move(value); }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(const Aws::String& key, const Aws::String& value) { m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(Aws::String&& key, const Aws::String& value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(const Aws::String& key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(Aws::String&& key, Aws::String&& value) { m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(const char* key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(Aws::String&& key, const char* value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services
-     * CodeCommit, or GitHub in JSON format.</p>
+     * <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON
+     * format.</p>
      */
     inline UpdateProvisioningArtifactResult& AddInfo(const char* key, const char* value) { m_info.emplace(key, value); return *this; }
 

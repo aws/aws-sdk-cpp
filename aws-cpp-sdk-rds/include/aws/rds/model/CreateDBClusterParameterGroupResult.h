@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API CreateDBClusterParameterGroupResult
+  class CreateDBClusterParameterGroupResult
   {
   public:
-    CreateDBClusterParameterGroupResult();
-    CreateDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDBClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API CreateDBClusterParameterGroupResult();
+    AWS_RDS_API CreateDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API CreateDBClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

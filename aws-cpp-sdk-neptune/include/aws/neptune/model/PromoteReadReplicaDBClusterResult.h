@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API PromoteReadReplicaDBClusterResult
+  class PromoteReadReplicaDBClusterResult
   {
   public:
-    PromoteReadReplicaDBClusterResult();
-    PromoteReadReplicaDBClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PromoteReadReplicaDBClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API PromoteReadReplicaDBClusterResult();
+    AWS_NEPTUNE_API PromoteReadReplicaDBClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API PromoteReadReplicaDBClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -24,12 +24,12 @@ namespace Route53Domains
 {
 namespace Model
 {
-  class AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult
+  class ResendContactReachabilityEmailResult
   {
   public:
-    ResendContactReachabilityEmailResult();
-    ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResendContactReachabilityEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult();
+    AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

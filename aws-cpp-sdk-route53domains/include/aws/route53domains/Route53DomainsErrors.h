@@ -47,7 +47,8 @@ enum class Route53DomainsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DOMAIN_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DNSSEC_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DOMAIN_LIMIT_EXCEEDED,
   DUPLICATE_REQUEST,
   INVALID_INPUT,
   OPERATION_LIMIT_EXCEEDED,

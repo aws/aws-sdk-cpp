@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/IntegrationAssociationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API IntegrationAssociationSummary
+  class IntegrationAssociationSummary
   {
   public:
-    IntegrationAssociationSummary();
-    IntegrationAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
-    IntegrationAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API IntegrationAssociationSummary();
+    AWS_CONNECT_API IntegrationAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API IntegrationAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

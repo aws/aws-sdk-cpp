@@ -25,12 +25,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetRegistryResult
+  class GetRegistryResult
   {
   public:
-    GetRegistryResult();
-    GetRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetRegistryResult();
+    AWS_GLUE_API GetRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

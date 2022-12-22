@@ -24,12 +24,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API UpdateCapacityProviderResult
+  class UpdateCapacityProviderResult
   {
   public:
-    UpdateCapacityProviderResult();
-    UpdateCapacityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCapacityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API UpdateCapacityProviderResult();
+    AWS_ECS_API UpdateCapacityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API UpdateCapacityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

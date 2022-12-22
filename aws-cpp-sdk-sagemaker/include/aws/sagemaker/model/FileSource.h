@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FileSource
+  class FileSource
   {
   public:
-    FileSource();
-    FileSource(Aws::Utils::Json::JsonView jsonValue);
-    FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FileSource();
+    AWS_SAGEMAKER_API FileSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

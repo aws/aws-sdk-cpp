@@ -25,12 +25,12 @@ namespace IoTEvents
 {
 namespace Model
 {
-  class AWS_IOTEVENTS_API ListTagsForResourceResult
+  class ListTagsForResourceResult
   {
   public:
-    ListTagsForResourceResult();
-    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTS_API ListTagsForResourceResult();
+    AWS_IOTEVENTS_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTS_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

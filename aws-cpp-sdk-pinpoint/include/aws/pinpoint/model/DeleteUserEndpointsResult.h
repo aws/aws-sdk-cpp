@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API DeleteUserEndpointsResult
+  class DeleteUserEndpointsResult
   {
   public:
-    DeleteUserEndpointsResult();
-    DeleteUserEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API DeleteUserEndpointsResult();
+    AWS_PINPOINT_API DeleteUserEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API DeleteUserEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

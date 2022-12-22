@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRunResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult
+  class StartReplicationTaskAssessmentRunResult
   {
   public:
-    StartReplicationTaskAssessmentRunResult();
-    StartReplicationTaskAssessmentRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartReplicationTaskAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

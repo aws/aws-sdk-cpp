@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDeviceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceResult
+  class AdminGetDeviceResult
   {
   public:
-    AdminGetDeviceResult();
-    AdminGetDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminGetDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

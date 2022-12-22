@@ -22,12 +22,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API DeleteStudioMemberResult
+  class DeleteStudioMemberResult
   {
   public:
-    DeleteStudioMemberResult();
-    DeleteStudioMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteStudioMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API DeleteStudioMemberResult();
+    AWS_NIMBLESTUDIO_API DeleteStudioMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API DeleteStudioMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

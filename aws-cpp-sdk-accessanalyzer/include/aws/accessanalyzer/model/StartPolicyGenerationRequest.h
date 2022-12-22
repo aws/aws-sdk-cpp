@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACCESSANALYZER_API StartPolicyGenerationRequest : public AccessAnalyzerRequest
+  class StartPolicyGenerationRequest : public AccessAnalyzerRequest
   {
   public:
-    StartPolicyGenerationRequest();
+    AWS_ACCESSANALYZER_API StartPolicyGenerationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartPolicyGeneration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
     /**

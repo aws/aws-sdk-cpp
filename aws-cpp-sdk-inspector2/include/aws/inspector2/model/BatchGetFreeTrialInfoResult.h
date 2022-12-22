@@ -26,12 +26,12 @@ namespace Inspector2
 {
 namespace Model
 {
-  class AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult
+  class BatchGetFreeTrialInfoResult
   {
   public:
-    BatchGetFreeTrialInfoResult();
-    BatchGetFreeTrialInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetFreeTrialInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult();
+    AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

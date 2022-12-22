@@ -25,12 +25,12 @@ namespace Route53RecoveryReadiness
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYREADINESS_API ListCrossAccountAuthorizationsResult
+  class ListCrossAccountAuthorizationsResult
   {
   public:
-    ListCrossAccountAuthorizationsResult();
-    ListCrossAccountAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCrossAccountAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API ListCrossAccountAuthorizationsResult();
+    AWS_ROUTE53RECOVERYREADINESS_API ListCrossAccountAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API ListCrossAccountAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

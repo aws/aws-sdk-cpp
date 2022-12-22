@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API SqlInjectionMatchSetSummary
+  class SqlInjectionMatchSetSummary
   {
   public:
-    SqlInjectionMatchSetSummary();
-    SqlInjectionMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    SqlInjectionMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API SqlInjectionMatchSetSummary();
+    AWS_WAFREGIONAL_API SqlInjectionMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API SqlInjectionMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

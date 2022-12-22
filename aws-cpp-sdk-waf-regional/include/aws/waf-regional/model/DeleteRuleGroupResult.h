@@ -24,12 +24,12 @@ namespace WAFRegional
 {
 namespace Model
 {
-  class AWS_WAFREGIONAL_API DeleteRuleGroupResult
+  class DeleteRuleGroupResult
   {
   public:
-    DeleteRuleGroupResult();
-    DeleteRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API DeleteRuleGroupResult();
+    AWS_WAFREGIONAL_API DeleteRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API DeleteRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

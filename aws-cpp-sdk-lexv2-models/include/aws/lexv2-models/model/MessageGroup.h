@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/MessageGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API MessageGroup
+  class MessageGroup
   {
   public:
-    MessageGroup();
-    MessageGroup(Aws::Utils::Json::JsonView jsonValue);
-    MessageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API MessageGroup();
+    AWS_LEXMODELSV2_API MessageGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API MessageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

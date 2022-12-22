@@ -27,12 +27,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API DescribeListenersResult
+  class DescribeListenersResult
   {
   public:
-    DescribeListenersResult();
-    DescribeListenersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeListenersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API DescribeListenersResult();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeListenersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API DescribeListenersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API ListLoggerDefinitionVersionsResult
+  class ListLoggerDefinitionVersionsResult
   {
   public:
-    ListLoggerDefinitionVersionsResult();
-    ListLoggerDefinitionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLoggerDefinitionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API ListLoggerDefinitionVersionsResult();
+    AWS_GREENGRASS_API ListLoggerDefinitionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API ListLoggerDefinitionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

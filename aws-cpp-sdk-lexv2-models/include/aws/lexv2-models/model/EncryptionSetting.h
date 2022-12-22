@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/EncryptionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API EncryptionSetting
+  class EncryptionSetting
   {
   public:
-    EncryptionSetting();
-    EncryptionSetting(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API EncryptionSetting();
+    AWS_LEXMODELSV2_API EncryptionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API EncryptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

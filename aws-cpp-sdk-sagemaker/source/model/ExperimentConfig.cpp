@@ -21,14 +21,16 @@ namespace Model
 ExperimentConfig::ExperimentConfig() : 
     m_experimentNameHasBeenSet(false),
     m_trialNameHasBeenSet(false),
-    m_trialComponentDisplayNameHasBeenSet(false)
+    m_trialComponentDisplayNameHasBeenSet(false),
+    m_runNameHasBeenSet(false)
 {
 }
 
 ExperimentConfig::ExperimentConfig(JsonView jsonValue) : 
     m_experimentNameHasBeenSet(false),
     m_trialNameHasBeenSet(false),
-    m_trialComponentDisplayNameHasBeenSet(false)
+    m_trialComponentDisplayNameHasBeenSet(false),
+    m_runNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ExperimentConfig& ExperimentConfig::operator =(JsonView jsonValue)
     m_trialComponentDisplayNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RunName"))
+  {
+    m_runName = jsonValue.GetString("RunName");
+
+    m_runNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ExperimentConfig::Jsonize() const
   if(m_trialComponentDisplayNameHasBeenSet)
   {
    payload.WithString("TrialComponentDisplayName", m_trialComponentDisplayName);
+
+  }
+
+  if(m_runNameHasBeenSet)
+  {
+   payload.WithString("RunName", m_runName);
 
   }
 

@@ -24,12 +24,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult
+  class DeleteApplicationInputProcessingConfigurationResult
   {
   public:
-    DeleteApplicationInputProcessingConfigurationResult();
-    DeleteApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationInputProcessingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult();
+    AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

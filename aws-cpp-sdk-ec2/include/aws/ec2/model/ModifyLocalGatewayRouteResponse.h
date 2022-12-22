@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyLocalGatewayRouteResponse
+  class ModifyLocalGatewayRouteResponse
   {
   public:
-    ModifyLocalGatewayRouteResponse();
-    ModifyLocalGatewayRouteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyLocalGatewayRouteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyLocalGatewayRouteResponse();
+    AWS_EC2_API ModifyLocalGatewayRouteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyLocalGatewayRouteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline const LocalGatewayRoute& GetRoute() const{ return m_route; }
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline void SetRoute(const LocalGatewayRoute& value) { m_route = value; }
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline void SetRoute(LocalGatewayRoute&& value) { m_route = std::move(value); }
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline ModifyLocalGatewayRouteResponse& WithRoute(const LocalGatewayRoute& value) { SetRoute(value); return *this;}
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline ModifyLocalGatewayRouteResponse& WithRoute(LocalGatewayRoute&& value) { SetRoute(std::move(value)); return *this;}
 
 

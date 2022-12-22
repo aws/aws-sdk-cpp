@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeEngineDefaultClusterParametersResult
+  class DescribeEngineDefaultClusterParametersResult
   {
   public:
-    DescribeEngineDefaultClusterParametersResult();
-    DescribeEngineDefaultClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEngineDefaultClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeEngineDefaultClusterParametersResult();
+    AWS_RDS_API DescribeEngineDefaultClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeEngineDefaultClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

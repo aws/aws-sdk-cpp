@@ -22,7 +22,8 @@ namespace Model
     INTELLIGENT_TIERING,
     GLACIER,
     DEEP_ARCHIVE,
-    OUTPOSTS
+    OUTPOSTS,
+    GLACIER_INSTANT_RETRIEVAL
   };
 
 namespace S3StorageClassMapper

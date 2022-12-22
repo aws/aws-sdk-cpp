@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/MemberDataSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API MemberDataSourceConfiguration
+  class MemberDataSourceConfiguration
   {
   public:
-    MemberDataSourceConfiguration();
-    MemberDataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MemberDataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API MemberDataSourceConfiguration();
+    AWS_GUARDDUTY_API MemberDataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API MemberDataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

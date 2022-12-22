@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API ModifyDBProxyTargetGroupResult
+  class ModifyDBProxyTargetGroupResult
   {
   public:
-    ModifyDBProxyTargetGroupResult();
-    ModifyDBProxyTargetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyDBProxyTargetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyDBProxyTargetGroupResult();
+    AWS_RDS_API ModifyDBProxyTargetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyDBProxyTargetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

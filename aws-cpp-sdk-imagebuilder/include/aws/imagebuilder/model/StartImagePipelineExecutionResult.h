@@ -24,12 +24,12 @@ namespace imagebuilder
 {
 namespace Model
 {
-  class AWS_IMAGEBUILDER_API StartImagePipelineExecutionResult
+  class StartImagePipelineExecutionResult
   {
   public:
-    StartImagePipelineExecutionResult();
-    StartImagePipelineExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartImagePipelineExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API StartImagePipelineExecutionResult();
+    AWS_IMAGEBUILDER_API StartImagePipelineExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API StartImagePipelineExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

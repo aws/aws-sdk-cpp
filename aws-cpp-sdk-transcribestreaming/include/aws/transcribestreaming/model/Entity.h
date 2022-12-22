@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/Entity">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API Entity
+  class Entity
   {
   public:
-    Entity();
-    Entity(Aws::Utils::Json::JsonView jsonValue);
-    Entity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Entity();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Entity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Entity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

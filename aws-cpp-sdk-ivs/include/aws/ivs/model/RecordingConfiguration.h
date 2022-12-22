@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/RecordingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API RecordingConfiguration
+  class RecordingConfiguration
   {
   public:
-    RecordingConfiguration();
-    RecordingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RecordingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API RecordingConfiguration();
+    AWS_IVS_API RecordingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API RecordingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

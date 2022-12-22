@@ -26,12 +26,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult
+  class ListThirdPartyFirewallFirewallPoliciesResult
   {
   public:
-    ListThirdPartyFirewallFirewallPoliciesResult();
-    ListThirdPartyFirewallFirewallPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThirdPartyFirewallFirewallPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult();
+    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

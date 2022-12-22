@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ParameterGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API ParameterGroup
+  class ParameterGroup
   {
   public:
-    ParameterGroup();
-    ParameterGroup(Aws::Utils::Json::JsonView jsonValue);
-    ParameterGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API ParameterGroup();
+    AWS_DAX_API ParameterGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API ParameterGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

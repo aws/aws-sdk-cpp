@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RecoveryPointByResource">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API RecoveryPointByResource
+  class RecoveryPointByResource
   {
   public:
-    RecoveryPointByResource();
-    RecoveryPointByResource(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryPointByResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API RecoveryPointByResource();
+    AWS_BACKUP_API RecoveryPointByResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API RecoveryPointByResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -360,6 +360,80 @@ namespace Model
      */
     inline RecoveryPointByResource& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) recovery
+     * point.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) recovery
+     * point.</p>
+     */
+    inline bool IsParentHasBeenSet() const { return m_isParentHasBeenSet; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) recovery
+     * point.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParentHasBeenSet = true; m_isParent = value; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) recovery
+     * point.</p>
+     */
+    inline RecoveryPointByResource& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline const Aws::String& GetParentRecoveryPointArn() const{ return m_parentRecoveryPointArn; }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline bool ParentRecoveryPointArnHasBeenSet() const { return m_parentRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline void SetParentRecoveryPointArn(const Aws::String& value) { m_parentRecoveryPointArnHasBeenSet = true; m_parentRecoveryPointArn = value; }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline void SetParentRecoveryPointArn(Aws::String&& value) { m_parentRecoveryPointArnHasBeenSet = true; m_parentRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline void SetParentRecoveryPointArn(const char* value) { m_parentRecoveryPointArnHasBeenSet = true; m_parentRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline RecoveryPointByResource& WithParentRecoveryPointArn(const Aws::String& value) { SetParentRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline RecoveryPointByResource& WithParentRecoveryPointArn(Aws::String&& value) { SetParentRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery
+     * point.</p>
+     */
+    inline RecoveryPointByResource& WithParentRecoveryPointArn(const char* value) { SetParentRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_recoveryPointArn;
@@ -382,6 +456,12 @@ namespace Model
 
     Aws::String m_backupVaultName;
     bool m_backupVaultNameHasBeenSet = false;
+
+    bool m_isParent;
+    bool m_isParentHasBeenSet = false;
+
+    Aws::String m_parentRecoveryPointArn;
+    bool m_parentRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

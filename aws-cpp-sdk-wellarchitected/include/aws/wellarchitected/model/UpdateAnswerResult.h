@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAnswerOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API UpdateAnswerResult
+  class UpdateAnswerResult
   {
   public:
-    UpdateAnswerResult();
-    UpdateAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API UpdateAnswerResult();
+    AWS_WELLARCHITECTED_API UpdateAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API UpdateAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

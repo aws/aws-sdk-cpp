@@ -24,12 +24,12 @@ namespace imagebuilder
 {
 namespace Model
 {
-  class AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult
+  class UpdateDistributionConfigurationResult
   {
   public:
-    UpdateDistributionConfigurationResult();
-    UpdateDistributionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult();
+    AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

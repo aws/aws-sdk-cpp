@@ -26,12 +26,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API ListPiiEntitiesDetectionJobsResult
+  class ListPiiEntitiesDetectionJobsResult
   {
   public:
-    ListPiiEntitiesDetectionJobsResult();
-    ListPiiEntitiesDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPiiEntitiesDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListPiiEntitiesDetectionJobsResult();
+    AWS_COMPREHEND_API ListPiiEntitiesDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListPiiEntitiesDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

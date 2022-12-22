@@ -45,6 +45,21 @@ ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
+  if(jsonValue.ValueExists("StreamSummaries"))
+  {
+    Aws::Utils::Array<JsonView> streamSummariesJsonList = jsonValue.GetArray("StreamSummaries");
+    for(unsigned streamSummariesIndex = 0; streamSummariesIndex < streamSummariesJsonList.GetLength(); ++streamSummariesIndex)
+    {
+      m_streamSummaries.push_back(streamSummariesJsonList[streamSummariesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

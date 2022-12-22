@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ConfigRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ConfigRecommendation
+  class ConfigRecommendation
   {
   public:
-    ConfigRecommendation();
-    ConfigRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ConfigRecommendation();
+    AWS_RESILIENCEHUB_API ConfigRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ConfigRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

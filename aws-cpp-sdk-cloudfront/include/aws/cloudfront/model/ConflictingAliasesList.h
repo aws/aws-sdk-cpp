@@ -29,18 +29,18 @@ namespace Model
    * Amazon Web Services accounts that they are associated with. In the list, the
    * distribution and account IDs are partially hidden, which allows you to identify
    * the distributions and accounts that you own, but helps to protect the
-   * information of ones that you don’t own.</p><p><h3>See Also:</h3>   <a
+   * information of ones that you don't own.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAliasesList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ConflictingAliasesList
+  class ConflictingAliasesList
   {
   public:
-    ConflictingAliasesList();
-    ConflictingAliasesList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConflictingAliasesList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAliasesList();
+    AWS_CLOUDFRONT_API ConflictingAliasesList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAliasesList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -22,17 +22,17 @@ namespace Model
 {
 
   /**
-   * Dolby Vision Profile 8.1 Settings<p><h3>See Also:</h3>   <a
+   * Dolby Vision81 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DolbyVision81Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DolbyVision81Settings
+  class DolbyVision81Settings
   {
   public:
-    DolbyVision81Settings();
-    DolbyVision81Settings(Aws::Utils::Json::JsonView jsonValue);
-    DolbyVision81Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API DolbyVision81Settings();
+    AWS_MEDIALIVE_API DolbyVision81Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API DolbyVision81Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

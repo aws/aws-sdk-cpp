@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CustomExtension">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API CustomExtension
+  class CustomExtension
   {
   public:
-    CustomExtension();
-    CustomExtension(Aws::Utils::Json::JsonView jsonValue);
-    CustomExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API CustomExtension();
+    AWS_ACMPCA_API CustomExtension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API CustomExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryInDesiredStateException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryInDesiredStateException
+  class DirectoryInDesiredStateException
   {
   public:
-    DirectoryInDesiredStateException();
-    DirectoryInDesiredStateException(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryInDesiredStateException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryInDesiredStateException();
+    AWS_DIRECTORYSERVICE_API DirectoryInDesiredStateException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryInDesiredStateException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

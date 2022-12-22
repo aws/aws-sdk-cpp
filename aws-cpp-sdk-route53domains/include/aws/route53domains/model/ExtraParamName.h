@@ -45,7 +45,8 @@ namespace Model
     VAT_NUMBER,
     UK_CONTACT_TYPE,
     UK_COMPANY_NUMBER,
-    EU_COUNTRY_OF_CITIZENSHIP
+    EU_COUNTRY_OF_CITIZENSHIP,
+    AU_PRIORITY_TOKEN
   };
 
 namespace ExtraParamNameMapper

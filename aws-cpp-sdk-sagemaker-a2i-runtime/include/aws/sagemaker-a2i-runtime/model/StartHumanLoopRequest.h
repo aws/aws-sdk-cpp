@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUGMENTEDAIRUNTIME_API StartHumanLoopRequest : public AugmentedAIRuntimeRequest
+  class StartHumanLoopRequest : public AugmentedAIRuntimeRequest
   {
   public:
-    StartHumanLoopRequest();
+    AWS_AUGMENTEDAIRUNTIME_API StartHumanLoopRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartHumanLoop"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUGMENTEDAIRUNTIME_API Aws::String SerializePayload() const override;
 
 
     /**

@@ -24,12 +24,12 @@ namespace MediaConvert
 {
 namespace Model
 {
-  class AWS_MEDIACONVERT_API GetJobResult
+  class GetJobResult
   {
   public:
-    GetJobResult();
-    GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API GetJobResult();
+    AWS_MEDIACONVERT_API GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

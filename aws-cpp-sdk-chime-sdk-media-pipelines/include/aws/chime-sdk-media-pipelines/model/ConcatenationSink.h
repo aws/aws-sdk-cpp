@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ConcatenationSink">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink
+  class ConcatenationSink
   {
   public:
-    ConcatenationSink();
-    ConcatenationSink(Aws::Utils::Json::JsonView jsonValue);
-    ConcatenationSink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink();
+    AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

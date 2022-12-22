@@ -7,6 +7,7 @@
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplify/AmplifyServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace Amplify
    * information, see the <a href="https://docs.amplify.aws/">Amplify Framework.</a>
    * </p>
    */
-  class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient
+  class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace Amplify
 
         /* End of legacy constructors due deprecation */
         virtual ~AmplifyClient();
-
 
         /**
          * <p> Creates a new Amplify app. </p><p><h3>See Also:</h3>   <a
@@ -733,6 +733,7 @@ namespace Amplify
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AmplifyEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>;
       void init(const AmplifyClientConfiguration& clientConfiguration);
 
       AmplifyClientConfiguration m_clientConfiguration;

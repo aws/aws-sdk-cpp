@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API CreateCrawlerRequest : public GlueRequest
+  class CreateCrawlerRequest : public GlueRequest
   {
   public:
-    CreateCrawlerRequest();
+    AWS_GLUE_API CreateCrawlerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCrawler"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -555,64 +555,64 @@ namespace Model
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

@@ -24,17 +24,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActionsOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API StopFleetActionsResult
+  class StopFleetActionsResult
   {
   public:
-    StopFleetActionsResult();
-    StopFleetActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopFleetActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StopFleetActionsResult();
+    AWS_GAMELIFT_API StopFleetActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StopFleetActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

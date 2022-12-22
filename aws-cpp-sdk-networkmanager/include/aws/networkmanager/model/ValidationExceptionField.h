@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ValidationExceptionField">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ValidationExceptionField
+  class ValidationExceptionField
   {
   public:
-    ValidationExceptionField();
-    ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
-    ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ValidationExceptionField();
+    AWS_NETWORKMANAGER_API ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

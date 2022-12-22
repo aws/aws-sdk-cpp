@@ -26,12 +26,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API ListDataCellsFilterResult
+  class ListDataCellsFilterResult
   {
   public:
-    ListDataCellsFilterResult();
-    ListDataCellsFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDataCellsFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API ListDataCellsFilterResult();
+    AWS_LAKEFORMATION_API ListDataCellsFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API ListDataCellsFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

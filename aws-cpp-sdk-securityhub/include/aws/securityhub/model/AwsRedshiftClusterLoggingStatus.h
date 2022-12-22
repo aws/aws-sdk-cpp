@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterLoggingStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus
+  class AwsRedshiftClusterLoggingStatus
   {
   public:
-    AwsRedshiftClusterLoggingStatus();
-    AwsRedshiftClusterLoggingStatus(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterLoggingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API DescribeClusterDbRevisionsResult
+  class DescribeClusterDbRevisionsResult
   {
   public:
-    DescribeClusterDbRevisionsResult();
-    DescribeClusterDbRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterDbRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeClusterDbRevisionsResult();
+    AWS_REDSHIFT_API DescribeClusterDbRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeClusterDbRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

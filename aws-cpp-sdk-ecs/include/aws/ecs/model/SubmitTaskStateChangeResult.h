@@ -24,12 +24,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API SubmitTaskStateChangeResult
+  class SubmitTaskStateChangeResult
   {
   public:
-    SubmitTaskStateChangeResult();
-    SubmitTaskStateChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubmitTaskStateChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API SubmitTaskStateChangeResult();
+    AWS_ECS_API SubmitTaskStateChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API SubmitTaskStateChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

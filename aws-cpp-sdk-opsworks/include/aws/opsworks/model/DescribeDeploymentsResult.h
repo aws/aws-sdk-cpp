@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeploymentsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeDeploymentsResult
+  class DescribeDeploymentsResult
   {
   public:
-    DescribeDeploymentsResult();
-    DescribeDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeDeploymentsResult();
+    AWS_OPSWORKS_API DescribeDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

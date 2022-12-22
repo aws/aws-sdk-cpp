@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Relationship">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API Relationship
+  class Relationship
   {
   public:
-    Relationship();
-    Relationship(Aws::Utils::Json::JsonView jsonValue);
-    Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API Relationship();
+    AWS_CONFIGSERVICE_API Relationship(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

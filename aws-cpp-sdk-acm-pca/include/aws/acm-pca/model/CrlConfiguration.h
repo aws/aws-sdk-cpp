@@ -75,13 +75,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CrlConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API CrlConfiguration
+  class CrlConfiguration
   {
   public:
-    CrlConfiguration();
-    CrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API CrlConfiguration();
+    AWS_ACMPCA_API CrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API CrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

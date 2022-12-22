@@ -24,12 +24,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API DeleteMessageResult
+  class DeleteMessageResult
   {
   public:
-    DeleteMessageResult();
-    DeleteMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API DeleteMessageResult();
+    AWS_IVSCHAT_API DeleteMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API DeleteMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

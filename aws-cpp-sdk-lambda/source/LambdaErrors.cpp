@@ -16,8 +16,10 @@
 #include <aws/lambda/model/KMSNotFoundException.h>
 #include <aws/lambda/model/PreconditionFailedException.h>
 #include <aws/lambda/model/CodeVerificationFailedException.h>
+#include <aws/lambda/model/SnapStartException.h>
 #include <aws/lambda/model/ResourceInUseException.h>
 #include <aws/lambda/model/SubnetIPAddressLimitReachedException.h>
+#include <aws/lambda/model/SnapStartNotReadyException.h>
 #include <aws/lambda/model/InvalidRequestContentException.h>
 #include <aws/lambda/model/EC2AccessDeniedException.h>
 #include <aws/lambda/model/RequestTooLargeException.h>
@@ -39,6 +41,7 @@
 #include <aws/lambda/model/ENILimitReachedException.h>
 #include <aws/lambda/model/TooManyRequestsException.h>
 #include <aws/lambda/model/ServiceException.h>
+#include <aws/lambda/model/SnapStartTimeoutException.h>
 #include <aws/lambda/model/CodeStorageExceededException.h>
 
 using namespace Aws::Client;
@@ -110,6 +113,12 @@ template<> AWS_LAMBDA_API CodeVerificationFailedException LambdaError::GetModele
   return CodeVerificationFailedException(this->GetJsonPayload().View());
 }
 
+template<> AWS_LAMBDA_API SnapStartException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::SNAP_START);
+  return SnapStartException(this->GetJsonPayload().View());
+}
+
 template<> AWS_LAMBDA_API ResourceInUseException LambdaError::GetModeledError()
 {
   assert(this->GetErrorType() == LambdaErrors::RESOURCE_IN_USE);
@@ -120,6 +129,12 @@ template<> AWS_LAMBDA_API SubnetIPAddressLimitReachedException LambdaError::GetM
 {
   assert(this->GetErrorType() == LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED);
   return SubnetIPAddressLimitReachedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LAMBDA_API SnapStartNotReadyException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::SNAP_START_NOT_READY);
+  return SnapStartNotReadyException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API InvalidRequestContentException LambdaError::GetModeledError()
@@ -248,6 +263,12 @@ template<> AWS_LAMBDA_API ServiceException LambdaError::GetModeledError()
   return ServiceException(this->GetJsonPayload().View());
 }
 
+template<> AWS_LAMBDA_API SnapStartTimeoutException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::SNAP_START_TIMEOUT);
+  return SnapStartTimeoutException(this->GetJsonPayload().View());
+}
+
 template<> AWS_LAMBDA_API CodeStorageExceededException LambdaError::GetModeledError()
 {
   assert(this->GetErrorType() == LambdaErrors::CODE_STORAGE_EXCEEDED);
@@ -265,8 +286,10 @@ static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyL
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int CODE_VERIFICATION_FAILED_HASH = HashingUtils::HashString("CodeVerificationFailedException");
+static const int SNAP_START_HASH = HashingUtils::HashString("SnapStartException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
+static const int SNAP_START_NOT_READY_HASH = HashingUtils::HashString("SnapStartNotReadyException");
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
@@ -288,6 +311,7 @@ static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConf
 static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
+static const int SNAP_START_TIMEOUT_HASH = HashingUtils::HashString("SnapStartTimeoutException");
 static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
 
 
@@ -327,6 +351,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_VERIFICATION_FAILED), false);
   }
+  else if (hashCode == SNAP_START_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START), false);
+  }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), false);
@@ -334,6 +362,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), false);
+  }
+  else if (hashCode == SNAP_START_NOT_READY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_NOT_READY), false);
   }
   else if (hashCode == INVALID_REQUEST_CONTENT_HASH)
   {
@@ -418,6 +450,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), false);
+  }
+  else if (hashCode == SNAP_START_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START_TIMEOUT), false);
   }
   else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
   {

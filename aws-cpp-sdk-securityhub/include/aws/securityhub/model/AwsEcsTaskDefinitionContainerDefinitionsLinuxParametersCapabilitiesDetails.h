@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

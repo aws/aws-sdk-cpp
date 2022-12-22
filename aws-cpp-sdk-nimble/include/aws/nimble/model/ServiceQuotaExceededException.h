@@ -27,18 +27,18 @@ namespace Model
   /**
    * <p>Your current quota does not allow you to perform the request action. You can
    * request increases for some quotas, and other quotas cannot be increased.</p>
-   * <p>Please use AWS Service Quotas to request an increase. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Please use Amazon Web Services Service Quotas to request an increase.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ServiceQuotaExceededException
+  class ServiceQuotaExceededException
   {
   public:
-    ServiceQuotaExceededException();
-    ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ServiceQuotaExceededException();
+    AWS_NIMBLESTUDIO_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

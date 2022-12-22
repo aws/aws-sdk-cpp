@@ -26,12 +26,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API ListComponentOutputsResult
+  class ListComponentOutputsResult
   {
   public:
-    ListComponentOutputsResult();
-    ListComponentOutputsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListComponentOutputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListComponentOutputsResult();
+    AWS_PROTON_API ListComponentOutputsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListComponentOutputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

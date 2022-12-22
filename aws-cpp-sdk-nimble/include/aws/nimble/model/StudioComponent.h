@@ -47,52 +47,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioComponent
+  class StudioComponent
   {
   public:
-    StudioComponent();
-    StudioComponent(Aws::Utils::Json::JsonView jsonValue);
-    StudioComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioComponent();
+    AWS_NIMBLESTUDIO_API StudioComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StudioComponent& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StudioComponent& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StudioComponent& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -129,32 +137,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline StudioComponent& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline StudioComponent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -371,49 +379,57 @@ namespace Model
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline const Aws::String& GetRuntimeRoleArn() const{ return m_runtimeRoleArn; }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline bool RuntimeRoleArnHasBeenSet() const { return m_runtimeRoleArnHasBeenSet; }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline void SetRuntimeRoleArn(const Aws::String& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = value; }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline void SetRuntimeRoleArn(Aws::String&& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = std::move(value); }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline void SetRuntimeRoleArn(const char* value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn.assign(value); }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline StudioComponent& WithRuntimeRoleArn(const Aws::String& value) { SetRuntimeRoleArn(value); return *this;}
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline StudioComponent& WithRuntimeRoleArn(Aws::String&& value) { SetRuntimeRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline StudioComponent& WithRuntimeRoleArn(const char* value) { SetRuntimeRoleArn(value); return *this;}
 
@@ -461,57 +477,57 @@ namespace Model
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline const Aws::String& GetSecureInitializationRoleArn() const{ return m_secureInitializationRoleArn; }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline bool SecureInitializationRoleArnHasBeenSet() const { return m_secureInitializationRoleArnHasBeenSet; }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline void SetSecureInitializationRoleArn(const Aws::String& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = value; }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline void SetSecureInitializationRoleArn(Aws::String&& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = std::move(value); }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline void SetSecureInitializationRoleArn(const char* value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn.assign(value); }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline StudioComponent& WithSecureInitializationRoleArn(const Aws::String& value) { SetSecureInitializationRoleArn(value); return *this;}
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline StudioComponent& WithSecureInitializationRoleArn(Aws::String&& value) { SetSecureInitializationRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline StudioComponent& WithSecureInitializationRoleArn(const char* value) { SetSecureInitializationRoleArn(value); return *this;}
 
@@ -692,79 +708,79 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StudioComponent& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -802,32 +818,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline StudioComponent& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline StudioComponent& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

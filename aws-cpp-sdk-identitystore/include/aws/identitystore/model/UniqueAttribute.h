@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UniqueAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API UniqueAttribute
+  class UniqueAttribute
   {
   public:
-    UniqueAttribute();
-    UniqueAttribute(Aws::Utils::Json::JsonView jsonValue);
-    UniqueAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API UniqueAttribute();
+    AWS_IDENTITYSTORE_API UniqueAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API UniqueAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

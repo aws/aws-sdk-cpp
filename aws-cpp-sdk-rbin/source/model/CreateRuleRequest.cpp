@@ -18,7 +18,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_tagsHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_lockConfigurationHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,12 @@ Aws::String CreateRuleRequest::SerializePayload() const
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
    }
    payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
+
+  }
+
+  if(m_lockConfigurationHasBeenSet)
+  {
+   payload.WithObject("LockConfiguration", m_lockConfiguration.Jsonize());
 
   }
 

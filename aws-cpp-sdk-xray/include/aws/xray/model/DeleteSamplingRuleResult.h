@@ -24,12 +24,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API DeleteSamplingRuleResult
+  class DeleteSamplingRuleResult
   {
   public:
-    DeleteSamplingRuleResult();
-    DeleteSamplingRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSamplingRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API DeleteSamplingRuleResult();
+    AWS_XRAY_API DeleteSamplingRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API DeleteSamplingRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

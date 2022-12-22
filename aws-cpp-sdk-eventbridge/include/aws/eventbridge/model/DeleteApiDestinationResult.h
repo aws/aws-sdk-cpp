@@ -22,12 +22,12 @@ namespace EventBridge
 {
 namespace Model
 {
-  class AWS_EVENTBRIDGE_API DeleteApiDestinationResult
+  class DeleteApiDestinationResult
   {
   public:
-    DeleteApiDestinationResult();
-    DeleteApiDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApiDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API DeleteApiDestinationResult();
+    AWS_EVENTBRIDGE_API DeleteApiDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API DeleteApiDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

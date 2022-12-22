@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/FindingFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API FindingFilter
+  class FindingFilter
   {
   public:
-    FindingFilter();
-    FindingFilter(Aws::Utils::Json::JsonView jsonValue);
-    FindingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API FindingFilter();
+    AWS_INSPECTOR_API FindingFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API FindingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

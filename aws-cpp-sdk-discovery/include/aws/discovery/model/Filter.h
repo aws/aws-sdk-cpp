@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/Filter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API Filter();
+    AWS_APPLICATIONDISCOVERYSERVICE_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

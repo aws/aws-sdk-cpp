@@ -27,12 +27,12 @@ namespace DevOpsGuru
 {
 namespace Model
 {
-  class AWS_DEVOPSGURU_API ListOrganizationInsightsResult
+  class ListOrganizationInsightsResult
   {
   public:
-    ListOrganizationInsightsResult();
-    ListOrganizationInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOrganizationInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API ListOrganizationInsightsResult();
+    AWS_DEVOPSGURU_API ListOrganizationInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API ListOrganizationInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

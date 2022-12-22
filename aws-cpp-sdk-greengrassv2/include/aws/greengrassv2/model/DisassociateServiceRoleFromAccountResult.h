@@ -24,12 +24,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult
+  class DisassociateServiceRoleFromAccountResult
   {
   public:
-    DisassociateServiceRoleFromAccountResult();
-    DisassociateServiceRoleFromAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateServiceRoleFromAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult();
+    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

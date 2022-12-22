@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualServiceOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API DeleteVirtualServiceResult
+  class DeleteVirtualServiceResult
   {
   public:
-    DeleteVirtualServiceResult();
-    DeleteVirtualServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVirtualServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API DeleteVirtualServiceResult();
+    AWS_APPMESH_API DeleteVirtualServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API DeleteVirtualServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/IngestedEventsTimeWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API IngestedEventsTimeWindow
+  class IngestedEventsTimeWindow
   {
   public:
-    IngestedEventsTimeWindow();
-    IngestedEventsTimeWindow(Aws::Utils::Json::JsonView jsonValue);
-    IngestedEventsTimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API IngestedEventsTimeWindow();
+    AWS_FRAUDDETECTOR_API IngestedEventsTimeWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API IngestedEventsTimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

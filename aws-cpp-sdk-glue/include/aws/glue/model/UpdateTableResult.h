@@ -22,12 +22,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API UpdateTableResult
+  class UpdateTableResult
   {
   public:
-    UpdateTableResult();
-    UpdateTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API UpdateTableResult();
+    AWS_GLUE_API UpdateTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API UpdateTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

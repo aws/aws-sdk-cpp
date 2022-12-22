@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateResourceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateResourceIdentifier
+  class AggregateResourceIdentifier
   {
   public:
-    AggregateResourceIdentifier();
-    AggregateResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    AggregateResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier();
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

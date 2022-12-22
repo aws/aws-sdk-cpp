@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateRoomRequest::CreateRoomRequest() : 
+    m_loggingConfigurationIdentifiersHasBeenSet(false),
     m_maximumMessageLength(0),
     m_maximumMessageLengthHasBeenSet(false),
     m_maximumMessageRatePerSecond(0),
@@ -26,6 +27,17 @@ CreateRoomRequest::CreateRoomRequest() :
 Aws::String CreateRoomRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_loggingConfigurationIdentifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
+   for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
+   {
+     loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
+   }
+   payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
+
+  }
 
   if(m_maximumMessageLengthHasBeenSet)
   {

@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
 #include <aws/sagemaker/model/DomainSettings.h>
+#include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -25,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateDomainRequest : public SageMakerRequest
+  class CreateDomainRequest : public SageMakerRequest
   {
   public:
-    CreateDomainRequest();
+    AWS_SAGEMAKER_API CreateDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -543,6 +544,37 @@ namespace Model
      */
     inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline bool DefaultSpaceSettingsHasBeenSet() const { return m_defaultSpaceSettingsHasBeenSet; }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = value; }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::move(value); }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline CreateDomainRequest& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline CreateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -574,6 +606,9 @@ namespace Model
 
     DomainSettings m_domainSettings;
     bool m_domainSettingsHasBeenSet = false;
+
+    DefaultSpaceSettings m_defaultSpaceSettings;
+    bool m_defaultSpaceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

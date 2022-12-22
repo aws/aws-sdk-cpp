@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API SearchQueuesRequest : public ConnectRequest
+  class SearchQueuesRequest : public ConnectRequest
   {
   public:
-    SearchQueuesRequest();
+    AWS_CONNECT_API SearchQueuesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SearchQueues"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -185,32 +185,50 @@ namespace Model
 
 
     /**
-     * <p>The search criteria to be used to return queues.</p>
+     * <p>The search criteria to be used to return queues.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline const QueueSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
 
     /**
-     * <p>The search criteria to be used to return queues.</p>
+     * <p>The search criteria to be used to return queues.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
 
     /**
-     * <p>The search criteria to be used to return queues.</p>
+     * <p>The search criteria to be used to return queues.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline void SetSearchCriteria(const QueueSearchCriteria& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = value; }
 
     /**
-     * <p>The search criteria to be used to return queues.</p>
+     * <p>The search criteria to be used to return queues.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline void SetSearchCriteria(QueueSearchCriteria&& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = std::move(value); }
 
     /**
-     * <p>The search criteria to be used to return queues.</p>
+     * <p>The search criteria to be used to return queues.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline SearchQueuesRequest& WithSearchCriteria(const QueueSearchCriteria& value) { SetSearchCriteria(value); return *this;}
 
     /**
-     * <p>The search criteria to be used to return queues.</p>
+     * <p>The search criteria to be used to return queues.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline SearchQueuesRequest& WithSearchCriteria(QueueSearchCriteria&& value) { SetSearchCriteria(std::move(value)); return *this;}
 

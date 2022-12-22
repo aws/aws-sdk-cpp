@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API CreateConfigurationSetResult
+  class CreateConfigurationSetResult
   {
   public:
-    CreateConfigurationSetResult();
-    CreateConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API CreateConfigurationSetResult();
+    AWS_PINPOINTEMAIL_API CreateConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API CreateConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

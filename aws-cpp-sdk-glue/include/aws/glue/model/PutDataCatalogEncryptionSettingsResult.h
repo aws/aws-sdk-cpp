@@ -22,12 +22,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API PutDataCatalogEncryptionSettingsResult
+  class PutDataCatalogEncryptionSettingsResult
   {
   public:
-    PutDataCatalogEncryptionSettingsResult();
-    PutDataCatalogEncryptionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutDataCatalogEncryptionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API PutDataCatalogEncryptionSettingsResult();
+    AWS_GLUE_API PutDataCatalogEncryptionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API PutDataCatalogEncryptionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

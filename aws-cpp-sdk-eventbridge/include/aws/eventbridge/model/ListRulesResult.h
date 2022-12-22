@@ -26,12 +26,12 @@ namespace EventBridge
 {
 namespace Model
 {
-  class AWS_EVENTBRIDGE_API ListRulesResult
+  class ListRulesResult
   {
   public:
-    ListRulesResult();
-    ListRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API ListRulesResult();
+    AWS_EVENTBRIDGE_API ListRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API ListRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

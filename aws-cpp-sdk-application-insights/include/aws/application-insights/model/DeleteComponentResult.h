@@ -22,12 +22,12 @@ namespace ApplicationInsights
 {
 namespace Model
 {
-  class AWS_APPLICATIONINSIGHTS_API DeleteComponentResult
+  class DeleteComponentResult
   {
   public:
-    DeleteComponentResult();
-    DeleteComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API DeleteComponentResult();
+    AWS_APPLICATIONINSIGHTS_API DeleteComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API DeleteComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

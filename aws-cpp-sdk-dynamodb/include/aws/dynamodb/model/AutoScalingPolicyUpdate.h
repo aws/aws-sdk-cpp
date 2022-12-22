@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AutoScalingPolicyUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AutoScalingPolicyUpdate
+  class AutoScalingPolicyUpdate
   {
   public:
-    AutoScalingPolicyUpdate();
-    AutoScalingPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AutoScalingPolicyUpdate();
+    AWS_DYNAMODB_API AutoScalingPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AutoScalingPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

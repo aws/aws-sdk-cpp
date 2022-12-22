@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ScheduledAuditMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ScheduledAuditMetadata
+  class ScheduledAuditMetadata
   {
   public:
-    ScheduledAuditMetadata();
-    ScheduledAuditMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledAuditMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ScheduledAuditMetadata();
+    AWS_IOT_API ScheduledAuditMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ScheduledAuditMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

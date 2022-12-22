@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScheduledAction">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ScheduledAction
+  class ScheduledAction
   {
   public:
-    ScheduledAction();
-    ScheduledAction(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API ScheduledAction();
+    AWS_APPLICATIONAUTOSCALING_API ScheduledAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API ScheduledAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

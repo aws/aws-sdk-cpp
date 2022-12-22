@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOfferingsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult
+  class DescribeReservedNodeOfferingsResult
   {
   public:
-    DescribeReservedNodeOfferingsResult();
-    DescribeReservedNodeOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedNodeOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult();
+    AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

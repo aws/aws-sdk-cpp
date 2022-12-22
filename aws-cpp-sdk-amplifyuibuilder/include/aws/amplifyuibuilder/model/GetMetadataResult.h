@@ -25,12 +25,12 @@ namespace AmplifyUIBuilder
 {
 namespace Model
 {
-  class AWS_AMPLIFYUIBUILDER_API GetMetadataResult
+  class GetMetadataResult
   {
   public:
-    GetMetadataResult();
-    GetMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYUIBUILDER_API GetMetadataResult();
+    AWS_AMPLIFYUIBUILDER_API GetMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYUIBUILDER_API GetMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

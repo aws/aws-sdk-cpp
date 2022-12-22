@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API DeleteGlobalReplicationGroupResult
+  class DeleteGlobalReplicationGroupResult
   {
   public:
-    DeleteGlobalReplicationGroupResult();
-    DeleteGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DeleteGlobalReplicationGroupResult();
+    AWS_ELASTICACHE_API DeleteGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DeleteGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

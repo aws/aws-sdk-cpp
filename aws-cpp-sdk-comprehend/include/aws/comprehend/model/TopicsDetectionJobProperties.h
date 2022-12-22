@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TopicsDetectionJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API TopicsDetectionJobProperties
+  class TopicsDetectionJobProperties
   {
   public:
-    TopicsDetectionJobProperties();
-    TopicsDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    TopicsDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API TopicsDetectionJobProperties();
+    AWS_COMPREHEND_API TopicsDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API TopicsDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

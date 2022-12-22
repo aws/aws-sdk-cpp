@@ -7,6 +7,7 @@
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace KinesisAnalyticsV2
    * sources to perform time series analytics, feed real-time dashboards, and create
    * real-time metrics.</p>
    */
-  class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient
+  class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace KinesisAnalyticsV2
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisAnalyticsV2Client();
-
 
         /**
          * <p>Adds an Amazon CloudWatch log stream to monitor application configuration
@@ -238,8 +238,7 @@ namespace KinesisAnalyticsV2
 
         /**
          * <p>Creates and returns a URL that you can use to connect to an application's
-         * extension. Currently, the only available extension is the Apache Flink
-         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * extension.</p> <p>The IAM role or user used to call this API defines the
          * permissions to access the extension. After the presigned URL is created, no
          * additional permission is required to access this URL. IAM authorization policies
          * for this API are also enforced for every HTTP request that attempts to connect
@@ -744,6 +743,7 @@ namespace KinesisAnalyticsV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>;
       void init(const KinesisAnalyticsV2ClientConfiguration& clientConfiguration);
 
       KinesisAnalyticsV2ClientConfiguration m_clientConfiguration;

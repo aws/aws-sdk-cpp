@@ -24,15 +24,15 @@ namespace EC2
 namespace Model
 {
 
-  class AWS_EC2_API NewDhcpConfiguration
+  class NewDhcpConfiguration
   {
   public:
-    NewDhcpConfiguration();
-    NewDhcpConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NewDhcpConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NewDhcpConfiguration();
+    AWS_EC2_API NewDhcpConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NewDhcpConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

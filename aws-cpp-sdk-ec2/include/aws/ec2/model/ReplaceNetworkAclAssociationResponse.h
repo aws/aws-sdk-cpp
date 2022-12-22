@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ReplaceNetworkAclAssociationResponse
+  class ReplaceNetworkAclAssociationResponse
   {
   public:
-    ReplaceNetworkAclAssociationResponse();
-    ReplaceNetworkAclAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReplaceNetworkAclAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ReplaceNetworkAclAssociationResponse();
+    AWS_EC2_API ReplaceNetworkAclAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ReplaceNetworkAclAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

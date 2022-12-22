@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CriteriaForJob">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API CriteriaForJob
+  class CriteriaForJob
   {
   public:
-    CriteriaForJob();
-    CriteriaForJob(Aws::Utils::Json::JsonView jsonValue);
-    CriteriaForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API CriteriaForJob();
+    AWS_MACIE2_API CriteriaForJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API CriteriaForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

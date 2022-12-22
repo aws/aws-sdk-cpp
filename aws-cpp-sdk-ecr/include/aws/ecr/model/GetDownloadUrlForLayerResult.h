@@ -24,12 +24,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API GetDownloadUrlForLayerResult
+  class GetDownloadUrlForLayerResult
   {
   public:
-    GetDownloadUrlForLayerResult();
-    GetDownloadUrlForLayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDownloadUrlForLayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API GetDownloadUrlForLayerResult();
+    AWS_ECR_API GetDownloadUrlForLayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API GetDownloadUrlForLayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API UntagResourceResult();
+    AWS_LICENSEMANAGER_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

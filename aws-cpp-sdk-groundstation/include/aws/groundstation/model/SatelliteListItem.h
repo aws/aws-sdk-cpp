@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/SatelliteListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API SatelliteListItem
+  class SatelliteListItem
   {
   public:
-    SatelliteListItem();
-    SatelliteListItem(Aws::Utils::Json::JsonView jsonValue);
-    SatelliteListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API SatelliteListItem();
+    AWS_GROUNDSTATION_API SatelliteListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API SatelliteListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

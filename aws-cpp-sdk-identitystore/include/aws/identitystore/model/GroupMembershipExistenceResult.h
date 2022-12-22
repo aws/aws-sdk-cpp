@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GroupMembershipExistenceResult">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API GroupMembershipExistenceResult
+  class GroupMembershipExistenceResult
   {
   public:
-    GroupMembershipExistenceResult();
-    GroupMembershipExistenceResult(Aws::Utils::Json::JsonView jsonValue);
-    GroupMembershipExistenceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API GroupMembershipExistenceResult();
+    AWS_IDENTITYSTORE_API GroupMembershipExistenceResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API GroupMembershipExistenceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

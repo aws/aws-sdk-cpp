@@ -22,12 +22,12 @@ namespace SupportApp
 {
 namespace Model
 {
-  class AWS_SUPPORTAPP_API CreateSlackChannelConfigurationResult
+  class CreateSlackChannelConfigurationResult
   {
   public:
-    CreateSlackChannelConfigurationResult();
-    CreateSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSlackChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API CreateSlackChannelConfigurationResult();
+    AWS_SUPPORTAPP_API CreateSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API CreateSlackChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

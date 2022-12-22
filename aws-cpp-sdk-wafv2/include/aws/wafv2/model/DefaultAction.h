@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API DefaultAction
+  class DefaultAction
   {
   public:
-    DefaultAction();
-    DefaultAction(Aws::Utils::Json::JsonView jsonValue);
-    DefaultAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API DefaultAction();
+    AWS_WAFV2_API DefaultAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API DefaultAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

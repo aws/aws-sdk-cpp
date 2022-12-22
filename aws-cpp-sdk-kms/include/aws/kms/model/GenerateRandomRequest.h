@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API GenerateRandomRequest : public KMSRequest
+  class GenerateRandomRequest : public KMSRequest
   {
   public:
-    GenerateRandomRequest();
+    AWS_KMS_API GenerateRandomRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GenerateRandom"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -57,73 +57,81 @@ namespace Model
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline GenerateRandomRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline GenerateRandomRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
 
     /**
      * <p>Generates the random byte string in the CloudHSM cluster that is associated
-     * with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. To find the ID of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.</p>
+     * with the specified CloudHSM key store. To find the ID of a custom key store, use
+     * the <a>DescribeCustomKeyStores</a> operation.</p> <p>External key store IDs are
+     * not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an
+     * <code>UnsupportedOperationException</code>.</p>
      */
     inline GenerateRandomRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
 

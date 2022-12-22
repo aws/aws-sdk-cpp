@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDefaultVersionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentDefaultVersionDescription
+  class DocumentDefaultVersionDescription
   {
   public:
-    DocumentDefaultVersionDescription();
-    DocumentDefaultVersionDescription(Aws::Utils::Json::JsonView jsonValue);
-    DocumentDefaultVersionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentDefaultVersionDescription();
+    AWS_SSM_API DocumentDefaultVersionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentDefaultVersionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API PutRegistryScanningConfigurationResult
+  class PutRegistryScanningConfigurationResult
   {
   public:
-    PutRegistryScanningConfigurationResult();
-    PutRegistryScanningConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRegistryScanningConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API PutRegistryScanningConfigurationResult();
+    AWS_ECR_API PutRegistryScanningConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API PutRegistryScanningConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

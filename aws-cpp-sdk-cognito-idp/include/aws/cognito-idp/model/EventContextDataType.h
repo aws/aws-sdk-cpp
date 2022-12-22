@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventContextDataType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API EventContextDataType
+  class EventContextDataType
   {
   public:
-    EventContextDataType();
-    EventContextDataType(Aws::Utils::Json::JsonView jsonValue);
-    EventContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API EventContextDataType();
+    AWS_COGNITOIDENTITYPROVIDER_API EventContextDataType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API EventContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

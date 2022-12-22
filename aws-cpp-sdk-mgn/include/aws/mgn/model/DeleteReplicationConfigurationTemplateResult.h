@@ -22,12 +22,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DeleteReplicationConfigurationTemplateResult
+  class DeleteReplicationConfigurationTemplateResult
   {
   public:
-    DeleteReplicationConfigurationTemplateResult();
-    DeleteReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DeleteReplicationConfigurationTemplateResult();
+    AWS_MGN_API DeleteReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DeleteReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

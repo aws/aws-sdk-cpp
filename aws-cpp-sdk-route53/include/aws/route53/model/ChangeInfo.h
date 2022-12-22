@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ChangeInfo
+  class ChangeInfo
   {
   public:
-    ChangeInfo();
-    ChangeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ChangeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API ChangeInfo();
+    AWS_ROUTE53_API ChangeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API ChangeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

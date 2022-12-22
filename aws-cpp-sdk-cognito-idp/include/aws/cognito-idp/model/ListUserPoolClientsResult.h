@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientsResult
+  class ListUserPoolClientsResult
   {
   public:
-    ListUserPoolClientsResult();
-    ListUserPoolClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUserPoolClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientsResult();
+    AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -19,7 +19,8 @@ PutRecommendationPreferencesRequest::PutRecommendationPreferencesRequest() :
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
     m_enhancedInfrastructureMetricsHasBeenSet(false),
     m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false)
+    m_inferredWorkloadTypesHasBeenSet(false),
+    m_externalMetricsPreferenceHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String PutRecommendationPreferencesRequest::SerializePayload() const
   if(m_inferredWorkloadTypesHasBeenSet)
   {
    payload.WithString("inferredWorkloadTypes", InferredWorkloadTypesPreferenceMapper::GetNameForInferredWorkloadTypesPreference(m_inferredWorkloadTypes));
+  }
+
+  if(m_externalMetricsPreferenceHasBeenSet)
+  {
+   payload.WithObject("externalMetricsPreference", m_externalMetricsPreference.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

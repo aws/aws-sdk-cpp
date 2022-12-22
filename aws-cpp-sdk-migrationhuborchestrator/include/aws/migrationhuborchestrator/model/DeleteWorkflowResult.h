@@ -25,12 +25,12 @@ namespace MigrationHubOrchestrator
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBORCHESTRATOR_API DeleteWorkflowResult
+  class DeleteWorkflowResult
   {
   public:
-    DeleteWorkflowResult();
-    DeleteWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBORCHESTRATOR_API DeleteWorkflowResult();
+    AWS_MIGRATIONHUBORCHESTRATOR_API DeleteWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBORCHESTRATOR_API DeleteWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

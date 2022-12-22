@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API DatastoreFilter
+  class DatastoreFilter
   {
   public:
-    DatastoreFilter();
-    DatastoreFilter(Aws::Utils::Json::JsonView jsonValue);
-    DatastoreFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API DatastoreFilter();
+    AWS_HEALTHLAKE_API DatastoreFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API DatastoreFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

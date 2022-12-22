@@ -30,12 +30,48 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DisconnectFromServiceResult
+  class DisconnectFromServiceResult
   {
   public:
-    DisconnectFromServiceResult();
-    DisconnectFromServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisconnectFromServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DisconnectFromServiceResult();
+    AWS_MGN_API DisconnectFromServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DisconnectFromServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const Aws::String& value) { m_applicationID = value; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(Aws::String&& value) { m_applicationID = std::move(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const char* value) { m_applicationID.assign(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline DisconnectFromServiceResult& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline DisconnectFromServiceResult& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline DisconnectFromServiceResult& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
 
 
     /**
@@ -353,6 +389,8 @@ namespace Model
     inline DisconnectFromServiceResult& WithVcenterClientID(const char* value) { SetVcenterClientID(value); return *this;}
 
   private:
+
+    Aws::String m_applicationID;
 
     Aws::String m_arn;
 

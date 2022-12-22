@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API ReplicateKeyRequest : public KMSRequest
+  class ReplicateKeyRequest : public KMSRequest
   {
   public:
-    ReplicateKeyRequest();
+    AWS_KMS_API ReplicateKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ReplicateKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -826,7 +826,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -851,7 +851,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -876,7 +876,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -901,7 +901,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -926,7 +926,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -951,7 +951,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -976,7 +976,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -1001,7 +1001,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>

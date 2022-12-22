@@ -24,12 +24,12 @@ namespace CloudDirectory
 {
 namespace Model
 {
-  class AWS_CLOUDDIRECTORY_API AttachTypedLinkResult
+  class AttachTypedLinkResult
   {
   public:
-    AttachTypedLinkResult();
-    AttachTypedLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachTypedLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API AttachTypedLinkResult();
+    AWS_CLOUDDIRECTORY_API AttachTypedLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API AttachTypedLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

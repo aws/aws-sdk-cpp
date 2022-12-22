@@ -25,18 +25,21 @@ namespace Model
 {
 
   /**
-   * <p>The search criteria to be used to return routing profiles.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+   * <code>name</code> and <code>description</code> fields support "contains" queries
+   * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+   * character lengths outside of this range will throw invalid results. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileSearchCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API RoutingProfileSearchCriteria
+  class RoutingProfileSearchCriteria
   {
   public:
-    RoutingProfileSearchCriteria();
-    RoutingProfileSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
-    RoutingProfileSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API RoutingProfileSearchCriteria();
+    AWS_CONNECT_API RoutingProfileSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API RoutingProfileSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

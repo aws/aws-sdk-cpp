@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/Gateway">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API Gateway
+  class Gateway
   {
   public:
-    Gateway();
-    Gateway(Aws::Utils::Json::JsonView jsonValue);
-    Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API Gateway();
+    AWS_BACKUPGATEWAY_API Gateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Algorithm">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API Algorithm
+  class Algorithm
   {
   public:
-    Algorithm();
-    Algorithm(Aws::Utils::Json::JsonView jsonValue);
-    Algorithm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API Algorithm();
+    AWS_PERSONALIZE_API Algorithm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Algorithm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

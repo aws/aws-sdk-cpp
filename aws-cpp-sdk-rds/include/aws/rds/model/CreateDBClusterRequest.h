@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API CreateDBClusterRequest : public RDSRequest
+  class CreateDBClusterRequest : public RDSRequest
   {
   public:
-    CreateDBClusterRequest();
+    AWS_RDS_API CreateDBClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDBCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -3769,6 +3769,47 @@ namespace Model
 
 
     /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -3947,6 +3988,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ListThingGroupsForThingResult
+  class ListThingGroupsForThingResult
   {
   public:
-    ListThingGroupsForThingResult();
-    ListThingGroupsForThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThingGroupsForThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListThingGroupsForThingResult();
+    AWS_IOT_API ListThingGroupsForThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListThingGroupsForThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

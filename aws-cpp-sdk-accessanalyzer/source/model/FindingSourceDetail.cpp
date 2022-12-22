@@ -19,12 +19,14 @@ namespace Model
 {
 
 FindingSourceDetail::FindingSourceDetail() : 
-    m_accessPointArnHasBeenSet(false)
+    m_accessPointArnHasBeenSet(false),
+    m_accessPointAccountHasBeenSet(false)
 {
 }
 
 FindingSourceDetail::FindingSourceDetail(JsonView jsonValue) : 
-    m_accessPointArnHasBeenSet(false)
+    m_accessPointArnHasBeenSet(false),
+    m_accessPointAccountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ FindingSourceDetail& FindingSourceDetail::operator =(JsonView jsonValue)
     m_accessPointArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("accessPointAccount"))
+  {
+    m_accessPointAccount = jsonValue.GetString("accessPointAccount");
+
+    m_accessPointAccountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue FindingSourceDetail::Jsonize() const
   if(m_accessPointArnHasBeenSet)
   {
    payload.WithString("accessPointArn", m_accessPointArn);
+
+  }
+
+  if(m_accessPointAccountHasBeenSet)
+  {
+   payload.WithString("accessPointAccount", m_accessPointAccount);
 
   }
 

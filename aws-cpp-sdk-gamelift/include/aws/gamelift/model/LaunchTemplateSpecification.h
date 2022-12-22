@@ -28,18 +28,17 @@ namespace Model
    * groups.</b> </p> <p>An Amazon Elastic Compute Cloud launch template that
    * contains configuration settings and game server code to be deployed to all
    * instances in a game server group. The launch template is specified when creating
-   * a new game server group with <a>CreateGameServerGroup</a>. </p><p><h3>See
-   * Also:</h3>   <a
+   * a new game server group. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API LaunchTemplateSpecification
+  class LaunchTemplateSpecification
   {
   public:
-    LaunchTemplateSpecification();
-    LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API LaunchTemplateSpecification();
+    AWS_GAMELIFT_API LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

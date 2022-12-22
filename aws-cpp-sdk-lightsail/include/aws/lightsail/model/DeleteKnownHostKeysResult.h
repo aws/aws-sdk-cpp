@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API DeleteKnownHostKeysResult
+  class DeleteKnownHostKeysResult
   {
   public:
-    DeleteKnownHostKeysResult();
-    DeleteKnownHostKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteKnownHostKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DeleteKnownHostKeysResult();
+    AWS_LIGHTSAIL_API DeleteKnownHostKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DeleteKnownHostKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

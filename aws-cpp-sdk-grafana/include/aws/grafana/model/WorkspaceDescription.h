@@ -14,6 +14,7 @@
 #include <aws/grafana/model/PermissionType.h>
 #include <aws/grafana/model/WorkspaceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/grafana/model/VpcConfiguration.h>
 #include <aws/grafana/model/DataSourceType.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
 #include <utility>
@@ -39,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/WorkspaceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API WorkspaceDescription
+  class WorkspaceDescription
   {
   public:
-    WorkspaceDescription();
-    WorkspaceDescription(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API WorkspaceDescription();
+    AWS_MANAGEDGRAFANA_API WorkspaceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API WorkspaceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,38 +105,38 @@ namespace Model
 
 
     /**
-     * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-     * Services SSO, or both methods for user authentication.</p>
+     * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+     * Center, or both methods for user authentication.</p>
      */
     inline const AuthenticationSummary& GetAuthentication() const{ return m_authentication; }
 
     /**
-     * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-     * Services SSO, or both methods for user authentication.</p>
+     * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+     * Center, or both methods for user authentication.</p>
      */
     inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
 
     /**
-     * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-     * Services SSO, or both methods for user authentication.</p>
+     * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+     * Center, or both methods for user authentication.</p>
      */
     inline void SetAuthentication(const AuthenticationSummary& value) { m_authenticationHasBeenSet = true; m_authentication = value; }
 
     /**
-     * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-     * Services SSO, or both methods for user authentication.</p>
+     * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+     * Center, or both methods for user authentication.</p>
      */
     inline void SetAuthentication(AuthenticationSummary&& value) { m_authenticationHasBeenSet = true; m_authentication = std::move(value); }
 
     /**
-     * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-     * Services SSO, or both methods for user authentication.</p>
+     * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+     * Center, or both methods for user authentication.</p>
      */
     inline WorkspaceDescription& WithAuthentication(const AuthenticationSummary& value) { SetAuthentication(value); return *this;}
 
     /**
-     * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-     * Services SSO, or both methods for user authentication.</p>
+     * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+     * Center, or both methods for user authentication.</p>
      */
     inline WorkspaceDescription& WithAuthentication(AuthenticationSummary&& value) { SetAuthentication(std::move(value)); return *this;}
 
@@ -1022,6 +1023,43 @@ namespace Model
 
 
     /**
+     * <p>The configuration for connecting to data sources in a private VPC (Amazon
+     * Virtual Private Cloud).</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>The configuration for connecting to data sources in a private VPC (Amazon
+     * Virtual Private Cloud).</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for connecting to data sources in a private VPC (Amazon
+     * Virtual Private Cloud).</p>
+     */
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>The configuration for connecting to data sources in a private VPC (Amazon
+     * Virtual Private Cloud).</p>
+     */
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for connecting to data sources in a private VPC (Amazon
+     * Virtual Private Cloud).</p>
+     */
+    inline WorkspaceDescription& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for connecting to data sources in a private VPC (Amazon
+     * Virtual Private Cloud).</p>
+     */
+    inline WorkspaceDescription& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The IAM role that grants permissions to the Amazon Web Services resources
      * that the workspace will view data from. This role must already exist.</p>
      */
@@ -1133,6 +1171,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_workspaceRoleArn;
     bool m_workspaceRoleArnHasBeenSet = false;

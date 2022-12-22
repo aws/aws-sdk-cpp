@@ -26,12 +26,12 @@ namespace RoboMaker
 {
 namespace Model
 {
-  class AWS_ROBOMAKER_API ListSimulationJobBatchesResult
+  class ListSimulationJobBatchesResult
   {
   public:
-    ListSimulationJobBatchesResult();
-    ListSimulationJobBatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSimulationJobBatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API ListSimulationJobBatchesResult();
+    AWS_ROBOMAKER_API ListSimulationJobBatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API ListSimulationJobBatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

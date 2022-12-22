@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeploymentEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API DeploymentEvent
+  class DeploymentEvent
   {
   public:
-    DeploymentEvent();
-    DeploymentEvent(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API DeploymentEvent();
+    AWS_APPCONFIG_API DeploymentEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API DeploymentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

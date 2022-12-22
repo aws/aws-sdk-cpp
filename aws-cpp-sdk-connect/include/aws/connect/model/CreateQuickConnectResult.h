@@ -24,12 +24,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API CreateQuickConnectResult
+  class CreateQuickConnectResult
   {
   public:
-    CreateQuickConnectResult();
-    CreateQuickConnectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateQuickConnectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API CreateQuickConnectResult();
+    AWS_CONNECT_API CreateQuickConnectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API CreateQuickConnectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

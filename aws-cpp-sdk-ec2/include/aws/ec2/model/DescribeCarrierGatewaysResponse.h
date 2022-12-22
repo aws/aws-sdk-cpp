@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeCarrierGatewaysResponse
+  class DescribeCarrierGatewaysResponse
   {
   public:
-    DescribeCarrierGatewaysResponse();
-    DescribeCarrierGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCarrierGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeCarrierGatewaysResponse();
+    AWS_EC2_API DescribeCarrierGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeCarrierGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

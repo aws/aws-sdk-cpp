@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API UploadListElement
+  class UploadListElement
   {
   public:
-    UploadListElement();
-    UploadListElement(Aws::Utils::Json::JsonView jsonValue);
-    UploadListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API UploadListElement();
+    AWS_GLACIER_API UploadListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API UploadListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

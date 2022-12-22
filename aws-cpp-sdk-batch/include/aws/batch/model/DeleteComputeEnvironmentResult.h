@@ -22,12 +22,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API DeleteComputeEnvironmentResult
+  class DeleteComputeEnvironmentResult
   {
   public:
-    DeleteComputeEnvironmentResult();
-    DeleteComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API DeleteComputeEnvironmentResult();
+    AWS_BATCH_API DeleteComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API DeleteComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -27,12 +27,12 @@ namespace CloudWatch
 {
 namespace Model
 {
-  class AWS_CLOUDWATCH_API ListMetricsResult
+  class ListMetricsResult
   {
   public:
-    ListMetricsResult();
-    ListMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API ListMetricsResult();
+    AWS_CLOUDWATCH_API ListMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API ListMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -107,6 +107,71 @@ namespace Model
     inline ListMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOwningAccounts() const{ return m_owningAccounts; }
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline void SetOwningAccounts(const Aws::Vector<Aws::String>& value) { m_owningAccounts = value; }
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline void SetOwningAccounts(Aws::Vector<Aws::String>&& value) { m_owningAccounts = std::move(value); }
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline ListMetricsResult& WithOwningAccounts(const Aws::Vector<Aws::String>& value) { SetOwningAccounts(value); return *this;}
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline ListMetricsResult& WithOwningAccounts(Aws::Vector<Aws::String>&& value) { SetOwningAccounts(std::move(value)); return *this;}
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline ListMetricsResult& AddOwningAccounts(const Aws::String& value) { m_owningAccounts.push_back(value); return *this; }
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline ListMetricsResult& AddOwningAccounts(Aws::String&& value) { m_owningAccounts.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>If you are using this operation in a monitoring account, this array contains
+     * the account IDs of the source accounts where the metrics in the returned data
+     * are from.</p> <p>This field is a 1:1 mapping between each metric that is
+     * returned and the ID of the owning account.</p>
+     */
+    inline ListMetricsResult& AddOwningAccounts(const char* value) { m_owningAccounts.push_back(value); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -127,6 +192,8 @@ namespace Model
     Aws::Vector<Metric> m_metrics;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<Aws::String> m_owningAccounts;
 
     ResponseMetadata m_responseMetadata;
   };

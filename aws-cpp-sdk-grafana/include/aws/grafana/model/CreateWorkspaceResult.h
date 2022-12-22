@@ -24,12 +24,12 @@ namespace ManagedGrafana
 {
 namespace Model
 {
-  class AWS_MANAGEDGRAFANA_API CreateWorkspaceResult
+  class CreateWorkspaceResult
   {
   public:
-    CreateWorkspaceResult();
-    CreateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceResult();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

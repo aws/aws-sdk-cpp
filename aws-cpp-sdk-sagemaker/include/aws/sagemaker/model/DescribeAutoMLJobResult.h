@@ -39,12 +39,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeAutoMLJobResult
+  class DescribeAutoMLJobResult
   {
   public:
-    DescribeAutoMLJobResult();
-    DescribeAutoMLJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAutoMLJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeAutoMLJobResult();
+    AWS_SAGEMAKER_API DescribeAutoMLJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeAutoMLJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -182,51 +182,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline DescribeAutoMLJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline DescribeAutoMLJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-     * Management (IAM) role that has read permission to the input data location and
-     * write permission to the output data location in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that has read permission to the input data location and write permission to
+     * the output data location in Amazon S3.</p>
      */
     inline DescribeAutoMLJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -460,27 +460,42 @@ namespace Model
 
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline const AutoMLCandidate& GetBestCandidate() const{ return m_bestCandidate; }
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline void SetBestCandidate(const AutoMLCandidate& value) { m_bestCandidate = value; }
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline void SetBestCandidate(AutoMLCandidate&& value) { m_bestCandidate = std::move(value); }
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline DescribeAutoMLJobResult& WithBestCandidate(const AutoMLCandidate& value) { SetBestCandidate(value); return *this;}
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline DescribeAutoMLJobResult& WithBestCandidate(AutoMLCandidate&& value) { SetBestCandidate(std::move(value)); return *this;}
 

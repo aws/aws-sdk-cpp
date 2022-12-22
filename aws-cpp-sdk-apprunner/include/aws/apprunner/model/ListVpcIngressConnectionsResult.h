@@ -26,12 +26,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API ListVpcIngressConnectionsResult
+  class ListVpcIngressConnectionsResult
   {
   public:
-    ListVpcIngressConnectionsResult();
-    ListVpcIngressConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVpcIngressConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListVpcIngressConnectionsResult();
+    AWS_APPRUNNER_API ListVpcIngressConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListVpcIngressConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

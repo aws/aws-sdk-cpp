@@ -26,18 +26,17 @@ namespace Model
   /**
    * <p>You've exceeded the number of tags allowed for a resource. See the <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits
-   * Topic</a> in the AWS Step Functions Developer Guide.</p><p><h3>See Also:</h3>  
-   * <a
+   * Topic</a> in the Step Functions Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TooManyTags">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TooManyTags
+  class TooManyTags
   {
   public:
-    TooManyTags();
-    TooManyTags(Aws::Utils::Json::JsonView jsonValue);
-    TooManyTags& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TooManyTags();
+    AWS_SFN_API TooManyTags(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TooManyTags& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

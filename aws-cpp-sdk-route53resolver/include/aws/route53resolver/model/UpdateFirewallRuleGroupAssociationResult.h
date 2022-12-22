@@ -24,12 +24,12 @@ namespace Route53Resolver
 {
 namespace Model
 {
-  class AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationResult
+  class UpdateFirewallRuleGroupAssociationResult
   {
   public:
-    UpdateFirewallRuleGroupAssociationResult();
-    UpdateFirewallRuleGroupAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFirewallRuleGroupAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationResult();
+    AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

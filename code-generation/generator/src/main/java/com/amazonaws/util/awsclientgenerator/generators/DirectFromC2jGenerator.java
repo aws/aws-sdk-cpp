@@ -13,6 +13,8 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionJso
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifierJsonDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.DefaultClientConfigs;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValueDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTestParamsDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import com.google.gson.Gson;
@@ -37,6 +39,7 @@ public class DirectFromC2jGenerator {
                                                                boolean enableVirtualOperations) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
+        gsonBuilder.registerTypeAdapter(EndpointParameterValue.class, new EndpointParameterValueDeserializer());
         Gson gson = gsonBuilder.create();
 
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
@@ -126,6 +129,7 @@ public class DirectFromC2jGenerator {
                                                          String licenseText) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
+        gsonBuilder.registerTypeAdapter(EndpointParameterValue.class, new EndpointParameterValueDeserializer());
         Gson gson = gsonBuilder.create();
 
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);

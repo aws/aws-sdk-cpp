@@ -26,12 +26,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult
+  class DescribeOptedOutNumbersResult
   {
   public:
-    DescribeOptedOutNumbersResult();
-    DescribeOptedOutNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOptedOutNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

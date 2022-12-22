@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UniqueProblem">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API UniqueProblem
+  class UniqueProblem
   {
   public:
-    UniqueProblem();
-    UniqueProblem(Aws::Utils::Json::JsonView jsonValue);
-    UniqueProblem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API UniqueProblem();
+    AWS_DEVICEFARM_API UniqueProblem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API UniqueProblem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

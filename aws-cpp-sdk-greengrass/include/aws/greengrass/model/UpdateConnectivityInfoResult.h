@@ -24,12 +24,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API UpdateConnectivityInfoResult
+  class UpdateConnectivityInfoResult
   {
   public:
-    UpdateConnectivityInfoResult();
-    UpdateConnectivityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConnectivityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API UpdateConnectivityInfoResult();
+    AWS_GREENGRASS_API UpdateConnectivityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API UpdateConnectivityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

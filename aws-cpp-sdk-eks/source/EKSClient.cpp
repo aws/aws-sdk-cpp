@@ -33,6 +33,7 @@
 #include <aws/eks/model/DeleteNodegroupRequest.h>
 #include <aws/eks/model/DeregisterClusterRequest.h>
 #include <aws/eks/model/DescribeAddonRequest.h>
+#include <aws/eks/model/DescribeAddonConfigurationRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeFargateProfileRequest.h>
@@ -579,6 +580,41 @@ void EKSClient::DescribeAddonAsync(const DescribeAddonRequest& request, const De
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeAddon(request), context);
+    } );
+}
+
+DescribeAddonConfigurationOutcome EKSClient::DescribeAddonConfiguration(const DescribeAddonConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAddonConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AddonNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAddonConfiguration", "Required field: AddonName, is not set");
+    return DescribeAddonConfigurationOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
+  }
+  if (!request.AddonVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAddonConfiguration", "Required field: AddonVersion, is not set");
+    return DescribeAddonConfigurationOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonVersion]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAddonConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/addons/configuration-schemas");
+  return DescribeAddonConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAddonConfigurationOutcomeCallable EKSClient::DescribeAddonConfigurationCallable(const DescribeAddonConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAddonConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAddonConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DescribeAddonConfigurationAsync(const DescribeAddonConfigurationRequest& request, const DescribeAddonConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAddonConfiguration(request), context);
     } );
 }
 

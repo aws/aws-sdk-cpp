@@ -24,12 +24,12 @@ namespace Translate
 {
 namespace Model
 {
-  class AWS_TRANSLATE_API DescribeTextTranslationJobResult
+  class DescribeTextTranslationJobResult
   {
   public:
-    DescribeTextTranslationJobResult();
-    DescribeTextTranslationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTextTranslationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API DescribeTextTranslationJobResult();
+    AWS_TRANSLATE_API DescribeTextTranslationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API DescribeTextTranslationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

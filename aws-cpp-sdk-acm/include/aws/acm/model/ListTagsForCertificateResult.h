@@ -25,12 +25,12 @@ namespace ACM
 {
 namespace Model
 {
-  class AWS_ACM_API ListTagsForCertificateResult
+  class ListTagsForCertificateResult
   {
   public:
-    ListTagsForCertificateResult();
-    ListTagsForCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACM_API ListTagsForCertificateResult();
+    AWS_ACM_API ListTagsForCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACM_API ListTagsForCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

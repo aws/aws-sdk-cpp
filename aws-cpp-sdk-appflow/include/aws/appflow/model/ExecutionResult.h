@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ExecutionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ExecutionResult
+  class ExecutionResult
   {
   public:
-    ExecutionResult();
-    ExecutionResult(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ExecutionResult();
+    AWS_APPFLOW_API ExecutionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ExecutionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

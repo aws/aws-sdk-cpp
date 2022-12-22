@@ -28,7 +28,8 @@ ListCopyJobsRequest::ListCopyJobsRequest() :
     m_byDestinationVaultArnHasBeenSet(false),
     m_byAccountIdHasBeenSet(false),
     m_byCompleteBeforeHasBeenSet(false),
-    m_byCompleteAfterHasBeenSet(false)
+    m_byCompleteAfterHasBeenSet(false),
+    m_byParentJobIdHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,13 @@ void ListCopyJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byCompleteAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("completeAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_byParentJobIdHasBeenSet)
+    {
+      ss << m_byParentJobId;
+      uri.AddQueryStringParameter("parentJobId", ss.str());
       ss.str("");
     }
 

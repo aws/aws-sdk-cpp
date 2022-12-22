@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopicResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API SetIdentityNotificationTopicResult
+  class SetIdentityNotificationTopicResult
   {
   public:
-    SetIdentityNotificationTopicResult();
-    SetIdentityNotificationTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetIdentityNotificationTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetIdentityNotificationTopicResult();
+    AWS_SES_API SetIdentityNotificationTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetIdentityNotificationTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

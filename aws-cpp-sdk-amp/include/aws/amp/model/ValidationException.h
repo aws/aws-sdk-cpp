@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API ValidationException();
+    AWS_PROMETHEUSSERVICE_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

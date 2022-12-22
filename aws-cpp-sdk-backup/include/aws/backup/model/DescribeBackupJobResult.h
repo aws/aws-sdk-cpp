@@ -28,12 +28,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API DescribeBackupJobResult
+  class DescribeBackupJobResult
   {
   public:
-    DescribeBackupJobResult();
-    DescribeBackupJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBackupJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeBackupJobResult();
+    AWS_BACKUP_API DescribeBackupJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeBackupJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -895,6 +895,113 @@ namespace Model
      */
     inline DescribeBackupJobResult& WithBackupType(const char* value) { SetBackupType(value); return *this;}
 
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline const Aws::String& GetParentJobId() const{ return m_parentJobId; }
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline void SetParentJobId(const Aws::String& value) { m_parentJobId = value; }
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline void SetParentJobId(Aws::String&& value) { m_parentJobId = std::move(value); }
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline void SetParentJobId(const char* value) { m_parentJobId.assign(value); }
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline DescribeBackupJobResult& WithParentJobId(const Aws::String& value) { SetParentJobId(value); return *this;}
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline DescribeBackupJobResult& WithParentJobId(Aws::String&& value) { SetParentJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns the parent (composite) resource backup job ID.</p>
+     */
+    inline DescribeBackupJobResult& WithParentJobId(const char* value) { SetParentJobId(value); return *this;}
+
+
+    /**
+     * <p>This returns the boolean value that a backup job is a parent (composite)
+     * job.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This returns the boolean value that a backup job is a parent (composite)
+     * job.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParent = value; }
+
+    /**
+     * <p>This returns the boolean value that a backup job is a parent (composite)
+     * job.</p>
+     */
+    inline DescribeBackupJobResult& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
+
+    /**
+     * <p>This returns the number of child (nested) backup jobs.</p>
+     */
+    inline long long GetNumberOfChildJobs() const{ return m_numberOfChildJobs; }
+
+    /**
+     * <p>This returns the number of child (nested) backup jobs.</p>
+     */
+    inline void SetNumberOfChildJobs(long long value) { m_numberOfChildJobs = value; }
+
+    /**
+     * <p>This returns the number of child (nested) backup jobs.</p>
+     */
+    inline DescribeBackupJobResult& WithNumberOfChildJobs(long long value) { SetNumberOfChildJobs(value); return *this;}
+
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline const Aws::Map<BackupJobState, long long>& GetChildJobsInState() const{ return m_childJobsInState; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline void SetChildJobsInState(const Aws::Map<BackupJobState, long long>& value) { m_childJobsInState = value; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline void SetChildJobsInState(Aws::Map<BackupJobState, long long>&& value) { m_childJobsInState = std::move(value); }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline DescribeBackupJobResult& WithChildJobsInState(const Aws::Map<BackupJobState, long long>& value) { SetChildJobsInState(value); return *this;}
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline DescribeBackupJobResult& WithChildJobsInState(Aws::Map<BackupJobState, long long>&& value) { SetChildJobsInState(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline DescribeBackupJobResult& AddChildJobsInState(const BackupJobState& key, long long value) { m_childJobsInState.emplace(key, value); return *this; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) backup jobs.</p>
+     */
+    inline DescribeBackupJobResult& AddChildJobsInState(BackupJobState&& key, long long value) { m_childJobsInState.emplace(std::move(key), value); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -936,6 +1043,14 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
 
     Aws::String m_backupType;
+
+    Aws::String m_parentJobId;
+
+    bool m_isParent;
+
+    long long m_numberOfChildJobs;
+
+    Aws::Map<BackupJobState, long long> m_childJobsInState;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnectionApiKeyAuthRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API CreateConnectionApiKeyAuthRequestParameters
+  class CreateConnectionApiKeyAuthRequestParameters
   {
   public:
-    CreateConnectionApiKeyAuthRequestParameters();
-    CreateConnectionApiKeyAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    CreateConnectionApiKeyAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API CreateConnectionApiKeyAuthRequestParameters();
+    AWS_EVENTBRIDGE_API CreateConnectionApiKeyAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API CreateConnectionApiKeyAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API CreateBucketAccessKeyResult
+  class CreateBucketAccessKeyResult
   {
   public:
-    CreateBucketAccessKeyResult();
-    CreateBucketAccessKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBucketAccessKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API CreateBucketAccessKeyResult();
+    AWS_LIGHTSAIL_API CreateBucketAccessKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API CreateBucketAccessKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

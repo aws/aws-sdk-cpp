@@ -24,12 +24,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API CreateScheduledAuditResult
+  class CreateScheduledAuditResult
   {
   public:
-    CreateScheduledAuditResult();
-    CreateScheduledAuditResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateScheduledAuditResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateScheduledAuditResult();
+    AWS_IOT_API CreateScheduledAuditResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateScheduledAuditResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

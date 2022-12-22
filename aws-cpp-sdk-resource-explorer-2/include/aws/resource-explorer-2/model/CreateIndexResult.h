@@ -26,12 +26,12 @@ namespace ResourceExplorer2
 {
 namespace Model
 {
-  class AWS_RESOURCEEXPLORER2_API CreateIndexResult
+  class CreateIndexResult
   {
   public:
-    CreateIndexResult();
-    CreateIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API CreateIndexResult();
+    AWS_RESOURCEEXPLORER2_API CreateIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

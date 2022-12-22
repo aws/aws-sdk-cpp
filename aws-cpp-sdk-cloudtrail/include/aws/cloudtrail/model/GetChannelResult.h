@@ -27,12 +27,12 @@ namespace CloudTrail
 {
 namespace Model
 {
-  class AWS_CLOUDTRAIL_API GetChannelResult
+  class GetChannelResult
   {
   public:
-    GetChannelResult();
-    GetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API GetChannelResult();
+    AWS_CLOUDTRAIL_API GetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API GetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

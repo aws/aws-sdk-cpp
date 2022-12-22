@@ -26,12 +26,12 @@ namespace BackupGateway
 {
 namespace Model
 {
-  class AWS_BACKUPGATEWAY_API ListHypervisorsResult
+  class ListHypervisorsResult
   {
   public:
-    ListHypervisorsResult();
-    ListHypervisorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHypervisorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API ListHypervisorsResult();
+    AWS_BACKUPGATEWAY_API ListHypervisorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API ListHypervisorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

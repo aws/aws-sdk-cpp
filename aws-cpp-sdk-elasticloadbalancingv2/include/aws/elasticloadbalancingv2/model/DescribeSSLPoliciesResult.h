@@ -27,12 +27,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesResult
+  class DescribeSSLPoliciesResult
   {
   public:
-    DescribeSSLPoliciesResult();
-    DescribeSSLPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSSLPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesResult();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

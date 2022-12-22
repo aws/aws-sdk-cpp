@@ -26,12 +26,12 @@ namespace Scheduler
 {
 namespace Model
 {
-  class AWS_SCHEDULER_API ListScheduleGroupsResult
+  class ListScheduleGroupsResult
   {
   public:
-    ListScheduleGroupsResult();
-    ListScheduleGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListScheduleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEDULER_API ListScheduleGroupsResult();
+    AWS_SCHEDULER_API ListScheduleGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEDULER_API ListScheduleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

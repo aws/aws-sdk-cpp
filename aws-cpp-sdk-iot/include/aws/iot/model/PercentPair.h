@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PercentPair">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API PercentPair
+  class PercentPair
   {
   public:
-    PercentPair();
-    PercentPair(Aws::Utils::Json::JsonView jsonValue);
-    PercentPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API PercentPair();
+    AWS_IOT_API PercentPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API PercentPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

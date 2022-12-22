@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdateOpsItemResult
+  class UpdateOpsItemResult
   {
   public:
-    UpdateOpsItemResult();
-    UpdateOpsItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateOpsItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateOpsItemResult();
+    AWS_SSM_API UpdateOpsItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateOpsItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

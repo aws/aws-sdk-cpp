@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionIdList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DistributionIdList
+  class DistributionIdList
   {
   public:
-    DistributionIdList();
-    DistributionIdList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DistributionIdList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionIdList();
+    AWS_CLOUDFRONT_API DistributionIdList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionIdList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

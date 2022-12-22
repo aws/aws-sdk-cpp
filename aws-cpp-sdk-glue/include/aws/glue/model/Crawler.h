@@ -40,13 +40,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Crawler
+  class Crawler
   {
   public:
-    Crawler();
-    Crawler(Aws::Utils::Json::JsonView jsonValue);
-    Crawler& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Crawler();
+    AWS_GLUE_API Crawler(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Crawler& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -663,64 +663,64 @@ namespace Model
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline Crawler& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline Crawler& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     * and Exclude Patterns</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline Crawler& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

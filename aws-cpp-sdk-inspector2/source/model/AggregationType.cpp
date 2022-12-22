@@ -29,6 +29,8 @@ namespace Aws
         static const int AWS_ECR_CONTAINER_HASH = HashingUtils::HashString("AWS_ECR_CONTAINER");
         static const int IMAGE_LAYER_HASH = HashingUtils::HashString("IMAGE_LAYER");
         static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
+        static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
+        static const int LAMBDA_LAYER_HASH = HashingUtils::HashString("LAMBDA_LAYER");
 
 
         AggregationType GetAggregationTypeForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return AggregationType::ACCOUNT;
           }
+          else if (hashCode == AWS_LAMBDA_FUNCTION_HASH)
+          {
+            return AggregationType::AWS_LAMBDA_FUNCTION;
+          }
+          else if (hashCode == LAMBDA_LAYER_HASH)
+          {
+            return AggregationType::LAMBDA_LAYER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +112,10 @@ namespace Aws
             return "IMAGE_LAYER";
           case AggregationType::ACCOUNT:
             return "ACCOUNT";
+          case AggregationType::AWS_LAMBDA_FUNCTION:
+            return "AWS_LAMBDA_FUNCTION";
+          case AggregationType::LAMBDA_LAYER:
+            return "LAMBDA_LAYER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

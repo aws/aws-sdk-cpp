@@ -25,12 +25,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API ExportAutoScalingGroupRecommendationsResult
+  class ExportAutoScalingGroupRecommendationsResult
   {
   public:
-    ExportAutoScalingGroupRecommendationsResult();
-    ExportAutoScalingGroupRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportAutoScalingGroupRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API ExportAutoScalingGroupRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API ExportAutoScalingGroupRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API ExportAutoScalingGroupRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  class AWS_SSMINCIDENTS_API ListRelatedItemsResult
+  class ListRelatedItemsResult
   {
   public:
-    ListRelatedItemsResult();
-    ListRelatedItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRelatedItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API ListRelatedItemsResult();
+    AWS_SSMINCIDENTS_API ListRelatedItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API ListRelatedItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

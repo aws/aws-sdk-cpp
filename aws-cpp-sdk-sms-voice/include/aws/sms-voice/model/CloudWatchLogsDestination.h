@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CloudWatchLogsDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API CloudWatchLogsDestination
+  class CloudWatchLogsDestination
   {
   public:
-    CloudWatchLogsDestination();
-    CloudWatchLogsDestination(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICE_API CloudWatchLogsDestination();
+    AWS_PINPOINTSMSVOICE_API CloudWatchLogsDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API CloudWatchLogsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

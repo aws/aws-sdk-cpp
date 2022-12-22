@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/FinishedWorldsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API FinishedWorldsSummary
+  class FinishedWorldsSummary
   {
   public:
-    FinishedWorldsSummary();
-    FinishedWorldsSummary(Aws::Utils::Json::JsonView jsonValue);
-    FinishedWorldsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API FinishedWorldsSummary();
+    AWS_ROBOMAKER_API FinishedWorldsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API FinishedWorldsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

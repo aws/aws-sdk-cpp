@@ -22,12 +22,12 @@ namespace CodePipeline
 {
 namespace Model
 {
-  class AWS_CODEPIPELINE_API DeleteWebhookResult
+  class DeleteWebhookResult
   {
   public:
-    DeleteWebhookResult();
-    DeleteWebhookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWebhookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API DeleteWebhookResult();
+    AWS_CODEPIPELINE_API DeleteWebhookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API DeleteWebhookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

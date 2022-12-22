@@ -29,60 +29,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetFromSignedUrlRequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails
+  class ImportAssetFromSignedUrlRequestDetails
   {
   public:
-    ImportAssetFromSignedUrlRequestDetails();
-    ImportAssetFromSignedUrlRequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    ImportAssetFromSignedUrlRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails();
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline const Aws::String& GetAssetName() const{ return m_assetName; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline ImportAssetFromSignedUrlRequestDetails& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline ImportAssetFromSignedUrlRequestDetails& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name.</p>
      */
     inline ImportAssetFromSignedUrlRequestDetails& WithAssetName(const char* value) { SetAssetName(value); return *this;}
 

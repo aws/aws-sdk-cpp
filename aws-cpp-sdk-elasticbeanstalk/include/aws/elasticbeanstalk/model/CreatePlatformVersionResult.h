@@ -26,12 +26,12 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  class AWS_ELASTICBEANSTALK_API CreatePlatformVersionResult
+  class CreatePlatformVersionResult
   {
   public:
-    CreatePlatformVersionResult();
-    CreatePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreatePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CreatePlatformVersionResult();
+    AWS_ELASTICBEANSTALK_API CreatePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CreatePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -26,14 +26,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Progress">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Progress
+  class Progress
   {
   public:
-    Progress();
-    Progress(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Progress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Progress();
+    AWS_S3CRT_API Progress(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Progress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

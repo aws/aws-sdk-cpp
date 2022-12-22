@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DatasetGroundTruthManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API DatasetGroundTruthManifest
+  class DatasetGroundTruthManifest
   {
   public:
-    DatasetGroundTruthManifest();
-    DatasetGroundTruthManifest(Aws::Utils::Json::JsonView jsonValue);
-    DatasetGroundTruthManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API DatasetGroundTruthManifest();
+    AWS_LOOKOUTFORVISION_API DatasetGroundTruthManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API DatasetGroundTruthManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

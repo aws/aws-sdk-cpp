@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetFromApiGatewayApiRequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ImportAssetFromApiGatewayApiRequestDetails
+  class ImportAssetFromApiGatewayApiRequestDetails
   {
   public:
-    ImportAssetFromApiGatewayApiRequestDetails();
-    ImportAssetFromApiGatewayApiRequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    ImportAssetFromApiGatewayApiRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ImportAssetFromApiGatewayApiRequestDetails();
+    AWS_DATAEXCHANGE_API ImportAssetFromApiGatewayApiRequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ImportAssetFromApiGatewayApiRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,18 @@ FilterCriteria::FilterCriteria() :
     m_ecrImageRegistryHasBeenSet(false),
     m_ecrImageRepositoryNameHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
+    m_exploitAvailableHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_findingStatusHasBeenSet(false),
     m_findingTypeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_fixAvailableHasBeenSet(false),
     m_inspectorScoreHasBeenSet(false),
+    m_lambdaFunctionExecutionRoleArnHasBeenSet(false),
+    m_lambdaFunctionLastModifiedAtHasBeenSet(false),
+    m_lambdaFunctionLayersHasBeenSet(false),
+    m_lambdaFunctionNameHasBeenSet(false),
+    m_lambdaFunctionRuntimeHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
     m_networkProtocolHasBeenSet(false),
     m_portRangeHasBeenSet(false),
@@ -67,12 +73,18 @@ FilterCriteria::FilterCriteria(JsonView jsonValue) :
     m_ecrImageRegistryHasBeenSet(false),
     m_ecrImageRepositoryNameHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
+    m_exploitAvailableHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_findingStatusHasBeenSet(false),
     m_findingTypeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_fixAvailableHasBeenSet(false),
     m_inspectorScoreHasBeenSet(false),
+    m_lambdaFunctionExecutionRoleArnHasBeenSet(false),
+    m_lambdaFunctionLastModifiedAtHasBeenSet(false),
+    m_lambdaFunctionLayersHasBeenSet(false),
+    m_lambdaFunctionNameHasBeenSet(false),
+    m_lambdaFunctionRuntimeHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
     m_networkProtocolHasBeenSet(false),
     m_portRangeHasBeenSet(false),
@@ -213,6 +225,16 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     m_ecrImageTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exploitAvailable"))
+  {
+    Aws::Utils::Array<JsonView> exploitAvailableJsonList = jsonValue.GetArray("exploitAvailable");
+    for(unsigned exploitAvailableIndex = 0; exploitAvailableIndex < exploitAvailableJsonList.GetLength(); ++exploitAvailableIndex)
+    {
+      m_exploitAvailable.push_back(exploitAvailableJsonList[exploitAvailableIndex].AsObject());
+    }
+    m_exploitAvailableHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("findingArn"))
   {
     Aws::Utils::Array<JsonView> findingArnJsonList = jsonValue.GetArray("findingArn");
@@ -271,6 +293,56 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
       m_inspectorScore.push_back(inspectorScoreJsonList[inspectorScoreIndex].AsObject());
     }
     m_inspectorScoreHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionExecutionRoleArn"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionExecutionRoleArnJsonList = jsonValue.GetArray("lambdaFunctionExecutionRoleArn");
+    for(unsigned lambdaFunctionExecutionRoleArnIndex = 0; lambdaFunctionExecutionRoleArnIndex < lambdaFunctionExecutionRoleArnJsonList.GetLength(); ++lambdaFunctionExecutionRoleArnIndex)
+    {
+      m_lambdaFunctionExecutionRoleArn.push_back(lambdaFunctionExecutionRoleArnJsonList[lambdaFunctionExecutionRoleArnIndex].AsObject());
+    }
+    m_lambdaFunctionExecutionRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionLastModifiedAt"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionLastModifiedAtJsonList = jsonValue.GetArray("lambdaFunctionLastModifiedAt");
+    for(unsigned lambdaFunctionLastModifiedAtIndex = 0; lambdaFunctionLastModifiedAtIndex < lambdaFunctionLastModifiedAtJsonList.GetLength(); ++lambdaFunctionLastModifiedAtIndex)
+    {
+      m_lambdaFunctionLastModifiedAt.push_back(lambdaFunctionLastModifiedAtJsonList[lambdaFunctionLastModifiedAtIndex].AsObject());
+    }
+    m_lambdaFunctionLastModifiedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionLayers"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionLayersJsonList = jsonValue.GetArray("lambdaFunctionLayers");
+    for(unsigned lambdaFunctionLayersIndex = 0; lambdaFunctionLayersIndex < lambdaFunctionLayersJsonList.GetLength(); ++lambdaFunctionLayersIndex)
+    {
+      m_lambdaFunctionLayers.push_back(lambdaFunctionLayersJsonList[lambdaFunctionLayersIndex].AsObject());
+    }
+    m_lambdaFunctionLayersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionName"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
+    for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+    {
+      m_lambdaFunctionName.push_back(lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject());
+    }
+    m_lambdaFunctionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionRuntime"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
+    for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+    {
+      m_lambdaFunctionRuntime.push_back(lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject());
+    }
+    m_lambdaFunctionRuntimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastObservedAt"))
@@ -552,6 +624,17 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
+  if(m_exploitAvailableHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> exploitAvailableJsonList(m_exploitAvailable.size());
+   for(unsigned exploitAvailableIndex = 0; exploitAvailableIndex < exploitAvailableJsonList.GetLength(); ++exploitAvailableIndex)
+   {
+     exploitAvailableJsonList[exploitAvailableIndex].AsObject(m_exploitAvailable[exploitAvailableIndex].Jsonize());
+   }
+   payload.WithArray("exploitAvailable", std::move(exploitAvailableJsonList));
+
+  }
+
   if(m_findingArnHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> findingArnJsonList(m_findingArn.size());
@@ -615,6 +698,61 @@ JsonValue FilterCriteria::Jsonize() const
      inspectorScoreJsonList[inspectorScoreIndex].AsObject(m_inspectorScore[inspectorScoreIndex].Jsonize());
    }
    payload.WithArray("inspectorScore", std::move(inspectorScoreJsonList));
+
+  }
+
+  if(m_lambdaFunctionExecutionRoleArnHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionExecutionRoleArnJsonList(m_lambdaFunctionExecutionRoleArn.size());
+   for(unsigned lambdaFunctionExecutionRoleArnIndex = 0; lambdaFunctionExecutionRoleArnIndex < lambdaFunctionExecutionRoleArnJsonList.GetLength(); ++lambdaFunctionExecutionRoleArnIndex)
+   {
+     lambdaFunctionExecutionRoleArnJsonList[lambdaFunctionExecutionRoleArnIndex].AsObject(m_lambdaFunctionExecutionRoleArn[lambdaFunctionExecutionRoleArnIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionExecutionRoleArn", std::move(lambdaFunctionExecutionRoleArnJsonList));
+
+  }
+
+  if(m_lambdaFunctionLastModifiedAtHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionLastModifiedAtJsonList(m_lambdaFunctionLastModifiedAt.size());
+   for(unsigned lambdaFunctionLastModifiedAtIndex = 0; lambdaFunctionLastModifiedAtIndex < lambdaFunctionLastModifiedAtJsonList.GetLength(); ++lambdaFunctionLastModifiedAtIndex)
+   {
+     lambdaFunctionLastModifiedAtJsonList[lambdaFunctionLastModifiedAtIndex].AsObject(m_lambdaFunctionLastModifiedAt[lambdaFunctionLastModifiedAtIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionLastModifiedAt", std::move(lambdaFunctionLastModifiedAtJsonList));
+
+  }
+
+  if(m_lambdaFunctionLayersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionLayersJsonList(m_lambdaFunctionLayers.size());
+   for(unsigned lambdaFunctionLayersIndex = 0; lambdaFunctionLayersIndex < lambdaFunctionLayersJsonList.GetLength(); ++lambdaFunctionLayersIndex)
+   {
+     lambdaFunctionLayersJsonList[lambdaFunctionLayersIndex].AsObject(m_lambdaFunctionLayers[lambdaFunctionLayersIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionLayers", std::move(lambdaFunctionLayersJsonList));
+
+  }
+
+  if(m_lambdaFunctionNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionNameJsonList(m_lambdaFunctionName.size());
+   for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+   {
+     lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject(m_lambdaFunctionName[lambdaFunctionNameIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionName", std::move(lambdaFunctionNameJsonList));
+
+  }
+
+  if(m_lambdaFunctionRuntimeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionRuntimeJsonList(m_lambdaFunctionRuntime.size());
+   for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+   {
+     lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject(m_lambdaFunctionRuntime[lambdaFunctionRuntimeIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionRuntime", std::move(lambdaFunctionRuntimeJsonList));
 
   }
 

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventDataStore">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API EventDataStore
+  class EventDataStore
   {
   public:
-    EventDataStore();
-    EventDataStore(Aws::Utils::Json::JsonView jsonValue);
-    EventDataStore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API EventDataStore();
+    AWS_CLOUDTRAIL_API EventDataStore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API EventDataStore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

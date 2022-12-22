@@ -22,12 +22,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API DisassociateUserAccessLoggingSettingsResult
+  class DisassociateUserAccessLoggingSettingsResult
   {
   public:
-    DisassociateUserAccessLoggingSettingsResult();
-    DisassociateUserAccessLoggingSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API DisassociateUserAccessLoggingSettingsResult();
+    AWS_WORKSPACESWEB_API DisassociateUserAccessLoggingSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API DisassociateUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

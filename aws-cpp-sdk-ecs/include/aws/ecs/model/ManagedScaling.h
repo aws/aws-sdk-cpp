@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedScaling">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ManagedScaling
+  class ManagedScaling
   {
   public:
-    ManagedScaling();
-    ManagedScaling(Aws::Utils::Json::JsonView jsonValue);
-    ManagedScaling& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ManagedScaling();
+    AWS_ECS_API ManagedScaling(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ManagedScaling& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,28 +166,28 @@ namespace Model
     /**
      * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
      * one time. The scale in process is not affected by this parameter. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.</p>
+     * parameter is omitted, the default value of <code>1</code> is used.</p>
      */
     inline int GetMaximumScalingStepSize() const{ return m_maximumScalingStepSize; }
 
     /**
      * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
      * one time. The scale in process is not affected by this parameter. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.</p>
+     * parameter is omitted, the default value of <code>1</code> is used.</p>
      */
     inline bool MaximumScalingStepSizeHasBeenSet() const { return m_maximumScalingStepSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
      * one time. The scale in process is not affected by this parameter. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.</p>
+     * parameter is omitted, the default value of <code>1</code> is used.</p>
      */
     inline void SetMaximumScalingStepSize(int value) { m_maximumScalingStepSizeHasBeenSet = true; m_maximumScalingStepSize = value; }
 
     /**
      * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
      * one time. The scale in process is not affected by this parameter. If this
-     * parameter is omitted, the default value of <code>10000</code> is used.</p>
+     * parameter is omitted, the default value of <code>1</code> is used.</p>
      */
     inline ManagedScaling& WithMaximumScalingStepSize(int value) { SetMaximumScalingStepSize(value); return *this;}
 

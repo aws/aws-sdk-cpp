@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/JobParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API JobParameters
+  class JobParameters
   {
   public:
-    JobParameters();
-    JobParameters(Aws::Utils::Json::JsonView jsonValue);
-    JobParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API JobParameters();
+    AWS_GLACIER_API JobParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API JobParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

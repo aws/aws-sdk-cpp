@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshotMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API CopyDBSnapshotRequest : public RDSRequest
+  class CopyDBSnapshotRequest : public RDSRequest
   {
   public:
-    CopyDBSnapshotRequest();
+    AWS_RDS_API CopyDBSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyDBSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -447,25 +447,25 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags are not copied.</p>
+     * to the target DB snapshot. By default, tags aren't copied.</p>
      */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags are not copied.</p>
+     * to the target DB snapshot. By default, tags aren't copied.</p>
      */
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags are not copied.</p>
+     * to the target DB snapshot. By default, tags aren't copied.</p>
      */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags are not copied.</p>
+     * to the target DB snapshot. By default, tags aren't copied.</p>
      */
     inline CopyDBSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 
@@ -1026,6 +1026,39 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether to copy the DB option group associated with
+     * the source DB snapshot to the target Amazon Web Services account and associate
+     * with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.</p>
+     */
+    inline bool GetCopyOptionGroup() const{ return m_copyOptionGroup; }
+
+    /**
+     * <p>A value that indicates whether to copy the DB option group associated with
+     * the source DB snapshot to the target Amazon Web Services account and associate
+     * with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.</p>
+     */
+    inline bool CopyOptionGroupHasBeenSet() const { return m_copyOptionGroupHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to copy the DB option group associated with
+     * the source DB snapshot to the target Amazon Web Services account and associate
+     * with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.</p>
+     */
+    inline void SetCopyOptionGroup(bool value) { m_copyOptionGroupHasBeenSet = true; m_copyOptionGroup = value; }
+
+    /**
+     * <p>A value that indicates whether to copy the DB option group associated with
+     * the source DB snapshot to the target Amazon Web Services account and associate
+     * with the target DB snapshot. The associated option group can be copied only with
+     * cross-account snapshot copy calls.</p>
+     */
+    inline CopyDBSnapshotRequest& WithCopyOptionGroup(bool value) { SetCopyOptionGroup(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -1090,6 +1123,9 @@ namespace Model
 
     Aws::String m_targetCustomAvailabilityZone;
     bool m_targetCustomAvailabilityZoneHasBeenSet = false;
+
+    bool m_copyOptionGroup;
+    bool m_copyOptionGroupHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

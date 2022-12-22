@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AvailabilityZone">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AvailabilityZone
+  class AvailabilityZone
   {
   public:
-    AvailabilityZone();
-    AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
-    AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AvailabilityZone();
+    AWS_LIGHTSAIL_API AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

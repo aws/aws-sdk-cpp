@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API GetGcmChannelResult
+  class GetGcmChannelResult
   {
   public:
-    GetGcmChannelResult();
-    GetGcmChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGcmChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API GetGcmChannelResult();
+    AWS_PINPOINT_API GetGcmChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API GetGcmChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

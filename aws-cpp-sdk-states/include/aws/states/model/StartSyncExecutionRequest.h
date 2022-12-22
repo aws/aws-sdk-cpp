@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SFN_API StartSyncExecutionRequest : public SFNRequest
+  class StartSyncExecutionRequest : public SFNRequest
   {
   public:
-    StartSyncExecutionRequest();
+    AWS_SFN_API StartSyncExecutionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartSyncExecution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SFN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -198,49 +198,49 @@ namespace Model
 
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline bool TraceHeaderHasBeenSet() const { return m_traceHeaderHasBeenSet; }
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline void SetTraceHeader(const Aws::String& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = value; }
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline void SetTraceHeader(Aws::String&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::move(value); }
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline void SetTraceHeader(const char* value) { m_traceHeaderHasBeenSet = true; m_traceHeader.assign(value); }
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline StartSyncExecutionRequest& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline StartSyncExecutionRequest& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
 
     /**
-     * <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the
+     * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
     inline StartSyncExecutionRequest& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}

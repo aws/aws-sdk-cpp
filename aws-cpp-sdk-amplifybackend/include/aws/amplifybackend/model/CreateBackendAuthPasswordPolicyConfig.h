@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthPasswordPolicyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API CreateBackendAuthPasswordPolicyConfig
+  class CreateBackendAuthPasswordPolicyConfig
   {
   public:
-    CreateBackendAuthPasswordPolicyConfig();
-    CreateBackendAuthPasswordPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
-    CreateBackendAuthPasswordPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthPasswordPolicyConfig();
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthPasswordPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthPasswordPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace IoTDeviceAdvisor
 {
 namespace Model
 {
-  class AWS_IOTDEVICEADVISOR_API ListTagsForResourceResult
+  class ListTagsForResourceResult
   {
   public:
-    ListTagsForResourceResult();
-    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API ListTagsForResourceResult();
+    AWS_IOTDEVICEADVISOR_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

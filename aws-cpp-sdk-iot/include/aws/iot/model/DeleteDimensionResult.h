@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DeleteDimensionResult
+  class DeleteDimensionResult
   {
   public:
-    DeleteDimensionResult();
-    DeleteDimensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDimensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeleteDimensionResult();
+    AWS_IOT_API DeleteDimensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeleteDimensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

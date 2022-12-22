@@ -24,12 +24,12 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API UpdateResourceServerResult
+  class UpdateResourceServerResult
   {
   public:
-    UpdateResourceServerResult();
-    UpdateResourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateResourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateResourceServerResult();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateResourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateResourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

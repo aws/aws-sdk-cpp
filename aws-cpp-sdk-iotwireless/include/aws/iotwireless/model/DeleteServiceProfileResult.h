@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API DeleteServiceProfileResult
+  class DeleteServiceProfileResult
   {
   public:
-    DeleteServiceProfileResult();
-    DeleteServiceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteServiceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API DeleteServiceProfileResult();
+    AWS_IOTWIRELESS_API DeleteServiceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API DeleteServiceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/EncryptionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API EncryptionConfig
+  class EncryptionConfig
   {
   public:
-    EncryptionConfig();
-    EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API EncryptionConfig();
+    AWS_XRAY_API EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

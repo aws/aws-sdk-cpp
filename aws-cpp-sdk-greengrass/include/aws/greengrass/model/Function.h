@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Function">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API Function
+  class Function
   {
   public:
-    Function();
-    Function(Aws::Utils::Json::JsonView jsonValue);
-    Function& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Function();
+    AWS_GREENGRASS_API Function(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Function& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

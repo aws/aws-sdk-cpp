@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTagsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API AddTagsResult
+  class AddTagsResult
   {
   public:
-    AddTagsResult();
-    AddTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API AddTagsResult();
+    AWS_MACHINELEARNING_API AddTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API AddTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

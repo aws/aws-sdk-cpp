@@ -253,6 +253,12 @@ CreateFunctionResult& CreateFunctionResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("SnapStart"))
+  {
+    m_snapStart = jsonValue.GetObject("SnapStart");
+
+  }
+
 
 
   return *this;

@@ -26,12 +26,12 @@ namespace DeviceFarm
 {
 namespace Model
 {
-  class AWS_DEVICEFARM_API ListTestGridSessionsResult
+  class ListTestGridSessionsResult
   {
   public:
-    ListTestGridSessionsResult();
-    ListTestGridSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTestGridSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListTestGridSessionsResult();
+    AWS_DEVICEFARM_API ListTestGridSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListTestGridSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Integration">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Integration
+  class Integration
   {
   public:
-    Integration();
-    Integration(Aws::Utils::Json::JsonView jsonValue);
-    Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Integration();
+    AWS_APIGATEWAYV2_API Integration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

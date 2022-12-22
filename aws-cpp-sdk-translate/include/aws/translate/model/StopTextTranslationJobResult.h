@@ -25,12 +25,12 @@ namespace Translate
 {
 namespace Model
 {
-  class AWS_TRANSLATE_API StopTextTranslationJobResult
+  class StopTextTranslationJobResult
   {
   public:
-    StopTextTranslationJobResult();
-    StopTextTranslationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopTextTranslationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API StopTextTranslationJobResult();
+    AWS_TRANSLATE_API StopTextTranslationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API StopTextTranslationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

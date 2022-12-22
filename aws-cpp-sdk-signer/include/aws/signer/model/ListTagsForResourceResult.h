@@ -25,12 +25,12 @@ namespace signer
 {
 namespace Model
 {
-  class AWS_SIGNER_API ListTagsForResourceResult
+  class ListTagsForResourceResult
   {
   public:
-    ListTagsForResourceResult();
-    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API ListTagsForResourceResult();
+    AWS_SIGNER_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

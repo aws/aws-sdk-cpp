@@ -22,12 +22,12 @@ namespace MediaPackage
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGE_API DeleteOriginEndpointResult
+  class DeleteOriginEndpointResult
   {
   public:
-    DeleteOriginEndpointResult();
-    DeleteOriginEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteOriginEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API DeleteOriginEndpointResult();
+    AWS_MEDIAPACKAGE_API DeleteOriginEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API DeleteOriginEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

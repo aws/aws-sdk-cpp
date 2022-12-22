@@ -20,6 +20,7 @@ CreateResponsePlanRequest::CreateResponsePlanRequest() :
     m_displayNameHasBeenSet(false),
     m_engagementsHasBeenSet(false),
     m_incidentTemplateHasBeenSet(false),
+    m_integrationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -72,6 +73,17 @@ Aws::String CreateResponsePlanRequest::SerializePayload() const
   if(m_incidentTemplateHasBeenSet)
   {
    payload.WithObject("incidentTemplate", m_incidentTemplate.Jsonize());
+
+  }
+
+  if(m_integrationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> integrationsJsonList(m_integrations.size());
+   for(unsigned integrationsIndex = 0; integrationsIndex < integrationsJsonList.GetLength(); ++integrationsIndex)
+   {
+     integrationsJsonList[integrationsIndex].AsObject(m_integrations[integrationsIndex].Jsonize());
+   }
+   payload.WithArray("integrations", std::move(integrationsJsonList));
 
   }
 

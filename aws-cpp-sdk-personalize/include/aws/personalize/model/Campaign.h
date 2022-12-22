@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Campaign">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API Campaign
+  class Campaign
   {
   public:
-    Campaign();
-    Campaign(Aws::Utils::Json::JsonView jsonValue);
-    Campaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API Campaign();
+    AWS_PERSONALIZE_API Campaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Campaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

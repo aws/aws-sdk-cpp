@@ -24,12 +24,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API CreateAssessmentTargetResult
+  class CreateAssessmentTargetResult
   {
   public:
-    CreateAssessmentTargetResult();
-    CreateAssessmentTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAssessmentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API CreateAssessmentTargetResult();
+    AWS_INSPECTOR_API CreateAssessmentTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API CreateAssessmentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUpResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminConfirmSignUpResult
+  class AdminConfirmSignUpResult
   {
   public:
-    AdminConfirmSignUpResult();
-    AdminConfirmSignUpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminConfirmSignUpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminConfirmSignUpResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminConfirmSignUpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminConfirmSignUpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

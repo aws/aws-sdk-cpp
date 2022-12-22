@@ -25,12 +25,12 @@ namespace GameSparks
 {
 namespace Model
 {
-  class AWS_GAMESPARKS_API GetPlayerConnectionStatusResult
+  class GetPlayerConnectionStatusResult
   {
   public:
-    GetPlayerConnectionStatusResult();
-    GetPlayerConnectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPlayerConnectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API GetPlayerConnectionStatusResult();
+    AWS_GAMESPARKS_API GetPlayerConnectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API GetPlayerConnectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

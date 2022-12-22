@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API CreateDBSubnetGroupResult
+  class CreateDBSubnetGroupResult
   {
   public:
-    CreateDBSubnetGroupResult();
-    CreateDBSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDBSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API CreateDBSubnetGroupResult();
+    AWS_NEPTUNE_API CreateDBSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API CreateDBSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -22,7 +22,9 @@ ProfilerConfig::ProfilerConfig() :
     m_s3OutputPathHasBeenSet(false),
     m_profilingIntervalInMilliseconds(0),
     m_profilingIntervalInMillisecondsHasBeenSet(false),
-    m_profilingParametersHasBeenSet(false)
+    m_profilingParametersHasBeenSet(false),
+    m_disableProfiler(false),
+    m_disableProfilerHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ProfilerConfig::ProfilerConfig(JsonView jsonValue) :
     m_s3OutputPathHasBeenSet(false),
     m_profilingIntervalInMilliseconds(0),
     m_profilingIntervalInMillisecondsHasBeenSet(false),
-    m_profilingParametersHasBeenSet(false)
+    m_profilingParametersHasBeenSet(false),
+    m_disableProfiler(false),
+    m_disableProfilerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +65,13 @@ ProfilerConfig& ProfilerConfig::operator =(JsonView jsonValue)
     m_profilingParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableProfiler"))
+  {
+    m_disableProfiler = jsonValue.GetBool("DisableProfiler");
+
+    m_disableProfilerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +99,12 @@ JsonValue ProfilerConfig::Jsonize() const
      profilingParametersJsonMap.WithString(profilingParametersItem.first, profilingParametersItem.second);
    }
    payload.WithObject("ProfilingParameters", std::move(profilingParametersJsonMap));
+
+  }
+
+  if(m_disableProfilerHasBeenSet)
+  {
+   payload.WithBool("DisableProfiler", m_disableProfiler);
 
   }
 

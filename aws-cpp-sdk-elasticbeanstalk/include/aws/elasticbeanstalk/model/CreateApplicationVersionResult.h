@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionDescriptionMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API CreateApplicationVersionResult
+  class CreateApplicationVersionResult
   {
   public:
-    CreateApplicationVersionResult();
-    CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CreateApplicationVersionResult();
+    AWS_ELASTICBEANSTALK_API CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CreateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

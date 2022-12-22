@@ -7,6 +7,7 @@
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
 
@@ -46,7 +47,7 @@ namespace SecretsManager
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">Amazon
    * Web Services CloudTrail User Guide</a>.</p>
    */
-  class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -100,7 +101,6 @@ namespace SecretsManager
 
         /* End of legacy constructors due deprecation */
         virtual ~SecretsManagerClient();
-
 
         /**
          * <p>Turns off automatic rotation, and if a rotation is currently in progress,
@@ -675,9 +675,14 @@ namespace SecretsManager
          * the <code>AWSPENDING</code> staging label is present but not attached to the
          * same version as <code>AWSCURRENT</code>, then any later invocation of
          * <code>RotateSecret</code> assumes that a previous rotation request is still in
-         * progress and returns an error.</p> <p>Secrets Manager generates a CloudTrail log
-         * entry when you call this action. Do not include sensitive information in request
-         * parameters because it might be logged. For more information, see <a
+         * progress and returns an error.</p> <p>When rotation is unsuccessful, the
+         * <code>AWSPENDING</code> staging label might be attached to an empty secret
+         * version. For more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
+         * rotation</a> in the <i>Secrets Manager User Guide</i>.</p> <p>Secrets Manager
+         * generates a CloudTrail log entry when you call this action. Do not include
+         * sensitive information in request parameters because it might be logged. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
          * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
          * </b> <code>secretsmanager:RotateSecret</code>. For more information, see <a
@@ -944,6 +949,7 @@ namespace SecretsManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SecretsManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>;
       void init(const SecretsManagerClientConfiguration& clientConfiguration);
 
       SecretsManagerClientConfiguration m_clientConfiguration;

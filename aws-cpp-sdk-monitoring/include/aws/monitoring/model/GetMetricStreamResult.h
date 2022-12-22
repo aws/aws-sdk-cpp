@@ -30,12 +30,12 @@ namespace CloudWatch
 {
 namespace Model
 {
-  class AWS_CLOUDWATCH_API GetMetricStreamResult
+  class GetMetricStreamResult
   {
   public:
-    GetMetricStreamResult();
-    GetMetricStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetMetricStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API GetMetricStreamResult();
+    AWS_CLOUDWATCH_API GetMetricStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API GetMetricStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -211,44 +211,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline const Aws::String& GetFirehoseArn() const{ return m_firehoseArn; }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline void SetFirehoseArn(const Aws::String& value) { m_firehoseArn = value; }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline void SetFirehoseArn(Aws::String&& value) { m_firehoseArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline void SetFirehoseArn(const char* value) { m_firehoseArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline GetMetricStreamResult& WithFirehoseArn(const Aws::String& value) { SetFirehoseArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline GetMetricStreamResult& WithFirehoseArn(Aws::String&& value) { SetFirehoseArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this
-     * metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by
+     * this metric stream.</p>
      */
     inline GetMetricStreamResult& WithFirehoseArn(const char* value) { SetFirehoseArn(value); return *this;}
 

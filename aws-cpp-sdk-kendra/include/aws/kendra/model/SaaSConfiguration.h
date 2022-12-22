@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SaaSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SaaSConfiguration
+  class SaaSConfiguration
   {
   public:
-    SaaSConfiguration();
-    SaaSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SaaSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SaaSConfiguration();
+    AWS_KENDRA_API SaaSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SaaSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

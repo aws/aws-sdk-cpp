@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AccessDeniedException
+  class AccessDeniedException
   {
   public:
-    AccessDeniedException();
-    AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AccessDeniedException();
+    AWS_INSPECTOR_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

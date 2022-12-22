@@ -22,12 +22,12 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API RevokeTokenResult
+  class RevokeTokenResult
   {
   public:
-    RevokeTokenResult();
-    RevokeTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RevokeTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API RevokeTokenResult();
+    AWS_COGNITOIDENTITYPROVIDER_API RevokeTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API RevokeTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

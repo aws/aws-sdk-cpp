@@ -45,6 +45,7 @@
 #include <aws/ecs/model/ListClustersResult.h>
 #include <aws/ecs/model/ListContainerInstancesResult.h>
 #include <aws/ecs/model/ListServicesResult.h>
+#include <aws/ecs/model/ListServicesByNamespaceResult.h>
 #include <aws/ecs/model/ListTagsForResourceResult.h>
 #include <aws/ecs/model/ListTaskDefinitionFamiliesResult.h>
 #include <aws/ecs/model/ListTaskDefinitionsResult.h>
@@ -139,6 +140,7 @@ namespace Aws
       class ListClustersRequest;
       class ListContainerInstancesRequest;
       class ListServicesRequest;
+      class ListServicesByNamespaceRequest;
       class ListTagsForResourceRequest;
       class ListTaskDefinitionFamiliesRequest;
       class ListTaskDefinitionsRequest;
@@ -196,6 +198,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListClustersResult, ECSError> ListClustersOutcome;
       typedef Aws::Utils::Outcome<ListContainerInstancesResult, ECSError> ListContainerInstancesOutcome;
       typedef Aws::Utils::Outcome<ListServicesResult, ECSError> ListServicesOutcome;
+      typedef Aws::Utils::Outcome<ListServicesByNamespaceResult, ECSError> ListServicesByNamespaceOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECSError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTaskDefinitionFamiliesResult, ECSError> ListTaskDefinitionFamiliesOutcome;
       typedef Aws::Utils::Outcome<ListTaskDefinitionsResult, ECSError> ListTaskDefinitionsOutcome;
@@ -253,6 +256,7 @@ namespace Aws
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
       typedef std::future<ListContainerInstancesOutcome> ListContainerInstancesOutcomeCallable;
       typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
+      typedef std::future<ListServicesByNamespaceOutcome> ListServicesByNamespaceOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTaskDefinitionFamiliesOutcome> ListTaskDefinitionFamiliesOutcomeCallable;
       typedef std::future<ListTaskDefinitionsOutcome> ListTaskDefinitionsOutcomeCallable;
@@ -313,6 +317,7 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListContainerInstancesRequest&, const Model::ListContainerInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerInstancesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::ListServicesByNamespaceRequest&, const Model::ListServicesByNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesByNamespaceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListTaskDefinitionFamiliesRequest&, const Model::ListTaskDefinitionFamiliesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskDefinitionFamiliesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListTaskDefinitionsRequest&, const Model::ListTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskDefinitionsResponseReceivedHandler;

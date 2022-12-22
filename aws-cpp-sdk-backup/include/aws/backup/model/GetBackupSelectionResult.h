@@ -26,12 +26,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API GetBackupSelectionResult
+  class GetBackupSelectionResult
   {
   public:
-    GetBackupSelectionResult();
-    GetBackupSelectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBackupSelectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API GetBackupSelectionResult();
+    AWS_BACKUP_API GetBackupSelectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API GetBackupSelectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

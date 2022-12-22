@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API UpdateDomainEndpointOptionsResult
+  class UpdateDomainEndpointOptionsResult
   {
   public:
-    UpdateDomainEndpointOptionsResult();
-    UpdateDomainEndpointOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateDomainEndpointOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API UpdateDomainEndpointOptionsResult();
+    AWS_CLOUDSEARCH_API UpdateDomainEndpointOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API UpdateDomainEndpointOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

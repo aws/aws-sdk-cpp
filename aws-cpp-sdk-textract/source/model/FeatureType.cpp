@@ -23,6 +23,7 @@ namespace Aws
         static const int TABLES_HASH = HashingUtils::HashString("TABLES");
         static const int FORMS_HASH = HashingUtils::HashString("FORMS");
         static const int QUERIES_HASH = HashingUtils::HashString("QUERIES");
+        static const int SIGNATURES_HASH = HashingUtils::HashString("SIGNATURES");
 
 
         FeatureType GetFeatureTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == QUERIES_HASH)
           {
             return FeatureType::QUERIES;
+          }
+          else if (hashCode == SIGNATURES_HASH)
+          {
+            return FeatureType::SIGNATURES;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "FORMS";
           case FeatureType::QUERIES:
             return "QUERIES";
+          case FeatureType::SIGNATURES:
+            return "SIGNATURES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

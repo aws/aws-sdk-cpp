@@ -22,12 +22,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API EnableOrganizationAdminAccountResult
+  class EnableOrganizationAdminAccountResult
   {
   public:
-    EnableOrganizationAdminAccountResult();
-    EnableOrganizationAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableOrganizationAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API EnableOrganizationAdminAccountResult();
+    AWS_SECURITYHUB_API EnableOrganizationAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API EnableOrganizationAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

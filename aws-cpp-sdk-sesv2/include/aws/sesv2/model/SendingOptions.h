@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SendingOptions
+  class SendingOptions
   {
   public:
-    SendingOptions();
-    SendingOptions(Aws::Utils::Json::JsonView jsonValue);
-    SendingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SendingOptions();
+    AWS_SESV2_API SendingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SendingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

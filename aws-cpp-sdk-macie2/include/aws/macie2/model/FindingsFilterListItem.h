@@ -30,52 +30,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingsFilterListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API FindingsFilterListItem
+  class FindingsFilterListItem
   {
   public:
-    FindingsFilterListItem();
-    FindingsFilterListItem(Aws::Utils::Json::JsonView jsonValue);
-    FindingsFilterListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API FindingsFilterListItem();
+    AWS_MACIE2_API FindingsFilterListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API FindingsFilterListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline const FindingsFilterAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(const FindingsFilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(FindingsFilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline FindingsFilterListItem& WithAction(const FindingsFilterAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */

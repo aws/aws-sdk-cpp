@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackupResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateBackupResult
+  class CreateBackupResult
   {
   public:
-    CreateBackupResult();
-    CreateBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateBackupResult();
+    AWS_FSX_API CreateBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

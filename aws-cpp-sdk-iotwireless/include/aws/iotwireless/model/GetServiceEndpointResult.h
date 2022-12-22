@@ -25,12 +25,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetServiceEndpointResult
+  class GetServiceEndpointResult
   {
   public:
-    GetServiceEndpointResult();
-    GetServiceEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServiceEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetServiceEndpointResult();
+    AWS_IOTWIRELESS_API GetServiceEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetServiceEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

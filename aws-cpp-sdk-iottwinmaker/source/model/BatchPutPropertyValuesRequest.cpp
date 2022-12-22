@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchPutPropertyValuesRequest::BatchPutPropertyValuesRequest() : 
-    m_entriesHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_entriesHasBeenSet(false)
 {
 }
 

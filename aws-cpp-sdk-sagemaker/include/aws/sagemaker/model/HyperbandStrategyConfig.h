@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperbandStrategyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperbandStrategyConfig
+  class HyperbandStrategyConfig
   {
   public:
-    HyperbandStrategyConfig();
-    HyperbandStrategyConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperbandStrategyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperbandStrategyConfig();
+    AWS_SAGEMAKER_API HyperbandStrategyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperbandStrategyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

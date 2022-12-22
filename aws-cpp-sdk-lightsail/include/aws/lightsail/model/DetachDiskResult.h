@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API DetachDiskResult
+  class DetachDiskResult
   {
   public:
-    DetachDiskResult();
-    DetachDiskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachDiskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DetachDiskResult();
+    AWS_LIGHTSAIL_API DetachDiskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DetachDiskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

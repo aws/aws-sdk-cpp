@@ -7,6 +7,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/SSMServiceClientModel.h>
 
@@ -15,36 +16,34 @@ namespace Aws
 namespace SSM
 {
   /**
-   * <p>Amazon Web Services Systems Manager is a collection of capabilities to help
-   * you manage your applications and infrastructure running in the Amazon Web
-   * Services Cloud;. Systems Manager simplifies application and resource management,
-   * shortens the time to detect and resolve operational problems, and helps you
-   * manage your Amazon Web Services resources securely at scale.</p> <p>This
-   * reference is intended to be used with the <a
+   * <p>Amazon Web Services Systems Manager is the operations hub for your Amazon Web
+   * Services applications and resources and a secure end-to-end management solution
+   * for hybrid cloud environments that enables safe and secure operations at
+   * scale.</p> <p>This reference is intended to be used with the <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web
-   * Services Systems Manager User Guide</a>.</p> <p>To get started, verify
-   * prerequisites. For more information, see <a
+   * Services Systems Manager User Guide</a>. To get started, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
    * up Amazon Web Services Systems Manager</a>.</p> <p class="title"> <b>Related
-   * resources</b> </p> <ul> <li> <p>For information about how to use a Query API,
-   * see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
-   * API requests</a>. </p> </li> <li> <p>For information about other API operations
-   * you can perform on EC2 instances, see the <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
-   * Reference</a>.</p> </li> <li> <p>For information about AppConfig, a capability
-   * of Systems Manager, see the <a
+   * resources</b> </p> <ul> <li> <p>For information about each of the capabilities
+   * that comprise Systems Manager, see <a
+   * href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
+   * Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User
+   * Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for
+   * Automation, a capability of Amazon Web Services Systems Manager, see the <i> <a
+   * href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html">Systems
+   * Manager Automation runbook reference</a> </i>.</p> </li> <li> <p>For information
+   * about AppConfig, a capability of Systems Manager, see the <i> <a
    * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User
-   * Guide</a> and the <a
+   * Guide</a> </i> and the <i> <a
    * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
-   * API Reference</a>.</p> </li> <li> <p>For information about Incident Manager, a
-   * capability of Systems Manager, see the <a
-   * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident
-   * Manager User Guide</a> and the <a
-   * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident
-   * Manager API Reference</a>.</p> </li> </ul>
+   * API Reference</a> </i>.</p> </li> <li> <p>For information about Incident
+   * Manager, a capability of Systems Manager, see the <i> <a
+   * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems
+   * Manager Incident Manager User Guide</a> </i> and the <i> <a
+   * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems
+   * Manager Incident Manager API Reference</a> </i>.</p> </li> </ul>
    */
-  class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient
+  class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -98,7 +97,6 @@ namespace SSM
 
         /* End of legacy constructors due deprecation */
         virtual ~SSMClient();
-
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. <i>Tags</i>
@@ -623,6 +621,29 @@ namespace SSM
          * An Async wrapper for DeleteResourceDataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteResourceDataSyncAsync(const Model::DeleteResourceDataSyncRequest& request, const DeleteResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a Systems Manager resource policy. A resource policy helps you to
+         * define the IAM entity (for example, an Amazon Web Services account) that can
+         * manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is
+         * the only resource that supports Systems Manager resource policies. The resource
+         * policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to
+         * view and interact with OpsCenter operational work items
+         * (OpsItems).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
@@ -1830,6 +1851,24 @@ namespace SSM
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of the <code>Policy</code> object.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
+
+        /**
+         * An Async wrapper for GetResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourcePoliciesAsync(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
          * Services service. This setting defines how a user interacts with or uses a
          * service or a feature of a service. For example, if an Amazon Web Services
@@ -2310,6 +2349,29 @@ namespace SSM
          * An Async wrapper for PutParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutParameterAsync(const Model::PutParameterRequest& request, const PutParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates a Systems Manager resource policy. A resource policy helps
+         * you to define the IAM entity (for example, an Amazon Web Services account) that
+         * can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code>
+         * is the only resource that supports Systems Manager resource policies. The
+         * resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+         * accounts to view and interact with OpsCenter operational work items
+         * (OpsItems).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines the default patch baseline for the relevant operating system.</p>
@@ -2976,6 +3038,7 @@ namespace SSM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SSMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>;
       void init(const SSMClientConfiguration& clientConfiguration);
 
       SSMClientConfiguration m_clientConfiguration;

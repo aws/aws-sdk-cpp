@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API UpdateEventConfigurationsResult
+  class UpdateEventConfigurationsResult
   {
   public:
-    UpdateEventConfigurationsResult();
-    UpdateEventConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEventConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API UpdateEventConfigurationsResult();
+    AWS_IOT_API UpdateEventConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API UpdateEventConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

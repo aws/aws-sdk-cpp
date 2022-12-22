@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductPlanDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisionedProductPlanDetails
+  class ProvisionedProductPlanDetails
   {
   public:
-    ProvisionedProductPlanDetails();
-    ProvisionedProductPlanDetails(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedProductPlanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisionedProductPlanDetails();
+    AWS_SERVICECATALOG_API ProvisionedProductPlanDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisionedProductPlanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -440,32 +440,32 @@ namespace Model
 
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline void SetUpdatedTime(const Aws::Utils::DateTime& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = value; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::move(value); }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline ProvisionedProductPlanDetails& WithUpdatedTime(const Aws::Utils::DateTime& value) { SetUpdatedTime(value); return *this;}
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline ProvisionedProductPlanDetails& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
 

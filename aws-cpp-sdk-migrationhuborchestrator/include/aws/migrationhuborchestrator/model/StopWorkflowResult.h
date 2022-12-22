@@ -26,12 +26,12 @@ namespace MigrationHubOrchestrator
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBORCHESTRATOR_API StopWorkflowResult
+  class StopWorkflowResult
   {
   public:
-    StopWorkflowResult();
-    StopWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBORCHESTRATOR_API StopWorkflowResult();
+    AWS_MIGRATIONHUBORCHESTRATOR_API StopWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBORCHESTRATOR_API StopWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

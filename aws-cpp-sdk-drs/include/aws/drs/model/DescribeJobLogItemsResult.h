@@ -26,12 +26,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API DescribeJobLogItemsResult
+  class DescribeJobLogItemsResult
   {
   public:
-    DescribeJobLogItemsResult();
-    DescribeJobLogItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobLogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DescribeJobLogItemsResult();
+    AWS_DRS_API DescribeJobLogItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DescribeJobLogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

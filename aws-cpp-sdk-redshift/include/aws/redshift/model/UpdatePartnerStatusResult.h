@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API UpdatePartnerStatusResult
+  class UpdatePartnerStatusResult
   {
   public:
-    UpdatePartnerStatusResult();
-    UpdatePartnerStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdatePartnerStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API UpdatePartnerStatusResult();
+    AWS_REDSHIFT_API UpdatePartnerStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API UpdatePartnerStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

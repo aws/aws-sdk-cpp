@@ -62,15 +62,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API DBCluster
+  class DBCluster
   {
   public:
-    DBCluster();
-    DBCluster(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBCluster& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBCluster();
+    AWS_RDS_API DBCluster(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBCluster& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -3057,6 +3057,47 @@ namespace Model
      */
     inline DBCluster& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3265,6 +3306,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

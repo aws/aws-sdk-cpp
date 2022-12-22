@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClustersMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeClustersResult
+  class DescribeClustersResult
   {
   public:
-    DescribeClustersResult();
-    DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeClustersResult();
+    AWS_REDSHIFT_API DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

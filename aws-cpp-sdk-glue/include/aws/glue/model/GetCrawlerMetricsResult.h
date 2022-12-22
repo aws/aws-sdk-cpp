@@ -26,12 +26,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetCrawlerMetricsResult
+  class GetCrawlerMetricsResult
   {
   public:
-    GetCrawlerMetricsResult();
-    GetCrawlerMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCrawlerMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetCrawlerMetricsResult();
+    AWS_GLUE_API GetCrawlerMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetCrawlerMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

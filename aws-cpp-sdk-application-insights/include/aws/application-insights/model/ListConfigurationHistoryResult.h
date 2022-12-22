@@ -26,12 +26,12 @@ namespace ApplicationInsights
 {
 namespace Model
 {
-  class AWS_APPLICATIONINSIGHTS_API ListConfigurationHistoryResult
+  class ListConfigurationHistoryResult
   {
   public:
-    ListConfigurationHistoryResult();
-    ListConfigurationHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConfigurationHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API ListConfigurationHistoryResult();
+    AWS_APPLICATIONINSIGHTS_API ListConfigurationHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API ListConfigurationHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

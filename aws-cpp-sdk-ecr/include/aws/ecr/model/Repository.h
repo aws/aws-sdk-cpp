@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Repository">AWS API
    * Reference</a></p>
    */
-  class AWS_ECR_API Repository
+  class Repository
   {
   public:
-    Repository();
-    Repository(Aws::Utils::Json::JsonView jsonValue);
-    Repository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API Repository();
+    AWS_ECR_API Repository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Repository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

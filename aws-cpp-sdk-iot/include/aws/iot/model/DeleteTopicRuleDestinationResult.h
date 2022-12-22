@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DeleteTopicRuleDestinationResult
+  class DeleteTopicRuleDestinationResult
   {
   public:
-    DeleteTopicRuleDestinationResult();
-    DeleteTopicRuleDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTopicRuleDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeleteTopicRuleDestinationResult();
+    AWS_IOT_API DeleteTopicRuleDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeleteTopicRuleDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

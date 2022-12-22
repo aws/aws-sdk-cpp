@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Parameter">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API Parameter
+  class Parameter
   {
   public:
-    Parameter();
-    Parameter(Aws::Utils::Json::JsonView jsonValue);
-    Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Parameter();
+    AWS_MEMORYDB_API Parameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

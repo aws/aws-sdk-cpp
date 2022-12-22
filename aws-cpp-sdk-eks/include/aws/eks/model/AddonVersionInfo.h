@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonVersionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API AddonVersionInfo
+  class AddonVersionInfo
   {
   public:
-    AddonVersionInfo();
-    AddonVersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    AddonVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API AddonVersionInfo();
+    AWS_EKS_API AddonVersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API AddonVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,6 +166,27 @@ namespace Model
      */
     inline AddonVersionInfo& AddCompatibilities(Compatibility&& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Whether the add-on requires configuration.</p>
+     */
+    inline bool GetRequiresConfiguration() const{ return m_requiresConfiguration; }
+
+    /**
+     * <p>Whether the add-on requires configuration.</p>
+     */
+    inline bool RequiresConfigurationHasBeenSet() const { return m_requiresConfigurationHasBeenSet; }
+
+    /**
+     * <p>Whether the add-on requires configuration.</p>
+     */
+    inline void SetRequiresConfiguration(bool value) { m_requiresConfigurationHasBeenSet = true; m_requiresConfiguration = value; }
+
+    /**
+     * <p>Whether the add-on requires configuration.</p>
+     */
+    inline AddonVersionInfo& WithRequiresConfiguration(bool value) { SetRequiresConfiguration(value); return *this;}
+
   private:
 
     Aws::String m_addonVersion;
@@ -176,6 +197,9 @@ namespace Model
 
     Aws::Vector<Compatibility> m_compatibilities;
     bool m_compatibilitiesHasBeenSet = false;
+
+    bool m_requiresConfiguration;
+    bool m_requiresConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

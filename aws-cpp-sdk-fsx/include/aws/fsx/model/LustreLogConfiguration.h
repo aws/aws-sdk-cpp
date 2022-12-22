@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreLogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API LustreLogConfiguration
+  class LustreLogConfiguration
   {
   public:
-    LustreLogConfiguration();
-    LustreLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LustreLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API LustreLogConfiguration();
+    AWS_FSX_API LustreLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API LustreLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

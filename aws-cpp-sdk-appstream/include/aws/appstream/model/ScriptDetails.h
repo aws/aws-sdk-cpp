@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ScriptDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ScriptDetails
+  class ScriptDetails
   {
   public:
-    ScriptDetails();
-    ScriptDetails(Aws::Utils::Json::JsonView jsonValue);
-    ScriptDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ScriptDetails();
+    AWS_APPSTREAM_API ScriptDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ScriptDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

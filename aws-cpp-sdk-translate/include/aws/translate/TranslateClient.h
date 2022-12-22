@@ -7,6 +7,7 @@
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/translate/TranslateServiceClientModel.h>
 
@@ -15,10 +16,10 @@ namespace Aws
 namespace Translate
 {
   /**
-   * <p>Provides language translation for input text in the source language to the
-   * specified target language.</p>
+   * <p>Provides translation of the input content from the source language to the
+   * target language.</p>
    */
-  class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient
+  class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace Translate
 
         /* End of legacy constructors due deprecation */
         virtual ~TranslateClient();
-
 
         /**
          * <p>Creates a parallel data resource in Amazon Translate by importing an input
@@ -304,16 +304,15 @@ namespace Translate
         /**
          * <p>Starts an asynchronous batch translation job. Use batch translation jobs to
          * translate large volumes of text across multiple documents at once. For batch
-         * translation, the input documents must share the same source language. You can
-         * specify one or more target languages. Batch translation translates each input
-         * document into each of the target languages. For more information, see <a
+         * translation, you can input documents with different source languages (specify
+         * <code>auto</code> as the source language). You can specify one or more target
+         * languages. Batch translation translates each input document into each of the
+         * target languages. For more information, see <a
          * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
-         * batch processing</a> </p> <p>Batch translation jobs can be described with the
+         * batch processing</a>.</p> <p>Batch translation jobs can be described with the
          * <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
-         * support batch translation of multiple source languages at once.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <a>StopTextTranslationJob</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          */
@@ -437,6 +436,7 @@ namespace Translate
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TranslateEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>;
       void init(const TranslateClientConfiguration& clientConfiguration);
 
       TranslateClientConfiguration m_clientConfiguration;

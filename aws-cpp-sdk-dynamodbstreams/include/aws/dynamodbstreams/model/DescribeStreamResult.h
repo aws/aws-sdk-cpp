@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStreamOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API DescribeStreamResult
+  class DescribeStreamResult
   {
   public:
-    DescribeStreamResult();
-    DescribeStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODBSTREAMS_API DescribeStreamResult();
+    AWS_DYNAMODBSTREAMS_API DescribeStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODBSTREAMS_API DescribeStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -35,7 +35,10 @@ CreateFleetRequest::CreateFleetRequest() :
     m_instanceRoleArnHasBeenSet(false),
     m_certificateConfigurationHasBeenSet(false),
     m_locationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_anywhereConfigurationHasBeenSet(false)
 {
 }
 
@@ -182,6 +185,17 @@ Aws::String CreateFleetRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_computeTypeHasBeenSet)
+  {
+   payload.WithString("ComputeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  }
+
+  if(m_anywhereConfigurationHasBeenSet)
+  {
+   payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
 
   }
 

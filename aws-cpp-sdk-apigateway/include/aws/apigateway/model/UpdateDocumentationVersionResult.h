@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UpdateDocumentationVersionResult
+  class UpdateDocumentationVersionResult
   {
   public:
-    UpdateDocumentationVersionResult();
-    UpdateDocumentationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDocumentationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateDocumentationVersionResult();
+    AWS_APIGATEWAY_API UpdateDocumentationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateDocumentationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

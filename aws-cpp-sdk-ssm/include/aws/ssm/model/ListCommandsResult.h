@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API ListCommandsResult
+  class ListCommandsResult
   {
   public:
-    ListCommandsResult();
-    ListCommandsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCommandsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API ListCommandsResult();
+    AWS_SSM_API ListCommandsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API ListCommandsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

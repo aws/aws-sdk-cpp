@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ErrorMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API ErrorMetric
+  class ErrorMetric
   {
   public:
-    ErrorMetric();
-    ErrorMetric(Aws::Utils::Json::JsonView jsonValue);
-    ErrorMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API ErrorMetric();
+    AWS_FORECASTSERVICE_API ErrorMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API ErrorMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

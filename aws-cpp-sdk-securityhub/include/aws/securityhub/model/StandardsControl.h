@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsControl">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StandardsControl
+  class StandardsControl
   {
   public:
-    StandardsControl();
-    StandardsControl(Aws::Utils::Json::JsonView jsonValue);
-    StandardsControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StandardsControl();
+    AWS_SECURITYHUB_API StandardsControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StandardsControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

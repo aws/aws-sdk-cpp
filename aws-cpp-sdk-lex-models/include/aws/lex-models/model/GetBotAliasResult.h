@@ -26,12 +26,12 @@ namespace LexModelBuildingService
 {
 namespace Model
 {
-  class AWS_LEXMODELBUILDINGSERVICE_API GetBotAliasResult
+  class GetBotAliasResult
   {
   public:
-    GetBotAliasResult();
-    GetBotAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetBotAliasResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBotAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetBotAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

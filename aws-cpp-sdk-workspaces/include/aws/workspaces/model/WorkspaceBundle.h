@@ -10,6 +10,8 @@
 #include <aws/workspaces/model/UserStorage.h>
 #include <aws/workspaces/model/ComputeType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/workspaces/model/WorkspaceBundleState.h>
+#include <aws/workspaces/model/BundleType.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceBundle">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceBundle
+  class WorkspaceBundle
   {
   public:
-    WorkspaceBundle();
-    WorkspaceBundle(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceBundle();
+    AWS_WORKSPACES_API WorkspaceBundle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -420,6 +422,68 @@ namespace Model
      */
     inline WorkspaceBundle& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The state of the WorkSpace bundle.</p>
+     */
+    inline const WorkspaceBundleState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the WorkSpace bundle.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the WorkSpace bundle.</p>
+     */
+    inline void SetState(const WorkspaceBundleState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The state of the WorkSpace bundle.</p>
+     */
+    inline void SetState(WorkspaceBundleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The state of the WorkSpace bundle.</p>
+     */
+    inline WorkspaceBundle& WithState(const WorkspaceBundleState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The state of the WorkSpace bundle.</p>
+     */
+    inline WorkspaceBundle& WithState(WorkspaceBundleState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of WorkSpace bundle.</p>
+     */
+    inline const BundleType& GetBundleType() const{ return m_bundleType; }
+
+    /**
+     * <p>The type of WorkSpace bundle.</p>
+     */
+    inline bool BundleTypeHasBeenSet() const { return m_bundleTypeHasBeenSet; }
+
+    /**
+     * <p>The type of WorkSpace bundle.</p>
+     */
+    inline void SetBundleType(const BundleType& value) { m_bundleTypeHasBeenSet = true; m_bundleType = value; }
+
+    /**
+     * <p>The type of WorkSpace bundle.</p>
+     */
+    inline void SetBundleType(BundleType&& value) { m_bundleTypeHasBeenSet = true; m_bundleType = std::move(value); }
+
+    /**
+     * <p>The type of WorkSpace bundle.</p>
+     */
+    inline WorkspaceBundle& WithBundleType(const BundleType& value) { SetBundleType(value); return *this;}
+
+    /**
+     * <p>The type of WorkSpace bundle.</p>
+     */
+    inline WorkspaceBundle& WithBundleType(BundleType&& value) { SetBundleType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bundleId;
@@ -451,6 +515,12 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet = false;
+
+    WorkspaceBundleState m_state;
+    bool m_stateHasBeenSet = false;
+
+    BundleType m_bundleType;
+    bool m_bundleTypeHasBeenSet = false;
   };
 
 } // namespace Model

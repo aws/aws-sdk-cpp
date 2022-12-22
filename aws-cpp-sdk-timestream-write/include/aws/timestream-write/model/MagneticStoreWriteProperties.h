@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/MagneticStoreWriteProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API MagneticStoreWriteProperties
+  class MagneticStoreWriteProperties
   {
   public:
-    MagneticStoreWriteProperties();
-    MagneticStoreWriteProperties(Aws::Utils::Json::JsonView jsonValue);
-    MagneticStoreWriteProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API MagneticStoreWriteProperties();
+    AWS_TIMESTREAMWRITE_API MagneticStoreWriteProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API MagneticStoreWriteProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

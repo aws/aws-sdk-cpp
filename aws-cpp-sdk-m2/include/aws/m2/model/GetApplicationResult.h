@@ -32,12 +32,12 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API GetApplicationResult
+  class GetApplicationResult
   {
   public:
-    GetApplicationResult();
-    GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetApplicationResult();
+    AWS_MAINFRAMEMODERNIZATION_API GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -227,68 +227,111 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentId = value; }
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentId = std::move(value); }
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentId.assign(value); }
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline GetApplicationResult& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline GetApplicationResult& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the environment where the application will be deployed.</p>
+     * <p>The identifier of the runtime environment where you want to deploy the
+     * application.</p>
      */
     inline GetApplicationResult& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline GetApplicationResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline GetApplicationResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline GetApplicationResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStartTime() const{ return m_lastStartTime; }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline void SetLastStartTime(const Aws::Utils::DateTime& value) { m_lastStartTime = value; }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline void SetLastStartTime(Aws::Utils::DateTime&& value) { m_lastStartTime = std::move(value); }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline GetApplicationResult& WithLastStartTime(const Aws::Utils::DateTime& value) { SetLastStartTime(value); return *this;}
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline GetApplicationResult& WithLastStartTime(Aws::Utils::DateTime&& value) { SetLastStartTime(std::move(value)); return *this;}
 
@@ -322,64 +365,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetListenerArns() const{ return m_listenerArns; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline void SetListenerArns(const Aws::Vector<Aws::String>& value) { m_listenerArns = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline void SetListenerArns(Aws::Vector<Aws::String>&& value) { m_listenerArns = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline GetApplicationResult& WithListenerArns(const Aws::Vector<Aws::String>& value) { SetListenerArns(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline GetApplicationResult& WithListenerArns(Aws::Vector<Aws::String>&& value) { SetListenerArns(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline GetApplicationResult& AddListenerArns(const Aws::String& value) { m_listenerArns.push_back(value); return *this; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline GetApplicationResult& AddListenerArns(Aws::String&& value) { m_listenerArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the network load balancer listener created
      * in your Amazon Web Services account. Amazon Web Services Mainframe Modernization
-     * creates this listener on your behalf the first time you deploy an
-     * application.</p>
+     * creates this listener for you the first time you deploy an application.</p>
      */
     inline GetApplicationResult& AddListenerArns(const char* value) { m_listenerArns.push_back(value); return *this; }
 
@@ -466,56 +501,56 @@ namespace Model
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline const Aws::Vector<LogGroupSummary>& GetLogGroups() const{ return m_logGroups; }
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline void SetLogGroups(const Aws::Vector<LogGroupSummary>& value) { m_logGroups = value; }
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline void SetLogGroups(Aws::Vector<LogGroupSummary>&& value) { m_logGroups = std::move(value); }
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline GetApplicationResult& WithLogGroups(const Aws::Vector<LogGroupSummary>& value) { SetLogGroups(value); return *this;}
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline GetApplicationResult& WithLogGroups(Aws::Vector<LogGroupSummary>&& value) { SetLogGroups(std::move(value)); return *this;}
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline GetApplicationResult& AddLogGroups(const LogGroupSummary& value) { m_logGroups.push_back(value); return *this; }
 
     /**
      * <p>The list of log summaries. Each log summary includes the log type as well as
-     * the log group identifier. These are CloudWatch logs. The Amazon Web Services
-     * Mainframe Modernization application log is pushed to CloudWatch under the
+     * the log group identifier. These are CloudWatch logs. Amazon Web Services
+     * Mainframe Modernization pushes the application log to CloudWatch under the
      * customer's account.</p>
      */
     inline GetApplicationResult& AddLogGroups(LogGroupSummary&& value) { m_logGroups.push_back(std::move(value)); return *this; }
@@ -743,6 +778,8 @@ namespace Model
     EngineType m_engineType;
 
     Aws::String m_environmentId;
+
+    Aws::String m_kmsKeyId;
 
     Aws::Utils::DateTime m_lastStartTime;
 

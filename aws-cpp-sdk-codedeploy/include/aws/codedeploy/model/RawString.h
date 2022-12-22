@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RawString">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API RawString
+  class RawString
   {
   public:
-    RawString();
-    RawString(Aws::Utils::Json::JsonView jsonValue);
-    RawString& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API RawString();
+    AWS_CODEDEPLOY_API RawString(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API RawString& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

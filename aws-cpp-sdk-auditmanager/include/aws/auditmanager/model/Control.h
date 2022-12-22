@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Control">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Control
+  class Control
   {
   public:
-    Control();
-    Control(Aws::Utils::Json::JsonView jsonValue);
-    Control& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Control();
+    AWS_AUDITMANAGER_API Control(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Control& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -369,50 +369,50 @@ namespace Model
 
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline const Aws::String& GetControlSources() const{ return m_controlSources; }
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline bool ControlSourcesHasBeenSet() const { return m_controlSourcesHasBeenSet; }
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline void SetControlSources(const Aws::String& value) { m_controlSourcesHasBeenSet = true; m_controlSources = value; }
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline void SetControlSources(Aws::String&& value) { m_controlSourcesHasBeenSet = true; m_controlSources = std::move(value); }
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline void SetControlSources(const char* value) { m_controlSourcesHasBeenSet = true; m_controlSources.assign(value); }
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline Control& WithControlSources(const Aws::String& value) { SetControlSources(value); return *this;}
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline Control& WithControlSources(Aws::String&& value) { SetControlSources(std::move(value)); return *this;}
 
     /**
-     * <p> The data source that determines where Audit Manager collects evidence from
-     * for the control. </p>
+     * <p> The data source types that determine where Audit Manager collects evidence
+     * from for the control. </p>
      */
     inline Control& WithControlSources(const char* value) { SetControlSources(value); return *this;}
 

@@ -22,12 +22,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API DisassociateBrowserSettingsResult
+  class DisassociateBrowserSettingsResult
   {
   public:
-    DisassociateBrowserSettingsResult();
-    DisassociateBrowserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateBrowserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API DisassociateBrowserSettingsResult();
+    AWS_WORKSPACESWEB_API DisassociateBrowserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API DisassociateBrowserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

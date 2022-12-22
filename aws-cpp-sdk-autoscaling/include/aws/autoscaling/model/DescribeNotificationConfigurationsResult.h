@@ -27,12 +27,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API DescribeNotificationConfigurationsResult
+  class DescribeNotificationConfigurationsResult
   {
   public:
-    DescribeNotificationConfigurationsResult();
-    DescribeNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNotificationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeNotificationConfigurationsResult();
+    AWS_AUTOSCALING_API DescribeNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeNotificationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

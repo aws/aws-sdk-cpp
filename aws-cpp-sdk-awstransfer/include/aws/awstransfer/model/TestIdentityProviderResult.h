@@ -24,12 +24,12 @@ namespace Transfer
 {
 namespace Model
 {
-  class AWS_TRANSFER_API TestIdentityProviderResult
+  class TestIdentityProviderResult
   {
   public:
-    TestIdentityProviderResult();
-    TestIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API TestIdentityProviderResult();
+    AWS_TRANSFER_API TestIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API TestIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

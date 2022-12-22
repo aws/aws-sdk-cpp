@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ElasticChannelConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration
+  class ElasticChannelConfiguration
   {
   public:
-    ElasticChannelConfiguration();
-    ElasticChannelConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ElasticChannelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration();
+    AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API MergeBranchesByThreeWayResult
+  class MergeBranchesByThreeWayResult
   {
   public:
-    MergeBranchesByThreeWayResult();
-    MergeBranchesByThreeWayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MergeBranchesByThreeWayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API MergeBranchesByThreeWayResult();
+    AWS_CODECOMMIT_API MergeBranchesByThreeWayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API MergeBranchesByThreeWayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

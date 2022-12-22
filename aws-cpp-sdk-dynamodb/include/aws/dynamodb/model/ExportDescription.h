@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ExportDescription
+  class ExportDescription
   {
   public:
-    ExportDescription();
-    ExportDescription(Aws::Utils::Json::JsonView jsonValue);
-    ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ExportDescription();
+    AWS_DYNAMODB_API ExportDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

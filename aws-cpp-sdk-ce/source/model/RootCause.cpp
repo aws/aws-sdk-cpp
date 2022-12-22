@@ -22,7 +22,8 @@ RootCause::RootCause() :
     m_serviceHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_linkedAccountHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
+    m_usageTypeHasBeenSet(false),
+    m_linkedAccountNameHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ RootCause::RootCause(JsonView jsonValue) :
     m_serviceHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_linkedAccountHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
+    m_usageTypeHasBeenSet(false),
+    m_linkedAccountNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ RootCause& RootCause::operator =(JsonView jsonValue)
     m_usageTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LinkedAccountName"))
+  {
+    m_linkedAccountName = jsonValue.GetString("LinkedAccountName");
+
+    m_linkedAccountNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue RootCause::Jsonize() const
   if(m_usageTypeHasBeenSet)
   {
    payload.WithString("UsageType", m_usageType);
+
+  }
+
+  if(m_linkedAccountNameHasBeenSet)
+  {
+   payload.WithString("LinkedAccountName", m_linkedAccountName);
 
   }
 

@@ -26,12 +26,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API BatchGetRepositoryScanningConfigurationResult
+  class BatchGetRepositoryScanningConfigurationResult
   {
   public:
-    BatchGetRepositoryScanningConfigurationResult();
-    BatchGetRepositoryScanningConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetRepositoryScanningConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API BatchGetRepositoryScanningConfigurationResult();
+    AWS_ECR_API BatchGetRepositoryScanningConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API BatchGetRepositoryScanningConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

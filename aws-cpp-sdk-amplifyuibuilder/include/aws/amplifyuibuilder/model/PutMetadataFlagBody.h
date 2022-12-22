@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlagBody">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API PutMetadataFlagBody
+  class PutMetadataFlagBody
   {
   public:
-    PutMetadataFlagBody();
-    PutMetadataFlagBody(Aws::Utils::Json::JsonView jsonValue);
-    PutMetadataFlagBody& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API PutMetadataFlagBody();
+    AWS_AMPLIFYUIBUILDER_API PutMetadataFlagBody(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API PutMetadataFlagBody& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

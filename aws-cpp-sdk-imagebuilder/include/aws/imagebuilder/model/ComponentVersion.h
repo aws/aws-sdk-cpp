@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ComponentVersion
+  class ComponentVersion
   {
   public:
-    ComponentVersion();
-    ComponentVersion(Aws::Utils::Json::JsonView jsonValue);
-    ComponentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ComponentVersion();
+    AWS_IMAGEBUILDER_API ComponentVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ComponentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

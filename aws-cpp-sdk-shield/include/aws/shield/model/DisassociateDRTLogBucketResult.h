@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DisassociateDRTLogBucketResult
+  class DisassociateDRTLogBucketResult
   {
   public:
-    DisassociateDRTLogBucketResult();
-    DisassociateDRTLogBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateDRTLogBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DisassociateDRTLogBucketResult();
+    AWS_SHIELD_API DisassociateDRTLogBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DisassociateDRTLogBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

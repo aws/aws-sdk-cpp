@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DeleteMobileDeviceAccessOverrideResult
+  class DeleteMobileDeviceAccessOverrideResult
   {
   public:
-    DeleteMobileDeviceAccessOverrideResult();
-    DeleteMobileDeviceAccessOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMobileDeviceAccessOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeleteMobileDeviceAccessOverrideResult();
+    AWS_WORKMAIL_API DeleteMobileDeviceAccessOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeleteMobileDeviceAccessOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -24,12 +24,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API GetMeetingResult
+  class GetMeetingResult
   {
   public:
-    GetMeetingResult();
-    GetMeetingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMeetingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API GetMeetingResult();
+    AWS_CHIME_API GetMeetingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API GetMeetingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace MediaConnect
 {
 namespace Model
 {
-  class AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult
+  class RemoveFlowMediaStreamResult
   {
   public:
-    RemoveFlowMediaStreamResult();
-    RemoveFlowMediaStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveFlowMediaStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult();
+    AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

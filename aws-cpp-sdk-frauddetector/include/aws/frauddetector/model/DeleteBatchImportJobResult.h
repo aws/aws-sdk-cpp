@@ -22,12 +22,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API DeleteBatchImportJobResult
+  class DeleteBatchImportJobResult
   {
   public:
-    DeleteBatchImportJobResult();
-    DeleteBatchImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBatchImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API DeleteBatchImportJobResult();
+    AWS_FRAUDDETECTOR_API DeleteBatchImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API DeleteBatchImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

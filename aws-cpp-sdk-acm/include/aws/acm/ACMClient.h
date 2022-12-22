@@ -7,6 +7,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/ACMServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace ACM
    * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
    * User Guide</a>.</p>
    */
-  class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
+  class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace ACM
 
         /* End of legacy constructors due deprecation */
         virtual ~ACMClient();
-
 
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
@@ -479,6 +479,7 @@ namespace ACM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>;
       void init(const ACMClientConfiguration& clientConfiguration);
 
       ACMClientConfiguration m_clientConfiguration;

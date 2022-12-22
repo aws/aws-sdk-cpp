@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountRecoverySettingType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType
+  class AccountRecoverySettingType
   {
   public:
-    AccountRecoverySettingType();
-    AccountRecoverySettingType(Aws::Utils::Json::JsonView jsonValue);
-    AccountRecoverySettingType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult
+  class DescribeApplicationVersionResult
   {
   public:
-    DescribeApplicationVersionResult();
-    DescribeApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult();
+    AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -28,12 +28,6 @@ ListWorkspacesResult::ListWorkspacesResult(const Aws::AmazonWebServiceResult<Jso
 ListWorkspacesResult& ListWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("workspaceSummaries"))
   {
     Aws::Utils::Array<JsonView> workspaceSummariesJsonList = jsonValue.GetArray("workspaceSummaries");
@@ -41,6 +35,12 @@ ListWorkspacesResult& ListWorkspacesResult::operator =(const Aws::AmazonWebServi
     {
       m_workspaceSummaries.push_back(workspaceSummariesJsonList[workspaceSummariesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

@@ -26,18 +26,18 @@ namespace Model
 
   /**
    * <p>A complex data type that includes the profile configurations specified for
-   * field-level encryption. </p><p><h3>See Also:</h3>   <a
+   * field-level encryption.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldLevelEncryptionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FieldLevelEncryptionConfig
+  class FieldLevelEncryptionConfig
   {
   public:
-    FieldLevelEncryptionConfig();
-    FieldLevelEncryptionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FieldLevelEncryptionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionConfig();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

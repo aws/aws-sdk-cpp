@@ -8,6 +8,7 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsRequest.h>
 #include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager-user-subscriptions/model/Settings.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RegisterIdentityProviderRequest : public LicenseManagerUserSubscriptionsRequest
+  class RegisterIdentityProviderRequest : public LicenseManagerUserSubscriptionsRequest
   {
   public:
-    RegisterIdentityProviderRequest();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RegisterIdentityProviderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterIdentityProvider"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -104,6 +105,43 @@ namespace Model
      */
     inline RegisterIdentityProviderRequest& WithProduct(const char* value) { SetProduct(value); return *this;}
 
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline RegisterIdentityProviderRequest& WithSettings(const Settings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline RegisterIdentityProviderRequest& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     IdentityProvider m_identityProvider;
@@ -111,6 +149,9 @@ namespace Model
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Settings m_settings;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterParameterGroupDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API DescribeDBClusterParametersResult
+  class DescribeDBClusterParametersResult
   {
   public:
-    DescribeDBClusterParametersResult();
-    DescribeDBClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeDBClusterParametersResult();
+    AWS_DOCDB_API DescribeDBClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeDBClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

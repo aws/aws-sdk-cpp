@@ -22,12 +22,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API PutOutcomeResult
+  class PutOutcomeResult
   {
   public:
-    PutOutcomeResult();
-    PutOutcomeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutOutcomeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API PutOutcomeResult();
+    AWS_FRAUDDETECTOR_API PutOutcomeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API PutOutcomeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

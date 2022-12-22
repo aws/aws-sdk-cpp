@@ -26,12 +26,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API ListBudgetsForResourceResult
+  class ListBudgetsForResourceResult
   {
   public:
-    ListBudgetsForResourceResult();
-    ListBudgetsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBudgetsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListBudgetsForResourceResult();
+    AWS_SERVICECATALOG_API ListBudgetsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListBudgetsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace Translate
 {
 namespace Model
 {
-  class AWS_TRANSLATE_API ListLanguagesResult
+  class ListLanguagesResult
   {
   public:
-    ListLanguagesResult();
-    ListLanguagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLanguagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API ListLanguagesResult();
+    AWS_TRANSLATE_API ListLanguagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API ListLanguagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

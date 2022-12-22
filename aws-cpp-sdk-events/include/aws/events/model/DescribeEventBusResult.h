@@ -24,12 +24,12 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVENTS_API DescribeEventBusResult
+  class DescribeEventBusResult
   {
   public:
-    DescribeEventBusResult();
-    DescribeEventBusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventBusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API DescribeEventBusResult();
+    AWS_CLOUDWATCHEVENTS_API DescribeEventBusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API DescribeEventBusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

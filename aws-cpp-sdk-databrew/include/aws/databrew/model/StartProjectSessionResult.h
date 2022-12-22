@@ -24,12 +24,12 @@ namespace GlueDataBrew
 {
 namespace Model
 {
-  class AWS_GLUEDATABREW_API StartProjectSessionResult
+  class StartProjectSessionResult
   {
   public:
-    StartProjectSessionResult();
-    StartProjectSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartProjectSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUEDATABREW_API StartProjectSessionResult();
+    AWS_GLUEDATABREW_API StartProjectSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUEDATABREW_API StartProjectSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

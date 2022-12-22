@@ -26,46 +26,53 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API DescribeAddonVersionsResult
+  class DescribeAddonVersionsResult
   {
   public:
-    DescribeAddonVersionsResult();
-    DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAddonVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API DescribeAddonVersionsResult();
+    AWS_EKS_API DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API DescribeAddonVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline const Aws::Vector<AddonInfo>& GetAddons() const{ return m_addons; }
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline void SetAddons(const Aws::Vector<AddonInfo>& value) { m_addons = value; }
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline void SetAddons(Aws::Vector<AddonInfo>&& value) { m_addons = std::move(value); }
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline DescribeAddonVersionsResult& WithAddons(const Aws::Vector<AddonInfo>& value) { SetAddons(value); return *this;}
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline DescribeAddonVersionsResult& WithAddons(Aws::Vector<AddonInfo>&& value) { SetAddons(std::move(value)); return *this;}
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline DescribeAddonVersionsResult& AddAddons(const AddonInfo& value) { m_addons.push_back(value); return *this; }
 
     /**
-     * <p>The list of available versions with Kubernetes version compatibility.</p>
+     * <p>The list of available versions with Kubernetes version compatibility and
+     * other properties.</p>
      */
     inline DescribeAddonVersionsResult& AddAddons(AddonInfo&& value) { m_addons.push_back(std::move(value)); return *this; }
 

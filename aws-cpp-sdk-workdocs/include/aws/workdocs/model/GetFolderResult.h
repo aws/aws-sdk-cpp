@@ -26,12 +26,12 @@ namespace WorkDocs
 {
 namespace Model
 {
-  class AWS_WORKDOCS_API GetFolderResult
+  class GetFolderResult
   {
   public:
-    GetFolderResult();
-    GetFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API GetFolderResult();
+    AWS_WORKDOCS_API GetFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API GetFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

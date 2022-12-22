@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdateDocumentMetadataResult
+  class UpdateDocumentMetadataResult
   {
   public:
-    UpdateDocumentMetadataResult();
-    UpdateDocumentMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDocumentMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateDocumentMetadataResult();
+    AWS_SSM_API UpdateDocumentMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateDocumentMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnectionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API RejectInboundConnectionResult
+  class RejectInboundConnectionResult
   {
   public:
-    RejectInboundConnectionResult();
-    RejectInboundConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectInboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API RejectInboundConnectionResult();
+    AWS_OPENSEARCHSERVICE_API RejectInboundConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API RejectInboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace LicenseManagerUserSubscriptions
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListProductSubscriptionsResult
+  class ListProductSubscriptionsResult
   {
   public:
-    ListProductSubscriptionsResult();
-    ListProductSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProductSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListProductSubscriptionsResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListProductSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListProductSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

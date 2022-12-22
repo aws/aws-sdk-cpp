@@ -24,12 +24,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API GetStreamingImageResult
+  class GetStreamingImageResult
   {
   public:
-    GetStreamingImageResult();
-    GetStreamingImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetStreamingImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetStreamingImageResult();
+    AWS_NIMBLESTUDIO_API GetStreamingImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetStreamingImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

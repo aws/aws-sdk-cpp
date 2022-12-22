@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API DeleteSkillAuthorizationResult
+  class DeleteSkillAuthorizationResult
   {
   public:
-    DeleteSkillAuthorizationResult();
-    DeleteSkillAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSkillAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DeleteSkillAuthorizationResult();
+    AWS_ALEXAFORBUSINESS_API DeleteSkillAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DeleteSkillAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

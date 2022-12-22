@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DataSet">AWS API
    * Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API DataSet
+  class DataSet
   {
   public:
-    DataSet();
-    DataSet(Aws::Utils::Json::JsonView jsonValue);
-    DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API DataSet();
+    AWS_MAINFRAMEMODERNIZATION_API DataSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,38 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline const DatasetOrgAttributes& GetDatasetOrg() const{ return m_datasetOrg; }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline bool DatasetOrgHasBeenSet() const { return m_datasetOrgHasBeenSet; }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline void SetDatasetOrg(const DatasetOrgAttributes& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = value; }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline void SetDatasetOrg(DatasetOrgAttributes&& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = std::move(value); }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline DataSet& WithDatasetOrg(const DatasetOrgAttributes& value) { SetDatasetOrg(value); return *this;}
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline DataSet& WithDatasetOrg(DatasetOrgAttributes&& value) { SetDatasetOrg(std::move(value)); return *this;}
 

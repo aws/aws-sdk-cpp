@@ -24,12 +24,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API DescribeAppInstanceAdminResult
+  class DescribeAppInstanceAdminResult
   {
   public:
-    DescribeAppInstanceAdminResult();
-    DescribeAppInstanceAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAppInstanceAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API DescribeAppInstanceAdminResult();
+    AWS_CHIME_API DescribeAppInstanceAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API DescribeAppInstanceAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

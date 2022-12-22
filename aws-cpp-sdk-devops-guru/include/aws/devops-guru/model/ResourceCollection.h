@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ResourceCollection">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ResourceCollection
+  class ResourceCollection
   {
   public:
-    ResourceCollection();
-    ResourceCollection(Aws::Utils::Json::JsonView jsonValue);
-    ResourceCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ResourceCollection();
+    AWS_DEVOPSGURU_API ResourceCollection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ResourceCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

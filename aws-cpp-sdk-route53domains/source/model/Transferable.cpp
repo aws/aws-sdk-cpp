@@ -23,6 +23,9 @@ namespace Aws
         static const int TRANSFERABLE_HASH = HashingUtils::HashString("TRANSFERABLE");
         static const int UNTRANSFERABLE_HASH = HashingUtils::HashString("UNTRANSFERABLE");
         static const int DONT_KNOW_HASH = HashingUtils::HashString("DONT_KNOW");
+        static const int DOMAIN_IN_OWN_ACCOUNT_HASH = HashingUtils::HashString("DOMAIN_IN_OWN_ACCOUNT");
+        static const int DOMAIN_IN_ANOTHER_ACCOUNT_HASH = HashingUtils::HashString("DOMAIN_IN_ANOTHER_ACCOUNT");
+        static const int PREMIUM_DOMAIN_HASH = HashingUtils::HashString("PREMIUM_DOMAIN");
 
 
         Transferable GetTransferableForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           else if (hashCode == DONT_KNOW_HASH)
           {
             return Transferable::DONT_KNOW;
+          }
+          else if (hashCode == DOMAIN_IN_OWN_ACCOUNT_HASH)
+          {
+            return Transferable::DOMAIN_IN_OWN_ACCOUNT;
+          }
+          else if (hashCode == DOMAIN_IN_ANOTHER_ACCOUNT_HASH)
+          {
+            return Transferable::DOMAIN_IN_ANOTHER_ACCOUNT;
+          }
+          else if (hashCode == PREMIUM_DOMAIN_HASH)
+          {
+            return Transferable::PREMIUM_DOMAIN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +75,12 @@ namespace Aws
             return "UNTRANSFERABLE";
           case Transferable::DONT_KNOW:
             return "DONT_KNOW";
+          case Transferable::DOMAIN_IN_OWN_ACCOUNT:
+            return "DOMAIN_IN_OWN_ACCOUNT";
+          case Transferable::DOMAIN_IN_ANOTHER_ACCOUNT:
+            return "DOMAIN_IN_ANOTHER_ACCOUNT";
+          case Transferable::PREMIUM_DOMAIN:
+            return "PREMIUM_DOMAIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

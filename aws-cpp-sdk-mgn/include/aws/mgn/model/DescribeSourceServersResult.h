@@ -26,12 +26,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DescribeSourceServersResult
+  class DescribeSourceServersResult
   {
   public:
-    DescribeSourceServersResult();
-    DescribeSourceServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSourceServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeSourceServersResult();
+    AWS_MGN_API DescribeSourceServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeSourceServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

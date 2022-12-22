@@ -22,12 +22,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API DeleteConstraintResult
+  class DeleteConstraintResult
   {
   public:
-    DeleteConstraintResult();
-    DeleteConstraintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConstraintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DeleteConstraintResult();
+    AWS_SERVICECATALOG_API DeleteConstraintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DeleteConstraintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

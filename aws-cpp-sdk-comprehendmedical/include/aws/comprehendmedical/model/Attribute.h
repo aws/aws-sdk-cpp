@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/Attribute">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API Attribute
+  class Attribute
   {
   public:
-    Attribute();
-    Attribute(Aws::Utils::Json::JsonView jsonValue);
-    Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API Attribute();
+    AWS_COMPREHENDMEDICAL_API Attribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

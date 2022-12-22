@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/Dataset">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API Dataset
+  class Dataset
   {
   public:
-    Dataset();
-    Dataset(Aws::Utils::Json::JsonView jsonValue);
-    Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API Dataset();
+    AWS_FINSPACEDATA_API Dataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

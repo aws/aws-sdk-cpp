@@ -24,12 +24,12 @@ namespace GlobalAccelerator
 {
 namespace Model
 {
-  class AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult
+  class WithdrawByoipCidrResult
   {
   public:
-    WithdrawByoipCidrResult();
-    WithdrawByoipCidrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    WithdrawByoipCidrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult();
+    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

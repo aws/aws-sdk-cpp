@@ -22,12 +22,12 @@ namespace MediaStore
 {
 namespace Model
 {
-  class AWS_MEDIASTORE_API PutLifecyclePolicyResult
+  class PutLifecyclePolicyResult
   {
   public:
-    PutLifecyclePolicyResult();
-    PutLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API PutLifecyclePolicyResult();
+    AWS_MEDIASTORE_API PutLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API PutLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

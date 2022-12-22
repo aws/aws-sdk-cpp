@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API ThrottlingException();
+    AWS_IVSCHAT_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

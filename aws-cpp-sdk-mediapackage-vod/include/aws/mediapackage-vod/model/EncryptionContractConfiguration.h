@@ -43,13 +43,13 @@ You must disable key rotation for this endpoint by setting
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/EncryptionContractConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API EncryptionContractConfiguration
+  class EncryptionContractConfiguration
   {
   public:
-    EncryptionContractConfiguration();
-    EncryptionContractConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionContractConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API EncryptionContractConfiguration();
+    AWS_MEDIAPACKAGEVOD_API EncryptionContractConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API EncryptionContractConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

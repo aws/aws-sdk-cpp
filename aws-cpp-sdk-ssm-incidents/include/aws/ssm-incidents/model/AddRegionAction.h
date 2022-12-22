@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/AddRegionAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API AddRegionAction
+  class AddRegionAction
   {
   public:
-    AddRegionAction();
-    AddRegionAction(Aws::Utils::Json::JsonView jsonValue);
-    AddRegionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API AddRegionAction();
+    AWS_SSMINCIDENTS_API AddRegionAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API AddRegionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

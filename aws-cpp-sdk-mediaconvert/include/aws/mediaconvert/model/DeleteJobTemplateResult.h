@@ -22,12 +22,12 @@ namespace MediaConvert
 {
 namespace Model
 {
-  class AWS_MEDIACONVERT_API DeleteJobTemplateResult
+  class DeleteJobTemplateResult
   {
   public:
-    DeleteJobTemplateResult();
-    DeleteJobTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API DeleteJobTemplateResult();
+    AWS_MEDIACONVERT_API DeleteJobTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API DeleteJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

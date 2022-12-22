@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentTemplateAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentTemplateAction
+  class ExperimentTemplateAction
   {
   public:
-    ExperimentTemplateAction();
-    ExperimentTemplateAction(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentTemplateAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentTemplateAction();
+    AWS_FIS_API ExperimentTemplateAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentTemplateAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

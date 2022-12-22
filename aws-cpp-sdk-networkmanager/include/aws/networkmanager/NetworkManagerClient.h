@@ -7,6 +7,7 @@
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkmanager/NetworkManagerServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace NetworkManager
    * Cloud WAN core network and your Transit Gateway network across Amazon Web
    * Services accounts, Regions, and on-premises locations.</p>
    */
-  class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace NetworkManager
 
         /* End of legacy constructors due deprecation */
         virtual ~NetworkManagerClient();
-
 
         /**
          * <p>Accepts a core network attachment request. </p> <p>Once the attachment
@@ -1418,9 +1418,9 @@ namespace NetworkManager
         virtual void RestoreCoreNetworkPolicyVersionAsync(const Model::RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables for the Network Manager service for an Amazon Web Services
-         * Organization. This can only be called by a management account within the
-         * organization. </p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Network Manager service for an Amazon Web Services Organization.
+         * This can only be called by a management account within the organization.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">AWS
          * API Reference</a></p>
          */
@@ -1636,6 +1636,7 @@ namespace NetworkManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<NetworkManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>;
       void init(const NetworkManagerClientConfiguration& clientConfiguration);
 
       NetworkManagerClientConfiguration m_clientConfiguration;

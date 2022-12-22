@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNamesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API ListDomainNamesResult
+  class ListDomainNamesResult
   {
   public:
-    ListDomainNamesResult();
-    ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API ListDomainNamesResult();
+    AWS_CLOUDSEARCH_API ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

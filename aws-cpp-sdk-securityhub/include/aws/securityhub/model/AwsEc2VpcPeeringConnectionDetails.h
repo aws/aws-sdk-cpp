@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpcPeeringConnectionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails
+  class AwsEc2VpcPeeringConnectionDetails
   {
   public:
-    AwsEc2VpcPeeringConnectionDetails();
-    AwsEc2VpcPeeringConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpcPeeringConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails();
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

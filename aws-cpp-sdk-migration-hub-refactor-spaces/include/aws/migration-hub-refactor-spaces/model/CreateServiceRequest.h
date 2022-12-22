@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API CreateServiceRequest : public MigrationHubRefactorSpacesRequest
+  class CreateServiceRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    CreateServiceRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -398,32 +398,56 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline const UrlEndpointInput& GetUrlEndpoint() const{ return m_urlEndpoint; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline bool UrlEndpointHasBeenSet() const { return m_urlEndpointHasBeenSet; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline void SetUrlEndpoint(const UrlEndpointInput& value) { m_urlEndpointHasBeenSet = true; m_urlEndpoint = value; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline void SetUrlEndpoint(UrlEndpointInput&& value) { m_urlEndpointHasBeenSet = true; m_urlEndpoint = std::move(value); }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline CreateServiceRequest& WithUrlEndpoint(const UrlEndpointInput& value) { SetUrlEndpoint(value); return *this;}
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline CreateServiceRequest& WithUrlEndpoint(UrlEndpointInput&& value) { SetUrlEndpoint(std::move(value)); return *this;}
 

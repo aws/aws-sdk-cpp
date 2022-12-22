@@ -19,7 +19,8 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_asyncInferenceConfigHasBeenSet(false),
-    m_explainerConfigHasBeenSet(false)
+    m_explainerConfigHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,17 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
   if(m_explainerConfigHasBeenSet)
   {
    payload.WithObject("ExplainerConfig", m_explainerConfig.Jsonize());
+
+  }
+
+  if(m_shadowProductionVariantsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shadowProductionVariantsJsonList(m_shadowProductionVariants.size());
+   for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+   {
+     shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject(m_shadowProductionVariants[shadowProductionVariantsIndex].Jsonize());
+   }
+   payload.WithArray("ShadowProductionVariants", std::move(shadowProductionVariantsJsonList));
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace AppSync
    * <p>AppSync provides API actions for creating and interacting with data sources
    * using GraphQL from your application.</p>
    */
-  class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient
+  class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace AppSync
 
         /* End of legacy constructors due deprecation */
         virtual ~AppSyncClient();
-
 
         /**
          * <p>Maps an endpoint to your custom domain.</p><p><h3>See Also:</h3>   <a
@@ -387,6 +387,29 @@ namespace AppSync
          * An Async wrapper for DisassociateApi that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateApiAsync(const Model::DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Evaluates the given code and returns the response. The code definition
+         * requirements depend on the specified runtime. For <code>APPSYNC_JS</code>
+         * runtimes, the code defines the request and response functions. The request
+         * function takes the incoming request after a GraphQL operation is parsed and
+         * converts it into a request configuration for the selected data source operation.
+         * The response function interprets responses from the data source and maps it to
+         * the shape of the GraphQL field output type. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EvaluateCodeOutcome EvaluateCode(const Model::EvaluateCodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for EvaluateCode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EvaluateCodeOutcomeCallable EvaluateCodeCallable(const Model::EvaluateCodeRequest& request) const;
+
+        /**
+         * An Async wrapper for EvaluateCode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EvaluateCodeAsync(const Model::EvaluateCodeRequest& request, const EvaluateCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Evaluates a given template and returns the response. The mapping template can
@@ -954,6 +977,7 @@ namespace AppSync
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppSyncEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>;
       void init(const AppSyncClientConfiguration& clientConfiguration);
 
       AppSyncClientConfiguration m_clientConfiguration;

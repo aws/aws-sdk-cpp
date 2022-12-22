@@ -26,96 +26,89 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API ListGameServerGroupsResult
+  class ListGameServerGroupsResult
   {
   public:
-    ListGameServerGroupsResult();
-    ListGameServerGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGameServerGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API ListGameServerGroupsResult();
+    AWS_GAMELIFT_API ListGameServerGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API ListGameServerGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline const Aws::Vector<GameServerGroup>& GetGameServerGroups() const{ return m_gameServerGroups; }
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline void SetGameServerGroups(const Aws::Vector<GameServerGroup>& value) { m_gameServerGroups = value; }
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline void SetGameServerGroups(Aws::Vector<GameServerGroup>&& value) { m_gameServerGroups = std::move(value); }
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline ListGameServerGroupsResult& WithGameServerGroups(const Aws::Vector<GameServerGroup>& value) { SetGameServerGroups(value); return *this;}
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline ListGameServerGroupsResult& WithGameServerGroups(Aws::Vector<GameServerGroup>&& value) { SetGameServerGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline ListGameServerGroupsResult& AddGameServerGroups(const GameServerGroup& value) { m_gameServerGroups.push_back(value); return *this; }
 
     /**
-     * <p>A collection of game server group objects that match the request.</p>
+     * <p>The game server groups' game server groups.</p>
      */
     inline ListGameServerGroupsResult& AddGameServerGroups(GameServerGroup&& value) { m_gameServerGroups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline ListGameServerGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline ListGameServerGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token that indicates where to resume retrieving results on the next call to
-     * this operation. If no token is returned, these results represent the end of the
-     * list.</p>
+     * <p>Specify the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline ListGameServerGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

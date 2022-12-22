@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace ElasticLoadBalancingv2
    * idempotent, which means that they complete at most one time. If you repeat an
    * operation, it succeeds.</p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client : public Aws::Client::AWSXMLClient
+  class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingv2Client>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -669,9 +670,7 @@ namespace ElasticLoadBalancingv2
 
         /**
          * <p>Modifies the health checks used when evaluating the health state of the
-         * targets in the specified target group.</p> <p>If the protocol of the target
-         * group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
-         * interval, timeout, or success codes.</p><p><h3>See Also:</h3>   <a
+         * targets in the specified target group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">AWS
          * API Reference</a></p>
          */
@@ -853,6 +852,7 @@ namespace ElasticLoadBalancingv2
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingv2Client>;
         void init(const ElasticLoadBalancingv2ClientConfiguration& clientConfiguration);
 
         ElasticLoadBalancingv2ClientConfiguration m_clientConfiguration;

@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API UpdateNetworkAnalyzerConfigurationResult
+  class UpdateNetworkAnalyzerConfigurationResult
   {
   public:
-    UpdateNetworkAnalyzerConfigurationResult();
-    UpdateNetworkAnalyzerConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNetworkAnalyzerConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API UpdateNetworkAnalyzerConfigurationResult();
+    AWS_IOTWIRELESS_API UpdateNetworkAnalyzerConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API UpdateNetworkAnalyzerConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

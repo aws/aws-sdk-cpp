@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult
+  class EvaluatePullRequestApprovalRulesResult
   {
   public:
-    EvaluatePullRequestApprovalRulesResult();
-    EvaluatePullRequestApprovalRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EvaluatePullRequestApprovalRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult();
+    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

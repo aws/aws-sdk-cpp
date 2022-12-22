@@ -26,58 +26,58 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API ListDataSetsResult
+  class ListDataSetsResult
   {
   public:
-    ListDataSetsResult();
-    ListDataSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDataSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API ListDataSetsResult();
+    AWS_MAINFRAMEMODERNIZATION_API ListDataSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API ListDataSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */
     inline const Aws::Vector<DataSetSummary>& GetDataSets() const{ return m_dataSets; }
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */
     inline void SetDataSets(const Aws::Vector<DataSetSummary>& value) { m_dataSets = value; }
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */
     inline void SetDataSets(Aws::Vector<DataSetSummary>&& value) { m_dataSets = std::move(value); }
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */
     inline ListDataSetsResult& WithDataSets(const Aws::Vector<DataSetSummary>& value) { SetDataSets(value); return *this;}
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */
     inline ListDataSetsResult& WithDataSets(Aws::Vector<DataSetSummary>&& value) { SetDataSets(std::move(value)); return *this;}
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */
     inline ListDataSetsResult& AddDataSets(const DataSetSummary& value) { m_dataSets.push_back(value); return *this; }
 
     /**
-     * <p>The list of data sets, containing ionformation including the creating time,
+     * <p>The list of data sets, containing information including the creation time,
      * the data set name, the data set organization, the data set format, and the last
      * time the data set was referenced or updated.</p>
      */

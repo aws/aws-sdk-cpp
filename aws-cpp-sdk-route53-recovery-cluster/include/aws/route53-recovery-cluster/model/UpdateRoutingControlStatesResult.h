@@ -22,12 +22,12 @@ namespace Route53RecoveryCluster
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStatesResult
+  class UpdateRoutingControlStatesResult
   {
   public:
-    UpdateRoutingControlStatesResult();
-    UpdateRoutingControlStatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRoutingControlStatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStatesResult();
+    AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API CreateDBInstanceRequest : public RDSRequest
+  class CreateDBInstanceRequest : public RDSRequest
   {
   public:
-    CreateDBInstanceRequest();
+    AWS_RDS_API CreateDBInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDBInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -1961,8 +1961,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -1997,8 +1997,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -2033,8 +2033,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -2069,8 +2069,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -2105,8 +2105,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -2141,8 +2141,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -2177,8 +2177,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -2213,8 +2213,8 @@ namespace Model
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
      * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
      * previously created. This setting is required for RDS Custom for Oracle. The CEV
-     * name has the following format: <code>19.<i>customized_string</i> </code>. An
-     * example identifier is <code>19.my_cev1</code>. For more information, see <a
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
@@ -4224,7 +4224,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
@@ -4239,7 +4239,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
@@ -4254,7 +4254,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
@@ -4269,7 +4269,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}

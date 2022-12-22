@@ -22,7 +22,8 @@ PrefixConfig::PrefixConfig() :
     m_prefixType(PrefixType::NOT_SET),
     m_prefixTypeHasBeenSet(false),
     m_prefixFormat(PrefixFormat::NOT_SET),
-    m_prefixFormatHasBeenSet(false)
+    m_prefixFormatHasBeenSet(false),
+    m_pathPrefixHierarchyHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ PrefixConfig::PrefixConfig(JsonView jsonValue) :
     m_prefixType(PrefixType::NOT_SET),
     m_prefixTypeHasBeenSet(false),
     m_prefixFormat(PrefixFormat::NOT_SET),
-    m_prefixFormatHasBeenSet(false)
+    m_prefixFormatHasBeenSet(false),
+    m_pathPrefixHierarchyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ PrefixConfig& PrefixConfig::operator =(JsonView jsonValue)
     m_prefixFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pathPrefixHierarchy"))
+  {
+    Aws::Utils::Array<JsonView> pathPrefixHierarchyJsonList = jsonValue.GetArray("pathPrefixHierarchy");
+    for(unsigned pathPrefixHierarchyIndex = 0; pathPrefixHierarchyIndex < pathPrefixHierarchyJsonList.GetLength(); ++pathPrefixHierarchyIndex)
+    {
+      m_pathPrefixHierarchy.push_back(PathPrefixMapper::GetPathPrefixForName(pathPrefixHierarchyJsonList[pathPrefixHierarchyIndex].AsString()));
+    }
+    m_pathPrefixHierarchyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +78,17 @@ JsonValue PrefixConfig::Jsonize() const
   if(m_prefixFormatHasBeenSet)
   {
    payload.WithString("prefixFormat", PrefixFormatMapper::GetNameForPrefixFormat(m_prefixFormat));
+  }
+
+  if(m_pathPrefixHierarchyHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> pathPrefixHierarchyJsonList(m_pathPrefixHierarchy.size());
+   for(unsigned pathPrefixHierarchyIndex = 0; pathPrefixHierarchyIndex < pathPrefixHierarchyJsonList.GetLength(); ++pathPrefixHierarchyIndex)
+   {
+     pathPrefixHierarchyJsonList[pathPrefixHierarchyIndex].AsString(PathPrefixMapper::GetNameForPathPrefix(m_pathPrefixHierarchy[pathPrefixHierarchyIndex]));
+   }
+   payload.WithArray("pathPrefixHierarchy", std::move(pathPrefixHierarchyJsonList));
+
   }
 
   return payload;

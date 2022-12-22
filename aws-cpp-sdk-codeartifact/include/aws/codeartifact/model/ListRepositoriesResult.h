@@ -26,12 +26,12 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API ListRepositoriesResult
+  class ListRepositoriesResult
   {
   public:
-    ListRepositoriesResult();
-    ListRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API ListRepositoriesResult();
+    AWS_CODEARTIFACT_API ListRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API ListRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

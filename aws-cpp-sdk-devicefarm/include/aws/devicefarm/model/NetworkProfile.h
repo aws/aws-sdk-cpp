@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/NetworkProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API NetworkProfile
+  class NetworkProfile
   {
   public:
-    NetworkProfile();
-    NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
-    NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API NetworkProfile();
+    AWS_DEVICEFARM_API NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

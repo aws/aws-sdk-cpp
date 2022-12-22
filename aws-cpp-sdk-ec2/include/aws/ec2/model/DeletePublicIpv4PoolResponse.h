@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeletePublicIpv4PoolResponse
+  class DeletePublicIpv4PoolResponse
   {
   public:
-    DeletePublicIpv4PoolResponse();
-    DeletePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeletePublicIpv4PoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeletePublicIpv4PoolResponse();
+    AWS_EC2_API DeletePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeletePublicIpv4PoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

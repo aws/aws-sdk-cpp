@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ShardFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API ShardFilter
+  class ShardFilter
   {
   public:
-    ShardFilter();
-    ShardFilter(Aws::Utils::Json::JsonView jsonValue);
-    ShardFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API ShardFilter();
+    AWS_KINESIS_API ShardFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API ShardFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

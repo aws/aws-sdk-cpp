@@ -27,12 +27,12 @@ namespace CloudTrail
 {
 namespace Model
 {
-  class AWS_CLOUDTRAIL_API GetEventSelectorsResult
+  class GetEventSelectorsResult
   {
   public:
-    GetEventSelectorsResult();
-    GetEventSelectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEventSelectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API GetEventSelectorsResult();
+    AWS_CLOUDTRAIL_API GetEventSelectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API GetEventSelectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

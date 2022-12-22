@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ObjectCountByEncryptionType">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ObjectCountByEncryptionType
+  class ObjectCountByEncryptionType
   {
   public:
-    ObjectCountByEncryptionType();
-    ObjectCountByEncryptionType(Aws::Utils::Json::JsonView jsonValue);
-    ObjectCountByEncryptionType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ObjectCountByEncryptionType();
+    AWS_MACIE2_API ObjectCountByEncryptionType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ObjectCountByEncryptionType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

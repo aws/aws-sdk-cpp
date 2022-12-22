@@ -26,12 +26,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API DescribeGlobalSettingsResult
+  class DescribeGlobalSettingsResult
   {
   public:
-    DescribeGlobalSettingsResult();
-    DescribeGlobalSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGlobalSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeGlobalSettingsResult();
+    AWS_BACKUP_API DescribeGlobalSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeGlobalSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

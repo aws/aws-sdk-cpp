@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API UpdateConnectionAliasPermissionResult
+  class UpdateConnectionAliasPermissionResult
   {
   public:
-    UpdateConnectionAliasPermissionResult();
-    UpdateConnectionAliasPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConnectionAliasPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateConnectionAliasPermissionResult();
+    AWS_WORKSPACES_API UpdateConnectionAliasPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateConnectionAliasPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -25,12 +25,12 @@ namespace NetworkFirewall
 {
 namespace Model
 {
-  class AWS_NETWORKFIREWALL_API CreateFirewallPolicyResult
+  class CreateFirewallPolicyResult
   {
   public:
-    CreateFirewallPolicyResult();
-    CreateFirewallPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFirewallPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API CreateFirewallPolicyResult();
+    AWS_NETWORKFIREWALL_API CreateFirewallPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API CreateFirewallPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

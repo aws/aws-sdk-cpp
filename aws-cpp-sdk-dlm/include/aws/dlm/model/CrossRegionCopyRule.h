@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyRule">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API CrossRegionCopyRule
+  class CrossRegionCopyRule
   {
   public:
-    CrossRegionCopyRule();
-    CrossRegionCopyRule(Aws::Utils::Json::JsonView jsonValue);
-    CrossRegionCopyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API CrossRegionCopyRule();
+    AWS_DLM_API CrossRegionCopyRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API CrossRegionCopyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API CreateCoreDefinitionResult
+  class CreateCoreDefinitionResult
   {
   public:
-    CreateCoreDefinitionResult();
-    CreateCoreDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCoreDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API CreateCoreDefinitionResult();
+    AWS_GREENGRASS_API CreateCoreDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API CreateCoreDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

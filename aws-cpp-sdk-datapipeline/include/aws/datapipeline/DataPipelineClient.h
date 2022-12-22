@@ -7,6 +7,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datapipeline/DataPipelineServiceClientModel.h>
 
@@ -34,7 +35,7 @@ namespace DataPipeline
    * web service as it does so. When the task is done, the task runner reports the
    * final success or failure of the task to the web service.</p>
    */
-  class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClient
+  class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -88,7 +89,6 @@ namespace DataPipeline
 
         /* End of legacy constructors due deprecation */
         virtual ~DataPipelineClient();
-
 
         /**
          * <p>Validates the specified pipeline and starts processing pipeline tasks. If the
@@ -498,6 +498,7 @@ namespace DataPipeline
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DataPipelineEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>;
       void init(const DataPipelineClientConfiguration& clientConfiguration);
 
       DataPipelineClientConfiguration m_clientConfiguration;

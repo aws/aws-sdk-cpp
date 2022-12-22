@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationTokenResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API GetFederationTokenResult
+  class GetFederationTokenResult
   {
   public:
-    GetFederationTokenResult();
-    GetFederationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetFederationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API GetFederationTokenResult();
+    AWS_STS_API GetFederationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API GetFederationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

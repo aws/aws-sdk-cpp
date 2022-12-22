@@ -28,12 +28,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API CreateLiveSourceResult
+  class CreateLiveSourceResult
   {
   public:
-    CreateLiveSourceResult();
-    CreateLiveSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLiveSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreateLiveSourceResult();
+    AWS_MEDIATAILOR_API CreateLiveSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreateLiveSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

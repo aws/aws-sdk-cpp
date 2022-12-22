@@ -7,6 +7,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace CloudWatchEvents
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide">Amazon
    * EventBridge User Guide</a>.</p>
    */
-  class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace CloudWatchEvents
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudWatchEventsClient();
-
 
         /**
          * <p>Activates a partner event source that has been deactivated. Once activated,
@@ -1264,6 +1264,7 @@ namespace CloudWatchEvents
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudWatchEventsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>;
       void init(const CloudWatchEventsClientConfiguration& clientConfiguration);
 
       CloudWatchEventsClientConfiguration m_clientConfiguration;

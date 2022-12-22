@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeInstanceTypesResponse
+  class DescribeInstanceTypesResponse
   {
   public:
-    DescribeInstanceTypesResponse();
-    DescribeInstanceTypesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstanceTypesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeInstanceTypesResponse();
+    AWS_EC2_API DescribeInstanceTypesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeInstanceTypesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

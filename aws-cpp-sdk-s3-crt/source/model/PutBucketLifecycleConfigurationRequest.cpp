@@ -83,6 +83,16 @@ Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequ
   return headers;
 }
 
+PutBucketLifecycleConfigurationRequest::EndpointParameters PutBucketLifecycleConfigurationRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 Aws::String PutBucketLifecycleConfigurationRequest::GetChecksumAlgorithmName() const
 {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)

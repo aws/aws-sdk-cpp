@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Metadata">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Metadata
+  class Metadata
   {
   public:
-    Metadata();
-    Metadata(Aws::Utils::Json::JsonView jsonValue);
-    Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Metadata();
+    AWS_GLUEDATABREW_API Metadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

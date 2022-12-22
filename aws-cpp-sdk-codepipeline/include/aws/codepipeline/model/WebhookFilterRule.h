@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/WebhookFilterRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API WebhookFilterRule
+  class WebhookFilterRule
   {
   public:
-    WebhookFilterRule();
-    WebhookFilterRule(Aws::Utils::Json::JsonView jsonValue);
-    WebhookFilterRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API WebhookFilterRule();
+    AWS_CODEPIPELINE_API WebhookFilterRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API WebhookFilterRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API PutInvitationConfigurationResult
+  class PutInvitationConfigurationResult
   {
   public:
-    PutInvitationConfigurationResult();
-    PutInvitationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutInvitationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API PutInvitationConfigurationResult();
+    AWS_ALEXAFORBUSINESS_API PutInvitationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API PutInvitationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

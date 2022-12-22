@@ -25,7 +25,8 @@ CreateDomainRequest::CreateDomainRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
     m_appSecurityGroupManagementHasBeenSet(false),
-    m_domainSettingsHasBeenSet(false)
+    m_domainSettingsHasBeenSet(false),
+    m_defaultSpaceSettingsHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,12 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_domainSettingsHasBeenSet)
   {
    payload.WithObject("DomainSettings", m_domainSettings.Jsonize());
+
+  }
+
+  if(m_defaultSpaceSettingsHasBeenSet)
+  {
+   payload.WithObject("DefaultSpaceSettings", m_defaultSpaceSettings.Jsonize());
 
   }
 

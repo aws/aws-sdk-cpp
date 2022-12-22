@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RecommendationDisruptionCompliance">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance
+  class RecommendationDisruptionCompliance
   {
   public:
-    RecommendationDisruptionCompliance();
-    RecommendationDisruptionCompliance(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationDisruptionCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance();
+    AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

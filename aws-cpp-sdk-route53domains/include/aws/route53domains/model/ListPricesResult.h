@@ -26,12 +26,12 @@ namespace Route53Domains
 {
 namespace Model
 {
-  class AWS_ROUTE53DOMAINS_API ListPricesResult
+  class ListPricesResult
   {
   public:
-    ListPricesResult();
-    ListPricesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPricesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API ListPricesResult();
+    AWS_ROUTE53DOMAINS_API ListPricesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API ListPricesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

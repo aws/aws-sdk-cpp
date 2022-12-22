@@ -32,52 +32,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FaqSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API FaqSummary
+  class FaqSummary
   {
   public:
-    FaqSummary();
-    FaqSummary(Aws::Utils::Json::JsonView jsonValue);
-    FaqSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API FaqSummary();
+    AWS_KENDRA_API FaqSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API FaqSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline FaqSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline FaqSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ.</p>
      */
     inline FaqSummary& WithId(const char* value) { SetId(value); return *this;}
 

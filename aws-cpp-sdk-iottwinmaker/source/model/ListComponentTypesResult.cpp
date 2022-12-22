@@ -30,6 +30,12 @@ ListComponentTypesResult::ListComponentTypesResult(const Aws::AmazonWebServiceRe
 ListComponentTypesResult& ListComponentTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+
+  }
+
   if(jsonValue.ValueExists("componentTypeSummaries"))
   {
     Aws::Utils::Array<JsonView> componentTypeSummariesJsonList = jsonValue.GetArray("componentTypeSummaries");
@@ -39,21 +45,15 @@ ListComponentTypesResult& ListComponentTypesResult::operator =(const Aws::Amazon
     }
   }
 
-  if(jsonValue.ValueExists("maxResults"))
-  {
-    m_maxResults = jsonValue.GetInteger("maxResults");
-
-  }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
 
   }
 
-  if(jsonValue.ValueExists("workspaceId"))
+  if(jsonValue.ValueExists("maxResults"))
   {
-    m_workspaceId = jsonValue.GetString("workspaceId");
+    m_maxResults = jsonValue.GetInteger("maxResults");
 
   }
 

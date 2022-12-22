@@ -43,19 +43,26 @@ namespace Model
    * health check is being evaluated or there's no container health check
    * defined.</p> </li> </ul> <p>The following describes the possible
    * <code>healthStatus</code> values for a task. The container health check status
-   * of nonessential containers do not have an effect on the health status of a
-   * task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the
-   * task have passed their health checks.</p> </li> <li> <p>
-   * <code>UNHEALTHY</code>-One or more essential containers have failed their health
-   * check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within
-   * the task are still having their health checks evaluated or there are no
-   * container health checks defined.</p> </li> </ul> <p>If a task is run manually,
-   * and not as part of a service, the task will continue its lifecycle regardless of
-   * its health status. For tasks that are part of a service, if the task reports as
-   * unhealthy then the task will be stopped and the service scheduler will replace
-   * it.</p> <p>The following are notes about container health check support:</p>
-   * <ul> <li> <p>Container health checks require version 1.17.0 or greater of the
-   * Amazon ECS container agent. For more information, see <a
+   * of nonessential containers only affects the health status of a task if no
+   * essential containers have health checks defined.</p> <ul> <li> <p>
+   * <code>HEALTHY</code>-All essential containers within the task have passed their
+   * health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential
+   * containers have failed their health check.</p> </li> <li> <p>
+   * <code>UNKNOWN</code>-The essential containers within the task are still having
+   * their health checks evaluated or there are only nonessential containers with
+   * health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as
+   * part of a service, the task will continue its lifecycle regardless of its health
+   * status. For tasks that are part of a service, if the task reports as unhealthy
+   * then the task will be stopped and the service scheduler will replace it.</p>
+   *  <p>For tasks that are a part of a service and the service uses the
+   * <code>ECS</code> rolling deployment type, the deployment is paused while the new
+   * tasks have the <code>UNKNOWN</code> task health check status. For example, tasks
+   * that define health checks for nonessential containers when no essential
+   * containers have health checks will have the <code>UNKNOWN</code> health check
+   * status indefinitely which prevents the deployment from completing.</p>
+   *  <p>The following are notes about container health check
+   * support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or
+   * greater of the Amazon ECS container agent. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
    * the Amazon ECS container agent</a>.</p> </li> <li> <p>Container health checks
    * are supported for Fargate tasks if you're using platform version
@@ -67,13 +74,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API HealthCheck
+  class HealthCheck
   {
   public:
-    HealthCheck();
-    HealthCheck(Aws::Utils::Json::JsonView jsonValue);
-    HealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API HealthCheck();
+    AWS_ECS_API HealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API HealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

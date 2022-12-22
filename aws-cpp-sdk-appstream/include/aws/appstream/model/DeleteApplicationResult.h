@@ -22,12 +22,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API DeleteApplicationResult
+  class DeleteApplicationResult
   {
   public:
-    DeleteApplicationResult();
-    DeleteApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API DeleteApplicationResult();
+    AWS_APPSTREAM_API DeleteApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API DeleteApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

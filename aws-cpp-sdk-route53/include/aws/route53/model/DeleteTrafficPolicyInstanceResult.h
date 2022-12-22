@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstanceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API DeleteTrafficPolicyInstanceResult
+  class DeleteTrafficPolicyInstanceResult
   {
   public:
-    DeleteTrafficPolicyInstanceResult();
-    DeleteTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteTrafficPolicyInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeleteTrafficPolicyInstanceResult();
+    AWS_ROUTE53_API DeleteTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeleteTrafficPolicyInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   };
 

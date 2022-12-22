@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API ValidationException();
+    AWS_SIGNER_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

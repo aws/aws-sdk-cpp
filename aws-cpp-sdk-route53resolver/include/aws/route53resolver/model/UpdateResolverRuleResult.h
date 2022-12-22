@@ -24,12 +24,12 @@ namespace Route53Resolver
 {
 namespace Model
 {
-  class AWS_ROUTE53RESOLVER_API UpdateResolverRuleResult
+  class UpdateResolverRuleResult
   {
   public:
-    UpdateResolverRuleResult();
-    UpdateResolverRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateResolverRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API UpdateResolverRuleResult();
+    AWS_ROUTE53RESOLVER_API UpdateResolverRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API UpdateResolverRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -10,6 +10,7 @@
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/billingconductor/model/CreateTieringInput.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -22,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_BILLINGCONDUCTOR_API CreatePricingRuleRequest : public BillingConductorRequest
+  class CreatePricingRuleRequest : public BillingConductorRequest
   {
   public:
-    CreatePricingRuleRequest();
+    AWS_BILLINGCONDUCTOR_API CreatePricingRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePricingRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -393,6 +394,86 @@ namespace Model
      */
     inline CreatePricingRuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline const Aws::String& GetBillingEntity() const{ return m_billingEntity; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline bool BillingEntityHasBeenSet() const { return m_billingEntityHasBeenSet; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const Aws::String& value) { m_billingEntityHasBeenSet = true; m_billingEntity = value; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(Aws::String&& value) { m_billingEntityHasBeenSet = true; m_billingEntity = std::move(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const char* value) { m_billingEntityHasBeenSet = true; m_billingEntity.assign(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(const Aws::String& value) { SetBillingEntity(value); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(Aws::String&& value) { SetBillingEntity(std::move(value)); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
+
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const CreateTieringInput& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline bool TieringHasBeenSet() const { return m_tieringHasBeenSet; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const CreateTieringInput& value) { m_tieringHasBeenSet = true; m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(CreateTieringInput&& value) { m_tieringHasBeenSet = true; m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline CreatePricingRuleRequest& WithTiering(const CreateTieringInput& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline CreatePricingRuleRequest& WithTiering(CreateTieringInput&& value) { SetTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -418,6 +499,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_billingEntity;
+    bool m_billingEntityHasBeenSet = false;
+
+    CreateTieringInput m_tiering;
+    bool m_tieringHasBeenSet = false;
   };
 
 } // namespace Model

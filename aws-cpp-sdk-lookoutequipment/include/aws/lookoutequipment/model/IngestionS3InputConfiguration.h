@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/IngestionS3InputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration
+  class IngestionS3InputConfiguration
   {
   public:
-    IngestionS3InputConfiguration();
-    IngestionS3InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    IngestionS3InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

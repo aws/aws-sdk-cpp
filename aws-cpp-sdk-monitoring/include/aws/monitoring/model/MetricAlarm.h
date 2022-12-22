@@ -13,6 +13,7 @@
 #include <aws/monitoring/model/Statistic.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
+#include <aws/monitoring/model/EvaluationState.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
 #include <utility>
@@ -36,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricAlarm">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricAlarm
+  class MetricAlarm
   {
   public:
-    MetricAlarm();
-    MetricAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricAlarm();
+    AWS_CLOUDWATCH_API MetricAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -532,32 +533,38 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of the last update to the alarm state.</p>
+     * <p>The time stamp of the last update to the value of either the
+     * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
     inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
 
     /**
-     * <p>The time stamp of the last update to the alarm state.</p>
+     * <p>The time stamp of the last update to the value of either the
+     * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
     inline bool StateUpdatedTimestampHasBeenSet() const { return m_stateUpdatedTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of the last update to the alarm state.</p>
+     * <p>The time stamp of the last update to the value of either the
+     * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
     inline void SetStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
-     * <p>The time stamp of the last update to the alarm state.</p>
+     * <p>The time stamp of the last update to the value of either the
+     * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
     inline void SetStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of the last update to the alarm state.</p>
+     * <p>The time stamp of the last update to the value of either the
+     * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of the last update to the alarm state.</p>
+     * <p>The time stamp of the last update to the value of either the
+     * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetStateUpdatedTimestamp(std::move(value)); return *this;}
 
@@ -1218,6 +1225,98 @@ namespace Model
      */
     inline MetricAlarm& WithThresholdMetricId(const char* value) { SetThresholdMetricId(value); return *this;}
 
+
+    /**
+     * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being
+     * evaluated based on only partial data. This happens if the query used for the
+     * alarm returns more than 10,000 metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.</p>
+     */
+    inline const EvaluationState& GetEvaluationState() const{ return m_evaluationState; }
+
+    /**
+     * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being
+     * evaluated based on only partial data. This happens if the query used for the
+     * alarm returns more than 10,000 metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.</p>
+     */
+    inline bool EvaluationStateHasBeenSet() const { return m_evaluationStateHasBeenSet; }
+
+    /**
+     * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being
+     * evaluated based on only partial data. This happens if the query used for the
+     * alarm returns more than 10,000 metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.</p>
+     */
+    inline void SetEvaluationState(const EvaluationState& value) { m_evaluationStateHasBeenSet = true; m_evaluationState = value; }
+
+    /**
+     * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being
+     * evaluated based on only partial data. This happens if the query used for the
+     * alarm returns more than 10,000 metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.</p>
+     */
+    inline void SetEvaluationState(EvaluationState&& value) { m_evaluationStateHasBeenSet = true; m_evaluationState = std::move(value); }
+
+    /**
+     * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being
+     * evaluated based on only partial data. This happens if the query used for the
+     * alarm returns more than 10,000 metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.</p>
+     */
+    inline MetricAlarm& WithEvaluationState(const EvaluationState& value) { SetEvaluationState(value); return *this;}
+
+    /**
+     * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being
+     * evaluated based on only partial data. This happens if the query used for the
+     * alarm returns more than 10,000 metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.</p>
+     */
+    inline MetricAlarm& WithEvaluationState(EvaluationState&& value) { SetEvaluationState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time that the alarm's <code>StateValue</code> most recently
+     * changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStateTransitionedTimestamp() const{ return m_stateTransitionedTimestamp; }
+
+    /**
+     * <p>The date and time that the alarm's <code>StateValue</code> most recently
+     * changed.</p>
+     */
+    inline bool StateTransitionedTimestampHasBeenSet() const { return m_stateTransitionedTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time that the alarm's <code>StateValue</code> most recently
+     * changed.</p>
+     */
+    inline void SetStateTransitionedTimestamp(const Aws::Utils::DateTime& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = value; }
+
+    /**
+     * <p>The date and time that the alarm's <code>StateValue</code> most recently
+     * changed.</p>
+     */
+    inline void SetStateTransitionedTimestamp(Aws::Utils::DateTime&& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = std::move(value); }
+
+    /**
+     * <p>The date and time that the alarm's <code>StateValue</code> most recently
+     * changed.</p>
+     */
+    inline MetricAlarm& WithStateTransitionedTimestamp(const Aws::Utils::DateTime& value) { SetStateTransitionedTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time that the alarm's <code>StateValue</code> most recently
+     * changed.</p>
+     */
+    inline MetricAlarm& WithStateTransitionedTimestamp(Aws::Utils::DateTime&& value) { SetStateTransitionedTimestamp(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_alarmName;
@@ -1300,6 +1399,12 @@ namespace Model
 
     Aws::String m_thresholdMetricId;
     bool m_thresholdMetricIdHasBeenSet = false;
+
+    EvaluationState m_evaluationState;
+    bool m_evaluationStateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_stateTransitionedTimestamp;
+    bool m_stateTransitionedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/InputColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API InputColumn
+  class InputColumn
   {
   public:
-    InputColumn();
-    InputColumn(Aws::Utils::Json::JsonView jsonValue);
-    InputColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API InputColumn();
+    AWS_QUICKSIGHT_API InputColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API InputColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

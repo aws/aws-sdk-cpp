@@ -22,12 +22,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API UpdateLicenseSpecificationsForResourceResult
+  class UpdateLicenseSpecificationsForResourceResult
   {
   public:
-    UpdateLicenseSpecificationsForResourceResult();
-    UpdateLicenseSpecificationsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLicenseSpecificationsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API UpdateLicenseSpecificationsForResourceResult();
+    AWS_LICENSEMANAGER_API UpdateLicenseSpecificationsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API UpdateLicenseSpecificationsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

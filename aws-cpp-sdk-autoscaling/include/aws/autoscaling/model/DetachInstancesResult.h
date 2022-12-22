@@ -26,12 +26,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API DetachInstancesResult
+  class DetachInstancesResult
   {
   public:
-    DetachInstancesResult();
-    DetachInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DetachInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DetachInstancesResult();
+    AWS_AUTOSCALING_API DetachInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DetachInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

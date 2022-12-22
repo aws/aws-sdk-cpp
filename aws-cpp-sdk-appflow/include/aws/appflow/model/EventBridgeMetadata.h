@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/EventBridgeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API EventBridgeMetadata
+  class EventBridgeMetadata
   {
   public:
-    EventBridgeMetadata();
-    EventBridgeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    EventBridgeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API EventBridgeMetadata();
+    AWS_APPFLOW_API EventBridgeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API EventBridgeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

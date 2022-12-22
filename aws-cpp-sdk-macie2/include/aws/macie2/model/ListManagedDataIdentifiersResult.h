@@ -26,12 +26,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API ListManagedDataIdentifiersResult
+  class ListManagedDataIdentifiersResult
   {
   public:
-    ListManagedDataIdentifiersResult();
-    ListManagedDataIdentifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListManagedDataIdentifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListManagedDataIdentifiersResult();
+    AWS_MACIE2_API ListManagedDataIdentifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListManagedDataIdentifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

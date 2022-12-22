@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/migrationhubstrategy/model/DataCollectionDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/model/AssessmentTarget.h>
 #include <utility>
 
 namespace Aws
@@ -25,12 +27,48 @@ namespace MigrationHubStrategyRecommendations
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult
+  class GetAssessmentResult
   {
   public:
-    GetAssessmentResult();
-    GetAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const{ return m_assessmentTargets; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline void SetAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { m_assessmentTargets = value; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline void SetAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { m_assessmentTargets = std::move(value); }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline GetAssessmentResult& WithAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { SetAssessmentTargets(value); return *this;}
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline GetAssessmentResult& WithAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { SetAssessmentTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline GetAssessmentResult& AddAssessmentTargets(const AssessmentTarget& value) { m_assessmentTargets.push_back(value); return *this; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline GetAssessmentResult& AddAssessmentTargets(AssessmentTarget&& value) { m_assessmentTargets.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -95,6 +133,8 @@ namespace Model
     inline GetAssessmentResult& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
+    Aws::Vector<AssessmentTarget> m_assessmentTargets;
 
     DataCollectionDetails m_dataCollectionDetails;
 

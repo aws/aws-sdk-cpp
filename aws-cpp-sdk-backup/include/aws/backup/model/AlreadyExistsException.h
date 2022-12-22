@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API AlreadyExistsException
+  class AlreadyExistsException
   {
   public:
-    AlreadyExistsException();
-    AlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    AlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API AlreadyExistsException();
+    AWS_BACKUP_API AlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API AlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

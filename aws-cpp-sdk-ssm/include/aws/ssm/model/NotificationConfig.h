@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/NotificationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API NotificationConfig
+  class NotificationConfig
   {
   public:
-    NotificationConfig();
-    NotificationConfig(Aws::Utils::Json::JsonView jsonValue);
-    NotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API NotificationConfig();
+    AWS_SSM_API NotificationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API NotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace EMRServerless
 {
 namespace Model
 {
-  class AWS_EMRSERVERLESS_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRSERVERLESS_API UntagResourceResult();
+    AWS_EMRSERVERLESS_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRSERVERLESS_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

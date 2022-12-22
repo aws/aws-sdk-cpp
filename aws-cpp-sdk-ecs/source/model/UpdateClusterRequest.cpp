@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateClusterRequest::UpdateClusterRequest() : 
     m_clusterHasBeenSet(false),
     m_settingsHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_serviceConnectDefaultsHasBeenSet)
+  {
+   payload.WithObject("serviceConnectDefaults", m_serviceConnectDefaults.Jsonize());
 
   }
 

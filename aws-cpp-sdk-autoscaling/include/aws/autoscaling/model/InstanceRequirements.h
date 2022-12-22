@@ -71,15 +71,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRequirements">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API InstanceRequirements
+  class InstanceRequirements
   {
   public:
-    InstanceRequirements();
-    InstanceRequirements(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceRequirements& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRequirements();
+    AWS_AUTOSCALING_API InstanceRequirements(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRequirements& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

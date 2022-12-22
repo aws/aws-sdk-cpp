@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnectionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API RejectInboundCrossClusterSearchConnectionResult
+  class RejectInboundCrossClusterSearchConnectionResult
   {
   public:
-    RejectInboundCrossClusterSearchConnectionResult();
-    RejectInboundCrossClusterSearchConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectInboundCrossClusterSearchConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API RejectInboundCrossClusterSearchConnectionResult();
+    AWS_ELASTICSEARCHSERVICE_API RejectInboundCrossClusterSearchConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API RejectInboundCrossClusterSearchConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

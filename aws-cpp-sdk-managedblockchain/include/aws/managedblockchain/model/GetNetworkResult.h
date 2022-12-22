@@ -24,12 +24,12 @@ namespace ManagedBlockchain
 {
 namespace Model
 {
-  class AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult
+  class GetNetworkResult
   {
   public:
-    GetNetworkResult();
-    GetNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult();
+    AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

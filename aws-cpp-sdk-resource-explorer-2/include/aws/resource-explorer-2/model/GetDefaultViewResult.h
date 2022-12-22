@@ -24,12 +24,12 @@ namespace ResourceExplorer2
 {
 namespace Model
 {
-  class AWS_RESOURCEEXPLORER2_API GetDefaultViewResult
+  class GetDefaultViewResult
   {
   public:
-    GetDefaultViewResult();
-    GetDefaultViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDefaultViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API GetDefaultViewResult();
+    AWS_RESOURCEEXPLORER2_API GetDefaultViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API GetDefaultViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EventSource">AWS API
    * Reference</a></p>
    */
-  class AWS_DLM_API EventSource
+  class EventSource
   {
   public:
-    EventSource();
-    EventSource(Aws::Utils::Json::JsonView jsonValue);
-    EventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API EventSource();
+    AWS_DLM_API EventSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API EventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

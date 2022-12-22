@@ -26,12 +26,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API DescribeConfigurationSetsResult
+  class DescribeConfigurationSetsResult
   {
   public:
-    DescribeConfigurationSetsResult();
-    DescribeConfigurationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigurationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DescribeConfigurationSetsResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeConfigurationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DescribeConfigurationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

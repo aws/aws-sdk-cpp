@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Behavior">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Behavior
+  class Behavior
   {
   public:
-    Behavior();
-    Behavior(Aws::Utils::Json::JsonView jsonValue);
-    Behavior& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Behavior();
+    AWS_IOT_API Behavior(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Behavior& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

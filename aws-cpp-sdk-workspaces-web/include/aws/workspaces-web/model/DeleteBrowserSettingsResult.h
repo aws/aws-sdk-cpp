@@ -22,12 +22,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API DeleteBrowserSettingsResult
+  class DeleteBrowserSettingsResult
   {
   public:
-    DeleteBrowserSettingsResult();
-    DeleteBrowserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBrowserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API DeleteBrowserSettingsResult();
+    AWS_WORKSPACESWEB_API DeleteBrowserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API DeleteBrowserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

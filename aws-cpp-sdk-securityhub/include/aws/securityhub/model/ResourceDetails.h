@@ -84,6 +84,10 @@
 #include <aws/securityhub/model/AwsBackupBackupVaultDetails.h>
 #include <aws/securityhub/model/AwsBackupBackupPlanDetails.h>
 #include <aws/securityhub/model/AwsBackupRecoveryPointDetails.h>
+#include <aws/securityhub/model/AwsEc2LaunchTemplateDetails.h>
+#include <aws/securityhub/model/AwsSageMakerNotebookInstanceDetails.h>
+#include <aws/securityhub/model/AwsWafv2WebAclDetails.h>
+#include <aws/securityhub/model/AwsWafv2RuleGroupDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -115,13 +119,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ResourceDetails
+  class ResourceDetails
   {
   public:
-    ResourceDetails();
-    ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ResourceDetails();
+    AWS_SECURITYHUB_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -2776,6 +2780,82 @@ namespace Model
      */
     inline ResourceDetails& WithAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { SetAwsBackupRecoveryPoint(std::move(value)); return *this;}
 
+
+    
+    inline const AwsEc2LaunchTemplateDetails& GetAwsEc2LaunchTemplate() const{ return m_awsEc2LaunchTemplate; }
+
+    
+    inline bool AwsEc2LaunchTemplateHasBeenSet() const { return m_awsEc2LaunchTemplateHasBeenSet; }
+
+    
+    inline void SetAwsEc2LaunchTemplate(const AwsEc2LaunchTemplateDetails& value) { m_awsEc2LaunchTemplateHasBeenSet = true; m_awsEc2LaunchTemplate = value; }
+
+    
+    inline void SetAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails&& value) { m_awsEc2LaunchTemplateHasBeenSet = true; m_awsEc2LaunchTemplate = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsEc2LaunchTemplate(const AwsEc2LaunchTemplateDetails& value) { SetAwsEc2LaunchTemplate(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails&& value) { SetAwsEc2LaunchTemplate(std::move(value)); return *this;}
+
+
+    
+    inline const AwsSageMakerNotebookInstanceDetails& GetAwsSageMakerNotebookInstance() const{ return m_awsSageMakerNotebookInstance; }
+
+    
+    inline bool AwsSageMakerNotebookInstanceHasBeenSet() const { return m_awsSageMakerNotebookInstanceHasBeenSet; }
+
+    
+    inline void SetAwsSageMakerNotebookInstance(const AwsSageMakerNotebookInstanceDetails& value) { m_awsSageMakerNotebookInstanceHasBeenSet = true; m_awsSageMakerNotebookInstance = value; }
+
+    
+    inline void SetAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails&& value) { m_awsSageMakerNotebookInstanceHasBeenSet = true; m_awsSageMakerNotebookInstance = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsSageMakerNotebookInstance(const AwsSageMakerNotebookInstanceDetails& value) { SetAwsSageMakerNotebookInstance(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails&& value) { SetAwsSageMakerNotebookInstance(std::move(value)); return *this;}
+
+
+    
+    inline const AwsWafv2WebAclDetails& GetAwsWafv2WebAcl() const{ return m_awsWafv2WebAcl; }
+
+    
+    inline bool AwsWafv2WebAclHasBeenSet() const { return m_awsWafv2WebAclHasBeenSet; }
+
+    
+    inline void SetAwsWafv2WebAcl(const AwsWafv2WebAclDetails& value) { m_awsWafv2WebAclHasBeenSet = true; m_awsWafv2WebAcl = value; }
+
+    
+    inline void SetAwsWafv2WebAcl(AwsWafv2WebAclDetails&& value) { m_awsWafv2WebAclHasBeenSet = true; m_awsWafv2WebAcl = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsWafv2WebAcl(const AwsWafv2WebAclDetails& value) { SetAwsWafv2WebAcl(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsWafv2WebAcl(AwsWafv2WebAclDetails&& value) { SetAwsWafv2WebAcl(std::move(value)); return *this;}
+
+
+    
+    inline const AwsWafv2RuleGroupDetails& GetAwsWafv2RuleGroup() const{ return m_awsWafv2RuleGroup; }
+
+    
+    inline bool AwsWafv2RuleGroupHasBeenSet() const { return m_awsWafv2RuleGroupHasBeenSet; }
+
+    
+    inline void SetAwsWafv2RuleGroup(const AwsWafv2RuleGroupDetails& value) { m_awsWafv2RuleGroupHasBeenSet = true; m_awsWafv2RuleGroup = value; }
+
+    
+    inline void SetAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails&& value) { m_awsWafv2RuleGroupHasBeenSet = true; m_awsWafv2RuleGroup = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsWafv2RuleGroup(const AwsWafv2RuleGroupDetails& value) { SetAwsWafv2RuleGroup(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails&& value) { SetAwsWafv2RuleGroup(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3014,6 +3094,18 @@ namespace Model
 
     AwsBackupRecoveryPointDetails m_awsBackupRecoveryPoint;
     bool m_awsBackupRecoveryPointHasBeenSet = false;
+
+    AwsEc2LaunchTemplateDetails m_awsEc2LaunchTemplate;
+    bool m_awsEc2LaunchTemplateHasBeenSet = false;
+
+    AwsSageMakerNotebookInstanceDetails m_awsSageMakerNotebookInstance;
+    bool m_awsSageMakerNotebookInstanceHasBeenSet = false;
+
+    AwsWafv2WebAclDetails m_awsWafv2WebAcl;
+    bool m_awsWafv2WebAclHasBeenSet = false;
+
+    AwsWafv2RuleGroupDetails m_awsWafv2RuleGroup;
+    bool m_awsWafv2RuleGroupHasBeenSet = false;
   };
 
 } // namespace Model

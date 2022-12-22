@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressionOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SuppressionOptions
+  class SuppressionOptions
   {
   public:
-    SuppressionOptions();
-    SuppressionOptions(Aws::Utils::Json::JsonView jsonValue);
-    SuppressionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SuppressionOptions();
+    AWS_SESV2_API SuppressionOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SuppressionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute
+  class SNOMEDCTAttribute
   {
   public:
-    SNOMEDCTAttribute();
-    SNOMEDCTAttribute(Aws::Utils::Json::JsonView jsonValue);
-    SNOMEDCTAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute();
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

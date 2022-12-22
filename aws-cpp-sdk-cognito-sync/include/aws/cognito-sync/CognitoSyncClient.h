@@ -7,6 +7,7 @@
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace CognitoSync
    * href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
    * Guide for iOS</a>.</p>
    */
-  class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient
+  class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace CognitoSync
 
         /* End of legacy constructors due deprecation */
         virtual ~CognitoSyncClient();
-
 
         /**
          * <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the
@@ -455,6 +455,7 @@ namespace CognitoSync
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CognitoSyncEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>;
       void init(const CognitoSyncClientConfiguration& clientConfiguration);
 
       CognitoSyncClientConfiguration m_clientConfiguration;

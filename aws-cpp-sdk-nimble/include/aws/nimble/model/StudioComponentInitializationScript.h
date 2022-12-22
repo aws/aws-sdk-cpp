@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponentInitializationScript">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioComponentInitializationScript
+  class StudioComponentInitializationScript
   {
   public:
-    StudioComponentInitializationScript();
-    StudioComponentInitializationScript(Aws::Utils::Json::JsonView jsonValue);
-    StudioComponentInitializationScript& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioComponentInitializationScript();
+    AWS_NIMBLESTUDIO_API StudioComponentInitializationScript(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioComponentInitializationScript& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,32 +89,32 @@ namespace Model
 
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline const LaunchProfilePlatform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline void SetPlatform(const LaunchProfilePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline void SetPlatform(LaunchProfilePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline StudioComponentInitializationScript& WithPlatform(const LaunchProfilePlatform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline StudioComponentInitializationScript& WithPlatform(LaunchProfilePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 

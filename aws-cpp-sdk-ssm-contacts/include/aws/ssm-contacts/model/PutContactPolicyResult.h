@@ -22,12 +22,12 @@ namespace SSMContacts
 {
 namespace Model
 {
-  class AWS_SSMCONTACTS_API PutContactPolicyResult
+  class PutContactPolicyResult
   {
   public:
-    PutContactPolicyResult();
-    PutContactPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutContactPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API PutContactPolicyResult();
+    AWS_SSMCONTACTS_API PutContactPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API PutContactPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

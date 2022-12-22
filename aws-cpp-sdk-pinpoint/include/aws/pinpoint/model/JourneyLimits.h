@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyLimits
+  class JourneyLimits
   {
   public:
-    JourneyLimits();
-    JourneyLimits(Aws::Utils::Json::JsonView jsonValue);
-    JourneyLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyLimits();
+    AWS_PINPOINT_API JourneyLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

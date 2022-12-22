@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace EKS
    * means that you can easily migrate any standard Kubernetes application to Amazon
    * EKS without any code modification required.</p>
    */
-  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient
+  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace EKS
         /* End of legacy constructors due deprecation */
         virtual ~EKSClient();
 
-
         /**
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
          * this API to enable encryption on existing clusters which do not have encryption
@@ -133,10 +133,7 @@ namespace EKS
         /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
          * provisioning and lifecycle management of common operational software for Amazon
-         * EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later
-         * because Amazon EKS add-ons rely on the Server-side Apply Kubernetes feature,
-         * which is only available in Kubernetes 1.18 and later. For more information, see
-         * <a
+         * EKS clusters. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
          * EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS
@@ -246,11 +243,11 @@ namespace EKS
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
          * Auto Scaling group and associated Amazon EC2 instances that are managed by
-         * Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of
-         * the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a
+         * Amazon Web Services for an Amazon EKS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
-         * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
-         * <a
+         * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
+         * types are only supported for commercial Regions that support Windows Amazon
+         * EKS.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">AWS
          * API Reference</a></p>
          */
@@ -388,8 +385,27 @@ namespace EKS
         virtual void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Kubernetes versions that the add-on can be used
-         * with.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns configuration options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddonConfigurationOutcome DescribeAddonConfiguration(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAddonConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddonConfigurationOutcomeCallable DescribeAddonConfigurationCallable(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAddonConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddonConfigurationAsync(const Model::DescribeAddonConfigurationRequest& request, const DescribeAddonConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the versions for an add-on. Information such as the Kubernetes
+         * versions that you can use the add-on with, the <code>owner</code>,
+         * <code>publisher</code>, and the <code>type</code> of the add-on are returned.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">AWS
          * API Reference</a></p>
          */
@@ -838,16 +854,19 @@ namespace EKS
          * the latest available AMI version of a node group's current Kubernetes version by
          * not specifying a Kubernetes version in the request. You can update to the latest
          * AMI version of your cluster's current Kubernetes version by specifying your
-         * cluster's Kubernetes version in the request. For more information, see <a
+         * cluster's Kubernetes version in the request. For information about Linux
+         * versions, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-         * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-         * Guide</i>.</p> <p>You cannot roll back a node group to an earlier Kubernetes
-         * version or AMI version.</p> <p>When a node in a managed node group is terminated
-         * due to a scaling action or update, the pods in that node are drained first.
-         * Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable
-         * to do so. You can <code>force</code> the update if Amazon EKS is unable to drain
-         * the nodes as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>
-         * <a
+         * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+         * For information about Windows versions, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+         * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>. </p>
+         * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
+         * version.</p> <p>When a node in a managed node group is terminated due to a
+         * scaling action or update, the pods in that node are drained first. Amazon EKS
+         * attempts to drain the nodes gracefully and will fail if it is unable to do so.
+         * You can <code>force</code> the update if Amazon EKS is unable to drain the nodes
+         * as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">AWS
          * API Reference</a></p>
          */
@@ -867,6 +886,7 @@ namespace EKS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
       void init(const EKSClientConfiguration& clientConfiguration);
 
       EKSClientConfiguration m_clientConfiguration;

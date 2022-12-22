@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API Configuration
+  class Configuration
   {
   public:
-    Configuration();
-    Configuration(Aws::Utils::Json::JsonView jsonValue);
-    Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API Configuration();
+    AWS_EMRSERVERLESS_API Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

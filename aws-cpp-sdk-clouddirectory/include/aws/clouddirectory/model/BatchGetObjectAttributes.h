@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetObjectAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchGetObjectAttributes
+  class BatchGetObjectAttributes
   {
   public:
-    BatchGetObjectAttributes();
-    BatchGetObjectAttributes(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetObjectAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchGetObjectAttributes();
+    AWS_CLOUDDIRECTORY_API BatchGetObjectAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchGetObjectAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GatingRuleUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRuleUpdate
+  class GatingRuleUpdate
   {
   public:
-    GatingRuleUpdate();
-    GatingRuleUpdate(Aws::Utils::Json::JsonView jsonValue);
-    GatingRuleUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRuleUpdate();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRuleUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRuleUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

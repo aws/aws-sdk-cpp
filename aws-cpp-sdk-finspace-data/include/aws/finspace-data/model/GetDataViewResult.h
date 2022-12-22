@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataViewResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API GetDataViewResult
+  class GetDataViewResult
   {
   public:
-    GetDataViewResult();
-    GetDataViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetDataViewResult();
+    AWS_FINSPACEDATA_API GetDataViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetDataViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

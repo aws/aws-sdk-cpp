@@ -26,12 +26,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API ListCatalogItemsResult
+  class ListCatalogItemsResult
   {
   public:
-    ListCatalogItemsResult();
-    ListCatalogItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCatalogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API ListCatalogItemsResult();
+    AWS_OUTPOSTS_API ListCatalogItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API ListCatalogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentOverview">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentOverview
+  class DeploymentOverview
   {
   public:
-    DeploymentOverview();
-    DeploymentOverview(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentOverview();
+    AWS_CODEDEPLOY_API DeploymentOverview(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

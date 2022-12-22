@@ -7,6 +7,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appmesh/AppMeshServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace AppMesh
    * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
    * for Services and Pods</a> in the Kubernetes documentation.</p> 
    */
-  class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient
+  class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppMeshClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace AppMesh
 
         /* End of legacy constructors due deprecation */
         virtual ~AppMeshClient();
-
 
         /**
          * <p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual
@@ -823,6 +823,7 @@ namespace AppMesh
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppMeshEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppMeshClient>;
       void init(const AppMeshClientConfiguration& clientConfiguration);
 
       AppMeshClientConfiguration m_clientConfiguration;

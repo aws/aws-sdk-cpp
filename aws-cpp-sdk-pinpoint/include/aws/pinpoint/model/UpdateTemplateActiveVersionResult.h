@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API UpdateTemplateActiveVersionResult
+  class UpdateTemplateActiveVersionResult
   {
   public:
-    UpdateTemplateActiveVersionResult();
-    UpdateTemplateActiveVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTemplateActiveVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API UpdateTemplateActiveVersionResult();
+    AWS_PINPOINT_API UpdateTemplateActiveVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API UpdateTemplateActiveVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

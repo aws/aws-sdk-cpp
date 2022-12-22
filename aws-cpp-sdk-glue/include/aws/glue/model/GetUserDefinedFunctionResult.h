@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetUserDefinedFunctionResult
+  class GetUserDefinedFunctionResult
   {
   public:
-    GetUserDefinedFunctionResult();
-    GetUserDefinedFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUserDefinedFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetUserDefinedFunctionResult();
+    AWS_GLUE_API GetUserDefinedFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetUserDefinedFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

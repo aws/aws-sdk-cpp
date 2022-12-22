@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API RepositoryTrigger
+  class RepositoryTrigger
   {
   public:
-    RepositoryTrigger();
-    RepositoryTrigger(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API RepositoryTrigger();
+    AWS_CODECOMMIT_API RepositoryTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API RepositoryTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

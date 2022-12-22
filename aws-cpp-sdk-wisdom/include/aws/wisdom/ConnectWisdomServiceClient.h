@@ -7,6 +7,7 @@
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wisdom/ConnectWisdomServiceServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace ConnectWisdomService
    * quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a
    * knowledge base, for example, or manage content by uploading custom files.</p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace ConnectWisdomService
 
         /* End of legacy constructors due deprecation */
         virtual ~ConnectWisdomServiceClient();
-
 
         /**
          * <p>Creates an Amazon Connect Wisdom assistant.</p><p><h3>See Also:</h3>   <a
@@ -674,6 +674,7 @@ namespace ConnectWisdomService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConnectWisdomServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>;
       void init(const ConnectWisdomServiceClientConfiguration& clientConfiguration);
 
       ConnectWisdomServiceClientConfiguration m_clientConfiguration;

@@ -25,12 +25,12 @@ namespace WorkDocs
 {
 namespace Model
 {
-  class AWS_WORKDOCS_API InitiateDocumentVersionUploadResult
+  class InitiateDocumentVersionUploadResult
   {
   public:
-    InitiateDocumentVersionUploadResult();
-    InitiateDocumentVersionUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateDocumentVersionUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API InitiateDocumentVersionUploadResult();
+    AWS_WORKDOCS_API InitiateDocumentVersionUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API InitiateDocumentVersionUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API PutRetentionSettingsResult
+  class PutRetentionSettingsResult
   {
   public:
-    PutRetentionSettingsResult();
-    PutRetentionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRetentionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API PutRetentionSettingsResult();
+    AWS_CHIME_API PutRetentionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API PutRetentionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/SlackWorkspaceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORTAPP_API SlackWorkspaceConfiguration
+  class SlackWorkspaceConfiguration
   {
   public:
-    SlackWorkspaceConfiguration();
-    SlackWorkspaceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SlackWorkspaceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORTAPP_API SlackWorkspaceConfiguration();
+    AWS_SUPPORTAPP_API SlackWorkspaceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORTAPP_API SlackWorkspaceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORTAPP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

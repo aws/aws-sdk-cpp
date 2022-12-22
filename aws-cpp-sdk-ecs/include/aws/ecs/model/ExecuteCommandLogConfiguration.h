@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommandLogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ExecuteCommandLogConfiguration
+  class ExecuteCommandLogConfiguration
   {
   public:
-    ExecuteCommandLogConfiguration();
-    ExecuteCommandLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExecuteCommandLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ExecuteCommandLogConfiguration();
+    AWS_ECS_API ExecuteCommandLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ExecuteCommandLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

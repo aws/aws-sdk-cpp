@@ -27,7 +27,10 @@ RecoveryPointByResource::RecoveryPointByResource() :
     m_encryptionKeyArnHasBeenSet(false),
     m_backupSizeBytes(0),
     m_backupSizeBytesHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false)
+    m_backupVaultNameHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false),
+    m_parentRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ RecoveryPointByResource::RecoveryPointByResource(JsonView jsonValue) :
     m_encryptionKeyArnHasBeenSet(false),
     m_backupSizeBytes(0),
     m_backupSizeBytesHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false)
+    m_backupVaultNameHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false),
+    m_parentRecoveryPointArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +102,20 @@ RecoveryPointByResource& RecoveryPointByResource::operator =(JsonView jsonValue)
     m_backupVaultNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
+
+    m_isParentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParentRecoveryPointArn"))
+  {
+    m_parentRecoveryPointArn = jsonValue.GetString("ParentRecoveryPointArn");
+
+    m_parentRecoveryPointArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +160,18 @@ JsonValue RecoveryPointByResource::Jsonize() const
   if(m_backupVaultNameHasBeenSet)
   {
    payload.WithString("BackupVaultName", m_backupVaultName);
+
+  }
+
+  if(m_isParentHasBeenSet)
+  {
+   payload.WithBool("IsParent", m_isParent);
+
+  }
+
+  if(m_parentRecoveryPointArnHasBeenSet)
+  {
+   payload.WithString("ParentRecoveryPointArn", m_parentRecoveryPointArn);
 
   }
 

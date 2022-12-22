@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/Disk">AWS API
    * Reference</a></p>
    */
-  class AWS_MGN_API Disk
+  class Disk
   {
   public:
-    Disk();
-    Disk(Aws::Utils::Json::JsonView jsonValue);
-    Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API Disk();
+    AWS_MGN_API Disk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

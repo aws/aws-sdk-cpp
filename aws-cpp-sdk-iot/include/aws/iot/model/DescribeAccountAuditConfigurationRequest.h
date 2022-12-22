@@ -16,10 +16,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API DescribeAccountAuditConfigurationRequest : public IoTRequest
+  class DescribeAccountAuditConfigurationRequest : public IoTRequest
   {
   public:
-    DescribeAccountAuditConfigurationRequest();
+    AWS_IOT_API DescribeAccountAuditConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -27,7 +27,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAccountAuditConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
   };
 

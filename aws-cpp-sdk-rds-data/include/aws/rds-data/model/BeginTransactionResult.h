@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransactionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API BeginTransactionResult
+  class BeginTransactionResult
   {
   public:
-    BeginTransactionResult();
-    BeginTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BeginTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RDSDATASERVICE_API BeginTransactionResult();
+    AWS_RDSDATASERVICE_API BeginTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RDSDATASERVICE_API BeginTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

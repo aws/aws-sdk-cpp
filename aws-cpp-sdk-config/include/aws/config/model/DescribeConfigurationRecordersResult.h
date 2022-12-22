@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecordersResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DescribeConfigurationRecordersResult
+  class DescribeConfigurationRecordersResult
   {
   public:
-    DescribeConfigurationRecordersResult();
-    DescribeConfigurationRecordersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigurationRecordersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeConfigurationRecordersResult();
+    AWS_CONFIGSERVICE_API DescribeConfigurationRecordersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeConfigurationRecordersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

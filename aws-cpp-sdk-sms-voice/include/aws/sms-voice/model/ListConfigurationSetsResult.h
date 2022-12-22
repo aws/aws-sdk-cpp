@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSetsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API ListConfigurationSetsResult
+  class ListConfigurationSetsResult
   {
   public:
-    ListConfigurationSetsResult();
-    ListConfigurationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConfigurationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICE_API ListConfigurationSetsResult();
+    AWS_PINPOINTSMSVOICE_API ListConfigurationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICE_API ListConfigurationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

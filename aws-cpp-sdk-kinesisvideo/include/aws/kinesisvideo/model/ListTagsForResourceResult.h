@@ -25,12 +25,12 @@ namespace KinesisVideo
 {
 namespace Model
 {
-  class AWS_KINESISVIDEO_API ListTagsForResourceResult
+  class ListTagsForResourceResult
   {
   public:
-    ListTagsForResourceResult();
-    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API ListTagsForResourceResult();
+    AWS_KINESISVIDEO_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

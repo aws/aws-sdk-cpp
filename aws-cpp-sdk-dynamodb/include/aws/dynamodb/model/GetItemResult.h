@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItemOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API GetItemResult
+  class GetItemResult
   {
   public:
-    GetItemResult();
-    GetItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API GetItemResult();
+    AWS_DYNAMODB_API GetItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API GetItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

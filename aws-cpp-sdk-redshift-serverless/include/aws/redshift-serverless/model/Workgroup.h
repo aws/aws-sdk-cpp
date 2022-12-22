@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Workgroup">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Workgroup
+  class Workgroup
   {
   public:
-    Workgroup();
-    Workgroup(Aws::Utils::Json::JsonView jsonValue);
-    Workgroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Workgroup();
+    AWS_REDSHIFTSERVERLESS_API Workgroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Workgroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -263,6 +263,31 @@ namespace Model
      * <p>The namespace the workgroup is associated with.</p>
      */
     inline Workgroup& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline Workgroup& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
@@ -554,6 +579,9 @@ namespace Model
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet = false;

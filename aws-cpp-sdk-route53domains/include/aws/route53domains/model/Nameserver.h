@@ -25,17 +25,17 @@ namespace Model
 {
 
   /**
-   * <p>Nameserver includes the following elements.</p><p><h3>See Also:</h3>   <a
+   * <p>Name server includes the following elements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Nameserver">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API Nameserver
+  class Nameserver
   {
   public:
-    Nameserver();
-    Nameserver(Aws::Utils::Json::JsonView jsonValue);
-    Nameserver& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API Nameserver();
+    AWS_ROUTE53DOMAINS_API Nameserver(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Nameserver& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

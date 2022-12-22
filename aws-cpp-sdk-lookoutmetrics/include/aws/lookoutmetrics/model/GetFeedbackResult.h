@@ -26,12 +26,12 @@ namespace LookoutMetrics
 {
 namespace Model
 {
-  class AWS_LOOKOUTMETRICS_API GetFeedbackResult
+  class GetFeedbackResult
   {
   public:
-    GetFeedbackResult();
-    GetFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API GetFeedbackResult();
+    AWS_LOOKOUTMETRICS_API GetFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API GetFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

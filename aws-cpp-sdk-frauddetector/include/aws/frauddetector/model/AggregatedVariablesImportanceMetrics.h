@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/AggregatedVariablesImportanceMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics
+  class AggregatedVariablesImportanceMetrics
   {
   public:
-    AggregatedVariablesImportanceMetrics();
-    AggregatedVariablesImportanceMetrics(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedVariablesImportanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics();
+    AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

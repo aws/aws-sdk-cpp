@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyVpcTenancyResponse
+  class ModifyVpcTenancyResponse
   {
   public:
-    ModifyVpcTenancyResponse();
-    ModifyVpcTenancyResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVpcTenancyResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpcTenancyResponse();
+    AWS_EC2_API ModifyVpcTenancyResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpcTenancyResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

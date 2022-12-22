@@ -25,12 +25,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API BatchAssociateUserStackResult
+  class BatchAssociateUserStackResult
   {
   public:
-    BatchAssociateUserStackResult();
-    BatchAssociateUserStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchAssociateUserStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API BatchAssociateUserStackResult();
+    AWS_APPSTREAM_API BatchAssociateUserStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API BatchAssociateUserStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/PackageFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API PackageFilter
+  class PackageFilter
   {
   public:
-    PackageFilter();
-    PackageFilter(Aws::Utils::Json::JsonView jsonValue);
-    PackageFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API PackageFilter();
+    AWS_INSPECTOR2_API PackageFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API PackageFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,6 +169,25 @@ namespace Model
     inline PackageFilter& WithRelease(StringFilter&& value) { SetRelease(std::move(value)); return *this;}
 
 
+    
+    inline const StringFilter& GetSourceLambdaLayerArn() const{ return m_sourceLambdaLayerArn; }
+
+    
+    inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
+
+    
+    inline void SetSourceLambdaLayerArn(const StringFilter& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = value; }
+
+    
+    inline void SetSourceLambdaLayerArn(StringFilter&& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = std::move(value); }
+
+    
+    inline PackageFilter& WithSourceLambdaLayerArn(const StringFilter& value) { SetSourceLambdaLayerArn(value); return *this;}
+
+    
+    inline PackageFilter& WithSourceLambdaLayerArn(StringFilter&& value) { SetSourceLambdaLayerArn(std::move(value)); return *this;}
+
+
     /**
      * <p>An object that contains details on the source layer hash to filter on.</p>
      */
@@ -243,6 +262,9 @@ namespace Model
 
     StringFilter m_release;
     bool m_releaseHasBeenSet = false;
+
+    StringFilter m_sourceLambdaLayerArn;
+    bool m_sourceLambdaLayerArnHasBeenSet = false;
 
     StringFilter m_sourceLayerHash;
     bool m_sourceLayerHashHasBeenSet = false;

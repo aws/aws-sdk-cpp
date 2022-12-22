@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RelationalTable">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RelationalTable
+  class RelationalTable
   {
   public:
-    RelationalTable();
-    RelationalTable(Aws::Utils::Json::JsonView jsonValue);
-    RelationalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RelationalTable();
+    AWS_QUICKSIGHT_API RelationalTable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RelationalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

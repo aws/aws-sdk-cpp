@@ -24,53 +24,53 @@ namespace ManagedGrafana
 {
 namespace Model
 {
-  class AWS_MANAGEDGRAFANA_API CreateWorkspaceApiKeyResult
+  class CreateWorkspaceApiKeyResult
   {
   public:
-    CreateWorkspaceApiKeyResult();
-    CreateWorkspaceApiKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkspaceApiKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceApiKeyResult();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceApiKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceApiKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline void SetKey(const Aws::String& value) { m_key = value; }
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline void SetKey(const char* value) { m_key.assign(value); }
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline CreateWorkspaceApiKeyResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline CreateWorkspaceApiKeyResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The key token that was created. Use this value as a bearer token to
-     * authenticate HTTP requests to the workspace.</p>
+     * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
+     * to the workspace.</p>
      */
     inline CreateWorkspaceApiKeyResult& WithKey(const char* value) { SetKey(value); return *this;}
 

@@ -25,12 +25,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeProvisioningTemplateVersionResult
+  class DescribeProvisioningTemplateVersionResult
   {
   public:
-    DescribeProvisioningTemplateVersionResult();
-    DescribeProvisioningTemplateVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProvisioningTemplateVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeProvisioningTemplateVersionResult();
+    AWS_IOT_API DescribeProvisioningTemplateVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeProvisioningTemplateVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

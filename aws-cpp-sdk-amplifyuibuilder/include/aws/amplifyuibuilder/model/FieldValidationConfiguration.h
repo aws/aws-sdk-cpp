@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/FieldValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API FieldValidationConfiguration
+  class FieldValidationConfiguration
   {
   public:
-    FieldValidationConfiguration();
-    FieldValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FieldValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API FieldValidationConfiguration();
+    AWS_AMPLIFYUIBUILDER_API FieldValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API FieldValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

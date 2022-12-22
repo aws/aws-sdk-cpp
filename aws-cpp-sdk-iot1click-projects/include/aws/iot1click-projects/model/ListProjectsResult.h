@@ -26,12 +26,12 @@ namespace IoT1ClickProjects
 {
 namespace Model
 {
-  class AWS_IOT1CLICKPROJECTS_API ListProjectsResult
+  class ListProjectsResult
   {
   public:
-    ListProjectsResult();
-    ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKPROJECTS_API ListProjectsResult();
+    AWS_IOT1CLICKPROJECTS_API ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKPROJECTS_API ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API DescribeServicesResult
+  class DescribeServicesResult
   {
   public:
-    DescribeServicesResult();
-    DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DescribeServicesResult();
+    AWS_ECS_API DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

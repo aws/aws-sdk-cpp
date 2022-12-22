@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/MountPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API MountPoint
+  class MountPoint
   {
   public:
-    MountPoint();
-    MountPoint(Aws::Utils::Json::JsonView jsonValue);
-    MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API MountPoint();
+    AWS_BATCH_API MountPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

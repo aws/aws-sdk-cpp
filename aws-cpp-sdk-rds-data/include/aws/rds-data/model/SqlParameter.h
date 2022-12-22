@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API SqlParameter
+  class SqlParameter
   {
   public:
-    SqlParameter();
-    SqlParameter(Aws::Utils::Json::JsonView jsonValue);
-    SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API SqlParameter();
+    AWS_RDSDATASERVICE_API SqlParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

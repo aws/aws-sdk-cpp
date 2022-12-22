@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsBackupBackupPlanLifecycleDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsBackupBackupPlanLifecycleDetails
+  class AwsBackupBackupPlanLifecycleDetails
   {
   public:
-    AwsBackupBackupPlanLifecycleDetails();
-    AwsBackupBackupPlanLifecycleDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsBackupBackupPlanLifecycleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsBackupBackupPlanLifecycleDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupPlanLifecycleDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsBackupBackupPlanLifecycleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

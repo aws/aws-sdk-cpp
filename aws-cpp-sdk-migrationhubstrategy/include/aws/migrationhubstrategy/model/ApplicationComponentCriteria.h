@@ -21,7 +21,9 @@ namespace Model
     SERVER_ID,
     APP_TYPE,
     STRATEGY,
-    DESTINATION
+    DESTINATION,
+    ANALYSIS_STATUS,
+    ERROR_CATEGORY
   };
 
 namespace ApplicationComponentCriteriaMapper

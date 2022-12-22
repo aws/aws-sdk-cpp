@@ -24,12 +24,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API DeleteCustomLineItemResult
+  class DeleteCustomLineItemResult
   {
   public:
-    DeleteCustomLineItemResult();
-    DeleteCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API DeleteCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API DeleteCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API DeleteCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

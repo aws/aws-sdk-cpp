@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ResourceCount">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API ResourceCount
+  class ResourceCount
   {
   public:
-    ResourceCount();
-    ResourceCount(Aws::Utils::Json::JsonView jsonValue);
-    ResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API ResourceCount();
+    AWS_RESOURCEEXPLORER2_API ResourceCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API ResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

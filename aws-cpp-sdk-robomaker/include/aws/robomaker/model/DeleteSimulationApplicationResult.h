@@ -22,12 +22,12 @@ namespace RoboMaker
 {
 namespace Model
 {
-  class AWS_ROBOMAKER_API DeleteSimulationApplicationResult
+  class DeleteSimulationApplicationResult
   {
   public:
-    DeleteSimulationApplicationResult();
-    DeleteSimulationApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSimulationApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API DeleteSimulationApplicationResult();
+    AWS_ROBOMAKER_API DeleteSimulationApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API DeleteSimulationApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

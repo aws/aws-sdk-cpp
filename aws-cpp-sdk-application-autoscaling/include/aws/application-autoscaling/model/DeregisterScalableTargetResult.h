@@ -22,12 +22,12 @@ namespace ApplicationAutoScaling
 {
 namespace Model
 {
-  class AWS_APPLICATIONAUTOSCALING_API DeregisterScalableTargetResult
+  class DeregisterScalableTargetResult
   {
   public:
-    DeregisterScalableTargetResult();
-    DeregisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DeregisterScalableTargetResult();
+    AWS_APPLICATIONAUTOSCALING_API DeregisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DeregisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

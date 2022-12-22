@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Filter">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Filter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API Filter();
+    AWS_AUTOSCALING_API Filter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API Filter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

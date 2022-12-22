@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteCarModeOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API CalculateRouteCarModeOptions
+  class CalculateRouteCarModeOptions
   {
   public:
-    CalculateRouteCarModeOptions();
-    CalculateRouteCarModeOptions(Aws::Utils::Json::JsonView jsonValue);
-    CalculateRouteCarModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API CalculateRouteCarModeOptions();
+    AWS_LOCATIONSERVICE_API CalculateRouteCarModeOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API CalculateRouteCarModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_DRS_API CreateReplicationConfigurationTemplateRequest : public DrsRequest
+  class CreateReplicationConfigurationTemplateRequest : public DrsRequest
   {
   public:
-    CreateReplicationConfigurationTemplateRequest();
+    AWS_DRS_API CreateReplicationConfigurationTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateReplicationConfigurationTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DRS_API Aws::String SerializePayload() const override;
 
 
     /**

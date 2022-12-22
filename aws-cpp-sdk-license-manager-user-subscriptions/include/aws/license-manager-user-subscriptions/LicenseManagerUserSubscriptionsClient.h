@@ -7,6 +7,7 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace LicenseManagerUserSubscriptions
    * <p>With License Manager, you can create user-based subscriptions to utilize
    * licensed software with a per user subscription fee on Amazon EC2 instances.</p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient
+  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,10 +74,15 @@ namespace LicenseManagerUserSubscriptions
         /* End of legacy constructors due deprecation */
         virtual ~LicenseManagerUserSubscriptionsClient();
 
-
         /**
          * <p>Associates the user to an EC2 instance to utilize user-based
-         * subscriptions.</p><p><h3>See Also:</h3>   <a
+         * subscriptions.</p>  <p>Your estimated bill for charges on the number of
+         * users and related costs will take 48 hours to appear for billing periods that
+         * haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services
+         * Billing. For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
+         * your monthly charges</a> in the <i>Amazon Web Services Billing User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/AssociateUser">AWS
          * API Reference</a></p>
          */
@@ -220,7 +226,13 @@ namespace LicenseManagerUserSubscriptions
 
         /**
          * <p>Starts a product subscription for a user with the specified identity
-         * provider.</p><p><h3>See Also:</h3>   <a
+         * provider.</p>  <p>Your estimated bill for charges on the number of users
+         * and related costs will take 48 hours to appear for billing periods that haven't
+         * closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
+         * your monthly charges</a> in the <i>Amazon Web Services Billing User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/StartProductSubscription">AWS
          * API Reference</a></p>
          */
@@ -254,10 +266,29 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual void StopProductSubscriptionAsync(const Model::StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates additional product configuration settings for the registered identity
+         * provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateIdentityProviderSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIdentityProviderSettingsOutcome UpdateIdentityProviderSettings(const Model::UpdateIdentityProviderSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIdentityProviderSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateIdentityProviderSettingsOutcomeCallable UpdateIdentityProviderSettingsCallable(const Model::UpdateIdentityProviderSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateIdentityProviderSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateIdentityProviderSettingsAsync(const Model::UpdateIdentityProviderSettingsRequest& request, const UpdateIdentityProviderSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>;
       void init(const LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration);
 
       LicenseManagerUserSubscriptionsClientConfiguration m_clientConfiguration;

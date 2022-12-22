@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EmailConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType
+  class EmailConfigurationType
   {
   public:
-    EmailConfigurationType();
-    EmailConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    EmailConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

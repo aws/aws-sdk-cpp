@@ -17,6 +17,7 @@
 #include <aws/iot/model/TimeoutConfig.h>
 #include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/SchedulingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -40,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Job();
+    AWS_IOT_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1047,6 +1048,43 @@ namespace Model
      */
     inline Job& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
 
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline const SchedulingConfig& GetSchedulingConfig() const{ return m_schedulingConfig; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline bool SchedulingConfigHasBeenSet() const { return m_schedulingConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline void SetSchedulingConfig(const SchedulingConfig& value) { m_schedulingConfigHasBeenSet = true; m_schedulingConfig = value; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline void SetSchedulingConfig(SchedulingConfig&& value) { m_schedulingConfigHasBeenSet = true; m_schedulingConfig = std::move(value); }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline Job& WithSchedulingConfig(const SchedulingConfig& value) { SetSchedulingConfig(value); return *this;}
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline Job& WithSchedulingConfig(SchedulingConfig&& value) { SetSchedulingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -1114,6 +1152,9 @@ namespace Model
 
     bool m_isConcurrent;
     bool m_isConcurrentHasBeenSet = false;
+
+    SchedulingConfig m_schedulingConfig;
+    bool m_schedulingConfigHasBeenSet = false;
   };
 
 } // namespace Model

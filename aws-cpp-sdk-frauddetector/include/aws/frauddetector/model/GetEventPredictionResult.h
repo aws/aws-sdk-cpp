@@ -27,12 +27,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API GetEventPredictionResult
+  class GetEventPredictionResult
   {
   public:
-    GetEventPredictionResult();
-    GetEventPredictionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEventPredictionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetEventPredictionResult();
+    AWS_FRAUDDETECTOR_API GetEventPredictionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetEventPredictionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

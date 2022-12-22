@@ -26,82 +26,82 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DescribeLaunchConfigurationTemplatesResult
+  class DescribeLaunchConfigurationTemplatesResult
   {
   public:
-    DescribeLaunchConfigurationTemplatesResult();
-    DescribeLaunchConfigurationTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLaunchConfigurationTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeLaunchConfigurationTemplatesResult();
+    AWS_MGN_API DescribeLaunchConfigurationTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeLaunchConfigurationTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline const Aws::Vector<LaunchConfigurationTemplate>& GetItems() const{ return m_items; }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline void SetItems(const Aws::Vector<LaunchConfigurationTemplate>& value) { m_items = value; }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline void SetItems(Aws::Vector<LaunchConfigurationTemplate>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& WithItems(const Aws::Vector<LaunchConfigurationTemplate>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& WithItems(Aws::Vector<LaunchConfigurationTemplate>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& AddItems(const LaunchConfigurationTemplate& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& AddItems(LaunchConfigurationTemplate&& value) { m_items.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Request to disconnect Source Server from service by Server ID.</p>
+     * <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
      */
     inline DescribeLaunchConfigurationTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

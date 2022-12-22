@@ -26,12 +26,12 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
-  class AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationInstanceTaskLogsResult
+  class DescribeReplicationInstanceTaskLogsResult
   {
   public:
-    DescribeReplicationInstanceTaskLogsResult();
-    DescribeReplicationInstanceTaskLogsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReplicationInstanceTaskLogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationInstanceTaskLogsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationInstanceTaskLogsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationInstanceTaskLogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace SupportApp
 {
 namespace Model
 {
-  class AWS_SUPPORTAPP_API PutAccountAliasResult
+  class PutAccountAliasResult
   {
   public:
-    PutAccountAliasResult();
-    PutAccountAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API PutAccountAliasResult();
+    AWS_SUPPORTAPP_API PutAccountAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API PutAccountAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

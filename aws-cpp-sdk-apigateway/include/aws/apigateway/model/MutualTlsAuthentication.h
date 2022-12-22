@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MutualTlsAuthentication">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API MutualTlsAuthentication
+  class MutualTlsAuthentication
   {
   public:
-    MutualTlsAuthentication();
-    MutualTlsAuthentication(Aws::Utils::Json::JsonView jsonValue);
-    MutualTlsAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API MutualTlsAuthentication();
+    AWS_APIGATEWAY_API MutualTlsAuthentication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API MutualTlsAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

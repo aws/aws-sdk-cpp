@@ -7,6 +7,7 @@
 #include <aws/privatenetworks/PrivateNetworks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/privatenetworks/PrivateNetworksServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace PrivateNetworks
    * mobile networks, helps automate setup, and scales capacity on demand to support
    * additional devices as needed.</p>
    */
-  class AWS_PRIVATENETWORKS_API PrivateNetworksClient : public Aws::Client::AWSJsonClient
+  class AWS_PRIVATENETWORKS_API PrivateNetworksClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PrivateNetworksClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace PrivateNetworks
 
         /* End of legacy constructors due deprecation */
         virtual ~PrivateNetworksClient();
-
 
         /**
          * <p>Acknowledges that the specified network order was received.</p><p><h3>See
@@ -538,6 +538,7 @@ namespace PrivateNetworks
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PrivateNetworksEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PrivateNetworksClient>;
       void init(const PrivateNetworksClientConfiguration& clientConfiguration);
 
       PrivateNetworksClientConfiguration m_clientConfiguration;

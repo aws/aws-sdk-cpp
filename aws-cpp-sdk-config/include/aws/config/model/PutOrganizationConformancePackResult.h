@@ -24,12 +24,12 @@ namespace ConfigService
 {
 namespace Model
 {
-  class AWS_CONFIGSERVICE_API PutOrganizationConformancePackResult
+  class PutOrganizationConformancePackResult
   {
   public:
-    PutOrganizationConformancePackResult();
-    PutOrganizationConformancePackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutOrganizationConformancePackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API PutOrganizationConformancePackResult();
+    AWS_CONFIGSERVICE_API PutOrganizationConformancePackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API PutOrganizationConformancePackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

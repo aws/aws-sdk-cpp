@@ -17,7 +17,10 @@ ListConnectorEntitiesRequest::ListConnectorEntitiesRequest() :
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
     m_entitiesPathHasBeenSet(false),
-    m_apiVersionHasBeenSet(false)
+    m_apiVersionHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -45,6 +48,18 @@ Aws::String ListConnectorEntitiesRequest::SerializePayload() const
   if(m_apiVersionHasBeenSet)
   {
    payload.WithString("apiVersion", m_apiVersion);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
 
   }
 

@@ -37,13 +37,13 @@ Not compatible with the inputSecurityGroups property.
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputVpcRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputVpcRequest
+  class InputVpcRequest
   {
   public:
-    InputVpcRequest();
-    InputVpcRequest(Aws::Utils::Json::JsonView jsonValue);
-    InputVpcRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputVpcRequest();
+    AWS_MEDIALIVE_API InputVpcRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputVpcRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -7,6 +7,7 @@
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace ManagedGrafana
    * visualizations to analyze your metrics, logs, and traces without having to
    * build, package, or deploy any hardware to run Grafana servers. </p>
    */
-  class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient
+  class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace ManagedGrafana
         /* End of legacy constructors due deprecation */
         virtual ~ManagedGrafanaClient();
 
-
         /**
          * <p>Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana
          * Enterprise incurs additional fees. For more information, see <a
@@ -125,10 +125,9 @@ namespace ManagedGrafana
         virtual void CreateWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an API key for the workspace. This key can be used to authenticate
-         * requests sent to the workspace's HTTP API. See <a href="
-         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+         * <p>Creates a Grafana API key for the workspace. This key can be used to
+         * authenticate requests sent to the workspace's HTTP API. See <a
+         * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
          * for available APIs and example requests.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey">AWS
          * API Reference</a></p>
@@ -163,7 +162,7 @@ namespace ManagedGrafana
         virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an API key for a workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Grafana API key for the workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey">AWS
          * API Reference</a></p>
          */
@@ -214,6 +213,24 @@ namespace ManagedGrafana
          * An Async wrapper for DescribeWorkspaceAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeWorkspaceAuthenticationAsync(const Model::DescribeWorkspaceAuthenticationRequest& request, const DescribeWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the current configuration string for the given workspace.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkspaceConfigurationOutcome DescribeWorkspaceConfiguration(const Model::DescribeWorkspaceConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWorkspaceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWorkspaceConfigurationOutcomeCallable DescribeWorkspaceConfigurationCallable(const Model::DescribeWorkspaceConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeWorkspaceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWorkspaceConfigurationAsync(const Model::DescribeWorkspaceConfigurationRequest& request, const DescribeWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the Grafana Enterprise license from a workspace.</p><p><h3>See
@@ -359,7 +376,7 @@ namespace ManagedGrafana
          * <p>Modifies an existing Amazon Managed Grafana workspace. If you use this
          * operation and omit any optional parameters, the existing values of those
          * parameters are not changed.</p> <p>To modify the user authentication methods
-         * that the workspace uses, such as SAML or Amazon Web Services SSO, use <a
+         * that the workspace uses, such as SAML or IAM Identity Center, use <a
          * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.</p>
          * <p>To modify which users in the workspace have the <code>Admin</code> and
          * <code>Editor</code> Grafana roles, use <a
@@ -401,10 +418,29 @@ namespace ManagedGrafana
          */
         virtual void UpdateWorkspaceAuthenticationAsync(const Model::UpdateWorkspaceAuthenticationRequest& request, const UpdateWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the configuration string for the given workspace</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWorkspaceConfigurationOutcome UpdateWorkspaceConfiguration(const Model::UpdateWorkspaceConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWorkspaceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateWorkspaceConfigurationOutcomeCallable UpdateWorkspaceConfigurationCallable(const Model::UpdateWorkspaceConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateWorkspaceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateWorkspaceConfigurationAsync(const Model::UpdateWorkspaceConfigurationRequest& request, const UpdateWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ManagedGrafanaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>;
       void init(const ManagedGrafanaClientConfiguration& clientConfiguration);
 
       ManagedGrafanaClientConfiguration m_clientConfiguration;

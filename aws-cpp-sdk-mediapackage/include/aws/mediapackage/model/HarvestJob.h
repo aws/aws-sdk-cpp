@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HarvestJob">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HarvestJob
+  class HarvestJob
   {
   public:
-    HarvestJob();
-    HarvestJob(Aws::Utils::Json::JsonView jsonValue);
-    HarvestJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HarvestJob();
+    AWS_MEDIAPACKAGE_API HarvestJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HarvestJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/AuthScheme.h>
 #include <aws/rds/model/IAMAuthMode.h>
+#include <aws/rds/model/ClientPasswordAuthType.h>
 #include <utility>
 
 namespace Aws
@@ -31,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UserAuthConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API UserAuthConfig
+  class UserAuthConfig
   {
   public:
-    UserAuthConfig();
-    UserAuthConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserAuthConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API UserAuthConfig();
+    AWS_RDS_API UserAuthConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API UserAuthConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -274,6 +275,37 @@ namespace Model
      */
     inline UserAuthConfig& WithIAMAuth(IAMAuthMode&& value) { SetIAMAuth(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline const ClientPasswordAuthType& GetClientPasswordAuthType() const{ return m_clientPasswordAuthType; }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline bool ClientPasswordAuthTypeHasBeenSet() const { return m_clientPasswordAuthTypeHasBeenSet; }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline void SetClientPasswordAuthType(const ClientPasswordAuthType& value) { m_clientPasswordAuthTypeHasBeenSet = true; m_clientPasswordAuthType = value; }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline void SetClientPasswordAuthType(ClientPasswordAuthType&& value) { m_clientPasswordAuthTypeHasBeenSet = true; m_clientPasswordAuthType = std::move(value); }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline UserAuthConfig& WithClientPasswordAuthType(const ClientPasswordAuthType& value) { SetClientPasswordAuthType(value); return *this;}
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline UserAuthConfig& WithClientPasswordAuthType(ClientPasswordAuthType&& value) { SetClientPasswordAuthType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -290,6 +322,9 @@ namespace Model
 
     IAMAuthMode m_iAMAuth;
     bool m_iAMAuthHasBeenSet = false;
+
+    ClientPasswordAuthType m_clientPasswordAuthType;
+    bool m_clientPasswordAuthTypeHasBeenSet = false;
   };
 
 } // namespace Model

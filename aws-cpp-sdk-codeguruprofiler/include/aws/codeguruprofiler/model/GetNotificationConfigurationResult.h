@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetNotificationConfigurationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API GetNotificationConfigurationResult
+  class GetNotificationConfigurationResult
   {
   public:
-    GetNotificationConfigurationResult();
-    GetNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API GetNotificationConfigurationResult();
+    AWS_CODEGURUPROFILER_API GetNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API GetNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

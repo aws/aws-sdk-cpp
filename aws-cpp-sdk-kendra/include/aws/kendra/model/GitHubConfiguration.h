@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GitHubConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GitHubConfiguration
+  class GitHubConfiguration
   {
   public:
-    GitHubConfiguration();
-    GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GitHubConfiguration();
+    AWS_KENDRA_API GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,88 +153,88 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline GitHubConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline GitHubConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline GitHubConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

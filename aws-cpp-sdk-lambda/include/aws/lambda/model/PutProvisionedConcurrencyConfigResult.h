@@ -25,12 +25,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult
+  class PutProvisionedConcurrencyConfigResult
   {
   public:
-    PutProvisionedConcurrencyConfigResult();
-    PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutProvisionedConcurrencyConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult();
+    AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -66,17 +66,23 @@ namespace Model
 
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline int GetAllocatedProvisionedConcurrentExecutions() const{ return m_allocatedProvisionedConcurrentExecutions; }
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline void SetAllocatedProvisionedConcurrentExecutions(int value) { m_allocatedProvisionedConcurrentExecutions = value; }
 
     /**
-     * <p>The amount of provisioned concurrency allocated.</p>
+     * <p>The amount of provisioned concurrency allocated. When a weighted alias is
+     * used during linear and canary deployments, this value fluctuates depending on
+     * the amount of concurrency that is provisioned for the function versions.</p>
      */
     inline PutProvisionedConcurrencyConfigResult& WithAllocatedProvisionedConcurrentExecutions(int value) { SetAllocatedProvisionedConcurrentExecutions(value); return *this;}
 

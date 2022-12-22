@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksPodPropertiesDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksPodPropertiesDetail
+  class EksPodPropertiesDetail
   {
   public:
-    EksPodPropertiesDetail();
-    EksPodPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
-    EksPodPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksPodPropertiesDetail();
+    AWS_BATCH_API EksPodPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksPodPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,12 +203,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline const Aws::String& GetDnsPolicy() const{ return m_dnsPolicy; }
 
@@ -217,12 +227,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline bool DnsPolicyHasBeenSet() const { return m_dnsPolicyHasBeenSet; }
 
@@ -231,12 +251,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline void SetDnsPolicy(const Aws::String& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = value; }
 
@@ -245,12 +275,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline void SetDnsPolicy(Aws::String&& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = std::move(value); }
 
@@ -259,12 +299,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline void SetDnsPolicy(const char* value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy.assign(value); }
 
@@ -273,12 +323,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline EksPodPropertiesDetail& WithDnsPolicy(const Aws::String& value) { SetDnsPolicy(value); return *this;}
 
@@ -287,12 +347,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline EksPodPropertiesDetail& WithDnsPolicy(Aws::String&& value) { SetDnsPolicy(std::move(value)); return *this;}
 
@@ -301,12 +371,22 @@ namespace Model
      * If the <code>hostNetwork</code> parameter is not specified, the default is
      * <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that
      * any DNS query that does not match the configured cluster domain suffix is
-     * forwarded to the upstream nameserver inherited from the node. For more
-     * information, see <a
+     * forwarded to the upstream nameserver inherited from the node. If no value was
+     * specified for <code>dnsPolicy</code> in the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+     * API operation, then no value will be returned for <code>dnsPolicy</code> by
+     * either of <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
+     * API operations. The pod spec setting will contain either
+     * <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on
+     * the value of the <code>hostNetwork</code> parameter. For more information, see
+     * <a
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline EksPodPropertiesDetail& WithDnsPolicy(const char* value) { SetDnsPolicy(value); return *this;}
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/IncidentRecordSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API IncidentRecordSummary
+  class IncidentRecordSummary
   {
   public:
-    IncidentRecordSummary();
-    IncidentRecordSummary(Aws::Utils::Json::JsonView jsonValue);
-    IncidentRecordSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API IncidentRecordSummary();
+    AWS_SSMINCIDENTS_API IncidentRecordSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API IncidentRecordSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

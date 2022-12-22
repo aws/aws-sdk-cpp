@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InventoryRetrievalJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API InventoryRetrievalJobInput
+  class InventoryRetrievalJobInput
   {
   public:
-    InventoryRetrievalJobInput();
-    InventoryRetrievalJobInput(Aws::Utils::Json::JsonView jsonValue);
-    InventoryRetrievalJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API InventoryRetrievalJobInput();
+    AWS_GLACIER_API InventoryRetrievalJobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API InventoryRetrievalJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsKinesisStreamDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsKinesisStreamDetails
+  class AwsKinesisStreamDetails
   {
   public:
-    AwsKinesisStreamDetails();
-    AwsKinesisStreamDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsKinesisStreamDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsKinesisStreamDetails();
+    AWS_SECURITYHUB_API AwsKinesisStreamDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsKinesisStreamDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

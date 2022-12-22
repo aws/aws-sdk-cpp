@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MediaConvert
   /**
    * AWS Elemental MediaConvert
    */
-  class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MediaConvert
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaConvertClient();
-
 
         /**
          * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
@@ -591,6 +591,7 @@ namespace MediaConvert
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaConvertEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>;
       void init(const MediaConvertClientConfiguration& clientConfiguration);
 
       MediaConvertClientConfiguration m_clientConfiguration;

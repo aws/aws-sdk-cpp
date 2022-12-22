@@ -7,6 +7,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/swf/SWFServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace SWF
    * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
    * Developer Guide</a> </i>.</p>
    */
-  class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient
+  class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace SWF
 
         /* End of legacy constructors due deprecation */
         virtual ~SWFClient();
-
 
         /**
          * <p>Returns the number of closed workflow executions within the given domain that
@@ -1457,6 +1457,7 @@ namespace SWF
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SWFEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>;
       void init(const SWFClientConfiguration& clientConfiguration);
 
       SWFClientConfiguration m_clientConfiguration;

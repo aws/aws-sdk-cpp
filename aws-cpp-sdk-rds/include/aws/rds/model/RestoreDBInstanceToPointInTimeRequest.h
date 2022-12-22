@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTimeMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API RestoreDBInstanceToPointInTimeRequest : public RDSRequest
+  class RestoreDBInstanceToPointInTimeRequest : public RDSRequest
   {
   public:
-    RestoreDBInstanceToPointInTimeRequest();
+    AWS_RDS_API RestoreDBInstanceToPointInTimeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreDBInstanceToPointInTime"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -1894,7 +1894,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
@@ -1910,7 +1910,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
@@ -1926,7 +1926,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
@@ -1942,7 +1942,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}

@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ResetEbsDefaultKmsKeyIdResponse
+  class ResetEbsDefaultKmsKeyIdResponse
   {
   public:
-    ResetEbsDefaultKmsKeyIdResponse();
-    ResetEbsDefaultKmsKeyIdResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ResetEbsDefaultKmsKeyIdResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ResetEbsDefaultKmsKeyIdResponse();
+    AWS_EC2_API ResetEbsDefaultKmsKeyIdResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ResetEbsDefaultKmsKeyIdResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

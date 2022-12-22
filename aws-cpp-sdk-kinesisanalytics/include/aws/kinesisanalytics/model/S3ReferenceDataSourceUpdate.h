@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSourceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API S3ReferenceDataSourceUpdate
+  class S3ReferenceDataSourceUpdate
   {
   public:
-    S3ReferenceDataSourceUpdate();
-    S3ReferenceDataSourceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    S3ReferenceDataSourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API S3ReferenceDataSourceUpdate();
+    AWS_KINESISANALYTICS_API S3ReferenceDataSourceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API S3ReferenceDataSourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

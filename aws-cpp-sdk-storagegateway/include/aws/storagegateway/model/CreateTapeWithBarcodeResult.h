@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcodeOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API CreateTapeWithBarcodeResult
+  class CreateTapeWithBarcodeResult
   {
   public:
-    CreateTapeWithBarcodeResult();
-    CreateTapeWithBarcodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTapeWithBarcodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CreateTapeWithBarcodeResult();
+    AWS_STORAGEGATEWAY_API CreateTapeWithBarcodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CreateTapeWithBarcodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/MediaCapturePipelineSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration
+  class MediaCapturePipelineSourceConfiguration
   {
   public:
-    MediaCapturePipelineSourceConfiguration();
-    MediaCapturePipelineSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MediaCapturePipelineSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

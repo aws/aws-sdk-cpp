@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/SnapshotDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API SnapshotDetails
+  class SnapshotDetails
   {
   public:
-    SnapshotDetails();
-    SnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API SnapshotDetails();
+    AWS_GAMESPARKS_API SnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API SnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

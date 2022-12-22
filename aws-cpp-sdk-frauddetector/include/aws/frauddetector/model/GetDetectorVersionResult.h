@@ -29,12 +29,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API GetDetectorVersionResult
+  class GetDetectorVersionResult
   {
   public:
-    GetDetectorVersionResult();
-    GetDetectorVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetDetectorVersionResult();
+    AWS_FRAUDDETECTOR_API GetDetectorVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

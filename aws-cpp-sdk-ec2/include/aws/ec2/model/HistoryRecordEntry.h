@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecordEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API HistoryRecordEntry
+  class HistoryRecordEntry
   {
   public:
-    HistoryRecordEntry();
-    HistoryRecordEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HistoryRecordEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HistoryRecordEntry();
+    AWS_EC2_API HistoryRecordEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HistoryRecordEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

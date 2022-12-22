@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Invitation">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Invitation
+  class Invitation
   {
   public:
-    Invitation();
-    Invitation(Aws::Utils::Json::JsonView jsonValue);
-    Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Invitation();
+    AWS_SECURITYHUB_API Invitation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

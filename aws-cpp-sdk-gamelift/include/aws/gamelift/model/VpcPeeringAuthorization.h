@@ -29,22 +29,19 @@ namespace Model
    * an Amazon GameLift fleet and another VPC on an account you have access to. This
    * authorization must exist and be valid for the peering connection to be
    * established. Authorizations are valid for 24 hours after they are issued.</p>
-   * <p> <b>Related actions</b> </p> <p> <a>CreateVpcPeeringAuthorization</a> |
-   * <a>DescribeVpcPeeringAuthorizations</a> | <a>DeleteVpcPeeringAuthorization</a> |
-   * <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a> |
-   * <a>DeleteVpcPeeringConnection</a> | <a
+   * <p> <b>Related actions</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringAuthorization">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API VpcPeeringAuthorization
+  class VpcPeeringAuthorization
   {
   public:
-    VpcPeeringAuthorization();
-    VpcPeeringAuthorization(Aws::Utils::Json::JsonView jsonValue);
-    VpcPeeringAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API VpcPeeringAuthorization();
+    AWS_GAMELIFT_API VpcPeeringAuthorization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API VpcPeeringAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,42 +102,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline VpcPeeringAuthorization& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline VpcPeeringAuthorization& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
     inline VpcPeeringAuthorization& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
 

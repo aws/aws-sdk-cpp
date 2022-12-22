@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateAppRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API CreateAppRequest : public AmplifyRequest
+  class CreateAppRequest : public AmplifyRequest
   {
   public:
-    CreateAppRequest();
+    AWS_AMPLIFY_API CreateAppRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApp"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -165,32 +165,56 @@ namespace Model
 
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline CreateAppRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline CreateAppRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 

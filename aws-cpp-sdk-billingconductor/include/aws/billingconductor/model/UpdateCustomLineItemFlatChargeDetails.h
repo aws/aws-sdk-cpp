@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItemFlatChargeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails
+  class UpdateCustomLineItemFlatChargeDetails
   {
   public:
-    UpdateCustomLineItemFlatChargeDetails();
-    UpdateCustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails();
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

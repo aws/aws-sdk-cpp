@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListCustomLineItemsFilter
+  class ListCustomLineItemsFilter
   {
   public:
-    ListCustomLineItemsFilter();
-    ListCustomLineItemsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListCustomLineItemsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsFilter();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

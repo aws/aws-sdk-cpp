@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ASN1Subject">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API ASN1Subject
+  class ASN1Subject
   {
   public:
-    ASN1Subject();
-    ASN1Subject(Aws::Utils::Json::JsonView jsonValue);
-    ASN1Subject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API ASN1Subject();
+    AWS_ACMPCA_API ASN1Subject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API ASN1Subject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

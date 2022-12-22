@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StorageTypeLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API StorageTypeLimit
+  class StorageTypeLimit
   {
   public:
-    StorageTypeLimit();
-    StorageTypeLimit(Aws::Utils::Json::JsonView jsonValue);
-    StorageTypeLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API StorageTypeLimit();
+    AWS_ELASTICSEARCHSERVICE_API StorageTypeLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API StorageTypeLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

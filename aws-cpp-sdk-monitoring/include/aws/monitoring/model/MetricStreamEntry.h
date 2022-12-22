@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricStreamEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricStreamEntry
+  class MetricStreamEntry
   {
   public:
-    MetricStreamEntry();
-    MetricStreamEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricStreamEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricStreamEntry();
+    AWS_CLOUDWATCH_API MetricStreamEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricStreamEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

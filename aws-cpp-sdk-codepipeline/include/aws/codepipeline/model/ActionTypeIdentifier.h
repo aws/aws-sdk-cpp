@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeIdentifier
+  class ActionTypeIdentifier
   {
   public:
-    ActionTypeIdentifier();
-    ActionTypeIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeIdentifier();
+    AWS_CODEPIPELINE_API ActionTypeIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

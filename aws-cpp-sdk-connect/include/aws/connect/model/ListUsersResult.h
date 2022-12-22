@@ -26,12 +26,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListUsersResult
+  class ListUsersResult
   {
   public:
-    ListUsersResult();
-    ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListUsersResult();
+    AWS_CONNECT_API ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

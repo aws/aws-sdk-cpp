@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServicePipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ServicePipeline
+  class ServicePipeline
   {
   public:
-    ServicePipeline();
-    ServicePipeline(Aws::Utils::Json::JsonView jsonValue);
-    ServicePipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ServicePipeline();
+    AWS_PROTON_API ServicePipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ServicePipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

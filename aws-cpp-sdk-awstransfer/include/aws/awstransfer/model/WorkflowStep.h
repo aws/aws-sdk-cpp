@@ -10,6 +10,7 @@
 #include <aws/awstransfer/model/CustomStepDetails.h>
 #include <aws/awstransfer/model/DeleteStepDetails.h>
 #include <aws/awstransfer/model/TagStepDetails.h>
+#include <aws/awstransfer/model/DecryptStepDetails.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowStep">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API WorkflowStep
+  class WorkflowStep
   {
   public:
-    WorkflowStep();
-    WorkflowStep(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API WorkflowStep();
+    AWS_TRANSFER_API WorkflowStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API WorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,6 +256,25 @@ namespace Model
      */
     inline WorkflowStep& WithTagStepDetails(TagStepDetails&& value) { SetTagStepDetails(std::move(value)); return *this;}
 
+
+    
+    inline const DecryptStepDetails& GetDecryptStepDetails() const{ return m_decryptStepDetails; }
+
+    
+    inline bool DecryptStepDetailsHasBeenSet() const { return m_decryptStepDetailsHasBeenSet; }
+
+    
+    inline void SetDecryptStepDetails(const DecryptStepDetails& value) { m_decryptStepDetailsHasBeenSet = true; m_decryptStepDetails = value; }
+
+    
+    inline void SetDecryptStepDetails(DecryptStepDetails&& value) { m_decryptStepDetailsHasBeenSet = true; m_decryptStepDetails = std::move(value); }
+
+    
+    inline WorkflowStep& WithDecryptStepDetails(const DecryptStepDetails& value) { SetDecryptStepDetails(value); return *this;}
+
+    
+    inline WorkflowStep& WithDecryptStepDetails(DecryptStepDetails&& value) { SetDecryptStepDetails(std::move(value)); return *this;}
+
   private:
 
     WorkflowStepType m_type;
@@ -271,6 +291,9 @@ namespace Model
 
     TagStepDetails m_tagStepDetails;
     bool m_tagStepDetailsHasBeenSet = false;
+
+    DecryptStepDetails m_decryptStepDetails;
+    bool m_decryptStepDetailsHasBeenSet = false;
   };
 
 } // namespace Model

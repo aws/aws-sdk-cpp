@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskSet">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API TaskSet
+  class TaskSet
   {
   public:
-    TaskSet();
-    TaskSet(Aws::Utils::Json::JsonView jsonValue);
-    TaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API TaskSet();
+    AWS_ECS_API TaskSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API TaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,7 +226,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
@@ -234,7 +234,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
@@ -242,7 +242,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
@@ -250,7 +250,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
@@ -258,7 +258,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
@@ -266,7 +266,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
@@ -274,7 +274,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
@@ -282,7 +282,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
@@ -1061,7 +1061,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1075,7 +1075,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1089,7 +1089,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1103,7 +1103,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1117,7 +1117,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1131,7 +1131,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no

@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AcceptTransitGatewayMulticastDomainAssociationsResponse
+  class AcceptTransitGatewayMulticastDomainAssociationsResponse
   {
   public:
-    AcceptTransitGatewayMulticastDomainAssociationsResponse();
-    AcceptTransitGatewayMulticastDomainAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AcceptTransitGatewayMulticastDomainAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AcceptTransitGatewayMulticastDomainAssociationsResponse();
+    AWS_EC2_API AcceptTransitGatewayMulticastDomainAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AcceptTransitGatewayMulticastDomainAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline const TransitGatewayMulticastDomainAssociations& GetAssociations() const{ return m_associations; }
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline void SetAssociations(const TransitGatewayMulticastDomainAssociations& value) { m_associations = value; }
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline void SetAssociations(TransitGatewayMulticastDomainAssociations&& value) { m_associations = std::move(value); }
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline AcceptTransitGatewayMulticastDomainAssociationsResponse& WithAssociations(const TransitGatewayMulticastDomainAssociations& value) { SetAssociations(value); return *this;}
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline AcceptTransitGatewayMulticastDomainAssociationsResponse& WithAssociations(TransitGatewayMulticastDomainAssociations&& value) { SetAssociations(std::move(value)); return *this;}
 
 

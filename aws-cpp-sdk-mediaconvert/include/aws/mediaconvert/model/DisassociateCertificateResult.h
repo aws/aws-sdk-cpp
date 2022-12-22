@@ -22,12 +22,12 @@ namespace MediaConvert
 {
 namespace Model
 {
-  class AWS_MEDIACONVERT_API DisassociateCertificateResult
+  class DisassociateCertificateResult
   {
   public:
-    DisassociateCertificateResult();
-    DisassociateCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API DisassociateCertificateResult();
+    AWS_MEDIACONVERT_API DisassociateCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API DisassociateCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

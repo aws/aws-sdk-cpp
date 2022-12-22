@@ -25,12 +25,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API DetectKeyPhrasesResult
+  class DetectKeyPhrasesResult
   {
   public:
-    DetectKeyPhrasesResult();
-    DetectKeyPhrasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectKeyPhrasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DetectKeyPhrasesResult();
+    AWS_COMPREHEND_API DetectKeyPhrasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DetectKeyPhrasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

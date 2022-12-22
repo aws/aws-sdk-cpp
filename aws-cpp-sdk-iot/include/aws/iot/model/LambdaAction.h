@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/LambdaAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API LambdaAction
+  class LambdaAction
   {
   public:
-    LambdaAction();
-    LambdaAction(Aws::Utils::Json::JsonView jsonValue);
-    LambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API LambdaAction();
+    AWS_IOT_API LambdaAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API LambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

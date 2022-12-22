@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AnomalyGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AnomalyGroup
+  class AnomalyGroup
   {
   public:
-    AnomalyGroup();
-    AnomalyGroup(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AnomalyGroup();
+    AWS_LOOKOUTMETRICS_API AnomalyGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AnomalyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

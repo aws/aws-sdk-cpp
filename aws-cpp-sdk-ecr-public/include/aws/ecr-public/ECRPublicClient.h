@@ -7,6 +7,7 @@
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace ECRPublic
    * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon
    * Elastic Container Registry API Reference</a>.</p>
    */
-  class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient
+  class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace ECRPublic
 
         /* End of legacy constructors due deprecation */
         virtual ~ECRPublicClient();
-
 
         /**
          * <p>Checks the availability of one or more image layers within a repository in a
@@ -549,6 +549,7 @@ namespace ECRPublic
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ECRPublicEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>;
       void init(const ECRPublicClientConfiguration& clientConfiguration);
 
       ECRPublicClientConfiguration m_clientConfiguration;

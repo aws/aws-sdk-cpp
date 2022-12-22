@@ -7,6 +7,7 @@
 #include <aws/kinesis-video-media/KinesisVideoMedia_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace KinesisVideoMedia
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEOMEDIA_API KinesisVideoMediaClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEOMEDIA_API KinesisVideoMediaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoMediaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace KinesisVideoMedia
         /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoMediaClient();
 
-
         /**
          * <p> Use this API to retrieve media content from a Kinesis video stream. In the
          * request, you identify the stream name or stream Amazon Resource Name (ARN), and
@@ -125,6 +125,7 @@ namespace KinesisVideoMedia
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisVideoMediaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoMediaClient>;
       void init(const KinesisVideoMediaClientConfiguration& clientConfiguration);
 
       KinesisVideoMediaClientConfiguration m_clientConfiguration;

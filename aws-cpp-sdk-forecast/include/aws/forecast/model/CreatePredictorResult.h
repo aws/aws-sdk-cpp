@@ -24,12 +24,12 @@ namespace ForecastService
 {
 namespace Model
 {
-  class AWS_FORECASTSERVICE_API CreatePredictorResult
+  class CreatePredictorResult
   {
   public:
-    CreatePredictorResult();
-    CreatePredictorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePredictorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API CreatePredictorResult();
+    AWS_FORECASTSERVICE_API CreatePredictorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API CreatePredictorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

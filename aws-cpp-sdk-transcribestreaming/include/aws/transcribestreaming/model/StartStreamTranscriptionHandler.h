@@ -24,24 +24,24 @@ namespace Model
         UNKNOWN
     };
 
-    class AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler : public Aws::Utils::Event::EventStreamHandler
+    class StartStreamTranscriptionHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const TranscriptEvent&)> TranscriptEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& error)> ErrorCallback;
 
     public:
-        StartStreamTranscriptionHandler();
-        StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler&) = default;
+        AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler();
+        AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler&) = default;
 
-        virtual void OnEvent() override;
+        AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 
         inline void SetTranscriptEventCallback(const TranscriptEventCallback& callback) { m_onTranscriptEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
     private:
-        void HandleEventInMessage();
-        void HandleErrorInMessage();
-        void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
+        AWS_TRANSCRIBESTREAMINGSERVICE_API void HandleEventInMessage();
+        AWS_TRANSCRIBESTREAMINGSERVICE_API void HandleErrorInMessage();
+        AWS_TRANSCRIBESTREAMINGSERVICE_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
         TranscriptEventCallback m_onTranscriptEvent;
         ErrorCallback m_onError;

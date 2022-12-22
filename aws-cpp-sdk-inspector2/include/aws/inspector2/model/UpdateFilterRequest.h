@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR2_API UpdateFilterRequest : public Inspector2Request
+  class UpdateFilterRequest : public Inspector2Request
   {
   public:
-    UpdateFilterRequest();
+    AWS_INSPECTOR2_API UpdateFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
     /**

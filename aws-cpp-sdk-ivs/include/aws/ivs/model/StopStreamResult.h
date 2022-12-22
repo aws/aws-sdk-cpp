@@ -22,12 +22,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API StopStreamResult
+  class StopStreamResult
   {
   public:
-    StopStreamResult();
-    StopStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API StopStreamResult();
+    AWS_IVS_API StopStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API StopStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

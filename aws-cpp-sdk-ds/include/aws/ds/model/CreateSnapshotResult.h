@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshotResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API CreateSnapshotResult
+  class CreateSnapshotResult
   {
   public:
-    CreateSnapshotResult();
-    CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API CreateSnapshotResult();
+    AWS_DIRECTORYSERVICE_API CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

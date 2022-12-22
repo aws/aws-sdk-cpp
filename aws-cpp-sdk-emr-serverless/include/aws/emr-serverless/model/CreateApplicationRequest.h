@@ -12,6 +12,7 @@
 #include <aws/emr-serverless/model/AutoStartConfig.h>
 #include <aws/emr-serverless/model/AutoStopConfig.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
+#include <aws/emr-serverless/model/Architecture.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -25,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMRSERVERLESS_API CreateApplicationRequest : public EMRServerlessRequest
+  class CreateApplicationRequest : public EMRServerlessRequest
   {
   public:
-    CreateApplicationRequest();
+    AWS_EMRSERVERLESS_API CreateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMRSERVERLESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -491,6 +492,37 @@ namespace Model
      */
     inline CreateApplicationRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline CreateApplicationRequest& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline CreateApplicationRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -522,6 +554,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
+
+    Architecture m_architecture;
+    bool m_architectureHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseParameter
+  class RelationalDatabaseParameter
   {
   public:
-    RelationalDatabaseParameter();
-    RelationalDatabaseParameter(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseParameter();
+    AWS_LIGHTSAIL_API RelationalDatabaseParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

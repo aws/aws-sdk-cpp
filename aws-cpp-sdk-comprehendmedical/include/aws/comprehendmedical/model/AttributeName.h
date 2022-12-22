@@ -19,7 +19,12 @@ namespace Model
     SIGN,
     SYMPTOM,
     DIAGNOSIS,
-    NEGATION
+    NEGATION,
+    PERTAINS_TO_FAMILY,
+    HYPOTHETICAL,
+    LOW_CONFIDENCE,
+    PAST_HISTORY,
+    FUTURE
   };
 
 namespace AttributeNameMapper

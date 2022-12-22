@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IndexingFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API IndexingFilter
+  class IndexingFilter
   {
   public:
-    IndexingFilter();
-    IndexingFilter(Aws::Utils::Json::JsonView jsonValue);
-    IndexingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API IndexingFilter();
+    AWS_IOT_API IndexingFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API IndexingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

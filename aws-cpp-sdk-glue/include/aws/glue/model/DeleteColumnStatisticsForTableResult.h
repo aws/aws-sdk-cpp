@@ -22,12 +22,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API DeleteColumnStatisticsForTableResult
+  class DeleteColumnStatisticsForTableResult
   {
   public:
-    DeleteColumnStatisticsForTableResult();
-    DeleteColumnStatisticsForTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteColumnStatisticsForTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API DeleteColumnStatisticsForTableResult();
+    AWS_GLUE_API DeleteColumnStatisticsForTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API DeleteColumnStatisticsForTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

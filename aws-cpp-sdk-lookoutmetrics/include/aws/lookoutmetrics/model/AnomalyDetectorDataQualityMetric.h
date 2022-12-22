@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AnomalyDetectorDataQualityMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AnomalyDetectorDataQualityMetric
+  class AnomalyDetectorDataQualityMetric
   {
   public:
-    AnomalyDetectorDataQualityMetric();
-    AnomalyDetectorDataQualityMetric(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyDetectorDataQualityMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorDataQualityMetric();
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorDataQualityMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorDataQualityMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

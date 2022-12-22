@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/AppInstanceUserEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpoint
+  class AppInstanceUserEndpoint
   {
   public:
-    AppInstanceUserEndpoint();
-    AppInstanceUserEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceUserEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpoint();
+    AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

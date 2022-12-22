@@ -24,12 +24,12 @@ namespace LicenseManagerUserSubscriptions
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult
+  class AssociateUserResult
   {
   public:
-    AssociateUserResult();
-    AssociateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

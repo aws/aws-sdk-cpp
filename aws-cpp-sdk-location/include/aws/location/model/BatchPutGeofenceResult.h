@@ -26,12 +26,12 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API BatchPutGeofenceResult
+  class BatchPutGeofenceResult
   {
   public:
-    BatchPutGeofenceResult();
-    BatchPutGeofenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchPutGeofenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceResult();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

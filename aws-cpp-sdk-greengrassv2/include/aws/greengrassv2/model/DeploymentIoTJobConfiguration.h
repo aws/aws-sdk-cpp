@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeploymentIoTJobConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration
+  class DeploymentIoTJobConfiguration
   {
   public:
-    DeploymentIoTJobConfiguration();
-    DeploymentIoTJobConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentIoTJobConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration();
+    AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

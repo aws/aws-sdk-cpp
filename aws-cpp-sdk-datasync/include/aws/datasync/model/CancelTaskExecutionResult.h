@@ -22,12 +22,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API CancelTaskExecutionResult
+  class CancelTaskExecutionResult
   {
   public:
-    CancelTaskExecutionResult();
-    CancelTaskExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelTaskExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CancelTaskExecutionResult();
+    AWS_DATASYNC_API CancelTaskExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CancelTaskExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

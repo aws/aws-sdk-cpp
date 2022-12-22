@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ImageFailure
+  class ImageFailure
   {
   public:
-    ImageFailure();
-    ImageFailure(Aws::Utils::Json::JsonView jsonValue);
-    ImageFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ImageFailure();
+    AWS_ECR_API ImageFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ImageFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

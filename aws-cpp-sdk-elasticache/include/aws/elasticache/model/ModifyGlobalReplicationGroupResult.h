@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult
+  class ModifyGlobalReplicationGroupResult
   {
   public:
-    ModifyGlobalReplicationGroupResult();
-    ModifyGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult();
+    AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

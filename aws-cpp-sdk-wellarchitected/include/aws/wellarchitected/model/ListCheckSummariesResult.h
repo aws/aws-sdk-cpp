@@ -26,12 +26,12 @@ namespace WellArchitected
 {
 namespace Model
 {
-  class AWS_WELLARCHITECTED_API ListCheckSummariesResult
+  class ListCheckSummariesResult
   {
   public:
-    ListCheckSummariesResult();
-    ListCheckSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCheckSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListCheckSummariesResult();
+    AWS_WELLARCHITECTED_API ListCheckSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListCheckSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

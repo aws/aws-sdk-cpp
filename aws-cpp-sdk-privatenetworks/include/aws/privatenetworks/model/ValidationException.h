@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API ValidationException();
+    AWS_PRIVATENETWORKS_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

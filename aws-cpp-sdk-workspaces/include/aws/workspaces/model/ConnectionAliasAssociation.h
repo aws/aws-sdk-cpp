@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ConnectionAliasAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ConnectionAliasAssociation
+  class ConnectionAliasAssociation
   {
   public:
-    ConnectionAliasAssociation();
-    ConnectionAliasAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionAliasAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ConnectionAliasAssociation();
+    AWS_WORKSPACES_API ConnectionAliasAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ConnectionAliasAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

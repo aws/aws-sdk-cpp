@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API SendContactMethodVerificationResult
+  class SendContactMethodVerificationResult
   {
   public:
-    SendContactMethodVerificationResult();
-    SendContactMethodVerificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendContactMethodVerificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API SendContactMethodVerificationResult();
+    AWS_LIGHTSAIL_API SendContactMethodVerificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API SendContactMethodVerificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

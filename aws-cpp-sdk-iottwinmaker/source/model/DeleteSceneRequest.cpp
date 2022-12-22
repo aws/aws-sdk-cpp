@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteSceneRequest::DeleteSceneRequest() : 
-    m_sceneIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_sceneIdHasBeenSet(false)
 {
 }
 

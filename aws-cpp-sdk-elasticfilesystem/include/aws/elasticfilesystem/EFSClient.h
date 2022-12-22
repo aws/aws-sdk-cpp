@@ -7,6 +7,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace EFS
    * href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic
    * File System User Guide</a>.</p>
    */
-  class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient
+  class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace EFS
         /* End of legacy constructors due deprecation */
         virtual ~EFSClient();
 
-
         /**
          * <p>Creates an EFS access point. An access point is an application-specific view
          * into an EFS file system that applies an operating system user and group, and a
@@ -91,8 +91,12 @@ namespace EFS
          * directory. Applications using the access point can only access data in the
          * application's own directory and any subdirectories. To learn more, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
-         * a file system using EFS access points</a>.</p> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+         * a file system using EFS access points</a>.</p>  <p>If multiple requests to
+         * create access points on the same file system are sent in quick succession, and
+         * the file system is near the limit of 120 access points, you may experience a
+         * throttling response for these requests. This is to ensure that the file system
+         * does not exceed the stated access point limit.</p>  <p>This operation
+         * requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
          * API Reference</a></p>
@@ -800,16 +804,16 @@ namespace EFS
         virtual void PutFileSystemPolicyAsync(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this action to manage EFS lifecycle management and intelligent tiering. A
-         * <code>LifecycleConfiguration</code> consists of one or more
-         * <code>LifecyclePolicy</code> objects that define the following:</p> <ul> <li>
-         * <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions
-         * files in a file system into the lower-cost Infrequent Access (IA) storage
-         * class.</p> <p>To enable EFS Lifecycle management, set the value of
+         * <p>Use this action to manage EFS lifecycle management and EFS
+         * Intelligent-Tiering. A <code>LifecycleConfiguration</code> consists of one or
+         * more <code>LifecyclePolicy</code> objects that define the following:</p> <ul>
+         * <li> <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically
+         * transitions files in a file system into the lower-cost EFS Infrequent Access
+         * (IA) storage class.</p> <p>To enable EFS Lifecycle management, set the value of
          * <code>TransitionToIA</code> to one of the available options.</p> </li> <li> <p>
-         * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files
-         * from IA back into the file system's primary storage class (Standard or One Zone
-         * Standard.</p> <p>To enable EFS Intelligent Tiering, set the value of
+         * <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files
+         * from IA back into the file system's primary storage class (EFS Standard or EFS
+         * One Zone Standard).</p> <p>To enable EFS Intelligent-Tiering, set the value of
          * <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>.</p>
          * </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
@@ -819,11 +823,11 @@ namespace EFS
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
          * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
          * <code>LifecyclePolicies</code> array in the request body deletes any existing
-         * <code>LifecycleConfiguration</code> and turns off lifecycle management and
-         * intelligent tiering for the file system.</p> <p>In the request, specify the
+         * <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS
+         * Intelligent-Tiering for the file system.</p> <p>In the request, specify the
          * following: </p> <ul> <li> <p>The ID for the file system for which you are
-         * enabling, disabling, or modifying lifecycle management and intelligent
-         * tiering.</p> </li> <li> <p>A <code>LifecyclePolicies</code> array of
+         * enabling, disabling, or modifying lifecycle management and EFS
+         * Intelligent-Tiering.</p> </li> <li> <p>A <code>LifecyclePolicies</code> array of
          * <code>LifecyclePolicy</code> objects that define when files are moved into IA
          * storage, and when they are moved back to Standard storage.</p>  <p>Amazon
          * EFS requires that each <code>LifecyclePolicy</code> object have only have a
@@ -912,6 +916,7 @@ namespace EFS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EFSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;
       void init(const EFSClientConfiguration& clientConfiguration);
 
       EFSClientConfiguration m_clientConfiguration;

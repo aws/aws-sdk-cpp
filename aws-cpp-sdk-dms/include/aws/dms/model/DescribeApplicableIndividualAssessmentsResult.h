@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessmentsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult
+  class DescribeApplicableIndividualAssessmentsResult
   {
   public:
-    DescribeApplicableIndividualAssessmentsResult();
-    DescribeApplicableIndividualAssessmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeApplicableIndividualAssessmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

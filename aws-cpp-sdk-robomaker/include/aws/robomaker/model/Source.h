@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/Source">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API Source();
+    AWS_ROBOMAKER_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

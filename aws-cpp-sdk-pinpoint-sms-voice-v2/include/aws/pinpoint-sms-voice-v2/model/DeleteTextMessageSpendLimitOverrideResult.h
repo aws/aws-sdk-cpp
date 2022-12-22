@@ -22,12 +22,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API DeleteTextMessageSpendLimitOverrideResult
+  class DeleteTextMessageSpendLimitOverrideResult
   {
   public:
-    DeleteTextMessageSpendLimitOverrideResult();
-    DeleteTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTextMessageSpendLimitOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DeleteTextMessageSpendLimitOverrideResult();
+    AWS_PINPOINTSMSVOICEV2_API DeleteTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DeleteTextMessageSpendLimitOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

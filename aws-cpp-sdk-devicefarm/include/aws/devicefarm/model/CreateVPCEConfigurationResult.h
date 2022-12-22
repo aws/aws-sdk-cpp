@@ -24,12 +24,12 @@ namespace DeviceFarm
 {
 namespace Model
 {
-  class AWS_DEVICEFARM_API CreateVPCEConfigurationResult
+  class CreateVPCEConfigurationResult
   {
   public:
-    CreateVPCEConfigurationResult();
-    CreateVPCEConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateVPCEConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API CreateVPCEConfigurationResult();
+    AWS_DEVICEFARM_API CreateVPCEConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API CreateVPCEConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

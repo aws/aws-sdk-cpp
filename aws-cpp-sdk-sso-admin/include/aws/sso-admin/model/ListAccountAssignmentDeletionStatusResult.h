@@ -26,12 +26,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult
+  class ListAccountAssignmentDeletionStatusResult
   {
   public:
-    ListAccountAssignmentDeletionStatusResult();
-    ListAccountAssignmentDeletionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAccountAssignmentDeletionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult();
+    AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

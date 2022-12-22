@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteTransitGatewayConnectPeerResponse
+  class DeleteTransitGatewayConnectPeerResponse
   {
   public:
-    DeleteTransitGatewayConnectPeerResponse();
-    DeleteTransitGatewayConnectPeerResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteTransitGatewayConnectPeerResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteTransitGatewayConnectPeerResponse();
+    AWS_EC2_API DeleteTransitGatewayConnectPeerResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteTransitGatewayConnectPeerResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API UpdateTerminationProtectionResult
+  class UpdateTerminationProtectionResult
   {
   public:
-    UpdateTerminationProtectionResult();
-    UpdateTerminationProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateTerminationProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API UpdateTerminationProtectionResult();
+    AWS_CLOUDFORMATION_API UpdateTerminationProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API UpdateTerminationProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

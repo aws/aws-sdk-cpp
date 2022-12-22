@@ -26,12 +26,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API GetNetworkResourceCountsResult
+  class GetNetworkResourceCountsResult
   {
   public:
-    GetNetworkResourceCountsResult();
-    GetNetworkResourceCountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetNetworkResourceCountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetNetworkResourceCountsResult();
+    AWS_NETWORKMANAGER_API GetNetworkResourceCountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetNetworkResourceCountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

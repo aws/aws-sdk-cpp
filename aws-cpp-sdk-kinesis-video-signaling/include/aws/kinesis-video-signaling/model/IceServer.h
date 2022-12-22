@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-signaling-2019-12-04/IceServer">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer
+  class IceServer
   {
   public:
-    IceServer();
-    IceServer(Aws::Utils::Json::JsonView jsonValue);
-    IceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

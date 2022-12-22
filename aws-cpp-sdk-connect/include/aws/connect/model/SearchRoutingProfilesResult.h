@@ -26,12 +26,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API SearchRoutingProfilesResult
+  class SearchRoutingProfilesResult
   {
   public:
-    SearchRoutingProfilesResult();
-    SearchRoutingProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchRoutingProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API SearchRoutingProfilesResult();
+    AWS_CONNECT_API SearchRoutingProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API SearchRoutingProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

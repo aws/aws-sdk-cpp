@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupPlan
+  class BackupPlan
   {
   public:
-    BackupPlan();
-    BackupPlan(Aws::Utils::Json::JsonView jsonValue);
-    BackupPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupPlan();
+    AWS_BACKUP_API BackupPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

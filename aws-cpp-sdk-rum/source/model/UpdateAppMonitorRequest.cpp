@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateAppMonitorRequest::UpdateAppMonitorRequest() : 
     m_appMonitorConfigurationHasBeenSet(false),
+    m_customEventsHasBeenSet(false),
     m_cwLogEnabled(false),
     m_cwLogEnabledHasBeenSet(false),
     m_domainHasBeenSet(false),
@@ -28,6 +29,12 @@ Aws::String UpdateAppMonitorRequest::SerializePayload() const
   if(m_appMonitorConfigurationHasBeenSet)
   {
    payload.WithObject("AppMonitorConfiguration", m_appMonitorConfiguration.Jsonize());
+
+  }
+
+  if(m_customEventsHasBeenSet)
+  {
+   payload.WithObject("CustomEvents", m_customEvents.Jsonize());
 
   }
 

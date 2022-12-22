@@ -25,17 +25,17 @@ namespace Model
 
   /**
    * <p>Details about the ECR automated re-scan duration setting for your
-   * environment</p><p><h3>See Also:</h3>   <a
+   * environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/EcrConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API EcrConfiguration
+  class EcrConfiguration
   {
   public:
-    EcrConfiguration();
-    EcrConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EcrConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API EcrConfiguration();
+    AWS_INSPECTOR2_API EcrConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API EcrConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

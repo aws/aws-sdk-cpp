@@ -24,12 +24,12 @@ namespace ChimeSDKMessaging
 {
 namespace Model
 {
-  class AWS_CHIMESDKMESSAGING_API GetChannelMessageResult
+  class GetChannelMessageResult
   {
   public:
-    GetChannelMessageResult();
-    GetChannelMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChannelMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API GetChannelMessageResult();
+    AWS_CHIMESDKMESSAGING_API GetChannelMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API GetChannelMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

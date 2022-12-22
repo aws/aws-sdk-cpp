@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API DeleteGatewayGroupResult
+  class DeleteGatewayGroupResult
   {
   public:
-    DeleteGatewayGroupResult();
-    DeleteGatewayGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGatewayGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DeleteGatewayGroupResult();
+    AWS_ALEXAFORBUSINESS_API DeleteGatewayGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DeleteGatewayGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

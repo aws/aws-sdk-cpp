@@ -26,12 +26,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API UpdateVocabularyFilterResult
+  class UpdateVocabularyFilterResult
   {
   public:
-    UpdateVocabularyFilterResult();
-    UpdateVocabularyFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVocabularyFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyFilterResult();
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -71,68 +71,73 @@ namespace Model
 
 
     /**
-     * <p>The language code you selected for your vocabulary filter.</p>
+     * <p>The language code you selected for your custom vocabulary filter.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code you selected for your vocabulary filter.</p>
+     * <p>The language code you selected for your custom vocabulary filter.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
 
     /**
-     * <p>The language code you selected for your vocabulary filter.</p>
+     * <p>The language code you selected for your custom vocabulary filter.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code you selected for your vocabulary filter.</p>
+     * <p>The language code you selected for your custom vocabulary filter.</p>
      */
     inline UpdateVocabularyFilterResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code you selected for your vocabulary filter.</p>
+     * <p>The language code you selected for your custom vocabulary filter.</p>
      */
     inline UpdateVocabularyFilterResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time the specified vocabulary filter was last updated.</p>
-     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
-     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
-     * UTC-7 on May 4, 2022.</p>
+     * <p>The date and time the specified custom vocabulary filter was last
+     * updated.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May
+     * 4, 2022.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time the specified vocabulary filter was last updated.</p>
-     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
-     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
-     * UTC-7 on May 4, 2022.</p>
+     * <p>The date and time the specified custom vocabulary filter was last
+     * updated.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May
+     * 4, 2022.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time the specified vocabulary filter was last updated.</p>
-     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
-     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
-     * UTC-7 on May 4, 2022.</p>
+     * <p>The date and time the specified custom vocabulary filter was last
+     * updated.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May
+     * 4, 2022.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time the specified vocabulary filter was last updated.</p>
-     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
-     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
-     * UTC-7 on May 4, 2022.</p>
+     * <p>The date and time the specified custom vocabulary filter was last
+     * updated.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May
+     * 4, 2022.</p>
      */
     inline UpdateVocabularyFilterResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time the specified vocabulary filter was last updated.</p>
-     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
-     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
-     * UTC-7 on May 4, 2022.</p>
+     * <p>The date and time the specified custom vocabulary filter was last
+     * updated.</p> <p>Timestamps are in the format
+     * <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+     * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May
+     * 4, 2022.</p>
      */
     inline UpdateVocabularyFilterResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

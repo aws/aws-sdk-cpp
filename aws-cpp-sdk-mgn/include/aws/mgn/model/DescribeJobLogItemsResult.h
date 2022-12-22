@@ -26,12 +26,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DescribeJobLogItemsResult
+  class DescribeJobLogItemsResult
   {
   public:
-    DescribeJobLogItemsResult();
-    DescribeJobLogItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobLogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeJobLogItemsResult();
+    AWS_MGN_API DescribeJobLogItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeJobLogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

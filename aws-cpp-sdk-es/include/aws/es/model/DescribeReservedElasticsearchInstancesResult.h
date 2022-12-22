@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstancesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstancesResult
+  class DescribeReservedElasticsearchInstancesResult
   {
   public:
-    DescribeReservedElasticsearchInstancesResult();
-    DescribeReservedElasticsearchInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReservedElasticsearchInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstancesResult();
+    AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

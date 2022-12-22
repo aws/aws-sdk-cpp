@@ -26,12 +26,12 @@ namespace RolesAnywhere
 {
 namespace Model
 {
-  class AWS_ROLESANYWHERE_API ListProfilesResult
+  class ListProfilesResult
   {
   public:
-    ListProfilesResult();
-    ListProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROLESANYWHERE_API ListProfilesResult();
+    AWS_ROLESANYWHERE_API ListProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROLESANYWHERE_API ListProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

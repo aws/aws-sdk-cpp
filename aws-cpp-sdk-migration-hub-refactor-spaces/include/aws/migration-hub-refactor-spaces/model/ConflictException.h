@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API ConflictException();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

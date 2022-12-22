@@ -24,12 +24,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHLOGS_API CreateExportTaskResult
+  class CreateExportTaskResult
   {
   public:
-    CreateExportTaskResult();
-    CreateExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API CreateExportTaskResult();
+    AWS_CLOUDWATCHLOGS_API CreateExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API CreateExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

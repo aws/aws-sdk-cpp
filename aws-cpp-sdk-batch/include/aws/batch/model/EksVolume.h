@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksVolume
+  class EksVolume
   {
   public:
-    EksVolume();
-    EksVolume(Aws::Utils::Json::JsonView jsonValue);
-    EksVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksVolume();
+    AWS_BATCH_API EksVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

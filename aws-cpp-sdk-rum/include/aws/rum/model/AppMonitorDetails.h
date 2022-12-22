@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/AppMonitorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API AppMonitorDetails
+  class AppMonitorDetails
   {
   public:
-    AppMonitorDetails();
-    AppMonitorDetails(Aws::Utils::Json::JsonView jsonValue);
-    AppMonitorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API AppMonitorDetails();
+    AWS_CLOUDWATCHRUM_API AppMonitorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API AppMonitorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

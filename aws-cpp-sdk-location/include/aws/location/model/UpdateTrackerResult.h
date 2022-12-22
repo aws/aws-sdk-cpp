@@ -25,12 +25,12 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API UpdateTrackerResult
+  class UpdateTrackerResult
   {
   public:
-    UpdateTrackerResult();
-    UpdateTrackerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTrackerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API UpdateTrackerResult();
+    AWS_LOCATIONSERVICE_API UpdateTrackerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API UpdateTrackerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

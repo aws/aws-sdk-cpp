@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AccountSettings
+  class AccountSettings
   {
   public:
-    AccountSettings();
-    AccountSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AccountSettings();
+    AWS_QUICKSIGHT_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -263,6 +263,43 @@ namespace Model
      */
     inline AccountSettings& WithPublicSharingEnabled(bool value) { SetPublicSharingEnabled(value); return *this;}
 
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline bool TerminationProtectionEnabledHasBeenSet() const { return m_terminationProtectionEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline AccountSettings& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_accountName;
@@ -279,6 +316,9 @@ namespace Model
 
     bool m_publicSharingEnabled;
     bool m_publicSharingEnabledHasBeenSet = false;
+
+    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

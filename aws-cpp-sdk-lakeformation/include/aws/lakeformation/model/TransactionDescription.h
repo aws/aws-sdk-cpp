@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/TransactionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API TransactionDescription
+  class TransactionDescription
   {
   public:
-    TransactionDescription();
-    TransactionDescription(Aws::Utils::Json::JsonView jsonValue);
-    TransactionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API TransactionDescription();
+    AWS_LAKEFORMATION_API TransactionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API TransactionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

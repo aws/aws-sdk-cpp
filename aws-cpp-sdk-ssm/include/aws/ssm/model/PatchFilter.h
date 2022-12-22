@@ -43,13 +43,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchFilter
+  class PatchFilter
   {
   public:
-    PatchFilter();
-    PatchFilter(Aws::Utils::Json::JsonView jsonValue);
-    PatchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchFilter();
+    AWS_SSM_API PatchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

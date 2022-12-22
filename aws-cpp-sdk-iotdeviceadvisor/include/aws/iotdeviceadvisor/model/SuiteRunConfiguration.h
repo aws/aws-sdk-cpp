@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteRunConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API SuiteRunConfiguration
+  class SuiteRunConfiguration
   {
   public:
-    SuiteRunConfiguration();
-    SuiteRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SuiteRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API SuiteRunConfiguration();
+    AWS_IOTDEVICEADVISOR_API SuiteRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API SuiteRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

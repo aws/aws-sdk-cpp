@@ -22,12 +22,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DeleteGameSessionQueueResult
+  class DeleteGameSessionQueueResult
   {
   public:
-    DeleteGameSessionQueueResult();
-    DeleteGameSessionQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGameSessionQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteGameSessionQueueResult();
+    AWS_GAMELIFT_API DeleteGameSessionQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteGameSessionQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

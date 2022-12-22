@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API CertificateAuthorityConfiguration
+  class CertificateAuthorityConfiguration
   {
   public:
-    CertificateAuthorityConfiguration();
-    CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API CertificateAuthorityConfiguration();
+    AWS_ACMPCA_API CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

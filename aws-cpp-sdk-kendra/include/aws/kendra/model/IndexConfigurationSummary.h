@@ -32,146 +32,146 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/IndexConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API IndexConfigurationSummary
+  class IndexConfigurationSummary
   {
   public:
-    IndexConfigurationSummary();
-    IndexConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    IndexConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API IndexConfigurationSummary();
+    AWS_KENDRA_API IndexConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API IndexConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline IndexConfigurationSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline IndexConfigurationSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index.</p>
+     * <p>The name of the index.</p>
      */
     inline IndexConfigurationSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline IndexConfigurationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline IndexConfigurationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
+     * <p>A identifier for the index. Use this to identify the index when you are using
+     * APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline IndexConfigurationSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the index is a enterprise edition index or a developer
-     * edition index. </p>
+     * <p>Indicates whether the index is a Enterprise Edition index or a Developer
+     * Edition index. </p>
      */
     inline const IndexEdition& GetEdition() const{ return m_edition; }
 
     /**
-     * <p>Indicates whether the index is a enterprise edition index or a developer
-     * edition index. </p>
+     * <p>Indicates whether the index is a Enterprise Edition index or a Developer
+     * Edition index. </p>
      */
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
 
     /**
-     * <p>Indicates whether the index is a enterprise edition index or a developer
-     * edition index. </p>
+     * <p>Indicates whether the index is a Enterprise Edition index or a Developer
+     * Edition index. </p>
      */
     inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
 
     /**
-     * <p>Indicates whether the index is a enterprise edition index or a developer
-     * edition index. </p>
+     * <p>Indicates whether the index is a Enterprise Edition index or a Developer
+     * Edition index. </p>
      */
     inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
 
     /**
-     * <p>Indicates whether the index is a enterprise edition index or a developer
-     * edition index. </p>
+     * <p>Indicates whether the index is a Enterprise Edition index or a Developer
+     * Edition index. </p>
      */
     inline IndexConfigurationSummary& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
 
     /**
-     * <p>Indicates whether the index is a enterprise edition index or a developer
-     * edition index. </p>
+     * <p>Indicates whether the index is a Enterprise Edition index or a Developer
+     * Edition index. </p>
      */
     inline IndexConfigurationSummary& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
 

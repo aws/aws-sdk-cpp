@@ -38,14 +38,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobOperation
+  class JobOperation
   {
   public:
-    JobOperation();
-    JobOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobOperation();
+    AWS_S3CONTROL_API JobOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -123,38 +123,38 @@ namespace Model
 
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline const S3SetObjectAclOperation& GetS3PutObjectAcl() const{ return m_s3PutObjectAcl; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline bool S3PutObjectAclHasBeenSet() const { return m_s3PutObjectAclHasBeenSet; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline void SetS3PutObjectAcl(const S3SetObjectAclOperation& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = value; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline void SetS3PutObjectAcl(S3SetObjectAclOperation&& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = std::move(value); }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline JobOperation& WithS3PutObjectAcl(const S3SetObjectAclOperation& value) { SetS3PutObjectAcl(value); return *this;}
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline JobOperation& WithS3PutObjectAcl(S3SetObjectAclOperation&& value) { SetS3PutObjectAcl(std::move(value)); return *this;}
 

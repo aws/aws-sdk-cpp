@@ -27,12 +27,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult
+  class DescribeLoadBalancerTargetGroupsResult
   {
   public:
-    DescribeLoadBalancerTargetGroupsResult();
-    DescribeLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLoadBalancerTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult();
+    AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

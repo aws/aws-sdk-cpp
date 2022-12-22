@@ -26,18 +26,17 @@ namespace Model
   /**
    * <p>Current resource utilization statistics in a specified fleet or location. The
    * location value might refer to a fleet's remote location or its home Region.</p>
-   * <p> <b>Related actions</b> </p> <p> <a>DescribeFleetUtilization</a> |
-   * <a>DescribeFleetLocationUtilization</a> </p><p><h3>See Also:</h3>   <a
+   * <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API FleetUtilization
+  class FleetUtilization
   {
   public:
-    FleetUtilization();
-    FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
-    FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API FleetUtilization();
+    AWS_GAMELIFT_API FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

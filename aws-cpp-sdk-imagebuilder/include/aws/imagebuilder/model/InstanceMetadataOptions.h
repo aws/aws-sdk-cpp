@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InstanceMetadataOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API InstanceMetadataOptions
+  class InstanceMetadataOptions
   {
   public:
-    InstanceMetadataOptions();
-    InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
-    InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API InstanceMetadataOptions();
+    AWS_IMAGEBUILDER_API InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

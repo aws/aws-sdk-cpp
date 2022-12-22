@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentDeploymentSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentDeploymentSpecification
+  class ComponentDeploymentSpecification
   {
   public:
-    ComponentDeploymentSpecification();
-    ComponentDeploymentSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ComponentDeploymentSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification();
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

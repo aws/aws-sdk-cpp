@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ManualEvidence">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ManualEvidence
+  class ManualEvidence
   {
   public:
-    ManualEvidence();
-    ManualEvidence(Aws::Utils::Json::JsonView jsonValue);
-    ManualEvidence& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ManualEvidence();
+    AWS_AUDITMANAGER_API ManualEvidence(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ManualEvidence& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

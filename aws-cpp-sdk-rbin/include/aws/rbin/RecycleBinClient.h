@@ -7,6 +7,7 @@
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace RecycleBin
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html">
    * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
    */
-  class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient
+  class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace RecycleBin
 
         /* End of legacy constructors due deprecation */
         virtual ~RecycleBinClient();
-
 
         /**
          * <p>Creates a Recycle Bin retention rule. For more information, see <a
@@ -178,6 +178,24 @@ namespace RecycleBin
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Locks a retention rule. A locked retention rule can't be modified or
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::LockRuleOutcome LockRule(const Model::LockRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for LockRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::LockRuleOutcomeCallable LockRuleCallable(const Model::LockRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for LockRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void LockRuleAsync(const Model::LockRuleRequest& request, const LockRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns tags to the specified retention rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/TagResource">AWS
          * API Reference</a></p>
@@ -193,6 +211,25 @@ namespace RecycleBin
          * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Unlocks a retention rule. After a retention rule is unlocked, it can be
+         * modified or deleted only after the unlock delay period expires.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::UnlockRuleOutcome UnlockRule(const Model::UnlockRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UnlockRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnlockRuleOutcomeCallable UnlockRuleCallable(const Model::UnlockRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for UnlockRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnlockRuleAsync(const Model::UnlockRuleRequest& request, const UnlockRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unassigns a tag from a retention rule.</p><p><h3>See Also:</h3>   <a
@@ -212,7 +249,10 @@ namespace RecycleBin
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing Recycle Bin retention rule. For more information, see <a
+         * <p>Updates an existing Recycle Bin retention rule. You can update a retention
+         * rule's description, resource tags, and retention period at any time after
+         * creation. You can't update a retention rule's resource type after creation. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
          * Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -235,6 +275,7 @@ namespace RecycleBin
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RecycleBinEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>;
       void init(const RecycleBinClientConfiguration& clientConfiguration);
 
       RecycleBinClientConfiguration m_clientConfiguration;

@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PlacementGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PlacementGroup
+  class PlacementGroup
   {
   public:
-    PlacementGroup();
-    PlacementGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PlacementGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PlacementGroup();
+    AWS_EC2_API PlacementGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PlacementGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -296,38 +296,38 @@ namespace Model
 
 
     /**
-     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
-     * groups can be spread across hosts. </p>
+     * <p>The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts.</p>
      */
     inline const SpreadLevel& GetSpreadLevel() const{ return m_spreadLevel; }
 
     /**
-     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
-     * groups can be spread across hosts. </p>
+     * <p>The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts.</p>
      */
     inline bool SpreadLevelHasBeenSet() const { return m_spreadLevelHasBeenSet; }
 
     /**
-     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
-     * groups can be spread across hosts. </p>
+     * <p>The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts.</p>
      */
     inline void SetSpreadLevel(const SpreadLevel& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = value; }
 
     /**
-     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
-     * groups can be spread across hosts. </p>
+     * <p>The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts.</p>
      */
     inline void SetSpreadLevel(SpreadLevel&& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = std::move(value); }
 
     /**
-     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
-     * groups can be spread across hosts. </p>
+     * <p>The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts.</p>
      */
     inline PlacementGroup& WithSpreadLevel(const SpreadLevel& value) { SetSpreadLevel(value); return *this;}
 
     /**
-     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
-     * groups can be spread across hosts. </p>
+     * <p>The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts.</p>
      */
     inline PlacementGroup& WithSpreadLevel(SpreadLevel&& value) { SetSpreadLevel(std::move(value)); return *this;}
 

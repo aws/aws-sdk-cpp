@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ResourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary
+  class ResourceSummary
   {
   public:
-    ResourceSummary();
-    ResourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary();
+    AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

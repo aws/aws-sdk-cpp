@@ -24,12 +24,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API TestAvailabilityConfigurationResult
+  class TestAvailabilityConfigurationResult
   {
   public:
-    TestAvailabilityConfigurationResult();
-    TestAvailabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestAvailabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API TestAvailabilityConfigurationResult();
+    AWS_WORKMAIL_API TestAvailabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API TestAvailabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

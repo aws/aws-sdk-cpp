@@ -26,12 +26,12 @@ namespace ACMPCA
 {
 namespace Model
 {
-  class AWS_ACMPCA_API DescribeCertificateAuthorityAuditReportResult
+  class DescribeCertificateAuthorityAuditReportResult
   {
   public:
-    DescribeCertificateAuthorityAuditReportResult();
-    DescribeCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCertificateAuthorityAuditReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACMPCA_API DescribeCertificateAuthorityAuditReportResult();
+    AWS_ACMPCA_API DescribeCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACMPCA_API DescribeCertificateAuthorityAuditReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

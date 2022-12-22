@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/IosImportClientBrandingAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API IosImportClientBrandingAttributes
+  class IosImportClientBrandingAttributes
   {
   public:
-    IosImportClientBrandingAttributes();
-    IosImportClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
-    IosImportClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API IosImportClientBrandingAttributes();
+    AWS_WORKSPACES_API IosImportClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API IosImportClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

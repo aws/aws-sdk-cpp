@@ -22,12 +22,12 @@ namespace MediaStore
 {
 namespace Model
 {
-  class AWS_MEDIASTORE_API PutMetricPolicyResult
+  class PutMetricPolicyResult
   {
   public:
-    PutMetricPolicyResult();
-    PutMetricPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutMetricPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API PutMetricPolicyResult();
+    AWS_MEDIASTORE_API PutMetricPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API PutMetricPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

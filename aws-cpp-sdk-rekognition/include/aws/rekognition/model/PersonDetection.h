@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API PersonDetection
+  class PersonDetection
   {
   public:
-    PersonDetection();
-    PersonDetection(Aws::Utils::Json::JsonView jsonValue);
-    PersonDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API PersonDetection();
+    AWS_REKOGNITION_API PersonDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API PersonDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

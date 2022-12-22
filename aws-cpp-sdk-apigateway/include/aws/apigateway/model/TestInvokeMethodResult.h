@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethodResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API TestInvokeMethodResult
+  class TestInvokeMethodResult
   {
   public:
-    TestInvokeMethodResult();
-    TestInvokeMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestInvokeMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API TestInvokeMethodResult();
+    AWS_APIGATEWAY_API TestInvokeMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API TestInvokeMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

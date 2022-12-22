@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API QueryRequest : public KendraRequest
+  class QueryRequest : public KendraRequest
   {
   public:
-    QueryRequest();
+    AWS_KENDRA_API QueryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,97 +37,113 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Query"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline QueryRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline QueryRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the <code>CreateIndex</code> API.</p>
+     * <p>The identifier of the index to search. The identifier is returned in the
+     * response from the <code>CreateIndex</code> API.</p>
      */
     inline QueryRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline const Aws::String& GetQueryText() const{ return m_queryText; }
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline void SetQueryText(const Aws::String& value) { m_queryTextHasBeenSet = true; m_queryText = value; }
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline void SetQueryText(Aws::String&& value) { m_queryTextHasBeenSet = true; m_queryText = std::move(value); }
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline void SetQueryText(const char* value) { m_queryTextHasBeenSet = true; m_queryText.assign(value); }
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline QueryRequest& WithQueryText(const Aws::String& value) { SetQueryText(value); return *this;}
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline QueryRequest& WithQueryText(Aws::String&& value) { SetQueryText(std::move(value)); return *this;}
 
     /**
-     * <p>The text to search for.</p>
+     * <p>The input query text for the search. Amazon Kendra truncates queries at 30
+     * token words, which excludes punctuation and stop words. Truncation still applies
+     * if you use Boolean or more advanced, complex queries. </p>
      */
     inline QueryRequest& WithQueryText(const char* value) { SetQueryText(value); return *this;}
 

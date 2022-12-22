@@ -26,18 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>Information required to remotely connect to a fleet instance. Access is
-   * requested by calling <a>GetInstanceAccess</a>. </p><p><h3>See Also:</h3>   <a
+   * <p>Information required to remotely connect to a fleet instance. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API InstanceAccess
+  class InstanceAccess
   {
   public:
-    InstanceAccess();
-    InstanceAccess(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API InstanceAccess();
+    AWS_GAMELIFT_API InstanceAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API InstanceAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Scheduler
 {
 namespace Model
 {
-  class AWS_SCHEDULER_API UpdateScheduleResult
+  class UpdateScheduleResult
   {
   public:
-    UpdateScheduleResult();
-    UpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEDULER_API UpdateScheduleResult();
+    AWS_SCHEDULER_API UpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEDULER_API UpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

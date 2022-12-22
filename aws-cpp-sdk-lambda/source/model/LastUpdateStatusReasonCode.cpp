@@ -30,6 +30,17 @@ namespace Aws
         static const int ImageDeleted_HASH = HashingUtils::HashString("ImageDeleted");
         static const int ImageAccessDenied_HASH = HashingUtils::HashString("ImageAccessDenied");
         static const int InvalidImage_HASH = HashingUtils::HashString("InvalidImage");
+        static const int KMSKeyAccessDenied_HASH = HashingUtils::HashString("KMSKeyAccessDenied");
+        static const int KMSKeyNotFound_HASH = HashingUtils::HashString("KMSKeyNotFound");
+        static const int InvalidStateKMSKey_HASH = HashingUtils::HashString("InvalidStateKMSKey");
+        static const int DisabledKMSKey_HASH = HashingUtils::HashString("DisabledKMSKey");
+        static const int EFSIOError_HASH = HashingUtils::HashString("EFSIOError");
+        static const int EFSMountConnectivityError_HASH = HashingUtils::HashString("EFSMountConnectivityError");
+        static const int EFSMountFailure_HASH = HashingUtils::HashString("EFSMountFailure");
+        static const int EFSMountTimeout_HASH = HashingUtils::HashString("EFSMountTimeout");
+        static const int InvalidRuntime_HASH = HashingUtils::HashString("InvalidRuntime");
+        static const int InvalidZipFileException_HASH = HashingUtils::HashString("InvalidZipFileException");
+        static const int FunctionError_HASH = HashingUtils::HashString("FunctionError");
 
 
         LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::String& name)
@@ -75,6 +86,50 @@ namespace Aws
           {
             return LastUpdateStatusReasonCode::InvalidImage;
           }
+          else if (hashCode == KMSKeyAccessDenied_HASH)
+          {
+            return LastUpdateStatusReasonCode::KMSKeyAccessDenied;
+          }
+          else if (hashCode == KMSKeyNotFound_HASH)
+          {
+            return LastUpdateStatusReasonCode::KMSKeyNotFound;
+          }
+          else if (hashCode == InvalidStateKMSKey_HASH)
+          {
+            return LastUpdateStatusReasonCode::InvalidStateKMSKey;
+          }
+          else if (hashCode == DisabledKMSKey_HASH)
+          {
+            return LastUpdateStatusReasonCode::DisabledKMSKey;
+          }
+          else if (hashCode == EFSIOError_HASH)
+          {
+            return LastUpdateStatusReasonCode::EFSIOError;
+          }
+          else if (hashCode == EFSMountConnectivityError_HASH)
+          {
+            return LastUpdateStatusReasonCode::EFSMountConnectivityError;
+          }
+          else if (hashCode == EFSMountFailure_HASH)
+          {
+            return LastUpdateStatusReasonCode::EFSMountFailure;
+          }
+          else if (hashCode == EFSMountTimeout_HASH)
+          {
+            return LastUpdateStatusReasonCode::EFSMountTimeout;
+          }
+          else if (hashCode == InvalidRuntime_HASH)
+          {
+            return LastUpdateStatusReasonCode::InvalidRuntime;
+          }
+          else if (hashCode == InvalidZipFileException_HASH)
+          {
+            return LastUpdateStatusReasonCode::InvalidZipFileException;
+          }
+          else if (hashCode == FunctionError_HASH)
+          {
+            return LastUpdateStatusReasonCode::FunctionError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +164,28 @@ namespace Aws
             return "ImageAccessDenied";
           case LastUpdateStatusReasonCode::InvalidImage:
             return "InvalidImage";
+          case LastUpdateStatusReasonCode::KMSKeyAccessDenied:
+            return "KMSKeyAccessDenied";
+          case LastUpdateStatusReasonCode::KMSKeyNotFound:
+            return "KMSKeyNotFound";
+          case LastUpdateStatusReasonCode::InvalidStateKMSKey:
+            return "InvalidStateKMSKey";
+          case LastUpdateStatusReasonCode::DisabledKMSKey:
+            return "DisabledKMSKey";
+          case LastUpdateStatusReasonCode::EFSIOError:
+            return "EFSIOError";
+          case LastUpdateStatusReasonCode::EFSMountConnectivityError:
+            return "EFSMountConnectivityError";
+          case LastUpdateStatusReasonCode::EFSMountFailure:
+            return "EFSMountFailure";
+          case LastUpdateStatusReasonCode::EFSMountTimeout:
+            return "EFSMountTimeout";
+          case LastUpdateStatusReasonCode::InvalidRuntime:
+            return "InvalidRuntime";
+          case LastUpdateStatusReasonCode::InvalidZipFileException:
+            return "InvalidZipFileException";
+          case LastUpdateStatusReasonCode::FunctionError:
+            return "FunctionError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

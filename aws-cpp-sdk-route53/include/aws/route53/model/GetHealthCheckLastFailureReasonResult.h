@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReasonResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetHealthCheckLastFailureReasonResult
+  class GetHealthCheckLastFailureReasonResult
   {
   public:
-    GetHealthCheckLastFailureReasonResult();
-    GetHealthCheckLastFailureReasonResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHealthCheckLastFailureReasonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetHealthCheckLastFailureReasonResult();
+    AWS_ROUTE53_API GetHealthCheckLastFailureReasonResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetHealthCheckLastFailureReasonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
-  class AWS_DATABASEMIGRATIONSERVICE_API DescribeFleetAdvisorLsaAnalysisResult
+  class DescribeFleetAdvisorLsaAnalysisResult
   {
   public:
-    DescribeFleetAdvisorLsaAnalysisResult();
-    DescribeFleetAdvisorLsaAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetAdvisorLsaAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeFleetAdvisorLsaAnalysisResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeFleetAdvisorLsaAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeFleetAdvisorLsaAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

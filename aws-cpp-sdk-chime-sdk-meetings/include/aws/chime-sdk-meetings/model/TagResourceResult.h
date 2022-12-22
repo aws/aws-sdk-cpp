@@ -22,12 +22,12 @@ namespace ChimeSDKMeetings
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEETINGS_API TagResourceResult
+  class TagResourceResult
   {
   public:
-    TagResourceResult();
-    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEETINGS_API TagResourceResult();
+    AWS_CHIMESDKMEETINGS_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEETINGS_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

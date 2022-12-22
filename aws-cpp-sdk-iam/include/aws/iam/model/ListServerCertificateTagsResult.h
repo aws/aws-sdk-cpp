@@ -27,12 +27,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API ListServerCertificateTagsResult
+  class ListServerCertificateTagsResult
   {
   public:
-    ListServerCertificateTagsResult();
-    ListServerCertificateTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListServerCertificateTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListServerCertificateTagsResult();
+    AWS_IAM_API ListServerCertificateTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListServerCertificateTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

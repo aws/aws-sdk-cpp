@@ -22,12 +22,12 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  class AWS_SSMINCIDENTS_API UpdateIncidentRecordResult
+  class UpdateIncidentRecordResult
   {
   public:
-    UpdateIncidentRecordResult();
-    UpdateIncidentRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateIncidentRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API UpdateIncidentRecordResult();
+    AWS_SSMINCIDENTS_API UpdateIncidentRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API UpdateIncidentRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

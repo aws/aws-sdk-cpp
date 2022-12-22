@@ -28,12 +28,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API StartBotRecommendationResult
+  class StartBotRecommendationResult
   {
   public:
-    StartBotRecommendationResult();
-    StartBotRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartBotRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API StartBotRecommendationResult();
+    AWS_LEXMODELSV2_API StartBotRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API StartBotRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

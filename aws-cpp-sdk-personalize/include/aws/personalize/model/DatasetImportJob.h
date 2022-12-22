@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetImportJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DatasetImportJob
+  class DatasetImportJob
   {
   public:
-    DatasetImportJob();
-    DatasetImportJob(Aws::Utils::Json::JsonView jsonValue);
-    DatasetImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DatasetImportJob();
+    AWS_PERSONALIZE_API DatasetImportJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DatasetImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -446,6 +446,27 @@ namespace Model
      */
     inline DatasetImportJob& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+     */
+    inline bool GetPublishAttributionMetricsToS3() const{ return m_publishAttributionMetricsToS3; }
+
+    /**
+     * <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+     */
+    inline bool PublishAttributionMetricsToS3HasBeenSet() const { return m_publishAttributionMetricsToS3HasBeenSet; }
+
+    /**
+     * <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+     */
+    inline void SetPublishAttributionMetricsToS3(bool value) { m_publishAttributionMetricsToS3HasBeenSet = true; m_publishAttributionMetricsToS3 = value; }
+
+    /**
+     * <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
+     */
+    inline DatasetImportJob& WithPublishAttributionMetricsToS3(bool value) { SetPublishAttributionMetricsToS3(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -477,6 +498,9 @@ namespace Model
 
     ImportMode m_importMode;
     bool m_importModeHasBeenSet = false;
+
+    bool m_publishAttributionMetricsToS3;
+    bool m_publishAttributionMetricsToS3HasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API GetRoutesResult
+  class GetRoutesResult
   {
   public:
-    GetRoutesResult();
-    GetRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API GetRoutesResult();
+    AWS_APIGATEWAYV2_API GetRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API GetRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

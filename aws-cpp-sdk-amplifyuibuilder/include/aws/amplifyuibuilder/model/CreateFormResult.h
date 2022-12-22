@@ -24,12 +24,12 @@ namespace AmplifyUIBuilder
 {
 namespace Model
 {
-  class AWS_AMPLIFYUIBUILDER_API CreateFormResult
+  class CreateFormResult
   {
   public:
-    CreateFormResult();
-    CreateFormResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYUIBUILDER_API CreateFormResult();
+    AWS_AMPLIFYUIBUILDER_API CreateFormResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYUIBUILDER_API CreateFormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

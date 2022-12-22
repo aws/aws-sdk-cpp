@@ -26,12 +26,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API ListSecretVersionIdsResult
+  class ListSecretVersionIdsResult
   {
   public:
-    ListSecretVersionIdsResult();
-    ListSecretVersionIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSecretVersionIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API ListSecretVersionIdsResult();
+    AWS_SECRETSMANAGER_API ListSecretVersionIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API ListSecretVersionIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

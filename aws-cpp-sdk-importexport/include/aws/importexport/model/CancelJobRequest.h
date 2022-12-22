@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API CancelJobRequest : public ImportExportRequest
+  class CancelJobRequest : public ImportExportRequest
   {
   public:
-    CancelJobRequest();
+    AWS_IMPORTEXPORT_API CancelJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CancelJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMPORTEXPORT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IMPORTEXPORT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

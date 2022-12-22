@@ -24,12 +24,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API GetPlaybackKeyPairResult
+  class GetPlaybackKeyPairResult
   {
   public:
-    GetPlaybackKeyPairResult();
-    GetPlaybackKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPlaybackKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API GetPlaybackKeyPairResult();
+    AWS_IVS_API GetPlaybackKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API GetPlaybackKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

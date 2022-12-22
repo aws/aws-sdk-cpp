@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/BadRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API BadRequestException
+  class BadRequestException
   {
   public:
-    BadRequestException();
-    BadRequestException(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API BadRequestException();
+    AWS_APPCONFIG_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

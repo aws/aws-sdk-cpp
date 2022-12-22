@@ -25,12 +25,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API ListDevEndpointsResult
+  class ListDevEndpointsResult
   {
   public:
-    ListDevEndpointsResult();
-    ListDevEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDevEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListDevEndpointsResult();
+    AWS_GLUE_API ListDevEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListDevEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

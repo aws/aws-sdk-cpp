@@ -24,12 +24,12 @@ namespace KinesisVideo
 {
 namespace Model
 {
-  class AWS_KINESISVIDEO_API DescribeSignalingChannelResult
+  class DescribeSignalingChannelResult
   {
   public:
-    DescribeSignalingChannelResult();
-    DescribeSignalingChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSignalingChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API DescribeSignalingChannelResult();
+    AWS_KINESISVIDEO_API DescribeSignalingChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API DescribeSignalingChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

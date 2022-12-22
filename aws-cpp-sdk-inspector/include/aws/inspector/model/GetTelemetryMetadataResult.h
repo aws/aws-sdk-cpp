@@ -25,12 +25,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API GetTelemetryMetadataResult
+  class GetTelemetryMetadataResult
   {
   public:
-    GetTelemetryMetadataResult();
-    GetTelemetryMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTelemetryMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API GetTelemetryMetadataResult();
+    AWS_INSPECTOR_API GetTelemetryMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API GetTelemetryMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

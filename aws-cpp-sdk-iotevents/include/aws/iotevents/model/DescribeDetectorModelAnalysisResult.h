@@ -24,12 +24,12 @@ namespace IoTEvents
 {
 namespace Model
 {
-  class AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult
+  class DescribeDetectorModelAnalysisResult
   {
   public:
-    DescribeDetectorModelAnalysisResult();
-    DescribeDetectorModelAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDetectorModelAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult();
+    AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

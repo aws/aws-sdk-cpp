@@ -32,12 +32,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeFeatureGroupResult
+  class DescribeFeatureGroupResult
   {
   public:
-    DescribeFeatureGroupResult();
-    DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFeatureGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeFeatureGroupResult();
+    AWS_SAGEMAKER_API DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeFeatureGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -353,87 +353,95 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfig = value; }
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfig = std::move(value); }
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline DescribeFeatureGroupResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline DescribeFeatureGroupResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline DescribeFeatureGroupResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

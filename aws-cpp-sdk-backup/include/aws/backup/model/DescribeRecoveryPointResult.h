@@ -30,12 +30,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API DescribeRecoveryPointResult
+  class DescribeRecoveryPointResult
   {
   public:
-    DescribeRecoveryPointResult();
-    DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeRecoveryPointResult();
+    AWS_BACKUP_API DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -435,7 +435,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
-     * of <i>Getting started</i>.</p>
+     * of <i>Getting started</i>.</p> <p> <code>STOPPED</code> status occurs on a
+     * continuous backup where a user has taken some action that causes the continuous
+     * backup to be disabled. This can be caused by the removal of permissions, turning
+     * off versioning, turning off events being sent to EventBridge, or disabling the
+     * EventBridge rules that are put in place by Backup.</p> <p>To resolve
+     * <code>STOPPED</code> status, ensure that all requested permissions are in place
+     * and that versioning is enabled on the S3 bucket. Once these conditions are met,
+     * the next instance of a backup rule running will result in a new continuous
+     * recovery point being created. The recovery points with STOPPED status do not
+     * need to be deleted.</p>
      */
     inline const RecoveryPointStatus& GetStatus() const{ return m_status; }
 
@@ -452,7 +461,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
-     * of <i>Getting started</i>.</p>
+     * of <i>Getting started</i>.</p> <p> <code>STOPPED</code> status occurs on a
+     * continuous backup where a user has taken some action that causes the continuous
+     * backup to be disabled. This can be caused by the removal of permissions, turning
+     * off versioning, turning off events being sent to EventBridge, or disabling the
+     * EventBridge rules that are put in place by Backup.</p> <p>To resolve
+     * <code>STOPPED</code> status, ensure that all requested permissions are in place
+     * and that versioning is enabled on the S3 bucket. Once these conditions are met,
+     * the next instance of a backup rule running will result in a new continuous
+     * recovery point being created. The recovery points with STOPPED status do not
+     * need to be deleted.</p>
      */
     inline void SetStatus(const RecoveryPointStatus& value) { m_status = value; }
 
@@ -469,7 +487,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
-     * of <i>Getting started</i>.</p>
+     * of <i>Getting started</i>.</p> <p> <code>STOPPED</code> status occurs on a
+     * continuous backup where a user has taken some action that causes the continuous
+     * backup to be disabled. This can be caused by the removal of permissions, turning
+     * off versioning, turning off events being sent to EventBridge, or disabling the
+     * EventBridge rules that are put in place by Backup.</p> <p>To resolve
+     * <code>STOPPED</code> status, ensure that all requested permissions are in place
+     * and that versioning is enabled on the S3 bucket. Once these conditions are met,
+     * the next instance of a backup rule running will result in a new continuous
+     * recovery point being created. The recovery points with STOPPED status do not
+     * need to be deleted.</p>
      */
     inline void SetStatus(RecoveryPointStatus&& value) { m_status = std::move(value); }
 
@@ -486,7 +513,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
-     * of <i>Getting started</i>.</p>
+     * of <i>Getting started</i>.</p> <p> <code>STOPPED</code> status occurs on a
+     * continuous backup where a user has taken some action that causes the continuous
+     * backup to be disabled. This can be caused by the removal of permissions, turning
+     * off versioning, turning off events being sent to EventBridge, or disabling the
+     * EventBridge rules that are put in place by Backup.</p> <p>To resolve
+     * <code>STOPPED</code> status, ensure that all requested permissions are in place
+     * and that versioning is enabled on the S3 bucket. Once these conditions are met,
+     * the next instance of a backup rule running will result in a new continuous
+     * recovery point being created. The recovery points with STOPPED status do not
+     * need to be deleted.</p>
      */
     inline DescribeRecoveryPointResult& WithStatus(const RecoveryPointStatus& value) { SetStatus(value); return *this;}
 
@@ -503,7 +539,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
-     * of <i>Getting started</i>.</p>
+     * of <i>Getting started</i>.</p> <p> <code>STOPPED</code> status occurs on a
+     * continuous backup where a user has taken some action that causes the continuous
+     * backup to be disabled. This can be caused by the removal of permissions, turning
+     * off versioning, turning off events being sent to EventBridge, or disabling the
+     * EventBridge rules that are put in place by Backup.</p> <p>To resolve
+     * <code>STOPPED</code> status, ensure that all requested permissions are in place
+     * and that versioning is enabled on the S3 bucket. Once these conditions are met,
+     * the next instance of a backup rule running will result in a new continuous
+     * recovery point being created. The recovery points with STOPPED status do not
+     * need to be deleted.</p>
      */
     inline DescribeRecoveryPointResult& WithStatus(RecoveryPointStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -897,6 +942,139 @@ namespace Model
      */
     inline DescribeRecoveryPointResult& WithLastRestoreTime(Aws::Utils::DateTime&& value) { SetLastRestoreTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline const Aws::String& GetParentRecoveryPointArn() const{ return m_parentRecoveryPointArn; }
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline void SetParentRecoveryPointArn(const Aws::String& value) { m_parentRecoveryPointArn = value; }
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline void SetParentRecoveryPointArn(Aws::String&& value) { m_parentRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline void SetParentRecoveryPointArn(const char* value) { m_parentRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithParentRecoveryPointArn(const Aws::String& value) { SetParentRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithParentRecoveryPointArn(Aws::String&& value) { SetParentRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is an ARN that uniquely identifies a parent (composite) recovery point;
+     * for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithParentRecoveryPointArn(const char* value) { SetParentRecoveryPointArn(value); return *this;}
+
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline const Aws::String& GetCompositeMemberIdentifier() const{ return m_compositeMemberIdentifier; }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline void SetCompositeMemberIdentifier(const Aws::String& value) { m_compositeMemberIdentifier = value; }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline void SetCompositeMemberIdentifier(Aws::String&& value) { m_compositeMemberIdentifier = std::move(value); }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline void SetCompositeMemberIdentifier(const char* value) { m_compositeMemberIdentifier.assign(value); }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline DescribeRecoveryPointResult& WithCompositeMemberIdentifier(const Aws::String& value) { SetCompositeMemberIdentifier(value); return *this;}
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline DescribeRecoveryPointResult& WithCompositeMemberIdentifier(Aws::String&& value) { SetCompositeMemberIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline DescribeRecoveryPointResult& WithCompositeMemberIdentifier(const char* value) { SetCompositeMemberIdentifier(value); return *this;}
+
+
+    /**
+     * <p>This returns the boolean value that a recovery point is a parent (composite)
+     * job.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This returns the boolean value that a recovery point is a parent (composite)
+     * job.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParent = value; }
+
+    /**
+     * <p>This returns the boolean value that a recovery point is a parent (composite)
+     * job.</p>
+     */
+    inline DescribeRecoveryPointResult& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
   private:
 
     Aws::String m_recoveryPointArn;
@@ -936,6 +1114,12 @@ namespace Model
     StorageClass m_storageClass;
 
     Aws::Utils::DateTime m_lastRestoreTime;
+
+    Aws::String m_parentRecoveryPointArn;
+
+    Aws::String m_compositeMemberIdentifier;
+
+    bool m_isParent;
   };
 
 } // namespace Model

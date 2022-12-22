@@ -26,12 +26,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetTableVersionsResult
+  class GetTableVersionsResult
   {
   public:
-    GetTableVersionsResult();
-    GetTableVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTableVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetTableVersionsResult();
+    AWS_GLUE_API GetTableVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetTableVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

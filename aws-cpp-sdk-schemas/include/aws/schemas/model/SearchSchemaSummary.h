@@ -25,13 +25,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API SearchSchemaSummary
+  class SearchSchemaSummary
   {
   public:
-    SearchSchemaSummary();
-    SearchSchemaSummary(Aws::Utils::Json::JsonView jsonValue);
-    SearchSchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API SearchSchemaSummary();
+    AWS_SCHEMAS_API SearchSchemaSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API SearchSchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

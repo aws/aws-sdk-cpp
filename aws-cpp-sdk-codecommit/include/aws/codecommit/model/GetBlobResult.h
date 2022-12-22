@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API GetBlobResult
+  class GetBlobResult
   {
   public:
-    GetBlobResult();
-    GetBlobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBlobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetBlobResult();
+    AWS_CODECOMMIT_API GetBlobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetBlobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

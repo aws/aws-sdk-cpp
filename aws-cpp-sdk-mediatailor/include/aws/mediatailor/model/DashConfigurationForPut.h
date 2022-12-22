@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DashConfigurationForPut">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API DashConfigurationForPut
+  class DashConfigurationForPut
   {
   public:
-    DashConfigurationForPut();
-    DashConfigurationForPut(Aws::Utils::Json::JsonView jsonValue);
-    DashConfigurationForPut& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API DashConfigurationForPut();
+    AWS_MEDIATAILOR_API DashConfigurationForPut(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API DashConfigurationForPut& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DocumentVersionMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API DocumentVersionMetadata
+  class DocumentVersionMetadata
   {
   public:
-    DocumentVersionMetadata();
-    DocumentVersionMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DocumentVersionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API DocumentVersionMetadata();
+    AWS_WORKDOCS_API DocumentVersionMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API DocumentVersionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

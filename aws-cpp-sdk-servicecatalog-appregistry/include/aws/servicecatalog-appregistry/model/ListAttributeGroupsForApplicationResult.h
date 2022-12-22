@@ -26,46 +26,46 @@ namespace AppRegistry
 {
 namespace Model
 {
-  class AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult
+  class ListAttributeGroupsForApplicationResult
   {
   public:
-    ListAttributeGroupsForApplicationResult();
-    ListAttributeGroupsForApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAttributeGroupsForApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult();
+    AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline const Aws::Vector<AttributeGroupDetails>& GetAttributeGroupsDetails() const{ return m_attributeGroupsDetails; }
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline void SetAttributeGroupsDetails(const Aws::Vector<AttributeGroupDetails>& value) { m_attributeGroupsDetails = value; }
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline void SetAttributeGroupsDetails(Aws::Vector<AttributeGroupDetails>&& value) { m_attributeGroupsDetails = std::move(value); }
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline ListAttributeGroupsForApplicationResult& WithAttributeGroupsDetails(const Aws::Vector<AttributeGroupDetails>& value) { SetAttributeGroupsDetails(value); return *this;}
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline ListAttributeGroupsForApplicationResult& WithAttributeGroupsDetails(Aws::Vector<AttributeGroupDetails>&& value) { SetAttributeGroupsDetails(std::move(value)); return *this;}
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline ListAttributeGroupsForApplicationResult& AddAttributeGroupsDetails(const AttributeGroupDetails& value) { m_attributeGroupsDetails.push_back(value); return *this; }
 
     /**
-     * <p> The details related to a specific AttributeGroup. </p>
+     * <p> The details related to a specific attribute group. </p>
      */
     inline ListAttributeGroupsForApplicationResult& AddAttributeGroupsDetails(AttributeGroupDetails&& value) { m_attributeGroupsDetails.push_back(std::move(value)); return *this; }
 

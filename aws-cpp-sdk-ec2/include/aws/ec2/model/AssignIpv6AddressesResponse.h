@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AssignIpv6AddressesResponse
+  class AssignIpv6AddressesResponse
   {
   public:
-    AssignIpv6AddressesResponse();
-    AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssignIpv6AddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssignIpv6AddressesResponse();
+    AWS_EC2_API AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssignIpv6AddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

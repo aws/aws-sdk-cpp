@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/FleetAdvisorSchemaObjectResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse
+  class FleetAdvisorSchemaObjectResponse
   {
   public:
-    FleetAdvisorSchemaObjectResponse();
-    FleetAdvisorSchemaObjectResponse(Aws::Utils::Json::JsonView jsonValue);
-    FleetAdvisorSchemaObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

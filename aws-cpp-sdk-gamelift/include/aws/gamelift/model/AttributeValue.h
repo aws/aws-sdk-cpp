@@ -26,20 +26,20 @@ namespace Model
 {
 
   /**
-   * <p>Values for use in <a>Player</a> attribute key-value pairs. This object lets
-   * you specify an attribute value using any of the valid data types: string,
-   * number, string array, or data map. Each <code>AttributeValue</code> object can
-   * use only one of the available properties.</p><p><h3>See Also:</h3>   <a
+   * <p>Values for use in player attribute key-value pairs. This object lets you
+   * specify an attribute value using any of the valid data types: string, number,
+   * string array, or data map. Each <code>AttributeValue</code> object can use only
+   * one of the available properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API AttributeValue
+  class AttributeValue
   {
   public:
-    AttributeValue();
-    AttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API AttributeValue();
+    AWS_GAMELIFT_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

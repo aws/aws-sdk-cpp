@@ -24,12 +24,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsResult
+  class RegisterTargetsResult
   {
   public:
-    RegisterTargetsResult();
-    RegisterTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RegisterTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsResult();
+    AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

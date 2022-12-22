@@ -28,6 +28,7 @@
 #include <aws/rds/model/CopyDBParameterGroupResult.h>
 #include <aws/rds/model/CopyDBSnapshotResult.h>
 #include <aws/rds/model/CopyOptionGroupResult.h>
+#include <aws/rds/model/CreateBlueGreenDeploymentResult.h>
 #include <aws/rds/model/CreateCustomDBEngineVersionResult.h>
 #include <aws/rds/model/CreateDBClusterResult.h>
 #include <aws/rds/model/CreateDBClusterEndpointResult.h>
@@ -44,6 +45,7 @@
 #include <aws/rds/model/CreateEventSubscriptionResult.h>
 #include <aws/rds/model/CreateGlobalClusterResult.h>
 #include <aws/rds/model/CreateOptionGroupResult.h>
+#include <aws/rds/model/DeleteBlueGreenDeploymentResult.h>
 #include <aws/rds/model/DeleteCustomDBEngineVersionResult.h>
 #include <aws/rds/model/DeleteDBClusterResult.h>
 #include <aws/rds/model/DeleteDBClusterEndpointResult.h>
@@ -57,6 +59,7 @@
 #include <aws/rds/model/DeleteGlobalClusterResult.h>
 #include <aws/rds/model/DeregisterDBProxyTargetsResult.h>
 #include <aws/rds/model/DescribeAccountAttributesResult.h>
+#include <aws/rds/model/DescribeBlueGreenDeploymentsResult.h>
 #include <aws/rds/model/DescribeCertificatesResult.h>
 #include <aws/rds/model/DescribeDBClusterBacktracksResult.h>
 #include <aws/rds/model/DescribeDBClusterEndpointsResult.h>
@@ -143,6 +146,7 @@
 #include <aws/rds/model/StopDBClusterResult.h>
 #include <aws/rds/model/StopDBInstanceResult.h>
 #include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationResult.h>
+#include <aws/rds/model/SwitchoverBlueGreenDeploymentResult.h>
 #include <aws/rds/model/SwitchoverReadReplicaResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in RDSClient header */
@@ -198,6 +202,7 @@ namespace Aws
       class CopyDBParameterGroupRequest;
       class CopyDBSnapshotRequest;
       class CopyOptionGroupRequest;
+      class CreateBlueGreenDeploymentRequest;
       class CreateCustomDBEngineVersionRequest;
       class CreateDBClusterRequest;
       class CreateDBClusterEndpointRequest;
@@ -214,6 +219,7 @@ namespace Aws
       class CreateEventSubscriptionRequest;
       class CreateGlobalClusterRequest;
       class CreateOptionGroupRequest;
+      class DeleteBlueGreenDeploymentRequest;
       class DeleteCustomDBEngineVersionRequest;
       class DeleteDBClusterRequest;
       class DeleteDBClusterEndpointRequest;
@@ -232,6 +238,7 @@ namespace Aws
       class DeleteOptionGroupRequest;
       class DeregisterDBProxyTargetsRequest;
       class DescribeAccountAttributesRequest;
+      class DescribeBlueGreenDeploymentsRequest;
       class DescribeCertificatesRequest;
       class DescribeDBClusterBacktracksRequest;
       class DescribeDBClusterEndpointsRequest;
@@ -321,6 +328,7 @@ namespace Aws
       class StopDBClusterRequest;
       class StopDBInstanceRequest;
       class StopDBInstanceAutomatedBackupsReplicationRequest;
+      class SwitchoverBlueGreenDeploymentRequest;
       class SwitchoverReadReplicaRequest;
       /* End of service model forward declarations required in RDSClient header */
 
@@ -338,6 +346,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, RDSError> CopyDBParameterGroupOutcome;
       typedef Aws::Utils::Outcome<CopyDBSnapshotResult, RDSError> CopyDBSnapshotOutcome;
       typedef Aws::Utils::Outcome<CopyOptionGroupResult, RDSError> CopyOptionGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateBlueGreenDeploymentResult, RDSError> CreateBlueGreenDeploymentOutcome;
       typedef Aws::Utils::Outcome<CreateCustomDBEngineVersionResult, RDSError> CreateCustomDBEngineVersionOutcome;
       typedef Aws::Utils::Outcome<CreateDBClusterResult, RDSError> CreateDBClusterOutcome;
       typedef Aws::Utils::Outcome<CreateDBClusterEndpointResult, RDSError> CreateDBClusterEndpointOutcome;
@@ -354,6 +363,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, RDSError> CreateEventSubscriptionOutcome;
       typedef Aws::Utils::Outcome<CreateGlobalClusterResult, RDSError> CreateGlobalClusterOutcome;
       typedef Aws::Utils::Outcome<CreateOptionGroupResult, RDSError> CreateOptionGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteBlueGreenDeploymentResult, RDSError> DeleteBlueGreenDeploymentOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomDBEngineVersionResult, RDSError> DeleteCustomDBEngineVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteDBClusterResult, RDSError> DeleteDBClusterOutcome;
       typedef Aws::Utils::Outcome<DeleteDBClusterEndpointResult, RDSError> DeleteDBClusterEndpointOutcome;
@@ -372,6 +382,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteOptionGroupOutcome;
       typedef Aws::Utils::Outcome<DeregisterDBProxyTargetsResult, RDSError> DeregisterDBProxyTargetsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, RDSError> DescribeAccountAttributesOutcome;
+      typedef Aws::Utils::Outcome<DescribeBlueGreenDeploymentsResult, RDSError> DescribeBlueGreenDeploymentsOutcome;
       typedef Aws::Utils::Outcome<DescribeCertificatesResult, RDSError> DescribeCertificatesOutcome;
       typedef Aws::Utils::Outcome<DescribeDBClusterBacktracksResult, RDSError> DescribeDBClusterBacktracksOutcome;
       typedef Aws::Utils::Outcome<DescribeDBClusterEndpointsResult, RDSError> DescribeDBClusterEndpointsOutcome;
@@ -461,6 +472,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopDBClusterResult, RDSError> StopDBClusterOutcome;
       typedef Aws::Utils::Outcome<StopDBInstanceResult, RDSError> StopDBInstanceOutcome;
       typedef Aws::Utils::Outcome<StopDBInstanceAutomatedBackupsReplicationResult, RDSError> StopDBInstanceAutomatedBackupsReplicationOutcome;
+      typedef Aws::Utils::Outcome<SwitchoverBlueGreenDeploymentResult, RDSError> SwitchoverBlueGreenDeploymentOutcome;
       typedef Aws::Utils::Outcome<SwitchoverReadReplicaResult, RDSError> SwitchoverReadReplicaOutcome;
       /* End of service model Outcome class definitions */
 
@@ -478,6 +490,7 @@ namespace Aws
       typedef std::future<CopyDBParameterGroupOutcome> CopyDBParameterGroupOutcomeCallable;
       typedef std::future<CopyDBSnapshotOutcome> CopyDBSnapshotOutcomeCallable;
       typedef std::future<CopyOptionGroupOutcome> CopyOptionGroupOutcomeCallable;
+      typedef std::future<CreateBlueGreenDeploymentOutcome> CreateBlueGreenDeploymentOutcomeCallable;
       typedef std::future<CreateCustomDBEngineVersionOutcome> CreateCustomDBEngineVersionOutcomeCallable;
       typedef std::future<CreateDBClusterOutcome> CreateDBClusterOutcomeCallable;
       typedef std::future<CreateDBClusterEndpointOutcome> CreateDBClusterEndpointOutcomeCallable;
@@ -494,6 +507,7 @@ namespace Aws
       typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
       typedef std::future<CreateGlobalClusterOutcome> CreateGlobalClusterOutcomeCallable;
       typedef std::future<CreateOptionGroupOutcome> CreateOptionGroupOutcomeCallable;
+      typedef std::future<DeleteBlueGreenDeploymentOutcome> DeleteBlueGreenDeploymentOutcomeCallable;
       typedef std::future<DeleteCustomDBEngineVersionOutcome> DeleteCustomDBEngineVersionOutcomeCallable;
       typedef std::future<DeleteDBClusterOutcome> DeleteDBClusterOutcomeCallable;
       typedef std::future<DeleteDBClusterEndpointOutcome> DeleteDBClusterEndpointOutcomeCallable;
@@ -512,6 +526,7 @@ namespace Aws
       typedef std::future<DeleteOptionGroupOutcome> DeleteOptionGroupOutcomeCallable;
       typedef std::future<DeregisterDBProxyTargetsOutcome> DeregisterDBProxyTargetsOutcomeCallable;
       typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
+      typedef std::future<DescribeBlueGreenDeploymentsOutcome> DescribeBlueGreenDeploymentsOutcomeCallable;
       typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
       typedef std::future<DescribeDBClusterBacktracksOutcome> DescribeDBClusterBacktracksOutcomeCallable;
       typedef std::future<DescribeDBClusterEndpointsOutcome> DescribeDBClusterEndpointsOutcomeCallable;
@@ -601,6 +616,7 @@ namespace Aws
       typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
       typedef std::future<StopDBInstanceOutcome> StopDBInstanceOutcomeCallable;
       typedef std::future<StopDBInstanceAutomatedBackupsReplicationOutcome> StopDBInstanceAutomatedBackupsReplicationOutcomeCallable;
+      typedef std::future<SwitchoverBlueGreenDeploymentOutcome> SwitchoverBlueGreenDeploymentOutcomeCallable;
       typedef std::future<SwitchoverReadReplicaOutcome> SwitchoverReadReplicaOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -621,6 +637,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::CopyDBParameterGroupRequest&, const Model::CopyDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBSnapshotRequest&, const Model::CopyDBSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyOptionGroupRequest&, const Model::CopyOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyOptionGroupResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::CreateBlueGreenDeploymentRequest&, const Model::CreateBlueGreenDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBlueGreenDeploymentResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateCustomDBEngineVersionRequest&, const Model::CreateCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomDBEngineVersionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateDBClusterRequest&, const Model::CreateDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateDBClusterEndpointRequest&, const Model::CreateDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterEndpointResponseReceivedHandler;
@@ -637,6 +654,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateGlobalClusterRequest&, const Model::CreateGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateOptionGroupRequest&, const Model::CreateOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOptionGroupResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DeleteBlueGreenDeploymentRequest&, const Model::DeleteBlueGreenDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBlueGreenDeploymentResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteCustomDBEngineVersionRequest&, const Model::DeleteCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomDBEngineVersionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterRequest&, const Model::DeleteDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterEndpointRequest&, const Model::DeleteDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterEndpointResponseReceivedHandler;
@@ -655,6 +673,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DeleteOptionGroupRequest&, const Model::DeleteOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOptionGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeregisterDBProxyTargetsRequest&, const Model::DeregisterDBProxyTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterDBProxyTargetsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DescribeBlueGreenDeploymentsRequest&, const Model::DescribeBlueGreenDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBlueGreenDeploymentsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificatesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBClusterBacktracksRequest&, const Model::DescribeDBClusterBacktracksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterBacktracksResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBClusterEndpointsRequest&, const Model::DescribeDBClusterEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterEndpointsResponseReceivedHandler;
@@ -744,6 +763,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceRequest&, const Model::StopDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceAutomatedBackupsReplicationRequest&, const Model::StopDBInstanceAutomatedBackupsReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::SwitchoverBlueGreenDeploymentRequest&, const Model::SwitchoverBlueGreenDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverBlueGreenDeploymentResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::SwitchoverReadReplicaRequest&, const Model::SwitchoverReadReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverReadReplicaResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace RDS

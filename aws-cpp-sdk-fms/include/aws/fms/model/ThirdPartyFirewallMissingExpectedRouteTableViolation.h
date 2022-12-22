@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallMissingExpectedRouteTableViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ThirdPartyFirewallMissingExpectedRouteTableViolation
+  class ThirdPartyFirewallMissingExpectedRouteTableViolation
   {
   public:
-    ThirdPartyFirewallMissingExpectedRouteTableViolation();
-    ThirdPartyFirewallMissingExpectedRouteTableViolation(Aws::Utils::Json::JsonView jsonValue);
-    ThirdPartyFirewallMissingExpectedRouteTableViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ThirdPartyFirewallMissingExpectedRouteTableViolation();
+    AWS_FMS_API ThirdPartyFirewallMissingExpectedRouteTableViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ThirdPartyFirewallMissingExpectedRouteTableViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

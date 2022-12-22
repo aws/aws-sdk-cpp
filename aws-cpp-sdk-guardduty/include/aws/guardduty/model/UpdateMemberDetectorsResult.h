@@ -25,12 +25,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API UpdateMemberDetectorsResult
+  class UpdateMemberDetectorsResult
   {
   public:
-    UpdateMemberDetectorsResult();
-    UpdateMemberDetectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMemberDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API UpdateMemberDetectorsResult();
+    AWS_GUARDDUTY_API UpdateMemberDetectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API UpdateMemberDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

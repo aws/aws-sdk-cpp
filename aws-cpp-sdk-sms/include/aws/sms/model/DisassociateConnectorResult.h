@@ -22,12 +22,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API DisassociateConnectorResult
+  class DisassociateConnectorResult
   {
   public:
-    DisassociateConnectorResult();
-    DisassociateConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API DisassociateConnectorResult();
+    AWS_SMS_API DisassociateConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API DisassociateConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

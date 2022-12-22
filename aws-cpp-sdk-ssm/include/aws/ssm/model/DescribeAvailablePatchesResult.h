@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeAvailablePatchesResult
+  class DescribeAvailablePatchesResult
   {
   public:
-    DescribeAvailablePatchesResult();
-    DescribeAvailablePatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAvailablePatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeAvailablePatchesResult();
+    AWS_SSM_API DescribeAvailablePatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeAvailablePatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

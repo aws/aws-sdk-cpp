@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemoveNotificationChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult
+  class RemoveNotificationChannelResult
   {
   public:
-    RemoveNotificationChannelResult();
-    RemoveNotificationChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveNotificationChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult();
+    AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

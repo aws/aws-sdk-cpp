@@ -7,6 +7,7 @@
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/comprehendmedical/ComprehendMedicalServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace ComprehendMedical
    * <p> Comprehend Medical; extracts structured information from unstructured
    * clinical text. Use these actions to gain insight in your documents. </p>
    */
-  class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient
+  class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace ComprehendMedical
 
         /* End of legacy constructors due deprecation */
         virtual ~ComprehendMedicalClient();
-
 
         /**
          * <p>Gets the properties associated with a medical entities detection job. Use
@@ -551,6 +551,7 @@ namespace ComprehendMedical
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ComprehendMedicalEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>;
       void init(const ComprehendMedicalClientConfiguration& clientConfiguration);
 
       ComprehendMedicalClientConfiguration m_clientConfiguration;

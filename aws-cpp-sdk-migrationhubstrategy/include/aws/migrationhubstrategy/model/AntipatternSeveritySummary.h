@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/AntipatternSeveritySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary
+  class AntipatternSeveritySummary
   {
   public:
-    AntipatternSeveritySummary();
-    AntipatternSeveritySummary(Aws::Utils::Json::JsonView jsonValue);
-    AntipatternSeveritySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

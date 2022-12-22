@@ -25,12 +25,12 @@ namespace CloudTrail
 {
 namespace Model
 {
-  class AWS_CLOUDTRAIL_API CancelQueryResult
+  class CancelQueryResult
   {
   public:
-    CancelQueryResult();
-    CancelQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API CancelQueryResult();
+    AWS_CLOUDTRAIL_API CancelQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API CancelQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

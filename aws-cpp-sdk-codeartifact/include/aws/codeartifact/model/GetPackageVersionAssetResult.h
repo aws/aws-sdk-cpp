@@ -19,21 +19,21 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API GetPackageVersionAssetResult
+  class GetPackageVersionAssetResult
   {
   public:
-    GetPackageVersionAssetResult();
+    AWS_CODEARTIFACT_API GetPackageVersionAssetResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetPackageVersionAssetResult(GetPackageVersionAssetResult&&);
-    GetPackageVersionAssetResult& operator=(GetPackageVersionAssetResult&&);
+    AWS_CODEARTIFACT_API GetPackageVersionAssetResult(GetPackageVersionAssetResult&&);
+    AWS_CODEARTIFACT_API GetPackageVersionAssetResult& operator=(GetPackageVersionAssetResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetPackageVersionAssetResult(const GetPackageVersionAssetResult&) = delete;
     GetPackageVersionAssetResult& operator=(const GetPackageVersionAssetResult&) = delete;
 
 
-    GetPackageVersionAssetResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetPackageVersionAssetResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_CODEARTIFACT_API GetPackageVersionAssetResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_CODEARTIFACT_API GetPackageVersionAssetResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

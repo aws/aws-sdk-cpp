@@ -27,12 +27,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API DescribeDataSharesResult
+  class DescribeDataSharesResult
   {
   public:
-    DescribeDataSharesResult();
-    DescribeDataSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDataSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeDataSharesResult();
+    AWS_REDSHIFT_API DescribeDataSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeDataSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

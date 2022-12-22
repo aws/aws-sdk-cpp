@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CanarySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API CanarySettings
+  class CanarySettings
   {
   public:
-    CanarySettings();
-    CanarySettings(Aws::Utils::Json::JsonView jsonValue);
-    CanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API CanarySettings();
+    AWS_APIGATEWAY_API CanarySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API CanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

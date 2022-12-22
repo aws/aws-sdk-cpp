@@ -29,13 +29,54 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API SourceServer
+  class SourceServer
   {
   public:
-    SourceServer();
-    SourceServer(Aws::Utils::Json::JsonView jsonValue);
-    SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SourceServer();
+    AWS_MGN_API SourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline bool ApplicationIDHasBeenSet() const { return m_applicationIDHasBeenSet; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const Aws::String& value) { m_applicationIDHasBeenSet = true; m_applicationID = value; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(Aws::String&& value) { m_applicationIDHasBeenSet = true; m_applicationID = std::move(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const char* value) { m_applicationIDHasBeenSet = true; m_applicationID.assign(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline SourceServer& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline SourceServer& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline SourceServer& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
 
 
     /**
@@ -403,6 +444,9 @@ namespace Model
     inline SourceServer& WithVcenterClientID(const char* value) { SetVcenterClientID(value); return *this;}
 
   private:
+
+    Aws::String m_applicationID;
+    bool m_applicationIDHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;

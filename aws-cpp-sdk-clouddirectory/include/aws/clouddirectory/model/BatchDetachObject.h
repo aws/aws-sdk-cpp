@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDetachObject">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchDetachObject
+  class BatchDetachObject
   {
   public:
-    BatchDetachObject();
-    BatchDetachObject(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchDetachObject();
+    AWS_CLOUDDIRECTORY_API BatchDetachObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchDetachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

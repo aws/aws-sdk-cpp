@@ -26,12 +26,12 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVENTS_API StartReplayResult
+  class StartReplayResult
   {
   public:
-    StartReplayResult();
-    StartReplayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartReplayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API StartReplayResult();
+    AWS_CLOUDWATCHEVENTS_API StartReplayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API StartReplayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

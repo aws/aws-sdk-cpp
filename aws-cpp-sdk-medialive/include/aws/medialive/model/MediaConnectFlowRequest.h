@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MediaConnectFlowRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MediaConnectFlowRequest
+  class MediaConnectFlowRequest
   {
   public:
-    MediaConnectFlowRequest();
-    MediaConnectFlowRequest(Aws::Utils::Json::JsonView jsonValue);
-    MediaConnectFlowRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MediaConnectFlowRequest();
+    AWS_MEDIALIVE_API MediaConnectFlowRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MediaConnectFlowRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

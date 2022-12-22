@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/QuipConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API QuipConfiguration
+  class QuipConfiguration
   {
   public:
-    QuipConfiguration();
-    QuipConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    QuipConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API QuipConfiguration();
+    AWS_KENDRA_API QuipConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API QuipConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,8 +103,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -113,8 +113,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -123,8 +123,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -133,8 +133,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -143,8 +143,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -153,8 +153,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline QuipConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -163,8 +163,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline QuipConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -173,8 +173,8 @@ namespace Model
      * key-value pairs that are required to connect to your Quip. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li>
      * <p>accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
-     * for a Quip data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using
+     * a Quip data source</a>.</p> </li> </ul>
      */
     inline QuipConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

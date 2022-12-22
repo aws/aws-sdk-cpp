@@ -27,44 +27,44 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetFindingsFilterResult
+  class GetFindingsFilterResult
   {
   public:
-    GetFindingsFilterResult();
-    GetFindingsFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFindingsFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetFindingsFilterResult();
+    AWS_MACIE2_API GetFindingsFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetFindingsFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria
+     * <p>The action that's performed on findings that match the filter criteria
      * (findingCriteria). Possible values are: ARCHIVE, suppress (automatically
      * archive) the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline const FindingsFilterAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria
+     * <p>The action that's performed on findings that match the filter criteria
      * (findingCriteria). Possible values are: ARCHIVE, suppress (automatically
      * archive) the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(const FindingsFilterAction& value) { m_action = value; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria
+     * <p>The action that's performed on findings that match the filter criteria
      * (findingCriteria). Possible values are: ARCHIVE, suppress (automatically
      * archive) the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(FindingsFilterAction&& value) { m_action = std::move(value); }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria
+     * <p>The action that's performed on findings that match the filter criteria
      * (findingCriteria). Possible values are: ARCHIVE, suppress (automatically
      * archive) the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline GetFindingsFilterResult& WithAction(const FindingsFilterAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria
+     * <p>The action that's performed on findings that match the filter criteria
      * (findingCriteria). Possible values are: ARCHIVE, suppress (automatically
      * archive) the findings; and, NOOP, don't perform any action on the findings.</p>
      */

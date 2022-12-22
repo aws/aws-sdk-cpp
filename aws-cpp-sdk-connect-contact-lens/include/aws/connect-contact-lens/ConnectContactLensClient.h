@@ -7,6 +7,7 @@
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace ConnectContactLens
    * conversations using Contact Lens</a> in the <i>Amazon Connect Administrator
    * Guide</i>. </p>
    */
-  class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace ConnectContactLens
         /* End of legacy constructors due deprecation */
         virtual ~ConnectContactLensClient();
 
-
         /**
          * <p>Provides a list of analysis segments for a real-time analysis
          * session.</p><p><h3>See Also:</h3>   <a
@@ -103,6 +103,7 @@ namespace ConnectContactLens
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConnectContactLensEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>;
       void init(const ConnectContactLensClientConfiguration& clientConfiguration);
 
       ConnectContactLensClientConfiguration m_clientConfiguration;

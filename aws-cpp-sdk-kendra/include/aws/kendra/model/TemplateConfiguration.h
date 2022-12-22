@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TemplateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API TemplateConfiguration
+  class TemplateConfiguration
   {
   public:
-    TemplateConfiguration();
-    TemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API TemplateConfiguration();
+    AWS_KENDRA_API TemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API TemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

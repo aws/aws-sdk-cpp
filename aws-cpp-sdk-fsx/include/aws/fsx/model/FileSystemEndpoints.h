@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystemEndpoints">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileSystemEndpoints
+  class FileSystemEndpoints
   {
   public:
-    FileSystemEndpoints();
-    FileSystemEndpoints(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemEndpoints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileSystemEndpoints();
+    AWS_FSX_API FileSystemEndpoints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileSystemEndpoints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

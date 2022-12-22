@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SnapshotDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API SnapshotDetails
+  class SnapshotDetails
   {
   public:
-    SnapshotDetails();
-    SnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API SnapshotDetails();
+    AWS_KINESISANALYTICSV2_API SnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API SnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,6 +30,7 @@ namespace Model
     me_south_1,
     me_central_1,
     ap_south_1,
+    ap_south_2,
     ap_southeast_1,
     ap_southeast_2,
     ap_southeast_3,

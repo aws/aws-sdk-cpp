@@ -24,12 +24,12 @@ namespace WorkDocs
 {
 namespace Model
 {
-  class AWS_WORKDOCS_API GetCurrentUserResult
+  class GetCurrentUserResult
   {
   public:
-    GetCurrentUserResult();
-    GetCurrentUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCurrentUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API GetCurrentUserResult();
+    AWS_WORKDOCS_API GetCurrentUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API GetCurrentUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

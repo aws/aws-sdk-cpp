@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/WorkspaceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API WorkspaceSummary
+  class WorkspaceSummary
   {
   public:
-    WorkspaceSummary();
-    WorkspaceSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API WorkspaceSummary();
+    AWS_MANAGEDGRAFANA_API WorkspaceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API WorkspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepExecutionStatusDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API StepExecutionStatusDetail
+  class StepExecutionStatusDetail
   {
   public:
-    StepExecutionStatusDetail();
-    StepExecutionStatusDetail(Aws::Utils::Json::JsonView jsonValue);
-    StepExecutionStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API StepExecutionStatusDetail();
+    AWS_EMR_API StepExecutionStatusDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API StepExecutionStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

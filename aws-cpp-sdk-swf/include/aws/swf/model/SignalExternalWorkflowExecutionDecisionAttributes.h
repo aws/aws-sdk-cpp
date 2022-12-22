@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalExternalWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes
+  class SignalExternalWorkflowExecutionDecisionAttributes
   {
   public:
-    SignalExternalWorkflowExecutionDecisionAttributes();
-    SignalExternalWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    SignalExternalWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

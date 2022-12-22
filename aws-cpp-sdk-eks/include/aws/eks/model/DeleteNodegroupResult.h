@@ -24,12 +24,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API DeleteNodegroupResult
+  class DeleteNodegroupResult
   {
   public:
-    DeleteNodegroupResult();
-    DeleteNodegroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteNodegroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API DeleteNodegroupResult();
+    AWS_EKS_API DeleteNodegroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API DeleteNodegroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

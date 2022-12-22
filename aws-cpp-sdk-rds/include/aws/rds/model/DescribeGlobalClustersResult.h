@@ -27,12 +27,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeGlobalClustersResult
+  class DescribeGlobalClustersResult
   {
   public:
-    DescribeGlobalClustersResult();
-    DescribeGlobalClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeGlobalClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeGlobalClustersResult();
+    AWS_RDS_API DescribeGlobalClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeGlobalClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

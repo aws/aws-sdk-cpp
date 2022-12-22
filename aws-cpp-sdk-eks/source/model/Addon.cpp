@@ -29,7 +29,11 @@ Addon::Addon() :
     m_createdAtHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
     m_serviceAccountRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publisherHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_marketplaceInformationHasBeenSet(false),
+    m_configurationValuesHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ Addon::Addon(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
     m_serviceAccountRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publisherHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_marketplaceInformationHasBeenSet(false),
+    m_configurationValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +132,34 @@ Addon& Addon::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("publisher"))
+  {
+    m_publisher = jsonValue.GetString("publisher");
+
+    m_publisherHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("owner"))
+  {
+    m_owner = jsonValue.GetString("owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("marketplaceInformation"))
+  {
+    m_marketplaceInformation = jsonValue.GetObject("marketplaceInformation");
+
+    m_marketplaceInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configurationValues"))
+  {
+    m_configurationValues = jsonValue.GetString("configurationValues");
+
+    m_configurationValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +226,30 @@ JsonValue Addon::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_publisherHasBeenSet)
+  {
+   payload.WithString("publisher", m_publisher);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("owner", m_owner);
+
+  }
+
+  if(m_marketplaceInformationHasBeenSet)
+  {
+   payload.WithObject("marketplaceInformation", m_marketplaceInformation.Jsonize());
+
+  }
+
+  if(m_configurationValuesHasBeenSet)
+  {
+   payload.WithString("configurationValues", m_configurationValues);
 
   }
 

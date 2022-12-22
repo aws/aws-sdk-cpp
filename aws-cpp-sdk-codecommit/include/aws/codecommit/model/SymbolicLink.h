@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/SymbolicLink">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API SymbolicLink
+  class SymbolicLink
   {
   public:
-    SymbolicLink();
-    SymbolicLink(Aws::Utils::Json::JsonView jsonValue);
-    SymbolicLink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API SymbolicLink();
+    AWS_CODECOMMIT_API SymbolicLink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API SymbolicLink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

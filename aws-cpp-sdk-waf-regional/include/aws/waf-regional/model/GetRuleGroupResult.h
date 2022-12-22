@@ -24,12 +24,12 @@ namespace WAFRegional
 {
 namespace Model
 {
-  class AWS_WAFREGIONAL_API GetRuleGroupResult
+  class GetRuleGroupResult
   {
   public:
-    GetRuleGroupResult();
-    GetRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API GetRuleGroupResult();
+    AWS_WAFREGIONAL_API GetRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

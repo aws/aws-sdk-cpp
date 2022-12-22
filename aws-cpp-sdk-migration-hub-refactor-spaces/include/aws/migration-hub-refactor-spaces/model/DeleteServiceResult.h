@@ -26,12 +26,12 @@ namespace MigrationHubRefactorSpaces
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBREFACTORSPACES_API DeleteServiceResult
+  class DeleteServiceResult
   {
   public:
-    DeleteServiceResult();
-    DeleteServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API DeleteServiceResult();
+    AWS_MIGRATIONHUBREFACTORSPACES_API DeleteServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API DeleteServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

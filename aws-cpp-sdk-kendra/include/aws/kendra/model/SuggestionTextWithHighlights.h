@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SuggestionTextWithHighlights">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SuggestionTextWithHighlights
+  class SuggestionTextWithHighlights
   {
   public:
-    SuggestionTextWithHighlights();
-    SuggestionTextWithHighlights(Aws::Utils::Json::JsonView jsonValue);
-    SuggestionTextWithHighlights& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SuggestionTextWithHighlights();
+    AWS_KENDRA_API SuggestionTextWithHighlights(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SuggestionTextWithHighlights& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

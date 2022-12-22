@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListPricingRulesFilter
+  class ListPricingRulesFilter
   {
   public:
-    ListPricingRulesFilter();
-    ListPricingRulesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListPricingRulesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesFilter();
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

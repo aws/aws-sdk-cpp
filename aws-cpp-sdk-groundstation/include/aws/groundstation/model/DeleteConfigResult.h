@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigIdResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DeleteConfigResult
+  class DeleteConfigResult
   {
   public:
-    DeleteConfigResult();
-    DeleteConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DeleteConfigResult();
+    AWS_GROUNDSTATION_API DeleteConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DeleteConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ContactIdResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API CancelContactResult
+  class CancelContactResult
   {
   public:
-    CancelContactResult();
-    CancelContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API CancelContactResult();
+    AWS_GROUNDSTATION_API CancelContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API CancelContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

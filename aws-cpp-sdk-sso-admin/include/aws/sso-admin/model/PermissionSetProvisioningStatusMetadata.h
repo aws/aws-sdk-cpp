@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PermissionSetProvisioningStatusMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API PermissionSetProvisioningStatusMetadata
+  class PermissionSetProvisioningStatusMetadata
   {
   public:
-    PermissionSetProvisioningStatusMetadata();
-    PermissionSetProvisioningStatusMetadata(Aws::Utils::Json::JsonView jsonValue);
-    PermissionSetProvisioningStatusMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API PermissionSetProvisioningStatusMetadata();
+    AWS_SSOADMIN_API PermissionSetProvisioningStatusMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API PermissionSetProvisioningStatusMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

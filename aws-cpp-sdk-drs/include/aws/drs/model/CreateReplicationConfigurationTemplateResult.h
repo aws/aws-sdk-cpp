@@ -30,12 +30,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API CreateReplicationConfigurationTemplateResult
+  class CreateReplicationConfigurationTemplateResult
   {
   public:
-    CreateReplicationConfigurationTemplateResult();
-    CreateReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API CreateReplicationConfigurationTemplateResult();
+    AWS_DRS_API CreateReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API CreateReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

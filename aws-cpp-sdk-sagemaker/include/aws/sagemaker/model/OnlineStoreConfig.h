@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OnlineStoreConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OnlineStoreConfig
+  class OnlineStoreConfig
   {
   public:
-    OnlineStoreConfig();
-    OnlineStoreConfig(Aws::Utils::Json::JsonView jsonValue);
-    OnlineStoreConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OnlineStoreConfig();
+    AWS_SAGEMAKER_API OnlineStoreConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OnlineStoreConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

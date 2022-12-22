@@ -24,12 +24,12 @@ namespace TimestreamWrite
 {
 namespace Model
 {
-  class AWS_TIMESTREAMWRITE_API DescribeTableResult
+  class DescribeTableResult
   {
   public:
-    DescribeTableResult();
-    DescribeTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMWRITE_API DescribeTableResult();
+    AWS_TIMESTREAMWRITE_API DescribeTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMWRITE_API DescribeTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

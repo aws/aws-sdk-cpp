@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter
+  class ListBillingGroupsFilter
   {
   public:
-    ListBillingGroupsFilter();
-    ListBillingGroupsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListBillingGroupsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter();
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

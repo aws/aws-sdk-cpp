@@ -7,6 +7,7 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resiliencehub/ResilienceHubServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace ResilienceHub
    * your applications are met, and resolve issues before they are released into
    * production. </p>
    */
-  class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonClient
+  class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace ResilienceHub
 
         /* End of legacy constructors due deprecation */
         virtual ~ResilienceHubClient();
-
 
         /**
          * <p>Adds the resource mapping for the draft application version.</p><p><h3>See
@@ -793,6 +793,7 @@ namespace ResilienceHub
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ResilienceHubEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>;
       void init(const ResilienceHubClientConfiguration& clientConfiguration);
 
       ResilienceHubClientConfiguration m_clientConfiguration;

@@ -1,3 +1,4 @@
+#set($exportMacro = $typeInfo.exportValue)
 #foreach($member in $shape.members.entrySet())
 #set($moveType = '')
 #set($moveValueType = '')
@@ -57,7 +58,7 @@
 #set($witherWithMove = ";")
 #set($adderWithCopy = ";")
 #set($adderWithMove = ";")
-#set($inline = "")
+#set($inline = "$exportMacro ")
 #else
 #set($getterBody = "{ return ${memberVariableName}; }")
 #set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
@@ -76,13 +77,13 @@
 
 #elseif ($isEventStreamInput)
     $memberDocumentation
-    std::shared_ptr<${member.value.shape.name}> ${getterFunctionName}() const ${getterBody}
+    ${exportMacro} std::shared_ptr<${member.value.shape.name}> ${getterFunctionName}() const ${getterBody}
 
     $memberDocumentation
-    void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
+    ${exportMacro} void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
 
     $memberDocumentation
-    ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${witherWithCopy}
+    ${exportMacro} ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${witherWithCopy}
 
 #else
 #set($override = "")

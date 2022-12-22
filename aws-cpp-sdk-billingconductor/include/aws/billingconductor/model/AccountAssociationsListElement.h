@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AccountAssociationsListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API AccountAssociationsListElement
+  class AccountAssociationsListElement
   {
   public:
-    AccountAssociationsListElement();
-    AccountAssociationsListElement(Aws::Utils::Json::JsonView jsonValue);
-    AccountAssociationsListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API AccountAssociationsListElement();
+    AWS_BILLINGCONDUCTOR_API AccountAssociationsListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API AccountAssociationsListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

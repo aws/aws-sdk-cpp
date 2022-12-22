@@ -25,12 +25,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API AcceptEulasResult
+  class AcceptEulasResult
   {
   public:
-    AcceptEulasResult();
-    AcceptEulasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptEulasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API AcceptEulasResult();
+    AWS_NIMBLESTUDIO_API AcceptEulasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API AcceptEulasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

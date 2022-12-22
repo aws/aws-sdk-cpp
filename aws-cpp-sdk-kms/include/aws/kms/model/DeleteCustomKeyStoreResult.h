@@ -22,12 +22,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API DeleteCustomKeyStoreResult
+  class DeleteCustomKeyStoreResult
   {
   public:
-    DeleteCustomKeyStoreResult();
-    DeleteCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API DeleteCustomKeyStoreResult();
+    AWS_KMS_API DeleteCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API DeleteCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -25,12 +25,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API RegisterTypeResult
+  class RegisterTypeResult
   {
   public:
-    RegisterTypeResult();
-    RegisterTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RegisterTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API RegisterTypeResult();
+    AWS_CLOUDFORMATION_API RegisterTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API RegisterTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

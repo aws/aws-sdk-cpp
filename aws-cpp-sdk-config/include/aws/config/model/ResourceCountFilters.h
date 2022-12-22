@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceCountFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ResourceCountFilters
+  class ResourceCountFilters
   {
   public:
-    ResourceCountFilters();
-    ResourceCountFilters(Aws::Utils::Json::JsonView jsonValue);
-    ResourceCountFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ResourceCountFilters();
+    AWS_CONFIGSERVICE_API ResourceCountFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ResourceCountFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

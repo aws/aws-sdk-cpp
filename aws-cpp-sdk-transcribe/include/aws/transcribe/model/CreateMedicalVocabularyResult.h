@@ -27,12 +27,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API CreateMedicalVocabularyResult
+  class CreateMedicalVocabularyResult
   {
   public:
-    CreateMedicalVocabularyResult();
-    CreateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMedicalVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API CreateMedicalVocabularyResult();
+    AWS_TRANSCRIBESERVICE_API CreateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API CreateMedicalVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -72,35 +72,35 @@ namespace Model
 
 
     /**
-     * <p>The language code you selected for your medical vocabulary. US English
+     * <p>The language code you selected for your custom medical vocabulary. US English
      * (<code>en-US</code>) is the only language supported with Amazon Transcribe
      * Medical.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code you selected for your medical vocabulary. US English
+     * <p>The language code you selected for your custom medical vocabulary. US English
      * (<code>en-US</code>) is the only language supported with Amazon Transcribe
      * Medical.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
 
     /**
-     * <p>The language code you selected for your medical vocabulary. US English
+     * <p>The language code you selected for your custom medical vocabulary. US English
      * (<code>en-US</code>) is the only language supported with Amazon Transcribe
      * Medical.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code you selected for your medical vocabulary. US English
+     * <p>The language code you selected for your custom medical vocabulary. US English
      * (<code>en-US</code>) is the only language supported with Amazon Transcribe
      * Medical.</p>
      */
     inline CreateMedicalVocabularyResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code you selected for your medical vocabulary. US English
+     * <p>The language code you selected for your custom medical vocabulary. US English
      * (<code>en-US</code>) is the only language supported with Amazon Transcribe
      * Medical.</p>
      */
@@ -109,35 +109,35 @@ namespace Model
 
     /**
      * <p>The processing state of your custom medical vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
      * <p>The processing state of your custom medical vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
      * <p>The processing state of your custom medical vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
      * <p>The processing state of your custom medical vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
      * <p>The processing state of your custom medical vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartMedicalTranscriptionJob</code> request.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}

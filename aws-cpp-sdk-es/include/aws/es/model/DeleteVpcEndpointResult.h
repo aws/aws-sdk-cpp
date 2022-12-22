@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpointResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API DeleteVpcEndpointResult
+  class DeleteVpcEndpointResult
   {
   public:
-    DeleteVpcEndpointResult();
-    DeleteVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API DeleteVpcEndpointResult();
+    AWS_ELASTICSEARCHSERVICE_API DeleteVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API DeleteVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

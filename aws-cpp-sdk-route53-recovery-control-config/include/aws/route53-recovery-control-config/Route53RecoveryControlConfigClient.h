@@ -7,6 +7,7 @@
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace Route53RecoveryControlConfig
    * <p>Recovery Control Configuration API Reference for Amazon Route 53 Application
    * Recovery Controller</p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace Route53RecoveryControlConfig
 
         /* End of legacy constructors due deprecation */
         virtual ~Route53RecoveryControlConfigClient();
-
 
         /**
          * <p>Create a new cluster. A cluster is a set of redundant Regional endpoints
@@ -520,6 +520,7 @@ namespace Route53RecoveryControlConfig
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>;
       void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
 
       Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;

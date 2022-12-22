@@ -27,12 +27,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetUsageStatisticsResult
+  class GetUsageStatisticsResult
   {
   public:
-    GetUsageStatisticsResult();
-    GetUsageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUsageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetUsageStatisticsResult();
+    AWS_MACIE2_API GetUsageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetUsageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -80,50 +80,50 @@ namespace Model
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline const Aws::Vector<UsageRecord>& GetRecords() const{ return m_records; }
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline void SetRecords(const Aws::Vector<UsageRecord>& value) { m_records = value; }
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline void SetRecords(Aws::Vector<UsageRecord>&& value) { m_records = std::move(value); }
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline GetUsageStatisticsResult& WithRecords(const Aws::Vector<UsageRecord>& value) { SetRecords(value); return *this;}
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline GetUsageStatisticsResult& WithRecords(Aws::Vector<UsageRecord>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline GetUsageStatisticsResult& AddRecords(const UsageRecord& value) { m_records.push_back(value); return *this; }
 
     /**
      * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that meets the filter criteria specified in the
-     * request.</p>
+     * contains the data for an account that matches the filter criteria specified in
+     * the request.</p>
      */
     inline GetUsageStatisticsResult& AddRecords(UsageRecord&& value) { m_records.push_back(std::move(value)); return *this; }
 

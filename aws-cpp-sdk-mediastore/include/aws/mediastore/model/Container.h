@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/Container">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIASTORE_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIASTORE_API Container();
+    AWS_MEDIASTORE_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

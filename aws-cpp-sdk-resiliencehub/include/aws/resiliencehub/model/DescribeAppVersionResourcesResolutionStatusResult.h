@@ -25,12 +25,12 @@ namespace ResilienceHub
 {
 namespace Model
 {
-  class AWS_RESILIENCEHUB_API DescribeAppVersionResourcesResolutionStatusResult
+  class DescribeAppVersionResourcesResolutionStatusResult
   {
   public:
-    DescribeAppVersionResourcesResolutionStatusResult();
-    DescribeAppVersionResourcesResolutionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAppVersionResourcesResolutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API DescribeAppVersionResourcesResolutionStatusResult();
+    AWS_RESILIENCEHUB_API DescribeAppVersionResourcesResolutionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API DescribeAppVersionResourcesResolutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

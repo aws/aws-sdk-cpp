@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRuleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult
+  class GetComplianceSummaryByConfigRuleResult
   {
   public:
-    GetComplianceSummaryByConfigRuleResult();
-    GetComplianceSummaryByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComplianceSummaryByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult();
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

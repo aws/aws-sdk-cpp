@@ -22,12 +22,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API DisassociateConfigurationItemsFromApplicationResult
+  class DisassociateConfigurationItemsFromApplicationResult
   {
   public:
-    DisassociateConfigurationItemsFromApplicationResult();
-    DisassociateConfigurationItemsFromApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateConfigurationItemsFromApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API DisassociateConfigurationItemsFromApplicationResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DisassociateConfigurationItemsFromApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API DisassociateConfigurationItemsFromApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

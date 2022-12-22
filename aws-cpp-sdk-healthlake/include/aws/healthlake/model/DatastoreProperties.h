@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API DatastoreProperties
+  class DatastoreProperties
   {
   public:
-    DatastoreProperties();
-    DatastoreProperties(Aws::Utils::Json::JsonView jsonValue);
-    DatastoreProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API DatastoreProperties();
+    AWS_HEALTHLAKE_API DatastoreProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API DatastoreProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

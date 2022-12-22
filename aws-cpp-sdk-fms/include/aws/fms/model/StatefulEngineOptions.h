@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatefulEngineOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API StatefulEngineOptions
+  class StatefulEngineOptions
   {
   public:
-    StatefulEngineOptions();
-    StatefulEngineOptions(Aws::Utils::Json::JsonView jsonValue);
-    StatefulEngineOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API StatefulEngineOptions();
+    AWS_FMS_API StatefulEngineOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API StatefulEngineOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

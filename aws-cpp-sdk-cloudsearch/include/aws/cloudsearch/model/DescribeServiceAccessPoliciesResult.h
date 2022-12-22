@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPoliciesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DescribeServiceAccessPoliciesResult
+  class DescribeServiceAccessPoliciesResult
   {
   public:
-    DescribeServiceAccessPoliciesResult();
-    DescribeServiceAccessPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeServiceAccessPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DescribeServiceAccessPoliciesResult();
+    AWS_CLOUDSEARCH_API DescribeServiceAccessPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DescribeServiceAccessPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

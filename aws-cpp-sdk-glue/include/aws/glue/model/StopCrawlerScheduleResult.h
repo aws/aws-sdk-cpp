@@ -22,12 +22,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API StopCrawlerScheduleResult
+  class StopCrawlerScheduleResult
   {
   public:
-    StopCrawlerScheduleResult();
-    StopCrawlerScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopCrawlerScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API StopCrawlerScheduleResult();
+    AWS_GLUE_API StopCrawlerScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API StopCrawlerScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

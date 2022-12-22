@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReportsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API ListDeliverabilityTestReportsResult
+  class ListDeliverabilityTestReportsResult
   {
   public:
-    ListDeliverabilityTestReportsResult();
-    ListDeliverabilityTestReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeliverabilityTestReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListDeliverabilityTestReportsResult();
+    AWS_PINPOINTEMAIL_API ListDeliverabilityTestReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListDeliverabilityTestReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace OpsWorksCM
 {
 namespace Model
 {
-  class AWS_OPSWORKSCM_API RestoreServerResult
+  class RestoreServerResult
   {
   public:
-    RestoreServerResult();
-    RestoreServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API RestoreServerResult();
+    AWS_OPSWORKSCM_API RestoreServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API RestoreServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

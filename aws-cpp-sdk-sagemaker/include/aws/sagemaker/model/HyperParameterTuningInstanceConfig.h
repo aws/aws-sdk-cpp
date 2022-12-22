@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningInstanceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig
+  class HyperParameterTuningInstanceConfig
   {
   public:
-    HyperParameterTuningInstanceConfig();
-    HyperParameterTuningInstanceConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningInstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,7 +112,7 @@ namespace Model
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
      * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * distributed training jobs</a> for more informcration.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
      * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * distributed training jobs</a> for more informcration.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
@@ -128,7 +128,7 @@ namespace Model
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
      * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * distributed training jobs</a> for more informcration.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
@@ -136,7 +136,7 @@ namespace Model
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
      * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * distributed training jobs</a> for more informcration.</p>
      */
     inline HyperParameterTuningInstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

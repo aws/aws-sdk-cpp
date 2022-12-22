@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedFieldSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API AdvancedFieldSelector
+  class AdvancedFieldSelector
   {
   public:
-    AdvancedFieldSelector();
-    AdvancedFieldSelector(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedFieldSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API AdvancedFieldSelector();
+    AWS_CLOUDTRAIL_API AdvancedFieldSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API AdvancedFieldSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -52,7 +52,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -151,7 +151,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -250,7 +250,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -349,7 +349,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -448,7 +448,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -547,7 +547,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -646,7 +646,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -745,7 +745,7 @@ namespace Model
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to

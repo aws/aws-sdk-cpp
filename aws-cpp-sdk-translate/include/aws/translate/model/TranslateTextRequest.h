@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSLATE_API TranslateTextRequest : public TranslateRequest
+  class TranslateTextRequest : public TranslateRequest
   {
   public:
-    TranslateTextRequest();
+    AWS_TRANSLATE_API TranslateTextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,56 +31,56 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TranslateText"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSLATE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSLATE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(const char* value) { SetText(value); return *this;}
 

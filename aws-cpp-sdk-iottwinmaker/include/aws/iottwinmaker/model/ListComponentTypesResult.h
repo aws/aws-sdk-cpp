@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iottwinmaker/model/ComponentTypeSummary.h>
 #include <utility>
 
@@ -26,12 +26,48 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API ListComponentTypesResult
+  class ListComponentTypesResult
   {
   public:
-    ListComponentTypesResult();
-    ListComponentTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListComponentTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ListComponentTypesResult();
+    AWS_IOTTWINMAKER_API ListComponentTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ListComponentTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListComponentTypesResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListComponentTypesResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListComponentTypesResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -71,22 +107,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies the maximum number of results to display.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Specifies the maximum number of results to display.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResults = value; }
-
-    /**
-     * <p>Specifies the maximum number of results to display.</p>
-     */
-    inline ListComponentTypesResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>The string that specifies the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -123,49 +143,29 @@ namespace Model
 
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Specifies the maximum number of results to display.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Specifies the maximum number of results to display.</p>
      */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
+    inline void SetMaxResults(int value) { m_maxResults = value; }
 
     /**
-     * <p>The ID of the workspace.</p>
+     * <p>Specifies the maximum number of results to display.</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListComponentTypesResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListComponentTypesResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListComponentTypesResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline ListComponentTypesResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    Aws::Vector<ComponentTypeSummary> m_componentTypeSummaries;
+    Aws::String m_workspaceId;
 
-    int m_maxResults;
+    Aws::Vector<ComponentTypeSummary> m_componentTypeSummaries;
 
     Aws::String m_nextToken;
 
-    Aws::String m_workspaceId;
+    int m_maxResults;
   };
 
 } // namespace Model

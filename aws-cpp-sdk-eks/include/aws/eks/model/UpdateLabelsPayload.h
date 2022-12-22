@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateLabelsPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API UpdateLabelsPayload
+  class UpdateLabelsPayload
   {
   public:
-    UpdateLabelsPayload();
-    UpdateLabelsPayload(Aws::Utils::Json::JsonView jsonValue);
-    UpdateLabelsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API UpdateLabelsPayload();
+    AWS_EKS_API UpdateLabelsPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API UpdateLabelsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartPosition">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API StartPosition
+  class StartPosition
   {
   public:
-    StartPosition();
-    StartPosition(Aws::Utils::Json::JsonView jsonValue);
-    StartPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API StartPosition();
+    AWS_CONNECTPARTICIPANT_API StartPosition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API StartPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

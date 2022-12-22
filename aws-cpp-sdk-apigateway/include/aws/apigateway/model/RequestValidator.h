@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RequestValidator">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API RequestValidator
+  class RequestValidator
   {
   public:
-    RequestValidator();
-    RequestValidator(Aws::Utils::Json::JsonView jsonValue);
-    RequestValidator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API RequestValidator();
+    AWS_APIGATEWAY_API RequestValidator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API RequestValidator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

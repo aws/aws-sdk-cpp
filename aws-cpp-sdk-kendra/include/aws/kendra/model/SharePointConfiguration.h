@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SharePointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SharePointConfiguration
+  class SharePointConfiguration
   {
   public:
-    SharePointConfiguration();
-    SharePointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SharePointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SharePointConfiguration();
+    AWS_KENDRA_API SharePointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SharePointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,8 +131,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -145,8 +145,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -159,8 +159,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -173,8 +173,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -187,8 +187,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -201,8 +201,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -215,8 +215,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -229,8 +229,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

@@ -25,87 +25,87 @@ namespace Model
 {
 
   /**
-   * <p>Source server replication type.</p><p><h3>See Also:</h3>   <a
+   * <p>AWS Systems Manager Parameter Store parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SsmParameterStoreParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API SsmParameterStoreParameter
+  class SsmParameterStoreParameter
   {
   public:
-    SsmParameterStoreParameter();
-    SsmParameterStoreParameter(Aws::Utils::Json::JsonView jsonValue);
-    SsmParameterStoreParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SsmParameterStoreParameter();
+    AWS_MGN_API SsmParameterStoreParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SsmParameterStoreParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline SsmParameterStoreParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline SsmParameterStoreParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
     inline SsmParameterStoreParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
 
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
     inline const SsmParameterStoreParameterType& GetParameterType() const{ return m_parameterType; }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
     inline bool ParameterTypeHasBeenSet() const { return m_parameterTypeHasBeenSet; }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
     inline void SetParameterType(const SsmParameterStoreParameterType& value) { m_parameterTypeHasBeenSet = true; m_parameterType = value; }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
     inline void SetParameterType(SsmParameterStoreParameterType&& value) { m_parameterTypeHasBeenSet = true; m_parameterType = std::move(value); }
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
     inline SsmParameterStoreParameter& WithParameterType(const SsmParameterStoreParameterType& value) { SetParameterType(value); return *this;}
 
     /**
-     * <p>Source server replication type.</p>
+     * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
     inline SsmParameterStoreParameter& WithParameterType(SsmParameterStoreParameterType&& value) { SetParameterType(std::move(value)); return *this;}
 

@@ -24,12 +24,12 @@ namespace ConnectCases
 {
 namespace Model
 {
-  class AWS_CONNECTCASES_API GetCaseEventConfigurationResult
+  class GetCaseEventConfigurationResult
   {
   public:
-    GetCaseEventConfigurationResult();
-    GetCaseEventConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCaseEventConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API GetCaseEventConfigurationResult();
+    AWS_CONNECTCASES_API GetCaseEventConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API GetCaseEventConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

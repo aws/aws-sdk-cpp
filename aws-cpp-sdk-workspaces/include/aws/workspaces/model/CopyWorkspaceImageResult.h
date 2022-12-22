@@ -24,12 +24,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API CopyWorkspaceImageResult
+  class CopyWorkspaceImageResult
   {
   public:
-    CopyWorkspaceImageResult();
-    CopyWorkspaceImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CopyWorkspaceImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API CopyWorkspaceImageResult();
+    AWS_WORKSPACES_API CopyWorkspaceImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API CopyWorkspaceImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API PromoteReadReplicaResult
+  class PromoteReadReplicaResult
   {
   public:
-    PromoteReadReplicaResult();
-    PromoteReadReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PromoteReadReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API PromoteReadReplicaResult();
+    AWS_RDS_API PromoteReadReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API PromoteReadReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

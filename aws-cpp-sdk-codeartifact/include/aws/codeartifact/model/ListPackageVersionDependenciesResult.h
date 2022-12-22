@@ -27,12 +27,12 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API ListPackageVersionDependenciesResult
+  class ListPackageVersionDependenciesResult
   {
   public:
-    ListPackageVersionDependenciesResult();
-    ListPackageVersionDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPackageVersionDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API ListPackageVersionDependenciesResult();
+    AWS_CODEARTIFACT_API ListPackageVersionDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API ListPackageVersionDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

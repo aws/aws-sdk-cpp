@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/IPSetReference">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API IPSetReference
+  class IPSetReference
   {
   public:
-    IPSetReference();
-    IPSetReference(Aws::Utils::Json::JsonView jsonValue);
-    IPSetReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API IPSetReference();
+    AWS_NETWORKFIREWALL_API IPSetReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API IPSetReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

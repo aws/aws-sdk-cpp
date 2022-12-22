@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchExecuteStatementRequest::BatchExecuteStatementRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_clusterIdentifierHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
@@ -28,6 +30,12 @@ BatchExecuteStatementRequest::BatchExecuteStatementRequest() :
 Aws::String BatchExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
 
   if(m_clusterIdentifierHasBeenSet)
   {

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Accessor">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API Accessor
+  class Accessor
   {
   public:
-    Accessor();
-    Accessor(Aws::Utils::Json::JsonView jsonValue);
-    Accessor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API Accessor();
+    AWS_MANAGEDBLOCKCHAIN_API Accessor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Accessor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

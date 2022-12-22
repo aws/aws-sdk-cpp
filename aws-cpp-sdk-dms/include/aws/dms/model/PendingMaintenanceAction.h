@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/PendingMaintenanceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction
+  class PendingMaintenanceAction
   {
   public:
-    PendingMaintenanceAction();
-    PendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
-    PendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction();
+    AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

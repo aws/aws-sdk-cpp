@@ -26,12 +26,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult
+  class GetRelationalDatabaseBlueprintsResult
   {
   public:
-    GetRelationalDatabaseBlueprintsResult();
-    GetRelationalDatabaseBlueprintsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRelationalDatabaseBlueprintsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

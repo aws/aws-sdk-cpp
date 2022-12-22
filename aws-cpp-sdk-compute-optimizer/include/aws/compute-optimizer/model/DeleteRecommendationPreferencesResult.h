@@ -22,12 +22,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesResult
+  class DeleteRecommendationPreferencesResult
   {
   public:
-    DeleteRecommendationPreferencesResult();
-    DeleteRecommendationPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRecommendationPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesResult();
+    AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

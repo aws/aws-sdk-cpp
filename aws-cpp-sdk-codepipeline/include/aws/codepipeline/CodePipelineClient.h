@@ -7,6 +7,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codepipeline/CodePipelineServiceClientModel.h>
 
@@ -96,7 +97,7 @@ namespace CodePipeline
    * <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job
    * success.</p> </li> </ul>
    */
-  class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -150,7 +151,6 @@ namespace CodePipeline
 
         /* End of legacy constructors due deprecation */
         virtual ~CodePipelineClient();
-
 
         /**
          * <p>Returns information about a specified job and whether that job has been
@@ -913,6 +913,7 @@ namespace CodePipeline
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodePipelineEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>;
       void init(const CodePipelineClientConfiguration& clientConfiguration);
 
       CodePipelineClientConfiguration m_clientConfiguration;

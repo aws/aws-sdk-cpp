@@ -7,6 +7,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lexv2-models/LexModelsV2ServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace LexModelsV2
   /**
    * <p/>
    */
-  class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient
+  class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace LexModelsV2
 
         /* End of legacy constructors due deprecation */
         virtual ~LexModelsV2Client();
-
 
         /**
          * <p>Batch create custom vocabulary item for the specified locale in the specified
@@ -1427,6 +1427,7 @@ namespace LexModelsV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LexModelsV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>;
       void init(const LexModelsV2ClientConfiguration& clientConfiguration);
 
       LexModelsV2ClientConfiguration m_clientConfiguration;

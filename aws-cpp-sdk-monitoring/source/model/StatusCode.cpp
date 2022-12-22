@@ -23,6 +23,7 @@ namespace Aws
         static const int Complete_HASH = HashingUtils::HashString("Complete");
         static const int InternalError_HASH = HashingUtils::HashString("InternalError");
         static const int PartialData_HASH = HashingUtils::HashString("PartialData");
+        static const int Forbidden_HASH = HashingUtils::HashString("Forbidden");
 
 
         StatusCode GetStatusCodeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == PartialData_HASH)
           {
             return StatusCode::PartialData;
+          }
+          else if (hashCode == Forbidden_HASH)
+          {
+            return StatusCode::Forbidden;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "InternalError";
           case StatusCode::PartialData:
             return "PartialData";
+          case StatusCode::Forbidden:
+            return "Forbidden";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

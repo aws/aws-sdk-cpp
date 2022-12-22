@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API AccessPointDescription
+  class AccessPointDescription
   {
   public:
-    AccessPointDescription();
-    AccessPointDescription(Aws::Utils::Json::JsonView jsonValue);
-    AccessPointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API AccessPointDescription();
+    AWS_EFS_API AccessPointDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API AccessPointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

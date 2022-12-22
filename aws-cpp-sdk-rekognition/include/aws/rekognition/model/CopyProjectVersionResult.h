@@ -24,12 +24,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API CopyProjectVersionResult
+  class CopyProjectVersionResult
   {
   public:
-    CopyProjectVersionResult();
-    CopyProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CopyProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API CopyProjectVersionResult();
+    AWS_REKOGNITION_API CopyProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API CopyProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

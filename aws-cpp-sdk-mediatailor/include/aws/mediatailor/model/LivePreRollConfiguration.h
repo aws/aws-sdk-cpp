@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/LivePreRollConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API LivePreRollConfiguration
+  class LivePreRollConfiguration
   {
   public:
-    LivePreRollConfiguration();
-    LivePreRollConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LivePreRollConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API LivePreRollConfiguration();
+    AWS_MEDIATAILOR_API LivePreRollConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API LivePreRollConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

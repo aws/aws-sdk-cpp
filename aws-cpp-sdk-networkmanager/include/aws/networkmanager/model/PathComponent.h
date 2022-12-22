@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PathComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API PathComponent
+  class PathComponent
   {
   public:
-    PathComponent();
-    PathComponent(Aws::Utils::Json::JsonView jsonValue);
-    PathComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API PathComponent();
+    AWS_NETWORKMANAGER_API PathComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API PathComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

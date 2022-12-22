@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlow">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ContactFlow
+  class ContactFlow
   {
   public:
-    ContactFlow();
-    ContactFlow(Aws::Utils::Json::JsonView jsonValue);
-    ContactFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ContactFlow();
+    AWS_CONNECT_API ContactFlow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ContactFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

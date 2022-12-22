@@ -24,12 +24,12 @@ namespace SSO
 {
 namespace Model
 {
-  class AWS_SSO_API GetRoleCredentialsResult
+  class GetRoleCredentialsResult
   {
   public:
-    GetRoleCredentialsResult();
-    GetRoleCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRoleCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSO_API GetRoleCredentialsResult();
+    AWS_SSO_API GetRoleCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSO_API GetRoleCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

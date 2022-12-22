@@ -24,12 +24,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API GetStudioComponentResult
+  class GetStudioComponentResult
   {
   public:
-    GetStudioComponentResult();
-    GetStudioComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetStudioComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetStudioComponentResult();
+    AWS_NIMBLESTUDIO_API GetStudioComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetStudioComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

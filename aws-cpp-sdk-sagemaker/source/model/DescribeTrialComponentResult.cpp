@@ -142,6 +142,15 @@ DescribeTrialComponentResult& DescribeTrialComponentResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("Sources"))
+  {
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

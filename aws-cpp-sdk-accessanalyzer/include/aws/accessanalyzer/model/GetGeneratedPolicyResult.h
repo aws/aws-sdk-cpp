@@ -25,12 +25,12 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  class AWS_ACCESSANALYZER_API GetGeneratedPolicyResult
+  class GetGeneratedPolicyResult
   {
   public:
-    GetGeneratedPolicyResult();
-    GetGeneratedPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGeneratedPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API GetGeneratedPolicyResult();
+    AWS_ACCESSANALYZER_API GetGeneratedPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API GetGeneratedPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

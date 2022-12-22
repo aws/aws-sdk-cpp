@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AttributeGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API AttributeGroupSummary
+  class AttributeGroupSummary
   {
   public:
-    AttributeGroupSummary();
-    AttributeGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    AttributeGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API AttributeGroupSummary();
+    AWS_APPREGISTRY_API AttributeGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API AttributeGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

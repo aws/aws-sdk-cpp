@@ -22,12 +22,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API UpdateHITTypeOfHITResult
+  class UpdateHITTypeOfHITResult
   {
   public:
-    UpdateHITTypeOfHITResult();
-    UpdateHITTypeOfHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateHITTypeOfHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API UpdateHITTypeOfHITResult();
+    AWS_MTURK_API UpdateHITTypeOfHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API UpdateHITTypeOfHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

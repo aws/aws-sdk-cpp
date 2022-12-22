@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API InternalServerException();
+    AWS_CONNECTCASES_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

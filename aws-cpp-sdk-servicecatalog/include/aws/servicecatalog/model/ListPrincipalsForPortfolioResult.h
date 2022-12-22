@@ -26,46 +26,53 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult
+  class ListPrincipalsForPortfolioResult
   {
   public:
-    ListPrincipalsForPortfolioResult();
-    ListPrincipalsForPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPrincipalsForPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult();
+    AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline const Aws::Vector<Principal>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Principal>& value) { m_principals = value; }
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline void SetPrincipals(Aws::Vector<Principal>&& value) { m_principals = std::move(value); }
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline ListPrincipalsForPortfolioResult& WithPrincipals(const Aws::Vector<Principal>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline ListPrincipalsForPortfolioResult& WithPrincipals(Aws::Vector<Principal>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline ListPrincipalsForPortfolioResult& AddPrincipals(const Principal& value) { m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The IAM principals (users or roles) associated with the portfolio.</p>
+     * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+     * associated with the portfolio.</p>
      */
     inline ListPrincipalsForPortfolioResult& AddPrincipals(Principal&& value) { m_principals.push_back(std::move(value)); return *this; }
 

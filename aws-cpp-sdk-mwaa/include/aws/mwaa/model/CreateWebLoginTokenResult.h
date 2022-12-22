@@ -24,12 +24,12 @@ namespace MWAA
 {
 namespace Model
 {
-  class AWS_MWAA_API CreateWebLoginTokenResult
+  class CreateWebLoginTokenResult
   {
   public:
-    CreateWebLoginTokenResult();
-    CreateWebLoginTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWebLoginTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API CreateWebLoginTokenResult();
+    AWS_MWAA_API CreateWebLoginTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API CreateWebLoginTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

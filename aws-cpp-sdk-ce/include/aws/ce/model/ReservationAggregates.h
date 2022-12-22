@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationAggregates">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationAggregates
+  class ReservationAggregates
   {
   public:
-    ReservationAggregates();
-    ReservationAggregates(Aws::Utils::Json::JsonView jsonValue);
-    ReservationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationAggregates();
+    AWS_COSTEXPLORER_API ReservationAggregates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Inspector2
 {
 namespace Model
 {
-  class AWS_INSPECTOR2_API UpdateConfigurationResult
+  class UpdateConfigurationResult
   {
   public:
-    UpdateConfigurationResult();
-    UpdateConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API UpdateConfigurationResult();
+    AWS_INSPECTOR2_API UpdateConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API UpdateConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

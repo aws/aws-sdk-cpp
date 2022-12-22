@@ -30,6 +30,8 @@ namespace Aws
         static const int RESCAN_HASH = HashingUtils::HashString("RESCAN");
         static const int STALLED_HASH = HashingUtils::HashString("STALLED");
         static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
+        static const int REPLICATION_STATE_NOT_AVAILABLE_HASH = HashingUtils::HashString("REPLICATION_STATE_NOT_AVAILABLE");
+        static const int NOT_STARTED_HASH = HashingUtils::HashString("NOT_STARTED");
 
 
         RecoveryInstanceDataReplicationState GetRecoveryInstanceDataReplicationStateForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return RecoveryInstanceDataReplicationState::DISCONNECTED;
           }
+          else if (hashCode == REPLICATION_STATE_NOT_AVAILABLE_HASH)
+          {
+            return RecoveryInstanceDataReplicationState::REPLICATION_STATE_NOT_AVAILABLE;
+          }
+          else if (hashCode == NOT_STARTED_HASH)
+          {
+            return RecoveryInstanceDataReplicationState::NOT_STARTED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "STALLED";
           case RecoveryInstanceDataReplicationState::DISCONNECTED:
             return "DISCONNECTED";
+          case RecoveryInstanceDataReplicationState::REPLICATION_STATE_NOT_AVAILABLE:
+            return "REPLICATION_STATE_NOT_AVAILABLE";
+          case RecoveryInstanceDataReplicationState::NOT_STARTED:
+            return "NOT_STARTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int WSS_HASH = HashingUtils::HashString("WSS");
         static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
+        static const int WEBRTC_HASH = HashingUtils::HashString("WEBRTC");
 
 
         ChannelProtocol GetChannelProtocolForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == HTTPS_HASH)
           {
             return ChannelProtocol::HTTPS;
+          }
+          else if (hashCode == WEBRTC_HASH)
+          {
+            return ChannelProtocol::WEBRTC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "WSS";
           case ChannelProtocol::HTTPS:
             return "HTTPS";
+          case ChannelProtocol::WEBRTC:
+            return "WEBRTC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -22,12 +22,12 @@ namespace WorkDocs
 {
 namespace Model
 {
-  class AWS_WORKDOCS_API CreateCustomMetadataResult
+  class CreateCustomMetadataResult
   {
   public:
-    CreateCustomMetadataResult();
-    CreateCustomMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCustomMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API CreateCustomMetadataResult();
+    AWS_WORKDOCS_API CreateCustomMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API CreateCustomMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ForbiddenException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API ForbiddenException
+  class ForbiddenException
   {
   public:
-    ForbiddenException();
-    ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
-    ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API ForbiddenException();
+    AWS_CHIMESDKMEETINGS_API ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

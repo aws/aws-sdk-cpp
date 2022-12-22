@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceAlreadyExists">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API NamespaceAlreadyExists
+  class NamespaceAlreadyExists
   {
   public:
-    NamespaceAlreadyExists();
-    NamespaceAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API NamespaceAlreadyExists();
+    AWS_SERVICEDISCOVERY_API NamespaceAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API NamespaceAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

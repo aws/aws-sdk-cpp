@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/SOAChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API SOAChange
+  class SOAChange
   {
   public:
-    SOAChange();
-    SOAChange(Aws::Utils::Json::JsonView jsonValue);
-    SOAChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API SOAChange();
+    AWS_SERVICEDISCOVERY_API SOAChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API SOAChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

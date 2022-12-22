@@ -26,12 +26,12 @@ namespace AmplifyUIBuilder
 {
 namespace Model
 {
-  class AWS_AMPLIFYUIBUILDER_API ListComponentsResult
+  class ListComponentsResult
   {
   public:
-    ListComponentsResult();
-    ListComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYUIBUILDER_API ListComponentsResult();
+    AWS_AMPLIFYUIBUILDER_API ListComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYUIBUILDER_API ListComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

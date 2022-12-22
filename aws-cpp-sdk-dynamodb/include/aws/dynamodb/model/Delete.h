@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Delete">AWS API
    * Reference</a></p>
    */
-  class AWS_DYNAMODB_API Delete
+  class Delete
   {
   public:
-    Delete();
-    Delete(Aws::Utils::Json::JsonView jsonValue);
-    Delete& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API Delete();
+    AWS_DYNAMODB_API Delete(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Delete& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

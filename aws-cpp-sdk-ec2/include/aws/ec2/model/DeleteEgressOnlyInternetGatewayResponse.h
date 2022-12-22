@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteEgressOnlyInternetGatewayResponse
+  class DeleteEgressOnlyInternetGatewayResponse
   {
   public:
-    DeleteEgressOnlyInternetGatewayResponse();
-    DeleteEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteEgressOnlyInternetGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteEgressOnlyInternetGatewayResponse();
+    AWS_EC2_API DeleteEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteEgressOnlyInternetGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

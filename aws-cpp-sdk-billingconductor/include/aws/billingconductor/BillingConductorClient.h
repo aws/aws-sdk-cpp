@@ -7,6 +7,7 @@
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/billingconductor/BillingConductorServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace BillingConductor
    * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html">
    * Amazon Web Services Billing Conductor User Guide</a>.</p>
    */
-  class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJsonClient
+  class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace BillingConductor
 
         /* End of legacy constructors due deprecation */
         virtual ~BillingConductorClient();
-
 
         /**
          * <p>Connects an array of account IDs in a consolidated billing family to a
@@ -662,6 +662,7 @@ namespace BillingConductor
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BillingConductorEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>;
       void init(const BillingConductorClientConfiguration& clientConfiguration);
 
       BillingConductorClientConfiguration m_clientConfiguration;

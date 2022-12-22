@@ -22,12 +22,12 @@ namespace LookoutMetrics
 {
 namespace Model
 {
-  class AWS_LOOKOUTMETRICS_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API UntagResourceResult();
+    AWS_LOOKOUTMETRICS_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

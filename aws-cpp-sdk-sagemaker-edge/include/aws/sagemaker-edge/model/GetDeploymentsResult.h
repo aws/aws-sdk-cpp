@@ -25,12 +25,12 @@ namespace SagemakerEdgeManager
 {
 namespace Model
 {
-  class AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult
+  class GetDeploymentsResult
   {
   public:
-    GetDeploymentsResult();
-    GetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult();
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

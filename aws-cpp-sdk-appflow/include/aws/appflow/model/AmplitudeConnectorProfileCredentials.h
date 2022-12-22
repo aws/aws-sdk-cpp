@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AmplitudeConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API AmplitudeConnectorProfileCredentials
+  class AmplitudeConnectorProfileCredentials
   {
   public:
-    AmplitudeConnectorProfileCredentials();
-    AmplitudeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    AmplitudeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API AmplitudeConnectorProfileCredentials();
+    AWS_APPFLOW_API AmplitudeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API AmplitudeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

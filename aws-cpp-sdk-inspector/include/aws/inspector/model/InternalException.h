@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/InternalException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API InternalException
+  class InternalException
   {
   public:
-    InternalException();
-    InternalException(Aws::Utils::Json::JsonView jsonValue);
-    InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API InternalException();
+    AWS_INSPECTOR_API InternalException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

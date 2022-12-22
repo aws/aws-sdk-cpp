@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/RuleDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API RuleDetail
+  class RuleDetail
   {
   public:
-    RuleDetail();
-    RuleDetail(Aws::Utils::Json::JsonView jsonValue);
-    RuleDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API RuleDetail();
+    AWS_FRAUDDETECTOR_API RuleDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API RuleDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

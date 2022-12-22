@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateClientDeviceFromCoreDeviceErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry
+  class DisassociateClientDeviceFromCoreDeviceErrorEntry
   {
   public:
-    DisassociateClientDeviceFromCoreDeviceErrorEntry();
-    DisassociateClientDeviceFromCoreDeviceErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    DisassociateClientDeviceFromCoreDeviceErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry();
+    AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

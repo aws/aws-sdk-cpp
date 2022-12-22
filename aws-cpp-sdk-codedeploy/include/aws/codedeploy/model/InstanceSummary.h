@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API InstanceSummary
+  class InstanceSummary
   {
   public:
-    InstanceSummary();
-    InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API InstanceSummary();
+    AWS_CODEDEPLOY_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRuleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult
+  class DescribeComplianceByConfigRuleResult
   {
   public:
-    DescribeComplianceByConfigRuleResult();
-    DescribeComplianceByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeComplianceByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult();
+    AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

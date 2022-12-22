@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UnauthorizedClientException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API UnauthorizedClientException
+  class UnauthorizedClientException
   {
   public:
-    UnauthorizedClientException();
-    UnauthorizedClientException(Aws::Utils::Json::JsonView jsonValue);
-    UnauthorizedClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API UnauthorizedClientException();
+    AWS_CHIMESDKMESSAGING_API UnauthorizedClientException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API UnauthorizedClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

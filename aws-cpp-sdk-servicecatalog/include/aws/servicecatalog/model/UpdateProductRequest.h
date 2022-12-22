@@ -8,6 +8,7 @@
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicecatalog/model/SourceConnection.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <utility>
 
@@ -20,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API UpdateProductRequest : public ServiceCatalogRequest
+  class UpdateProductRequest : public ServiceCatalogRequest
   {
   public:
-    UpdateProductRequest();
+    AWS_SERVICECATALOG_API UpdateProductRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProduct"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -507,6 +508,67 @@ namespace Model
      */
     inline UpdateProductRequest& AddRemoveTags(const char* value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies connection details for the updated product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline const SourceConnection& GetSourceConnection() const{ return m_sourceConnection; }
+
+    /**
+     * <p>Specifies connection details for the updated product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline bool SourceConnectionHasBeenSet() const { return m_sourceConnectionHasBeenSet; }
+
+    /**
+     * <p>Specifies connection details for the updated product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline void SetSourceConnection(const SourceConnection& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = value; }
+
+    /**
+     * <p>Specifies connection details for the updated product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline void SetSourceConnection(SourceConnection&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::move(value); }
+
+    /**
+     * <p>Specifies connection details for the updated product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline UpdateProductRequest& WithSourceConnection(const SourceConnection& value) { SetSourceConnection(value); return *this;}
+
+    /**
+     * <p>Specifies connection details for the updated product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline UpdateProductRequest& WithSourceConnection(SourceConnection&& value) { SetSourceConnection(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -541,6 +603,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeTags;
     bool m_removeTagsHasBeenSet = false;
+
+    SourceConnection m_sourceConnection;
+    bool m_sourceConnectionHasBeenSet = false;
   };
 
 } // namespace Model

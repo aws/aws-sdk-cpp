@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ListBillingGroupsResult
+  class ListBillingGroupsResult
   {
   public:
-    ListBillingGroupsResult();
-    ListBillingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBillingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListBillingGroupsResult();
+    AWS_IOT_API ListBillingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListBillingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

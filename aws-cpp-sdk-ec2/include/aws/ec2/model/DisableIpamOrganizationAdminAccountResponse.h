@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisableIpamOrganizationAdminAccountResponse
+  class DisableIpamOrganizationAdminAccountResponse
   {
   public:
-    DisableIpamOrganizationAdminAccountResponse();
-    DisableIpamOrganizationAdminAccountResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableIpamOrganizationAdminAccountResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableIpamOrganizationAdminAccountResponse();
+    AWS_EC2_API DisableIpamOrganizationAdminAccountResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableIpamOrganizationAdminAccountResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

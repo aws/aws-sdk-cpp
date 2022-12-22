@@ -22,12 +22,12 @@ namespace ConnectWisdomService
 {
 namespace Model
 {
-  class AWS_CONNECTWISDOMSERVICE_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API UntagResourceResult();
+    AWS_CONNECTWISDOMSERVICE_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

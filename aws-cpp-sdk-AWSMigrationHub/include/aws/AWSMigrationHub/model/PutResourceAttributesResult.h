@@ -22,12 +22,12 @@ namespace MigrationHub
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUB_API PutResourceAttributesResult
+  class PutResourceAttributesResult
   {
   public:
-    PutResourceAttributesResult();
-    PutResourceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResourceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API PutResourceAttributesResult();
+    AWS_MIGRATIONHUB_API PutResourceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API PutResourceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

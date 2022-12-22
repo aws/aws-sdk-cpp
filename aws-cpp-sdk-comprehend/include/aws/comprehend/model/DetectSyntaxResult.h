@@ -25,12 +25,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API DetectSyntaxResult
+  class DetectSyntaxResult
   {
   public:
-    DetectSyntaxResult();
-    DetectSyntaxResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectSyntaxResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DetectSyntaxResult();
+    AWS_COMPREHEND_API DetectSyntaxResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DetectSyntaxResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

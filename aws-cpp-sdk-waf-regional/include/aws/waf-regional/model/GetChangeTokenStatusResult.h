@@ -24,12 +24,12 @@ namespace WAFRegional
 {
 namespace Model
 {
-  class AWS_WAFREGIONAL_API GetChangeTokenStatusResult
+  class GetChangeTokenStatusResult
   {
   public:
-    GetChangeTokenStatusResult();
-    GetChangeTokenStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChangeTokenStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API GetChangeTokenStatusResult();
+    AWS_WAFREGIONAL_API GetChangeTokenStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API GetChangeTokenStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

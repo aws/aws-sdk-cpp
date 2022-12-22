@@ -26,12 +26,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetClassifiersResult
+  class GetClassifiersResult
   {
   public:
-    GetClassifiersResult();
-    GetClassifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetClassifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetClassifiersResult();
+    AWS_GLUE_API GetClassifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetClassifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

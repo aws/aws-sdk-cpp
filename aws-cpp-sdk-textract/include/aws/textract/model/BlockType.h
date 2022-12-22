@@ -26,7 +26,8 @@ namespace Model
     MERGED_CELL,
     TITLE,
     QUERY,
-    QUERY_RESULT
+    QUERY_RESULT,
+    SIGNATURE
   };
 
 namespace BlockTypeMapper

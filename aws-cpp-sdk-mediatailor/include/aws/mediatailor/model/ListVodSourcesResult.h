@@ -26,12 +26,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API ListVodSourcesResult
+  class ListVodSourcesResult
   {
   public:
-    ListVodSourcesResult();
-    ListVodSourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVodSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API ListVodSourcesResult();
+    AWS_MEDIATAILOR_API ListVodSourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API ListVodSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

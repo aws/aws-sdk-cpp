@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/SentimentScore">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API SentimentScore
+  class SentimentScore
   {
   public:
-    SentimentScore();
-    SentimentScore(Aws::Utils::Json::JsonView jsonValue);
-    SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API SentimentScore();
+    AWS_COMPREHEND_API SentimentScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

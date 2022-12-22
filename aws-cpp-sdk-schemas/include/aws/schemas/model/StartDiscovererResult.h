@@ -25,12 +25,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API StartDiscovererResult
+  class StartDiscovererResult
   {
   public:
-    StartDiscovererResult();
-    StartDiscovererResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartDiscovererResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API StartDiscovererResult();
+    AWS_SCHEMAS_API StartDiscovererResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API StartDiscovererResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

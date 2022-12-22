@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEventsFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListEventsFilters
+  class ListEventsFilters
   {
   public:
-    ListEventsFilters();
-    ListEventsFilters(Aws::Utils::Json::JsonView jsonValue);
-    ListEventsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListEventsFilters();
+    AWS_DEVOPSGURU_API ListEventsFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListEventsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

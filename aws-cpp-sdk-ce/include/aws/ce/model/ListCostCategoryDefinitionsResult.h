@@ -26,12 +26,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API ListCostCategoryDefinitionsResult
+  class ListCostCategoryDefinitionsResult
   {
   public:
-    ListCostCategoryDefinitionsResult();
-    ListCostCategoryDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCostCategoryDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API ListCostCategoryDefinitionsResult();
+    AWS_COSTEXPLORER_API ListCostCategoryDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API ListCostCategoryDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

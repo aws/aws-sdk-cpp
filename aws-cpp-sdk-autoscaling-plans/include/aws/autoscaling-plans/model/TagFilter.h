@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/TagFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API TagFilter
+  class TagFilter
   {
   public:
-    TagFilter();
-    TagFilter(Aws::Utils::Json::JsonView jsonValue);
-    TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API TagFilter();
+    AWS_AUTOSCALINGPLANS_API TagFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Model">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Model
+  class Model
   {
   public:
-    Model();
-    Model(Aws::Utils::Json::JsonView jsonValue);
-    Model& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Model();
+    AWS_APIGATEWAYV2_API Model(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Model& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

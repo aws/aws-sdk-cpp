@@ -9,6 +9,7 @@
 #include <aws/drs/model/RecoveryInstanceDataReplicationInfo.h>
 #include <aws/drs/model/EC2InstanceState.h>
 #include <aws/drs/model/RecoveryInstanceFailback.h>
+#include <aws/drs/model/OriginEnvironment.h>
 #include <aws/drs/model/RecoveryInstanceProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -34,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstance
+  class RecoveryInstance
   {
   public:
-    RecoveryInstance();
-    RecoveryInstance(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstance();
+    AWS_DRS_API RecoveryInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,6 +289,43 @@ namespace Model
      * <p>The ID of the Job that created the Recovery Instance.</p>
      */
     inline RecoveryInstance& WithJobID(const char* value) { SetJobID(value); return *this;}
+
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline const OriginEnvironment& GetOriginEnvironment() const{ return m_originEnvironment; }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline bool OriginEnvironmentHasBeenSet() const { return m_originEnvironmentHasBeenSet; }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline void SetOriginEnvironment(const OriginEnvironment& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = value; }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline void SetOriginEnvironment(OriginEnvironment&& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = std::move(value); }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline RecoveryInstance& WithOriginEnvironment(const OriginEnvironment& value) { SetOriginEnvironment(value); return *this;}
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline RecoveryInstance& WithOriginEnvironment(OriginEnvironment&& value) { SetOriginEnvironment(std::move(value)); return *this;}
 
 
     /**
@@ -539,6 +577,9 @@ namespace Model
 
     Aws::String m_jobID;
     bool m_jobIDHasBeenSet = false;
+
+    OriginEnvironment m_originEnvironment;
+    bool m_originEnvironmentHasBeenSet = false;
 
     Aws::String m_pointInTimeSnapshotDateTime;
     bool m_pointInTimeSnapshotDateTimeHasBeenSet = false;

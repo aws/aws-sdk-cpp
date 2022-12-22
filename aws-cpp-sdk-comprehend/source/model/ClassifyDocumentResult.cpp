@@ -46,6 +46,30 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("DocumentMetadata"))
+  {
+    m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
+
+  }
+
+  if(jsonValue.ValueExists("DocumentType"))
+  {
+    Aws::Utils::Array<JsonView> documentTypeJsonList = jsonValue.GetArray("DocumentType");
+    for(unsigned documentTypeIndex = 0; documentTypeIndex < documentTypeJsonList.GetLength(); ++documentTypeIndex)
+    {
+      m_documentType.push_back(documentTypeJsonList[documentTypeIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("Errors"))
+  {
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+    {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DeleteAccountAuditConfigurationResult
+  class DeleteAccountAuditConfigurationResult
   {
   public:
-    DeleteAccountAuditConfigurationResult();
-    DeleteAccountAuditConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAccountAuditConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeleteAccountAuditConfigurationResult();
+    AWS_IOT_API DeleteAccountAuditConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeleteAccountAuditConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

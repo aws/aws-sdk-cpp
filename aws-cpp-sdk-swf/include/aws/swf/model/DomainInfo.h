@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DomainInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_SWF_API DomainInfo
+  class DomainInfo
   {
   public:
-    DomainInfo();
-    DomainInfo(Aws::Utils::Json::JsonView jsonValue);
-    DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API DomainInfo();
+    AWS_SWF_API DomainInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

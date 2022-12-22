@@ -24,12 +24,12 @@ namespace ManagedGrafana
 {
 namespace Model
 {
-  class AWS_MANAGEDGRAFANA_API DescribeWorkspaceAuthenticationResult
+  class DescribeWorkspaceAuthenticationResult
   {
   public:
-    DescribeWorkspaceAuthenticationResult();
-    DescribeWorkspaceAuthenticationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkspaceAuthenticationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API DescribeWorkspaceAuthenticationResult();
+    AWS_MANAGEDGRAFANA_API DescribeWorkspaceAuthenticationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API DescribeWorkspaceAuthenticationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace GlueDataBrew
 {
 namespace Model
 {
-  class AWS_GLUEDATABREW_API UpdateScheduleResult
+  class UpdateScheduleResult
   {
   public:
-    UpdateScheduleResult();
-    UpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUEDATABREW_API UpdateScheduleResult();
+    AWS_GLUEDATABREW_API UpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUEDATABREW_API UpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

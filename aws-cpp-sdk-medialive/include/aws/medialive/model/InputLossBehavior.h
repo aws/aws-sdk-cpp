@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputLossBehavior">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputLossBehavior
+  class InputLossBehavior
   {
   public:
-    InputLossBehavior();
-    InputLossBehavior(Aws::Utils::Json::JsonView jsonValue);
-    InputLossBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputLossBehavior();
+    AWS_MEDIALIVE_API InputLossBehavior(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputLossBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

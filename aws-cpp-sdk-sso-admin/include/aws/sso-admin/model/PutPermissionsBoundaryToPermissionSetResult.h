@@ -22,12 +22,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API PutPermissionsBoundaryToPermissionSetResult
+  class PutPermissionsBoundaryToPermissionSetResult
   {
   public:
-    PutPermissionsBoundaryToPermissionSetResult();
-    PutPermissionsBoundaryToPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutPermissionsBoundaryToPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API PutPermissionsBoundaryToPermissionSetResult();
+    AWS_SSOADMIN_API PutPermissionsBoundaryToPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API PutPermissionsBoundaryToPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

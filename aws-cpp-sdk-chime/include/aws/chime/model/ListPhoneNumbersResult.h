@@ -26,12 +26,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API ListPhoneNumbersResult
+  class ListPhoneNumbersResult
   {
   public:
-    ListPhoneNumbersResult();
-    ListPhoneNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListPhoneNumbersResult();
+    AWS_CHIME_API ListPhoneNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListPhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

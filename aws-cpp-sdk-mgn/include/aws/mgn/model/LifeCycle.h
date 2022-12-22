@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LifeCycle">AWS API
    * Reference</a></p>
    */
-  class AWS_MGN_API LifeCycle
+  class LifeCycle
   {
   public:
-    LifeCycle();
-    LifeCycle(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LifeCycle();
+    AWS_MGN_API LifeCycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LifeCycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

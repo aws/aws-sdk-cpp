@@ -28,7 +28,11 @@ WorkspaceBundle::WorkspaceBundle() :
     m_userStorageHasBeenSet(false),
     m_computeTypeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_state(WorkspaceBundleState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_bundleType(BundleType::NOT_SET),
+    m_bundleTypeHasBeenSet(false)
 {
 }
 
@@ -42,7 +46,11 @@ WorkspaceBundle::WorkspaceBundle(JsonView jsonValue) :
     m_userStorageHasBeenSet(false),
     m_computeTypeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_state(WorkspaceBundleState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_bundleType(BundleType::NOT_SET),
+    m_bundleTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +127,20 @@ WorkspaceBundle& WorkspaceBundle::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = WorkspaceBundleStateMapper::GetWorkspaceBundleStateForName(jsonValue.GetString("State"));
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BundleType"))
+  {
+    m_bundleType = BundleTypeMapper::GetBundleTypeForName(jsonValue.GetString("BundleType"));
+
+    m_bundleTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +204,16 @@ JsonValue WorkspaceBundle::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", WorkspaceBundleStateMapper::GetNameForWorkspaceBundleState(m_state));
+  }
+
+  if(m_bundleTypeHasBeenSet)
+  {
+   payload.WithString("BundleType", BundleTypeMapper::GetNameForBundleType(m_bundleType));
   }
 
   return payload;

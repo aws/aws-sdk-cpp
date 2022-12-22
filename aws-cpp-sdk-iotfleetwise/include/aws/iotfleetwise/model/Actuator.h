@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/Actuator">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API Actuator
+  class Actuator
   {
   public:
-    Actuator();
-    Actuator(Aws::Utils::Json::JsonView jsonValue);
-    Actuator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API Actuator();
+    AWS_IOTFLEETWISE_API Actuator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Actuator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -292,47 +292,6 @@ namespace Model
      */
     inline Actuator& WithMax(double value) { SetMax(value); return *this;}
 
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline const Aws::String& GetAssignedValue() const{ return m_assignedValue; }
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline bool AssignedValueHasBeenSet() const { return m_assignedValueHasBeenSet; }
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline void SetAssignedValue(const Aws::String& value) { m_assignedValueHasBeenSet = true; m_assignedValue = value; }
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline void SetAssignedValue(Aws::String&& value) { m_assignedValueHasBeenSet = true; m_assignedValue = std::move(value); }
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline void SetAssignedValue(const char* value) { m_assignedValueHasBeenSet = true; m_assignedValue.assign(value); }
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline Actuator& WithAssignedValue(const Aws::String& value) { SetAssignedValue(value); return *this;}
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline Actuator& WithAssignedValue(Aws::String&& value) { SetAssignedValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A specified value for the actuator.</p>
-     */
-    inline Actuator& WithAssignedValue(const char* value) { SetAssignedValue(value); return *this;}
-
   private:
 
     Aws::String m_fullyQualifiedName;
@@ -355,9 +314,6 @@ namespace Model
 
     double m_max;
     bool m_maxHasBeenSet = false;
-
-    Aws::String m_assignedValue;
-    bool m_assignedValueHasBeenSet = false;
   };
 
 } // namespace Model

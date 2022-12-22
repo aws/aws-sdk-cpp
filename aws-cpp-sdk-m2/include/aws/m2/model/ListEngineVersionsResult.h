@@ -26,12 +26,12 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API ListEngineVersionsResult
+  class ListEngineVersionsResult
   {
   public:
-    ListEngineVersionsResult();
-    ListEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API ListEngineVersionsResult();
+    AWS_MAINFRAMEMODERNIZATION_API ListEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API ListEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

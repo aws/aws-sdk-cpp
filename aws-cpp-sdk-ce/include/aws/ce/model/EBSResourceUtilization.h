@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EBSResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API EBSResourceUtilization
+  class EBSResourceUtilization
   {
   public:
-    EBSResourceUtilization();
-    EBSResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    EBSResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API EBSResourceUtilization();
+    AWS_COSTEXPLORER_API EBSResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API EBSResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

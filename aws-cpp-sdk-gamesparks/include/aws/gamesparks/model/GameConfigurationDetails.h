@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/GameConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API GameConfigurationDetails
+  class GameConfigurationDetails
   {
   public:
-    GameConfigurationDetails();
-    GameConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    GameConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API GameConfigurationDetails();
+    AWS_GAMESPARKS_API GameConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API GameConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

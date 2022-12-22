@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/VsamDetailAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API VsamDetailAttributes
+  class VsamDetailAttributes
   {
   public:
-    VsamDetailAttributes();
-    VsamDetailAttributes(Aws::Utils::Json::JsonView jsonValue);
-    VsamDetailAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API VsamDetailAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API VsamDetailAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API VsamDetailAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

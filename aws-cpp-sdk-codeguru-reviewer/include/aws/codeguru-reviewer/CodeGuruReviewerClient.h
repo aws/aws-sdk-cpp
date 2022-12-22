@@ -7,6 +7,7 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace CodeGuruReviewer
    * Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in
    * the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
    */
-  class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruReviewerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace CodeGuruReviewer
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeGuruReviewerClient();
-
 
         /**
          * <p>Use to associate an Amazon Web Services CodeCommit repository or a repository
@@ -381,6 +381,7 @@ namespace CodeGuruReviewer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeGuruReviewerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruReviewerClient>;
       void init(const CodeGuruReviewerClientConfiguration& clientConfiguration);
 
       CodeGuruReviewerClientConfiguration m_clientConfiguration;

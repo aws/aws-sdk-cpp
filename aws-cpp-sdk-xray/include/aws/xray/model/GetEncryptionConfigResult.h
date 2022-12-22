@@ -24,12 +24,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API GetEncryptionConfigResult
+  class GetEncryptionConfigResult
   {
   public:
-    GetEncryptionConfigResult();
-    GetEncryptionConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEncryptionConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetEncryptionConfigResult();
+    AWS_XRAY_API GetEncryptionConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetEncryptionConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

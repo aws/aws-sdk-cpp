@@ -7,6 +7,7 @@
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/S3ControlEndpointProvider.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
@@ -21,7 +22,7 @@ namespace S3Control
      * <p> Amazon Web Services S3 Control provides access to Amazon S3 control plane
    * actions. </p>
      */
-    class AWS_S3CONTROL_API S3ControlClient : public Aws::Client::AWSXMLClient
+    class AWS_S3CONTROL_API S3ControlClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3ControlClient>
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -75,7 +76,6 @@ namespace S3Control
 
         /* End of legacy constructors due deprecation */
         virtual ~S3ControlClient();
-
 
         /**
          * <p>Creates an access point and associates it with the specified bucket. For more
@@ -1268,6 +1268,31 @@ namespace S3Control
         virtual void GetMultiRegionAccessPointPolicyStatusAsync(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the routing configuration for a Multi-Region Access Point, indicating
+         * which Regions are active or passive.</p> <p>To obtain routing control changes
+         * and failover requests, use the Amazon S3 failover control infrastructure
+         * endpoints in these five Amazon Web Services Regions:</p> <ul> <li> <p>
+         * <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li>
+         * <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p>
+         * <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p>
+         * </li> </ul>  <p>Your Amazon S3 bucket does not need to be in these five
+         * Regions.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMultiRegionAccessPointRoutesOutcome GetMultiRegionAccessPointRoutes(const Model::GetMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMultiRegionAccessPointRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMultiRegionAccessPointRoutesOutcomeCallable GetMultiRegionAccessPointRoutesCallable(const Model::GetMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * An Async wrapper for GetMultiRegionAccessPointRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMultiRegionAccessPointRoutesAsync(const Model::GetMultiRegionAccessPointRoutesRequest& request, const GetMultiRegionAccessPointRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
          * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
@@ -1296,9 +1321,12 @@ namespace S3Control
          * <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
          * your storage activity and usage with Amazon S3 Storage Lens </a> in the
-         * <i>Amazon S3 User Guide</i>.</p>  <p>To use this action, you must have
-         * permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
-         * For more information, see <a
+         * <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3
+         * Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p> 
+         * <p>To use this action, you must have permission to perform the
+         * <code>s3:GetStorageLensConfiguration</code> action. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
          * permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -1344,18 +1372,18 @@ namespace S3Control
         virtual void GetStorageLensConfigurationTaggingAsync(const Model::GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the access points currently associated with the specified
-         * bucket. You can retrieve up to 1000 access points per call. If the specified
-         * bucket has more than 1,000 access points (or the number specified in
-         * <code>maxResults</code>, whichever is less), the response will include a
-         * continuation token that you can use to list the additional access points.</p>
-         * <p/> <p>All Amazon S3 on Outposts REST API requests for this action require an
-         * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
-         * request. In addition, you must use an S3 on Outposts endpoint hostname prefix
-         * instead of <code>s3-control</code>. For an example of the request syntax for
-         * Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
-         * the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the
-         * <a
+         * <p>Returns a list of the access points owned by the current account associated
+         * with the specified bucket. You can retrieve up to 1000 access points per call.
+         * If the specified bucket has more than 1,000 access points (or the number
+         * specified in <code>maxResults</code>, whichever is less), the response will
+         * include a continuation token that you can use to list the additional access
+         * points.</p> <p/> <p>All Amazon S3 on Outposts REST API requests for this action
+         * require an additional parameter of <code>x-amz-outpost-id</code> to be passed
+         * with the request. In addition, you must use an S3 on Outposts endpoint hostname
+         * prefix instead of <code>s3-control</code>. For an example of the request syntax
+         * for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix
+         * and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see
+         * the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a>
          * section.</p> <p>The following actions are related to
          * <code>ListAccessPoints</code>:</p> <ul> <li> <p> <a
@@ -1933,7 +1961,10 @@ namespace S3Control
          * <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3
          * Storage Lens, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
-         * with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p> 
+         * with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a
+         * complete list of S3 Storage Lens metrics, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3
+         * Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p> 
          * <p>To use this action, you must have permission to perform the
          * <code>s3:PutStorageLensConfiguration</code> action. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
@@ -1979,6 +2010,41 @@ namespace S3Control
          * An Async wrapper for PutStorageLensConfigurationTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutStorageLensConfigurationTaggingAsync(const Model::PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Submits an updated route configuration for a Multi-Region Access Point. This
+         * API operation updates the routing status for the specified Regions from active
+         * to passive, or from passive to active. A value of <code>0</code> indicates a
+         * passive status, which means that traffic won't be routed to the specified
+         * Region. A value of <code>100</code> indicates an active status, which means that
+         * traffic will be routed to the specified Region. At least one Region must be
+         * active at all times.</p> <p>When the routing configuration is changed, any
+         * in-progress operations (uploads, copies, deletes, and so on) to formerly active
+         * Regions will continue to run to their final completion state (success or
+         * failure). The routing configurations of any Regions that aren’t specified remain
+         * unchanged.</p>  <p>Updated routing configurations might not be immediately
+         * applied. It can take up to 2 minutes for your changes to take effect.</p>
+         *  <p>To submit routing control changes and failover requests, use the
+         * Amazon S3 failover control infrastructure endpoints in these five Amazon Web
+         * Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p>
+         * <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p>
+         * </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p>
+         * <code>eu-west-1</code> </p> </li> </ul>  <p>Your Amazon S3 bucket does not
+         * need to be in these five Regions.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubmitMultiRegionAccessPointRoutesOutcome SubmitMultiRegionAccessPointRoutes(const Model::SubmitMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SubmitMultiRegionAccessPointRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SubmitMultiRegionAccessPointRoutesOutcomeCallable SubmitMultiRegionAccessPointRoutesCallable(const Model::SubmitMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * An Async wrapper for SubmitMultiRegionAccessPointRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SubmitMultiRegionAccessPointRoutesAsync(const Model::SubmitMultiRegionAccessPointRoutesRequest& request, const SubmitMultiRegionAccessPointRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing S3 Batch Operations job's priority. For more information,
@@ -2042,6 +2108,7 @@ namespace S3Control
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<S3ControlEndpointProviderBase>& accessEndpointProvider();
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<S3ControlClient>;
         void init(const S3ControlClientConfiguration& clientConfiguration);
         S3ControlClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;

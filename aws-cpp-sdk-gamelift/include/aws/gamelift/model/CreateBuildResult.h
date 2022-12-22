@@ -26,18 +26,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuildOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API CreateBuildResult
+  class CreateBuildResult
   {
   public:
-    CreateBuildResult();
-    CreateBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API CreateBuildResult();
+    AWS_GAMELIFT_API CreateBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API CreateBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -75,7 +69,8 @@ namespace Model
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
      * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
+     * life span. To refresh these credentials, call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
      * </p>
      */
     inline const AwsCredentials& GetUploadCredentials() const{ return m_uploadCredentials; }
@@ -84,7 +79,8 @@ namespace Model
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
      * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
+     * life span. To refresh these credentials, call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
      * </p>
      */
     inline void SetUploadCredentials(const AwsCredentials& value) { m_uploadCredentials = value; }
@@ -93,7 +89,8 @@ namespace Model
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
      * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
+     * life span. To refresh these credentials, call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
      * </p>
      */
     inline void SetUploadCredentials(AwsCredentials&& value) { m_uploadCredentials = std::move(value); }
@@ -102,7 +99,8 @@ namespace Model
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
      * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
+     * life span. To refresh these credentials, call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
      * </p>
      */
     inline CreateBuildResult& WithUploadCredentials(const AwsCredentials& value) { SetUploadCredentials(value); return *this;}
@@ -111,7 +109,8 @@ namespace Model
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
      * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
+     * life span. To refresh these credentials, call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
      * </p>
      */
     inline CreateBuildResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(std::move(value)); return *this;}

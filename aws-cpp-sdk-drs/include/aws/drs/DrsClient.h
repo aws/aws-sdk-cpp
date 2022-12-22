@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/drs/DrsServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace drs
   /**
    * <p>AWS Elastic Disaster Recovery Service.</p>
    */
-  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient
+  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace drs
 
         /* End of legacy constructors due deprecation */
         virtual ~DrsClient();
-
 
         /**
          * <p>Create an extended source server in the target Account based on the source
@@ -496,6 +496,27 @@ namespace drs
         virtual void RetryDataReplicationAsync(const Model::RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Start replication to origin / target region - applies only to protected
+         * instances that originated in EC2. For recovery instances on target region -
+         * starts replication back to origin region. For failback instances on origin
+         * region - starts replication to target region to re-protect them. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReverseReplicationOutcome ReverseReplication(const Model::ReverseReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReverseReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReverseReplicationOutcomeCallable ReverseReplicationCallable(const Model::ReverseReplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for ReverseReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReverseReplicationAsync(const Model::ReverseReplicationRequest& request, const ReverseReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Initiates a Job for launching the machine that is being failed back to from
          * the specified Recovery Instance. This will run conversion on the failback client
          * and will reboot your machine, thus completing the failback
@@ -535,6 +556,25 @@ namespace drs
         virtual void StartRecoveryAsync(const Model::StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts replication for a stopped Source Server. This action would make the
+         * Source Server protected again and restart billing for it.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplicationOutcome StartReplication(const Model::StartReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartReplicationOutcomeCallable StartReplicationCallable(const Model::StartReplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for StartReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartReplicationAsync(const Model::StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops the failback process for a specified Recovery Instance. This changes
          * the Failback State of the Recovery Instance back to
          * FAILBACK_NOT_STARTED.</p><p><h3>See Also:</h3>   <a
@@ -552,6 +592,25 @@ namespace drs
          * An Async wrapper for StopFailback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopFailbackAsync(const Model::StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops replication for a Source Server. This action would make the Source
+         * Server unprotected, delete its existing snapshots and stop billing for
+         * it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopReplicationOutcome StopReplication(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopReplicationOutcomeCallable StopReplicationCallable(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for StopReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopReplicationAsync(const Model::StopReplicationRequest& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites only the specified tags for the specified Elastic Disaster
@@ -686,6 +745,7 @@ namespace drs
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DrsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;
       void init(const DrsClientConfiguration& clientConfiguration);
 
       DrsClientConfiguration m_clientConfiguration;

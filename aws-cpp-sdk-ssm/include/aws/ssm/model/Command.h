@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Command">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Command
+  class Command
   {
   public:
-    Command();
-    Command(Aws::Utils::Json::JsonView jsonValue);
-    Command& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Command();
+    AWS_SSM_API Command(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Command& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

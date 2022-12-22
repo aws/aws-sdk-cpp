@@ -21,6 +21,7 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_engineVersionHasBeenSet(false),
     m_highAvailabilityConfigHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -68,6 +69,12 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

@@ -35,42 +35,42 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSessionStream">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StreamingSessionStream
+  class StreamingSessionStream
   {
   public:
-    StreamingSessionStream();
-    StreamingSessionStream(Aws::Utils::Json::JsonView jsonValue);
-    StreamingSessionStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StreamingSessionStream();
+    AWS_NIMBLESTUDIO_API StreamingSessionStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StreamingSessionStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline StreamingSessionStream& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline StreamingSessionStream& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -117,32 +117,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+     * <p>The ISO timestamp in seconds for when the resource expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+     * <p>The ISO timestamp in seconds for when the resource expires.</p>
      */
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+     * <p>The ISO timestamp in seconds for when the resource expires.</p>
      */
     inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+     * <p>The ISO timestamp in seconds for when the resource expires.</p>
      */
     inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+     * <p>The ISO timestamp in seconds for when the resource expires.</p>
      */
     inline StreamingSessionStream& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+     * <p>The ISO timestamp in seconds for when the resource expires.</p>
      */
     inline StreamingSessionStream& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
 

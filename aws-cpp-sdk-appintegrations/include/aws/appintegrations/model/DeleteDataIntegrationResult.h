@@ -22,12 +22,12 @@ namespace AppIntegrationsService
 {
 namespace Model
 {
-  class AWS_APPINTEGRATIONSSERVICE_API DeleteDataIntegrationResult
+  class DeleteDataIntegrationResult
   {
   public:
-    DeleteDataIntegrationResult();
-    DeleteDataIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDataIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPINTEGRATIONSSERVICE_API DeleteDataIntegrationResult();
+    AWS_APPINTEGRATIONSSERVICE_API DeleteDataIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPINTEGRATIONSSERVICE_API DeleteDataIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -22,12 +22,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CreateTagsResult
+  class CreateTagsResult
   {
   public:
-    CreateTagsResult();
-    CreateTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CreateTagsResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CreateTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CreateTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

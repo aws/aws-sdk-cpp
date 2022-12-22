@@ -26,12 +26,12 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API GetDataSetImportTaskResult
+  class GetDataSetImportTaskResult
   {
   public:
-    GetDataSetImportTaskResult();
-    GetDataSetImportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataSetImportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetDataSetImportTaskResult();
+    AWS_MAINFRAMEMODERNIZATION_API GetDataSetImportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetDataSetImportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

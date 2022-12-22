@@ -24,12 +24,12 @@ namespace ChimeSDKMessaging
 {
 namespace Model
 {
-  class AWS_CHIMESDKMESSAGING_API DescribeChannelModeratorResult
+  class DescribeChannelModeratorResult
   {
   public:
-    DescribeChannelModeratorResult();
-    DescribeChannelModeratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeChannelModeratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API DescribeChannelModeratorResult();
+    AWS_CHIMESDKMESSAGING_API DescribeChannelModeratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API DescribeChannelModeratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

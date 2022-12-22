@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ParallelDataProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API ParallelDataProperties
+  class ParallelDataProperties
   {
   public:
-    ParallelDataProperties();
-    ParallelDataProperties(Aws::Utils::Json::JsonView jsonValue);
-    ParallelDataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API ParallelDataProperties();
+    AWS_TRANSLATE_API ParallelDataProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API ParallelDataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

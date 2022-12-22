@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ZoneAwarenessConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig
+  class ZoneAwarenessConfig
   {
   public:
-    ZoneAwarenessConfig();
-    ZoneAwarenessConfig(Aws::Utils::Json::JsonView jsonValue);
-    ZoneAwarenessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig();
+    AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

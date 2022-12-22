@@ -24,12 +24,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API RegisterCertificateResult
+  class RegisterCertificateResult
   {
   public:
-    RegisterCertificateResult();
-    RegisterCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API RegisterCertificateResult();
+    AWS_DIRECTORYSERVICE_API RegisterCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API RegisterCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

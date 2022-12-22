@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/DeploymentCircuitBreaker.h>
+#include <aws/ecs/model/DeploymentAlarms.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeploymentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API DeploymentConfiguration
+  class DeploymentConfiguration
   {
   public:
-    DeploymentConfiguration();
-    DeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API DeploymentConfiguration();
+    AWS_ECS_API DeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API DeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -381,6 +382,37 @@ namespace Model
      */
     inline DeploymentConfiguration& WithMinimumHealthyPercent(int value) { SetMinimumHealthyPercent(value); return *this;}
 
+
+    /**
+     * <p>Information about the CloudWatch alarms.</p>
+     */
+    inline const DeploymentAlarms& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Information about the CloudWatch alarms.</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
+
+    /**
+     * <p>Information about the CloudWatch alarms.</p>
+     */
+    inline void SetAlarms(const DeploymentAlarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+
+    /**
+     * <p>Information about the CloudWatch alarms.</p>
+     */
+    inline void SetAlarms(DeploymentAlarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
+
+    /**
+     * <p>Information about the CloudWatch alarms.</p>
+     */
+    inline DeploymentConfiguration& WithAlarms(const DeploymentAlarms& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>Information about the CloudWatch alarms.</p>
+     */
+    inline DeploymentConfiguration& WithAlarms(DeploymentAlarms&& value) { SetAlarms(std::move(value)); return *this;}
+
   private:
 
     DeploymentCircuitBreaker m_deploymentCircuitBreaker;
@@ -391,6 +423,9 @@ namespace Model
 
     int m_minimumHealthyPercent;
     bool m_minimumHealthyPercentHasBeenSet = false;
+
+    DeploymentAlarms m_alarms;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

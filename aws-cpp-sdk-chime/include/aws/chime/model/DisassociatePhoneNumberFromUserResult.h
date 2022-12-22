@@ -22,12 +22,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API DisassociatePhoneNumberFromUserResult
+  class DisassociatePhoneNumberFromUserResult
   {
   public:
-    DisassociatePhoneNumberFromUserResult();
-    DisassociatePhoneNumberFromUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociatePhoneNumberFromUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API DisassociatePhoneNumberFromUserResult();
+    AWS_CHIME_API DisassociatePhoneNumberFromUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API DisassociatePhoneNumberFromUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

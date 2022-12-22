@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListPoliciesResult
+  class ListPoliciesResult
   {
   public:
-    ListPoliciesResult();
-    ListPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListPoliciesResult();
+    AWS_IAM_API ListPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

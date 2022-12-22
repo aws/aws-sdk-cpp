@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for the Debugger output tensor
+   * <p>Configuration information for the Amazon SageMaker Debugger output tensor
    * collections.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CollectionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CollectionConfiguration
+  class CollectionConfiguration
   {
   public:
-    CollectionConfiguration();
-    CollectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CollectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CollectionConfiguration();
+    AWS_SAGEMAKER_API CollectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CollectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

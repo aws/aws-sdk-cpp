@@ -24,12 +24,12 @@ namespace LicenseManagerUserSubscriptions
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult
+  class DeregisterIdentityProviderResult
   {
   public:
-    DeregisterIdentityProviderResult();
-    DeregisterIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

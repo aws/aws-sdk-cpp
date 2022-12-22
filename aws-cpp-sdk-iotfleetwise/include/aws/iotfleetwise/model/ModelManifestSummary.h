@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ModelManifestSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API ModelManifestSummary
+  class ModelManifestSummary
   {
   public:
-    ModelManifestSummary();
-    ModelManifestSummary(Aws::Utils::Json::JsonView jsonValue);
-    ModelManifestSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API ModelManifestSummary();
+    AWS_IOTFLEETWISE_API ModelManifestSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API ModelManifestSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

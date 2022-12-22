@@ -24,12 +24,12 @@ namespace ConnectParticipant
 {
 namespace Model
 {
-  class AWS_CONNECTPARTICIPANT_API GetAttachmentResult
+  class GetAttachmentResult
   {
   public:
-    GetAttachmentResult();
-    GetAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API GetAttachmentResult();
+    AWS_CONNECTPARTICIPANT_API GetAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API GetAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

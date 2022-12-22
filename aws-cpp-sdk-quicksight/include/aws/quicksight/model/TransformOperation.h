@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TransformOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TransformOperation
+  class TransformOperation
   {
   public:
-    TransformOperation();
-    TransformOperation(Aws::Utils::Json::JsonView jsonValue);
-    TransformOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TransformOperation();
+    AWS_QUICKSIGHT_API TransformOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TransformOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

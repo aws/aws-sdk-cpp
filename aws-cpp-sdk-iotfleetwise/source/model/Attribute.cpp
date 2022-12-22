@@ -29,7 +29,6 @@ Attribute::Attribute() :
     m_minHasBeenSet(false),
     m_max(0.0),
     m_maxHasBeenSet(false),
-    m_assignedValueHasBeenSet(false),
     m_defaultValueHasBeenSet(false)
 {
 }
@@ -45,7 +44,6 @@ Attribute::Attribute(JsonView jsonValue) :
     m_minHasBeenSet(false),
     m_max(0.0),
     m_maxHasBeenSet(false),
-    m_assignedValueHasBeenSet(false),
     m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -105,13 +103,6 @@ Attribute& Attribute::operator =(JsonView jsonValue)
     m_maxHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("assignedValue"))
-  {
-    m_assignedValue = jsonValue.GetString("assignedValue");
-
-    m_assignedValueHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
@@ -169,12 +160,6 @@ JsonValue Attribute::Jsonize() const
   if(m_maxHasBeenSet)
   {
    payload.WithDouble("max", m_max);
-
-  }
-
-  if(m_assignedValueHasBeenSet)
-  {
-   payload.WithString("assignedValue", m_assignedValue);
 
   }
 

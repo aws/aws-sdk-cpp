@@ -7,6 +7,7 @@
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/finspace-data/FinSpaceDataServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace FinSpaceData
   /**
    * <p> The FinSpace APIs let you take actions inside the FinSpace.</p>
    */
-  class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClient
+  class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace FinSpaceData
 
         /* End of legacy constructors due deprecation */
         virtual ~FinSpaceDataClient();
-
 
         /**
          * <p>Adds a user account to a permission group to grant permissions for actions a
@@ -626,6 +626,7 @@ namespace FinSpaceData
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FinSpaceDataEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>;
       void init(const FinSpaceDataClientConfiguration& clientConfiguration);
 
       FinSpaceDataClientConfiguration m_clientConfiguration;

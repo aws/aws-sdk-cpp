@@ -25,18 +25,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentialsOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API RequestUploadCredentialsResult
+  class RequestUploadCredentialsResult
   {
   public:
-    RequestUploadCredentialsResult();
-    RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RequestUploadCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API RequestUploadCredentialsResult();
+    AWS_GAMELIFT_API RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API RequestUploadCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

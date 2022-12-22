@@ -13,36 +13,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateEntityRequest::CreateEntityRequest() : 
-    m_componentsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_entityNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_componentsHasBeenSet(false),
     m_parentEntityIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
 Aws::String CreateEntityRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_componentsHasBeenSet)
-  {
-   JsonValue componentsJsonMap;
-   for(auto& componentsItem : m_components)
-   {
-     componentsJsonMap.WithObject(componentsItem.first, componentsItem.second.Jsonize());
-   }
-   payload.WithObject("components", std::move(componentsJsonMap));
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
 
   if(m_entityIdHasBeenSet)
   {
@@ -53,6 +36,23 @@ Aws::String CreateEntityRequest::SerializePayload() const
   if(m_entityNameHasBeenSet)
   {
    payload.WithString("entityName", m_entityName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_componentsHasBeenSet)
+  {
+   JsonValue componentsJsonMap;
+   for(auto& componentsItem : m_components)
+   {
+     componentsJsonMap.WithObject(componentsItem.first, componentsItem.second.Jsonize());
+   }
+   payload.WithObject("components", std::move(componentsJsonMap));
 
   }
 

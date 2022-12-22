@@ -48,7 +48,7 @@ namespace Model
    * to return, use the <code>FaceAttributes</code> input parameter for
    * <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations
    * return only the default attributes. The corresponding Start operations don't
-   * have a <code>FaceAttributes</code> input parameter.</p> <ul> <li>
+   * have a <code>FaceAttributes</code> input parameter:</p> <ul> <li>
    * <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li>
    * <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image
    * <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial
@@ -59,13 +59,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API FaceDetail
+  class FaceDetail
   {
   public:
-    FaceDetail();
-    FaceDetail(Aws::Utils::Json::JsonView jsonValue);
-    FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API FaceDetail();
+    AWS_REKOGNITION_API FaceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/PhoneNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API PhoneNumber
+  class PhoneNumber
   {
   public:
-    PhoneNumber();
-    PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API PhoneNumber();
+    AWS_IDENTITYSTORE_API PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

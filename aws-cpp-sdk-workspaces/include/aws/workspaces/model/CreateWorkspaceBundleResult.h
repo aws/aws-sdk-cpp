@@ -24,12 +24,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API CreateWorkspaceBundleResult
+  class CreateWorkspaceBundleResult
   {
   public:
-    CreateWorkspaceBundleResult();
-    CreateWorkspaceBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkspaceBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API CreateWorkspaceBundleResult();
+    AWS_WORKSPACES_API CreateWorkspaceBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API CreateWorkspaceBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

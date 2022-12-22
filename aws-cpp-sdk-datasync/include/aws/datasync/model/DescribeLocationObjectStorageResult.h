@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API DescribeLocationObjectStorageResult
+  class DescribeLocationObjectStorageResult
   {
   public:
-    DescribeLocationObjectStorageResult();
-    DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeLocationObjectStorageResult();
+    AWS_DATASYNC_API DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

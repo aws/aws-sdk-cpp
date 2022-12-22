@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/SubscriptionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API SubscriptionFilter
+  class SubscriptionFilter
   {
   public:
-    SubscriptionFilter();
-    SubscriptionFilter(Aws::Utils::Json::JsonView jsonValue);
-    SubscriptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter();
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,25 +248,25 @@ namespace Model
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 

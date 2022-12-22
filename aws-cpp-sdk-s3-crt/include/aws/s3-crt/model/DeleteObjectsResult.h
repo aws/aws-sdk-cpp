@@ -27,12 +27,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API DeleteObjectsResult
+  class DeleteObjectsResult
   {
   public:
-    DeleteObjectsResult();
-    DeleteObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API DeleteObjectsResult();
+    AWS_S3CRT_API DeleteObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API DeleteObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

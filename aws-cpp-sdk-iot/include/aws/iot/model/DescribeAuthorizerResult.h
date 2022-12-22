@@ -24,12 +24,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeAuthorizerResult
+  class DescribeAuthorizerResult
   {
   public:
-    DescribeAuthorizerResult();
-    DescribeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeAuthorizerResult();
+    AWS_IOT_API DescribeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

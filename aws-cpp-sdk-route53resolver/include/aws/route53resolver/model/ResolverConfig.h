@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResolverConfig
+  class ResolverConfig
   {
   public:
-    ResolverConfig();
-    ResolverConfig(Aws::Utils::Json::JsonView jsonValue);
-    ResolverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResolverConfig();
+    AWS_ROUTE53RESOLVER_API ResolverConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResolverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

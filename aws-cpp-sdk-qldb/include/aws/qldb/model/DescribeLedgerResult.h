@@ -28,12 +28,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API DescribeLedgerResult
+  class DescribeLedgerResult
   {
   public:
-    DescribeLedgerResult();
-    DescribeLedgerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLedgerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API DescribeLedgerResult();
+    AWS_QLDB_API DescribeLedgerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API DescribeLedgerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

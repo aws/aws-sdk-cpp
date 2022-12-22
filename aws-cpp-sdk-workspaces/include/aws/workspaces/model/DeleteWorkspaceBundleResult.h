@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API DeleteWorkspaceBundleResult
+  class DeleteWorkspaceBundleResult
   {
   public:
-    DeleteWorkspaceBundleResult();
-    DeleteWorkspaceBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWorkspaceBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DeleteWorkspaceBundleResult();
+    AWS_WORKSPACES_API DeleteWorkspaceBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DeleteWorkspaceBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

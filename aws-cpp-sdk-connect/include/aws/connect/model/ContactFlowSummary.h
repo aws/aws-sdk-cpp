@@ -28,18 +28,18 @@ namespace Model
   /**
    * <p>Contains summary information about a flow.</p> <p>You can also create and
    * update flows using the <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
    * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ContactFlowSummary
+  class ContactFlowSummary
   {
   public:
-    ContactFlowSummary();
-    ContactFlowSummary(Aws::Utils::Json::JsonView jsonValue);
-    ContactFlowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ContactFlowSummary();
+    AWS_CONNECT_API ContactFlowSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ContactFlowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

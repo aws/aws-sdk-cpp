@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/FargateProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API FargateProfile
+  class FargateProfile
   {
   public:
-    FargateProfile();
-    FargateProfile(Aws::Utils::Json::JsonView jsonValue);
-    FargateProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API FargateProfile();
+    AWS_EKS_API FargateProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API FargateProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

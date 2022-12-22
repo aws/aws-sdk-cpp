@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlComment">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ControlComment
+  class ControlComment
   {
   public:
-    ControlComment();
-    ControlComment(Aws::Utils::Json::JsonView jsonValue);
-    ControlComment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ControlComment();
+    AWS_AUDITMANAGER_API ControlComment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ControlComment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

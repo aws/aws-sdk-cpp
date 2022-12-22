@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BounceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API BounceAction
+  class BounceAction
   {
   public:
-    BounceAction();
-    BounceAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BounceAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BounceAction();
+    AWS_SES_API BounceAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BounceAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

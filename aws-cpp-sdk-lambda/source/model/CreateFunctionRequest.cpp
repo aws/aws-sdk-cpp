@@ -39,7 +39,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_imageConfigHasBeenSet(false),
     m_codeSigningConfigArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_snapStartHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_snapStartHasBeenSet)
+  {
+   payload.WithObject("SnapStart", m_snapStart.Jsonize());
 
   }
 

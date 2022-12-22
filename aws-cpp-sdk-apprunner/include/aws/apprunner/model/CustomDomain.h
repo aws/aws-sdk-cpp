@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CustomDomain">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API CustomDomain
+  class CustomDomain
   {
   public:
-    CustomDomain();
-    CustomDomain(Aws::Utils::Json::JsonView jsonValue);
-    CustomDomain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API CustomDomain();
+    AWS_APPRUNNER_API CustomDomain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API CustomDomain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

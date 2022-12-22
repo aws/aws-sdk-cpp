@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Warning">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API Warning
+  class Warning
   {
   public:
-    Warning();
-    Warning(Aws::Utils::Json::JsonView jsonValue);
-    Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Warning();
+    AWS_TEXTRACT_API Warning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

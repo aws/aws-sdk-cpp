@@ -24,12 +24,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API DescribeDocumentClassificationJobResult
+  class DescribeDocumentClassificationJobResult
   {
   public:
-    DescribeDocumentClassificationJobResult();
-    DescribeDocumentClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDocumentClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DescribeDocumentClassificationJobResult();
+    AWS_COMPREHEND_API DescribeDocumentClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DescribeDocumentClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

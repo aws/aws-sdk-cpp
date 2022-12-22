@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluencePageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ConfluencePageConfiguration
+  class ConfluencePageConfiguration
   {
   public:
-    ConfluencePageConfiguration();
-    ConfluencePageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConfluencePageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ConfluencePageConfiguration();
+    AWS_KENDRA_API ConfluencePageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ConfluencePageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace ChimeSDKMessaging
 {
 namespace Model
 {
-  class AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult
+  class ListChannelMembershipsResult
   {
   public:
-    ListChannelMembershipsResult();
-    ListChannelMembershipsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListChannelMembershipsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult();
+    AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

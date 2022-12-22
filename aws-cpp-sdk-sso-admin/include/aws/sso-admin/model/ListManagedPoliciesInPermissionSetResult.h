@@ -26,12 +26,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult
+  class ListManagedPoliciesInPermissionSetResult
   {
   public:
-    ListManagedPoliciesInPermissionSetResult();
-    ListManagedPoliciesInPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListManagedPoliciesInPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult();
+    AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

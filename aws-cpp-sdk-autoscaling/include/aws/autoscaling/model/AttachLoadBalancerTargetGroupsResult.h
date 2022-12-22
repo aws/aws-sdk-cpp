@@ -24,12 +24,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API AttachLoadBalancerTargetGroupsResult
+  class AttachLoadBalancerTargetGroupsResult
   {
   public:
-    AttachLoadBalancerTargetGroupsResult();
-    AttachLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachLoadBalancerTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API AttachLoadBalancerTargetGroupsResult();
+    AWS_AUTOSCALING_API AttachLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API AttachLoadBalancerTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

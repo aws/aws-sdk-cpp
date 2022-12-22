@@ -23,13 +23,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API ResourceNotFoundException();
+    AWS_IOT1CLICKDEVICESSERVICE_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

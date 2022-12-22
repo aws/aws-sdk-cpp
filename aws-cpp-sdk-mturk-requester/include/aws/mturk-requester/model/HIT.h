@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/HIT">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API HIT
+  class HIT
   {
   public:
-    HIT();
-    HIT(Aws::Utils::Json::JsonView jsonValue);
-    HIT& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API HIT();
+    AWS_MTURK_API HIT(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API HIT& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

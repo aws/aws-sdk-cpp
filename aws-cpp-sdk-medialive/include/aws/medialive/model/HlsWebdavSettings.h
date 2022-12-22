@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsWebdavSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsWebdavSettings
+  class HlsWebdavSettings
   {
   public:
-    HlsWebdavSettings();
-    HlsWebdavSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsWebdavSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsWebdavSettings();
+    AWS_MEDIALIVE_API HlsWebdavSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsWebdavSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

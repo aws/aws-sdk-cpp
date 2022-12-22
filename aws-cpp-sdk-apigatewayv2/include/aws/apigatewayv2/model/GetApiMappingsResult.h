@@ -26,12 +26,12 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API GetApiMappingsResult
+  class GetApiMappingsResult
   {
   public:
-    GetApiMappingsResult();
-    GetApiMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApiMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API GetApiMappingsResult();
+    AWS_APIGATEWAYV2_API GetApiMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API GetApiMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

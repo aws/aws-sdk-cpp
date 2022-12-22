@@ -7,6 +7,7 @@
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/savingsplans/SavingsPlansServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace SavingsPlans
    * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS Savings
    * Plans User Guide</a>.</p>
    */
-  class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient
+  class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace SavingsPlans
 
         /* End of legacy constructors due deprecation */
         virtual ~SavingsPlansClient();
-
 
         /**
          * <p>Creates a Savings Plan.</p><p><h3>See Also:</h3>   <a
@@ -240,6 +240,7 @@ namespace SavingsPlans
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SavingsPlansEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>;
       void init(const SavingsPlansClientConfiguration& clientConfiguration);
 
       SavingsPlansClientConfiguration m_clientConfiguration;

@@ -26,12 +26,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API DescribeCustomerMetadataResult
+  class DescribeCustomerMetadataResult
   {
   public:
-    DescribeCustomerMetadataResult();
-    DescribeCustomerMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomerMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DescribeCustomerMetadataResult();
+    AWS_DIRECTCONNECT_API DescribeCustomerMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DescribeCustomerMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

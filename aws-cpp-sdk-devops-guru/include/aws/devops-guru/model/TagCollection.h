@@ -56,13 +56,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/TagCollection">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API TagCollection
+  class TagCollection
   {
   public:
-    TagCollection();
-    TagCollection(Aws::Utils::Json::JsonView jsonValue);
-    TagCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API TagCollection();
+    AWS_DEVOPSGURU_API TagCollection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API TagCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

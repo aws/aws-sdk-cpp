@@ -26,96 +26,96 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API ListEnvironmentsResult
+  class ListEnvironmentsResult
   {
   public:
-    ListEnvironmentsResult();
-    ListEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API ListEnvironmentsResult();
+    AWS_MAINFRAMEMODERNIZATION_API ListEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API ListEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline const Aws::Vector<EnvironmentSummary>& GetEnvironments() const{ return m_environments; }
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline void SetEnvironments(const Aws::Vector<EnvironmentSummary>& value) { m_environments = value; }
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline void SetEnvironments(Aws::Vector<EnvironmentSummary>&& value) { m_environments = std::move(value); }
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline ListEnvironmentsResult& WithEnvironments(const Aws::Vector<EnvironmentSummary>& value) { SetEnvironments(value); return *this;}
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline ListEnvironmentsResult& WithEnvironments(Aws::Vector<EnvironmentSummary>&& value) { SetEnvironments(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline ListEnvironmentsResult& AddEnvironments(const EnvironmentSummary& value) { m_environments.push_back(value); return *this; }
 
     /**
-     * <p>Returns a list of summary details for all the environments in your account.
-     * </p>
+     * <p>Returns a list of summary details for all the runtime environments in your
+     * account. </p>
      */
     inline ListEnvironmentsResult& AddEnvironments(EnvironmentSummary&& value) { m_environments.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline ListEnvironmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline ListEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token that's returned when the response doesn't contain all the
-     * environments.</p>
+     * runtime environments.</p>
      */
     inline ListEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

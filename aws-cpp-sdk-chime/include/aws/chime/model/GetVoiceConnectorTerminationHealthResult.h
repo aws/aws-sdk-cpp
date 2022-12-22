@@ -24,12 +24,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API GetVoiceConnectorTerminationHealthResult
+  class GetVoiceConnectorTerminationHealthResult
   {
   public:
-    GetVoiceConnectorTerminationHealthResult();
-    GetVoiceConnectorTerminationHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVoiceConnectorTerminationHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API GetVoiceConnectorTerminationHealthResult();
+    AWS_CHIME_API GetVoiceConnectorTerminationHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API GetVoiceConnectorTerminationHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

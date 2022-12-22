@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ManagedRuleGroupStatement
+  class ManagedRuleGroupStatement
   {
   public:
-    ManagedRuleGroupStatement();
-    ManagedRuleGroupStatement(Aws::Utils::Json::JsonView jsonValue);
-    ManagedRuleGroupStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ManagedRuleGroupStatement();
+    AWS_WAFV2_API ManagedRuleGroupStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ManagedRuleGroupStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,7 +290,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    const Statement& GetScopeDownStatement() const;
+    AWS_WAFV2_API const Statement& GetScopeDownStatement() const;
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -299,7 +299,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    bool ScopeDownStatementHasBeenSet() const;
+    AWS_WAFV2_API bool ScopeDownStatementHasBeenSet() const;
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -308,7 +308,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    void SetScopeDownStatement(const Statement& value);
+    AWS_WAFV2_API void SetScopeDownStatement(const Statement& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -317,7 +317,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    void SetScopeDownStatement(Statement&& value);
+    AWS_WAFV2_API void SetScopeDownStatement(Statement&& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -326,7 +326,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
+    AWS_WAFV2_API ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -335,7 +335,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
+    AWS_WAFV2_API ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
 
 
     /**

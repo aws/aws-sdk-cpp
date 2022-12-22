@@ -31,36 +31,36 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfigResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentityConfig2020_05_31Result
+  class GetCloudFrontOriginAccessIdentityConfig2020_05_31Result
   {
   public:
-    GetCloudFrontOriginAccessIdentityConfig2020_05_31Result();
-    GetCloudFrontOriginAccessIdentityConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentityConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentityConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfig = std::move(value); }
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
 

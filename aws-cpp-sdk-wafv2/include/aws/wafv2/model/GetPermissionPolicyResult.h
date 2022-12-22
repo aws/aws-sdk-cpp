@@ -24,12 +24,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API GetPermissionPolicyResult
+  class GetPermissionPolicyResult
   {
   public:
-    GetPermissionPolicyResult();
-    GetPermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetPermissionPolicyResult();
+    AWS_WAFV2_API GetPermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetPermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

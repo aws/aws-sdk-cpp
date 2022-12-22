@@ -24,12 +24,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API GetAccessPointPolicyResult
+  class GetAccessPointPolicyResult
   {
   public:
-    GetAccessPointPolicyResult();
-    GetAccessPointPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccessPointPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetAccessPointPolicyResult();
+    AWS_S3CONTROL_API GetAccessPointPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetAccessPointPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

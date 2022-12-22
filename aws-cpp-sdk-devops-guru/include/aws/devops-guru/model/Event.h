@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/Event">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API Event
+  class Event
   {
   public:
-    Event();
-    Event(Aws::Utils::Json::JsonView jsonValue);
-    Event& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API Event();
+    AWS_DEVOPSGURU_API Event(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

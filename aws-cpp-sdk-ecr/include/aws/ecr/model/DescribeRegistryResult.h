@@ -25,12 +25,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API DescribeRegistryResult
+  class DescribeRegistryResult
   {
   public:
-    DescribeRegistryResult();
-    DescribeRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API DescribeRegistryResult();
+    AWS_ECR_API DescribeRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API DescribeRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

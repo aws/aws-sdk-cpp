@@ -25,7 +25,9 @@ ResponseDetails::ResponseDetails() :
     m_importAssetFromSignedUrlHasBeenSet(false),
     m_importAssetsFromS3HasBeenSet(false),
     m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
-    m_importAssetFromApiGatewayApiHasBeenSet(false)
+    m_importAssetFromApiGatewayApiHasBeenSet(false),
+    m_createS3DataAccessFromS3BucketHasBeenSet(false),
+    m_importAssetsFromLakeFormationTagPolicyHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ ResponseDetails::ResponseDetails(JsonView jsonValue) :
     m_importAssetFromSignedUrlHasBeenSet(false),
     m_importAssetsFromS3HasBeenSet(false),
     m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
-    m_importAssetFromApiGatewayApiHasBeenSet(false)
+    m_importAssetFromApiGatewayApiHasBeenSet(false),
+    m_createS3DataAccessFromS3BucketHasBeenSet(false),
+    m_importAssetsFromLakeFormationTagPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,20 @@ ResponseDetails& ResponseDetails::operator =(JsonView jsonValue)
     m_importAssetFromApiGatewayApiHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreateS3DataAccessFromS3Bucket"))
+  {
+    m_createS3DataAccessFromS3Bucket = jsonValue.GetObject("CreateS3DataAccessFromS3Bucket");
+
+    m_createS3DataAccessFromS3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImportAssetsFromLakeFormationTagPolicy"))
+  {
+    m_importAssetsFromLakeFormationTagPolicy = jsonValue.GetObject("ImportAssetsFromLakeFormationTagPolicy");
+
+    m_importAssetsFromLakeFormationTagPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +156,18 @@ JsonValue ResponseDetails::Jsonize() const
   if(m_importAssetFromApiGatewayApiHasBeenSet)
   {
    payload.WithObject("ImportAssetFromApiGatewayApi", m_importAssetFromApiGatewayApi.Jsonize());
+
+  }
+
+  if(m_createS3DataAccessFromS3BucketHasBeenSet)
+  {
+   payload.WithObject("CreateS3DataAccessFromS3Bucket", m_createS3DataAccessFromS3Bucket.Jsonize());
+
+  }
+
+  if(m_importAssetsFromLakeFormationTagPolicyHasBeenSet)
+  {
+   payload.WithObject("ImportAssetsFromLakeFormationTagPolicy", m_importAssetsFromLakeFormationTagPolicy.Jsonize());
 
   }
 

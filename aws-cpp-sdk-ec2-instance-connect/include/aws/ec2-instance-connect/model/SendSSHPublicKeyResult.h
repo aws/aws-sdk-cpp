@@ -24,12 +24,12 @@ namespace EC2InstanceConnect
 {
 namespace Model
 {
-  class AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult
+  class SendSSHPublicKeyResult
   {
   public:
-    SendSSHPublicKeyResult();
-    SendSSHPublicKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult();
+    AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/VirtualMachine">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API VirtualMachine
+  class VirtualMachine
   {
   public:
-    VirtualMachine();
-    VirtualMachine(Aws::Utils::Json::JsonView jsonValue);
-    VirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API VirtualMachine();
+    AWS_BACKUPGATEWAY_API VirtualMachine(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API VirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

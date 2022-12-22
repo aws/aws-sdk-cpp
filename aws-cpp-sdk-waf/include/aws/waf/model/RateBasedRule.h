@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RateBasedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API RateBasedRule
+  class RateBasedRule
   {
   public:
-    RateBasedRule();
-    RateBasedRule(Aws::Utils::Json::JsonView jsonValue);
-    RateBasedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API RateBasedRule();
+    AWS_WAF_API RateBasedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API RateBasedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

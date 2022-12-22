@@ -22,12 +22,12 @@ namespace ConnectCases
 {
 namespace Model
 {
-  class AWS_CONNECTCASES_API UpdateLayoutResult
+  class UpdateLayoutResult
   {
   public:
-    UpdateLayoutResult();
-    UpdateLayoutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLayoutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API UpdateLayoutResult();
+    AWS_CONNECTCASES_API UpdateLayoutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API UpdateLayoutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UnprocessedNamedQueryId">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API UnprocessedNamedQueryId
+  class UnprocessedNamedQueryId
   {
   public:
-    UnprocessedNamedQueryId();
-    UnprocessedNamedQueryId(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedNamedQueryId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API UnprocessedNamedQueryId();
+    AWS_ATHENA_API UnprocessedNamedQueryId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API UnprocessedNamedQueryId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

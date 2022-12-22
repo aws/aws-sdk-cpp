@@ -36,6 +36,8 @@
 #include <aws/states/model/LambdaFunctionTimedOutEventDetails.h>
 #include <aws/states/model/StateEnteredEventDetails.h>
 #include <aws/states/model/StateExitedEventDetails.h>
+#include <aws/states/model/MapRunStartedEventDetails.h>
+#include <aws/states/model/MapRunFailedEventDetails.h>
 #include <utility>
 
 namespace Aws
@@ -59,13 +61,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API HistoryEvent
+  class HistoryEvent
   {
   public:
-    HistoryEvent();
-    HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
-    HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API HistoryEvent();
+    AWS_SFN_API HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -897,37 +899,37 @@ namespace Model
 
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline const LambdaFunctionSucceededEventDetails& GetLambdaFunctionSucceededEventDetails() const{ return m_lambdaFunctionSucceededEventDetails; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline bool LambdaFunctionSucceededEventDetailsHasBeenSet() const { return m_lambdaFunctionSucceededEventDetailsHasBeenSet; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline void SetLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = value; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline void SetLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = std::move(value); }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { SetLambdaFunctionSucceededEventDetails(value); return *this;}
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { SetLambdaFunctionSucceededEventDetails(std::move(value)); return *this;}
@@ -988,6 +990,80 @@ namespace Model
 
     
     inline HistoryEvent& WithStateExitedEventDetails(StateExitedEventDetails&& value) { SetStateExitedEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline const MapRunStartedEventDetails& GetMapRunStartedEventDetails() const{ return m_mapRunStartedEventDetails; }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline bool MapRunStartedEventDetailsHasBeenSet() const { return m_mapRunStartedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline void SetMapRunStartedEventDetails(const MapRunStartedEventDetails& value) { m_mapRunStartedEventDetailsHasBeenSet = true; m_mapRunStartedEventDetails = value; }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline void SetMapRunStartedEventDetails(MapRunStartedEventDetails&& value) { m_mapRunStartedEventDetailsHasBeenSet = true; m_mapRunStartedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline HistoryEvent& WithMapRunStartedEventDetails(const MapRunStartedEventDetails& value) { SetMapRunStartedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline HistoryEvent& WithMapRunStartedEventDetails(MapRunStartedEventDetails&& value) { SetMapRunStartedEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline const MapRunFailedEventDetails& GetMapRunFailedEventDetails() const{ return m_mapRunFailedEventDetails; }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline bool MapRunFailedEventDetailsHasBeenSet() const { return m_mapRunFailedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline void SetMapRunFailedEventDetails(const MapRunFailedEventDetails& value) { m_mapRunFailedEventDetailsHasBeenSet = true; m_mapRunFailedEventDetails = value; }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline void SetMapRunFailedEventDetails(MapRunFailedEventDetails&& value) { m_mapRunFailedEventDetailsHasBeenSet = true; m_mapRunFailedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline HistoryEvent& WithMapRunFailedEventDetails(const MapRunFailedEventDetails& value) { SetMapRunFailedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline HistoryEvent& WithMapRunFailedEventDetails(MapRunFailedEventDetails&& value) { SetMapRunFailedEventDetails(std::move(value)); return *this;}
 
   private:
 
@@ -1098,6 +1174,12 @@ namespace Model
 
     StateExitedEventDetails m_stateExitedEventDetails;
     bool m_stateExitedEventDetailsHasBeenSet = false;
+
+    MapRunStartedEventDetails m_mapRunStartedEventDetails;
+    bool m_mapRunStartedEventDetailsHasBeenSet = false;
+
+    MapRunFailedEventDetails m_mapRunFailedEventDetails;
+    bool m_mapRunFailedEventDetailsHasBeenSet = false;
   };
 
 } // namespace Model

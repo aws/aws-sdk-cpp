@@ -24,12 +24,12 @@ namespace GlobalAccelerator
 {
 namespace Model
 {
-  class AWS_GLOBALACCELERATOR_API CreateAcceleratorResult
+  class CreateAcceleratorResult
   {
   public:
-    CreateAcceleratorResult();
-    CreateAcceleratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAcceleratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API CreateAcceleratorResult();
+    AWS_GLOBALACCELERATOR_API CreateAcceleratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API CreateAcceleratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

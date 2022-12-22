@@ -36,21 +36,22 @@ namespace Model
    * IAM roles for use with the Nimble Studio portal. These roles are assumed by your
    * users when they log in to the Nimble Studio portal via IAM Identity Center and
    * your identity source.</p> <p>The user role must have the
-   * AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
-   * properly.</p> <p>The admin role must have the AmazonNimbleStudio-StudioAdmin
-   * managed policy attached for the portal to function properly.</p> <p>Your studio
-   * roles must trust the identity.nimble.amazonaws.com service principal to function
+   * <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the
+   * portal to function properly.</p> <p>The admin role must have the
+   * <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the
+   * portal to function properly.</p> <p>Your studio roles must trust the
+   * <code>identity.nimble.amazonaws.com</code> service principal to function
    * properly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/Studio">AWS API
    * Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API Studio
+  class Studio
   {
   public:
-    Studio();
-    Studio(Aws::Utils::Json::JsonView jsonValue);
-    Studio& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API Studio();
+    AWS_NIMBLESTUDIO_API Studio(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Studio& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,32 +153,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline Studio& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline Studio& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -266,57 +267,57 @@ namespace Model
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline const Aws::String& GetSsoClientId() const{ return m_ssoClientId; }
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline bool SsoClientIdHasBeenSet() const { return m_ssoClientIdHasBeenSet; }
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline void SetSsoClientId(const Aws::String& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = value; }
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline void SetSsoClientId(Aws::String&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::move(value); }
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline void SetSsoClientId(const char* value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId.assign(value); }
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline Studio& WithSsoClientId(const Aws::String& value) { SetSsoClientId(value); return *this;}
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline Studio& WithSsoClientId(Aws::String&& value) { SetSsoClientId(std::move(value)); return *this;}
 
     /**
      * <p>The IAM Identity Center application client ID used to integrate with IAM
-     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
-     * portal.</p>
+     * Identity Center. This ID allows IAM Identity Center users to log in to Nimble
+     * Studio portal.</p>
      */
     inline Studio& WithSsoClientId(const char* value) { SetSsoClientId(value); return *this;}
 
@@ -595,111 +596,111 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline Studio& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline Studio& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline Studio& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

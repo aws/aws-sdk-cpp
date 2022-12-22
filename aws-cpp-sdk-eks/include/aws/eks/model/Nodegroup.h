@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Nodegroup">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Nodegroup
+  class Nodegroup
   {
   public:
-    Nodegroup();
-    Nodegroup(Aws::Utils::Json::JsonView jsonValue);
-    Nodegroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Nodegroup();
+    AWS_EKS_API Nodegroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Nodegroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

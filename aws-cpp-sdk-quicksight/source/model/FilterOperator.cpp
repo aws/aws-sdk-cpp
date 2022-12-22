@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int StringEquals_HASH = HashingUtils::HashString("StringEquals");
+        static const int StringLike_HASH = HashingUtils::HashString("StringLike");
 
 
         FilterOperator GetFilterOperatorForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == StringEquals_HASH)
           {
             return FilterOperator::StringEquals;
+          }
+          else if (hashCode == StringLike_HASH)
+          {
+            return FilterOperator::StringLike;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case FilterOperator::StringEquals:
             return "StringEquals";
+          case FilterOperator::StringLike:
+            return "StringLike";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

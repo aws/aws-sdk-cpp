@@ -32,19 +32,19 @@ namespace Model
    * the Nimble Studio portal. These users have the permissions provided by the
    * studio's user IAM role and do not appear in the studio membership collection.
    * Only studio admins appear in studio membership.</p> <p>When you add a user to
-   * studio membership with the persona ADMIN, upon logging in to the Nimble Studio
+   * studio membership with the ADMIN persona, upon logging in to the Nimble Studio
    * portal, they are granted permissions specified by the Studio's Admin IAM
    * role.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioMembership
+  class StudioMembership
   {
   public:
-    StudioMembership();
-    StudioMembership(Aws::Utils::Json::JsonView jsonValue);
-    StudioMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioMembership();
+    AWS_NIMBLESTUDIO_API StudioMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ProfileData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API ProfileData
+  class ProfileData
   {
   public:
-    ProfileData();
-    ProfileData(Aws::Utils::Json::JsonView jsonValue);
-    ProfileData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API ProfileData();
+    AWS_ALEXAFORBUSINESS_API ProfileData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API ProfileData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

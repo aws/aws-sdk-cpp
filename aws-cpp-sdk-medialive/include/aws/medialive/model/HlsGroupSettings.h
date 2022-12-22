@@ -57,13 +57,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsGroupSettings
+  class HlsGroupSettings
   {
   public:
-    HlsGroupSettings();
-    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsGroupSettings();
+    AWS_MEDIALIVE_API HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1497,26 +1497,30 @@ If this "keep segments" number is too low, the following might happen: the
 
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline int GetMinSegmentLength() const{ return m_minSegmentLength; }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline bool MinSegmentLengthHasBeenSet() const { return m_minSegmentLengthHasBeenSet; }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline void SetMinSegmentLength(int value) { m_minSegmentLengthHasBeenSet = true; m_minSegmentLength = value; }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline HlsGroupSettings& WithMinSegmentLength(int value) { SetMinSegmentLength(value); return *this;}
 
@@ -1932,30 +1936,30 @@ For an HLS output group with
 
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline HlsGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
 

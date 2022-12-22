@@ -24,12 +24,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API CreateDynamicThingGroupResult
+  class CreateDynamicThingGroupResult
   {
   public:
-    CreateDynamicThingGroupResult();
-    CreateDynamicThingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDynamicThingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateDynamicThingGroupResult();
+    AWS_IOT_API CreateDynamicThingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateDynamicThingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

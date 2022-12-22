@@ -24,12 +24,12 @@ namespace ResourceExplorer2
 {
 namespace Model
 {
-  class AWS_RESOURCEEXPLORER2_API CreateViewResult
+  class CreateViewResult
   {
   public:
-    CreateViewResult();
-    CreateViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API CreateViewResult();
+    AWS_RESOURCEEXPLORER2_API CreateViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API CreateViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

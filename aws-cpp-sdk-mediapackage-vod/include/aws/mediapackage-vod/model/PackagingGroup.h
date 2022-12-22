@@ -31,13 +31,34 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/PackagingGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API PackagingGroup
+  class PackagingGroup
   {
   public:
-    PackagingGroup();
-    PackagingGroup(Aws::Utils::Json::JsonView jsonValue);
-    PackagingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API PackagingGroup();
+    AWS_MEDIAPACKAGEVOD_API PackagingGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API PackagingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline int GetApproximateAssetCount() const{ return m_approximateAssetCount; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline bool ApproximateAssetCountHasBeenSet() const { return m_approximateAssetCountHasBeenSet; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline void SetApproximateAssetCount(int value) { m_approximateAssetCountHasBeenSet = true; m_approximateAssetCount = value; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline PackagingGroup& WithApproximateAssetCount(int value) { SetApproximateAssetCount(value); return *this;}
 
 
     /**
@@ -241,6 +262,9 @@ namespace Model
     inline PackagingGroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    int m_approximateAssetCount;
+    bool m_approximateAssetCountHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;

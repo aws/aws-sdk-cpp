@@ -39,14 +39,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AllowedMethods">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API AllowedMethods
+  class AllowedMethods
   {
   public:
-    AllowedMethods();
-    AllowedMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AllowedMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API AllowedMethods();
+    AWS_CLOUDFRONT_API AllowedMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API AllowedMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

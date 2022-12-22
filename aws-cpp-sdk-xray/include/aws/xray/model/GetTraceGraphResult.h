@@ -26,12 +26,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API GetTraceGraphResult
+  class GetTraceGraphResult
   {
   public:
-    GetTraceGraphResult();
-    GetTraceGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTraceGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetTraceGraphResult();
+    AWS_XRAY_API GetTraceGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetTraceGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

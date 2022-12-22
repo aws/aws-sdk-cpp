@@ -24,12 +24,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API GetResourcePolicyResult
+  class GetResourcePolicyResult
   {
   public:
-    GetResourcePolicyResult();
-    GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API GetResourcePolicyResult();
+    AWS_SECRETSMANAGER_API GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API RegisterPatchBaselineForPatchGroupResult
+  class RegisterPatchBaselineForPatchGroupResult
   {
   public:
-    RegisterPatchBaselineForPatchGroupResult();
-    RegisterPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API RegisterPatchBaselineForPatchGroupResult();
+    AWS_SSM_API RegisterPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API RegisterPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

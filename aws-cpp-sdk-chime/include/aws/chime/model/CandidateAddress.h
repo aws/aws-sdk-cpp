@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CandidateAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API CandidateAddress
+  class CandidateAddress
   {
   public:
-    CandidateAddress();
-    CandidateAddress(Aws::Utils::Json::JsonView jsonValue);
-    CandidateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API CandidateAddress();
+    AWS_CHIME_API CandidateAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API CandidateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

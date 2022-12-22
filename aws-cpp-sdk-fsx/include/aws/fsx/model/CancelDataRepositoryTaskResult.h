@@ -25,12 +25,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API CancelDataRepositoryTaskResult
+  class CancelDataRepositoryTaskResult
   {
   public:
-    CancelDataRepositoryTaskResult();
-    CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelDataRepositoryTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CancelDataRepositoryTaskResult();
+    AWS_FSX_API CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CancelDataRepositoryTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

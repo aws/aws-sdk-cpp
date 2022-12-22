@@ -26,12 +26,12 @@ namespace PrivateNetworks
 {
 namespace Model
 {
-  class AWS_PRIVATENETWORKS_API ListNetworkSitesResult
+  class ListNetworkSitesResult
   {
   public:
-    ListNetworkSitesResult();
-    ListNetworkSitesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNetworkSitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API ListNetworkSitesResult();
+    AWS_PRIVATENETWORKS_API ListNetworkSitesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API ListNetworkSitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

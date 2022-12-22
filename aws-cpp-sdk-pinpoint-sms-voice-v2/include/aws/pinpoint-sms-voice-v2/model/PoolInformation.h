@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PoolInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API PoolInformation
+  class PoolInformation
   {
   public:
-    PoolInformation();
-    PoolInformation(Aws::Utils::Json::JsonView jsonValue);
-    PoolInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API PoolInformation();
+    AWS_PINPOINTSMSVOICEV2_API PoolInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API PoolInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

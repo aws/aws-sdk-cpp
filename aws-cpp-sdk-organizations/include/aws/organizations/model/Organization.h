@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Organization">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Organization
+  class Organization
   {
   public:
-    Organization();
-    Organization(Aws::Utils::Json::JsonView jsonValue);
-    Organization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Organization();
+    AWS_ORGANIZATIONS_API Organization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Organization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

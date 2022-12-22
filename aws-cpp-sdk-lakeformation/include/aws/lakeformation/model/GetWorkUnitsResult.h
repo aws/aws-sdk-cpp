@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetWorkUnitsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API GetWorkUnitsResult
+  class GetWorkUnitsResult
   {
   public:
-    GetWorkUnitsResult();
-    GetWorkUnitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWorkUnitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API GetWorkUnitsResult();
+    AWS_LAKEFORMATION_API GetWorkUnitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API GetWorkUnitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

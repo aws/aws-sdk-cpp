@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopTimecode">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StopTimecode
+  class StopTimecode
   {
   public:
-    StopTimecode();
-    StopTimecode(Aws::Utils::Json::JsonView jsonValue);
-    StopTimecode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API StopTimecode();
+    AWS_MEDIALIVE_API StopTimecode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API StopTimecode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstancesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API RequestSpotInstancesResponse
+  class RequestSpotInstancesResponse
   {
   public:
-    RequestSpotInstancesResponse();
-    RequestSpotInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RequestSpotInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RequestSpotInstancesResponse();
+    AWS_EC2_API RequestSpotInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RequestSpotInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

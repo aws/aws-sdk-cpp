@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreIotSiteWiseMultiLayerStorageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary
+  class DatastoreIotSiteWiseMultiLayerStorageSummary
   {
   public:
-    DatastoreIotSiteWiseMultiLayerStorageSummary();
-    DatastoreIotSiteWiseMultiLayerStorageSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatastoreIotSiteWiseMultiLayerStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary();
+    AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

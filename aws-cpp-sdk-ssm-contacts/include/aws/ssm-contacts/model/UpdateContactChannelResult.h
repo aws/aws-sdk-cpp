@@ -22,12 +22,12 @@ namespace SSMContacts
 {
 namespace Model
 {
-  class AWS_SSMCONTACTS_API UpdateContactChannelResult
+  class UpdateContactChannelResult
   {
   public:
-    UpdateContactChannelResult();
-    UpdateContactChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateContactChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API UpdateContactChannelResult();
+    AWS_SSMCONTACTS_API UpdateContactChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API UpdateContactChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

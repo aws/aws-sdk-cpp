@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleEmailPart">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SimpleEmailPart
+  class SimpleEmailPart
   {
   public:
-    SimpleEmailPart();
-    SimpleEmailPart(Aws::Utils::Json::JsonView jsonValue);
-    SimpleEmailPart& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SimpleEmailPart();
+    AWS_PINPOINT_API SimpleEmailPart(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SimpleEmailPart& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API UpdateUserResult
+  class UpdateUserResult
   {
   public:
-    UpdateUserResult();
-    UpdateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API UpdateUserResult();
+    AWS_MQ_API UpdateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API UpdateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

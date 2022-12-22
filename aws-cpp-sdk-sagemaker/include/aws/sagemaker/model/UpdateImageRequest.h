@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateImageRequest : public SageMakerRequest
+  class UpdateImageRequest : public SageMakerRequest
   {
   public:
-    UpdateImageRequest();
+    AWS_SAGEMAKER_API UpdateImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -214,50 +214,50 @@ namespace Model
 
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline UpdateImageRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline UpdateImageRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf.</p>
+     * <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks
+     * on your behalf.</p>
      */
     inline UpdateImageRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

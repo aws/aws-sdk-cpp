@@ -24,12 +24,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API DescribeContactResult
+  class DescribeContactResult
   {
   public:
-    DescribeContactResult();
-    DescribeContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DescribeContactResult();
+    AWS_CONNECT_API DescribeContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DescribeContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

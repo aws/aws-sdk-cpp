@@ -26,12 +26,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult
+  class DescribeTargetHealthResult
   {
   public:
-    DescribeTargetHealthResult();
-    DescribeTargetHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTargetHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

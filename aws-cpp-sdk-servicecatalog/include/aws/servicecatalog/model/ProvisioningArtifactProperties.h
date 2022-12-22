@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisioningArtifactProperties
+  class ProvisioningArtifactProperties
   {
   public:
-    ProvisioningArtifactProperties();
-    ProvisioningArtifactProperties(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningArtifactProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisioningArtifactProperties();
+    AWS_SERVICECATALOG_API ProvisioningArtifactProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisioningArtifactProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,8 +142,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -157,8 +157,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -172,8 +172,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -187,8 +187,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -202,8 +202,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -217,8 +217,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -232,8 +232,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -247,8 +247,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -262,8 +262,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -277,8 +277,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -292,8 +292,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -307,8 +307,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -322,8 +322,8 @@ namespace Model
      * <p>Specify the template source with one of the following options, but not both.
      * Keys accepted: [ <code>LoadTemplateFromURL</code>,
      * <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation
-     * template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format
+     * as follows:</p> <p> <code>"LoadTemplateFromURL":
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      * <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that
      * contains the template. Currently only supports CloudFormation stack arn. Specify
@@ -390,26 +390,26 @@ namespace Model
 
 
     /**
-     * <p>If set to true, Amazon Web Services Service Catalog stops validating the
-     * specified provisioning artifact even if it is invalid.</p>
+     * <p>If set to true, Service Catalog stops validating the specified provisioning
+     * artifact even if it is invalid.</p>
      */
     inline bool GetDisableTemplateValidation() const{ return m_disableTemplateValidation; }
 
     /**
-     * <p>If set to true, Amazon Web Services Service Catalog stops validating the
-     * specified provisioning artifact even if it is invalid.</p>
+     * <p>If set to true, Service Catalog stops validating the specified provisioning
+     * artifact even if it is invalid.</p>
      */
     inline bool DisableTemplateValidationHasBeenSet() const { return m_disableTemplateValidationHasBeenSet; }
 
     /**
-     * <p>If set to true, Amazon Web Services Service Catalog stops validating the
-     * specified provisioning artifact even if it is invalid.</p>
+     * <p>If set to true, Service Catalog stops validating the specified provisioning
+     * artifact even if it is invalid.</p>
      */
     inline void SetDisableTemplateValidation(bool value) { m_disableTemplateValidationHasBeenSet = true; m_disableTemplateValidation = value; }
 
     /**
-     * <p>If set to true, Amazon Web Services Service Catalog stops validating the
-     * specified provisioning artifact even if it is invalid.</p>
+     * <p>If set to true, Service Catalog stops validating the specified provisioning
+     * artifact even if it is invalid.</p>
      */
     inline ProvisioningArtifactProperties& WithDisableTemplateValidation(bool value) { SetDisableTemplateValidation(value); return *this;}
 

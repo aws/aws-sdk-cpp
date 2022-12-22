@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIpsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeElasticIpsResult
+  class DescribeElasticIpsResult
   {
   public:
-    DescribeElasticIpsResult();
-    DescribeElasticIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeElasticIpsResult();
+    AWS_OPSWORKS_API DescribeElasticIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeElasticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Slot">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API Slot
+  class Slot
   {
   public:
-    Slot();
-    Slot(Aws::Utils::Json::JsonView jsonValue);
-    Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API Slot();
+    AWS_LEXRUNTIMEV2_API Slot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

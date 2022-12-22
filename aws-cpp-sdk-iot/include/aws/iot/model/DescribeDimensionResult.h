@@ -27,12 +27,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeDimensionResult
+  class DescribeDimensionResult
   {
   public:
-    DescribeDimensionResult();
-    DescribeDimensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDimensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeDimensionResult();
+    AWS_IOT_API DescribeDimensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeDimensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

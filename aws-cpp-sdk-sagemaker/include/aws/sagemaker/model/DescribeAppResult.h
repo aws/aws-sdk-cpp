@@ -28,12 +28,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeAppResult
+  class DescribeAppResult
   {
   public:
-    DescribeAppResult();
-    DescribeAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeAppResult();
+    AWS_SAGEMAKER_API DescribeAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -391,6 +391,49 @@ namespace Model
      */
     inline DescribeAppResult& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
   private:
 
     Aws::String m_appArn;
@@ -414,6 +457,8 @@ namespace Model
     Aws::String m_failureReason;
 
     ResourceSpec m_resourceSpec;
+
+    Aws::String m_spaceName;
   };
 
 } // namespace Model

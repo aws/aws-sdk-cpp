@@ -24,12 +24,12 @@ namespace ConnectWisdomService
 {
 namespace Model
 {
-  class AWS_CONNECTWISDOMSERVICE_API CreateSessionResult
+  class CreateSessionResult
   {
   public:
-    CreateSessionResult();
-    CreateSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API CreateSessionResult();
+    AWS_CONNECTWISDOMSERVICE_API CreateSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API CreateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/FormStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API FormStyle
+  class FormStyle
   {
   public:
-    FormStyle();
-    FormStyle(Aws::Utils::Json::JsonView jsonValue);
-    FormStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API FormStyle();
+    AWS_AMPLIFYUIBUILDER_API FormStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API FormStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

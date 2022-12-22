@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelMembership
+  class ChannelMembership
   {
   public:
-    ChannelMembership();
-    ChannelMembership(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelMembership();
+    AWS_CHIME_API ChannelMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

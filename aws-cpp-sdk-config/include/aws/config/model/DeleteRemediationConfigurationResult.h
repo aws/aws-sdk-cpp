@@ -22,12 +22,12 @@ namespace ConfigService
 {
 namespace Model
 {
-  class AWS_CONFIGSERVICE_API DeleteRemediationConfigurationResult
+  class DeleteRemediationConfigurationResult
   {
   public:
-    DeleteRemediationConfigurationResult();
-    DeleteRemediationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRemediationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DeleteRemediationConfigurationResult();
+    AWS_CONFIGSERVICE_API DeleteRemediationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DeleteRemediationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

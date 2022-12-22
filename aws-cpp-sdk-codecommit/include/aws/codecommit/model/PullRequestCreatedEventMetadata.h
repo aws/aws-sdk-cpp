@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PullRequestCreatedEventMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PullRequestCreatedEventMetadata
+  class PullRequestCreatedEventMetadata
   {
   public:
-    PullRequestCreatedEventMetadata();
-    PullRequestCreatedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
-    PullRequestCreatedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PullRequestCreatedEventMetadata();
+    AWS_CODECOMMIT_API PullRequestCreatedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PullRequestCreatedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

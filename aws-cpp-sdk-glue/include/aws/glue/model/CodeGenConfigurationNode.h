@@ -55,6 +55,8 @@
 #include <aws/glue/model/MySQLCatalogTarget.h>
 #include <aws/glue/model/OracleSQLCatalogTarget.h>
 #include <aws/glue/model/PostgreSQLCatalogTarget.h>
+#include <aws/glue/model/DynamicTransform.h>
+#include <aws/glue/model/EvaluateDataQuality.h>
 #include <utility>
 
 namespace Aws
@@ -79,13 +81,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CodeGenConfigurationNode">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CodeGenConfigurationNode
+  class CodeGenConfigurationNode
   {
   public:
-    CodeGenConfigurationNode();
-    CodeGenConfigurationNode(Aws::Utils::Json::JsonView jsonValue);
-    CodeGenConfigurationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CodeGenConfigurationNode();
+    AWS_GLUE_API CodeGenConfigurationNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CodeGenConfigurationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1793,6 +1795,68 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithPostgreSQLCatalogTarget(PostgreSQLCatalogTarget&& value) { SetPostgreSQLCatalogTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline const DynamicTransform& GetDynamicTransform() const{ return m_dynamicTransform; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline bool DynamicTransformHasBeenSet() const { return m_dynamicTransformHasBeenSet; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline void SetDynamicTransform(const DynamicTransform& value) { m_dynamicTransformHasBeenSet = true; m_dynamicTransform = value; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline void SetDynamicTransform(DynamicTransform&& value) { m_dynamicTransformHasBeenSet = true; m_dynamicTransform = std::move(value); }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline CodeGenConfigurationNode& WithDynamicTransform(const DynamicTransform& value) { SetDynamicTransform(value); return *this;}
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline CodeGenConfigurationNode& WithDynamicTransform(DynamicTransform&& value) { SetDynamicTransform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline const EvaluateDataQuality& GetEvaluateDataQuality() const{ return m_evaluateDataQuality; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline bool EvaluateDataQualityHasBeenSet() const { return m_evaluateDataQualityHasBeenSet; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline void SetEvaluateDataQuality(const EvaluateDataQuality& value) { m_evaluateDataQualityHasBeenSet = true; m_evaluateDataQuality = value; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline void SetEvaluateDataQuality(EvaluateDataQuality&& value) { m_evaluateDataQualityHasBeenSet = true; m_evaluateDataQuality = std::move(value); }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQuality(const EvaluateDataQuality& value) { SetEvaluateDataQuality(value); return *this;}
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQuality(EvaluateDataQuality&& value) { SetEvaluateDataQuality(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -1944,6 +2008,12 @@ namespace Model
 
     PostgreSQLCatalogTarget m_postgreSQLCatalogTarget;
     bool m_postgreSQLCatalogTargetHasBeenSet = false;
+
+    DynamicTransform m_dynamicTransform;
+    bool m_dynamicTransformHasBeenSet = false;
+
+    EvaluateDataQuality m_evaluateDataQuality;
+    bool m_evaluateDataQualityHasBeenSet = false;
   };
 
 } // namespace Model

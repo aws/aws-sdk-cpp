@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API BatchCreateRoomMembershipResult
+  class BatchCreateRoomMembershipResult
   {
   public:
-    BatchCreateRoomMembershipResult();
-    BatchCreateRoomMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchCreateRoomMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API BatchCreateRoomMembershipResult();
+    AWS_CHIME_API BatchCreateRoomMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API BatchCreateRoomMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

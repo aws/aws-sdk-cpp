@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DataShareAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DataShareAssociation
+  class DataShareAssociation
   {
   public:
-    DataShareAssociation();
-    DataShareAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DataShareAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DataShareAssociation();
+    AWS_REDSHIFT_API DataShareAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DataShareAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

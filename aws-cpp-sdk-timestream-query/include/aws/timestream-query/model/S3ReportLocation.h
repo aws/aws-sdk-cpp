@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/S3ReportLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API S3ReportLocation
+  class S3ReportLocation
   {
   public:
-    S3ReportLocation();
-    S3ReportLocation(Aws::Utils::Json::JsonView jsonValue);
-    S3ReportLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API S3ReportLocation();
+    AWS_TIMESTREAMQUERY_API S3ReportLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API S3ReportLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

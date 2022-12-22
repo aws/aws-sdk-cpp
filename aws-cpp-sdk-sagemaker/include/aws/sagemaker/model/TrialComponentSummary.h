@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentSummary
+  class TrialComponentSummary
   {
   public:
-    TrialComponentSummary();
-    TrialComponentSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentSummary();
+    AWS_SAGEMAKER_API TrialComponentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline const Aws::String& GetTrialComponentArn() const{ return m_trialComponentArn; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline bool TrialComponentArnHasBeenSet() const { return m_trialComponentArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(const Aws::String& value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn = value; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(Aws::String&& value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn = std::move(value); }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(const char* value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn.assign(value); }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline TrialComponentSummary& WithTrialComponentArn(const Aws::String& value) { SetTrialComponentArn(value); return *this;}
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline TrialComponentSummary& WithTrialComponentArn(Aws::String&& value) { SetTrialComponentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline TrialComponentSummary& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
 

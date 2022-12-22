@@ -32,76 +32,76 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/S3DestinationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API S3DestinationDescription
+  class S3DestinationDescription
   {
   public:
-    S3DestinationDescription();
-    S3DestinationDescription(Aws::Utils::Json::JsonView jsonValue);
-    S3DestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API S3DestinationDescription();
+    AWS_FIREHOSE_API S3DestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API S3DestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline S3DestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline S3DestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline S3DestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -109,56 +109,56 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline S3DestinationDescription& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline S3DestinationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline S3DestinationDescription& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
 

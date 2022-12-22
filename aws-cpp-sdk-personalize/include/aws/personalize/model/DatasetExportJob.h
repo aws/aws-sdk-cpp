@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetExportJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DatasetExportJob
+  class DatasetExportJob
   {
   public:
-    DatasetExportJob();
-    DatasetExportJob(Aws::Utils::Json::JsonView jsonValue);
-    DatasetExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DatasetExportJob();
+    AWS_PERSONALIZE_API DatasetExportJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DatasetExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

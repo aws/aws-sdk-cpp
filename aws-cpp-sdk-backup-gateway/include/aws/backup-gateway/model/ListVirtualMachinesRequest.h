@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPGATEWAY_API ListVirtualMachinesRequest : public BackupGatewayRequest
+  class ListVirtualMachinesRequest : public BackupGatewayRequest
   {
   public:
-    ListVirtualMachinesRequest();
+    AWS_BACKUPGATEWAY_API ListVirtualMachinesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListVirtualMachines"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUPGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BACKUPGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

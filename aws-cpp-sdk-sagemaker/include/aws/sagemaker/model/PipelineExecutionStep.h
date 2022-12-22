@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExecutionStep">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PipelineExecutionStep
+  class PipelineExecutionStep
   {
   public:
-    PipelineExecutionStep();
-    PipelineExecutionStep(Aws::Utils::Json::JsonView jsonValue);
-    PipelineExecutionStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PipelineExecutionStep();
+    AWS_SAGEMAKER_API PipelineExecutionStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PipelineExecutionStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -367,32 +367,32 @@ namespace Model
 
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline const PipelineExecutionStepMetadata& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline void SetMetadata(const PipelineExecutionStepMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline void SetMetadata(PipelineExecutionStepMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline PipelineExecutionStep& WithMetadata(const PipelineExecutionStepMetadata& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline PipelineExecutionStep& WithMetadata(PipelineExecutionStepMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 

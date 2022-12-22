@@ -28,7 +28,8 @@ CreateOpsItemRequest::CreateOpsItemRequest() :
     m_actualStartTimeHasBeenSet(false),
     m_actualEndTimeHasBeenSet(false),
     m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+    m_plannedEndTimeHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,12 @@ Aws::String CreateOpsItemRequest::SerializePayload() const
   if(m_plannedEndTimeHasBeenSet)
   {
    payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
   }
 
   return payload.View().WriteReadable();

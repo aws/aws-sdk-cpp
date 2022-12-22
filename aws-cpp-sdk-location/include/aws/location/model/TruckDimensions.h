@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TruckDimensions">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API TruckDimensions
+  class TruckDimensions
   {
   public:
-    TruckDimensions();
-    TruckDimensions(Aws::Utils::Json::JsonView jsonValue);
-    TruckDimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API TruckDimensions();
+    AWS_LOCATIONSERVICE_API TruckDimensions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API TruckDimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult
+  class ModifyCacheSubnetGroupResult
   {
   public:
-    ModifyCacheSubnetGroupResult();
-    ModifyCacheSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyCacheSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult();
+    AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

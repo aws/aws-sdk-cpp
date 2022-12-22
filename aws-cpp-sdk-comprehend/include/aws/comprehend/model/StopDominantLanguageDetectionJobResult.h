@@ -25,12 +25,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API StopDominantLanguageDetectionJobResult
+  class StopDominantLanguageDetectionJobResult
   {
   public:
-    StopDominantLanguageDetectionJobResult();
-    StopDominantLanguageDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDominantLanguageDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API StopDominantLanguageDetectionJobResult();
+    AWS_COMPREHEND_API StopDominantLanguageDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API StopDominantLanguageDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

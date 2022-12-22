@@ -26,12 +26,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API ListKeysResult
+  class ListKeysResult
   {
   public:
-    ListKeysResult();
-    ListKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ListKeysResult();
+    AWS_KMS_API ListKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ListKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

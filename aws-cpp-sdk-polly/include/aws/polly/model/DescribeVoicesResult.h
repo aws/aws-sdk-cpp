@@ -26,12 +26,12 @@ namespace Polly
 {
 namespace Model
 {
-  class AWS_POLLY_API DescribeVoicesResult
+  class DescribeVoicesResult
   {
   public:
-    DescribeVoicesResult();
-    DescribeVoicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVoicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API DescribeVoicesResult();
+    AWS_POLLY_API DescribeVoicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API DescribeVoicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

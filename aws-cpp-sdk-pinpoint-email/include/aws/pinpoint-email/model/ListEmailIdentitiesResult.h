@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListEmailIdentitiesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult
+  class ListEmailIdentitiesResult
   {
   public:
-    ListEmailIdentitiesResult();
-    ListEmailIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEmailIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult();
+    AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

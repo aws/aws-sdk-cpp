@@ -25,12 +25,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API FailoverDBClusterResult
+  class FailoverDBClusterResult
   {
   public:
-    FailoverDBClusterResult();
-    FailoverDBClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    FailoverDBClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API FailoverDBClusterResult();
+    AWS_DOCDB_API FailoverDBClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API FailoverDBClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

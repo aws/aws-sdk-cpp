@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AnonymousUserDashboardEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserDashboardVisualEmbeddingConfiguration.h>
+#include <aws/quicksight/model/AnonymousUserQSearchBarEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnonymousUserEmbeddingExperienceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration
+  class AnonymousUserEmbeddingExperienceConfiguration
   {
   public:
-    AnonymousUserEmbeddingExperienceConfiguration();
-    AnonymousUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AnonymousUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration();
+    AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,6 +113,37 @@ namespace Model
      */
     inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline const AnonymousUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const{ return m_qSearchBar; }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline void SetQSearchBar(const AnonymousUserQSearchBarEmbeddingConfiguration& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = value; }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline void SetQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::move(value); }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(const AnonymousUserQSearchBarEmbeddingConfiguration& value) { SetQSearchBar(value); return *this;}
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
+
   private:
 
     AnonymousUserDashboardEmbeddingConfiguration m_dashboard;
@@ -119,6 +151,9 @@ namespace Model
 
     AnonymousUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
     bool m_dashboardVisualHasBeenSet = false;
+
+    AnonymousUserQSearchBarEmbeddingConfiguration m_qSearchBar;
+    bool m_qSearchBarHasBeenSet = false;
   };
 
 } // namespace Model

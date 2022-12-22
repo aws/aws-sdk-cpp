@@ -26,12 +26,12 @@ namespace IdentityStore
 {
 namespace Model
 {
-  class AWS_IDENTITYSTORE_API ListUsersResult
+  class ListUsersResult
   {
   public:
-    ListUsersResult();
-    ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IDENTITYSTORE_API ListUsersResult();
+    AWS_IDENTITYSTORE_API ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IDENTITYSTORE_API ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

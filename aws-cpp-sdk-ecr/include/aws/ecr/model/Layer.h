@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Layer">AWS API
    * Reference</a></p>
    */
-  class AWS_ECR_API Layer
+  class Layer
   {
   public:
-    Layer();
-    Layer(Aws::Utils::Json::JsonView jsonValue);
-    Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API Layer();
+    AWS_ECR_API Layer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

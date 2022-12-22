@@ -24,12 +24,12 @@ namespace RedshiftServerless
 {
 namespace Model
 {
-  class AWS_REDSHIFTSERVERLESS_API DeleteWorkgroupResult
+  class DeleteWorkgroupResult
   {
   public:
-    DeleteWorkgroupResult();
-    DeleteWorkgroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWorkgroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API DeleteWorkgroupResult();
+    AWS_REDSHIFTSERVERLESS_API DeleteWorkgroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API DeleteWorkgroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

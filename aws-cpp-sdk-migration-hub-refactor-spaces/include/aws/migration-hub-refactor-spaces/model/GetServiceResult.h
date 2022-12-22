@@ -31,12 +31,12 @@ namespace MigrationHubRefactorSpaces
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBREFACTORSPACES_API GetServiceResult
+  class GetServiceResult
   {
   public:
-    GetServiceResult();
-    GetServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API GetServiceResult();
+    AWS_MIGRATIONHUBREFACTORSPACES_API GetServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API GetServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

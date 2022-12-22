@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ProfileConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ProfileConfiguration
+  class ProfileConfiguration
   {
   public:
-    ProfileConfiguration();
-    ProfileConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProfileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ProfileConfiguration();
+    AWS_GLUEDATABREW_API ProfileConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ProfileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

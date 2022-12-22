@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelBiasBaselineConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelBiasBaselineConfig
+  class ModelBiasBaselineConfig
   {
   public:
-    ModelBiasBaselineConfig();
-    ModelBiasBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelBiasBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelBiasBaselineConfig();
+    AWS_SAGEMAKER_API ModelBiasBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelBiasBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

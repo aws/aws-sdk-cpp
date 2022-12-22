@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/MountTargetConflict">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API MountTargetConflict
+  class MountTargetConflict
   {
   public:
-    MountTargetConflict();
-    MountTargetConflict(Aws::Utils::Json::JsonView jsonValue);
-    MountTargetConflict& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API MountTargetConflict();
+    AWS_EFS_API MountTargetConflict(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API MountTargetConflict& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

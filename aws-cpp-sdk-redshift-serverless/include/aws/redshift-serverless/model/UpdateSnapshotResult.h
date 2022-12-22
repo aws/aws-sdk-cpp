@@ -24,12 +24,12 @@ namespace RedshiftServerless
 {
 namespace Model
 {
-  class AWS_REDSHIFTSERVERLESS_API UpdateSnapshotResult
+  class UpdateSnapshotResult
   {
   public:
-    UpdateSnapshotResult();
-    UpdateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API UpdateSnapshotResult();
+    AWS_REDSHIFTSERVERLESS_API UpdateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API UpdateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

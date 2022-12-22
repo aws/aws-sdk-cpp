@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPresetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API ReadPresetResult
+  class ReadPresetResult
   {
   public:
-    ReadPresetResult();
-    ReadPresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReadPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API ReadPresetResult();
+    AWS_ELASTICTRANSCODER_API ReadPresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API ReadPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SpellCorrectionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SpellCorrectionConfiguration
+  class SpellCorrectionConfiguration
   {
   public:
-    SpellCorrectionConfiguration();
-    SpellCorrectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SpellCorrectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SpellCorrectionConfiguration();
+    AWS_KENDRA_API SpellCorrectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SpellCorrectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

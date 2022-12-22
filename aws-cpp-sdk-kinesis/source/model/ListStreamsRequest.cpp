@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 ListStreamsRequest::ListStreamsRequest() : 
     m_limit(0),
     m_limitHasBeenSet(false),
-    m_exclusiveStartStreamNameHasBeenSet(false)
+    m_exclusiveStartStreamNameHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String ListStreamsRequest::SerializePayload() const
   if(m_exclusiveStartStreamNameHasBeenSet)
   {
    payload.WithString("ExclusiveStartStreamName", m_exclusiveStartStreamName);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 

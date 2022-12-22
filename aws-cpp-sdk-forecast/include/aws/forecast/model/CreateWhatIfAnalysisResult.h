@@ -24,12 +24,12 @@ namespace ForecastService
 {
 namespace Model
 {
-  class AWS_FORECASTSERVICE_API CreateWhatIfAnalysisResult
+  class CreateWhatIfAnalysisResult
   {
   public:
-    CreateWhatIfAnalysisResult();
-    CreateWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWhatIfAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API CreateWhatIfAnalysisResult();
+    AWS_FORECASTSERVICE_API CreateWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API CreateWhatIfAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

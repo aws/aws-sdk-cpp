@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceSharePermissionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ResourceSharePermissionDetail
+  class ResourceSharePermissionDetail
   {
   public:
-    ResourceSharePermissionDetail();
-    ResourceSharePermissionDetail(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSharePermissionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ResourceSharePermissionDetail();
+    AWS_RAM_API ResourceSharePermissionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ResourceSharePermissionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

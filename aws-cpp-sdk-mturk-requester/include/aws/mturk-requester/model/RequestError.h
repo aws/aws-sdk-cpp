@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/RequestError">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API RequestError
+  class RequestError
   {
   public:
-    RequestError();
-    RequestError(Aws::Utils::Json::JsonView jsonValue);
-    RequestError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API RequestError();
+    AWS_MTURK_API RequestError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API RequestError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

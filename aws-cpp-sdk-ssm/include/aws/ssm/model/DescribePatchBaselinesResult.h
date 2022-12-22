@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribePatchBaselinesResult
+  class DescribePatchBaselinesResult
   {
   public:
-    DescribePatchBaselinesResult();
-    DescribePatchBaselinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePatchBaselinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribePatchBaselinesResult();
+    AWS_SSM_API DescribePatchBaselinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribePatchBaselinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

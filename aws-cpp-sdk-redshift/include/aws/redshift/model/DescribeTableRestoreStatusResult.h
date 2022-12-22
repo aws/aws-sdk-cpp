@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/TableRestoreStatusMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeTableRestoreStatusResult
+  class DescribeTableRestoreStatusResult
   {
   public:
-    DescribeTableRestoreStatusResult();
-    DescribeTableRestoreStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTableRestoreStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeTableRestoreStatusResult();
+    AWS_REDSHIFT_API DescribeTableRestoreStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeTableRestoreStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

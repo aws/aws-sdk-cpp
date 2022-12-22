@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAlarmActionErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API BatchAlarmActionErrorEntry
+  class BatchAlarmActionErrorEntry
   {
   public:
-    BatchAlarmActionErrorEntry();
-    BatchAlarmActionErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchAlarmActionErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API BatchAlarmActionErrorEntry();
+    AWS_IOTEVENTSDATA_API BatchAlarmActionErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API BatchAlarmActionErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

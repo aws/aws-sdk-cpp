@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SoftwarePackage">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API SoftwarePackage
+  class SoftwarePackage
   {
   public:
-    SoftwarePackage();
-    SoftwarePackage(Aws::Utils::Json::JsonView jsonValue);
-    SoftwarePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API SoftwarePackage();
+    AWS_SECURITYHUB_API SoftwarePackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API SoftwarePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -421,6 +421,88 @@ namespace Model
      */
     inline SoftwarePackage& WithRemediation(const char* value) { SetRemediation(value); return *this;}
 
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline const Aws::String& GetSourceLayerHash() const{ return m_sourceLayerHash; }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline bool SourceLayerHashHasBeenSet() const { return m_sourceLayerHashHasBeenSet; }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline void SetSourceLayerHash(const Aws::String& value) { m_sourceLayerHashHasBeenSet = true; m_sourceLayerHash = value; }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline void SetSourceLayerHash(Aws::String&& value) { m_sourceLayerHashHasBeenSet = true; m_sourceLayerHash = std::move(value); }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline void SetSourceLayerHash(const char* value) { m_sourceLayerHashHasBeenSet = true; m_sourceLayerHash.assign(value); }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerHash(const Aws::String& value) { SetSourceLayerHash(value); return *this;}
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerHash(Aws::String&& value) { SetSourceLayerHash(std::move(value)); return *this;}
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerHash(const char* value) { SetSourceLayerHash(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline const Aws::String& GetSourceLayerArn() const{ return m_sourceLayerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline bool SourceLayerArnHasBeenSet() const { return m_sourceLayerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline void SetSourceLayerArn(const Aws::String& value) { m_sourceLayerArnHasBeenSet = true; m_sourceLayerArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline void SetSourceLayerArn(Aws::String&& value) { m_sourceLayerArnHasBeenSet = true; m_sourceLayerArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline void SetSourceLayerArn(const char* value) { m_sourceLayerArnHasBeenSet = true; m_sourceLayerArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerArn(const Aws::String& value) { SetSourceLayerArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerArn(Aws::String&& value) { SetSourceLayerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerArn(const char* value) { SetSourceLayerArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -449,6 +531,12 @@ namespace Model
 
     Aws::String m_remediation;
     bool m_remediationHasBeenSet = false;
+
+    Aws::String m_sourceLayerHash;
+    bool m_sourceLayerHashHasBeenSet = false;
+
+    Aws::String m_sourceLayerArn;
+    bool m_sourceLayerArnHasBeenSet = false;
   };
 
 } // namespace Model

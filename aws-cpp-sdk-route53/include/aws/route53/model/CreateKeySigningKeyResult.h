@@ -26,12 +26,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API CreateKeySigningKeyResult
+  class CreateKeySigningKeyResult
   {
   public:
-    CreateKeySigningKeyResult();
-    CreateKeySigningKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateKeySigningKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API CreateKeySigningKeyResult();
+    AWS_ROUTE53_API CreateKeySigningKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API CreateKeySigningKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -24,12 +24,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult
+  class GenerateEmbedUrlForRegisteredUserResult
   {
   public:
-    GenerateEmbedUrlForRegisteredUserResult();
-    GenerateEmbedUrlForRegisteredUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateEmbedUrlForRegisteredUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult();
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

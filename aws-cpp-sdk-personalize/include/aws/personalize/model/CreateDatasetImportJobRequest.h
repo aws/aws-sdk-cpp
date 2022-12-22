@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PERSONALIZE_API CreateDatasetImportJobRequest : public PersonalizeRequest
+  class CreateDatasetImportJobRequest : public PersonalizeRequest
   {
   public:
-    CreateDatasetImportJobRequest();
+    AWS_PERSONALIZE_API CreateDatasetImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDatasetImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PERSONALIZE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -329,6 +329,31 @@ namespace Model
      */
     inline CreateDatasetImportJobRequest& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If you created a metric attribution, specify whether to publish metrics for
+     * this import job to Amazon S3</p>
+     */
+    inline bool GetPublishAttributionMetricsToS3() const{ return m_publishAttributionMetricsToS3; }
+
+    /**
+     * <p>If you created a metric attribution, specify whether to publish metrics for
+     * this import job to Amazon S3</p>
+     */
+    inline bool PublishAttributionMetricsToS3HasBeenSet() const { return m_publishAttributionMetricsToS3HasBeenSet; }
+
+    /**
+     * <p>If you created a metric attribution, specify whether to publish metrics for
+     * this import job to Amazon S3</p>
+     */
+    inline void SetPublishAttributionMetricsToS3(bool value) { m_publishAttributionMetricsToS3HasBeenSet = true; m_publishAttributionMetricsToS3 = value; }
+
+    /**
+     * <p>If you created a metric attribution, specify whether to publish metrics for
+     * this import job to Amazon S3</p>
+     */
+    inline CreateDatasetImportJobRequest& WithPublishAttributionMetricsToS3(bool value) { SetPublishAttributionMetricsToS3(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -348,6 +373,9 @@ namespace Model
 
     ImportMode m_importMode;
     bool m_importModeHasBeenSet = false;
+
+    bool m_publishAttributionMetricsToS3;
+    bool m_publishAttributionMetricsToS3HasBeenSet = false;
   };
 
 } // namespace Model

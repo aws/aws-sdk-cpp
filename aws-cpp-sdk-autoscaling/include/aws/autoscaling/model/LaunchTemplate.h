@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API LaunchTemplate
+  class LaunchTemplate
   {
   public:
-    LaunchTemplate();
-    LaunchTemplate(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LaunchTemplate();
+    AWS_AUTOSCALING_API LaunchTemplate(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LaunchTemplate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

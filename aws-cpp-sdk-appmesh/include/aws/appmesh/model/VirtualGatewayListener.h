@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayListener">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayListener
+  class VirtualGatewayListener
   {
   public:
-    VirtualGatewayListener();
-    VirtualGatewayListener(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayListener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayListener();
+    AWS_APPMESH_API VirtualGatewayListener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayListener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

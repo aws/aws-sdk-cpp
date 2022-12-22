@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ComputeResourceUpdate
+  class ComputeResourceUpdate
   {
   public:
-    ComputeResourceUpdate();
-    ComputeResourceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ComputeResourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ComputeResourceUpdate();
+    AWS_BATCH_API ComputeResourceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ComputeResourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,7 +133,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
@@ -141,7 +144,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
@@ -149,7 +155,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
@@ -157,7 +166,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 
@@ -173,7 +185,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
@@ -188,7 +211,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
@@ -203,7 +237,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
@@ -218,7 +263,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
@@ -233,7 +289,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResourceUpdate& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
@@ -248,7 +315,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResourceUpdate& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
@@ -263,7 +341,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResourceUpdate& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -278,7 +367,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResourceUpdate& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -293,7 +393,18 @@ namespace Model
      * compute environment, changing the VPC subnets requires an infrastructure update
      * of the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResourceUpdate& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -1431,9 +1542,10 @@ namespace Model
      * the On-Demand price for that instance type before instances are launched. For
      * example, if your maximum percentage is 20%, the Spot price must be less than 20%
      * of the current On-Demand price for that Amazon EC2 instance. You always pay the
-     * lowest (market) price and never more than your maximum percentage.</p> <p>When
-     * updating a compute environment, changing the bid percentage requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * lowest (market) price and never more than your maximum percentage. For most use
+     * cases, we recommend leaving this field empty.</p> <p>When updating a compute
+     * environment, changing the bid percentage requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1446,9 +1558,10 @@ namespace Model
      * the On-Demand price for that instance type before instances are launched. For
      * example, if your maximum percentage is 20%, the Spot price must be less than 20%
      * of the current On-Demand price for that Amazon EC2 instance. You always pay the
-     * lowest (market) price and never more than your maximum percentage.</p> <p>When
-     * updating a compute environment, changing the bid percentage requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * lowest (market) price and never more than your maximum percentage. For most use
+     * cases, we recommend leaving this field empty.</p> <p>When updating a compute
+     * environment, changing the bid percentage requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1461,9 +1574,10 @@ namespace Model
      * the On-Demand price for that instance type before instances are launched. For
      * example, if your maximum percentage is 20%, the Spot price must be less than 20%
      * of the current On-Demand price for that Amazon EC2 instance. You always pay the
-     * lowest (market) price and never more than your maximum percentage.</p> <p>When
-     * updating a compute environment, changing the bid percentage requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * lowest (market) price and never more than your maximum percentage. For most use
+     * cases, we recommend leaving this field empty.</p> <p>When updating a compute
+     * environment, changing the bid percentage requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
@@ -1476,9 +1590,10 @@ namespace Model
      * the On-Demand price for that instance type before instances are launched. For
      * example, if your maximum percentage is 20%, the Spot price must be less than 20%
      * of the current On-Demand price for that Amazon EC2 instance. You always pay the
-     * lowest (market) price and never more than your maximum percentage.</p> <p>When
-     * updating a compute environment, changing the bid percentage requires an
-     * infrastructure update of the compute environment. For more information, see <a
+     * lowest (market) price and never more than your maximum percentage. For most use
+     * cases, we recommend leaving this field empty.</p> <p>When updating a compute
+     * environment, changing the bid percentage requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't

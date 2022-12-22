@@ -26,12 +26,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API GetDimensionValuesResult
+  class GetDimensionValuesResult
   {
   public:
-    GetDimensionValuesResult();
-    GetDimensionValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDimensionValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetDimensionValuesResult();
+    AWS_COSTEXPLORER_API GetDimensionValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetDimensionValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

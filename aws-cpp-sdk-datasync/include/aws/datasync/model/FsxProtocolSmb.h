@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolSmb">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API FsxProtocolSmb
+  class FsxProtocolSmb
   {
   public:
-    FsxProtocolSmb();
-    FsxProtocolSmb(Aws::Utils::Json::JsonView jsonValue);
-    FsxProtocolSmb& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API FsxProtocolSmb();
+    AWS_DATASYNC_API FsxProtocolSmb(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API FsxProtocolSmb& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace LookoutforVision
 {
 namespace Model
 {
-  class AWS_LOOKOUTFORVISION_API StopModelResult
+  class StopModelResult
   {
   public:
-    StopModelResult();
-    StopModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API StopModelResult();
+    AWS_LOOKOUTFORVISION_API StopModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API StopModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

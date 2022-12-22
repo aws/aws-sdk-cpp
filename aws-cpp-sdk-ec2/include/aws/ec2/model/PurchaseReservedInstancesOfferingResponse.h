@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOfferingResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PurchaseReservedInstancesOfferingResponse
+  class PurchaseReservedInstancesOfferingResponse
   {
   public:
-    PurchaseReservedInstancesOfferingResponse();
-    PurchaseReservedInstancesOfferingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseReservedInstancesOfferingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API PurchaseReservedInstancesOfferingResponse();
+    AWS_EC2_API PurchaseReservedInstancesOfferingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API PurchaseReservedInstancesOfferingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

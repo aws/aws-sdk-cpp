@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CustomCode">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API CustomCode
+  class CustomCode
   {
   public:
-    CustomCode();
-    CustomCode(Aws::Utils::Json::JsonView jsonValue);
-    CustomCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CustomCode();
+    AWS_GLUE_API CustomCode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CustomCode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

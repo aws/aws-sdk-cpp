@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/EstimatedResourceSize">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API EstimatedResourceSize
+  class EstimatedResourceSize
   {
   public:
-    EstimatedResourceSize();
-    EstimatedResourceSize(Aws::Utils::Json::JsonView jsonValue);
-    EstimatedResourceSize& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API EstimatedResourceSize();
+    AWS_IOTANALYTICS_API EstimatedResourceSize(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API EstimatedResourceSize& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

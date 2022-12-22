@@ -24,12 +24,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult
+  class UpdateSiteRackPhysicalPropertiesResult
   {
   public:
-    UpdateSiteRackPhysicalPropertiesResult();
-    UpdateSiteRackPhysicalPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSiteRackPhysicalPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult();
+    AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

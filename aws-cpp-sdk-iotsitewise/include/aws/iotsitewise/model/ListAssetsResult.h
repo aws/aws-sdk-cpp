@@ -26,12 +26,12 @@ namespace IoTSiteWise
 {
 namespace Model
 {
-  class AWS_IOTSITEWISE_API ListAssetsResult
+  class ListAssetsResult
   {
   public:
-    ListAssetsResult();
-    ListAssetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API ListAssetsResult();
+    AWS_IOTSITEWISE_API ListAssetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API ListAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

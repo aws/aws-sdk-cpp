@@ -24,12 +24,12 @@ namespace GlobalAccelerator
 {
 namespace Model
 {
-  class AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult
+  class DescribeCustomRoutingEndpointGroupResult
   {
   public:
-    DescribeCustomRoutingEndpointGroupResult();
-    DescribeCustomRoutingEndpointGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomRoutingEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult();
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

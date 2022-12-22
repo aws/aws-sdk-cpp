@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/Policy">AWS API
    * Reference</a></p>
    */
-  class AWS_FMS_API Policy
+  class Policy
   {
   public:
-    Policy();
-    Policy(Aws::Utils::Json::JsonView jsonValue);
-    Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API Policy();
+    AWS_FMS_API Policy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

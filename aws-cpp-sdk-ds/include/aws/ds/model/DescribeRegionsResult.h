@@ -26,12 +26,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API DescribeRegionsResult
+  class DescribeRegionsResult
   {
   public:
-    DescribeRegionsResult();
-    DescribeRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeRegionsResult();
+    AWS_DIRECTORYSERVICE_API DescribeRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

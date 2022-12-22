@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceMetadataOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2InstanceMetadataOptions
+  class AwsEc2InstanceMetadataOptions
   {
   public:
-    AwsEc2InstanceMetadataOptions();
-    AwsEc2InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2InstanceMetadataOptions();
+    AWS_SECURITYHUB_API AwsEc2InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

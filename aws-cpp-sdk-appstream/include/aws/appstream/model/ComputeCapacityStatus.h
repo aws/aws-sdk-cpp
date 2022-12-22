@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ComputeCapacityStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ComputeCapacityStatus
+  class ComputeCapacityStatus
   {
   public:
-    ComputeCapacityStatus();
-    ComputeCapacityStatus(Aws::Utils::Json::JsonView jsonValue);
-    ComputeCapacityStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ComputeCapacityStatus();
+    AWS_APPSTREAM_API ComputeCapacityStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ComputeCapacityStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

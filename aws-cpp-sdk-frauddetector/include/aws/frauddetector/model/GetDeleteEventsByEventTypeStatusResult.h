@@ -25,12 +25,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API GetDeleteEventsByEventTypeStatusResult
+  class GetDeleteEventsByEventTypeStatusResult
   {
   public:
-    GetDeleteEventsByEventTypeStatusResult();
-    GetDeleteEventsByEventTypeStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeleteEventsByEventTypeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetDeleteEventsByEventTypeStatusResult();
+    AWS_FRAUDDETECTOR_API GetDeleteEventsByEventTypeStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetDeleteEventsByEventTypeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

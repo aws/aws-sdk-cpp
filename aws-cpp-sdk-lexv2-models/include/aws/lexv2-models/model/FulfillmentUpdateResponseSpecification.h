@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/FulfillmentUpdateResponseSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API FulfillmentUpdateResponseSpecification
+  class FulfillmentUpdateResponseSpecification
   {
   public:
-    FulfillmentUpdateResponseSpecification();
-    FulfillmentUpdateResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
-    FulfillmentUpdateResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API FulfillmentUpdateResponseSpecification();
+    AWS_LEXMODELSV2_API FulfillmentUpdateResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API FulfillmentUpdateResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

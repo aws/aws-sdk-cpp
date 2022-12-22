@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API StartChangeRequestExecutionResult
+  class StartChangeRequestExecutionResult
   {
   public:
-    StartChangeRequestExecutionResult();
-    StartChangeRequestExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartChangeRequestExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API StartChangeRequestExecutionResult();
+    AWS_SSM_API StartChangeRequestExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API StartChangeRequestExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API GetRevisionResult
+  class GetRevisionResult
   {
   public:
-    GetRevisionResult();
-    GetRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API GetRevisionResult();
+    AWS_QLDB_API GetRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API GetRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

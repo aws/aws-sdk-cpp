@@ -24,12 +24,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API AddTagsResult
+  class AddTagsResult
   {
   public:
-    AddTagsResult();
-    AddTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AddTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API AddTagsResult();
+    AWS_ELASTICLOADBALANCINGV2_API AddTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API AddTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

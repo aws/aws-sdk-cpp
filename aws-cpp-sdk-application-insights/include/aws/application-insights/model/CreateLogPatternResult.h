@@ -25,12 +25,12 @@ namespace ApplicationInsights
 {
 namespace Model
 {
-  class AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult
+  class CreateLogPatternResult
   {
   public:
-    CreateLogPatternResult();
-    CreateLogPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLogPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult();
+    AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

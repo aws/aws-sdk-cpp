@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeEndPointStateOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthResult
+  class DescribeInstanceHealthResult
   {
   public:
-    DescribeInstanceHealthResult();
-    DescribeInstanceHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstanceHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthResult();
+    AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

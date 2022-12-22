@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MemoryGiBPerVCpuRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MemoryGiBPerVCpuRequest
+  class MemoryGiBPerVCpuRequest
   {
   public:
-    MemoryGiBPerVCpuRequest();
-    MemoryGiBPerVCpuRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MemoryGiBPerVCpuRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MemoryGiBPerVCpuRequest();
+    AWS_AUTOSCALING_API MemoryGiBPerVCpuRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MemoryGiBPerVCpuRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

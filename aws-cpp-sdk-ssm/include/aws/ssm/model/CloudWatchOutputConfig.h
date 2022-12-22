@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CloudWatchOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CloudWatchOutputConfig
+  class CloudWatchOutputConfig
   {
   public:
-    CloudWatchOutputConfig();
-    CloudWatchOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CloudWatchOutputConfig();
+    AWS_SSM_API CloudWatchOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CloudWatchOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

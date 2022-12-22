@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PromptAttemptSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API PromptAttemptSpecification
+  class PromptAttemptSpecification
   {
   public:
-    PromptAttemptSpecification();
-    PromptAttemptSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PromptAttemptSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API PromptAttemptSpecification();
+    AWS_LEXMODELSV2_API PromptAttemptSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API PromptAttemptSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

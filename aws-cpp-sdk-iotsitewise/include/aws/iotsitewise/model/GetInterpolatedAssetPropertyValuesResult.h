@@ -26,12 +26,12 @@ namespace IoTSiteWise
 {
 namespace Model
 {
-  class AWS_IOTSITEWISE_API GetInterpolatedAssetPropertyValuesResult
+  class GetInterpolatedAssetPropertyValuesResult
   {
   public:
-    GetInterpolatedAssetPropertyValuesResult();
-    GetInterpolatedAssetPropertyValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInterpolatedAssetPropertyValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API GetInterpolatedAssetPropertyValuesResult();
+    AWS_IOTSITEWISE_API GetInterpolatedAssetPropertyValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API GetInterpolatedAssetPropertyValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

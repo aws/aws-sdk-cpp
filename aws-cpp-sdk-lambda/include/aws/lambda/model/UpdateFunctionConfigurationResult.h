@@ -19,6 +19,7 @@
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/EphemeralStorage.h>
+#include <aws/lambda/model/SnapStartResponse.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -45,12 +46,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API UpdateFunctionConfigurationResult
+  class UpdateFunctionConfigurationResult
   {
   public:
-    UpdateFunctionConfigurationResult();
-    UpdateFunctionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFunctionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionConfigurationResult();
+    AWS_LAMBDA_API UpdateFunctionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -188,37 +189,37 @@ namespace Model
 
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline const Aws::String& GetHandler() const{ return m_handler; }
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline void SetHandler(const Aws::String& value) { m_handler = value; }
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline void SetHandler(Aws::String&& value) { m_handler = std::move(value); }
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline void SetHandler(const char* value) { m_handler.assign(value); }
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline UpdateFunctionConfigurationResult& WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline UpdateFunctionConfigurationResult& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
 
     /**
-     * <p>The function that Lambda calls to begin executing your function.</p>
+     * <p>The function that Lambda calls to begin running your function.</p>
      */
     inline UpdateFunctionConfigurationResult& WithHandler(const char* value) { SetHandler(value); return *this;}
 
@@ -295,17 +296,17 @@ namespace Model
 
 
     /**
-     * <p>The amount of memory available to the function at runtime. </p>
+     * <p>The amount of memory available to the function at runtime.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The amount of memory available to the function at runtime. </p>
+     * <p>The amount of memory available to the function at runtime.</p>
      */
     inline void SetMemorySize(int value) { m_memorySize = value; }
 
     /**
-     * <p>The amount of memory available to the function at runtime. </p>
+     * <p>The amount of memory available to the function at runtime.</p>
      */
     inline UpdateFunctionConfigurationResult& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -487,78 +488,78 @@ namespace Model
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline const EnvironmentResponse& GetEnvironment() const{ return m_environment; }
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline void SetEnvironment(const EnvironmentResponse& value) { m_environment = value; }
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline void SetEnvironment(EnvironmentResponse&& value) { m_environment = std::move(value); }
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline UpdateFunctionConfigurationResult& WithEnvironment(const EnvironmentResponse& value) { SetEnvironment(value); return *this;}
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline UpdateFunctionConfigurationResult& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(std::move(value)); return *this;}
 
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArn = value; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArn.assign(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline UpdateFunctionConfigurationResult& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline UpdateFunctionConfigurationResult& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed key.</p>
+     * key is returned only if you've configured a customer managed key.</p>
      */
     inline UpdateFunctionConfigurationResult& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
@@ -663,50 +664,43 @@ namespace Model
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline void SetLayers(const Aws::Vector<Layer>& value) { m_layers = value; }
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = std::move(value); }
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline UpdateFunctionConfigurationResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline UpdateFunctionConfigurationResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline UpdateFunctionConfigurationResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
 
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     * layers</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
      */
     inline UpdateFunctionConfigurationResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
 
@@ -1132,34 +1126,80 @@ namespace Model
 
 
     /**
-     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
-     * but can be any whole number between 512 and 10240 MB.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
-     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
-     * but can be any whole number between 512 and 10240 MB.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorage = value; }
 
     /**
-     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
-     * but can be any whole number between 512 and 10240 MB.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorage = std::move(value); }
 
     /**
-     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
-     * but can be any whole number between 512 and 10240 MB.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline UpdateFunctionConfigurationResult& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
     /**
-     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
-     * but can be any whole number between 512 and 10240 MB.</p>
+     * <p>The size of the function’s <code>/tmp</code> directory in MB. The default
+     * value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
      */
     inline UpdateFunctionConfigurationResult& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
+     * snapshot of the initialized execution environment when you publish a function
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
+     * startup time with Lambda SnapStart</a>.</p>
+     */
+    inline const SnapStartResponse& GetSnapStart() const{ return m_snapStart; }
+
+    /**
+     * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
+     * snapshot of the initialized execution environment when you publish a function
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
+     * startup time with Lambda SnapStart</a>.</p>
+     */
+    inline void SetSnapStart(const SnapStartResponse& value) { m_snapStart = value; }
+
+    /**
+     * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
+     * snapshot of the initialized execution environment when you publish a function
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
+     * startup time with Lambda SnapStart</a>.</p>
+     */
+    inline void SetSnapStart(SnapStartResponse&& value) { m_snapStart = std::move(value); }
+
+    /**
+     * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
+     * snapshot of the initialized execution environment when you publish a function
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
+     * startup time with Lambda SnapStart</a>.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSnapStart(const SnapStartResponse& value) { SetSnapStart(value); return *this;}
+
+    /**
+     * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
+     * snapshot of the initialized execution environment when you publish a function
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
+     * startup time with Lambda SnapStart</a>.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithSnapStart(SnapStartResponse&& value) { SetSnapStart(std::move(value)); return *this;}
 
   private:
 
@@ -1228,6 +1268,8 @@ namespace Model
     Aws::Vector<Architecture> m_architectures;
 
     EphemeralStorage m_ephemeralStorage;
+
+    SnapStartResponse m_snapStart;
   };
 
 } // namespace Model

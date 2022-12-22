@@ -35,10 +35,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateTrainingJobRequest : public SageMakerRequest
+  class CreateTrainingJobRequest : public SageMakerRequest
   {
   public:
-    CreateTrainingJobRequest();
+    AWS_SAGEMAKER_API CreateTrainingJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,9 +46,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTrainingJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1096,50 +1096,50 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline bool DebugRuleConfigurationsHasBeenSet() const { return m_debugRuleConfigurationsHasBeenSet; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline CreateTrainingJobRequest& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline CreateTrainingJobRequest& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline CreateTrainingJobRequest& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline CreateTrainingJobRequest& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
 
@@ -1202,50 +1202,50 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline bool ProfilerRuleConfigurationsHasBeenSet() const { return m_profilerRuleConfigurationsHasBeenSet; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline CreateTrainingJobRequest& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline CreateTrainingJobRequest& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 

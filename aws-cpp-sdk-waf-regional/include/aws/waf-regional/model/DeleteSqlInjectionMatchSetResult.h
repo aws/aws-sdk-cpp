@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSqlInjectionMatchSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API DeleteSqlInjectionMatchSetResult
+  class DeleteSqlInjectionMatchSetResult
   {
   public:
-    DeleteSqlInjectionMatchSetResult();
-    DeleteSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API DeleteSqlInjectionMatchSetResult();
+    AWS_WAFREGIONAL_API DeleteSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API DeleteSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

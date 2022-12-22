@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ActionInvocation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API ActionInvocation
+  class ActionInvocation
   {
   public:
-    ActionInvocation();
-    ActionInvocation(Aws::Utils::Json::JsonView jsonValue);
-    ActionInvocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API ActionInvocation();
+    AWS_APPCONFIG_API ActionInvocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API ActionInvocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

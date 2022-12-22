@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeadLetterConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API DeadLetterConfig
+  class DeadLetterConfig
   {
   public:
-    DeadLetterConfig();
-    DeadLetterConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeadLetterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API DeadLetterConfig();
+    AWS_SCHEDULER_API DeadLetterConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API DeadLetterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

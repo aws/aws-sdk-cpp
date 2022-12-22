@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ServiceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ServiceMetadata
+  class ServiceMetadata
   {
   public:
-    ServiceMetadata();
-    ServiceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ServiceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ServiceMetadata();
+    AWS_TRANSFER_API ServiceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ServiceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

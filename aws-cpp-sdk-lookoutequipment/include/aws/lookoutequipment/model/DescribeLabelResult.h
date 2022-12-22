@@ -26,12 +26,12 @@ namespace LookoutEquipment
 {
 namespace Model
 {
-  class AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult
+  class DescribeLabelResult
   {
   public:
-    DescribeLabelResult();
-    DescribeLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult();
+    AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

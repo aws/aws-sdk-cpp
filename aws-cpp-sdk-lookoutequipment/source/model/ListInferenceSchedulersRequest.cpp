@@ -17,7 +17,9 @@ ListInferenceSchedulersRequest::ListInferenceSchedulersRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_inferenceSchedulerNameBeginsWithHasBeenSet(false),
-    m_modelNameHasBeenSet(false)
+    m_modelNameHasBeenSet(false),
+    m_status(InferenceSchedulerStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String ListInferenceSchedulersRequest::SerializePayload() const
   {
    payload.WithString("ModelName", m_modelName);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", InferenceSchedulerStatusMapper::GetNameForInferenceSchedulerStatus(m_status));
   }
 
   return payload.View().WriteReadable();

@@ -22,6 +22,7 @@
 #include <aws/medialive/model/H265SceneChangeDetect.h>
 #include <aws/medialive/model/H265Tier.h>
 #include <aws/medialive/model/H265TimecodeInsertionBehavior.h>
+#include <aws/medialive/model/TimecodeBurninSettings.h>
 #include <utility>
 
 namespace Aws
@@ -44,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H265Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H265Settings
+  class H265Settings
   {
   public:
-    H265Settings();
-    H265Settings(Aws::Utils::Json::JsonView jsonValue);
-    H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H265Settings();
+    AWS_MEDIALIVE_API H265Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1123,6 +1124,37 @@ This field is optional; when
      */
     inline H265Settings& WithTimecodeInsertion(H265TimecodeInsertionBehavior&& value) { SetTimecodeInsertion(std::move(value)); return *this;}
 
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const{ return m_timecodeBurninSettings; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline bool TimecodeBurninSettingsHasBeenSet() const { return m_timecodeBurninSettingsHasBeenSet; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(const TimecodeBurninSettings& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = value; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(TimecodeBurninSettings&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::move(value); }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline H265Settings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline H265Settings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
+
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
@@ -1211,6 +1243,9 @@ This field is optional; when
 
     H265TimecodeInsertionBehavior m_timecodeInsertion;
     bool m_timecodeInsertionHasBeenSet = false;
+
+    TimecodeBurninSettings m_timecodeBurninSettings;
+    bool m_timecodeBurninSettingsHasBeenSet = false;
   };
 
 } // namespace Model

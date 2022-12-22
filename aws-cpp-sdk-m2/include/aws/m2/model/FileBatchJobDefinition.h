@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/FileBatchJobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API FileBatchJobDefinition
+  class FileBatchJobDefinition
   {
   public:
-    FileBatchJobDefinition();
-    FileBatchJobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    FileBatchJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobDefinition();
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

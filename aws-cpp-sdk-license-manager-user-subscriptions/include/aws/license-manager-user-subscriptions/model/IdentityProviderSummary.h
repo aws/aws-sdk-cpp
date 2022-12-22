@@ -7,6 +7,7 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
+#include <aws/license-manager-user-subscriptions/model/Settings.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/IdentityProviderSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary
+  class IdentityProviderSummary
   {
   public:
-    IdentityProviderSummary();
-    IdentityProviderSummary(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProviderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,6 +153,43 @@ namespace Model
 
 
     /**
+     * <p>An object that details the registered identity provider’s product related
+     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     */
+    inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>An object that details the registered identity provider’s product related
+     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>An object that details the registered identity provider’s product related
+     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     */
+    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>An object that details the registered identity provider’s product related
+     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     */
+    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>An object that details the registered identity provider’s product related
+     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     */
+    inline IdentityProviderSummary& WithSettings(const Settings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>An object that details the registered identity provider’s product related
+     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     */
+    inline IdentityProviderSummary& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of an identity provider.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -201,6 +239,9 @@ namespace Model
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Settings m_settings;
+    bool m_settingsHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;

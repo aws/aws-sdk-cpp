@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExpectedAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ExpectedAttributeValue
+  class ExpectedAttributeValue
   {
   public:
-    ExpectedAttributeValue();
-    ExpectedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    ExpectedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ExpectedAttributeValue();
+    AWS_DYNAMODB_API ExpectedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ExpectedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

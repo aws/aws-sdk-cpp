@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Rule">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Rule
+  class Rule
   {
   public:
-    Rule();
-    Rule(Aws::Utils::Json::JsonView jsonValue);
-    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Rule();
+    AWS_GLUEDATABREW_API Rule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

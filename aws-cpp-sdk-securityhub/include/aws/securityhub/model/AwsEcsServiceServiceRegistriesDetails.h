@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceServiceRegistriesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceServiceRegistriesDetails
+  class AwsEcsServiceServiceRegistriesDetails
   {
   public:
-    AwsEcsServiceServiceRegistriesDetails();
-    AwsEcsServiceServiceRegistriesDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceServiceRegistriesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceServiceRegistriesDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceServiceRegistriesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceServiceRegistriesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

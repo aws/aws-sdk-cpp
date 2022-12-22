@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Patch">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Patch
+  class Patch
   {
   public:
-    Patch();
-    Patch(Aws::Utils::Json::JsonView jsonValue);
-    Patch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Patch();
+    AWS_SSM_API Patch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Patch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

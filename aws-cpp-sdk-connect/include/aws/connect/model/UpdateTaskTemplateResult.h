@@ -30,12 +30,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API UpdateTaskTemplateResult
+  class UpdateTaskTemplateResult
   {
   public:
-    UpdateTaskTemplateResult();
-    UpdateTaskTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTaskTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API UpdateTaskTemplateResult();
+    AWS_CONNECT_API UpdateTaskTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API UpdateTaskTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

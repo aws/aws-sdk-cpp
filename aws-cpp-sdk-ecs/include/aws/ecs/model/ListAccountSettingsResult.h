@@ -26,12 +26,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API ListAccountSettingsResult
+  class ListAccountSettingsResult
   {
   public:
-    ListAccountSettingsResult();
-    ListAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ListAccountSettingsResult();
+    AWS_ECS_API ListAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ListAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

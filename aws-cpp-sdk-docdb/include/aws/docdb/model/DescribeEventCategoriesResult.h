@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/EventCategoriesMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API DescribeEventCategoriesResult
+  class DescribeEventCategoriesResult
   {
   public:
-    DescribeEventCategoriesResult();
-    DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEventCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeEventCategoriesResult();
+    AWS_DOCDB_API DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeEventCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

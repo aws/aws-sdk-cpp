@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ReportGenerator">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ReportGenerator
+  class ReportGenerator
   {
   public:
-    ReportGenerator();
-    ReportGenerator(Aws::Utils::Json::JsonView jsonValue);
-    ReportGenerator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ReportGenerator();
+    AWS_LICENSEMANAGER_API ReportGenerator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ReportGenerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

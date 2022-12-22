@@ -24,12 +24,12 @@ namespace MediaConnect
 {
 namespace Model
 {
-  class AWS_MEDIACONNECT_API DescribeOfferingResult
+  class DescribeOfferingResult
   {
   public:
-    DescribeOfferingResult();
-    DescribeOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API DescribeOfferingResult();
+    AWS_MEDIACONNECT_API DescribeOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API DescribeOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

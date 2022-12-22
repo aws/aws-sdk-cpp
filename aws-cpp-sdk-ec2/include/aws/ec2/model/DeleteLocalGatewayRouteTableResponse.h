@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteLocalGatewayRouteTableResponse
+  class DeleteLocalGatewayRouteTableResponse
   {
   public:
-    DeleteLocalGatewayRouteTableResponse();
-    DeleteLocalGatewayRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteLocalGatewayRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteLocalGatewayRouteTableResponse();
+    AWS_EC2_API DeleteLocalGatewayRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteLocalGatewayRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline const LocalGatewayRouteTable& GetLocalGatewayRouteTable() const{ return m_localGatewayRouteTable; }
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline void SetLocalGatewayRouteTable(const LocalGatewayRouteTable& value) { m_localGatewayRouteTable = value; }
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline void SetLocalGatewayRouteTable(LocalGatewayRouteTable&& value) { m_localGatewayRouteTable = std::move(value); }
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline DeleteLocalGatewayRouteTableResponse& WithLocalGatewayRouteTable(const LocalGatewayRouteTable& value) { SetLocalGatewayRouteTable(value); return *this;}
 
-    
+    /**
+     * <p>Information about the local gateway route table.</p>
+     */
     inline DeleteLocalGatewayRouteTableResponse& WithLocalGatewayRouteTable(LocalGatewayRouteTable&& value) { SetLocalGatewayRouteTable(std::move(value)); return *this;}
 
 

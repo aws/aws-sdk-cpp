@@ -26,12 +26,12 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVENTS_API CreateConnectionResult
+  class CreateConnectionResult
   {
   public:
-    CreateConnectionResult();
-    CreateConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionResult();
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

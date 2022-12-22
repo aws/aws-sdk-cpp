@@ -35,7 +35,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_loadBalancersHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
     m_propagateTagsHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false)
+    m_serviceRegistriesHasBeenSet(false),
+    m_serviceConnectConfigurationHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,12 @@ Aws::String UpdateServiceRequest::SerializePayload() const
      serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
    }
    payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
+
+  }
+
+  if(m_serviceConnectConfigurationHasBeenSet)
+  {
+   payload.WithObject("serviceConnectConfiguration", m_serviceConnectConfiguration.Jsonize());
 
   }
 

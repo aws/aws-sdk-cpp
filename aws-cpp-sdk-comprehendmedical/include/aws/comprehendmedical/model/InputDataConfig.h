@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API InputDataConfig
+  class InputDataConfig
   {
   public:
-    InputDataConfig();
-    InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API InputDataConfig();
+    AWS_COMPREHENDMEDICAL_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

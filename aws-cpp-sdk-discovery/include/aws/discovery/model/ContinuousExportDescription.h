@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ContinuousExportDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API ContinuousExportDescription
+  class ContinuousExportDescription
   {
   public:
-    ContinuousExportDescription();
-    ContinuousExportDescription(Aws::Utils::Json::JsonView jsonValue);
-    ContinuousExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API ContinuousExportDescription();
+    AWS_APPLICATIONDISCOVERYSERVICE_API ContinuousExportDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API ContinuousExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

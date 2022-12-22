@@ -24,12 +24,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API CreateBGPPeerResult
+  class CreateBGPPeerResult
   {
   public:
-    CreateBGPPeerResult();
-    CreateBGPPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API CreateBGPPeerResult();
+    AWS_DIRECTCONNECT_API CreateBGPPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API CreateBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

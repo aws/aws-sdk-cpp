@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ContainerDefinition
+  class ContainerDefinition
   {
   public:
-    ContainerDefinition();
-    ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ContainerDefinition();
+    AWS_ECS_API ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -4172,9 +4172,10 @@ namespace Model
 
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4196,9 +4197,10 @@ namespace Model
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4220,9 +4222,10 @@ namespace Model
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4244,9 +4247,10 @@ namespace Model
     inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4268,9 +4272,10 @@ namespace Model
     inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4292,9 +4297,10 @@ namespace Model
     inline ContainerDefinition& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4316,9 +4322,10 @@ namespace Model
     inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4340,9 +4347,10 @@ namespace Model
     inline ContainerDefinition& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it overrides the default values set by Docker.
-     * This parameter maps to <code>Ulimits</code> in the <a
+     * <p>A list of <code>ulimits</code> to set in the container. If a
+     * <code>ulimit</code> value is specified in a task definition, it overrides the
+     * default values set by Docker. This parameter maps to <code>Ulimits</code> in the
+     * <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the

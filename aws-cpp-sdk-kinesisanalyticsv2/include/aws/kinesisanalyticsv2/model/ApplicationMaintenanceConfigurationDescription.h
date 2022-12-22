@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationMaintenanceConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription
+  class ApplicationMaintenanceConfigurationDescription
   {
   public:
-    ApplicationMaintenanceConfigurationDescription();
-    ApplicationMaintenanceConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationMaintenanceConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

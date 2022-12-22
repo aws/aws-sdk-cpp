@@ -22,12 +22,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API DeleteFilterResult
+  class DeleteFilterResult
   {
   public:
-    DeleteFilterResult();
-    DeleteFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API DeleteFilterResult();
+    AWS_GUARDDUTY_API DeleteFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API DeleteFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

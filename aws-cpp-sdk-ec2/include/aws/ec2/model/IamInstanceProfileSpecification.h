@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IamInstanceProfileSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API IamInstanceProfileSpecification
+  class IamInstanceProfileSpecification
   {
   public:
-    IamInstanceProfileSpecification();
-    IamInstanceProfileSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IamInstanceProfileSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IamInstanceProfileSpecification();
+    AWS_EC2_API IamInstanceProfileSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IamInstanceProfileSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

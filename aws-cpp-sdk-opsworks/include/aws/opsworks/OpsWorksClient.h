@@ -7,6 +7,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworks/OpsWorksServiceClientModel.h>
 
@@ -68,7 +69,7 @@ namespace OpsWorks
    * Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as
    * soon as possible.</p> 
    */
-  class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient
+  class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -122,7 +123,6 @@ namespace OpsWorks
 
         /* End of legacy constructors due deprecation */
         virtual ~OpsWorksClient();
-
 
         /**
          * <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign
@@ -1880,6 +1880,7 @@ namespace OpsWorks
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OpsWorksEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>;
       void init(const OpsWorksClientConfiguration& clientConfiguration);
 
       OpsWorksClientConfiguration m_clientConfiguration;

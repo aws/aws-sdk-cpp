@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupRequest : public ElasticLoadBalancingv2Request
+  class ModifyTargetGroupRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    ModifyTargetGroupRequest();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyTargetGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCINGV2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCINGV2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -283,29 +283,25 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For TCP health checks, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
@@ -362,66 +358,80 @@ namespace Model
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
-     * value must be the same as the healthy threshold count.</p>
+     * the target unhealthy.</p>
      */
     inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
-     * value must be the same as the healthy threshold count.</p>
+     * the target unhealthy.</p>
      */
     inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
-     * value must be the same as the healthy threshold count.</p>
+     * the target unhealthy.</p>
      */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy. For target groups with a protocol of TCP or TLS, this
-     * value must be the same as the healthy threshold count.</p>
+     * the target unhealthy.</p>
      */
     inline ModifyTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
 
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 

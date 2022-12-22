@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/LiveSource">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API LiveSource
+  class LiveSource
   {
   public:
-    LiveSource();
-    LiveSource(Aws::Utils::Json::JsonView jsonValue);
-    LiveSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API LiveSource();
+    AWS_MEDIATAILOR_API LiveSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API LiveSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

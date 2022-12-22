@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/SelectedVideoStreams">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams
+  class SelectedVideoStreams
   {
   public:
-    SelectedVideoStreams();
-    SelectedVideoStreams(Aws::Utils::Json::JsonView jsonValue);
-    SelectedVideoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams();
+    AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

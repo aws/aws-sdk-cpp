@@ -24,12 +24,12 @@ namespace GlobalAccelerator
 {
 namespace Model
 {
-  class AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult
+  class DescribeCustomRoutingListenerResult
   {
   public:
-    DescribeCustomRoutingListenerResult();
-    DescribeCustomRoutingListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomRoutingListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult();
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,65 +24,73 @@ namespace Model
 {
 
   /**
-   * <p>The Launch Profile Initialization Script is used when start streaming session
+   * <p>The launch profile initialization script is used when start streaming session
    * runs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitializationScript">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API LaunchProfileInitializationScript
+  class LaunchProfileInitializationScript
   {
   public:
-    LaunchProfileInitializationScript();
-    LaunchProfileInitializationScript(Aws::Utils::Json::JsonView jsonValue);
-    LaunchProfileInitializationScript& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API LaunchProfileInitializationScript();
+    AWS_NIMBLESTUDIO_API LaunchProfileInitializationScript(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API LaunchProfileInitializationScript& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline const Aws::String& GetRuntimeRoleArn() const{ return m_runtimeRoleArn; }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline bool RuntimeRoleArnHasBeenSet() const { return m_runtimeRoleArnHasBeenSet; }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline void SetRuntimeRoleArn(const Aws::String& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = value; }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline void SetRuntimeRoleArn(Aws::String&& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = std::move(value); }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline void SetRuntimeRoleArn(const char* value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn.assign(value); }
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline LaunchProfileInitializationScript& WithRuntimeRoleArn(const Aws::String& value) { SetRuntimeRoleArn(value); return *this;}
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline LaunchProfileInitializationScript& WithRuntimeRoleArn(Aws::String&& value) { SetRuntimeRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role attached to a Studio Component that gives the studio component
-     * access to AWS resources at anytime while the instance is running. </p>
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
      */
     inline LaunchProfileInitializationScript& WithRuntimeRoleArn(const char* value) { SetRuntimeRoleArn(value); return *this;}
 
@@ -130,57 +138,57 @@ namespace Model
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline const Aws::String& GetSecureInitializationRoleArn() const{ return m_secureInitializationRoleArn; }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline bool SecureInitializationRoleArnHasBeenSet() const { return m_secureInitializationRoleArnHasBeenSet; }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline void SetSecureInitializationRoleArn(const Aws::String& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = value; }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline void SetSecureInitializationRoleArn(Aws::String&& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = std::move(value); }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline void SetSecureInitializationRoleArn(const char* value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn.assign(value); }
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline LaunchProfileInitializationScript& WithSecureInitializationRoleArn(const Aws::String& value) { SetSecureInitializationRoleArn(value); return *this;}
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline LaunchProfileInitializationScript& WithSecureInitializationRoleArn(Aws::String&& value) { SetSecureInitializationRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role attached to Studio Component when the system initialization
-     * script runs which give the studio component access to AWS resources when the
-     * system initialization script runs.</p>
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
      */
     inline LaunchProfileInitializationScript& WithSecureInitializationRoleArn(const char* value) { SetSecureInitializationRoleArn(value); return *this;}
 

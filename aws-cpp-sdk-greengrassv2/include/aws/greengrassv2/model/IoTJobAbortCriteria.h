@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/IoTJobAbortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API IoTJobAbortCriteria
+  class IoTJobAbortCriteria
   {
   public:
-    IoTJobAbortCriteria();
-    IoTJobAbortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    IoTJobAbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria();
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

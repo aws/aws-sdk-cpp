@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceCredentialsInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API SourceCredentialsInfo
+  class SourceCredentialsInfo
   {
   public:
-    SourceCredentialsInfo();
-    SourceCredentialsInfo(Aws::Utils::Json::JsonView jsonValue);
-    SourceCredentialsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API SourceCredentialsInfo();
+    AWS_CODEBUILD_API SourceCredentialsInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API SourceCredentialsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

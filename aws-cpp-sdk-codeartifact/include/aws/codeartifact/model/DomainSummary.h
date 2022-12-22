@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API DomainSummary
+  class DomainSummary
   {
   public:
-    DomainSummary();
-    DomainSummary(Aws::Utils::Json::JsonView jsonValue);
-    DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API DomainSummary();
+    AWS_CODEARTIFACT_API DomainSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

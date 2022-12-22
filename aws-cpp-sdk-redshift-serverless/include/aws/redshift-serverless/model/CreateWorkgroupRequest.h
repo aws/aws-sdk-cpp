@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTSERVERLESS_API CreateWorkgroupRequest : public RedshiftServerlessRequest
+  class CreateWorkgroupRequest : public RedshiftServerlessRequest
   {
   public:
-    CreateWorkgroupRequest();
+    AWS_REDSHIFTSERVERLESS_API CreateWorkgroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorkgroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -195,6 +195,31 @@ namespace Model
      * <p>The name of the namespace to associate with the workgroup.</p>
      */
     inline CreateWorkgroupRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline CreateWorkgroupRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
@@ -408,6 +433,9 @@ namespace Model
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet = false;

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimitResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetHostedZoneLimitResult
+  class GetHostedZoneLimitResult
   {
   public:
-    GetHostedZoneLimitResult();
-    GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHostedZoneLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetHostedZoneLimitResult();
+    AWS_ROUTE53_API GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetHostedZoneLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

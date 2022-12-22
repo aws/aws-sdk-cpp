@@ -52,4 +52,14 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
 
 
 
+PutEventsRequest::EndpointParameters PutEventsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (EndpointIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("EndpointId"), this->GetEndpointId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

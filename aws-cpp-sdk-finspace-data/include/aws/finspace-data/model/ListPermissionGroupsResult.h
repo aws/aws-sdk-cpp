@@ -26,12 +26,12 @@ namespace FinSpaceData
 {
 namespace Model
 {
-  class AWS_FINSPACEDATA_API ListPermissionGroupsResult
+  class ListPermissionGroupsResult
   {
   public:
-    ListPermissionGroupsResult();
-    ListPermissionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPermissionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API ListPermissionGroupsResult();
+    AWS_FINSPACEDATA_API ListPermissionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API ListPermissionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

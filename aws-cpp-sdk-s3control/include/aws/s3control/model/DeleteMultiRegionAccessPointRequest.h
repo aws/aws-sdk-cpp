@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API DeleteMultiRegionAccessPointRequest : public S3ControlRequest
+  class DeleteMultiRegionAccessPointRequest : public S3ControlRequest
   {
   public:
-    DeleteMultiRegionAccessPointRequest();
+    AWS_S3CONTROL_API DeleteMultiRegionAccessPointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,23 +31,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteMultiRegionAccessPoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
 
-
-    EndpointParameters GetEndpointContextParams() const override
-    {
-        EndpointParameters parameters;
-        if (AccountIdHasBeenSet()) {
-            parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-        }
-
-        return parameters;
-    }
-
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access

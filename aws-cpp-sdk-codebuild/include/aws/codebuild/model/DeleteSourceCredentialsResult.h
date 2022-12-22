@@ -24,12 +24,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API DeleteSourceCredentialsResult
+  class DeleteSourceCredentialsResult
   {
   public:
-    DeleteSourceCredentialsResult();
-    DeleteSourceCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSourceCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API DeleteSourceCredentialsResult();
+    AWS_CODEBUILD_API DeleteSourceCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API DeleteSourceCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

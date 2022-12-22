@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/model/ControlPlanePlacementResponse.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OutpostConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API OutpostConfigResponse
+  class OutpostConfigResponse
   {
   public:
-    OutpostConfigResponse();
-    OutpostConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    OutpostConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OutpostConfigResponse();
+    AWS_EKS_API OutpostConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OutpostConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,6 +144,61 @@ namespace Model
      */
     inline OutpostConfigResponse& WithControlPlaneInstanceType(const char* value) { SetControlPlaneInstanceType(value); return *this;}
 
+
+    /**
+     * <p>An object representing the placement configuration for all the control plane
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     */
+    inline const ControlPlanePlacementResponse& GetControlPlanePlacement() const{ return m_controlPlanePlacement; }
+
+    /**
+     * <p>An object representing the placement configuration for all the control plane
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     */
+    inline bool ControlPlanePlacementHasBeenSet() const { return m_controlPlanePlacementHasBeenSet; }
+
+    /**
+     * <p>An object representing the placement configuration for all the control plane
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     */
+    inline void SetControlPlanePlacement(const ControlPlanePlacementResponse& value) { m_controlPlanePlacementHasBeenSet = true; m_controlPlanePlacement = value; }
+
+    /**
+     * <p>An object representing the placement configuration for all the control plane
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     */
+    inline void SetControlPlanePlacement(ControlPlanePlacementResponse&& value) { m_controlPlanePlacementHasBeenSet = true; m_controlPlanePlacement = std::move(value); }
+
+    /**
+     * <p>An object representing the placement configuration for all the control plane
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     */
+    inline OutpostConfigResponse& WithControlPlanePlacement(const ControlPlanePlacementResponse& value) { SetControlPlanePlacement(value); return *this;}
+
+    /**
+     * <p>An object representing the placement configuration for all the control plane
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+     */
+    inline OutpostConfigResponse& WithControlPlanePlacement(ControlPlanePlacementResponse&& value) { SetControlPlanePlacement(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_outpostArns;
@@ -150,6 +206,9 @@ namespace Model
 
     Aws::String m_controlPlaneInstanceType;
     bool m_controlPlaneInstanceTypeHasBeenSet = false;
+
+    ControlPlanePlacementResponse m_controlPlanePlacement;
+    bool m_controlPlanePlacementHasBeenSet = false;
   };
 
 } // namespace Model

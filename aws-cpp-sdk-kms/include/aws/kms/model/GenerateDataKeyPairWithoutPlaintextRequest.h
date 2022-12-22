@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API GenerateDataKeyPairWithoutPlaintextRequest : public KMSRequest
+  class GenerateDataKeyPairWithoutPlaintextRequest : public KMSRequest
   {
   public:
-    GenerateDataKeyPairWithoutPlaintextRequest();
+    AWS_KMS_API GenerateDataKeyPairWithoutPlaintextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GenerateDataKeyPairWithoutPlaintext"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -378,8 +378,7 @@ namespace Model
      * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
      * or to sign and verify (but not both), and the rule that permits you to use ECC
      * KMS keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
-     * and ECC asymmetric key pairs are also available in China Regions.</p>
+     * used outside of KMS. The SM2 key spec is only available in China Regions.</p>
      */
     inline const DataKeyPairSpec& GetKeyPairSpec() const{ return m_keyPairSpec; }
 
@@ -388,8 +387,7 @@ namespace Model
      * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
      * or to sign and verify (but not both), and the rule that permits you to use ECC
      * KMS keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
-     * and ECC asymmetric key pairs are also available in China Regions.</p>
+     * used outside of KMS. The SM2 key spec is only available in China Regions.</p>
      */
     inline bool KeyPairSpecHasBeenSet() const { return m_keyPairSpecHasBeenSet; }
 
@@ -398,8 +396,7 @@ namespace Model
      * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
      * or to sign and verify (but not both), and the rule that permits you to use ECC
      * KMS keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
-     * and ECC asymmetric key pairs are also available in China Regions.</p>
+     * used outside of KMS. The SM2 key spec is only available in China Regions.</p>
      */
     inline void SetKeyPairSpec(const DataKeyPairSpec& value) { m_keyPairSpecHasBeenSet = true; m_keyPairSpec = value; }
 
@@ -408,8 +405,7 @@ namespace Model
      * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
      * or to sign and verify (but not both), and the rule that permits you to use ECC
      * KMS keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
-     * and ECC asymmetric key pairs are also available in China Regions.</p>
+     * used outside of KMS. The SM2 key spec is only available in China Regions.</p>
      */
     inline void SetKeyPairSpec(DataKeyPairSpec&& value) { m_keyPairSpecHasBeenSet = true; m_keyPairSpec = std::move(value); }
 
@@ -418,8 +414,7 @@ namespace Model
      * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
      * or to sign and verify (but not both), and the rule that permits you to use ECC
      * KMS keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
-     * and ECC asymmetric key pairs are also available in China Regions.</p>
+     * used outside of KMS. The SM2 key spec is only available in China Regions.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& WithKeyPairSpec(const DataKeyPairSpec& value) { SetKeyPairSpec(value); return *this;}
 
@@ -428,8 +423,7 @@ namespace Model
      * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
      * or to sign and verify (but not both), and the rule that permits you to use ECC
      * KMS keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
-     * and ECC asymmetric key pairs are also available in China Regions.</p>
+     * used outside of KMS. The SM2 key spec is only available in China Regions.</p>
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& WithKeyPairSpec(DataKeyPairSpec&& value) { SetKeyPairSpec(std::move(value)); return *this;}
 

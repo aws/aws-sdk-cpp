@@ -26,12 +26,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API ListChannelMembershipsForAppInstanceUserResult
+  class ListChannelMembershipsForAppInstanceUserResult
   {
   public:
-    ListChannelMembershipsForAppInstanceUserResult();
-    ListChannelMembershipsForAppInstanceUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListChannelMembershipsForAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListChannelMembershipsForAppInstanceUserResult();
+    AWS_CHIME_API ListChannelMembershipsForAppInstanceUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListChannelMembershipsForAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

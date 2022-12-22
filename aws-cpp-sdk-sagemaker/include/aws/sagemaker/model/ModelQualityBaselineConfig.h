@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelQualityBaselineConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelQualityBaselineConfig
+  class ModelQualityBaselineConfig
   {
   public:
-    ModelQualityBaselineConfig();
-    ModelQualityBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelQualityBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelQualityBaselineConfig();
+    AWS_SAGEMAKER_API ModelQualityBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelQualityBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

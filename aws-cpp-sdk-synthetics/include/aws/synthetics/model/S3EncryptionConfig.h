@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/S3EncryptionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API S3EncryptionConfig
+  class S3EncryptionConfig
   {
   public:
-    S3EncryptionConfig();
-    S3EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API S3EncryptionConfig();
+    AWS_SYNTHETICS_API S3EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API S3EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnectionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API CreateOutboundCrossClusterSearchConnectionRequest : public ElasticsearchServiceRequest
+  class CreateOutboundCrossClusterSearchConnectionRequest : public ElasticsearchServiceRequest
   {
   public:
-    CreateOutboundCrossClusterSearchConnectionRequest();
+    AWS_ELASTICSEARCHSERVICE_API CreateOutboundCrossClusterSearchConnectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOutboundCrossClusterSearchConnection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

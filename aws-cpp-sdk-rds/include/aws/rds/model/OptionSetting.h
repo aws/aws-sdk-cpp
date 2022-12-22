@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionSetting
+  class OptionSetting
   {
   public:
-    OptionSetting();
-    OptionSetting(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionSetting& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionSetting();
+    AWS_RDS_API OptionSetting(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionSetting& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

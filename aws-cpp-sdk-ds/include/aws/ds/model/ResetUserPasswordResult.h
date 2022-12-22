@@ -22,12 +22,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API ResetUserPasswordResult
+  class ResetUserPasswordResult
   {
   public:
-    ResetUserPasswordResult();
-    ResetUserPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResetUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API ResetUserPasswordResult();
+    AWS_DIRECTORYSERVICE_API ResetUserPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API ResetUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

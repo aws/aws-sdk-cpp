@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodResult
+  class ModifySnapshotCopyRetentionPeriodResult
   {
   public:
-    ModifySnapshotCopyRetentionPeriodResult();
-    ModifySnapshotCopyRetentionPeriodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifySnapshotCopyRetentionPeriodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodResult();
+    AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

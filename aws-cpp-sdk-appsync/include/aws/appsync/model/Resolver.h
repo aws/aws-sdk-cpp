@@ -10,6 +10,7 @@
 #include <aws/appsync/model/PipelineConfig.h>
 #include <aws/appsync/model/SyncConfig.h>
 #include <aws/appsync/model/CachingConfig.h>
+#include <aws/appsync/model/AppSyncRuntime.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/Resolver">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API Resolver
+  class Resolver
   {
   public:
-    Resolver();
-    Resolver(Aws::Utils::Json::JsonView jsonValue);
-    Resolver& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API Resolver();
+    AWS_APPSYNC_API Resolver(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Resolver& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -467,6 +468,82 @@ namespace Model
      */
     inline Resolver& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
+
+    
+    inline const AppSyncRuntime& GetRuntime() const{ return m_runtime; }
+
+    
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+
+    
+    inline void SetRuntime(const AppSyncRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    
+    inline void SetRuntime(AppSyncRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
+
+    
+    inline Resolver& WithRuntime(const AppSyncRuntime& value) { SetRuntime(value); return *this;}
+
+    
+    inline Resolver& WithRuntime(AppSyncRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline Resolver& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline Resolver& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>resolver</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline Resolver& WithCode(const char* value) { SetCode(value); return *this;}
+
   private:
 
     Aws::String m_typeName;
@@ -501,6 +578,12 @@ namespace Model
 
     int m_maxBatchSize;
     bool m_maxBatchSizeHasBeenSet = false;
+
+    AppSyncRuntime m_runtime;
+    bool m_runtimeHasBeenSet = false;
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API GetCredentialsForIdentityResult
+  class GetCredentialsForIdentityResult
   {
   public:
-    GetCredentialsForIdentityResult();
-    GetCredentialsForIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCredentialsForIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API GetCredentialsForIdentityResult();
+    AWS_COGNITOIDENTITY_API GetCredentialsForIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API GetCredentialsForIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

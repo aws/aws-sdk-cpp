@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignatureValidityPeriod">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SignatureValidityPeriod
+  class SignatureValidityPeriod
   {
   public:
-    SignatureValidityPeriod();
-    SignatureValidityPeriod(Aws::Utils::Json::JsonView jsonValue);
-    SignatureValidityPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SignatureValidityPeriod();
+    AWS_SIGNER_API SignatureValidityPeriod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SignatureValidityPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

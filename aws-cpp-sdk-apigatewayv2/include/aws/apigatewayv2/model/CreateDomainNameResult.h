@@ -28,12 +28,12 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API CreateDomainNameResult
+  class CreateDomainNameResult
   {
   public:
-    CreateDomainNameResult();
-    CreateDomainNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDomainNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API CreateDomainNameResult();
+    AWS_APIGATEWAYV2_API CreateDomainNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API CreateDomainNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransferResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CancelInputDeviceTransferResult
+  class CancelInputDeviceTransferResult
   {
   public:
-    CancelInputDeviceTransferResult();
-    CancelInputDeviceTransferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelInputDeviceTransferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API CancelInputDeviceTransferResult();
+    AWS_MEDIALIVE_API CancelInputDeviceTransferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API CancelInputDeviceTransferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

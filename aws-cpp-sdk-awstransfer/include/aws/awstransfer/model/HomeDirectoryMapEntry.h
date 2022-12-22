@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/HomeDirectoryMapEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API HomeDirectoryMapEntry
+  class HomeDirectoryMapEntry
   {
   public:
-    HomeDirectoryMapEntry();
-    HomeDirectoryMapEntry(Aws::Utils::Json::JsonView jsonValue);
-    HomeDirectoryMapEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API HomeDirectoryMapEntry();
+    AWS_TRANSFER_API HomeDirectoryMapEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API HomeDirectoryMapEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

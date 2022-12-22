@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogKafkaSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CatalogKafkaSource
+  class CatalogKafkaSource
   {
   public:
-    CatalogKafkaSource();
-    CatalogKafkaSource(Aws::Utils::Json::JsonView jsonValue);
-    CatalogKafkaSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CatalogKafkaSource();
+    AWS_GLUE_API CatalogKafkaSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CatalogKafkaSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

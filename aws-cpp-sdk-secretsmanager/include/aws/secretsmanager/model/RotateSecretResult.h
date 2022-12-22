@@ -24,12 +24,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API RotateSecretResult
+  class RotateSecretResult
   {
   public:
-    RotateSecretResult();
-    RotateSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RotateSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API RotateSecretResult();
+    AWS_SECRETSMANAGER_API RotateSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API RotateSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

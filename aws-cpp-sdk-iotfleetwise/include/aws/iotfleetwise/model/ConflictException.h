@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API ConflictException();
+    AWS_IOTFLEETWISE_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

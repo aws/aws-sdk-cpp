@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Greengrass">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Greengrass
+  class Greengrass
   {
   public:
-    Greengrass();
-    Greengrass(Aws::Utils::Json::JsonView jsonValue);
-    Greengrass& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Greengrass();
+    AWS_IOTSITEWISE_API Greengrass(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Greengrass& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

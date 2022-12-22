@@ -21,14 +21,16 @@ namespace Model
 JdbcTarget::JdbcTarget() : 
     m_connectionNameHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+    m_exclusionsHasBeenSet(false),
+    m_enableAdditionalMetadataHasBeenSet(false)
 {
 }
 
 JdbcTarget::JdbcTarget(JsonView jsonValue) : 
     m_connectionNameHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+    m_exclusionsHasBeenSet(false),
+    m_enableAdditionalMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ JdbcTarget& JdbcTarget::operator =(JsonView jsonValue)
     m_exclusionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableAdditionalMetadata"))
+  {
+    Aws::Utils::Array<JsonView> enableAdditionalMetadataJsonList = jsonValue.GetArray("EnableAdditionalMetadata");
+    for(unsigned enableAdditionalMetadataIndex = 0; enableAdditionalMetadataIndex < enableAdditionalMetadataJsonList.GetLength(); ++enableAdditionalMetadataIndex)
+    {
+      m_enableAdditionalMetadata.push_back(JdbcMetadataEntryMapper::GetJdbcMetadataEntryForName(enableAdditionalMetadataJsonList[enableAdditionalMetadataIndex].AsString()));
+    }
+    m_enableAdditionalMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +98,17 @@ JsonValue JdbcTarget::Jsonize() const
      exclusionsJsonList[exclusionsIndex].AsString(m_exclusions[exclusionsIndex]);
    }
    payload.WithArray("Exclusions", std::move(exclusionsJsonList));
+
+  }
+
+  if(m_enableAdditionalMetadataHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> enableAdditionalMetadataJsonList(m_enableAdditionalMetadata.size());
+   for(unsigned enableAdditionalMetadataIndex = 0; enableAdditionalMetadataIndex < enableAdditionalMetadataJsonList.GetLength(); ++enableAdditionalMetadataIndex)
+   {
+     enableAdditionalMetadataJsonList[enableAdditionalMetadataIndex].AsString(JdbcMetadataEntryMapper::GetNameForJdbcMetadataEntry(m_enableAdditionalMetadata[enableAdditionalMetadataIndex]));
+   }
+   payload.WithArray("EnableAdditionalMetadata", std::move(enableAdditionalMetadataJsonList));
 
   }
 

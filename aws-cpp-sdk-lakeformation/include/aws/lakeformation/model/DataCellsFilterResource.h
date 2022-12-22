@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DataCellsFilterResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API DataCellsFilterResource
+  class DataCellsFilterResource
   {
   public:
-    DataCellsFilterResource();
-    DataCellsFilterResource(Aws::Utils::Json::JsonView jsonValue);
-    DataCellsFilterResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API DataCellsFilterResource();
+    AWS_LAKEFORMATION_API DataCellsFilterResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API DataCellsFilterResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

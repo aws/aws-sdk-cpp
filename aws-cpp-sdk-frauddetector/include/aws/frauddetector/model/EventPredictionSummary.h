@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EventPredictionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EventPredictionSummary
+  class EventPredictionSummary
   {
   public:
-    EventPredictionSummary();
-    EventPredictionSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventPredictionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EventPredictionSummary();
+    AWS_FRAUDDETECTOR_API EventPredictionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EventPredictionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

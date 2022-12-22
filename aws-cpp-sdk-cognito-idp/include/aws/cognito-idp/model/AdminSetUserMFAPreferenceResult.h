@@ -22,12 +22,12 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminSetUserMFAPreferenceResult
+  class AdminSetUserMFAPreferenceResult
   {
   public:
-    AdminSetUserMFAPreferenceResult();
-    AdminSetUserMFAPreferenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminSetUserMFAPreferenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminSetUserMFAPreferenceResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminSetUserMFAPreferenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminSetUserMFAPreferenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

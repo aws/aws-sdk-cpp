@@ -26,12 +26,12 @@ namespace AppIntegrationsService
 {
 namespace Model
 {
-  class AWS_APPINTEGRATIONSSERVICE_API GetEventIntegrationResult
+  class GetEventIntegrationResult
   {
   public:
-    GetEventIntegrationResult();
-    GetEventIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEventIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPINTEGRATIONSSERVICE_API GetEventIntegrationResult();
+    AWS_APPINTEGRATIONSSERVICE_API GetEventIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPINTEGRATIONSSERVICE_API GetEventIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API CreateActivityResult
+  class CreateActivityResult
   {
   public:
-    CreateActivityResult();
-    CreateActivityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API CreateActivityResult();
+    AWS_SFN_API CreateActivityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API CreateActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/VolumeSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API VolumeSpecification
+  class VolumeSpecification
   {
   public:
-    VolumeSpecification();
-    VolumeSpecification(Aws::Utils::Json::JsonView jsonValue);
-    VolumeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API VolumeSpecification();
+    AWS_EMR_API VolumeSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API VolumeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

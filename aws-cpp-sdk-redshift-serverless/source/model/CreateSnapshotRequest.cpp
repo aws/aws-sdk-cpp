@@ -16,7 +16,8 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
     m_namespaceNameHasBeenSet(false),
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+    m_snapshotNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   if(m_snapshotNameHasBeenSet)
   {
    payload.WithString("snapshotName", m_snapshotName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

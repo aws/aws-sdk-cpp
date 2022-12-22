@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/Network">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API Network
+  class Network
   {
   public:
-    Network();
-    Network(Aws::Utils::Json::JsonView jsonValue);
-    Network& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API Network();
+    AWS_PRIVATENETWORKS_API Network(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Network& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

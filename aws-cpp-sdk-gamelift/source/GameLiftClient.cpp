@@ -30,6 +30,7 @@
 #include <aws/gamelift/model/CreateGameServerGroupRequest.h>
 #include <aws/gamelift/model/CreateGameSessionRequest.h>
 #include <aws/gamelift/model/CreateGameSessionQueueRequest.h>
+#include <aws/gamelift/model/CreateLocationRequest.h>
 #include <aws/gamelift/model/CreateMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/CreateMatchmakingRuleSetRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionRequest.h>
@@ -43,15 +44,18 @@
 #include <aws/gamelift/model/DeleteFleetLocationsRequest.h>
 #include <aws/gamelift/model/DeleteGameServerGroupRequest.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueRequest.h>
+#include <aws/gamelift/model/DeleteLocationRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingRuleSetRequest.h>
 #include <aws/gamelift/model/DeleteScalingPolicyRequest.h>
 #include <aws/gamelift/model/DeleteScriptRequest.h>
 #include <aws/gamelift/model/DeleteVpcPeeringAuthorizationRequest.h>
 #include <aws/gamelift/model/DeleteVpcPeeringConnectionRequest.h>
+#include <aws/gamelift/model/DeregisterComputeRequest.h>
 #include <aws/gamelift/model/DeregisterGameServerRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
 #include <aws/gamelift/model/DescribeBuildRequest.h>
+#include <aws/gamelift/model/DescribeComputeRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
 #include <aws/gamelift/model/DescribeFleetAttributesRequest.h>
 #include <aws/gamelift/model/DescribeFleetCapacityRequest.h>
@@ -78,16 +82,21 @@
 #include <aws/gamelift/model/DescribeScriptRequest.h>
 #include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsRequest.h>
 #include <aws/gamelift/model/DescribeVpcPeeringConnectionsRequest.h>
+#include <aws/gamelift/model/GetComputeAccessRequest.h>
+#include <aws/gamelift/model/GetComputeAuthTokenRequest.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlRequest.h>
 #include <aws/gamelift/model/GetInstanceAccessRequest.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>
+#include <aws/gamelift/model/ListComputeRequest.h>
 #include <aws/gamelift/model/ListFleetsRequest.h>
 #include <aws/gamelift/model/ListGameServerGroupsRequest.h>
 #include <aws/gamelift/model/ListGameServersRequest.h>
+#include <aws/gamelift/model/ListLocationsRequest.h>
 #include <aws/gamelift/model/ListScriptsRequest.h>
 #include <aws/gamelift/model/ListTagsForResourceRequest.h>
 #include <aws/gamelift/model/PutScalingPolicyRequest.h>
+#include <aws/gamelift/model/RegisterComputeRequest.h>
 #include <aws/gamelift/model/RegisterGameServerRequest.h>
 #include <aws/gamelift/model/RequestUploadCredentialsRequest.h>
 #include <aws/gamelift/model/ResolveAliasRequest.h>
@@ -460,6 +469,30 @@ void GameLiftClient::CreateGameSessionQueueAsync(const CreateGameSessionQueueReq
     } );
 }
 
+CreateLocationOutcome GameLiftClient::CreateLocation(const CreateLocationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateLocationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationOutcomeCallable GameLiftClient::CreateLocationCallable(const CreateLocationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateLocationAsync(const CreateLocationRequest& request, const CreateLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLocation(request), context);
+    } );
+}
+
 CreateMatchmakingConfigurationOutcome GameLiftClient::CreateMatchmakingConfiguration(const CreateMatchmakingConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMatchmakingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -772,6 +805,30 @@ void GameLiftClient::DeleteGameSessionQueueAsync(const DeleteGameSessionQueueReq
     } );
 }
 
+DeleteLocationOutcome GameLiftClient::DeleteLocation(const DeleteLocationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteLocationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLocationOutcomeCallable GameLiftClient::DeleteLocationCallable(const DeleteLocationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLocationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLocation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteLocationAsync(const DeleteLocationRequest& request, const DeleteLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLocation(request), context);
+    } );
+}
+
 DeleteMatchmakingConfigurationOutcome GameLiftClient::DeleteMatchmakingConfiguration(const DeleteMatchmakingConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMatchmakingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -916,6 +973,30 @@ void GameLiftClient::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConne
     } );
 }
 
+DeregisterComputeOutcome GameLiftClient::DeregisterCompute(const DeregisterComputeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeregisterComputeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterComputeOutcomeCallable GameLiftClient::DeregisterComputeCallable(const DeregisterComputeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterComputeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterCompute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeregisterComputeAsync(const DeregisterComputeRequest& request, const DeregisterComputeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterCompute(request), context);
+    } );
+}
+
 DeregisterGameServerOutcome GameLiftClient::DeregisterGameServer(const DeregisterGameServerRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterGameServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -985,6 +1066,30 @@ void GameLiftClient::DescribeBuildAsync(const DescribeBuildRequest& request, con
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeBuild(request), context);
+    } );
+}
+
+DescribeComputeOutcome GameLiftClient::DescribeCompute(const DescribeComputeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeComputeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeComputeOutcomeCallable GameLiftClient::DescribeComputeCallable(const DescribeComputeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeComputeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCompute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeComputeAsync(const DescribeComputeRequest& request, const DescribeComputeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCompute(request), context);
     } );
 }
 
@@ -1612,6 +1717,54 @@ void GameLiftClient::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeering
     } );
 }
 
+GetComputeAccessOutcome GameLiftClient::GetComputeAccess(const GetComputeAccessRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComputeAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComputeAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetComputeAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetComputeAccessOutcomeCallable GameLiftClient::GetComputeAccessCallable(const GetComputeAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetComputeAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComputeAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::GetComputeAccessAsync(const GetComputeAccessRequest& request, const GetComputeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComputeAccess(request), context);
+    } );
+}
+
+GetComputeAuthTokenOutcome GameLiftClient::GetComputeAuthToken(const GetComputeAuthTokenRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComputeAuthToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComputeAuthToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetComputeAuthTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetComputeAuthTokenOutcomeCallable GameLiftClient::GetComputeAuthTokenCallable(const GetComputeAuthTokenRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetComputeAuthTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComputeAuthToken(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::GetComputeAuthTokenAsync(const GetComputeAuthTokenRequest& request, const GetComputeAuthTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComputeAuthToken(request), context);
+    } );
+}
+
 GetGameSessionLogUrlOutcome GameLiftClient::GetGameSessionLogUrl(const GetGameSessionLogUrlRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGameSessionLogUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1708,6 +1861,30 @@ void GameLiftClient::ListBuildsAsync(const ListBuildsRequest& request, const Lis
     } );
 }
 
+ListComputeOutcome GameLiftClient::ListCompute(const ListComputeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListComputeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListComputeOutcomeCallable GameLiftClient::ListComputeCallable(const ListComputeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListComputeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCompute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ListComputeAsync(const ListComputeRequest& request, const ListComputeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCompute(request), context);
+    } );
+}
+
 ListFleetsOutcome GameLiftClient::ListFleets(const ListFleetsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFleets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1780,6 +1957,30 @@ void GameLiftClient::ListGameServersAsync(const ListGameServersRequest& request,
     } );
 }
 
+ListLocationsOutcome GameLiftClient::ListLocations(const ListLocationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListLocationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLocationsOutcomeCallable GameLiftClient::ListLocationsCallable(const ListLocationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLocationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLocations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ListLocationsAsync(const ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLocations(request), context);
+    } );
+}
+
 ListScriptsOutcome GameLiftClient::ListScripts(const ListScriptsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScripts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1849,6 +2050,30 @@ void GameLiftClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& reques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutScalingPolicy(request), context);
+    } );
+}
+
+RegisterComputeOutcome GameLiftClient::RegisterCompute(const RegisterComputeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterCompute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RegisterComputeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterComputeOutcomeCallable GameLiftClient::RegisterComputeCallable(const RegisterComputeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterComputeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterCompute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::RegisterComputeAsync(const RegisterComputeRequest& request, const RegisterComputeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterCompute(request), context);
     } );
 }
 

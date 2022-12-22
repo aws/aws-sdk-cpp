@@ -36,6 +36,12 @@ GetEffectiveRecommendationPreferencesResult& GetEffectiveRecommendationPreferenc
 
   }
 
+  if(jsonValue.ValueExists("externalMetricsPreference"))
+  {
+    m_externalMetricsPreference = jsonValue.GetObject("externalMetricsPreference");
+
+  }
+
 
 
   return *this;

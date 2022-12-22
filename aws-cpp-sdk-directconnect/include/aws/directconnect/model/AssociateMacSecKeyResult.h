@@ -26,12 +26,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API AssociateMacSecKeyResult
+  class AssociateMacSecKeyResult
   {
   public:
-    AssociateMacSecKeyResult();
-    AssociateMacSecKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateMacSecKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API AssociateMacSecKeyResult();
+    AWS_DIRECTCONNECT_API AssociateMacSecKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API AssociateMacSecKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

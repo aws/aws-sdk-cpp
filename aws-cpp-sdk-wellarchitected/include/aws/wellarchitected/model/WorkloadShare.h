@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/WorkloadShare">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API WorkloadShare
+  class WorkloadShare
   {
   public:
-    WorkloadShare();
-    WorkloadShare(Aws::Utils::Json::JsonView jsonValue);
-    WorkloadShare& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API WorkloadShare();
+    AWS_WELLARCHITECTED_API WorkloadShare(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API WorkloadShare& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

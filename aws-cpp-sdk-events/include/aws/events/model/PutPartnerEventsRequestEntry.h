@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPartnerEventsRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API PutPartnerEventsRequestEntry
+  class PutPartnerEventsRequestEntry
   {
   public:
-    PutPartnerEventsRequestEntry();
-    PutPartnerEventsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutPartnerEventsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API PutPartnerEventsRequestEntry();
+    AWS_CLOUDWATCHEVENTS_API PutPartnerEventsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API PutPartnerEventsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

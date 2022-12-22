@@ -24,12 +24,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API UpdateAnomalyMonitorResult
+  class UpdateAnomalyMonitorResult
   {
   public:
-    UpdateAnomalyMonitorResult();
-    UpdateAnomalyMonitorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAnomalyMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API UpdateAnomalyMonitorResult();
+    AWS_COSTEXPLORER_API UpdateAnomalyMonitorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API UpdateAnomalyMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

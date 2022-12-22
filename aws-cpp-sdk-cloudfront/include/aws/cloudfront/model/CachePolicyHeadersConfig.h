@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyHeadersConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachePolicyHeadersConfig
+  class CachePolicyHeadersConfig
   {
   public:
-    CachePolicyHeadersConfig();
-    CachePolicyHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachePolicyHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyHeadersConfig();
+    AWS_CLOUDFRONT_API CachePolicyHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

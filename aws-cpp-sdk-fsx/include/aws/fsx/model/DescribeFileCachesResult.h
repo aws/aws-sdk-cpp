@@ -26,12 +26,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DescribeFileCachesResult
+  class DescribeFileCachesResult
   {
   public:
-    DescribeFileCachesResult();
-    DescribeFileCachesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFileCachesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeFileCachesResult();
+    AWS_FSX_API DescribeFileCachesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeFileCachesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

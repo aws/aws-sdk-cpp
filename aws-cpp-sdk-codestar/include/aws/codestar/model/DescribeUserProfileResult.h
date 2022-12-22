@@ -25,12 +25,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API DescribeUserProfileResult
+  class DescribeUserProfileResult
   {
   public:
-    DescribeUserProfileResult();
-    DescribeUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API DescribeUserProfileResult();
+    AWS_CODESTAR_API DescribeUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API DescribeUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

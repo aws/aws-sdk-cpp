@@ -29,7 +29,9 @@ DatasetImportJob::DatasetImportJob() :
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false)
+    m_importModeHasBeenSet(false),
+    m_publishAttributionMetricsToS3(false),
+    m_publishAttributionMetricsToS3HasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ DatasetImportJob::DatasetImportJob(JsonView jsonValue) :
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false)
+    m_importModeHasBeenSet(false),
+    m_publishAttributionMetricsToS3(false),
+    m_publishAttributionMetricsToS3HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +125,13 @@ DatasetImportJob& DatasetImportJob::operator =(JsonView jsonValue)
     m_importModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("publishAttributionMetricsToS3"))
+  {
+    m_publishAttributionMetricsToS3 = jsonValue.GetBool("publishAttributionMetricsToS3");
+
+    m_publishAttributionMetricsToS3HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +194,12 @@ JsonValue DatasetImportJob::Jsonize() const
   if(m_importModeHasBeenSet)
   {
    payload.WithString("importMode", ImportModeMapper::GetNameForImportMode(m_importMode));
+  }
+
+  if(m_publishAttributionMetricsToS3HasBeenSet)
+  {
+   payload.WithBool("publishAttributionMetricsToS3", m_publishAttributionMetricsToS3);
+
   }
 
   return payload;

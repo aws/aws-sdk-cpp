@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API VpcSecurityGroupMembership
+  class VpcSecurityGroupMembership
   {
   public:
-    VpcSecurityGroupMembership();
-    VpcSecurityGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcSecurityGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API VpcSecurityGroupMembership();
+    AWS_RDS_API VpcSecurityGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API VpcSecurityGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

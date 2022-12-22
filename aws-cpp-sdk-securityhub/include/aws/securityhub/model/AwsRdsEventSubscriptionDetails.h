@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsEventSubscriptionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails
+  class AwsRdsEventSubscriptionDetails
   {
   public:
-    AwsRdsEventSubscriptionDetails();
-    AwsRdsEventSubscriptionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsEventSubscriptionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails();
+    AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

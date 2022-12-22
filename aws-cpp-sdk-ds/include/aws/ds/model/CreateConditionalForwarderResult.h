@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarderResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API CreateConditionalForwarderResult
+  class CreateConditionalForwarderResult
   {
   public:
-    CreateConditionalForwarderResult();
-    CreateConditionalForwarderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConditionalForwarderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API CreateConditionalForwarderResult();
+    AWS_DIRECTORYSERVICE_API CreateConditionalForwarderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API CreateConditionalForwarderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

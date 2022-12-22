@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupRule">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupRule
+  class BackupRule
   {
   public:
-    BackupRule();
-    BackupRule(Aws::Utils::Json::JsonView jsonValue);
-    BackupRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupRule();
+    AWS_BACKUP_API BackupRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,25 +255,29 @@ namespace Model
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline BackupRule& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 

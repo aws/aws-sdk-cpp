@@ -7,6 +7,7 @@
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace KinesisVideo
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace KinesisVideo
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoClient();
-
 
         /**
          * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
@@ -160,6 +160,26 @@ namespace KinesisVideo
         virtual void DeleteStreamAsync(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a stream’s edge configuration that was set using the
+         * <code>StartEdgeConfigurationUpdate</code> API. Use this API to get the status of
+         * the configuration if the configuration is in sync with the Edge
+         * Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEdgeConfigurationOutcome DescribeEdgeConfiguration(const Model::DescribeEdgeConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEdgeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEdgeConfigurationOutcomeCallable DescribeEdgeConfigurationCallable(const Model::DescribeEdgeConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeEdgeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEdgeConfigurationAsync(const Model::DescribeEdgeConfigurationRequest& request, const DescribeEdgeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">AWS
@@ -176,6 +196,46 @@ namespace KinesisVideo
          * An Async wrapper for DescribeImageGenerationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeImageGenerationConfigurationAsync(const Model::DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the most current information about the stream. Either streamName or
+         * streamARN should be provided in the input.</p> <p>Returns the most current
+         * information about the stream. The <code>streamName</code> or
+         * <code>streamARN</code> should be provided in the input.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMappedResourceConfigurationOutcome DescribeMappedResourceConfiguration(const Model::DescribeMappedResourceConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMappedResourceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMappedResourceConfigurationOutcomeCallable DescribeMappedResourceConfigurationCallable(const Model::DescribeMappedResourceConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMappedResourceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMappedResourceConfigurationAsync(const Model::DescribeMappedResourceConfigurationRequest& request, const DescribeMappedResourceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the most current information about the channel. Specify the
+         * <code>ChannelName</code> or <code>ChannelARN</code> in the input.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMediaStorageConfigurationOutcome DescribeMediaStorageConfiguration(const Model::DescribeMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMediaStorageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMediaStorageConfigurationOutcomeCallable DescribeMediaStorageConfigurationCallable(const Model::DescribeMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMediaStorageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMediaStorageConfigurationAsync(const Model::DescribeMediaStorageConfigurationRequest& request, const DescribeMediaStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the <code>NotificationConfiguration</code> for a given Kinesis video
@@ -363,6 +423,36 @@ namespace KinesisVideo
         virtual void ListTagsForStreamAsync(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>An asynchronous API that updates a stream’s existing edge configuration. The
+         * Kinesis Video Stream will sync the stream’s edge configuration with the Edge
+         * Agent IoT Greengrass component that runs on an IoT Hub Device, setup at your
+         * premise. The time to sync can vary and depends on the connectivity of the Hub
+         * Device. The <code>SyncStatus</code> will be updated as the edge configuration is
+         * acknowledged, and synced with the Edge Agent. </p> <p>If this API is invoked for
+         * the first time, a new edge configuration will be created for the stream, and the
+         * sync status will be set to <code>SYNCING</code>. You will have to wait for the
+         * sync status to reach a terminal state such as: <code>IN_SYNC</code>, or
+         * <code>SYNC_FAILED</code>, before using this API again. If you invoke this API
+         * during the syncing process, a <code>ResourceInUseException</code> will be
+         * thrown. The connectivity of the stream’s edge configuration and the Edge Agent
+         * will be retried for 15 minutes. After 15 minutes, the status will transition
+         * into the <code>SYNC_FAILED</code> state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEdgeConfigurationUpdateOutcome StartEdgeConfigurationUpdate(const Model::StartEdgeConfigurationUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartEdgeConfigurationUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartEdgeConfigurationUpdateOutcomeCallable StartEdgeConfigurationUpdateCallable(const Model::StartEdgeConfigurationUpdateRequest& request) const;
+
+        /**
+         * An Async wrapper for StartEdgeConfigurationUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartEdgeConfigurationUpdateAsync(const Model::StartEdgeConfigurationUpdateRequest& request, const StartEdgeConfigurationUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
          * pair (the value is optional) that you can define and assign to Amazon Web
          * Services resources. If you specify a tag that already exists, the tag value is
@@ -502,6 +592,28 @@ namespace KinesisVideo
         virtual void UpdateImageGenerationConfigurationAsync(const Model::UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates a <code>SignalingChannel</code> to a stream to store the media.
+         * There are two signaling modes that can specified :</p> <ul> <li> <p>If the
+         * <code>StorageStatus</code> is disabled, no data will be stored, and the
+         * <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If the
+         * <code>StorageStatus</code> is enabled, the data will be stored in the
+         * <code>StreamARN</code> provided. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMediaStorageConfigurationOutcome UpdateMediaStorageConfiguration(const Model::UpdateMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMediaStorageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMediaStorageConfigurationOutcomeCallable UpdateMediaStorageConfigurationCallable(const Model::UpdateMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMediaStorageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMediaStorageConfigurationAsync(const Model::UpdateMediaStorageConfigurationRequest& request, const UpdateMediaStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the notification information for a stream.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">AWS
@@ -569,6 +681,7 @@ namespace KinesisVideo
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisVideoEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>;
       void init(const KinesisVideoClientConfiguration& clientConfiguration);
 
       KinesisVideoClientConfiguration m_clientConfiguration;

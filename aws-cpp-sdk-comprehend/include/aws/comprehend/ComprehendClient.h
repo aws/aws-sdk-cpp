@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Comprehend
    * documents, the topics they discuss, the predominant sentiment expressed in them,
    * the predominant language used, and more.</p>
    */
-  class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient
+  class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Comprehend
 
         /* End of legacy constructors due deprecation */
         virtual ~ComprehendClient();
-
 
         /**
          * <p>Determines the dominant language of the input text for a batch of documents.
@@ -198,7 +198,16 @@ namespace Comprehend
         /**
          * <p>Creates a new document classification request to analyze a single document in
          * real-time, using a previously created and trained custom model and an
-         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * endpoint.</p> <p>You can input plain text or you can upload a single-page input
+         * document (text, PDF, Word, or image). </p> <p>If the system detects errors while
+         * processing a page in the input document, the API response includes an entry in
+         * <code>Errors</code> that describes the errors.</p> <p>If the system detects a
+         * document-level error in your input document, the API returns an
+         * <code>InvalidRequestException</code> error response. For details about this
+         * exception, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
+         * Errors in semi-structured documents</a> in the Comprehend Developer Guide.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument">AWS
          * API Reference</a></p>
          */
@@ -642,10 +651,22 @@ namespace Comprehend
         virtual void DetectDominantLanguageAsync(const Model::DetectDominantLanguageRequest& request, const DetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Inspects text for named entities, and returns information about them. For
-         * more information, about named entities, see <a
+         * <p>Detects named entities in input text when you use the pre-trained model.
+         * Detects custom entities if you have a custom entity recognition model. </p> <p>
+         * When detecting named entities using the pre-trained model, use plain text as the
+         * input. For more information about named entities, see <a
          * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
-         * in the Comprehend Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * in the Comprehend Developer Guide.</p> <p>When you use a custom entity
+         * recognition model, you can input plain text or you can upload a single-page
+         * input document (text, PDF, Word, or image). </p> <p>If the system detects errors
+         * while processing a page in the input document, the API response includes an
+         * entry in <code>Errors</code> for each error. </p> <p>If the system detects a
+         * document-level error in your input document, the API returns an
+         * <code>InvalidRequestException</code> error response. For details about this
+         * exception, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
+         * Errors in semi-structured documents</a> in the Comprehend Developer Guide.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">AWS
          * API Reference</a></p>
          */
@@ -1519,6 +1540,7 @@ namespace Comprehend
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;
       void init(const ComprehendClientConfiguration& clientConfiguration);
 
       ComprehendClientConfiguration m_clientConfiguration;

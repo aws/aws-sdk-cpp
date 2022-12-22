@@ -26,12 +26,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API GetExecutionHistoryResult
+  class GetExecutionHistoryResult
   {
   public:
-    GetExecutionHistoryResult();
-    GetExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API GetExecutionHistoryResult();
+    AWS_SFN_API GetExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API GetExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

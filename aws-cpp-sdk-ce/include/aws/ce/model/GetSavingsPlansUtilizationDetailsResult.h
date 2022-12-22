@@ -28,12 +28,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult
+  class GetSavingsPlansUtilizationDetailsResult
   {
   public:
-    GetSavingsPlansUtilizationDetailsResult();
-    GetSavingsPlansUtilizationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSavingsPlansUtilizationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult();
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

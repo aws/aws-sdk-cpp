@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API UpdateEndpointsBatchResult
+  class UpdateEndpointsBatchResult
   {
   public:
-    UpdateEndpointsBatchResult();
-    UpdateEndpointsBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEndpointsBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API UpdateEndpointsBatchResult();
+    AWS_PINPOINT_API UpdateEndpointsBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API UpdateEndpointsBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

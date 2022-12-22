@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CompatibleVersionsMap">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API CompatibleVersionsMap
+  class CompatibleVersionsMap
   {
   public:
-    CompatibleVersionsMap();
-    CompatibleVersionsMap(Aws::Utils::Json::JsonView jsonValue);
-    CompatibleVersionsMap& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API CompatibleVersionsMap();
+    AWS_OPENSEARCHSERVICE_API CompatibleVersionsMap(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API CompatibleVersionsMap& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

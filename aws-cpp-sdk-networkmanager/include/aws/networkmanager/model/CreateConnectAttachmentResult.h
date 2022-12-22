@@ -24,12 +24,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API CreateConnectAttachmentResult
+  class CreateConnectAttachmentResult
   {
   public:
-    CreateConnectAttachmentResult();
-    CreateConnectAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConnectAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API CreateConnectAttachmentResult();
+    AWS_NETWORKMANAGER_API CreateConnectAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API CreateConnectAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

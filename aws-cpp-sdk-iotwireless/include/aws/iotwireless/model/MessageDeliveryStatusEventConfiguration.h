@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/MessageDeliveryStatusEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration
+  class MessageDeliveryStatusEventConfiguration
   {
   public:
-    MessageDeliveryStatusEventConfiguration();
-    MessageDeliveryStatusEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MessageDeliveryStatusEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration();
+    AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,38 +59,38 @@ namespace Model
 
 
     /**
-     * <p>Denotes whether the wireless device ID device registration state event topic
-     * is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessDeviceIdEventTopic() const{ return m_wirelessDeviceIdEventTopic; }
 
     /**
-     * <p>Denotes whether the wireless device ID device registration state event topic
-     * is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline bool WirelessDeviceIdEventTopicHasBeenSet() const { return m_wirelessDeviceIdEventTopicHasBeenSet; }
 
     /**
-     * <p>Denotes whether the wireless device ID device registration state event topic
-     * is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = value; }
 
     /**
-     * <p>Denotes whether the wireless device ID device registration state event topic
-     * is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = std::move(value); }
 
     /**
-     * <p>Denotes whether the wireless device ID device registration state event topic
-     * is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline MessageDeliveryStatusEventConfiguration& WithWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceIdEventTopic(value); return *this;}
 
     /**
-     * <p>Denotes whether the wireless device ID device registration state event topic
-     * is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline MessageDeliveryStatusEventConfiguration& WithWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceIdEventTopic(std::move(value)); return *this;}
 

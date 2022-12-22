@@ -27,12 +27,12 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API CreateAuthorizerResult
+  class CreateAuthorizerResult
   {
   public:
-    CreateAuthorizerResult();
-    CreateAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API CreateAuthorizerResult();
+    AWS_APIGATEWAYV2_API CreateAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API CreateAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

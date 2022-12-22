@@ -7,6 +7,7 @@
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lexv2-runtime/LexRuntimeV2ServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace LexRuntimeV2
   /**
    * <p/>
    */
-  class AWS_LEXRUNTIMEV2_API LexRuntimeV2Client : public Aws::Client::AWSJsonClient
+  class AWS_LEXRUNTIMEV2_API LexRuntimeV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace LexRuntimeV2
 
         /* End of legacy constructors due deprecation */
         virtual ~LexRuntimeV2Client();
-
 
         /**
          * <p>Removes session information for a specified bot, alias, and user ID. </p>
@@ -269,6 +269,7 @@ namespace LexRuntimeV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LexRuntimeV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeV2Client>;
       void init(const LexRuntimeV2ClientConfiguration& clientConfiguration);
 
       LexRuntimeV2ClientConfiguration m_clientConfiguration;

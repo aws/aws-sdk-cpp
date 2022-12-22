@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotSortBy
+  class SlotSortBy
   {
   public:
-    SlotSortBy();
-    SlotSortBy(Aws::Utils::Json::JsonView jsonValue);
-    SlotSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotSortBy();
+    AWS_LEXMODELSV2_API SlotSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

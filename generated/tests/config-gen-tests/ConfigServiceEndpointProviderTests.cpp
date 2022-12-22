@@ -979,6 +979,38 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 116*/
+  {"For region ap-southeast-4 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-4"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://config-fips.ap-southeast-4.api.aws",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 117*/
+  {"For region ap-southeast-4 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-4"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://config-fips.ap-southeast-4.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 118*/
+  {"For region ap-southeast-4 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-4"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://config.ap-southeast-4.api.aws",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 119*/
+  {"For region ap-southeast-4 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-4"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://config.ap-southeast-4.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 120*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -986,7 +1018,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 117*/
+  /*TEST CASE 121*/
   {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -994,7 +1026,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 118*/
+  /*TEST CASE 122*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1002,7 +1034,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 119*/
+  /*TEST CASE 123*/
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1010,7 +1042,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 120*/
+  /*TEST CASE 124*/
   {"For region us-east-2 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1018,7 +1050,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 121*/
+  /*TEST CASE 125*/
   {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1026,7 +1058,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 122*/
+  /*TEST CASE 126*/
   {"For region us-east-2 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1034,7 +1066,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 123*/
+  /*TEST CASE 127*/
   {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1042,7 +1074,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 124*/
+  /*TEST CASE 128*/
   {"For region cn-northwest-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1050,7 +1082,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 125*/
+  /*TEST CASE 129*/
   {"For region cn-northwest-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1058,7 +1090,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 126*/
+  /*TEST CASE 130*/
   {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1066,7 +1098,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 127*/
+  /*TEST CASE 131*/
   {"For region cn-northwest-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1074,13 +1106,13 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 128*/
+  /*TEST CASE 132*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
   },
-  /*TEST CASE 129*/
+  /*TEST CASE 133*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1088,13 +1120,13 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 130*/
+  /*TEST CASE 134*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   },
-  /*TEST CASE 131*/
+  /*TEST CASE 135*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1102,7 +1134,7 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 132*/
+  /*TEST CASE 136*/
   {"For custom endpoint with fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
@@ -1111,14 +1143,14 @@ static const Aws::Vector<ConfigServiceEndpointProviderEndpointTestCase> TEST_CAS
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 133*/
+  /*TEST CASE 137*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 134*/
+  /*TEST CASE 138*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", true)}, // params

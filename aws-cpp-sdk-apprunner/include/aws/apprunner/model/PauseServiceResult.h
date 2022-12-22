@@ -25,12 +25,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API PauseServiceResult
+  class PauseServiceResult
   {
   public:
-    PauseServiceResult();
-    PauseServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PauseServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API PauseServiceResult();
+    AWS_APPRUNNER_API PauseServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API PauseServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

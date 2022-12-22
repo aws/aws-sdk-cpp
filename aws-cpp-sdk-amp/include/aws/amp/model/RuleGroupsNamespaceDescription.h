@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/RuleGroupsNamespaceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceDescription
+  class RuleGroupsNamespaceDescription
   {
   public:
-    RuleGroupsNamespaceDescription();
-    RuleGroupsNamespaceDescription(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupsNamespaceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceDescription();
+    AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

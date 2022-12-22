@@ -26,52 +26,52 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API DescribeBucketsResult
+  class DescribeBucketsResult
   {
   public:
-    DescribeBucketsResult();
-    DescribeBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DescribeBucketsResult();
+    AWS_MACIE2_API DescribeBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DescribeBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline const Aws::Vector<BucketMetadata>& GetBuckets() const{ return m_buckets; }
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline void SetBuckets(const Aws::Vector<BucketMetadata>& value) { m_buckets = value; }
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline void SetBuckets(Aws::Vector<BucketMetadata>&& value) { m_buckets = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline DescribeBucketsResult& WithBuckets(const Aws::Vector<BucketMetadata>& value) { SetBuckets(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline DescribeBucketsResult& WithBuckets(Aws::Vector<BucketMetadata>&& value) { SetBuckets(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline DescribeBucketsResult& AddBuckets(const BucketMetadata& value) { m_buckets.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each bucket that meets the filter criteria
+     * <p>An array of objects, one for each bucket that matches the filter criteria
      * specified in the request.</p>
      */
     inline DescribeBucketsResult& AddBuckets(BucketMetadata&& value) { m_buckets.push_back(std::move(value)); return *this; }

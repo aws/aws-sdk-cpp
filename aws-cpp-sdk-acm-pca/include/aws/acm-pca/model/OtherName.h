@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/OtherName">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API OtherName
+  class OtherName
   {
   public:
-    OtherName();
-    OtherName(Aws::Utils::Json::JsonView jsonValue);
-    OtherName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API OtherName();
+    AWS_ACMPCA_API OtherName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API OtherName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

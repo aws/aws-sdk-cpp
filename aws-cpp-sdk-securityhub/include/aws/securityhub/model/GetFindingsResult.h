@@ -26,12 +26,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API GetFindingsResult
+  class GetFindingsResult
   {
   public:
-    GetFindingsResult();
-    GetFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API GetFindingsResult();
+    AWS_SECURITYHUB_API GetFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API GetFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

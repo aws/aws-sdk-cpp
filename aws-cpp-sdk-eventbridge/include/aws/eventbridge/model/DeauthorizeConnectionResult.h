@@ -26,12 +26,12 @@ namespace EventBridge
 {
 namespace Model
 {
-  class AWS_EVENTBRIDGE_API DeauthorizeConnectionResult
+  class DeauthorizeConnectionResult
   {
   public:
-    DeauthorizeConnectionResult();
-    DeauthorizeConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeauthorizeConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API DeauthorizeConnectionResult();
+    AWS_EVENTBRIDGE_API DeauthorizeConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EVENTBRIDGE_API DeauthorizeConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ModelPackagingDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ModelPackagingDescription
+  class ModelPackagingDescription
   {
   public:
-    ModelPackagingDescription();
-    ModelPackagingDescription(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackagingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ModelPackagingDescription();
+    AWS_LOOKOUTFORVISION_API ModelPackagingDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ModelPackagingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

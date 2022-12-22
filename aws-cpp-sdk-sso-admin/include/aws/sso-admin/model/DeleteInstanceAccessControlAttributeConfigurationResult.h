@@ -22,12 +22,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DeleteInstanceAccessControlAttributeConfigurationResult
+  class DeleteInstanceAccessControlAttributeConfigurationResult
   {
   public:
-    DeleteInstanceAccessControlAttributeConfigurationResult();
-    DeleteInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DeleteInstanceAccessControlAttributeConfigurationResult();
+    AWS_SSOADMIN_API DeleteInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DeleteInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

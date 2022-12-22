@@ -24,12 +24,12 @@ namespace Organizations
 {
 namespace Model
 {
-  class AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult
+  class DescribeOrganizationalUnitResult
   {
   public:
-    DescribeOrganizationalUnitResult();
-    DescribeOrganizationalUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult();
+    AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

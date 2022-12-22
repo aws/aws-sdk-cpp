@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API DescribeAgentResult
+  class DescribeAgentResult
   {
   public:
-    DescribeAgentResult();
-    DescribeAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeAgentResult();
+    AWS_DATASYNC_API DescribeAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API DescribeCodeCoveragesResult
+  class DescribeCodeCoveragesResult
   {
   public:
-    DescribeCodeCoveragesResult();
-    DescribeCodeCoveragesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCodeCoveragesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API DescribeCodeCoveragesResult();
+    AWS_CODEBUILD_API DescribeCodeCoveragesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API DescribeCodeCoveragesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

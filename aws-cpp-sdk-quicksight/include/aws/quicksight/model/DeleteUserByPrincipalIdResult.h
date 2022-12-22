@@ -24,12 +24,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API DeleteUserByPrincipalIdResult
+  class DeleteUserByPrincipalIdResult
   {
   public:
-    DeleteUserByPrincipalIdResult();
-    DeleteUserByPrincipalIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserByPrincipalIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API DeleteUserByPrincipalIdResult();
+    AWS_QUICKSIGHT_API DeleteUserByPrincipalIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API DeleteUserByPrincipalIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

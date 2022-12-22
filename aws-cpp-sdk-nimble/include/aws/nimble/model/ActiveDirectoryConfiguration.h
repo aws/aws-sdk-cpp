@@ -26,18 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for a Directory Service for Microsoft Active Directory
+   * studio resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ActiveDirectoryConfiguration
+  class ActiveDirectoryConfiguration
   {
   public:
-    ActiveDirectoryConfiguration();
-    ActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ActiveDirectoryConfiguration();
+    AWS_NIMBLESTUDIO_API ActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

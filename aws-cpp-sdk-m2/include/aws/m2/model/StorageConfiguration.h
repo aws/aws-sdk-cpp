@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Defines the storage configuration for an environment.</p><p><h3>See
+   * <p>Defines the storage configuration for a runtime environment.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StorageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration
+  class StorageConfiguration
   {
   public:
-    StorageConfiguration();
-    StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration();
+    AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

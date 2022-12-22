@@ -29,12 +29,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API GetLaunchConfigurationResult
+  class GetLaunchConfigurationResult
   {
   public:
-    GetLaunchConfigurationResult();
-    GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API GetLaunchConfigurationResult();
+    AWS_MGN_API GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API GetLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -132,6 +132,22 @@ namespace Model
 
 
     /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline bool GetEnableMapAutoTagging() const{ return m_enableMapAutoTagging; }
+
+    /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline void SetEnableMapAutoTagging(bool value) { m_enableMapAutoTagging = value; }
+
+    /**
+     * <p>Enable map auto tagging.</p>
+     */
+    inline GetLaunchConfigurationResult& WithEnableMapAutoTagging(bool value) { SetEnableMapAutoTagging(value); return *this;}
+
+
+    /**
      * <p>Launch disposition for launch configuration.</p>
      */
     inline const LaunchDisposition& GetLaunchDisposition() const{ return m_launchDisposition; }
@@ -181,6 +197,42 @@ namespace Model
      * <p>Launch configuration OS licensing.</p>
      */
     inline GetLaunchConfigurationResult& WithLicensing(Licensing&& value) { SetLicensing(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline const Aws::String& GetMapAutoTaggingMpeID() const{ return m_mapAutoTaggingMpeID; }
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline void SetMapAutoTaggingMpeID(const Aws::String& value) { m_mapAutoTaggingMpeID = value; }
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline void SetMapAutoTaggingMpeID(Aws::String&& value) { m_mapAutoTaggingMpeID = std::move(value); }
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline void SetMapAutoTaggingMpeID(const char* value) { m_mapAutoTaggingMpeID.assign(value); }
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline GetLaunchConfigurationResult& WithMapAutoTaggingMpeID(const Aws::String& value) { SetMapAutoTaggingMpeID(value); return *this;}
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline GetLaunchConfigurationResult& WithMapAutoTaggingMpeID(Aws::String&& value) { SetMapAutoTaggingMpeID(std::move(value)); return *this;}
+
+    /**
+     * <p>Map auto tagging MPE ID.</p>
+     */
+    inline GetLaunchConfigurationResult& WithMapAutoTaggingMpeID(const char* value) { SetMapAutoTaggingMpeID(value); return *this;}
 
 
     /**
@@ -306,9 +358,13 @@ namespace Model
 
     Aws::String m_ec2LaunchTemplateID;
 
+    bool m_enableMapAutoTagging;
+
     LaunchDisposition m_launchDisposition;
 
     Licensing m_licensing;
+
+    Aws::String m_mapAutoTaggingMpeID;
 
     Aws::String m_name;
 

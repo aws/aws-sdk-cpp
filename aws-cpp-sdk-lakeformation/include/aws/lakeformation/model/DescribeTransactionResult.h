@@ -24,12 +24,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API DescribeTransactionResult
+  class DescribeTransactionResult
   {
   public:
-    DescribeTransactionResult();
-    DescribeTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API DescribeTransactionResult();
+    AWS_LAKEFORMATION_API DescribeTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API DescribeTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

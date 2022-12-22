@@ -26,12 +26,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API SearchProfilesResult
+  class SearchProfilesResult
   {
   public:
-    SearchProfilesResult();
-    SearchProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API SearchProfilesResult();
+    AWS_CUSTOMERPROFILES_API SearchProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API SearchProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientsRequest : public CognitoIdentityProviderRequest
+  class ListUserPoolClientsRequest : public CognitoIdentityProviderRequest
   {
   public:
-    ListUserPoolClientsRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListUserPoolClients"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/Positioning.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/ApplicationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -28,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFPorts">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API UpdateFPorts
+  class UpdateFPorts
   {
   public:
-    UpdateFPorts();
-    UpdateFPorts(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFPorts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API UpdateFPorts();
+    AWS_IOTWIRELESS_API UpdateFPorts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API UpdateFPorts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,10 +69,62 @@ namespace Model
      */
     inline UpdateFPorts& WithPositioning(Positioning&& value) { SetPositioning(std::move(value)); return *this;}
 
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline const Aws::Vector<ApplicationConfig>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline void SetApplications(const Aws::Vector<ApplicationConfig>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline void SetApplications(Aws::Vector<ApplicationConfig>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline UpdateFPorts& WithApplications(const Aws::Vector<ApplicationConfig>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline UpdateFPorts& WithApplications(Aws::Vector<ApplicationConfig>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline UpdateFPorts& AddApplications(const ApplicationConfig& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>LoRaWAN application, which can be used for geolocation by activating
+     * positioning.</p>
+     */
+    inline UpdateFPorts& AddApplications(ApplicationConfig&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+
   private:
 
     Positioning m_positioning;
     bool m_positioningHasBeenSet = false;
+
+    Aws::Vector<ApplicationConfig> m_applications;
+    bool m_applicationsHasBeenSet = false;
   };
 
 } // namespace Model

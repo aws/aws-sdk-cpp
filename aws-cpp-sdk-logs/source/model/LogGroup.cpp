@@ -29,7 +29,9 @@ LogGroup::LogGroup() :
     m_arnHasBeenSet(false),
     m_storedBytes(0),
     m_storedBytesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
+    m_dataProtectionStatusHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ LogGroup::LogGroup(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_storedBytes(0),
     m_storedBytesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
+    m_dataProtectionStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +104,13 @@ LogGroup& LogGroup::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataProtectionStatus"))
+  {
+    m_dataProtectionStatus = DataProtectionStatusMapper::GetDataProtectionStatusForName(jsonValue.GetString("dataProtectionStatus"));
+
+    m_dataProtectionStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +158,11 @@ JsonValue LogGroup::Jsonize() const
   {
    payload.WithString("kmsKeyId", m_kmsKeyId);
 
+  }
+
+  if(m_dataProtectionStatusHasBeenSet)
+  {
+   payload.WithString("dataProtectionStatus", DataProtectionStatusMapper::GetNameForDataProtectionStatus(m_dataProtectionStatus));
   }
 
   return payload;

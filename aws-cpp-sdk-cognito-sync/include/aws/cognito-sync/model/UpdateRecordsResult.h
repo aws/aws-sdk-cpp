@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecordsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API UpdateRecordsResult
+  class UpdateRecordsResult
   {
   public:
-    UpdateRecordsResult();
-    UpdateRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API UpdateRecordsResult();
+    AWS_COGNITOSYNC_API UpdateRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API UpdateRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

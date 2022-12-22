@@ -26,12 +26,12 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult
+  class SearchPlaceIndexForSuggestionsResult
   {
   public:
-    SearchPlaceIndexForSuggestionsResult();
-    SearchPlaceIndexForSuggestionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchPlaceIndexForSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult();
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

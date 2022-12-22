@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrlResult">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API GetArtifactUrlResult
+  class GetArtifactUrlResult
   {
   public:
-    GetArtifactUrlResult();
-    GetArtifactUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetArtifactUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API GetArtifactUrlResult();
+    AWS_AMPLIFY_API GetArtifactUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API GetArtifactUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

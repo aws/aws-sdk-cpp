@@ -25,12 +25,12 @@ namespace IoTJobsDataPlane
 {
 namespace Model
 {
-  class AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult
+  class UpdateJobExecutionResult
   {
   public:
-    UpdateJobExecutionResult();
-    UpdateJobExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateJobExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult();
+    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

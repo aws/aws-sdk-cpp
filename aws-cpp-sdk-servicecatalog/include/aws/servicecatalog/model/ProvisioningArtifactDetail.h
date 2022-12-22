@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisioningArtifactDetail
+  class ProvisioningArtifactDetail
   {
   public:
-    ProvisioningArtifactDetail();
-    ProvisioningArtifactDetail(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningArtifactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisioningArtifactDetail();
+    AWS_SERVICECATALOG_API ProvisioningArtifactDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisioningArtifactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -307,6 +307,119 @@ namespace Model
      */
     inline ProvisioningArtifactDetail& WithGuidance(ProvisioningArtifactGuidance&& value) { SetGuidance(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline const Aws::String& GetSourceRevision() const{ return m_sourceRevision; }
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline bool SourceRevisionHasBeenSet() const { return m_sourceRevisionHasBeenSet; }
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline void SetSourceRevision(const Aws::String& value) { m_sourceRevisionHasBeenSet = true; m_sourceRevision = value; }
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline void SetSourceRevision(Aws::String&& value) { m_sourceRevisionHasBeenSet = true; m_sourceRevision = std::move(value); }
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline void SetSourceRevision(const char* value) { m_sourceRevisionHasBeenSet = true; m_sourceRevision.assign(value); }
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline ProvisioningArtifactDetail& WithSourceRevision(const Aws::String& value) { SetSourceRevision(value); return *this;}
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline ProvisioningArtifactDetail& WithSourceRevision(Aws::String&& value) { SetSourceRevision(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the revision of the external artifact that was used to
+     * automatically sync the Service Catalog product and create the provisioning
+     * artifact. Service Catalog includes this response parameter as a high level field
+     * to the existing <code>ProvisioningArtifactDetail</code> type, which is returned
+     * as part of the response for <code>CreateProduct</code>,
+     * <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>,
+     * <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for
+     * Repo-Synced products. </p>
+     */
+    inline ProvisioningArtifactDetail& WithSourceRevision(const char* value) { SetSourceRevision(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -329,6 +442,9 @@ namespace Model
 
     ProvisioningArtifactGuidance m_guidance;
     bool m_guidanceHasBeenSet = false;
+
+    Aws::String m_sourceRevision;
+    bool m_sourceRevisionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,12 +24,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API CreateStreamResult
+  class CreateStreamResult
   {
   public:
-    CreateStreamResult();
-    CreateStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateStreamResult();
+    AWS_IOT_API CreateStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

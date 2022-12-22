@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BackupDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BackupDescription
+  class BackupDescription
   {
   public:
-    BackupDescription();
-    BackupDescription(Aws::Utils::Json::JsonView jsonValue);
-    BackupDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API BackupDescription();
+    AWS_DYNAMODB_API BackupDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API BackupDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

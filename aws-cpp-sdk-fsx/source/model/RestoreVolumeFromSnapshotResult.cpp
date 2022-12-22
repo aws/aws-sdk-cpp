@@ -42,6 +42,15 @@ RestoreVolumeFromSnapshotResult& RestoreVolumeFromSnapshotResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("AdministrativeActions"))
+  {
+    Aws::Utils::Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
+    for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+    {
+      m_administrativeActions.push_back(administrativeActionsJsonList[administrativeActionsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

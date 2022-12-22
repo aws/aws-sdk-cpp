@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentitiesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ListIdentitiesResult
+  class ListIdentitiesResult
   {
   public:
-    ListIdentitiesResult();
-    ListIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API ListIdentitiesResult();
+    AWS_SES_API ListIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API ListIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

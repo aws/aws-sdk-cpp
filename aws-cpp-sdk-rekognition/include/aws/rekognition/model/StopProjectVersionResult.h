@@ -24,12 +24,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API StopProjectVersionResult
+  class StopProjectVersionResult
   {
   public:
-    StopProjectVersionResult();
-    StopProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API StopProjectVersionResult();
+    AWS_REKOGNITION_API StopProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API StopProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

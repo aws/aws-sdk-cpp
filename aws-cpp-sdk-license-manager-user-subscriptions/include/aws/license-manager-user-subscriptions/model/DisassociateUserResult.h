@@ -24,12 +24,12 @@ namespace LicenseManagerUserSubscriptions
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DisassociateUserResult
+  class DisassociateUserResult
   {
   public:
-    DisassociateUserResult();
-    DisassociateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DisassociateUserResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DisassociateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DisassociateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

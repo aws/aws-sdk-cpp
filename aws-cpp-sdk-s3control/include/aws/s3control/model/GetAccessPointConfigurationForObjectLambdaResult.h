@@ -24,12 +24,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API GetAccessPointConfigurationForObjectLambdaResult
+  class GetAccessPointConfigurationForObjectLambdaResult
   {
   public:
-    GetAccessPointConfigurationForObjectLambdaResult();
-    GetAccessPointConfigurationForObjectLambdaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccessPointConfigurationForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetAccessPointConfigurationForObjectLambdaResult();
+    AWS_S3CONTROL_API GetAccessPointConfigurationForObjectLambdaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetAccessPointConfigurationForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

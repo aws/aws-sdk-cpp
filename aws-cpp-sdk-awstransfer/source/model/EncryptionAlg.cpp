@@ -23,6 +23,7 @@ namespace Aws
         static const int AES128_CBC_HASH = HashingUtils::HashString("AES128_CBC");
         static const int AES192_CBC_HASH = HashingUtils::HashString("AES192_CBC");
         static const int AES256_CBC_HASH = HashingUtils::HashString("AES256_CBC");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         EncryptionAlg GetEncryptionAlgForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == AES256_CBC_HASH)
           {
             return EncryptionAlg::AES256_CBC;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return EncryptionAlg::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "AES192_CBC";
           case EncryptionAlg::AES256_CBC:
             return "AES256_CBC";
+          case EncryptionAlg::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

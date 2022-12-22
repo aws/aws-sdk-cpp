@@ -7,6 +7,7 @@
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace ServiceQuotas
    * <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
    * Quotas User Guide</a>.</p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient
+  class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace ServiceQuotas
 
         /* End of legacy constructors due deprecation */
         virtual ~ServiceQuotasClient();
-
 
         /**
          * <p>Associates your quota request template with your organization. When a new
@@ -430,6 +430,7 @@ namespace ServiceQuotas
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>;
       void init(const ServiceQuotasClientConfiguration& clientConfiguration);
 
       ServiceQuotasClientConfiguration m_clientConfiguration;

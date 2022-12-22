@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LocalGatewayRouteTable">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LocalGatewayRouteTable
+  class LocalGatewayRouteTable
   {
   public:
-    LocalGatewayRouteTable();
-    LocalGatewayRouteTable(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LocalGatewayRouteTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayRouteTable();
+    AWS_EC2_API LocalGatewayRouteTable(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayRouteTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -369,22 +369,34 @@ namespace Model
     inline LocalGatewayRouteTable& WithMode(LocalGatewayRouteTableMode&& value) { SetMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline const StateReason& GetStateReason() const{ return m_stateReason; }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline void SetStateReason(const StateReason& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline void SetStateReason(StateReason&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline LocalGatewayRouteTable& WithStateReason(const StateReason& value) { SetStateReason(value); return *this;}
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline LocalGatewayRouteTable& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
 
   private:

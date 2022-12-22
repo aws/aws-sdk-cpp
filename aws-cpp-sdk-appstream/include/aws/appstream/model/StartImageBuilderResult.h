@@ -24,12 +24,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API StartImageBuilderResult
+  class StartImageBuilderResult
   {
   public:
-    StartImageBuilderResult();
-    StartImageBuilderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartImageBuilderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API StartImageBuilderResult();
+    AWS_APPSTREAM_API StartImageBuilderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API StartImageBuilderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

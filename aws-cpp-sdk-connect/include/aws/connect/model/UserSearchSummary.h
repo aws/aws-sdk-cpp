@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserSearchSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserSearchSummary
+  class UserSearchSummary
   {
   public:
-    UserSearchSummary();
-    UserSearchSummary(Aws::Utils::Json::JsonView jsonValue);
-    UserSearchSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserSearchSummary();
+    AWS_CONNECT_API UserSearchSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserSearchSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

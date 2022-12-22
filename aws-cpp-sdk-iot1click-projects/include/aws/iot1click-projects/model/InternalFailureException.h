@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/InternalFailureException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT1CLICKPROJECTS_API InternalFailureException
+  class InternalFailureException
   {
   public:
-    InternalFailureException();
-    InternalFailureException(Aws::Utils::Json::JsonView jsonValue);
-    InternalFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKPROJECTS_API InternalFailureException();
+    AWS_IOT1CLICKPROJECTS_API InternalFailureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API InternalFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

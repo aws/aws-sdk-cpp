@@ -33,12 +33,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API GetPlaybackConfigurationResult
+  class GetPlaybackConfigurationResult
   {
   public:
-    GetPlaybackConfigurationResult();
-    GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPlaybackConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API GetPlaybackConfigurationResult();
+    AWS_MEDIATAILOR_API GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API GetPlaybackConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

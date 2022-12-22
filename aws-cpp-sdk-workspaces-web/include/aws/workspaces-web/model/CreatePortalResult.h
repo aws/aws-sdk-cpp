@@ -24,12 +24,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API CreatePortalResult
+  class CreatePortalResult
   {
   public:
-    CreatePortalResult();
-    CreatePortalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API CreatePortalResult();
+    AWS_WORKSPACESWEB_API CreatePortalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API CreatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

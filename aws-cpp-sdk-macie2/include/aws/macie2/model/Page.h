@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Page">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API Page
+  class Page
   {
   public:
-    Page();
-    Page(Aws::Utils::Json::JsonView jsonValue);
-    Page& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Page();
+    AWS_MACIE2_API Page(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Page& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

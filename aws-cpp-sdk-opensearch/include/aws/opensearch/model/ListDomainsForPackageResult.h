@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainsForPackageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ListDomainsForPackageResult
+  class ListDomainsForPackageResult
   {
   public:
-    ListDomainsForPackageResult();
-    ListDomainsForPackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainsForPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListDomainsForPackageResult();
+    AWS_OPENSEARCHSERVICE_API ListDomainsForPackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListDomainsForPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

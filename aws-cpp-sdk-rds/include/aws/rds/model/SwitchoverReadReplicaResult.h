@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API SwitchoverReadReplicaResult
+  class SwitchoverReadReplicaResult
   {
   public:
-    SwitchoverReadReplicaResult();
-    SwitchoverReadReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SwitchoverReadReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API SwitchoverReadReplicaResult();
+    AWS_RDS_API SwitchoverReadReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API SwitchoverReadReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

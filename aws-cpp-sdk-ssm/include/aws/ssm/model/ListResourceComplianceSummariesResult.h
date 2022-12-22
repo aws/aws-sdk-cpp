@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API ListResourceComplianceSummariesResult
+  class ListResourceComplianceSummariesResult
   {
   public:
-    ListResourceComplianceSummariesResult();
-    ListResourceComplianceSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceComplianceSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API ListResourceComplianceSummariesResult();
+    AWS_SSM_API ListResourceComplianceSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API ListResourceComplianceSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

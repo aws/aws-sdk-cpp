@@ -25,12 +25,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API RemoveLFTagsFromResourceResult
+  class RemoveLFTagsFromResourceResult
   {
   public:
-    RemoveLFTagsFromResourceResult();
-    RemoveLFTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveLFTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API RemoveLFTagsFromResourceResult();
+    AWS_LAKEFORMATION_API RemoveLFTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API RemoveLFTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

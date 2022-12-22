@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallInternetTrafficNotInspectedViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallInternetTrafficNotInspectedViolation
+  class NetworkFirewallInternetTrafficNotInspectedViolation
   {
   public:
-    NetworkFirewallInternetTrafficNotInspectedViolation();
-    NetworkFirewallInternetTrafficNotInspectedViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallInternetTrafficNotInspectedViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallInternetTrafficNotInspectedViolation();
+    AWS_FMS_API NetworkFirewallInternetTrafficNotInspectedViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallInternetTrafficNotInspectedViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

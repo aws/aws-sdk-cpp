@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetEbsEncryptionByDefaultResponse
+  class GetEbsEncryptionByDefaultResponse
   {
   public:
-    GetEbsEncryptionByDefaultResponse();
-    GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetEbsEncryptionByDefaultResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetEbsEncryptionByDefaultResponse();
+    AWS_EC2_API GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetEbsEncryptionByDefaultResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

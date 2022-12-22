@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatchResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API ChangeMessageVisibilityBatchResult
+  class ChangeMessageVisibilityBatchResult
   {
   public:
-    ChangeMessageVisibilityBatchResult();
-    ChangeMessageVisibilityBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ChangeMessageVisibilityBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ChangeMessageVisibilityBatchResult();
+    AWS_SQS_API ChangeMessageVisibilityBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ChangeMessageVisibilityBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

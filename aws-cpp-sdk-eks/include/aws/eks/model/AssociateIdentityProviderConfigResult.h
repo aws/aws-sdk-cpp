@@ -26,12 +26,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API AssociateIdentityProviderConfigResult
+  class AssociateIdentityProviderConfigResult
   {
   public:
-    AssociateIdentityProviderConfigResult();
-    AssociateIdentityProviderConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateIdentityProviderConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API AssociateIdentityProviderConfigResult();
+    AWS_EKS_API AssociateIdentityProviderConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API AssociateIdentityProviderConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

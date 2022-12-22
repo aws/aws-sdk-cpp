@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DatasetOrgAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API DatasetOrgAttributes
+  class DatasetOrgAttributes
   {
   public:
-    DatasetOrgAttributes();
-    DatasetOrgAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DatasetOrgAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API DatasetOrgAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API DatasetOrgAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API DatasetOrgAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

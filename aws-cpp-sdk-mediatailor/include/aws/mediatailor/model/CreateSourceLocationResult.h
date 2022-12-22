@@ -31,12 +31,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API CreateSourceLocationResult
+  class CreateSourceLocationResult
   {
   public:
-    CreateSourceLocationResult();
-    CreateSourceLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSourceLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreateSourceLocationResult();
+    AWS_MEDIATAILOR_API CreateSourceLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreateSourceLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

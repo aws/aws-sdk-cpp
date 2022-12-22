@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeValidDBInstanceModificationsResult
+  class DescribeValidDBInstanceModificationsResult
   {
   public:
-    DescribeValidDBInstanceModificationsResult();
-    DescribeValidDBInstanceModificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeValidDBInstanceModificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeValidDBInstanceModificationsResult();
+    AWS_RDS_API DescribeValidDBInstanceModificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeValidDBInstanceModificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

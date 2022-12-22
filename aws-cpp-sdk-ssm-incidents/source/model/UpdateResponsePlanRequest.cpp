@@ -26,7 +26,8 @@ UpdateResponsePlanRequest::UpdateResponsePlanRequest() :
     m_incidentTemplateNotificationTargetsHasBeenSet(false),
     m_incidentTemplateSummaryHasBeenSet(false),
     m_incidentTemplateTagsHasBeenSet(false),
-    m_incidentTemplateTitleHasBeenSet(false)
+    m_incidentTemplateTitleHasBeenSet(false),
+    m_integrationsHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,17 @@ Aws::String UpdateResponsePlanRequest::SerializePayload() const
   if(m_incidentTemplateTitleHasBeenSet)
   {
    payload.WithString("incidentTemplateTitle", m_incidentTemplateTitle);
+
+  }
+
+  if(m_integrationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> integrationsJsonList(m_integrations.size());
+   for(unsigned integrationsIndex = 0; integrationsIndex < integrationsJsonList.GetLength(); ++integrationsIndex)
+   {
+     integrationsJsonList[integrationsIndex].AsObject(m_integrations[integrationsIndex].Jsonize());
+   }
+   payload.WithArray("integrations", std::move(integrationsJsonList));
 
   }
 

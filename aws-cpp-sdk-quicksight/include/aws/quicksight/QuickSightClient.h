@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace QuickSight
    * your organization. This API reference contains documentation for a programming
    * interface that you can use to manage Amazon QuickSight. </p>
    */
-  class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient
+  class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace QuickSight
 
         /* End of legacy constructors due deprecation */
         virtual ~QuickSightClient();
-
 
         /**
          * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>  
@@ -505,6 +505,30 @@ namespace QuickSight
         virtual void DeleteAccountCustomizationAsync(const Model::DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon
+         * QuickSight account. This operation will result in an error message if you have
+         * configured your account termination protection settings to <code>True</code>. To
+         * change this setting and delete your account, call the
+         * <code>UpdateAccountSettings</code> API and set the value of the
+         * <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then
+         * make another call to the <code>DeleteAccountSubscription</code>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountSubscriptionOutcome DeleteAccountSubscription(const Model::DeleteAccountSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccountSubscriptionOutcomeCallable DeleteAccountSubscriptionCallable(const Model::DeleteAccountSubscriptionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteAccountSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccountSubscriptionAsync(const Model::DeleteAccountSubscriptionRequest& request, const DeleteAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
          * recovery window during which you can restore the analysis. If you don't specify
          * a recovery window value, the operation defaults to 30 days. Amazon QuickSight
@@ -879,7 +903,7 @@ namespace QuickSight
         virtual void DescribeAccountSettingsAsync(const Model::DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use the DescribeAccountSubscription operation to receive a description of a
+         * <p>Use the DescribeAccountSubscription operation to receive a description of an
          * Amazon QuickSight account's subscription. A successful API call returns an
          * <code>AccountInfo</code> object that includes an account's name, subscription
          * status, authentication type, edition, and notification email
@@ -918,6 +942,29 @@ namespace QuickSight
         virtual void DescribeAnalysisAsync(const Model::DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a detailed description of the definition of an analysis.</p> 
+         * <p>If you do not need to know details about the content of an Analysis, for
+         * instance if you are trying to check the status of a recently created or updated
+         * Analysis, use the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
+         * <code>DescribeAnalysis</code> </a> instead. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAnalysisDefinitionOutcome DescribeAnalysisDefinition(const Model::DescribeAnalysisDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAnalysisDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAnalysisDefinitionOutcomeCallable DescribeAnalysisDefinitionCallable(const Model::DescribeAnalysisDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAnalysisDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAnalysisDefinitionAsync(const Model::DescribeAnalysisDefinitionRequest& request, const DescribeAnalysisDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides the read and write permissions for an analysis.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions">AWS
@@ -951,6 +998,29 @@ namespace QuickSight
          * An Async wrapper for DescribeDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a detailed description of the definition of a dashboard.</p> 
+         * <p>If you do not need to know details about the content of a dashboard, for
+         * instance if you are trying to check the status of a recently created or updated
+         * dashboard, use the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
+         * <code>DescribeDashboard</code> </a> instead. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDashboardDefinitionOutcome DescribeDashboardDefinition(const Model::DescribeDashboardDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDashboardDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDashboardDefinitionOutcomeCallable DescribeDashboardDefinitionCallable(const Model::DescribeDashboardDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeDashboardDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDashboardDefinitionAsync(const Model::DescribeDashboardDefinitionRequest& request, const DescribeDashboardDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes read and write permissions for a dashboard.</p><p><h3>See
@@ -1235,6 +1305,29 @@ namespace QuickSight
          * An Async wrapper for DescribeTemplateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTemplateAliasAsync(const Model::DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a detailed description of the definition of a template.</p> 
+         * <p>If you do not need to know details about the content of a template, for
+         * instance if you are trying to check the status of a recently created or updated
+         * template, use the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
+         * <code>DescribeTemplate</code> </a> instead. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTemplateDefinitionOutcome DescribeTemplateDefinition(const Model::DescribeTemplateDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTemplateDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTemplateDefinitionOutcomeCallable DescribeTemplateDefinitionCallable(const Model::DescribeTemplateDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTemplateDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTemplateDefinitionAsync(const Model::DescribeTemplateDefinitionRequest& request, const DescribeTemplateDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes read and write permissions on a template.</p><p><h3>See Also:</h3> 
@@ -1934,6 +2027,42 @@ namespace QuickSight
         virtual void SearchDashboardsAsync(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use the <code>SearchDataSets</code> operation to search for datasets that
+         * belong to an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchDataSetsOutcome SearchDataSets(const Model::SearchDataSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchDataSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchDataSetsOutcomeCallable SearchDataSetsCallable(const Model::SearchDataSetsRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchDataSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchDataSetsAsync(const Model::SearchDataSetsRequest& request, const SearchDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use the <code>SearchDataSources</code> operation to search for data sources
+         * that belong to an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchDataSourcesOutcome SearchDataSources(const Model::SearchDataSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchDataSourcesOutcomeCallable SearchDataSourcesCallable(const Model::SearchDataSourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchDataSourcesAsync(const Model::SearchDataSourcesRequest& request, const SearchDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Searches the subfolders in a folder.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">AWS
          * API Reference</a></p>
@@ -2489,6 +2618,7 @@ namespace QuickSight
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<QuickSightEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>;
       void init(const QuickSightClientConfiguration& clientConfiguration);
 
       QuickSightClientConfiguration m_clientConfiguration;

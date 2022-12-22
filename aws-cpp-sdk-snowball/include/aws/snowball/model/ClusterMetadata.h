@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API ClusterMetadata
+  class ClusterMetadata
   {
   public:
-    ClusterMetadata();
-    ClusterMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ClusterMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API ClusterMetadata();
+    AWS_SNOWBALL_API ClusterMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API ClusterMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensReviewImprovementsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ListLensReviewImprovementsResult
+  class ListLensReviewImprovementsResult
   {
   public:
-    ListLensReviewImprovementsResult();
-    ListLensReviewImprovementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLensReviewImprovementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListLensReviewImprovementsResult();
+    AWS_WELLARCHITECTED_API ListLensReviewImprovementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListLensReviewImprovementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

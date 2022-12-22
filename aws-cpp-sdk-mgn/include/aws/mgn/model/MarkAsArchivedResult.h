@@ -30,12 +30,48 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API MarkAsArchivedResult
+  class MarkAsArchivedResult
   {
   public:
-    MarkAsArchivedResult();
-    MarkAsArchivedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MarkAsArchivedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API MarkAsArchivedResult();
+    AWS_MGN_API MarkAsArchivedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API MarkAsArchivedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const Aws::String& value) { m_applicationID = value; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(Aws::String&& value) { m_applicationID = std::move(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const char* value) { m_applicationID.assign(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline MarkAsArchivedResult& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline MarkAsArchivedResult& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline MarkAsArchivedResult& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
 
 
     /**
@@ -353,6 +389,8 @@ namespace Model
     inline MarkAsArchivedResult& WithVcenterClientID(const char* value) { SetVcenterClientID(value); return *this;}
 
   private:
+
+    Aws::String m_applicationID;
 
     Aws::String m_arn;
 

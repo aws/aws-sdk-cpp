@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Provides information about the block public access settings for an S3 bucket.
-   * These settings can apply to a bucket at the account level or bucket level. For
+   * These settings can apply to a bucket at the account or bucket level. For
    * detailed information about each setting, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking
    * public access to your Amazon S3 storage</a> in the <i>Amazon Simple Storage
@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BlockPublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BlockPublicAccess
+  class BlockPublicAccess
   {
   public:
-    BlockPublicAccess();
-    BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BlockPublicAccess();
+    AWS_MACIE2_API BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

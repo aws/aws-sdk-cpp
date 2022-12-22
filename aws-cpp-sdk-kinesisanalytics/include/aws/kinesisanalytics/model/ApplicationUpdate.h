@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ApplicationUpdate
+  class ApplicationUpdate
   {
   public:
-    ApplicationUpdate();
-    ApplicationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ApplicationUpdate();
+    AWS_KINESISANALYTICS_API ApplicationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ApplicationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
