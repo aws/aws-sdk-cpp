@@ -399,7 +399,7 @@ namespace Aws
 
         void InitEC2MetadataClient()
         {
-            if (s_ec2metadataClient)
+            if (s_ec2metadataClient || (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) == "true"))
             {
                 return;
             }
