@@ -458,56 +458,92 @@ namespace Model
 
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedMessagingContentTypes() const{ return m_supportedMessagingContentTypes; }
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline bool SupportedMessagingContentTypesHasBeenSet() const { return m_supportedMessagingContentTypesHasBeenSet; }
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline void SetSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = value; }
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline void SetSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = std::move(value); }
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline StartChatContactRequest& WithSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { SetSupportedMessagingContentTypes(value); return *this;}
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline StartChatContactRequest& WithSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { SetSupportedMessagingContentTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(const Aws::String& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(Aws::String&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The supported chat message content types. Content types can be text/plain or
-     * both text/plain and text/markdown.</p>
+     * <p>The supported chat message content types. Content types must always contain
+     * <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain
+     * <code>text/plain</code>: <code>[text/plain, text/markdown,
+     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json]</code>.</p>
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(const char* value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
 

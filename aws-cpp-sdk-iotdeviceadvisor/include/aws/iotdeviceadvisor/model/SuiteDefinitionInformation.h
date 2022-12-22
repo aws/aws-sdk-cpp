@@ -186,53 +186,53 @@ namespace Model
 
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline bool GetIsLongDurationTest() const{ return m_isLongDurationTest; }
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline bool IsLongDurationTestHasBeenSet() const { return m_isLongDurationTestHasBeenSet; }
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline void SetIsLongDurationTest(bool value) { m_isLongDurationTestHasBeenSet = true; m_isLongDurationTest = value; }
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline SuiteDefinitionInformation& WithIsLongDurationTest(bool value) { SetIsLongDurationTest(value); return *this;}
 
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Gets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Gets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Gets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Gets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Gets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline SuiteDefinitionInformation& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Gets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline SuiteDefinitionInformation& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 

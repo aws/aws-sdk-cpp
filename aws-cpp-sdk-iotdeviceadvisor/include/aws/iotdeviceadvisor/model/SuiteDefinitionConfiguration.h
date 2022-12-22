@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Gets Suite Definition Configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets the suite definition configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteDefinitionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline const Aws::String& GetSuiteDefinitionName() const{ return m_suiteDefinitionName; }
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline bool SuiteDefinitionNameHasBeenSet() const { return m_suiteDefinitionNameHasBeenSet; }
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline void SetSuiteDefinitionName(const Aws::String& value) { m_suiteDefinitionNameHasBeenSet = true; m_suiteDefinitionName = value; }
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline void SetSuiteDefinitionName(Aws::String&& value) { m_suiteDefinitionNameHasBeenSet = true; m_suiteDefinitionName = std::move(value); }
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline void SetSuiteDefinitionName(const char* value) { m_suiteDefinitionNameHasBeenSet = true; m_suiteDefinitionName.assign(value); }
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithSuiteDefinitionName(const Aws::String& value) { SetSuiteDefinitionName(value); return *this;}
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithSuiteDefinitionName(Aws::String&& value) { SetSuiteDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>Gets Suite Definition Configuration name.</p>
+     * <p>Gets the suite definition name. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithSuiteDefinitionName(const char* value) { SetSuiteDefinitionName(value); return *this;}
 
@@ -144,135 +144,135 @@ namespace Model
 
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline bool GetIsLongDurationTest() const{ return m_isLongDurationTest; }
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline bool IsLongDurationTestHasBeenSet() const { return m_isLongDurationTestHasBeenSet; }
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline void SetIsLongDurationTest(bool value) { m_isLongDurationTestHasBeenSet = true; m_isLongDurationTest = value; }
 
     /**
-     * <p> Verifies if the test suite is a long duration test. </p>
+     * <p>Verifies if the test suite is a long duration test.</p>
      */
     inline SuiteDefinitionConfiguration& WithIsLongDurationTest(bool value) { SetIsLongDurationTest(value); return *this;}
 
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline const Aws::String& GetRootGroup() const{ return m_rootGroup; }
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline bool RootGroupHasBeenSet() const { return m_rootGroupHasBeenSet; }
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline void SetRootGroup(const Aws::String& value) { m_rootGroupHasBeenSet = true; m_rootGroup = value; }
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline void SetRootGroup(Aws::String&& value) { m_rootGroupHasBeenSet = true; m_rootGroup = std::move(value); }
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline void SetRootGroup(const char* value) { m_rootGroupHasBeenSet = true; m_rootGroup.assign(value); }
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithRootGroup(const Aws::String& value) { SetRootGroup(value); return *this;}
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithRootGroup(Aws::String&& value) { SetRootGroup(std::move(value)); return *this;}
 
     /**
-     * <p>Gets test suite root group.</p>
+     * <p>Gets the test suite root group. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithRootGroup(const char* value) { SetRootGroup(value); return *this;}
 
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline const Aws::String& GetDevicePermissionRoleArn() const{ return m_devicePermissionRoleArn; }
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline bool DevicePermissionRoleArnHasBeenSet() const { return m_devicePermissionRoleArnHasBeenSet; }
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline void SetDevicePermissionRoleArn(const Aws::String& value) { m_devicePermissionRoleArnHasBeenSet = true; m_devicePermissionRoleArn = value; }
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline void SetDevicePermissionRoleArn(Aws::String&& value) { m_devicePermissionRoleArnHasBeenSet = true; m_devicePermissionRoleArn = std::move(value); }
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline void SetDevicePermissionRoleArn(const char* value) { m_devicePermissionRoleArnHasBeenSet = true; m_devicePermissionRoleArn.assign(value); }
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(const Aws::String& value) { SetDevicePermissionRoleArn(value); return *this;}
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(Aws::String&& value) { SetDevicePermissionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Gets the device permission ARN.</p>
+     * <p>Gets the device permission ARN. This is a required parameter.</p>
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(const char* value) { SetDevicePermissionRoleArn(value); return *this;}
 
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Sets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Sets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Sets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Sets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Sets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline SuiteDefinitionConfiguration& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     * <p>Sets the MQTT protocol that is configured in the suite definition.</p>
      */
     inline SuiteDefinitionConfiguration& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 
