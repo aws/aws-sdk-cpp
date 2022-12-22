@@ -166,6 +166,7 @@
 #include <aws/connect/model/UpdateHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateInstanceAttributeRequest.h>
 #include <aws/connect/model/UpdateInstanceStorageConfigRequest.h>
+#include <aws/connect/model/UpdateParticipantRoleConfigRequest.h>
 #include <aws/connect/model/UpdatePhoneNumberRequest.h>
 #include <aws/connect/model/UpdateQueueHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateQueueMaxContactsRequest.h>
@@ -5101,6 +5102,43 @@ void ConnectClient::UpdateInstanceStorageConfigAsync(const UpdateInstanceStorage
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateInstanceStorageConfig(request), context);
+    } );
+}
+
+UpdateParticipantRoleConfigOutcome ConnectClient::UpdateParticipantRoleConfig(const UpdateParticipantRoleConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateParticipantRoleConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateParticipantRoleConfig", "Required field: InstanceId, is not set");
+    return UpdateParticipantRoleConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateParticipantRoleConfig", "Required field: ContactId, is not set");
+    return UpdateParticipantRoleConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateParticipantRoleConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/contact/participant-role-config/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+  return UpdateParticipantRoleConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateParticipantRoleConfigOutcomeCallable ConnectClient::UpdateParticipantRoleConfigCallable(const UpdateParticipantRoleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateParticipantRoleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateParticipantRoleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateParticipantRoleConfigAsync(const UpdateParticipantRoleConfigRequest& request, const UpdateParticipantRoleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateParticipantRoleConfig(request), context);
     } );
 }
 

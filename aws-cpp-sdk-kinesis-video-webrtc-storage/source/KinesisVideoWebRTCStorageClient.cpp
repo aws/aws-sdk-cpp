@@ -22,7 +22,6 @@
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageErrorMarshaller.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointProvider.h>
 #include <aws/kinesis-video-webrtc-storage/model/JoinStorageSessionRequest.h>
-#include <aws/kinesis-video-webrtc-storage/model/JoinStorageSessionAsViewerRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -173,31 +172,6 @@ void KinesisVideoWebRTCStorageClient::JoinStorageSessionAsync(const JoinStorageS
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, JoinStorageSession(request), context);
-    } );
-}
-
-JoinStorageSessionAsViewerOutcome KinesisVideoWebRTCStorageClient::JoinStorageSessionAsViewer(const JoinStorageSessionAsViewerRequest& request) const
-{
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, JoinStorageSessionAsViewer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, JoinStorageSessionAsViewer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/joinStorageSessionAsViewer");
-  return JoinStorageSessionAsViewerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-JoinStorageSessionAsViewerOutcomeCallable KinesisVideoWebRTCStorageClient::JoinStorageSessionAsViewerCallable(const JoinStorageSessionAsViewerRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< JoinStorageSessionAsViewerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->JoinStorageSessionAsViewer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void KinesisVideoWebRTCStorageClient::JoinStorageSessionAsViewerAsync(const JoinStorageSessionAsViewerRequest& request, const JoinStorageSessionAsViewerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, JoinStorageSessionAsViewer(request), context);
     } );
 }
 

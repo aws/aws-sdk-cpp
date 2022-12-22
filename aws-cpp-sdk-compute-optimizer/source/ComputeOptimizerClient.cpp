@@ -26,11 +26,14 @@
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/ExportECSServiceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsRequest.h>
+#include <aws/compute-optimizer/model/GetECSServiceRecommendationProjectedMetricsRequest.h>
+#include <aws/compute-optimizer/model/GetECSServiceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
@@ -287,6 +290,30 @@ void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsync(const ExportE
     } );
 }
 
+ExportECSServiceRecommendationsOutcome ComputeOptimizerClient::ExportECSServiceRecommendations(const ExportECSServiceRecommendationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportECSServiceRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportECSServiceRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportECSServiceRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportECSServiceRecommendationsOutcomeCallable ComputeOptimizerClient::ExportECSServiceRecommendationsCallable(const ExportECSServiceRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportECSServiceRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportECSServiceRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::ExportECSServiceRecommendationsAsync(const ExportECSServiceRecommendationsRequest& request, const ExportECSServiceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportECSServiceRecommendations(request), context);
+    } );
+}
+
 ExportLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::ExportLambdaFunctionRecommendations(const ExportLambdaFunctionRecommendationsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportLambdaFunctionRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -404,6 +431,54 @@ void ComputeOptimizerClient::GetEC2RecommendationProjectedMetricsAsync(const Get
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetEC2RecommendationProjectedMetrics(request), context);
+    } );
+}
+
+GetECSServiceRecommendationProjectedMetricsOutcome ComputeOptimizerClient::GetECSServiceRecommendationProjectedMetrics(const GetECSServiceRecommendationProjectedMetricsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetECSServiceRecommendationProjectedMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetECSServiceRecommendationProjectedMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetECSServiceRecommendationProjectedMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetECSServiceRecommendationProjectedMetricsOutcomeCallable ComputeOptimizerClient::GetECSServiceRecommendationProjectedMetricsCallable(const GetECSServiceRecommendationProjectedMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetECSServiceRecommendationProjectedMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetECSServiceRecommendationProjectedMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::GetECSServiceRecommendationProjectedMetricsAsync(const GetECSServiceRecommendationProjectedMetricsRequest& request, const GetECSServiceRecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetECSServiceRecommendationProjectedMetrics(request), context);
+    } );
+}
+
+GetECSServiceRecommendationsOutcome ComputeOptimizerClient::GetECSServiceRecommendations(const GetECSServiceRecommendationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetECSServiceRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetECSServiceRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetECSServiceRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetECSServiceRecommendationsOutcomeCallable ComputeOptimizerClient::GetECSServiceRecommendationsCallable(const GetECSServiceRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetECSServiceRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetECSServiceRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::GetECSServiceRecommendationsAsync(const GetECSServiceRecommendationsRequest& request, const GetECSServiceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetECSServiceRecommendations(request), context);
     } );
 }
 

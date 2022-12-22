@@ -23,11 +23,14 @@
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsResult.h>
+#include <aws/compute-optimizer/model/ExportECSServiceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsResult.h>
+#include <aws/compute-optimizer/model/GetECSServiceRecommendationProjectedMetricsResult.h>
+#include <aws/compute-optimizer/model/GetECSServiceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationResult.h>
@@ -81,11 +84,14 @@ namespace Aws
       class ExportAutoScalingGroupRecommendationsRequest;
       class ExportEBSVolumeRecommendationsRequest;
       class ExportEC2InstanceRecommendationsRequest;
+      class ExportECSServiceRecommendationsRequest;
       class ExportLambdaFunctionRecommendationsRequest;
       class GetAutoScalingGroupRecommendationsRequest;
       class GetEBSVolumeRecommendationsRequest;
       class GetEC2InstanceRecommendationsRequest;
       class GetEC2RecommendationProjectedMetricsRequest;
+      class GetECSServiceRecommendationProjectedMetricsRequest;
+      class GetECSServiceRecommendationsRequest;
       class GetEffectiveRecommendationPreferencesRequest;
       class GetEnrollmentStatusRequest;
       class GetEnrollmentStatusesForOrganizationRequest;
@@ -102,11 +108,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<ExportAutoScalingGroupRecommendationsResult, ComputeOptimizerError> ExportAutoScalingGroupRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportEBSVolumeRecommendationsResult, ComputeOptimizerError> ExportEBSVolumeRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportEC2InstanceRecommendationsResult, ComputeOptimizerError> ExportEC2InstanceRecommendationsOutcome;
+      typedef Aws::Utils::Outcome<ExportECSServiceRecommendationsResult, ComputeOptimizerError> ExportECSServiceRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportLambdaFunctionRecommendationsResult, ComputeOptimizerError> ExportLambdaFunctionRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetAutoScalingGroupRecommendationsResult, ComputeOptimizerError> GetAutoScalingGroupRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetEBSVolumeRecommendationsResult, ComputeOptimizerError> GetEBSVolumeRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, ComputeOptimizerError> GetEC2RecommendationProjectedMetricsOutcome;
+      typedef Aws::Utils::Outcome<GetECSServiceRecommendationProjectedMetricsResult, ComputeOptimizerError> GetECSServiceRecommendationProjectedMetricsOutcome;
+      typedef Aws::Utils::Outcome<GetECSServiceRecommendationsResult, ComputeOptimizerError> GetECSServiceRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetEffectiveRecommendationPreferencesResult, ComputeOptimizerError> GetEffectiveRecommendationPreferencesOutcome;
       typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
       typedef Aws::Utils::Outcome<GetEnrollmentStatusesForOrganizationResult, ComputeOptimizerError> GetEnrollmentStatusesForOrganizationOutcome;
@@ -123,11 +132,14 @@ namespace Aws
       typedef std::future<ExportAutoScalingGroupRecommendationsOutcome> ExportAutoScalingGroupRecommendationsOutcomeCallable;
       typedef std::future<ExportEBSVolumeRecommendationsOutcome> ExportEBSVolumeRecommendationsOutcomeCallable;
       typedef std::future<ExportEC2InstanceRecommendationsOutcome> ExportEC2InstanceRecommendationsOutcomeCallable;
+      typedef std::future<ExportECSServiceRecommendationsOutcome> ExportECSServiceRecommendationsOutcomeCallable;
       typedef std::future<ExportLambdaFunctionRecommendationsOutcome> ExportLambdaFunctionRecommendationsOutcomeCallable;
       typedef std::future<GetAutoScalingGroupRecommendationsOutcome> GetAutoScalingGroupRecommendationsOutcomeCallable;
       typedef std::future<GetEBSVolumeRecommendationsOutcome> GetEBSVolumeRecommendationsOutcomeCallable;
       typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;
       typedef std::future<GetEC2RecommendationProjectedMetricsOutcome> GetEC2RecommendationProjectedMetricsOutcomeCallable;
+      typedef std::future<GetECSServiceRecommendationProjectedMetricsOutcome> GetECSServiceRecommendationProjectedMetricsOutcomeCallable;
+      typedef std::future<GetECSServiceRecommendationsOutcome> GetECSServiceRecommendationsOutcomeCallable;
       typedef std::future<GetEffectiveRecommendationPreferencesOutcome> GetEffectiveRecommendationPreferencesOutcomeCallable;
       typedef std::future<GetEnrollmentStatusOutcome> GetEnrollmentStatusOutcomeCallable;
       typedef std::future<GetEnrollmentStatusesForOrganizationOutcome> GetEnrollmentStatusesForOrganizationOutcomeCallable;
@@ -147,11 +159,14 @@ namespace Aws
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportAutoScalingGroupRecommendationsRequest&, const Model::ExportAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportAutoScalingGroupRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEBSVolumeRecommendationsRequest&, const Model::ExportEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEC2InstanceRecommendationsRequest&, const Model::ExportEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEC2InstanceRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportECSServiceRecommendationsRequest&, const Model::ExportECSServiceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportECSServiceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportLambdaFunctionRecommendationsRequest&, const Model::ExportLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLambdaFunctionRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetAutoScalingGroupRecommendationsRequest&, const Model::GetAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoScalingGroupRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEBSVolumeRecommendationsRequest&, const Model::GetEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2InstanceRecommendationsRequest&, const Model::GetEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2RecommendationProjectedMetricsRequest&, const Model::GetEC2RecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2RecommendationProjectedMetricsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetECSServiceRecommendationProjectedMetricsRequest&, const Model::GetECSServiceRecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetECSServiceRecommendationProjectedMetricsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetECSServiceRecommendationsRequest&, const Model::GetECSServiceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetECSServiceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEffectiveRecommendationPreferencesRequest&, const Model::GetEffectiveRecommendationPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectiveRecommendationPreferencesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusRequest&, const Model::GetEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusesForOrganizationRequest&, const Model::GetEnrollmentStatusesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusesForOrganizationResponseReceivedHandler;

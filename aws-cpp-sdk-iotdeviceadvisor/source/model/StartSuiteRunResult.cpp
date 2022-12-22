@@ -46,6 +46,12 @@ StartSuiteRunResult& StartSuiteRunResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("endpoint"))
+  {
+    m_endpoint = jsonValue.GetString("endpoint");
+
+  }
+
 
 
   return *this;

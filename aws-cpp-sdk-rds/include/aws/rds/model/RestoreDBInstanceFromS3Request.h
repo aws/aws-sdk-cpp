@@ -403,57 +403,105 @@ namespace Model
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Constraints: Must contain from 8
-     * to 41 characters.</p>
+     * ASCII character except "/", """, or "@".</p> <p>Constraints: Can't be specified
+     * if <code>ManageMasterUserPassword</code> is turned on.</p> <p> <b>MariaDB</b>
+     * </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft
+     * SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p>
+     * <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -2617,6 +2665,196 @@ namespace Model
      */
     inline RestoreDBInstanceFromS3Request& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to manage the master user password with Amazon
+     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
+     * user password with Amazon Web Services Secrets Manager if
+     * <code>MasterUserPassword</code> is specified.</p> </li> </ul>
+     */
+    inline bool GetManageMasterUserPassword() const{ return m_manageMasterUserPassword; }
+
+    /**
+     * <p>A value that indicates whether to manage the master user password with Amazon
+     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
+     * user password with Amazon Web Services Secrets Manager if
+     * <code>MasterUserPassword</code> is specified.</p> </li> </ul>
+     */
+    inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to manage the master user password with Amazon
+     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
+     * user password with Amazon Web Services Secrets Manager if
+     * <code>MasterUserPassword</code> is specified.</p> </li> </ul>
+     */
+    inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
+
+    /**
+     * <p>A value that indicates whether to manage the master user password with Amazon
+     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Can't manage the master
+     * user password with Amazon Web Services Secrets Manager if
+     * <code>MasterUserPassword</code> is specified.</p> </li> </ul>
+     */
+    inline RestoreDBInstanceFromS3Request& WithManageMasterUserPassword(bool value) { SetManageMasterUserPassword(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline const Aws::String& GetMasterUserSecretKmsKeyId() const{ return m_masterUserSecretKmsKeyId; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline bool MasterUserSecretKmsKeyIdHasBeenSet() const { return m_masterUserSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline void SetMasterUserSecretKmsKeyId(const Aws::String& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline void SetMasterUserSecretKmsKeyId(Aws::String&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline void SetMasterUserSecretKmsKeyId(const char* value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithMasterUserSecretKmsKeyId(const Aws::String& value) { SetMasterUserSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithMasterUserSecretKmsKeyId(Aws::String&& value) { SetMasterUserSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if the master user password is managed by RDS in
+     * Amazon Web Services Secrets Manager for the DB instance.</p> <p>The Amazon Web
+     * Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key. To use a KMS key in a different Amazon Web Services account,
+     * specify the key ARN or alias ARN.</p> <p>If you don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * <p>There is a default KMS key for your Amazon Web Services account. Your Amazon
+     * Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2756,6 +2994,12 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    bool m_manageMasterUserPassword;
+    bool m_manageMasterUserPasswordHasBeenSet = false;
+
+    Aws::String m_masterUserSecretKmsKeyId;
+    bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

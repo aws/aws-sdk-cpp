@@ -17,6 +17,7 @@
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/ActivityStreamPolicyStatus.h>
+#include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -3687,6 +3688,61 @@ namespace Model
      */
     inline DBInstance& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
 
+
+    /**
+     * <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for
+     * the master user password.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline const MasterUserSecret& GetMasterUserSecret() const{ return m_masterUserSecret; }
+
+    /**
+     * <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for
+     * the master user password.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline bool MasterUserSecretHasBeenSet() const { return m_masterUserSecretHasBeenSet; }
+
+    /**
+     * <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for
+     * the master user password.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline void SetMasterUserSecret(const MasterUserSecret& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = value; }
+
+    /**
+     * <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for
+     * the master user password.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline void SetMasterUserSecret(MasterUserSecret&& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = std::move(value); }
+
+    /**
+     * <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for
+     * the master user password.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline DBInstance& WithMasterUserSecret(const MasterUserSecret& value) { SetMasterUserSecret(value); return *this;}
+
+    /**
+     * <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for
+     * the master user password.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline DBInstance& WithMasterUserSecret(MasterUserSecret&& value) { SetMasterUserSecret(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3922,6 +3978,9 @@ namespace Model
 
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
+
+    MasterUserSecret m_masterUserSecret;
+    bool m_masterUserSecretHasBeenSet = false;
   };
 
 } // namespace Model

@@ -2261,7 +2261,7 @@ namespace Connect
         /**
          * <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of
          * the user specified by <i>userId</i> will be set to silent monitoring mode on the
-         * contact.</p><p><h3>See Also:</h3>   <a
+         * contact. Supports voice and chat contacts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact">AWS
          * API Reference</a></p>
          */
@@ -3012,6 +3012,30 @@ namespace Connect
          * An Async wrapper for UpdateInstanceStorageConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateInstanceStorageConfigAsync(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates timeouts for when human chat participants are to be considered idle,
+         * and when agents are automatically disconnected from a chat due to idleness. You
+         * can set four timers:</p> <ul> <li> <p>Customer idle timeout</p> </li> <li>
+         * <p>Customer auto-disconnect timeout</p> </li> <li> <p>Agent idle timeout</p>
+         * </li> <li> <p>Agent auto-disconnect timeout</p> </li> </ul> <p>For more
+         * information about how chat timeouts work, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set
+         * up chat timeouts for human participants</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateParticipantRoleConfigOutcome UpdateParticipantRoleConfig(const Model::UpdateParticipantRoleConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateParticipantRoleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateParticipantRoleConfigOutcomeCallable UpdateParticipantRoleConfigCallable(const Model::UpdateParticipantRoleConfigRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateParticipantRoleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateParticipantRoleConfigAsync(const Model::UpdateParticipantRoleConfigRequest& request, const UpdateParticipantRoleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates your claimed phone number from its current Amazon Connect instance or

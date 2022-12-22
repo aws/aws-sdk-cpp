@@ -130,7 +130,7 @@ namespace Model
      * <code>effectiveRecommendationPreferences</code> value in the response of the
      * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline const ExternalMetricsPreference& GetExternalMetricsPreference() const{ return m_externalMetricsPreference; }
@@ -146,7 +146,7 @@ namespace Model
      * <code>effectiveRecommendationPreferences</code> value in the response of the
      * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetExternalMetricsPreference(const ExternalMetricsPreference& value) { m_externalMetricsPreference = value; }
@@ -162,7 +162,7 @@ namespace Model
      * <code>effectiveRecommendationPreferences</code> value in the response of the
      * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetExternalMetricsPreference(ExternalMetricsPreference&& value) { m_externalMetricsPreference = std::move(value); }
@@ -178,7 +178,7 @@ namespace Model
      * <code>effectiveRecommendationPreferences</code> value in the response of the
      * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline GetEffectiveRecommendationPreferencesResult& WithExternalMetricsPreference(const ExternalMetricsPreference& value) { SetExternalMetricsPreference(value); return *this;}
@@ -194,7 +194,7 @@ namespace Model
      * <code>effectiveRecommendationPreferences</code> value in the response of the
      * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline GetEffectiveRecommendationPreferencesResult& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}

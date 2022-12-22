@@ -127,6 +127,7 @@
 #include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleMetadataResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
+#include <aws/connect/model/UpdateParticipantRoleConfigResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
 #include <aws/connect/model/UpdateTaskTemplateResult.h>
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
@@ -316,6 +317,7 @@ namespace Aws
       class UpdateHoursOfOperationRequest;
       class UpdateInstanceAttributeRequest;
       class UpdateInstanceStorageConfigRequest;
+      class UpdateParticipantRoleConfigRequest;
       class UpdatePhoneNumberRequest;
       class UpdateQueueHoursOfOperationRequest;
       class UpdateQueueMaxContactsRequest;
@@ -487,6 +489,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
+      typedef Aws::Utils::Outcome<UpdateParticipantRoleConfigResult, ConnectError> UpdateParticipantRoleConfigOutcome;
       typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueHoursOfOperationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueMaxContactsOutcome;
@@ -658,6 +661,7 @@ namespace Aws
       typedef std::future<UpdateHoursOfOperationOutcome> UpdateHoursOfOperationOutcomeCallable;
       typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
       typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
+      typedef std::future<UpdateParticipantRoleConfigOutcome> UpdateParticipantRoleConfigOutcomeCallable;
       typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
       typedef std::future<UpdateQueueHoursOfOperationOutcome> UpdateQueueHoursOfOperationOutcomeCallable;
       typedef std::future<UpdateQueueMaxContactsOutcome> UpdateQueueMaxContactsOutcomeCallable;
@@ -832,6 +836,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::UpdateHoursOfOperationRequest&, const Model::UpdateHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceAttributeRequest&, const Model::UpdateInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&, const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceStorageConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantRoleConfigRequest&, const Model::UpdateParticipantRoleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateParticipantRoleConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateQueueHoursOfOperationRequest&, const Model::UpdateQueueHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateQueueMaxContactsRequest&, const Model::UpdateQueueMaxContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueMaxContactsResponseReceivedHandler;
