@@ -70,6 +70,7 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("ThrottlingException", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
     s_CoreErrorsMapper->emplace("ThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
     s_CoreErrorsMapper->emplace("Throttling", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
+    s_CoreErrorsMapper->emplace("TooManyRequestsException", AWSError<CoreErrors>(CoreErrors::THROTTLING, true));
     s_CoreErrorsMapper->emplace("ValidationErrorException", AWSError<CoreErrors>(CoreErrors::VALIDATION, false));
     s_CoreErrorsMapper->emplace("ValidationException", AWSError<CoreErrors>(CoreErrors::VALIDATION, false));
     s_CoreErrorsMapper->emplace("ValidationError", AWSError<CoreErrors>(CoreErrors::VALIDATION, false));
