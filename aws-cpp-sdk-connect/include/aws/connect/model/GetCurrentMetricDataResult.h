@@ -153,6 +153,22 @@ namespace Model
      */
     inline GetCurrentMetricDataResult& WithDataSnapshotTime(Aws::Utils::DateTime&& value) { SetDataSnapshotTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The total count of the result, regardless of the current page size. </p>
+     */
+    inline long long GetApproximateTotalCount() const{ return m_approximateTotalCount; }
+
+    /**
+     * <p>The total count of the result, regardless of the current page size. </p>
+     */
+    inline void SetApproximateTotalCount(long long value) { m_approximateTotalCount = value; }
+
+    /**
+     * <p>The total count of the result, regardless of the current page size. </p>
+     */
+    inline GetCurrentMetricDataResult& WithApproximateTotalCount(long long value) { SetApproximateTotalCount(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -160,6 +176,8 @@ namespace Model
     Aws::Vector<CurrentMetricResult> m_metricResults;
 
     Aws::Utils::DateTime m_dataSnapshotTime;
+
+    long long m_approximateTotalCount;
   };
 
 } // namespace Model

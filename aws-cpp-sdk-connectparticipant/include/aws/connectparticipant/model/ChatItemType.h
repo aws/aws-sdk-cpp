@@ -25,7 +25,9 @@ namespace Model
     MESSAGE,
     EVENT,
     ATTACHMENT,
-    CONNECTION_ACK
+    CONNECTION_ACK,
+    MESSAGE_DELIVERED,
+    MESSAGE_READ
   };
 
 namespace ChatItemTypeMapper

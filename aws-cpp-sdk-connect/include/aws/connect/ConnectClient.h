@@ -2261,7 +2261,7 @@ namespace Connect
         /**
          * <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of
          * the user specified by <i>userId</i> will be set to silent monitoring mode on the
-         * contact. Supports voice and chat contacts.</p><p><h3>See Also:</h3>   <a
+         * contact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact">AWS
          * API Reference</a></p>
          */

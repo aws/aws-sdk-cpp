@@ -30,6 +30,8 @@ namespace Aws
         static const int EVENT_HASH = HashingUtils::HashString("EVENT");
         static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
         static const int CONNECTION_ACK_HASH = HashingUtils::HashString("CONNECTION_ACK");
+        static const int MESSAGE_DELIVERED_HASH = HashingUtils::HashString("MESSAGE_DELIVERED");
+        static const int MESSAGE_READ_HASH = HashingUtils::HashString("MESSAGE_READ");
 
 
         ChatItemType GetChatItemTypeForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return ChatItemType::CONNECTION_ACK;
           }
+          else if (hashCode == MESSAGE_DELIVERED_HASH)
+          {
+            return ChatItemType::MESSAGE_DELIVERED;
+          }
+          else if (hashCode == MESSAGE_READ_HASH)
+          {
+            return ChatItemType::MESSAGE_READ;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "ATTACHMENT";
           case ChatItemType::CONNECTION_ACK:
             return "CONNECTION_ACK";
+          case ChatItemType::MESSAGE_DELIVERED:
+            return "MESSAGE_DELIVERED";
+          case ChatItemType::MESSAGE_READ:
+            return "MESSAGE_READ";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

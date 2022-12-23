@@ -185,10 +185,10 @@ namespace Model
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
@@ -204,10 +204,10 @@ namespace Model
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
@@ -223,10 +223,10 @@ namespace Model
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline void SetDeploymentType(const OpenZFSDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
@@ -242,10 +242,10 @@ namespace Model
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline void SetDeploymentType(OpenZFSDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
@@ -261,10 +261,10 @@ namespace Model
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(const OpenZFSDeploymentType& value) { SetDeploymentType(value); return *this;}
 
@@ -280,10 +280,10 @@ namespace Model
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
-     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(OpenZFSDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 

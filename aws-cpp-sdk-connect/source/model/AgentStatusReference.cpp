@@ -20,13 +20,15 @@ namespace Model
 
 AgentStatusReference::AgentStatusReference() : 
     m_statusStartTimestampHasBeenSet(false),
-    m_statusArnHasBeenSet(false)
+    m_statusArnHasBeenSet(false),
+    m_statusNameHasBeenSet(false)
 {
 }
 
 AgentStatusReference::AgentStatusReference(JsonView jsonValue) : 
     m_statusStartTimestampHasBeenSet(false),
-    m_statusArnHasBeenSet(false)
+    m_statusArnHasBeenSet(false),
+    m_statusNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AgentStatusReference& AgentStatusReference::operator =(JsonView jsonValue)
     m_statusArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusName"))
+  {
+    m_statusName = jsonValue.GetString("StatusName");
+
+    m_statusNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +71,12 @@ JsonValue AgentStatusReference::Jsonize() const
   if(m_statusArnHasBeenSet)
   {
    payload.WithString("StatusArn", m_statusArn);
+
+  }
+
+  if(m_statusNameHasBeenSet)
+  {
+   payload.WithString("StatusName", m_statusName);
 
   }
 

@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCurrentUserDataResult::GetCurrentUserDataResult()
+GetCurrentUserDataResult::GetCurrentUserDataResult() : 
+    m_approximateTotalCount(0)
 {
 }
 
-GetCurrentUserDataResult::GetCurrentUserDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetCurrentUserDataResult::GetCurrentUserDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_approximateTotalCount(0)
 {
   *this = result;
 }
@@ -41,6 +43,12 @@ GetCurrentUserDataResult& GetCurrentUserDataResult::operator =(const Aws::Amazon
     {
       m_userDataList.push_back(userDataListJsonList[userDataListIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("ApproximateTotalCount"))
+  {
+    m_approximateTotalCount = jsonValue.GetInt64("ApproximateTotalCount");
+
   }
 
 

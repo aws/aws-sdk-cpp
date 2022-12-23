@@ -19,7 +19,8 @@ GetCurrentMetricDataRequest::GetCurrentMetricDataRequest() :
     m_currentMetricsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_sortCriteriaHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,17 @@ Aws::String GetCurrentMetricDataRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_sortCriteriaHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sortCriteriaJsonList(m_sortCriteria.size());
+   for(unsigned sortCriteriaIndex = 0; sortCriteriaIndex < sortCriteriaJsonList.GetLength(); ++sortCriteriaIndex)
+   {
+     sortCriteriaJsonList[sortCriteriaIndex].AsObject(m_sortCriteria[sortCriteriaIndex].Jsonize());
+   }
+   payload.WithArray("SortCriteria", std::move(sortCriteriaJsonList));
 
   }
 

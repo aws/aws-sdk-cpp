@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/QueueReference.h>
 #include <aws/connect/model/Channel.h>
+#include <aws/connect/model/RoutingProfileReference.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +101,25 @@ namespace Model
      */
     inline Dimensions& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 
+
+    
+    inline const RoutingProfileReference& GetRoutingProfile() const{ return m_routingProfile; }
+
+    
+    inline bool RoutingProfileHasBeenSet() const { return m_routingProfileHasBeenSet; }
+
+    
+    inline void SetRoutingProfile(const RoutingProfileReference& value) { m_routingProfileHasBeenSet = true; m_routingProfile = value; }
+
+    
+    inline void SetRoutingProfile(RoutingProfileReference&& value) { m_routingProfileHasBeenSet = true; m_routingProfile = std::move(value); }
+
+    
+    inline Dimensions& WithRoutingProfile(const RoutingProfileReference& value) { SetRoutingProfile(value); return *this;}
+
+    
+    inline Dimensions& WithRoutingProfile(RoutingProfileReference&& value) { SetRoutingProfile(std::move(value)); return *this;}
+
   private:
 
     QueueReference m_queue;
@@ -107,6 +127,9 @@ namespace Model
 
     Channel m_channel;
     bool m_channelHasBeenSet = false;
+
+    RoutingProfileReference m_routingProfile;
+    bool m_routingProfileHasBeenSet = false;
   };
 
 } // namespace Model

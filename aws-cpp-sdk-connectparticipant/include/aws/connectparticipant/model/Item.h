@@ -9,6 +9,7 @@
 #include <aws/connectparticipant/model/ChatItemType.h>
 #include <aws/connectparticipant/model/ParticipantRole.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectparticipant/model/MessageMetadata.h>
 #include <aws/connectparticipant/model/AttachmentItem.h>
 #include <utility>
 
@@ -406,6 +407,43 @@ namespace Model
      */
     inline Item& AddAttachments(AttachmentItem&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The metadata related to the message. Currently this supports only information
+     * related to message receipts.</p>
+     */
+    inline const MessageMetadata& GetMessageMetadata() const{ return m_messageMetadata; }
+
+    /**
+     * <p>The metadata related to the message. Currently this supports only information
+     * related to message receipts.</p>
+     */
+    inline bool MessageMetadataHasBeenSet() const { return m_messageMetadataHasBeenSet; }
+
+    /**
+     * <p>The metadata related to the message. Currently this supports only information
+     * related to message receipts.</p>
+     */
+    inline void SetMessageMetadata(const MessageMetadata& value) { m_messageMetadataHasBeenSet = true; m_messageMetadata = value; }
+
+    /**
+     * <p>The metadata related to the message. Currently this supports only information
+     * related to message receipts.</p>
+     */
+    inline void SetMessageMetadata(MessageMetadata&& value) { m_messageMetadataHasBeenSet = true; m_messageMetadata = std::move(value); }
+
+    /**
+     * <p>The metadata related to the message. Currently this supports only information
+     * related to message receipts.</p>
+     */
+    inline Item& WithMessageMetadata(const MessageMetadata& value) { SetMessageMetadata(value); return *this;}
+
+    /**
+     * <p>The metadata related to the message. Currently this supports only information
+     * related to message receipts.</p>
+     */
+    inline Item& WithMessageMetadata(MessageMetadata&& value) { SetMessageMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_absoluteTime;
@@ -434,6 +472,9 @@ namespace Model
 
     Aws::Vector<AttachmentItem> m_attachments;
     bool m_attachmentsHasBeenSet = false;
+
+    MessageMetadata m_messageMetadata;
+    bool m_messageMetadataHasBeenSet = false;
   };
 
 } // namespace Model

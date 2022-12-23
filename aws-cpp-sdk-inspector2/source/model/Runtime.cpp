@@ -31,6 +31,8 @@ namespace Aws
         static const int PYTHON_3_8_HASH = HashingUtils::HashString("PYTHON_3_8");
         static const int PYTHON_3_9_HASH = HashingUtils::HashString("PYTHON_3_9");
         static const int UNSUPPORTED_HASH = HashingUtils::HashString("UNSUPPORTED");
+        static const int NODEJS_18_X_HASH = HashingUtils::HashString("NODEJS_18_X");
+        static const int GO_1_X_HASH = HashingUtils::HashString("GO_1_X");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return Runtime::UNSUPPORTED;
           }
+          else if (hashCode == NODEJS_18_X_HASH)
+          {
+            return Runtime::NODEJS_18_X;
+          }
+          else if (hashCode == GO_1_X_HASH)
+          {
+            return Runtime::GO_1_X;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +126,10 @@ namespace Aws
             return "PYTHON_3_9";
           case Runtime::UNSUPPORTED:
             return "UNSUPPORTED";
+          case Runtime::NODEJS_18_X:
+            return "NODEJS_18_X";
+          case Runtime::GO_1_X:
+            return "GO_1_X";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

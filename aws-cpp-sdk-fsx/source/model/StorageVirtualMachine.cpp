@@ -28,6 +28,8 @@ StorageVirtualMachine::StorageVirtualMachine() :
     m_nameHasBeenSet(false),
     m_resourceARNHasBeenSet(false),
     m_storageVirtualMachineIdHasBeenSet(false),
+    m_subtype(StorageVirtualMachineSubtype::NOT_SET),
+    m_subtypeHasBeenSet(false),
     m_uUIDHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_lifecycleTransitionReasonHasBeenSet(false),
@@ -46,6 +48,8 @@ StorageVirtualMachine::StorageVirtualMachine(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_resourceARNHasBeenSet(false),
     m_storageVirtualMachineIdHasBeenSet(false),
+    m_subtype(StorageVirtualMachineSubtype::NOT_SET),
+    m_subtypeHasBeenSet(false),
     m_uUIDHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_lifecycleTransitionReasonHasBeenSet(false),
@@ -111,6 +115,13 @@ StorageVirtualMachine& StorageVirtualMachine::operator =(JsonView jsonValue)
     m_storageVirtualMachineId = jsonValue.GetString("StorageVirtualMachineId");
 
     m_storageVirtualMachineIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Subtype"))
+  {
+    m_subtype = StorageVirtualMachineSubtypeMapper::GetStorageVirtualMachineSubtypeForName(jsonValue.GetString("Subtype"));
+
+    m_subtypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UUID"))
@@ -195,6 +206,11 @@ JsonValue StorageVirtualMachine::Jsonize() const
   {
    payload.WithString("StorageVirtualMachineId", m_storageVirtualMachineId);
 
+  }
+
+  if(m_subtypeHasBeenSet)
+  {
+   payload.WithString("Subtype", StorageVirtualMachineSubtypeMapper::GetNameForStorageVirtualMachineSubtype(m_subtype));
   }
 
   if(m_uUIDHasBeenSet)

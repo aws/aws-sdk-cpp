@@ -112,11 +112,29 @@ namespace Model
      */
     inline GetCurrentUserDataResult& AddUserDataList(UserData&& value) { m_userDataList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The total count of the result, regardless of the current page size.</p>
+     */
+    inline long long GetApproximateTotalCount() const{ return m_approximateTotalCount; }
+
+    /**
+     * <p>The total count of the result, regardless of the current page size.</p>
+     */
+    inline void SetApproximateTotalCount(long long value) { m_approximateTotalCount = value; }
+
+    /**
+     * <p>The total count of the result, regardless of the current page size.</p>
+     */
+    inline GetCurrentUserDataResult& WithApproximateTotalCount(long long value) { SetApproximateTotalCount(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<UserData> m_userDataList;
+
+    long long m_approximateTotalCount;
   };
 
 } // namespace Model

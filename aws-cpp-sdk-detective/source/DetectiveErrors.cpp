@@ -8,6 +8,7 @@
 #include <aws/detective/DetectiveErrors.h>
 #include <aws/detective/model/ServiceQuotaExceededException.h>
 #include <aws/detective/model/ValidationException.h>
+#include <aws/detective/model/AccessDeniedException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -28,6 +29,12 @@ template<> AWS_DETECTIVE_API ValidationException DetectiveError::GetModeledError
 {
   assert(this->GetErrorType() == DetectiveErrors::VALIDATION);
   return ValidationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DETECTIVE_API AccessDeniedException DetectiveError::GetModeledError()
+{
+  assert(this->GetErrorType() == DetectiveErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
 }
 
 namespace DetectiveErrorMapper

@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline AttachmentItem& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline AttachmentItem& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline AttachmentItem& WithContentType(const char* value) { SetContentType(value); return *this;}
