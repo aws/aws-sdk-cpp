@@ -13,20 +13,19 @@ namespace Connect
 {
 namespace Model
 {
-  enum class Grouping
+  enum class SortOrder
   {
     NOT_SET,
-    QUEUE,
-    CHANNEL,
-    ROUTING_PROFILE
+    ASCENDING,
+    DESCENDING
   };
 
-namespace GroupingMapper
+namespace SortOrderMapper
 {
-AWS_CONNECT_API Grouping GetGroupingForName(const Aws::String& name);
+AWS_CONNECT_API SortOrder GetSortOrderForName(const Aws::String& name);
 
-AWS_CONNECT_API Aws::String GetNameForGrouping(Grouping value);
-} // namespace GroupingMapper
+AWS_CONNECT_API Aws::String GetNameForSortOrder(SortOrder value);
+} // namespace SortOrderMapper
 } // namespace Model
 } // namespace Connect
 } // namespace Aws

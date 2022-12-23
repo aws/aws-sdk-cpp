@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/connect/model/Grouping.h>
+#include <aws/connect/model/SortOrder.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,49 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace GroupingMapper
+      namespace SortOrderMapper
       {
 
-        static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
-        static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
-        static const int ROUTING_PROFILE_HASH = HashingUtils::HashString("ROUTING_PROFILE");
+        static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
+        static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
 
 
-        Grouping GetGroupingForName(const Aws::String& name)
+        SortOrder GetSortOrderForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == QUEUE_HASH)
+          if (hashCode == ASCENDING_HASH)
           {
-            return Grouping::QUEUE;
+            return SortOrder::ASCENDING;
           }
-          else if (hashCode == CHANNEL_HASH)
+          else if (hashCode == DESCENDING_HASH)
           {
-            return Grouping::CHANNEL;
-          }
-          else if (hashCode == ROUTING_PROFILE_HASH)
-          {
-            return Grouping::ROUTING_PROFILE;
+            return SortOrder::DESCENDING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Grouping>(hashCode);
+            return static_cast<SortOrder>(hashCode);
           }
 
-          return Grouping::NOT_SET;
+          return SortOrder::NOT_SET;
         }
 
-        Aws::String GetNameForGrouping(Grouping enumValue)
+        Aws::String GetNameForSortOrder(SortOrder enumValue)
         {
           switch(enumValue)
           {
-          case Grouping::QUEUE:
-            return "QUEUE";
-          case Grouping::CHANNEL:
-            return "CHANNEL";
-          case Grouping::ROUTING_PROFILE:
-            return "ROUTING_PROFILE";
+          case SortOrder::ASCENDING:
+            return "ASCENDING";
+          case SortOrder::DESCENDING:
+            return "DESCENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace GroupingMapper
+      } // namespace SortOrderMapper
     } // namespace Model
   } // namespace Connect
 } // namespace Aws
